@@ -1,0 +1,152 @@
+
+<form autocomplete="off" onsubmit="event.preventDefault();">
+    <fieldset>
+        <div class="form-group">
+            <label>{{localize "LMRTFY.SelectUser"}}</label>
+
+            <select name="user" data-dtype="String">
+                <option value="tokens" selected>{{localize "LMRTFY.ControlledTokens"}}</option>
+                <option value="character">{{localize "LMRTFY.AssignedCharacters"}}</option>
+                {{#each users}}
+                    <option value="{{this.id}}">{{this.name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="form-group">
+            <label>{{localize "LMRTFY.SelectCharacters"}}</label>
+            <button type="button" class="select-all"><i class="fas fa-check-square"></i>{{localize "LMRTFY.SelectAll"}}</button>
+            <button type="button" class="deselect-all"><i class="fas fa-square"></i>{{localize "LMRTFY.SelectNone"}}</button>
+        </div>
+        <div class="form-group lmrtfy-actor-avatars">
+        {{#each actors}}
+            <div class="lmrtfy-actor" data-id="{{this.id}}">
+                <input type="checkbox" name="actor-{{this.id}}" id="lmrtf-actor-{{this.id}}" data-dtype="Boolean" {{#if (lmrtfy-controlledToken this)}}checked{{/if}} />
+                <label for="lmrtf-actor-{{this.id}}"><img src="{{this.img}}" /></label>
+            </div>
+        {{/each}}
+        </div>
+    </fieldset>
+   
+    <fieldset>
+    <div class="form-group">
+        <label>{{localize "LMRTFY.Modifiers"}}</label>
+        
+        <select name="advantage" data-dtype="Number">
+            <option value="0">{{localize "LMRTFY.NormalRoll"}}</option>
+            <option value="1">{{localize "LMRTFY.AdvantageRoll"}}</option>
+            <option value="-1">{{localize "LMRTFY.DisadvantageRoll"}}</option>
+            <option value="2">{{localize "LMRTFY.QueryRoll"}}</option>
+        </select>
+
+        <select name="mode" data-dtype="String">
+            {{#each rollModes as |name mode|}}
+            <option value="{{mode}}">{{localize name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="form-group">
+        <label>{{localize "LMRTFY.WindowTitle"}}</label>
+        <input type="text" name="title" value='{{localize "LMRTFY.WindowTitleValue"}}' placeholder='{{localize "LMRTFY.WindowTitlePlaceholder"}}' data-dtype="String"/>
+    </div>
+    <div class="form-group">
+        <label>{{localize "LMRTFY.Message"}}</label>
+        <input type="text" name="message" value='' placeholder='{{localize "LMRTFY.MessagePlaceholder"}}' data-dtype="String"/>
+    </div>
+    </fieldset>
+
+    <fieldset>
+        <div class="form-group">
+            <label>{{localize "LMRTFY.Extras"}}</label>
+                
+            <div class="lmrtfy-extras">
+                {{#if specialRolls.initiative}}
+                <div class="lmrtfy-extra-initiative">
+                    <input type="checkbox" name="extra-initiative" id="lmrtf-extra-initiative" data-dtype="Boolean" />
+                    <label for="lmrtf-extra-initiative">{{localize "LMRTFY.Initiative"}}</label>
+                    
+                </div>
+                {{/if}}
+                {{#if specialRolls.deathsave}}
+                <div class="lmrtfy-extra-death-save">
+                    <input type="checkbox" name="extra-death-save" id="lmrtf-extra-death-save" data-dtype="Boolean" />
+                    <label for="lmrtf-extra-death-save">{{localize "LMRTFY.DeathSave"}}</label>
+                </div>
+                {{/if}}
+                {{#if specialRolls.perception}}
+                <div class="lmrtfy-extra-perception">
+                    <input type="checkbox" name="extra-perception" id="lmrtf-extra-perception" data-dtype="Boolean" />
+                    <label for="lmrtf-extra-perception">{{localize "LMRTFY.Perception"}}</label>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label>{{localize "LMRTFY.CustomFormula"}}</label>
+            <input type="text" name="formula" value='' placeholder='{{localize "LMRTFY.CustomFormulaPlaceholder"}}' data-dtype="String"/>
+        </div>
+    </fieldset>
+ 
+    <fieldset>
+    <div class="form-group">
+        <label>{{localize "LMRTFY.AbilityChecks"}}</label>
+        
+        <div class="lmrtfy-ability-checks">
+            {{#each abilities as |name key|}}
+            <div class="lmrtfy-ability">
+                <input type="checkbox" name="check-{{key}}" id="lmrtf-check-{{key}}" data-dtype="Boolean" />
+                <label for="lmrtf-check-{{key}}">{{name}}</label>
+                
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    </fieldset>
+     
+    <fieldset>
+    <div class="form-group">
+        <label>{{localize "LMRTFY.SavingThrows"}}</label>
+        
+        <div class="lmrtfy-saving-throws">
+            {{#each saves as |name key|}}
+            <div class="lmrtfy-ability">
+                <input type="checkbox" name="save-{{key}}" id="lmrtf-save-{{key}}" data-dtype="Boolean" />
+                <label for="lmrtf-save-{{key}}">{{name}}</label>            
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    </fieldset>
+   
+    <fieldset>
+        <div class="form-group">
+            <label>{{localize "LMRTFY.SkillChecks"}}</label>
+            <div class="lmrtfy-skill-checks">
+                {{#each skills as |name key|}}
+                <div class="lmrtfy-skill">
+                    <input type="checkbox" name="skill-{{key}}" id="lmrtf-skill-{{key}}" data-dtype="Boolean" />
+                    <label for="lmrtf-skill-{{key}}">{{name}}</label>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </fieldset>
+
+    {{#if tables}}
+    <fieldset>
+        <div class="form-group">
+            <label>{{localize "LMRTFY.RollTables"}}</label>
+
+            <select name="table" class="lmrtfy-roll-table-list" data-dtype="String" multiple="multiple">
+                {{#each tables as |name|}}
+                    <option value="{{name}}">{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+    </fieldset>
+    {{/if}}
+
+    <div class="lmrtfy-submit">
+        <button type="submit" class="lmrtfy-request-roll" name="submit" value="1"><i class="fas fa-dice"></i>{{localize "LMRTFY.RequestRolls"}}</button>
+        <button type="button" class="lmrtfy-save-roll" name="submit" value="1"><i class="fas fa-download"></i>{{localize "LMRTFY.SaveRequest"}}</button>
+    </div>
+</form>

@@ -1,0 +1,18 @@
+.dnd5e.sheet.actor.character .resource .attribute-value label.recharge {
+    margin: 5px;
+    height: 32px;
+    position: relative;
+    font-size: 13px;
+    text-align: center;
+    color: #4b4a44;
+}
+
+.dnd5e.sheet.actor ul.skills-list {
+  flex: 0 0 190px;
+  height: 440px;
+  list-style: none;
+  margin: 0 5px 0;
+  padding: 3px 0 2px;
+  border: 2px groove #eeede0;
+  border-radius: 3px;
+}

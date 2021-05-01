@@ -1,0 +1,155 @@
+{{log this}}    
+{{#*inline "settingPartial"}}
+<div class="form-group">
+    <div class="flexcol">
+        <label>{{{localize this.name}}}</label>
+        {{#if this.hint}}
+        <p class="notes">{{{localize this.hint}}}</p>
+        {{/if}}
+    </div>
+    {{#if this.isColor}}
+    <div class="form-fields ws-color-input">
+        <select class="ws-color-value">
+            <option value="custom">{{localize "WHETSTONE.ColorOptionCustom"}}</option>
+            {{#each this.choices as |name k|}}
+            <option value="{{k}}">{{localize name}}</option>
+            {{/each}}
+        </select>
+        <div class="flexrow" style="margin-top: 5px;">
+            <input type="text" name="{{this.id}}" class="ws-color-value" value="{{this.colorData.full}}" data-dtype="String" data-shades="{{this.color}}" data-tab="{{this.tab}}"/>
+            <input type="color" class="ws-color-value" value="{{this.colorData.color}}" data-edit="{{this.id}}"/>
+        </div>
+        <div class="flexrow" style="margin-top: 5px;">
+            <input class="ws-color-value" type="range" data-dtype="Number" value="{{this.colorData.alpha}}" min="0" max="255" step="1"/>
+            <span class="range-value">{{this.colorData.alpha}}</span>
+        </div>
+        {{#if this.shades}}
+        <div class="flexrow ws-shade-preview" style="margin-top: 5px;">
+            {{{this.shades}}}
+        </div>
+        {{/if}}
+    </div>
+    {{else}}
+    <div class="form-fields">
+
+        {{#if this.isCheckbox}}
+        <input type="checkbox" name="{{this.id}}" data-dtype="Boolean" data-tab="{{this.tab}}" {{checked this.value}}/>
+
+        {{else if this.isSelect}}
+        <select name="{{this.id}}" data-tab="{{this.tab}}">
+            {{#select this.value}}
+            {{#each this.choices as |name k|}}
+            <option value="{{k}}">{{localize name}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+
+        {{else if this.isRange}}
+        <input type="range" name="{{this.id}}" data-dtype="Number" data-tab="{{this.tab}}" value="{{this.value}}"
+               min="{{this.range.min}}" max="{{this.range.max}}" step="{{this.range.step}}"/>
+        <span class="range-value">{{this.value}}</span>
+
+        {{else if this.isImage}}
+        <input class="image" type="text" value="{{this.value}}" name="{{this.id}}" data-target="{{this.id}}" data-dtype="String" data-tab="{{this.tab}}" />
+        <button type="button" title="Browse Files" class="file-picker" data-type="imagevideo" data-target="{{this.id}}">
+            <i class="fa fa-file-import fa-fw"></i>
+        </button>
+
+        {{else}}
+        <input type="text" name="{{this.id}}" value="{{this.value}}" data-dtype="{{this.type}}" data-tab="{{this.tab}}"/>
+        {{/if}}
+    </div>
+    {{/if}}
+</div>
+{{/inline}}
+
+<form autocomplete="off" onsubmit="event.preventDefault();" class="{{theme.name}}" data-theme="{{theme.name}}">
+
+    <header class="sheet-header flexrow">
+        <img src="{{theme.options.img}}" title="{{theme.name}}" height="48" width="48"/>
+        <h1>{{theme.options.title}}</h1>
+    </header>
+
+    <!-- Sheet Navigation Tabs -->
+    <nav class="sheet-tabs tabs" data-group="sections">
+        <a class="item" data-tab="themevariables">
+            <i class="fas fa-paint-brush"></i> {{localize "WHETSTONE.ThemeColorsTab"}}
+        </a>
+        <a class="item" data-tab="themesettings">
+            <i class="fas fa-tasks"></i> {{localize "WHETSTONE.ThemeSettingsTab"}}
+        </a>
+        <a class="item" data-tab="themesubstyles">
+            <i class="fas fa-tasks"></i> {{localize "WHETSTONE.SubstylesTab"}}
+        </a>
+    </nav>
+
+    <!-- Main Content Section -->
+    <section id="config-tabs" class="content">
+
+        <!-- Theme Variables Tab -->
+        <div class="tab theme-variables" data-tab="themevariables" data-group="sections">
+            <div class="form-group theme-presets">
+                <label>Theme Presets</label>
+                <select name="colorTheme" data-tab="settings">
+                    {{#select colorTheme}}
+                    <option value="custom">{{localize "WHETSTONE.ColorThemeCustom"}}</option>
+                    {{#each theme.data.colorThemes}}
+                    <option value="{{this.id}}">{{localize this.name}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                {{#if colorThemeEdit}}
+                <button type="button" class="theme-delete" title="{{localize 'WHETSTONE.Delete'}}">
+                    <i class="fas fa-trash"></i>
+                </button>
+                {{/if}}
+                <button type="button" class="theme-import" title="{{localize 'WHETSTONE.Import'}}">
+                    <i class="fas fa-file-import"></i>
+                </button>
+                <button type="button" class="theme-export" title="{{localize 'WHETSTONE.Export'}}">
+                    <i class="fas fa-download"></i>
+                </button>
+            </div>
+            <div class="settings-list">
+                {{#each settings.variables}}
+                {{> settingPartial}}
+                {{else}}
+                <p class="notes">{{localize 'WHETSTONE.None'}}</p>
+                {{/each}}
+            </div>
+        </div>
+
+        <!-- Theme Settings Tab -->
+        <div class="tab theme-settings" data-tab="themesettings" data-group="sections">
+            <div class="settings-list">
+                {{#each settings.settings}}
+                {{> settingPartial}}
+                {{else}}
+                <p class="notes">{{localize 'WHETSTONE.None'}}</p>
+                {{/each}}
+            </div>
+        </div>
+
+        <!-- Substyles Tab -->
+        <div class="tab theme-substyles" data-tab="themesubstyles" data-group="sections">
+            <div class="settings-list">
+                {{#each settings.substyles}}
+                {{> settingPartial}}
+                {{else}}
+                <p class="notes">{{localize 'WHETSTONE.None'}}</p>
+                {{/each}}
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="sheet-footer flexrow">
+        <button type="submit" name="submit">
+            <i class="far fa-save"></i> {{localize 'WHETSTONE.Save'}}
+        </button>
+        <button type="button" name="reset">
+            <i class="fas fa-undo"></i> {{localize 'WHETSTONE.Reset'}}
+        </button>
+    </footer>
+</form>

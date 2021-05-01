@@ -1,0 +1,37 @@
+{
+	"name": "torch",
+	"title": "Torch",
+	"description": "Torch HUD Controls",
+	"version": "1.1.4",
+	"author": "Deuce",
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "./lang/en.json"
+		},
+		{
+			"lang": "cn",
+			"name": "中文",
+			"path": "./lang/cn.json"
+		},
+		{
+			"lang": "fr",
+			"name": "Français",
+			"path": "./lang/fr.json"
+		},
+		{
+			"lang": "es",
+			"name": "Spanish",
+			"path": "./lang/es.json"
+		}
+	],
+	"esmodules": ["./torch.js"],
+	"socket": true,
+	"styles": [],
+	"packs": [],
+	"manifest": "https://raw.githubusercontent.com/RealDeuce/torch/master/module.json",
+	"download": "https://raw.githubusercontent.com/RealDeuce/torch/master/torch.zip",
+	"minimumCoreVersion": "0.5.4",
+	"compatibleCoreVersion": "0.7.5"
+}

@@ -1,0 +1,462 @@
+.dark-mode {
+  /* region Select2 */
+  /* endregion */
+  /* region Statgen */
+  /* endregion */
+  /* region Dumped from SCSS conversion */
+  /* endregion */
+}
+
+.dark-mode .rd__b-inset {
+  background-color: #02152b;
+}
+
+.dark-mode .rd__b {
+  color: #bbb;
+}
+
+.dark-mode .rd__h--1,
+.dark-mode .rd__h--0,
+.dark-mode .rd__h--2,
+.dark-mode .rd__h--3,
+.dark-mode .rd__h--4 {
+  color: #3f88e6;
+}
+
+.dark-mode .rd__h--1 {
+  border-bottom: 1px solid #3f88e6;
+}
+
+.dark-mode .hwin__wrp-table {
+  background: #222;
+}
+
+.dark-mode .hwin__wrp-table i,
+.dark-mode .hwin__wrp-table td {
+  color: #bbb;
+}
+
+.dark-mode .hwin th.name {
+  color: #bbb;
+}
+
+.dark-mode .rd__stats-name-page {
+  color: #bbb;
+}
+
+.dark-mode .stats-name.copyable {
+  color: #3f88e6;
+}
+
+.dark-mode .rd-item__type-rarity-attunement {
+  color: #bbb;
+}
+
+.dark-mode .hwin td div.border {
+  background-color: #3f88e6;
+}
+
+.dark-mode .cfg__btn-tab-header,
+.dark-mode .veapp-ctx-menu__wrp {
+  background: url("../ui/parchment_dark.jpg") repeat;
+}
+
+.dark-mode .permu__cell-ent-name--header {
+  background: #222;
+}
+
+.dark-mode .permu__row-ent {
+  border-bottom: 1px solid #555;
+}
+
+.dark-mode .ui-slider-horizontal .ui-slider-range,
+.dark-mode .permu__cell-ent-name {
+  background: #222;
+}
+
+.dark-mode .cfg__btn-tab-header--active {
+  box-shadow: 0 0 10px #3f88e6;
+  border-color: #3f88e6;
+}
+
+.dark-mode .permu__sel-permission[data-permu-value="-1"],
+.dark-mode .permu__sel-permission--mass option {
+  color: #bbb;
+}
+
+.dark-mode .veapp-ctx-menu__wrp {
+  color: #bbb;
+}
+
+.dark-mode .ve-window {
+  background: url("../ui/parchment_dark.jpg") repeat;
+}
+
+.dark-mode .ui-modal__inner {
+  border-color: #555;
+  background: url("../ui/parchment_dark.jpg") repeat;
+  color: #bbb;
+}
+
+.dark-mode .input-group a.btn:last-child {
+  background: url("../ui/parchment_dark.jpg");
+  border: 1px solid #555;
+}
+
+.dark-mode .ui-modal__inner {
+  background: url("../ui/parchment_dark.jpg");
+}
+
+.dark-mode .ui-modal__inner--uncap-height {
+  max-height: calc(100% - 120px);
+  height: initial;
+}
+
+.dark-mode .btn--active,
+.dark-mode button.active,
+.dark-mode .ui-tab__btn-tab-head--active {
+  box-shadow: inset 0 0 10px #3f88e6;
+}
+
+.dark-mode .list-multi-selected {
+  box-shadow: inset 0 0 0 200px rgba(0, 107, 196, 0.3);
+}
+
+.dark-mode .stripe-odd:nth-child(odd),
+.dark-mode .stripe-even:nth-child(even),
+.dark-mode .stats table.stripe-odd > tbody > tr:nth-child(odd),
+.dark-mode .stats table.stripe-even > tbody > tr:nth-child(even) {
+  background: #c0c0c020;
+}
+
+.dark-mode .imp__cls__wrp-equi-group {
+  border-color: #555;
+}
+
+.dark-mode .cfg__wrp-search,
+.dark-mode .cfg__btn-tab-header,
+.dark-mode .cfg__wrp-save {
+  border-color: #555;
+}
+
+.dark-mode input.form-control:hover,
+.dark-mode input.form-control:focus,
+.dark-mode input.form-control:active {
+  outline: 0;
+  box-shadow: inset 0 0 8px #3f88e6;
+  background: transparent;
+}
+
+.dark-mode input.form-control,
+.dark-mode select.form-control {
+  border-color: #555555a0;
+  background: transparent;
+  color: #bbb;
+}
+
+.dark-mode .btn-primary, .dark-mode a.btn-primary, .dark-mode label.btn-primary {
+  background-color: #2a4e6c;
+  filter: initial;
+}
+
+.dark-mode .vr-1,
+.dark-mode .vr-2,
+.dark-mode .vr-3,
+.dark-mode .vr-4,
+.dark-mode .vr-5 {
+  border-color: #555;
+}
+
+.dark-mode .imp-wiz__spc-panels {
+  background-color: #555;
+}
+
+.dark-mode .ve-window,
+.dark-mode .veapp-loading__wrp-outer,
+.dark-mode .veapp__bg-foundry,
+.dark-mode .ui-tab-side__wrp-tab {
+  background: url("../ui/parchment_dark.jpg") repeat local;
+}
+
+.dark-mode .ui-tab__wrp-tab-heads--border {
+  border-color: #555;
+}
+
+.dark-mode .ui-sel2__ipt-search {
+  background: transparent;
+}
+
+.dark-mode .ui-sel2__wrp-options {
+  background-color: #222;
+  border-color: #555;
+}
+
+.dark-mode .ui-sel2__disp-option.active, .dark-mode .ui-sel2__disp-option:focus, .dark-mode .ui-sel2__disp-option:hover {
+  background: #383838;
+}
+
+.dark-mode .ui-sel2__disp-option:focus.active, .dark-mode .ui-sel2__disp-option:hover.active {
+  background: #525252;
+}
+
+.dark-mode .statgen .statgen-shared__ipt[readonly] {
+  background-color: #3a3a3a;
+}
+
+.dark-mode .statgen .statgen-rolled__wrp-results {
+  border-color: #555555a0;
+}
+
+.dark-mode .statgen .statgen-pb__ipt-budget--error {
+  border-color: red;
+}
+
+.dark-mode .statgen .statgen-asi__row {
+  border-bottom: 1px solid #555555a0;
+}
+
+.dark-mode .statgen .statgen-asi__cell--top {
+  border-color: #555;
+}
+
+.dark-mode .btn-group > select, .dark-mode .input-group > select {
+  border-color: #555555a0;
+}
+
+.dark-mode .btn-group > input.form-control, .dark-mode .input-group > input.form-control, .dark-mode .btn-group > label, .dark-mode .input-group > label, .dark-mode .btn-group > button, .dark-mode .input-group > button, .dark-mode .btn-group > select, .dark-mode .input-group > select, .dark-mode .btn-group > a.btn, .dark-mode .input-group > a.btn, .dark-mode .btn-group > div.btn, .dark-mode .input-group > div.btn {
+  border-radius: 0;
+  border-right: 0;
+}
+
+.dark-mode .btn-group > input.form-control:first-child, .dark-mode .input-group > input.form-control:first-child, .dark-mode .btn-group > label:first-child, .dark-mode .input-group > label:first-child, .dark-mode .btn-group > button:first-child, .dark-mode .input-group > button:first-child, .dark-mode .btn-group > select:first-child, .dark-mode .input-group > select:first-child, .dark-mode .btn-group > a.btn:first-child, .dark-mode .input-group > a.btn:first-child, .dark-mode .btn-group > div.btn:first-child, .dark-mode .input-group > div.btn:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.dark-mode .btn-group > input.form-control:last-child, .dark-mode .input-group > input.form-control:last-child, .dark-mode .btn-group > label:last-child, .dark-mode .input-group > label:last-child, .dark-mode .btn-group > button:last-child, .dark-mode .input-group > button:last-child, .dark-mode .btn-group > select:last-child, .dark-mode .input-group > select:last-child, .dark-mode .btn-group > a.btn:last-child, .dark-mode .input-group > a.btn:last-child, .dark-mode .btn-group > div.btn:last-child, .dark-mode .input-group > div.btn:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-right: 1px solid #555555a0;
+}
+
+.dark-mode .btn-group--top > input.form-control:first-child, .dark-mode .input-group--top > input.form-control:first-child, .dark-mode .btn-group--top > label:first-child, .dark-mode .input-group--top > label:first-child, .dark-mode .btn-group--top > button:first-child, .dark-mode .input-group--top > button:first-child, .dark-mode .btn-group--top > select:first-child, .dark-mode .input-group--top > select:first-child, .dark-mode .btn-group--top > a.btn:first-child, .dark-mode .input-group--top > a.btn:first-child, .dark-mode .btn-group--top > div.btn:first-child, .dark-mode .input-group--top > div.btn:first-child {
+  border-bottom-left-radius: 0;
+}
+
+.dark-mode .btn-group--top > input.form-control:last-child, .dark-mode .input-group--top > input.form-control:last-child, .dark-mode .btn-group--top > label:last-child, .dark-mode .input-group--top > label:last-child, .dark-mode .btn-group--top > button:last-child, .dark-mode .input-group--top > button:last-child, .dark-mode .btn-group--top > select:last-child, .dark-mode .input-group--top > select:last-child, .dark-mode .btn-group--top > a.btn:last-child, .dark-mode .input-group--top > a.btn:last-child, .dark-mode .btn-group--top > div.btn:last-child, .dark-mode .input-group--top > div.btn:last-child {
+  border-bottom-right-radius: 0;
+}
+
+.dark-mode .btn-group--middle > input.form-control, .dark-mode .input-group--middle > input.form-control, .dark-mode .btn-group--middle > label, .dark-mode .input-group--middle > label, .dark-mode .btn-group--middle > button, .dark-mode .input-group--middle > button, .dark-mode .btn-group--middle > select, .dark-mode .input-group--middle > select, .dark-mode .btn-group--middle > a.btn, .dark-mode .input-group--middle > a.btn, .dark-mode .btn-group--middle > div.btn, .dark-mode .input-group--middle > div.btn {
+  border-top: 0;
+}
+
+.dark-mode .btn-group--middle > input.form-control:first-child, .dark-mode .input-group--middle > input.form-control:first-child, .dark-mode .btn-group--middle > label:first-child, .dark-mode .input-group--middle > label:first-child, .dark-mode .btn-group--middle > button:first-child, .dark-mode .input-group--middle > button:first-child, .dark-mode .btn-group--middle > select:first-child, .dark-mode .input-group--middle > select:first-child, .dark-mode .btn-group--middle > a.btn:first-child, .dark-mode .input-group--middle > a.btn:first-child, .dark-mode .btn-group--middle > div.btn:first-child, .dark-mode .input-group--middle > div.btn:first-child {
+  border-radius: 0;
+}
+
+.dark-mode .btn-group--middle > input.form-control:last-child, .dark-mode .input-group--middle > input.form-control:last-child, .dark-mode .btn-group--middle > label:last-child, .dark-mode .input-group--middle > label:last-child, .dark-mode .btn-group--middle > button:last-child, .dark-mode .input-group--middle > button:last-child, .dark-mode .btn-group--middle > select:last-child, .dark-mode .input-group--middle > select:last-child, .dark-mode .btn-group--middle > a.btn:last-child, .dark-mode .input-group--middle > a.btn:last-child, .dark-mode .btn-group--middle > div.btn:last-child, .dark-mode .input-group--middle > div.btn:last-child {
+  border-radius: 0;
+}
+
+.dark-mode .btn-group--bottom > input.form-control, .dark-mode .input-group--bottom > input.form-control, .dark-mode .btn-group--bottom > label, .dark-mode .input-group--bottom > label, .dark-mode .btn-group--bottom > button, .dark-mode .input-group--bottom > button, .dark-mode .btn-group--bottom > select, .dark-mode .input-group--bottom > select, .dark-mode .btn-group--bottom > a.btn, .dark-mode .input-group--bottom > a.btn, .dark-mode .btn-group--bottom > div.btn, .dark-mode .input-group--bottom > div.btn {
+  border-top: 0;
+}
+
+.dark-mode .btn-group--bottom > input.form-control:first-child, .dark-mode .input-group--bottom > input.form-control:first-child, .dark-mode .btn-group--bottom > label:first-child, .dark-mode .input-group--bottom > label:first-child, .dark-mode .btn-group--bottom > button:first-child, .dark-mode .input-group--bottom > button:first-child, .dark-mode .btn-group--bottom > select:first-child, .dark-mode .input-group--bottom > select:first-child, .dark-mode .btn-group--bottom > a.btn:first-child, .dark-mode .input-group--bottom > a.btn:first-child, .dark-mode .btn-group--bottom > div.btn:first-child, .dark-mode .input-group--bottom > div.btn:first-child {
+  border-top-left-radius: 0;
+}
+
+.dark-mode .btn-group--bottom > input.form-control:last-child, .dark-mode .input-group--bottom > input.form-control:last-child, .dark-mode .btn-group--bottom > label:last-child, .dark-mode .input-group--bottom > label:last-child, .dark-mode .btn-group--bottom > button:last-child, .dark-mode .input-group--bottom > button:last-child, .dark-mode .btn-group--bottom > select:last-child, .dark-mode .input-group--bottom > select:last-child, .dark-mode .btn-group--bottom > a.btn:last-child, .dark-mode .input-group--bottom > a.btn:last-child, .dark-mode .btn-group--bottom > div.btn:last-child, .dark-mode .input-group--bottom > div.btn:last-child {
+  border-top-right-radius: 0;
+}
+
+.dark-mode .btn-group-vertical > select, .dark-mode .input-group-vertical > select {
+  border-color: #555555a0;
+}
+
+.dark-mode .btn-group-vertical > input.form-control, .dark-mode .input-group-vertical > input.form-control, .dark-mode .btn-group-vertical > label, .dark-mode .input-group-vertical > label, .dark-mode .btn-group-vertical > button, .dark-mode .input-group-vertical > button, .dark-mode .btn-group-vertical > select, .dark-mode .input-group-vertical > select, .dark-mode .btn-group-vertical > a.btn, .dark-mode .input-group-vertical > a.btn, .dark-mode .btn-group-vertical > div.btn, .dark-mode .input-group-vertical > div.btn {
+  border-radius: 0;
+  border-bottom: 0;
+}
+
+.dark-mode .btn-group-vertical > input.form-control:first-child, .dark-mode .input-group-vertical > input.form-control:first-child, .dark-mode .btn-group-vertical > label:first-child, .dark-mode .input-group-vertical > label:first-child, .dark-mode .btn-group-vertical > button:first-child, .dark-mode .input-group-vertical > button:first-child, .dark-mode .btn-group-vertical > select:first-child, .dark-mode .input-group-vertical > select:first-child, .dark-mode .btn-group-vertical > a.btn:first-child, .dark-mode .input-group-vertical > a.btn:first-child, .dark-mode .btn-group-vertical > div.btn:first-child, .dark-mode .input-group-vertical > div.btn:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.dark-mode .btn-group-vertical > input.form-control:last-child, .dark-mode .input-group-vertical > input.form-control:last-child, .dark-mode .btn-group-vertical > label:last-child, .dark-mode .input-group-vertical > label:last-child, .dark-mode .btn-group-vertical > button:last-child, .dark-mode .input-group-vertical > button:last-child, .dark-mode .btn-group-vertical > select:last-child, .dark-mode .input-group-vertical > select:last-child, .dark-mode .btn-group-vertical > a.btn:last-child, .dark-mode .input-group-vertical > a.btn:last-child, .dark-mode .btn-group-vertical > div.btn:last-child, .dark-mode .input-group-vertical > div.btn:last-child {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom: 1px solid #555555a0;
+}
+
+/* region List */
+.dark-mode .ui-list__wrp-preview {
+  background: #222;
+}
+
+.dark-mode .ui-list__btn-inline {
+  color: #bbb;
+}
+
+.dark-mode .ui-list__btn-inline:hover {
+  color: #d5d5d5;
+  background: #ffffff30;
+}
+
+/* endregion */
+/* region Range Slider */
+.dark-mode .ui-slidr__thumb {
+  background: #cccccca0;
+  border-color: #bbb;
+}
+
+.dark-mode .ui-slidr__thumb--hover, .dark-mode .ui-slidr__thumb:hover {
+  background: rgba(230, 230, 230, 0.627451);
+  border-color: #bbb;
+}
+
+.dark-mode .ui-slidr__track-outer {
+  border-color: #555;
+}
+
+.dark-mode .ui-slidr__track-inner {
+  background: #555555a0;
+}
+
+.dark-mode .ui-slidr__disp-value--visible {
+  border-color: #555;
+  background: #222;
+}
+
+.dark-mode .ui-slidr__pip {
+  background: #bbb;
+}
+
+/* endregion */
+.dark-mode .fltr__btn_nest {
+  background: #222;
+  border-color: #555;
+}
+
+.dark-mode .fltr__btn_nest:hover {
+  background: #323232;
+}
+
+.dark-mode .fltr__btn_nest--include {
+  background: repeating-linear-gradient(135deg, #337ab7, #337ab7 11px, transparent 11px, transparent 22px);
+}
+
+.dark-mode .fltr__btn_nest--include:hover {
+  background: repeating-linear-gradient(135deg, #2d6da3, #2d6da3 11px, transparent 11px, transparent 22px);
+}
+
+.dark-mode .fltr__btn_nest--include span {
+  background: #222;
+}
+
+.dark-mode .fltr__btn_nest--include-all {
+  background: #337ab7;
+}
+
+.dark-mode .fltr__btn_nest--include-all:hover {
+  background: #2d6da3;
+}
+
+.dark-mode .fltr__btn_nest--exclude {
+  background: repeating-linear-gradient(135deg, transparent, transparent 11px, #8a1a1b 11px, #8a1a1b 22px);
+}
+
+.dark-mode .fltr__btn_nest--exclude:hover {
+  background: repeating-linear-gradient(135deg, transparent, transparent 11px, #751617 11px, #751617 22px);
+}
+
+.dark-mode .fltr__btn_nest--exclude span {
+  background: #222;
+}
+
+.dark-mode .fltr__btn_nest--exclude-all {
+  background: #8a1a1b;
+}
+
+.dark-mode .fltr__btn_nest--exclude-all:hover {
+  background: #751617;
+}
+
+.dark-mode .fltr__btn_nest--both {
+  background: repeating-linear-gradient(135deg, #337ab7, #337ab7 11px, #8a1a1b 11px, #8a1a1b 22px);
+}
+
+.dark-mode .fltr__btn_nest--both:hover {
+  background: repeating-linear-gradient(135deg, #2d6da3, #2d6da3 11px, #751617 11px, #751617 22px);
+}
+
+.dark-mode .fltr__dropdown-divider {
+  border-color: #555;
+}
+
+@media only screen and (max-width: 768px) {
+  .dark-mode .fltr__dropdown-divider {
+    box-shadow: inset 0 0 2px 2px #333;
+    background: #555;
+  }
+}
+
+.dark-mode .fltr__dropdown-divider--sub {
+  border-color: #555555a0;
+}
+
+.dark-mode .fltr__pill {
+  border-color: #555;
+}
+
+.dark-mode .fltr__pill[state=ignore] {
+  background: #222;
+}
+
+.dark-mode .fltr__pill[state=ignore]:hover {
+  background: #323232;
+}
+
+.dark-mode .fltr__pill[state=yes] {
+  border-color: #22527b;
+}
+
+.dark-mode .fltr__pill[state=no] {
+  border-color: #4a0e0e;
+}
+
+.dark-mode .fltr__pill--muted {
+  color: #656565;
+}
+
+.dark-mode .fltr__pill--muted[state=yes], .dark-mode .fltr__pill--muted[state=no] {
+  color: white;
+}
+
+.dark-mode .fltr__mini-view {
+  background: #343434;
+  border-color: #555;
+  background: linear-gradient(to top, #555, #343434 1px);
+}
+
+.dark-mode .fltr__h-btn-logic--blue {
+  color: #337ab7;
+}
+
+.dark-mode .fltr__h-btn-logic--blue:hover {
+  color: #7398b7;
+}
+
+.dark-mode .fltr__h-btn-logic--red {
+  color: #8a1a1b;
+}
+
+.dark-mode .fltr__h-btn-logic--red:hover {
+  color: #8a4b4b;
+}
+
+.dark-mode .fltr-src__wrp-slider {
+  background: #333a;
+}

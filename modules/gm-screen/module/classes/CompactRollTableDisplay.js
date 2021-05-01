@@ -1,0 +1,83 @@
+import { log } from "../helpers.js";
+import { TEMPLATES } from "../constants.js";
+export class CompactRollTableDisplay extends RollTableConfig {
+    constructor(options, cellId) {
+        super(options);
+        log(false, 'CompactRollTableDisplay constructor', {
+            options,
+            cellId,
+        });
+        this.cellId = cellId;
+    }
+    static get defaultOptions() {
+        return mergeObject(super.defaultOptions, {
+            template: TEMPLATES.compactRollTable,
+            editable: false,
+            popOut: false,
+        });
+    }
+    _replaceHTML(element, html, options) {
+        const gridCellContent = $(this.cellId).find('.gm-screen-grid-cell-content');
+        //@ts-ignore
+        gridCellContent.html(html);
+        this._element = html;
+    }
+    _injectHTML(html, options) {
+        const gridCellContent = $(this.cellId).find('.gm-screen-grid-cell-content');
+        log(false, 'CompactJournalEntryDisplay _injectHTML', {
+            cellId: this.cellId,
+            html,
+        });
+        gridCellContent.append(html);
+        this._element = html;
+    }
+    activateListeners(html) {
+        $(html).on('click', 'a', function (e) {
+            const action = e.currentTarget.dataset.action;
+            log(false, 'CompactRollTableDisplay click registered', {
+                table: this,
+                action,
+            });
+            switch (action) {
+                case 'rolltable-reset': {
+                    this.entity.reset();
+                    break;
+                }
+                case 'rolltable': {
+                    let tableRoll = this.entity.roll();
+                    const draws = this.entity._getResultsForRoll(tableRoll.roll.total);
+                    if (draws.length) {
+                        this.entity.draw(tableRoll);
+                    }
+                    break;
+                }
+            }
+        }.bind(this));
+        // we purposefully are not calling
+        // super.activateListeners(html);
+    }
+    //@ts-ignore
+    getData() {
+        const sheetData = super.getData();
+        const enrichedResults = sheetData.results.map((result) => {
+            let label;
+            switch (result.type) {
+                case CONST.TABLE_RESULT_TYPES.COMPENDIUM: {
+                    label = `@Compendium[${result.collection}.${result.resultId}]{${result.text}}`;
+                    break;
+                }
+                case CONST.TABLE_RESULT_TYPES.ENTITY: {
+                    label = `@${result.collection}[${result.resultId}]{${result.text}}`;
+                    break;
+                }
+                default:
+                    label = result.text;
+            }
+            return {
+                ...result,
+                label,
+            };
+        });
+        return { ...sheetData, enrichedResults };
+    }
+}

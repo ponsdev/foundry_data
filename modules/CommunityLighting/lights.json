@@ -1,0 +1,494 @@
+{
+    "Blitz": {
+        "discord": "Blitz#6797",
+        "links": {
+            "github": "https://github.com/BlitzKraig",
+            "twitter": "",
+            "youtube": ""
+        },
+        "lights": [
+            {
+                "translationName": "shadertest",
+                "name": "Custom Shader Example",
+                "animationFunction": "blitzShaderTest",
+                "shaders": {
+                    "coloration": "CLCustomWaveColorationShader",
+                    "illumination": "CLCustomWaveIlluminationShader"
+                },
+                "description": "A pulsing light using a custom shader",
+                "intensityDescription": "Controls how extreme the fade will be",
+                "speedDescription": "Controls how quickly the light will fade in and out"
+            },
+            {
+                "translationName": "fade",
+                "name": "Fader",
+                "animationFunction": "blitzFadeSimple",
+                "description": "A fading light",
+                "intensityDescription": "Controls how extreme the fade will be",
+                "speedDescription": "Controls how quickly the light will fade in and out"
+            },
+            {
+                "translationName": "lightning",
+                "name": "Lightning (Experimental!)",
+                "animationFunction": "blitzLightningSimple",
+                "description": "A basic Lightning strike, randomly flashes on for a short time",
+                "intensityDescription": "Controls how bright the flash will be",
+                "speedDescription": "Controls how often the lightning will strike"
+            },
+            {
+                "translationName": "electricFault",
+                "name": "Electric Fault",
+                "animationFunction": "blitzElectricFault",
+                "description": "A glitched electrical light. Dims slightly at random",
+                "intensityDescription": "Controls how much dimmer the light will get",
+                "speedDescription": "Controls how often the fault will occur"
+            },
+            {
+                "translationName": "flash",
+                "name": "Simple Flash",
+                "animationFunction": "blitzSimpleFlash",
+                "description": "A simple flashing light",
+                "intensityDescription": "Controls how dim the light will be when it flashes off",
+                "speedDescription": "Controls how often the light will flash"
+            },
+            {
+                "translationName": "rgbflash",
+                "name": "RGB Flash",
+                "animationFunction": "blitzRGBFlash",
+                "description": "A simple flashing light, cycling between Red, Green and Blue",
+                "intensityDescription": "Controls how dim the light will be when it flashes off",
+                "speedDescription": "Controls how often the light will flash"
+            },
+            {
+                "translationName": "policeflash",
+                "name": "Police Flash",
+                "animationFunction": "blitzPoliceFlash",
+                "description": "A simple flashing light, cycling between Red, and Blue, mimicking police lights",
+                "intensityDescription": "Controls how dim the light will be when it flashes off",
+                "speedDescription": "Controls how often the light will flash"
+            },
+            {
+                "translationName": "fadeMusic",
+                "name": "Audio Fade",
+                "animationFunction": "blitzFadeMusic",
+                "description": "An audio-reactive fading light",
+                "intensityDescription": "Controls how extreme the fade will be",
+                "speedDescription": "Controls smoothing on peak changes",
+                "customProperties": [
+                    {
+                        "title": "Band",
+                        "varName": "listeningBand",
+                        "type": "select",
+                        "options": [
+                            {
+                                "label": "Low",
+                                "value": "low"
+                            },
+                            {
+                                "label": "Mid",
+                                "value": "mid"
+                            },
+                            {
+                                "label": "High",
+                                "value": "high"
+                            },
+                            {
+                                "label": "All",
+                                "value": "all"
+                            }
+                        ],
+                        "default": "mid"
+                    },
+                    {
+                        "title": "Source",
+                        "varName": "gainNode",
+                        "type": "select",
+                        "options": [
+                            {
+                                "label": "Master",
+                                "value": "master"
+                            },
+                            {
+                                "label": "SoundBoard by Blitz (requires module)",
+                                "value": "soundboard"
+                            }
+                        ],
+                        "default": "master"
+                    }
+                ]
+            },
+            {
+                "translationName": "pulseMusic",
+                "name": "Audio Pulse",
+                "animationFunction": "blitzPulseMusic",
+                "description": "An audio-reactive pulsing light",
+                "intensityDescription": "Controls how far the light will animate from the center value",
+                "speedDescription": "Controls smoothing on peak changes",
+                "customProperties": [
+                    {
+                        "title": "Band",
+                        "varName": "listeningBand",
+                        "type": "select",
+                        "options": [
+                            {
+                                "label": "Low",
+                                "value": "low"
+                            },
+                            {
+                                "label": "Mid",
+                                "value": "mid"
+                            },
+                            {
+                                "label": "High",
+                                "value": "high"
+                            },
+                            {
+                                "label": "All",
+                                "value": "all"
+                            }
+                        ],
+                        "default": "mid"
+                    },
+                    {
+                        "title": "Source",
+                        "varName": "gainNode",
+                        "type": "select",
+                        "options": [
+                            {
+                                "label": "Master",
+                                "value": "master"
+                            },
+                            {
+                                "label": "SoundBoard by Blitz (requires module)",
+                                "value": "soundboard"
+                            }
+                        ],
+                        "default": "master"
+                    }
+                ]
+            },
+            {
+                "translationName": "pulseMusicColorshift",
+                "name": "Audio Pulse Colorshift",
+                "animationFunction": "blitzPulseMusicColorshift",
+                "description": "An audio-reactive pulsing light that shifts between three colors",
+                "intensityDescription": "Controls how far the light will animate from the center value",
+                "speedDescription": "Controls smoothing on peak changes",
+                "customProperties": [
+                    {
+                        "title": "Secondary Color",
+                        "varName": "secondaryColor",
+                        "type": "color",
+                        "default": "#00ff00"
+                    },
+                    {
+                        "title": "Tertiary Color",
+                        "varName": "tertiaryColor",
+                        "type": "color",
+                        "default": "#0000ff"
+                    },
+                    {
+                        "title": "Color Speed",
+                        "varName": "colorSpeed",
+                        "type": "range",
+                        "min": 1,
+                        "max": 10,
+                        "step": 1,
+                        "default": 5
+                    },
+                    {
+                        "title": "Band",
+                        "varName": "listeningBand",
+                        "type": "select",
+                        "options": [
+                            {
+                                "label": "Low",
+                                "value": "low"
+                            },
+                            {
+                                "label": "Mid",
+                                "value": "mid"
+                            },
+                            {
+                                "label": "High",
+                                "value": "high"
+                            },
+                            {
+                                "label": "All",
+                                "value": "all"
+                            }
+                        ],
+                        "default": "mid"
+                    },
+                    {
+                        "title": "Source",
+                        "varName": "gainNode",
+                        "type": "select",
+                        "options": [
+                            {
+                                "label": "Master",
+                                "value": "master"
+                            },
+                            {
+                                "label": "SoundBoard by Blitz (requires module)",
+                                "value": "soundboard"
+                            }
+                        ],
+                        "default": "master"
+                    }
+                ]
+            },
+            {
+                "translationName": "blurStatic",
+                "name": "Static Blur",
+                "animationFunction": "blitzStaticBlur",
+                "description": "A static, blurrable light",
+                "intensityDescription": "Not used",
+                "speedDescription": "Not used",
+                "customProperties": [
+                    {
+                        "title": "Blur Strength",
+                        "varName": "blurStrength",
+                        "type": "range",
+                        "min": 1,
+                        "max": 50,
+                        "step": 1,
+                        "default": 20
+                    }
+                ]
+            },
+            {
+                "translationName": "torch",
+                "name": "Alternate Torch",
+                "animationFunction": "blitzTorch",
+                "description": "A deeper, alternative version of the torch",
+                "customProperties": [
+                    {
+                        "title": "Secondary Color",
+                        "varName": "secondaryColor",
+                        "type": "color",
+                        "default": "#f0ba5c"
+                    },
+                    {
+                        "title": "Ratio Damper",
+                        "varName": "ratioDamper",
+                        "type": "range",
+                        "min": 1,
+                        "max": 50,
+                        "step": 1,
+                        "default": 1
+                    }
+                ]
+            },
+            {
+                "translationName": "blurtorch",
+                "name": "Blurred Torch",
+                "animationFunction": "blitzTorchBlur",
+                "description": "A deeper, alternative version of the torch",
+                "customProperties": [
+                    {
+                        "title": "Secondary Color",
+                        "varName": "secondaryColor",
+                        "type": "color",
+                        "default": "#f0ba5c"
+                    },
+                    {
+                        "title": "Ratio Damper",
+                        "varName": "ratioDamper",
+                        "type": "range",
+                        "min": 1,
+                        "max": 50,
+                        "step": 1,
+                        "default": 1
+                    },
+                    {
+                        "title": "Blur Strength",
+                        "varName": "blurStrength",
+                        "type": "range",
+                        "min": 1,
+                        "max": 50,
+                        "step": 1,
+                        "default": 20
+                    }
+                ]
+            },
+            {
+                "name": "Grid Force-Field Colorshift",
+                "animationFunction": "blitzForceFieldExtension",
+                "shaders": {
+                    "coloration": "CLForceGridColorationShader"
+                },
+                "description": "A color-changing pulsating grid force-field, based on Grid Force-Field by SecretFire",
+                "intensityDescription": "Controls the pulsating power",
+                "speedDescription": "Controls how quickly the grid is pulsating",
+                "customPropertiesComment": "!AUTHORS! All possible property types are provided below for demonstration purposes.",
+                "customProperties": [
+                    {
+                        "title": "Secondary Color",
+                        "varName": "secondaryColor",
+                        "type": "color",
+                        "default": "#00ff00"
+                    },
+                    {
+                        "title": "Use Color Speed",
+                        "varName": "useColorSpeed",
+                        "type": "checkbox",
+                        "default": true
+                    },
+                    {
+                        "title": "Color Speed",
+                        "varName": "colorSpeed",
+                        "type": "range",
+                        "min": 1,
+                        "max": 10,
+                        "step": 1,
+                        "default": 5
+                    },
+                    {
+                        "title": "Color Speed Multiplier",
+                        "varName": "colorSpeedMult",
+                        "type": "select",
+                        "options": [
+                            {
+                                "label": "Quarter Speed",
+                                "value": 0.25
+                            },
+                            {
+                                "label": "Half Speed",
+                                "value": 0.5
+                            },
+                            {
+                                "label": "Full Speed",
+                                "value": 1
+                            },
+                            {
+                                "label": "Double Speed",
+                                "value": 2
+                            },
+                            {
+                                "label": "Triple Speed",
+                                "value": 3
+                            }
+                        ],
+                        "default": 1
+                    }
+                ]
+            }
+        ]
+    },
+    "SecretFire": {
+        "discord": "SecretFire#4843",
+        "links": {
+            "github": "https://github.com/Feu-Secret",
+            "twitter": "",
+            "youtube": ""
+        },
+        "lights": [
+            {
+                "translationName": "gridForceField",
+                "name": "Grid Force-Field",
+                "animationFunction": "secretFireAnimateTimeForceColor",
+                "shaders": {
+                    "coloration": "CLForceGridColorationShader"
+                },
+                "description": "A pulsating grid force-field",
+                "intensityDescription": "Controls the pulsating power",
+                "speedDescription": "Controls how quickly the grid is pulsating"
+            },
+            {
+                "translationName": "smokePatch",
+                "name": "Smoke Patch",
+                "animationFunction": "secretFireAnimateTimeForceColor",
+                "shaders": {
+                    "coloration": "CLSmokePatchColorationShader",
+                    "illumination": "CLSmokePatchIlluminationShader"
+                },
+                "description": "A billow of smoke",
+                "intensityDescription": "Controls the intensity of the smoke",
+                "speedDescription": "Controls how quickly the smoke swirls"
+            },
+            {
+                "translationName": "starLight",
+                "name": "Star Light",
+                "animationFunction": "secretFireAnimateStarLight",
+                "shaders": {
+                    "coloration": "CLStarLightColorationShader",
+                    "illumination": "CLSmoothTransitionIlluminationShader"
+                },
+                "description": "A shining star light",
+                "intensityDescription": "Controls the intensity of the star light",
+                "speedDescription": "Controls how quickly the star shines",
+                "customPropertiesComment": "test",
+                "customProperties": [
+                    {
+                        "title": "Secondary Color",
+                        "varName": "secondaryColor",
+                        "type": "color",
+                        "default": "#00ff00"
+                    }
+                ]
+            },
+            {
+                "translationName": "starLightMusic",
+                "name": "Star Light Disco",
+                "animationFunction": "secretFireAnimateStarLightMusic",
+                "shaders": {
+                    "coloration": "CLStarLightColorationShader",
+                    "illumination": "CLSmoothTransitionIlluminationShader"
+                },
+                "description": "An audio-reactive disco star light",
+                "intensityDescription": "Controls the intensity of the rays shifting according to music",
+                "speedDescription": "Controls how quickly the star shines",
+                "customPropertiesComment": "test",
+                "customProperties": [
+                    {
+                        "title": "Secondary Color",
+                        "varName": "secondaryColor",
+                        "type": "color",
+                        "default": "#00ff00"
+                    },
+                    {
+                        "title": "Band",
+                        "varName": "listeningBand",
+                        "type": "select",
+                        "options": [
+                            {
+                                "label": "Low",
+                                "value": "low"
+                            },
+                            {
+                                "label": "Mid",
+                                "value": "mid"
+                            },
+                            {
+                                "label": "High",
+                                "value": "high"
+                            },
+                            {
+                                "label": "All",
+                                "value": "all"
+                            }
+                        ],
+                        "default": "mid"
+                    },
+                    {
+                        "title": "Source",
+                        "varName": "gainNode",
+                        "type": "select",
+                        "options": [
+                            {
+                                "label": "Master",
+                                "value": "master"
+                            },
+                            {
+                                "label": "SoundBoard by Blitz (requires module)",
+                                "value": "soundboard"
+                            }
+                        ],
+                        "default": "master"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "alternative-rotation",
+    "title": "Alternative Rotation",
+    "description": "Rotate tokens by dragging in a direction",
+    "author": "shem",
+    "version": "1.1.0",
+    "minimumCoreVersion": "0.6.0",
+    "compatibleCoreVersion": "0.7.9",
+    "esmodules": [
+        "scripts/alternative-rotation.js"
+    ],
+    "url": "https://github.com/itamarcu/AlternativeRotation",
+    "manifest": "https://github.com/itamarcu/AlternativeRotation/releases/latest/download/module.json",
+    "download": "https://github.com/itamarcu/AlternativeRotation/releases/download/1.1.0/module.zip",
+    "readme": "https://raw.githubusercontent.com/itamarcu/AlternativeRotation/master/README.md",
+    "bugs": "https://github.com/itamarcu/AlternativeRotation/issues"
+}

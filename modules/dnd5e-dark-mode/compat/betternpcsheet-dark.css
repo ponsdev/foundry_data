@@ -1,0 +1,128 @@
+.betternpcsheet-dark .better-npc-sheet {
+	background-image: url("../ui/parchment_dark.jpg");
+}
+
+.betternpcsheet-dark .better-npc-sheet a:hover {
+	color: var(--5edark-rgb-text-blue);
+	text-shadow: 0 0 7px var(--5edark-rgb-text-blue);
+}
+
+.betternpcsheet-dark .better-npc-sheet input[type="text"]:focus {
+	border: 1px solid #111;
+	box-shadow: 0 0 8px var(--5edark-rgb-text-blue);
+}
+
+.betternpcsheet-dark .better-npc-sheet .white-input {
+	background: black !important;
+}
+
+.betternpcsheet-dark ::-webkit-scrollbar-thumb {
+	background: var(--5edark-rgb-scroll-blue) !important;
+	border: 1px solid var(--5edark-rgb-text-blue) !important;
+}
+
+.betternpcsheet-dark .better-npc-sheet .tabs .item.active {
+	color: var(--5edark-rgb-text-blue);
+	text-shadow: 0 0 10px var(--5edark-rgb-text-blue);
+}
+
+.betternpcsheet-dark .better-npc-sheet > editable input[type="text"] {
+	background: #000;
+}
+
+.betternpcsheet-dark .better-npc-sheet ul {
+	list-style: none;
+}
+
+.betternpcsheet-dark .better-npc-sheet .tox .tox-toolbar__primary {
+	background: #000;
+}
+
+.betternpcsheet-dark .better-npc-sheet .editor .tox-edit-area {
+	background: #939393;
+}
+
+.betternpcsheet-dark .better-npc-sheet .tox-tbtn svg {
+	fill: #2f83e4 !important;
+}
+
+.betternpcsheet-dark .better-npc-sheet .tox.tox-tinymce .tox-tbtn {
+	color: #2f83e4;
+}
+
+.betternpcsheet-dark .better-npc-sheet .npc-header .charname input {
+	border-bottom: 2px solid var(--5edark-rgb-text-blue) !important;
+}
+
+.betternpcsheet-dark .better-npc-sheet .charname input {
+	color: var(--5edark-rgb-text-white);
+}
+
+.betternpcsheet-dark .better-npc-sheet .editBtn {
+	color: var(--5edark-rgb-text-white);
+}
+
+.betternpcsheet-dark .better-npc-sheet .npc-header .tabs {
+	color: var(--5edark-rgb-text-white);
+}
+
+.betternpcsheet-dark .better-npc-sheet .npc-header .tabs a {
+	color: var(--5edark-rgb-text-white);
+}
+
+.betternpcsheet-dark .better-npc-sheet .npc-body {
+
+	color: var(--5edark-rgb-text-white-2);
+}
+
+.betternpcsheet-dark .better-npc-sheet .rollable:hover {
+	text-shadow: 0 0 8px blue;
+}
+
+.betternpcsheet-dark .better-npc-sheet .tag {
+	border: 1px solid #999;
+	background: rgba(0, 0, 0, 0.05);
+}
+
+.betternpcsheet-dark .better-npc-sheet .item-buttons button {
+	color: var(--5edark-rgb-text-white-2)
+}
+
+.betternpcsheet-dark select:focus {
+	box-shadow: 0 0 5px var(--5edark-rgb-text-blue)
+}
+
+.betternpcsheet-dark button:hover {
+	box-shadow: 0 0 10px var(--5edark-rgb-text-blue)
+}
+
+.betternpcsheet-dark .better-npc-sheet .tag {
+	border: 1px solid #999;
+	background: rgba(0, 0, 0, 0.05);
+}
+
+.betternpcsheet-dark .better-npc-sheet .sheet-divider {
+	border-right: 140px solid #B5B3A4;
+}
+
+.betternpcsheet-dark .better-npc-sheet .sheet-divider-left {
+	border-left: 140px solid #B5B3A4;
+}
+
+.betternpcsheet-dark .npc-textinput, .betternpcsheet-dark .better-npc-sheet .size-selector {
+	color: var(--5edark-rgb-text-white) !important;
+	background-color: var(--5edark-rgb-bg-black) !important;
+}
+
+.betternpcsheet-dark .better-npc-sheet .npc-textinput-small {
+	color: var(--5edark-rgb-text-white);
+}
+
+.betternpcsheet-dark .better-npc-sheet .spellslot-input {
+	color: var(--5edark-rgb-text-white-2);
+}
+
+.betternpcsheet-dark .better-npc-sheet select {
+	color: var(--5edark-rgb-text-white);
+	background-color: #191813 !important;
+}

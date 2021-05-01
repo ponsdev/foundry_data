@@ -1,0 +1,7 @@
+@charset "UTF-8";
+#forien-copy-environment-settings fieldset th.property {
+  text-align: left;
+}
+#forien-copy-environment-settings fieldset td.value {
+  word-break: break-all;
+}

@@ -1,0 +1,52 @@
+#chat {
+    order: 2; /* Place the chat below the combat tracker */
+}
+
+#combat {
+    min-height: 180px;
+}
+
+/* The following rules gain a bit of screen real estate by removing unnecessary paddings and shrinking the chat box */
+#sidebar {
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.small-chat #chat-form {
+    height: 42px;
+    flex-basis: 42px;
+}
+
+.small-chat #chat-message {
+    min-height: 42px;
+}
+
+.small-chat {
+    position: relative;
+    min-height: 100px;
+}
+
+.small-chat::before {
+    content: '';
+    height: 8px;
+    cursor: row-resize;
+}
+
+.small-chat::after {
+    content: '';
+    height: 2px;
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    right: 4px;
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+    cursor: row-resize;
+}
+
+.small-chat.hide-chat-input #chat-log ~ *,
+body.emu.e-body#emu #sidebar #chat.small-chat.hide-chat-input #chat-log ~ * { /* Ernie's Modern UI compatibility */
+    display: none;
+}

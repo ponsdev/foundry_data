@@ -1,0 +1,39 @@
+div.permission-viewer {
+  max-width: max-content;
+  margin: auto 5px;
+}
+.permission-viewer-user {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: auto 2px auto 2px;
+}
+
+.permission-viewer-all {
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    margin: auto 2px auto 2px;
+    border-bottom: 6px solid red;
+    border-top: 6px solid green;
+    border-left: 6px solid yellow;
+    border-right: 6px solid blue;
+}
+
+.permission-viewer-limited {
+    -webkit-transform-origin:50% 50%;
+    -ms-transform-origin:50% 50%;
+    transform-origin:50% 50%;
+    
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.permission-viewer-observer {
+    border-radius: 0%;
+}
+
+.permission-viewer-owner {
+    border-radius: 50%;
+}

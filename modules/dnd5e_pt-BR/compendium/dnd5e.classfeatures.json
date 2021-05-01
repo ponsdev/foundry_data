@@ -1,0 +1,1185 @@
+{
+	"label": "Características de Classe (SRD)",
+	"entries": [
+		{
+			"id": "Ability Score Improvement",
+			"name": "Aumento de Valor de Atributo",
+			"description": "<p><span style=\"color: #191813;\">Quando você atinge o 4° nível e novamente no 8°, 12°, 16° e 19° nível, você pode aumentar um valor de atributo, à sua escolha, em 2 ou você pode aumentar dois valores de atributo, à sua escolha, em 1. Como padrão, você não pode elevar um valor de atributo acima de 20 com essa característica.</span></p>"
+		},
+		{
+			"id": "Ability Score Improvement (Fighter)",
+			"name": "Aumento de Valor de Atributo (Guerreiro)",
+			"description": "<p>Quando você atinge o 4° nível e novamente no 6°, 8°, 12°, 14°, 16° e 19° nível, você pode aumentar um valor de atributo, à sua escolha, em 2 ou você pode aumentar dois valores de atributo, à sua escolha, em 1. Como padrão, você não pode elevar um valor de atributo acima de 20 com essa característica.</p>"
+		},
+		{
+			"id": "Ability Score Improvement (Rogue)",
+			"name": "Aumento de Valor de Atributo (Ladino)",
+			"description": "<p>Quando você atinge o 4° nível e novamente no 8°, 10°, 12°, 16° e 19° nível, você pode aumentar um valor de atributo, à sua escolha, em 2 ou você pode aumentar dois valores de atributo, à sua escolha, em 1. Como padrão, você não pode elevar um valor de atributo acima de 20 com essa característica.</p>"
+		},
+		{
+			"id": "Action Surge",
+			"name": "Surto de Ação",
+			"description": "<p>A partir do 2º nível, você pode forçar o seu limite para além do normal por um momento. Durante o seu turno, você pode realizar uma ação adicional juntamente com sua ação e possível ação bônus.</p>\n<p>Uma vez que você use essa característica, você precisa terminar um descanso curto ou longo para usá-la de novo. A partir do 17º nível, você pode usá-la duas vezes antes do descanso, porém somente uma vez por turno.</p>\n<p><em>**Nota do Foundry : Observe que os usos limitados estão configurados para o padrão base de 1 por descanso curto ou longo. Ajuste manualmente conforme necessário.</em></p>"
+		},
+		{
+			"id": "Additional Fighting Style",
+			"name": "Estilo de Luta Adicional",
+			"description": "<p>Escolha uma segunda característica de classe de estilo de luta entre os seguintes:</p>\n<p>@Compendium[dnd5e.classfeatures.8YwPFv3UAPjWVDNf]{Arquearia}</p>\n<p>@Compendium[dnd5e.classfeatures.zSlV0O2rQMdoq6pB]{Defensivo}</p>\n<p>@Compendium[dnd5e.classfeatures.hCop9uJrWhF1QPb4]{Duelismo}</p>\n<p>@Compendium[dnd5e.classfeatures.3Nc6u9pyStByuJsm]{Combate com Armas Grandes}</p>\n<p>@Compendium[dnd5e.classfeatures.06NVMYf58Z76O85O]{Protetivo}</p>\n<p>@Compendium[dnd5e.classfeatures.mHcSjcHJ8oZu3hkb]{Combate com Duas Armas}</p>\n<p>A escolha deve ser diferente da feita no nível 1.</p>\n<p><span style=\"color: #191813; font-size: 13px;\">Você pode arrastar sua escolha acima para sua ficha de personagem e ela será atualizada automaticamente.</span></p>"
+		},
+		{
+			"id": "Additional Magical Secrets",
+			"name": "Segredos Mágicos Adicionais",
+			"description": "<p>No 6° nível, você aprende duas magias de qualquer classe à sua escolha. Essas magias devem ser truques ou pertencer a um círculo que você possa conjurar, conforme mostrado na tabela O Bardo. As magias escolhidas contam como magias de bardo, mas não contam para o número de magias de bardo que você conhece.</p>"
+		},
+		{
+			"id": "Arcane Recovery",
+			"name": "Recuperação Arcana",
+			"description": "<p>Você aprendeu como recuperar um pouco de sua energia mágica estudando seu grimório. Uma vez por dia, quando você terminar um descanso curto, você pode escolher espaços de magia gastos para recuperá-los. Os espaços gastos a serem recuperados podem ser de qualquer combinação de círculos de magia, desde que sejam iguais ou inferiores a metade de seu nível de mago (arredondado para cima) e nenhum deles seja de 6º circulo ou superior.</p><p>Por exemplo, se você é um mago de 4º circulo, você pode recuperar até 2 espaços de magia gastos. Você pode recuperar o espaço de uma magia de 2º circulo ou os espaços de duas magias de 1º circulo.</p>"
+		},
+		{
+			"id": "Arcane Tradition",
+			"name": "Tradição Arcana",
+			"description": "<p>Ao alcançar o 2º nível, você precisa escolher uma Tradição Arcana, moldando sua prática de magia por meio de uma das oito escolas, como Evocação.</p>\n<p>Sua escolha confere características no 2º nível e de novo no 6º, 10º e 14º nível.</p>"
+		},
+		{
+			"id": "Archdruid",
+			"name": "Arquidruida",
+			"description": "<p> No 20° nível, você pode usar @Compendium[dnd5e.classfeatures.swK0r5TOIxredxWS]{Forma Selvagem} um numero ilimitado de vezes.</p>\n<p> Alem disso, torna-se capaz de ignorar os componentes somáticos e verbais de suas magias de druida, bem como quaisquer componentes materiais que não tenham um custo e não sejam consumidos por uma magia.</p>\n<p>Você ganha este beneficio tanto em sua forma normal quanto em sua Forma Animal.</p>"
+		},
+		{
+			"id": "Aura of Courage",
+			"name": "Aura de Coragem",
+			"description": "<p>A partir do 10° nível, você e as criaturas amigáveis dentro de um raio de 3 metros de você não podem ser amedrontadas enquanto você estiver consciente.</p> <p>No 18° nível, o alcance dessa aura aumenta para 9 metros.</p>"
+		},
+		{
+			"id": "Aura of Devotion",
+			"name": "Aura de Devoção",
+			"description": "<p>A partir do 7° nível, você e as criaturas amistosas a até 3 metros não podem ser enfeitiçadas enquanto você estiver consciente.</p> <p>No 18° nível, o alcance dessa aura aumenta para 9 metros.</p>"
+		},
+		{
+			"id": "Aura of Protection",
+			"name": "Aura de Proteção",
+			"description": "<p>A partir do 6° nível, sempre que você ou uma criatura amigável a até 3 metros de você tiver que fazer uma salvaguarda, aquela criatura ganha um bônus na sua salvaguarda igual a seu modificador de Carisma (com um bônus mínimo de +1). Você deve estar consciente para garantir esse bônus.</p> <p>No 18° nível, o alcance dessa aura aumenta para 9 metros.</p>"
+		},
+		{
+			"id": "Bard College",
+			"name": "Colégio de Bardo",
+			"description": "<p>No 3° nível, você se aprofunda nas técnicas avançadas de um colégio de bardo, à sua escolha, como o Colégio do Conhecimento. Sua escolha lhe concede características no 3° nível e, novamente, no 6° e 14° níveis.</p>"
+		},
+		{
+			"id": "Bardic Inspiration",
+			"name": "Inspiração de Bardo",
+			"description": "<p>Você pode inspirar os outros através de palavras animadoras ou música. Para tanto, você usa uma ação bônus no seu turno para escolher uma outra criatura, que não seja você mesmo, a até 18 metros de você que possa ouvi-lo. Essa criatura ganha um dado de Inspiração de Bardo, um d6. Uma vez, nos próximos 10 minutos, a criatura poderá rolar o dado e adicionar o valor rolado a um teste de atributo, jogada de ataque ou salvaguarda que ela fizer. A criatura pode esperar até rolar o d20 antes de decidir usar o dado de Inspiração de Bardo, mas deve decidir antes do Mestre dizer se a rolagem foi bem ou mal sucedida. Quando o dado de Inspiração de Bardo for rolado, ele é gasto. Uma criatura pode ter apenas um dado de Inspiração de Bardo por vez.</p>\n<p>Você pode usar essa característica um número de vezes igual ao seu modificador de Carisma (no mínimo uma vez).</p>\n<p>Você recupera todos os usos quando termina um descanso longo.</p>\n<p>Seu dado de Inspiração de Bardo muda quando você atinge certos níveis na classe. O dado se torna um d8 no 5° nível, um d10 no 10° nível e um d12 no 15° nível.</p>\n<p><em style=\"box-sizing: border-box; user-select: text; color: #191813; font-size: 13px;\">**Nota do Foundry: Observe que a outra fórmula é definida com o padrão básico de 1d6 e os usos limitados são definidos como o mínimo de 1. Além disso, a recuperação é configurada para um descanso longo (para níveis antes de @Compendium[dnd5e.classfeatures.3VDZGs5Ug3hIE322]{Fonte de Inspiração} ser adquirida). Ajuste manualmente conforme necessário.</em></p>"
+		},
+		{
+			"id": "Beast Spells",
+			"name": "Magias Bestiais",
+			"description": "<p>A partir do 18° nível, você pode conjurar muitas de suas magias de druida em qualquer forma que assuma, usando @Compendium[dnd5e.classfeatures.swK0r5TOIxredxWS]{Forma Selvagem}. Você pode executar os componentes verbais e somáticos de uma magia de druida enquanto está na forma animal, mas não é capaz de manipular componentes materiais.</p>"
+		},
+		{
+			"id": "Blessed Healer",
+			"name": "Curandeiro Abençoado",
+			"description": "<p>A partir do 6° nível, suas magias de cura conjuradas sobre terceiros também o curam.</p>\n<p>Ao conjurar uma magia de 1 °círculo ou superior, que restaure pontos de vida a outrem, você recupera urna quantidade de pontos de vida igual a 2 + o círculo da magia.</p>\n<p><em>**Nota do Foundry: A fórmula de cura é definida como 2. Adicione o adicional do nível de magia manualmente.</em></p>"
+		},
+		{
+			"id": "Blindsense",
+			"name": "Sentido Cego",
+			"description": "<p>No 14º nível, se você for capaz de ouvir, você está ciente da localização de qualquer criatura escondida ou invisível a até 3 metros de você.</p>"
+		},
+		{
+			"id": "Bonus Cantrip (Druid)",
+			"name": "Truque Bônus (Druida)",
+			"description": "<p><span style=\"color: #191813;\">Quando você escolhe esse círculo no 2° nível, você aprende um truque de druida adicional, à sua escolha.</span></p>"
+		},
+		{
+			"id": "Bonus Proficiencies (College of Lore)",
+			"name": "Proficiência Bônus (Colégio do Conhecimento)",
+			"description": "<p><span style=\"color: #191813;\">Quando você se junta ao Colégio do Conhecimento no 3° nível, você ganha proficiência em três perícias, à sua escolha.</span></p>"
+		},
+		{
+			"id": "Bonus Proficiency (Life Domain)",
+			"name": "Proficiência Bônus (Domínio da Vida)",
+			"description": "<p>Quando você escolhe este domínio no 1º nível, você ganha proficiência com armaduras pesadas.</p>"
+		},
+		{
+			"id": "Brutal Critical",
+			"name": "Crítico Brutal",
+			"description": "<p>A partir do 9° nível, você pode rolar um dado de dano de arma adicional quando estiver determinando o dano extra de um acerto crítico com uma arma corpo-a-corpo. Isso aumenta para dois dados adicionais no 13° nível e três dados adicionais no 17° nível.</p>"
+		},
+		{
+			"id": "Channel Divinity (Cleric)",
+			"name": "Canalizar Divindade (Clérigo)",
+			"description": "<p>No 2º nível, você se torna capaz de canalizar energia diretamente de sua divindade, utilizando-a como combustível para efeitos mágicos. Você começa com dois efeitos: Expulsar Mortos-vivos e um efeito determinado pelo seu domínio. Alguns domínios conferem efeitos adicionais conforme você avança de nível, como consta na descrição de cada domínio.</p>\n<p>Quando você usar seu Canalizar Divindade, você escolhe qual efeito quer criar. Você precisa terminar um descanso curto ou longo para usar a característica de novo. Alguns efeitos requerem salvaguarda. Quando você usar um desses efeitos, a CD é igual a das suas magias de clérigo.</p>\n<p>A partir do 6º nível, você pode Canalizar Divindade duas vezes entre descansos e a partir do 18º nível, três vezes. Você recupera os usos dessa característica quando termina um descanso curto ou longo.</p>\n<p><em>**Nota do Foundry: Use isso para rastrear todos os vários usos do Canalizar Divindade para o clérigo. Observe que os usos limitados estão configurados para o padrão base de 1 por descanso curto ou longo. Ajuste manualmente conforme necessário.</em></p>"
+		},
+		{
+			"id": "Channel Divinity (Paladin)",
+			"name": "Canalizar Divindade (Paladino)",
+			"description": "<p style=\"box-sizing: border-box; user-select: text; color: #191813; font-size: 13px;\">Seu juramento permite que você canalize energia divina para abastecer efeitos mágicos. Cada opção de Canalizar Divindade concedida por um juramento explica como usá-la.</p>\n<p style=\"box-sizing: border-box; user-select: text; color: #191813; font-size: 13px;\">Quando você usa o seu Canalizar Divindade, você escolhe qual opção usar. Você deve terminar um descanso curto ou longo para pode usar seu Canalizar Divindade novamente.</p>\n<p style=\"box-sizing: border-box; user-select: text; color: #191813; font-size: 13px;\">Alguns efeitos de Canalizar Divindade requerem uma salvaguarda. Quando você usar tais efeitos dessa classe, a CD será igual a CD das suas magias de paladino.</p>\n<p style=\"box-sizing: border-box; user-select: text; color: #191813; font-size: 13px;\"><em style=\"box-sizing: border-box; user-select: text;\">**Nota do Foundry: Use isso para rastrear todos os vários usos do Canalizar Divindade para o paladino.</em></p>"
+		},
+		{
+			"id": "Channel Divinity: Preserve Life",
+			"name": "Canalizar Divindade: Preservar a Vida",
+			"description": "<p>A partir do 2º nível, você pode usar seu Canalizar Divindade para curar os feridos.</p><p>Como uma ação, você usa seu símbolo sagrado para invocar energia que pode recuperar um total de 5 vezes seu nível de clérigo em pontos de vida.</p><p>Você escolhe quaisquer criaturas a até 9 metros de você e divide esses pontos entre elas. Essa característica só pode curar as criaturas a até metade de seu máximo de pontos de vida. Você não pode usar essa característica em um morto-vivo ou constructo.</p>"
+		},
+		{
+			"id": "Channel Divinity: Sacred Weapon",
+			"name": "Canalizar Divindade: Arma Sagrada",
+			"description": "<p>Com uma ação, você pode imbuir uma arma que você esteja empunhando com energia positiva, usando seu Canalizar Divindade.</p> <p>Por 1 minuto, você adiciona seu modificador de Carisma as jogadas de ataque feitas com essa arma (bônus mínimo de +1). A arma também emite luz plena num raio de 6 metros e penumbra mais 6 metros além. Se a arma ainda não for mágica, ela se torna mágica por essa duração.</p> <p>Você pode terminar o efeito no seu turno, como parte de qualquer ação. Se você não estiver mais segurando ou portando a arma, ou estiver inconsciente, esse efeito termina.</p>"
+		},
+		{
+			"id": "Channel Divinity: Turn the Unholy",
+			"name": "Canalizar Divindade: Expulsar o Profano",
+			"description": "<p>Com uma ação, você apresenta seu símbolo sagrado e faz uma oração censurando corruptores e mortos-vivos, usando seu Canalizar Divindade. Cada corruptor ou morto-vivo que puder ver ou ouvir você e esteja a até 9 metros, deve realizar uma salvaguarda de Sabedoria. Se a criatura falhar na salvaguarda, ela será expulsa por 1 minuto ou até sofrer dano.</p> <p>Uma criatura expulsa deve gastar seu turno tentando se mover para longe de você da melhor forma possível e não pode, voluntariamente, se mover para um espaço a menos de 9 metros de você. Ela também não pode realizar reações. Nas ações delas, elas só poderão realizar a ação de Correr ou tentar escapar de um efeito que as impeça de se mover. Se não houver lugar para se mover, a criatura pode usar a ação de Esquivar.</p>"
+		},
+		{
+			"id": "Channel Divinity: Turn Undead",
+			"name": "Canalizar Divindade: Expulsar Mortos-Vivos",
+			"description": "<p>Usando uma ação, você levanta seu símbolo sagrado e murmura uma prece repreendendo os mortos-vivos.</p><p>Cada morto-vivo que puder ver ou ouvir você em um raio de 9 metros a partir de você, deve fazer uma salvaguarda de Sabedoria. Se falhar, a criatura está expulsa por 1 minuto ou até sofrer algum dano.</p><p>Uma criatura expulsa deve usar seu turno para fugir da melhor forma possível e de forma alguma pode aproximar-se a mais de 9 metros de você por vontade própria. Ela também não pode usar reações.</p><p>Como uma ação, a criatura pode apenas realizar uma Correr ou tentar escapar de um efeito que a impeça de se mover. Se não há lugar para ir, a criatura pode usar a ação Esquivar.</p>"
+		},
+		{
+			"id": "Circle Spells",
+			"name": "Magias de Círculo Druídico",
+			"description": "<p>Sua conexão mística com a terra infunde você com a habilidade de conjurar certas magias. No 3°, 5°, 7° e 9° nível, você ganha acesso a magias de círculo ligadas ao terreno em que você se tornou druida. Escolha o terreno – ártico, litoral, deserto, floresta, campo, montanha ou pântano – e consulte a lista de magias associada.</p>\n<p>Uma vez que você tenha acesso a uma magia de círculo, você sempre poderá prepará-la e ela não conta no número de magias que você pode preparar a cada dia. Se você tiver acesso a uma magia que não aparece na lista de magias de druida, a magia, no entanto, será uma magia de druida para você.</p>\n<table border=\"1\"><caption>\n<h3>Ártico</h3>\n</caption>\n<thead>\n<tr>\n<td><strong>Nível de Druida</strong></td>\n<td><strong>Magias de Círculo</strong></td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>3º</td>\n<td>@Compendium[dnd5e.spells.3Lo9boi7P2ro6QV4]{Imobilizar Pessoa}, @Compendium[dnd5e.spells.9gYGkrL6qFTsE6fw]{Crescer Espinhos}</td>\n</tr>\n<tr>\n<td>5º</td>\n<td>@Compendium[dnd5e.spells.dhqBY4TvVjxVmOZd]{Nevasca}, @Compendium[dnd5e.spells.yqUDoxk4x0NWG5Bz]{Lentidão}</td>\n</tr>\n<tr>\n<td>7º</td>\n<td>@Compendium[dnd5e.spells.da0a1t2FqaTjRZGT]{Movimentação Livre}, @Compendium[dnd5e.spells.WN2LWEljYU6QqnRH]{Tempestade Glacial}</td>\n</tr>\n<tr>\n<td>9º</td>\n<td>@Compendium[dnd5e.spells.d54VDyFulD9xxY7J]{Comunhão com a Natureza}, @Compendium[dnd5e.spells.RpKjTlYASrfqUPVA]{Cone de Frio}</td>\n</tr>\n</tbody>\n</table>\n<table border=\"1\"><caption>\n<h3>Litoral</h3>\n</caption>\n<thead>\n<tr>\n<td><strong>Nível de Druida</strong></td>\n<td><strong>Magias de Círculo</strong></td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>3º</td>\n<td>@Compendium[dnd5e.spells.X4c8xCkmF8U9HUMz]{Reflexos}, @Compendium[dnd5e.spells.wqfAVANuQonNBgnL]{Passo Nebuloso}</td>\n</tr>\n<tr>\n<td>5º</td>\n<td>@Compendium[dnd5e.spells.13uVuBQP6VaiSPvC]{Respirar na Água}, @Compendium[dnd5e.spells.YBda6nLKjxdT1LbS]{Andar sobre as Águas}</td>\n</tr>\n<tr>\n<td>7º</td>\n<td>@Compendium[dnd5e.spells.7fFHlBk3UNX8gPKL]{Controlar Água}, @Compendium[dnd5e.spells.da0a1t2FqaTjRZGT]{Movimentação Livre}</td>\n</tr>\n<tr>\n<td>9º</td>\n<td>@Compendium[dnd5e.spells.1LkZvINag7KqBmDR]{Invocar Elemental}, @Compendium[dnd5e.spells.fVbCxFRaORalHB20]{Vidência}</td>\n</tr>\n</tbody>\n</table>\n<table border=\"1\"><caption>\n<h3>Deserto</h3>\n</caption>\n<thead>\n<tr>\n<td><strong>Nível de Druida</strong></td>\n<td><strong>Magias de Círculo</strong></td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>3º</td>\n<td>@Compendium[dnd5e.spells.UDUnlfPsOAbq2RSE]{Turvar}, @Compendium[dnd5e.spells.5VhqFROQYjr1P9lp]{Silêncio}</td>\n</tr>\n<tr>\n<td>5º</td>\n<td>@Compendium[dnd5e.spells.BV0mpbHh29IbbIj5]{Criar Comida e Água}, @Compendium[dnd5e.spells.j8NtLXOOJ3GAKF8I]{Proteção Contra Energia}</td>\n</tr>\n<tr>\n<td>7º</td>\n<td>@Compendium[dnd5e.spells.pybg5MNc3lkerH4Y]{Malogro}, @Compendium[dnd5e.spells.sTIkQK7KuQNOyY0C]{Terreno Alucinatório}</td>\n</tr>\n<tr>\n<td>9º</td>\n<td>@Compendium[dnd5e.spells.OVikYmSdHliAG2YD]{Praga de Insetos}, @Compendium[dnd5e.spells.NmoRmM1mhuM3pqnY]{Muralha de Pedra}</td>\n</tr>\n</tbody>\n</table>\n<table border=\"1\"><caption>\n<h3>Floresta</h3>\n</caption>\n<thead>\n<tr>\n<td><strong>Nível de Druida</strong></td>\n<td><strong>Magias de Círculo</strong></td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>3º</td>\n<td>@Compendium[dnd5e.spells.JPwIEfgUPVebr5AH]{Pele-casca}, @Compendium[dnd5e.spells.KJRVzeMQXPj8Gtyx]{Escalada de Aranha}</td>\n</tr>\n<tr>\n<td>5º</td>\n<td>@Compendium[dnd5e.spells.ehvmg9U9fcMEhE4z]{Convocar Relâmpagos}, @Compendium[dnd5e.spells.YWtwzp6ZnQJMEmVW]{Crescimento de Plantas}</td>\n</tr>\n<tr>\n<td>7º</td>\n<td>@Compendium[dnd5e.spells.XqzXSKNR75ZdYTA9]{Presságio}, @Compendium[dnd5e.spells.da0a1t2FqaTjRZGT]{Movimentação Livre}</td>\n</tr>\n<tr>\n<td>9º</td>\n<td>@Compendium[dnd5e.spells.dp6xny4v8PDoIGjh]{Comunhão com a Natureza}, @Compendium[dnd5e.spells.DUBgwHPakcLDkB6W]{Passo Arbóreo}</td>\n</tr>\n</tbody>\n</table>\n<h4> </h4>\n<table border=\"1\"><caption>\n<h3>Campo</h3>\n</caption>\n<thead>\n<tr>\n<td><strong>Nível de Druida</strong></td>\n<td><strong>Magias de Círculo</strong></td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>3º</td>\n<td>@Compendium[dnd5e.spells.1N8dDMMgZ1h1YJ3B]{Invisibilidade}, @Compendium[dnd5e.spells.pRMvmknwLf2tdMTj]{Passo Sem Rastro}</td>\n</tr>\n<tr>\n<td>5º</td>\n<td>@Compendium[dnd5e.spells.BP3GCwa66IAw1yTG]{Luz do Dia}, @Compendium[dnd5e.spells.Szvk5FEVQW3uhJi5]{Celeridade}</td>\n</tr>\n<tr>\n<td>7º</td>\n<td>@Compendium[dnd5e.spells.XqzXSKNR75ZdYTA9]{Presságio}, @Compendium[dnd5e.spells.da0a1t2FqaTjRZGT]{Movimentação Livre}</td>\n</tr>\n<tr>\n<td>9º</td>\n<td>@Compendium[dnd5e.spells.kSPRpeIx3w3nihrF]{Sonho}, @Compendium[dnd5e.spells.OVikYmSdHliAG2YD]{Praga de Insetos}</td>\n</tr>\n</tbody>\n</table>\n<table border=\"1\"><caption>\n<h3>Montanha</h3>\n</caption>\n<thead>\n<tr>\n<td><strong>Nível de Druida</strong></td>\n<td><strong>Magias de Círculo</strong></td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>3º</td>\n<td>@Compendium[dnd5e.spells.KJRVzeMQXPj8Gtyx]{Escalada de Aranha}, @Compendium[dnd5e.spells.9gYGkrL6qFTsE6fw]{Crescer Espinhos}</td>\n</tr>\n<tr>\n<td>5º</td>\n<td>@Compendium[dnd5e.spells.IyikgTEOTv701jgQ]{Relâmpago}, @Compendium[dnd5e.spells.64uo4fHriHLjRUrX]{Mesclar-se às Rochas}</td>\n</tr>\n<tr>\n<td>7º</td>\n<td>@Compendium[dnd5e.spells.QvGcdRUSNRKEQJlK]{Moldar Rochas}, @Compendium[dnd5e.spells.ReMbjfeOKoSj3O79]{Pele-rocha}</td>\n</tr>\n<tr>\n<td>9º</td>\n<td>@Compendium[dnd5e.spells.d9MwcXi7Il3HROXd]{Criar Passagem}, @Compendium[dnd5e.spells.NmoRmM1mhuM3pqnY]{Muralha de Pedra}</td>\n</tr>\n</tbody>\n</table>\n<table border=\"1\"><caption>\n<h3>Pântano</h3>\n</caption>\n<thead>\n<tr>\n<td><strong>Nível de Druida</strong></td>\n<td><strong>Magias de Círculo</strong></td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>3º</td>\n<td>@Compendium[dnd5e.spells.4H6YgYdKgnX6ZQ8M]{Flecha Ácida}, @Compendium[dnd5e.spells.S7VbUetIfVT7B6Eq]{Escuridão}</td>\n</tr>\n<tr>\n<td>5º</td>\n<td>@Compendium[dnd5e.spells.YBda6nLKjxdT1LbS]{Andar Sobre as Águas}, @Compendium[dnd5e.spells.TwlD4PLcltv7Xh7j]{Nuvem Fétida}</td>\n</tr>\n<tr>\n<td>7º</td>\n<td>@Compendium[dnd5e.spells.da0a1t2FqaTjRZGT]{Movimentação Livre}, @Compendium[dnd5e.spells.gXtzz9t1DTzJeLr4]{Localizar Criatura}</td>\n</tr>\n<tr>\n<td>9º</td>\n<td>@Compendium[dnd5e.spells.OVikYmSdHliAG2YD]{Praga de Insetos}, @Compendium[dnd5e.spells.fVbCxFRaORalHB20]{Vidência}</td>\n</tr>\n</tbody>\n</table>"
+		},
+		{
+			"id": "Cleansing Touch",
+			"name": "Toque Purificador",
+			"description": "<p>A partir do 14° nível, você pode usar sua ação para terminar uma magia em si mesmo ou em uma criatura voluntária que você tocar.</p>\n<p>Você pode usar essa característica um número de vezes igual a seu modificador de Carisma (mínimo uma vez). Você recupera os usos gastos quando termina um descanso longo.</p>\n<p><em style=\"box-sizing: border-box; user-select: text; color: #191813; font-size: 13px;\">**Nota do Foundry: Observe que os usos limitados estão configurados para o padrão base de 1 por descanso longo. Ajuste manualmente conforme necessário.</em></p>"
+		},
+		{
+			"id": "Countercharm",
+			"name": "Contra-Encantamento",
+			"description": "<p>No 6° nível, você adquire a habilidade de usar notas musicais ou palavras de poder para interromper efeito de influência mental. Com uma ação, você pode começar uma atuação que dura até o fim do seu próximo turno. Durante esse tempo, você e qualquer criatura amigável a até 9 metros de você terá vantagem em salvaguardas para não ser amedrontado ou enfeitiçado. Uma criatura deve ser capaz de ouvir você para receber esse benefício. A atuação termina prematuramente se você for incapacitado ou silenciado ou se você terminá-la voluntariamente (não requer ação).</p>"
+		},
+		{
+			"id": "Cunning Action",
+			"name": "Ação Ardilosa",
+			"description": "<p>A partir do 2º nível, seu pensamento rápido e agilidade faz você se mover e agir rapidamente. Você pode usar uma ação bônus durante cada um de seus turnos em combate. Esta ação pode ser usada somente para Correr, Desengajar ou Esconder-se.</p>"
+		},
+		{
+			"id": "Cutting Words",
+			"name": "Palavras de Interrupção",
+			"description": "<p>Também no 3° nível, você aprende como usar sua perspicácia para distrair, confundir e, de outras formas, atrapalhar a confiança e competência de outros.</p>\n<p>Quando uma criatura que você pode ver a até 18 metros de você realizar uma jogada de ataque, um teste de atributo ou uma jogada de dano, você pode usar sua reação para gastar um uso de @Compendium[dnd5e.classfeatures.EeGafsa17CapsH2j]{Inspiração de Bardo}, rolando o dado de Inspiração de Bardo e subtraindo o número rolado da rolagem da criatura.</p>\n<p>Você escolhe usar essa característica depois da criatura fazer a rolagem, mas antes do Mestre determinar se a jogada de ataque ou teste de atributo foi bem ou mal sucedido, ou antes da criatura causar dano. A criatura será imune se não puder ouvir ou se não puder ser enfeitiçada.</p>"
+		},
+		{
+			"id": "Danger Sense",
+			"name": "Sentido de Perigo",
+			"description": "<p>No 2° nível, você adquire um sentido sobrenatural de quando as coisas próximas não estão como deveriam, concedendo a você uma chance maior quando estiver evitando perigos.</p><p>Você possui vantagem em salvaguardas de Destreza contra efeitos que você possa ver, como armadilhas e magias. Para receber esse benefício você não pode estar cego, surdo ou incapacitado.</p>"
+		},
+		{
+			"id": "Dark One's Blessing ",
+			"name": "Bênção do Tenebroso",
+			"description": "<p>A partir do 1° nível, quando você reduzir uma criatura hostil a 0 pontos de vida, você ganha uma quantidade de pontos de vida temporários igual ao seu modificador de Carisma + seu nível de bruxo (mínimo 1).</p>"
+		},
+		{
+			"id": "Dark One's Own Luck",
+			"name": "A Sorte do Próprio Tenebroso",
+			"description": "<p>A partir do 6° nível, você pode pedir ao seu patrono para alterar o destino em seu favor. Quando você realizar um teste de atributo ou uma salvaguarda, você pode usar essa característica para adicionar 1d10 a sua jogada. Você pode fazer isso após ver sua jogada inicial, mas antes que qualquer efeito da jogada ocorra.</p><p>Após usar essa características, você não poderá utilizá-la novamente até terminar um descanso curto ou longo.</p>"
+		},
+		{
+			"id": "Defensive Tactics",
+			"name": "Táticas Defensivas",
+			"description": "<p>No 7º nível, você ganha uma das seguintes características de sua escolha.</p>\n<p>@Compendium[dnd5e.classfeatures.pAQMJU5R9SGUmzHU]{Escapar de Hordas}</p>\n<p>@Compendium[dnd5e.classfeatures.slelvrm83v9UAKZU]{Defesa Contra Ataques Múltiplos}</p>\n<p>@Compendium[dnd5e.classfeatures.zbHu0NvHuII8lR7W]{Vontade de Aço}</p>\n<p style=\"box-sizing: border-box; user-select: text; color: #191813; font-size: 13px;\">Você pode arrastar sua escolha acima para sua ficha de personagem e ela será atualizada automaticamente.</p>"
+		},
+		{
+			"id": "Defensive Tactics: Escape the Horde",
+			"name": "Táticas Defensivas: Escapar de Hordas",
+			"description": "<p>Ataques de oportunidade contra você são feitos com desvantagem.</p>"
+		},
+		{
+			"id": "Defensive Tactics: Multiattack Defense",
+			"name": "Táticas Defensivas: Defesa Contra Ataques Múltiplos",
+			"description": "<p>Quando uma criatura atinge você com um ataque, você recebe +4 de bônus na CA contra todos os ataques subsequentes feitos por essa criatura no resto do turno.</p>"
+		},
+		{
+			"id": "Defensive Tactics: Steel Will",
+			"name": "Táticas Defensivas: Vontade de Aço",
+			"description": "<p>Você tem vantagem em salvaguardas para evitar ser amedrontado.</p>"
+		},
+		{
+			"id": "Deflect Missiles",
+			"name": "Desviar Projéteis",
+			"description": "<p>A partir do 3° nível, você pode usar sua reação para defletir ou apanhar o projétil quando você é atingido por um ataque de arma à distância. Quando o fizer, o dano que você sofrer do ataque é reduzido em 1d10 + seu modificador de Destreza + seu nível de monge.</p>\n<p>Se o dano for reduzido a 0, você pode apanhar o projétil se ele for pequeno o suficiente para ser segurando em uma mão e você tenha, pelo menos, uma mão livre. Se você apanhar um projétil dessa forma, você pode gastar 1 ponto de @Compendium[dnd5e.classfeatures.10b6z2W1txNkrGP7]{Ki} para realizar uma ataque à distância com a arma ou munição que você acabou de pegar, como parte da mesma reação. Você realiza esse ataque com proficiência, independentemente das armas em que você é proficiente, e o projétil conta como uma arma de monge para o ataque. A distância do ataque do monge é de 6/18 metros.</p>\n<p><em style=\"box-sizing: border-box; user-select: text; color: #191813; font-size: 13px;\">**Nota do Foundry: Observe que o teste de redução de dano é calculado pela Outra fórmula. Além disso, o dado de dano do ataque lançado é o padrão base de 1d4. Ajuste manualmente conforme necessário.</em></p>"
+		},
+		{
+			"id": "Destroy Undead",
+			"name": "Destruir Mortos-Vivos",
+			"description": "<p>A partir do 5º nível, quando um morto-vivo falhar na salvaguarda contra a sua característica @Compendium[dnd5e.classfeatures.r91UIgwFdHwkXdia]{Expulsar Mortos-vivos}, ele é instantaneamente destruído se o Nível de Desafio dele for menor ou igual ao valor da tabela Destruir Mortos-vivos, de acordo com seu nível de clérigo.</p>\n<table style=\"width: 244px;\" border=\"1\">\n<tbody>\n<tr>\n<td style=\"width: 81px;\"><strong>Nível de Clérigo</strong></td>\n<td style=\"width: 156px;\"><strong>Destrói Mortos-Vivos de ND</strong></td>\n</tr>\n<tr>\n<td style=\"width: 81px;\">5°</td>\n<td style=\"width: 156px;\">1/2 ou menor</td>\n</tr>\n<tr>\n<td style=\"width: 81px;\">8°</td>\n<td style=\"width: 156px;\">1 ou menor</td>\n</tr>\n<tr>\n<td style=\"width: 81px;\">11°</td>\n<td style=\"width: 156px;\">2 ou menor</td>\n</tr>\n<tr>\n<td style=\"width: 81px;\">14°</td>\n<td style=\"width: 156px;\">3 ou menor</td>\n</tr>\n<tr>\n<td style=\"width: 81px;\">17°</td>\n<td style=\"width: 156px;\">4 ou menor</td>\n</tr>\n</tbody>\n</table>"
+		},
+		{
+			"id": "Disciple of Life",
+			"name": "Discípulo da Vida",
+			"description": "<p>Começando no 1º nível, suas magias de cura são mais efetivas.</p>\n<p>Sempre que você conjurar uma magia de cura para recuperar pontos de vida, o alvo daquela magia recupera pontos de vida adicionais iguais a 2 + circulo da magia.</p>"
+		},
+		{
+			"id": "Divine Domain",
+			"name": "Domínio Divino",
+			"description": "<p>Escolha um domínio relacionado à sua divindade, como Vida. Sua escolha concede a você magias de domínio e outras características quando você escolhe no 1º nível. Também concede a você maneiras adicionais de usar Canalizar Divindade quando você ganha essa característica no 2º nível, e benefícios adicionais no 6º, 8º e 17º níveis.</p>\n<h3>Magias de Domínio</h3>\n<p>Cada domínio tem uma lista de magias - suas magias de domínio - que você ganha nos níveis de clérigo indicados na descrição do domínio. Depois de ganhar uma magia de domínio, você sempre a tem preparada e não conta contra o número de magias que você pode preparar a cada dia.</p>\n<p>Se você tiver uma magia de domínio que não aparece na lista de magias de clérigo, a magia não deixa de ser uma magia de clérigo para você.</p>"
+		},
+		{
+			"id": "Divine Health",
+			"name": "Saúde Divina",
+			"description": "<p>No 3° nível, a magia divina flui através de você tornando você imune a doenças.</p>"
+		},
+		{
+			"id": "Divine Intervention",
+			"name": "Intervenção Divina",
+			"description": "<p>A partir do 10º nível, você pode rogar à sua divindade para que auxilie você em uma árdua tarefa.</p><p>Implorar pelo auxílio requer uma ação. Você precisa descrever o que busca e realizar uma rolagem de dado de percentagem. Se o resultado for menor ou igual ao seu nível de clérigo, sua divindade intervém. O Mestre escolhe a natureza da intervenção. O efeito de qualquer magia de clérigo ou magia de domínio é apropriado como resultado.</p><p>Se sua divindade intervir, você fica impedido de usar essa característica de novo por 7 dias. Do contrário, você pode usá-la de novo após terminar um descanso longo.</p><p>No 20º nível, seus pedidos de intervenção funcionam automaticamente, sem necessidade de rolagem de dados.</p>"
+		},
+		{
+			"id": "Divine Sense",
+			"name": "Sentido Divino",
+			"description": "<p>A presença de um mal poderoso é registrada nos seus sentidos como um odor nocivo e o bem poderoso badala como música celestial nos seus ouvidos. Com uma ação, você pode expandir sua consciência para detectar tais forças. Até o final do seu próximo turno, você sabe a localização de qualquer celestial, corruptor ou morto-vivo a 18 metros de você que não esteja com cobertura total. Você sabe o tipo (celestial, corruptor ou morto-vivo) de qualquer ser cuja presença você sentiu, mas não sua identidade (o vampiro Conde Strahd von Zarovish, por exemplo). Dentro do mesmo raio, você também detecta a presença de qualquer lugar ou objeto que tenha sido consagrado ou conspurcado, como pela magia @Compendium[dnd5e.spells.SLxA9QhrggTz0taU]{Consagrar}.</p>\n<p>Você pode usar essa característica um número de vezes igual a 1 + seu modificador de Carisma. Quando você concluir um descanso longo, você recupera todos os usos gastos.</p>\n<p><em style=\"box-sizing: border-box; user-select: text; color: #191813; font-size: 13px;\">**Nota do Foundry: Observe que os usos limitados estão configurados para o padrão base de 1 por descanso longo. Ajuste manualmente conforme necessário.</em></p>"
+		},
+		{
+			"id": "Divine Smite",
+			"name": "Destruição Divina",
+			"description": "<p>A partir do 2º nível, ao atingir uma criatura com uma arma de combate corpo a corpo, além do dano normal da arma, você pode gastar um espaço de magia para causar dano radiante.</p>\n<p>O dano adicional é igual a 2d8 para um espaço de magia de 1º círculo, mais 1d8 para cada círculo de magia além do 1º, até o máximo de 6d8. O dano aumenta em 1d8 se o alvo for morto-vivo ou ínfero.</p>\n<p><em style=\"box-sizing: border-box; user-select: text; color: #191813; font-size: 13px;\">**Nota do Foundry: Observe que os usos limitados estão configurados para o padrão base de 1 por descanso curto ou longo. Ajuste manualmente conforme necessário.</em></p>"
+		},
+		{
+			"id": "Divine Strike",
+			"name": "Golpe Divino",
+			"description": "<p>No 8° nível, você ganha a habilidade de infundir os golpes da sua arma com energia divina.</p>\n<p>Uma vez em cada um de seus turnos, quando você acertar uma criatura com um ataque com arma, você pode fazer o ataque causar 1d8 de dano radiante extra ao alvo. Quando alcançar o 14º nível, o dano extra aumenta para 2d8.</p>\n<p><em>**Nota do Foundry: Observe que o dado de dano é definido com o padrão básico de 1d8, Versátil 2d8.</em></p>"
+		},
+		{
+			"id": "Draconic Presence",
+			"name": "Presença Dracônica",
+			"description": "<p>A partir do 18° nível, você pode canalizar a assustadora presença do seu ancestral dracônico, fazendo com que aqueles que o rodeiam fiquem impressionados ou amedrontados. Com uma ação, você pode gastar 5 pontos de feitiçaria para recorrer a esse poder e exalar uma aura de admiração ou medo (à sua escolha) a uma distância de 18 metros. Por 1 minuto ou até você perder sua concentração (como se você tivesse conjurado uma magia de concentração), cada criatura hostil que começar seu turno nessa aura, deve ser bem sucedido em uma salvaguarda de Sabedoria ou ficará enfeitiçada (se você escolheu admiração) ou amedrontada (se você escolheu medo) até a aura terminar. Uma criatura que seja bem sucedida na salvaguarda ficará imune a sua aura por 24 horas.</p>"
+		},
+		{
+			"id": "Draconic Resilience",
+			"name": "Resiliência Dracônica",
+			"description": "<p>A medida que a magia flui pelo seu corpo, ela faz com que os traços físicos do seu ancestral dracônico surjam. No 1° nível, seu máximo de pontos de vida aumenta em 1 e aumenta em mais 1 sempre que você ganhar um nível na classe.</p><p>Além disso, partes da sua pele são cobertas com minúsculas escamas lustrosas de dragão. Quando você não estiver utilizando armadura, sua CA será igual a 13 + seu modificador de Destreza.</p>"
+		},
+		{
+			"id": "Dragon Ancestor",
+			"name": "Ancestral Dragão",
+			"description": "<p>No 1° nível, você escolhe um tipo de dragão como seu ancestral. O tipo de dano associado a cada dragão será usado por características que você ganhará posteriormente.</p>\n<table style=\"height: 170px; width: 153px;\" border=\"1\">\n<tbody>\n<tr style=\"height: 17px;\">\n<td style=\"height: 17px; width: 59px;\"><strong>Dragão</strong></td>\n<td style=\"height: 17px; width: 87px;\"><strong>Tipo de Dano</strong></td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"height: 17px; width: 59px;\">Negro</td>\n<td style=\"height: 17px; width: 87px;\">Ácido</td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"height: 17px; width: 59px;\">Azul</td>\n<td style=\"height: 17px; width: 87px;\">Elétrico</td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"height: 17px; width: 59px;\">Latão</td>\n<td style=\"height: 17px; width: 87px;\">Fogo</td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"height: 17px; width: 59px;\">Bronze</td>\n<td style=\"height: 17px; width: 87px;\">Elétrico</td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"height: 17px; width: 59px;\">Cobre</td>\n<td style=\"height: 17px; width: 87px;\">Ácido</td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"height: 17px; width: 59px;\">Ouro</td>\n<td style=\"height: 17px; width: 87px;\">Fogo</td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"height: 17px; width: 59px;\">Verde</td>\n<td style=\"height: 17px; width: 87px;\">Veneno</td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"height: 17px; width: 59px;\">Vermelho</td>\n<td style=\"height: 17px; width: 87px;\">Fogo</td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"height: 17px; width: 59px;\">Prata</td>\n<td style=\"height: 17px; width: 87px;\">Frio</td>\n</tr>\n<tr>\n<td style=\"width: 59px;\">Branco</td>\n<td style=\"width: 87px;\">Frio</td>\n</tr>\n</tbody>\n</table>\n<p>Você pode falar, ler e escrever em Dracônico. Além disso, sempre que você fizer um teste de Carisma quando estiver interagindo com dragões, seu bônus de proficiência será dobrado se ele se aplicar a esse teste.</p>"
+		},
+		{
+			"id": "Dragon Wings",
+			"name": "Asas de Dragão",
+			"description": "<p>No 14° nível, você adquire a habilidade de brotar um par de asas de dragão das suas costas, ganhando deslocamento de voo igual ao seu deslocamento atual. Você pode criar essas asas com uma ação bônus, no seu turno. Elas duram até que você as dissipe, com uma ação bônus no seu turno.</p><p>Você não pode manifestar suas asas quando estiver vestindo uma armadura, a não ser que a armadura seja feita para acomodá-las, e roupas que não forem feitas para se acomodar às suas asas devem ser destruídas quando você manifestá-las.</p>"
+		},
+		{
+			"id": "Druid Circle",
+			"name": "Circulo Druídico",
+			"description": "<p>No 2° nível, você escolhe se identificar com um círculo de druidas, como o Círculo da Terra.</p>\n<p>Sua escolha lhe concede características no 2° nível e novamente no 6°, 10° e 14° nível.</p>"
+		},
+		{
+			"id": "Druidic",
+			"name": "Idioma Druídico",
+			"description": "<p>Você conhece o Druídico, o idioma secreto dos druidas. Você pode falar esse idioma e usá-lo para deixar mensagens escondidas. Você e outros que conheçam esse idioma automaticamente veem tais mensagens. Outros perceberão a presença da mensagem se passarem num teste de Sabedoria (Percepção) CD 15, mas não conseguirão decifrá-lo sem magia.</p>"
+		},
+		{
+			"id": "Eldritch Invocations",
+			"name": "Invocações Misticas",
+			"description": "<p>Durante seus estudos sobre conhecimento oculto, você descobriu as invocações místicas, fragmentos de conhecimento proibido que infundiram você com habilidade mágica permanente.</p>\n<p>No 2° nível, você ganha duas invocações místicas, à sua escolha. Suas opções de invocação estão detalhadas no final da descrição dessa classe. Quando você atinge certos nível de bruxo, você adquire novas invocações à sua escolha, como mostrado na coluna Invocações Conhecidas na tabela de classe.</p>\n<p>Além disso, quando você adquire um novo nível nessa classe, você pode escolher uma invocação que você conheça e substituí-la por outra invocação que você possa aprender nesse nível.</p>\n<h3>Invocações Misticas</h3>\n<p>Se uma invocação mística tiver pré-requisitos, você deve possuí-los para que possa aprendê-la. Você pode aprender a invocação ao mesmo tempo que adquire os pré-requisitos dela. O pré-requisito de nível nas invocações se refere ao nível de bruxo, não ao nível de personagem.</p>\n<table border=\"1\">\n<thead>\n<tr>\n<td colspan=\"2\">Pré-requisitos</td>\n<td rowspan=\"2\">Invocação</td>\n</tr>\n<tr>\n<td>Nível de Classe</td>\n<td>Outro</td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td rowspan=\"16\">2º</td>\n<td>@Compendium[dnd5e.spells.Z9p1vezIn95jw1Yw]{Raio Místico}</td>\n<td>@Compendium[dnd5e.classfeatures.2fyuw7MiCnocDeAU]{Explosão Agonizante}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.alUqO6c6OEKFQJdb]{Armadura de Sombras}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.61kXR1sniXHjvN17]{Idioma Bestial}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.eNvpIaSnJUdF8fHl]{Influência Enganadora}</td>\n</tr>\n<tr>\n<td>@Compendium[dnd5e.classfeatures.MYM908WLZ1lVvA1u]{Pacto do Tomo}</td>\n<td>@Compendium[dnd5e.classfeatures.CFIYXDmbmSP8BXjN]{Livro dos Segredos Antigos}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.3sN91lT1R3oxcDKd]{Visão Diabólica}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.bbUEsCPTLzbbwK6o]{Visão Mística}</td>\n</tr>\n<tr>\n<td>@Compendium[dnd5e.spells.Z9p1vezIn95jw1Yw]{Raio Místico}</td>\n<td>@Compendium[dnd5e.classfeatures.r01WtcxTg4yTHm9m]{Lança Mística}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.lEZKbWaVrSljRa9n]{Olhos do Protetor das Runas}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.id0gmGvzNZBEdzbx]{Vigor Ínfero}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.65ReXU4ZWqcSs3Cm]{Olhar de Duas Mentes}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.MhJfdBl1B7PdU4oZ]{Máscara das Muitas Faces}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.k5DU0mMuYVHejiqz]{Visões Nebulosas}</td>\n</tr>\n<tr>\n<td>@Compendium[dnd5e.spells.Z9p1vezIn95jw1Yw]{Raio Místico}</td>\n<td>@Compendium[dnd5e.classfeatures.rdBPd6CwqXT64iJM]{Explosão Repulsiva}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.rhbwDZ9XNTmdkX2u]{Ladrão dos Cinco Destinos}</td>\n</tr>\n<tr>\n<td>@Compendium[dnd5e.classfeatures.Ic1CSjvbWKudVUv9]{Pacto da Corrente}</td>\n<td>@Compendium[dnd5e.classfeatures.k5M8gsl7MMcdjOjs]{Voz do Mestre das Correntes}</td>\n</tr>\n<tr>\n<td rowspan=\"4\">5º</td>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.DjXi0IkCTbJx1gsp]{Encharcar a Mente}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.KfnUyjUWAk0bAAus]{Uno com as Sombras}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.dTSV0xZMpY5CxkRk]{Sinal de Mau Agouro}</td>\n</tr>\n<tr>\n<td>@Compendium[dnd5e.classfeatures.9dSSa68mIPoX2ezA]{Pacto da Lâmina}</td>\n<td>@Compendium[dnd5e.classfeatures.pJADgAxxefgcATWr]{Lâmina Sedenta}</td>\n</tr>\n<tr>\n<td rowspan=\"3\">7º</td>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.KygHql3cTj4IRrvZ]{Sussurros Sedutores}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.QBk1RsuTIEF4GEBC]{Vozes Perturbadoras}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.Xa2MLUJGCReJ28B7]{Escultor de Carne}</td>\n</tr>\n<tr>\n<td rowspan=\"4\">9º</td>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.QEuH5TeBN4PPYT2g]{Passo Ascendente}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.QnRKYXb2bXpnNd2k]{Lacaios do Caos}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.8zciiglzEOZo7DDN]{Salto Sobrenatural}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.gFjxo01hAN4c9hDG]{Lamento das Sepulturas}</td>\n</tr>\n<tr>\n<td>12º</td>\n<td>@Compendium[dnd5e.classfeatures.9dSSa68mIPoX2ezA]{Pacto da Lâmina}</td>\n<td>@Compendium[dnd5e.classfeatures.zUIAzBnyt0NDvVXb]{Sorvedouro de Vida}</td>\n</tr>\n<tr>\n<td rowspan=\"4\">15º</td>\n<td>@Compendium[dnd5e.classfeatures.Ic1CSjvbWKudVUv9]{Pacto da Corrente}</td>\n<td>@Compendium[dnd5e.classfeatures.Phy02H5x0TKHd7T3]{Correntes de Cárceri}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.lxfdjLer3uKjyZqU]{Mestre das Infindáveis Formas}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.zYIdNAjqRyhS6qWs]{Visões dos Reinos Distantes}</td>\n</tr>\n<tr>\n<td> </td>\n<td>@Compendium[dnd5e.classfeatures.snsjxGfmzWfZR5Nh]{Visão da Bruxa}</td>\n</tr>\n</tbody>\n</table>\n<p><em>Você pode arrastar suas escolhas para a ficha de personagem e ela será atualizada automaticamente.</em></p>"
+		},
+		{
+			"id": "Eldritch Master",
+			"name": "Mestre Místico",
+			"description": "<p>No 20° nível, você pode recarregar sua reserva interior de poder místico quando suplicar ao seu patrono para recuperar espaços de magia gastos. Você pode gastar 1 minuto suplicando pela ajuda do seu patrono para recuperar todos os espaços de magia gastos da sua característica Magia de Pacto. Uma vez que você recuperou espaços de magia com essa característica, você deve terminar um descanso longo antes de fazê-lo novamente.</p>"
+		},
+		{
+			"id": "Elemental Affinity",
+			"name": "Afinidade Elemental",
+			"description": "<p>A partir do 6° nível, quando você conjurar uma magia que cause dano do tipo associado ao seu ancestral dracônico, adicione seu modificador de Carisma ao dano. Ao mesmo tempo, você pode gastar 1 ponto de feitiçaria para ganhar resistência a esse tipo de dano por 1 hora. O bônus de dano se aplica a uma única rolagem de dano da magia, não à diversas rolagens.</p>"
+		},
+		{
+			"id": "Elusive",
+			"name": "Elusivo",
+			"description": "<p>A partir do 18º nível, você se torna tão sagaz que raramente alguém encosta a mão em você. Nenhuma jogada de ataque tem vantagem contra você, desde que você não esteja incapacitado.</p>"
+		},
+		{
+			"id": "Empowered Evocation",
+			"name": "Evocação Potencializada",
+			"description": "<p>Começando no 10º nível, você pode adicionar seu modificador de Inteligência a uma jogada de dano de qualquer magia de evocação de mago que você conjurar.</p><blockquote></blockquote>"
+		},
+		{
+			"id": "Evasion",
+			"name": "Evasão",
+			"description": "<p>No 7º nível, sua agilidade instintiva permite que você se desvie de certos efeitos de área, como o sopro relâmpago de um dragão azul ou uma magia de bola de fogo. Quando você está sujeito a um efeito que permite que você faça uma salvaguarda de Destreza para receber apenas metade do dano, você não recebe dano se tiver sucesso na salvaguarda e apenas metade do dano se falhar.</p>"
+		},
+		{
+			"id": "Evocation Savant",
+			"name": "Versado em Evocação",
+			"description": "<p>Começando quando você seleciona esta escola no 2° nível, o ouro e o tempo que você deve gastar para copiar uma magia de evocação em seu grimório é reduzido pela metade.</p>"
+		},
+		{
+			"id": "Expanded Spell List",
+			"name": "Lista de Magia Expandida",
+			"description": "<p>O Ínfero permite que você escolha magias de uma lista expandida quando você for aprender magias de bruxo. As seguintes magias são adicionadas a sua lista de magias de bruxo.</p>\n<table border=\"1\"><caption>Magias Expandidas do Ínfero</caption>\n<thead>\n<tr>\n<td><strong>Circulo de Magia</strong></td>\n<td><strong>Magias</strong></td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1º</td>\n<td>@Compendium[dnd5e.spells.5SuJewoa1CRWaj1F]{Mãos Flamejantes}, @Compendium[dnd5e.spells.arzCrMRgcNiQuh43]{Comando}</td>\n</tr>\n<tr>\n<td>2º</td>\n<td>@Compendium[dnd5e.spells.zwGsAv6kmwzYGhh3]{Cegueira/Surdez}, @Compendium[dnd5e.spells.7u2obDvuvtZBkTfq]{Raio Ardente}</td>\n</tr>\n<tr>\n<td>3º</td>\n<td>@Compendium[dnd5e.spells.ztgcdrWPshKRpFd0]{Bola de Fogo}, @Compendium[dnd5e.spells.TwlD4PLcltv7Xh7j]{Nuvem Fétida}</td>\n</tr>\n<tr>\n<td>4º</td>\n<td>@Compendium[dnd5e.spells.avD5XUtkBPQQR97c]{Escudo Ardente}, @Compendium[dnd5e.spells.X3DrXgxjwI2dvkD6]{Muralha de Fogo}</td>\n</tr>\n<tr>\n<td>5º</td>\n<td>@Compendium[dnd5e.spells.5e1xTohkzqFqbYH4]{Coluna de Chamas}, @Compendium[dnd5e.spells.SLxA9QhrggTz0taU]{Consagrar}</td>\n</tr>\n</tbody>\n</table>"
+		},
+		{
+			"id": "Expertise (Bard)",
+			"name": "Especialista (Bardo)",
+			"description": "<p>No 3° nível, escolha duas perícias na quais já seja proficiente. Seu bônus de proficiência é duplicado em qualquer teste de atributo que utilize uma dessas perícias. No 10° nível, você pode atribuir este mesmo benefício a outras duas perícias em que seja proficiente.</p>"
+		},
+		{
+			"id": "Expertise (Rogue)",
+			"name": "Manhas",
+			"description": "<p>No 1 ° nível, escolha duas de suas proficiências com perícias, ou uma de suas proficiências com perícias e sua proficiência com ferramentas de ladrão. Seu bônus de proficiência é duplicado em qualquer teste de atributo que utilize qualquer uma das proficiências escolhidas.</p><p>No 6° nível, você pode escolher mais duas proficiências (em perícias ou ferramentas de ladrão) para ganhar este benefício.</p>"
+		},
+		{
+			"id": "Extra Attack",
+			"name": "Ataque Extra",
+			"description": "<p>Você pode atacar duas vezes, em vez de uma, sempre que realizar a ação Ataque no seu turno.</p>"
+		},
+		{
+			"id": "Extra Attack (Fighter)",
+			"name": "Ataque Extra (Guerreiro)",
+			"description": "<p>Você pode atacar duas vezes, em vez de uma, sempre que realizar a ação Ataque no seu turno.</p><p>O número de ataques aumenta para três quando você atinge o 11º nível nesta classe e para quatro quando você atinge o 20º nível nesta classe.</p>"
+		},
+		{
+			"id": "Fast Hands",
+			"name": "Mão Leve",
+			"description": "<p>A partir do 3º nível, você pode usar a sua ação bônus concedida pela @Compendium[dnd5e.classfeatures.01pcLg6PRu5zGrsb]{Ação Ardilosa} para fazer um teste de Destreza (Prestidigitação), usar suas ferramentas de ladrão para desarmar uma armadilha ou abrir uma fechadura, ou realizar a ação de Usar um Objeto.</p>"
+		},
+		{
+			"id": "Fast Movement",
+			"name": "Movimento Rápido",
+			"description": "<p>Sua velocidade aumenta em 3 metros enquanto você não está usando uma armadura pesada.</p>"
+		},
+		{
+			"id": "Favored Enemy",
+			"name": "Inimigo Favorito",
+			"description": "<p>A partir do 1° nível, você tem experiência significativa estudando, rastreando, caçando e, até mesmo, falando com certos tipos de inimigos.</p>\n<p>Escolha um tipo de inimigo favorito: aberrações, feras, celestiais, constructos, dragões, elementais, feéricos, gigantes, gosmas, ínferos, monstruosidades, mortos-vivos ou plantas. Se preferir, pode selecionar duas raças humanoides (gnolls, ores, etc.) como inimigos favoritos.</p>\n<p>Você tem vantagem em testes de Sabedoria (Sobrevivência) para rastrear seus inimigos favoritos, bem como em testes de Inteligência para recuperar informações sobre eles.</p>\n<p>Quando você ganha essa característica, também aprende um idioma de sua escolha, falado por seus inimigos favoritos, se é que eles falam um.</p>\n<p>Você escolhe um inimigo favorito adicional, bem como um idioma associado, no 6º e 14º nível. Conforme você ganha níveis, suas escolhas devem refletir os tipos de monstros que você encontrou em suas aventuras.</p>\n<p>Se desejar, edite manualmente esta entrada e anote suas escolhas aqui:</p>\n<ul>\n<li><em>1º nível</em></li>\n<li><em>6º nível</em></li>\n<li><em>14º nível</em></li>\n</ul>"
+		},
+		{
+			"id": "Feral Instinct",
+			"name": "Instintos Primitivos",
+			"description": "<p>No 7º nível, seus instintos são tão aguçados que você tem vantagem nas rolagens de iniciativa.</p><p>Além disso, se você for surpreendido no início do combate e não estiver incapacitado, você pode agir normalmente no primeiro turno, mas apenas se entrar em fúria antes de fazer qualquer outra coisa naquele turno.</p>"
+		},
+		{
+			"id": "Feral Senses",
+			"name": "Sentidos Selvagens",
+			"description": "<p>No 18° nível, você ganha sentidos sobrenaturais que o ajudam a lutar contra criaturas invisíveis. Ao atacar uma criatura que não possa ver, não sofrerá desvantagem nas suas jogadas de ataque contra ela.</p><p>Você também está ciente da localização de qualquer criatura invisível a até 9 metros de distância, desde que ela não esteja escondida e você não esteja cego ou surdo.</p>"
+		},
+		{
+			"id": "Fiendish Resilience",
+			"name": "Resistência Ínfera",
+			"description": "<p>A partir do 10° nível, você pode escolher um tipo de dano quando você terminar um descanso curto ou longo. Você adquire resistência contra esse tipo de dano até você escolher um tipo de dano diferente com essa característica. Dano causado por armas mágicas ou armas de prata ignoram essa resistência.</p>"
+		},
+		{
+			"id": "Fighting Style",
+			"name": "Estilo de Luta",
+			"description": "<p>Você adota um estilo particular de luta como sua especialidade. Escolha uma das seguintes opções na lista de classe apropriada. Você não pode escolher o mesmo Estilo de Luta mais de uma vez, mesmo se puder escolher de novo.</p>\n<h3>Opções do Guerreiro</h3>\n<p>@Compendium[dnd5e.classfeatures.8YwPFv3UAPjWVDNf]{Arquearia}</p>\n<p>@Compendium[dnd5e.classfeatures.zSlV0O2rQMdoq6pB]{Defensivo}</p>\n<p>@Compendium[dnd5e.classfeatures.hCop9uJrWhF1QPb4]{Duelismo}</p>\n<p>@Compendium[dnd5e.classfeatures.3Nc6u9pyStByuJsm]{Combate com Armas Grandes}</p>\n<p>@Compendium[dnd5e.classfeatures.06NVMYf58Z76O85O]{Protetivo}</p>\n<p>@Compendium[dnd5e.classfeatures.mHcSjcHJ8oZu3hkb]{Combate com Duas Armas}</p>\n<h3>Opções do Paladino</h3>\n<p>@Compendium[dnd5e.classfeatures.zSlV0O2rQMdoq6pB]{Defensivo}</p>\n<p>@Compendium[dnd5e.classfeatures.hCop9uJrWhF1QPb4]{Duelismo}</p>\n<p>@Compendium[dnd5e.classfeatures.3Nc6u9pyStByuJsm]{Combate com Armas Grandes}</p>\n<p>@Compendium[dnd5e.classfeatures.06NVMYf58Z76O85O]{Protetivo}</p>\n<h3>Opções do Guardião</h3>\n<p>@Compendium[dnd5e.classfeatures.8YwPFv3UAPjWVDNf]{Arquearia}</p>\n<p>@Compendium[dnd5e.classfeatures.zSlV0O2rQMdoq6pB]{Defensivo}</p>\n<p>@Compendium[dnd5e.classfeatures.hCop9uJrWhF1QPb4]{Duelismo}</p>\n<p>@Compendium[dnd5e.classfeatures.mHcSjcHJ8oZu3hkb]{Combate com Duas Armas}</p>"
+		},
+		{
+			"id": "Fighting Style: Archery",
+			"name": "Estilo de Luta: Arquearia",
+			"description": "<p>Você ganha um bônus de +2 nas jogadas de ataque feitas com armas de combate à distância.</p>"
+		},
+		{
+			"id": "Fighting Style: Defense",
+			"name": "Estilo de Luta: Defensivo",
+			"description": "<p>Enquanto estiver vestindo armadura, você ganha um bônus de +1 na sua CA.</p>"
+		},
+		{
+			"id": "Fighting Style: Dueling",
+			"name": "Estilo de Luta: Duelismo",
+			"description": "<p>Quando você empunhar uma arma de ataque corpo-a-corpo em uma mão e nenhuma outra arma, você ganha +2 de bônus nas jogadas de dano com essa arma.</p>"
+		},
+		{
+			"id": "Fighting Style: Great Weapon Fighting",
+			"name": "Estilo de Luta: Combate com Armas Grandes",
+			"description": "<p>Ao tirar 1 ou 2 em um dos dados de dano causado por uma arma de combate corpo a corpo empunhada com ambas as mãos, você pode jogar o dado novamente e deve usar o novo resultado, mesmo que seja 1 ou 2. A arma precisa ter as propriedades duas mãos ou versátil para que você receba este benefício.</p>"
+		},
+		{
+			"id": "Fighting Style: Protection",
+			"name": "Estilo de Luta: Protetivo",
+			"description": "<p>Quando uma criatura que você possa ver atacar um alvo que esteja a até 1,5 metro de você, você pode usar sua reação para impor desvantagem na jogada de ataque da criatura. Você deve estar empunhando um escudo.</p>"
+		},
+		{
+			"id": "Fighting Style: Two Weapon Fighting",
+			"name": "Estilo de Luta: Combate com Duas Armas",
+			"description": "<p>Ao se engajar em combate com duas armas, você pode adicionar o seu modificador de atributo ao dano do segundo ataque.</p>"
+		},
+		{
+			"id": "Foe Slayer",
+			"name": "Matador de Inimigos Favoritos",
+			"description": "<p>No 20° nível, você se transforma em um caçador de inimigos sem igual. Uma vez por turno, pode adicionar seu modificador de Sabedoria a uma jogada de ataque ou de dano realizada contra seus inimigos favoritos. Você pode usar esta característica antes ou depois da jogada, mas isso deve ser feito antes de os efeitos da jogada serem aplicados.</p>"
+		},
+		{
+			"id": "Font of Inspiration",
+			"name": "Fonte de Inspiração",
+			"description": "<p>Ao alcançar o 5° nível, ao final de um descanso curto ou longo, você recupera todos os usos de @Compendium[dnd5e.classfeatures.EeGafsa17CapsH2j]{Inspiração de Bardo} que tiver gastado.</p>\n<p>Observe que o padrão do Foundry para o Inspiração de Bardo é definido para recuperação de descanso longo por padrão. Edite para um descanso curto ao atingir este nível.</p>"
+		},
+		{
+			"id": "Font of Magic",
+			"name": "Fonte de Magia",
+			"description": "<p>No 2° nível, você alcança uma profunda fonte de magia dentro de você. Essa fonte é representada pelos pontos de feitiçaria, que permitem que você crie uma variedade de efeitos mágicos.</p>\n<h3>Pontos de Feitiçaria</h3>\n<p>Você tem 2 pontos de feitiçaria, e ganha mais à medida que atinge níveis mais altos. Seu nível de feiticeiro é igual ao número de pontos de feitiçaria que você tem, então um feiticeiro de 4º nível tem 4 pontos de feitiçaria, um feiticeiro de 16º nível tem 16. Você nunca pode ter mais pontos de feitiçaria do que seu nível determina. Você recupera todos os pontos de feitiçaria gastos ao terminar um longo descanso.</p>\n<h3>Conjuração Flexivel</h3>\n<p>Você pode usar seus pontos de feitiçaria para ganhar espaços de magia adicionais ou sacrificar espaços de magia para ganhar pontos de feitiçaria adicionais. Você aprende outras maneiras de usar seus pontos de feitiçaria à medida que atinge níveis mais altos.</p>\n<p><em><strong>Criando Espaços de Magia</strong>. </em>Você pode transformar pontos de feitiçaria não gastos em um espaço de magia como uma ação bônus no seu turno. A tabela Criando Espaços de Magia mostra o custo de criar um espaço de magia de um determinado circulo. Você pode criar espaços de magia com circulo não superior a 5º.</p>\n<p>Qualquer espaço de magia que você criar com esta característica desaparece quando você termina um descanso longo.</p>\n<table border=\"1\"><caption>Criando Espaços de Magia</caption>\n<thead>\n<tr>\n<td><strong>Circulo de Espaço de Magia</strong></td>\n<td><strong>Custo de Pontos de Feitiçaria</strong></td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1º</td>\n<td>2</td>\n</tr>\n<tr>\n<td>2º</td>\n<td>3</td>\n</tr>\n<tr>\n<td>3º</td>\n<td>5</td>\n</tr>\n<tr>\n<td>4º</td>\n<td>6</td>\n</tr>\n<tr>\n<td>5º</td>\n<td>7</td>\n</tr>\n</tbody>\n</table>\n<p><em><strong>Convertendo um Espaço de Magia em Pontos de Feitiçaria</strong>. </em>Com uma ação bônus, no seu turno, você pode gastar um espaço de magia disponível e ganhar uma quantidade de pontos de feitiçaria igual ao circulo do espaço.</p>\n<p><em>**Nota do Foundry: </em><em>Use isso para rastrear todos os vários usos de pontos de feitiçaria para o feiticeiro. </em><em>Observe que os usos limitados são definidos com o padrão básico de 2 por descanso longo. Ajuste manualmente conforme necessário.</em></p>"
+		},
+		{
+			"id": "Frenzy",
+			"name": "Frenesi",
+			"description": "<p>Começando no momento que você escolhe essa trilha no 3° nível, você pode entrar num frenesi quando estiver em @Compendium[dnd5e.classfeatures.VoR0SUrNX5EJVPIO]{Fúria}. Se você desejar, pela duração da sua fúria, você pode realizar um único ataque corpo-a-corpo com arma, com uma ação bônus, em cada um de seus turnos após esse. Quando sua fúria acabar, você sofrerá um nível de exaustão (como descrito no apêndice A).</p>"
+		},
+		{
+			"id": "Grappler",
+			"name": "Imobilizador",
+			"description": "<p><em>Pré-requisito: Força 13 ou maior</em></p>\n<p>Você desenvolveu as habilidades necessárias para manter sua posição durante um agarramento em combate corpo a corpo.</p>\n<p>Eis os benefícios ganhos:</p>\n<ul>\n<li>Você tem vantagem nas jogadas de ataque feitas contra uma criatura que você esteja agarrando.</li>\n<li>Você pode usar sua ação para tentar imobilizar uma criatura que já tenha agarrado. Para tanto, faça outro teste de agarrar. Se for bem-sucedido, você e a criatura ficam imobilizados até o agarramento terminar.</li>\n</ul>"
+		},
+		{
+			"id": "Hide in Plain Sight",
+			"name": "Sumir de Vista",
+			"description": "<p>A partir do 10° nível, você pode dedicar 1 minuto a criar uma camuflagem para si mesmo, contanto que tenha acesso a lama fresca, terra, plantas, fuligem e materiais naturais semelhantes.</p><p>Uma vez camuflado, você pode tentar se esconder, posicionando- se contra uma superfície sólida que seja, no mínimo, tão alta e larga quanto você, como uma árvore ou uma parede. Você ganha um bônus de +10 em testes de Destreza (Furtividade) enquanto permanecer imóvel e sem executar ações. Caso se mova ou execute alguma ação ou reação, você deve se camuflar novamente para recuperar este benefício.</p>"
+		},
+		{
+			"id": "Holy Nimbus",
+			"name": "Resplendor Sagrado",
+			"description": "<p>No 20° nível, como uma ação, você pode emanar uma aura de luz solar. Durante 1 minuto, você emanará luz plena em um raio de 9 metros e meia-luz por mais 9 metros. Sempre que uma criatura inimiga iniciar o turno dela na área de luz plena, sofrerá 10 pontos de dano radiante.</p><p>Além disso, enquanto durar a luz, você tem vantagem em salvaguardas contra magias conjuradas por ínferos e mortos-vivos.</p><p>Uma vez usada esta característica, ela não pode ser usada novamente até que você termine um descanso longo.</p>"
+		},
+		{
+			"id": "Hunter's Prey",
+			"name": "Presa do Caçador",
+			"description": "<p>No 3° nível, você ganha uma das seguintes características, à sua escolha.</p>\n<p>@Compendium[dnd5e.classfeatures.5gx1O0sxK08awEO9]{Assassino de Colossos}</p>\n<p>@Compendium[dnd5e.classfeatures.StfmqK1twVfukpa0]{Matador de Gigantes}</p>\n<p>@Compendium[dnd5e.classfeatures.C6sHdDGmCMo0cYHd]{Destruidor de Hordas}</p>\n<p style=\"box-sizing: border-box; user-select: text; color: #191813; font-size: 13px;\">Você pode arrastar sua escolha acima para sua ficha de personagem e ela será atualizada automaticamente.</p>"
+		},
+		{
+			"id": "Hunter's Prey: Colossus Slayer",
+			"name": "Presa do Caçador: Assassino de Colossos",
+			"description": "<p>Sua tenacidade pode derrubar até mesmo os inimigos mais poderosos. Ao atingir uma criatura com um ataque armado, se os pontos de vida dela estiverem abaixo dos pontos de vida máximos, ela sofre 1d8 pontos de dano adicional. Você pode causar esse dano adicional apenas uma vez por turno.</p>"
+		},
+		{
+			"id": "Hunter's Prey: Giant Killer",
+			"name": "Presa do Caçador: Matador de Gigantes",
+			"description": "<p>Quando uma criatura Grande ou maior, que esteja a até 1,5 metro de distância, atacá-lo, você pode usar sua reação para contra-atacar.</p>"
+		},
+		{
+			"id": "Hunter's Prey: Horde Breaker",
+			"name": "Presa do Caçador: Destruidor de Hordas",
+			"description": "<p>Uma vez por turno, ao realizar um ataque armado, você pode realizar outro ataque, com a mesma arma contra outra criatura que esteja a até 1,5 metros do alvo do primeiro ataque e dentro do alcance da sua arma.</p>"
+		},
+		{
+			"id": "Hurl Through Hell",
+			"name": "Lançar no Inferno",
+			"description": "<p>A partir do 14° nível, ao atingir uma criatura com um ataque, você pode usar esta característica para transportá-la instantaneamente para os planos inferiores. A criatura desaparece e é lançada numa paisagem de pesadelos.</p><p>No final do seu próximo turno, o alvo retorna para o espaço que ocupava anteriormente ou para o espaço desocupado mais próximo. Se não se tratava de um ínfero, o alvo sofre 10d10 pontos de dano psíquico, por conta da experiência aterrorizante.</p><p>Uma vez usada esta característica, você só pode utilizá-la novamente após completar um descanso longo.</p>"
+		},
+		{
+			"id": "Improved Critical",
+			"name": "Critico Aprimorado",
+			"description": "<p>Seus ataques armados passam a causar um acerto crítico nas jogadas com resultados 19 ou 20.</p>"
+		},
+		{
+			"id": "Improved Divine Smite",
+			"name": "Destruição Divina Aprimorada",
+			"description": "<p>No 11° nível, você está tão imbuído do poder da justiça que todos os seus ataques feitos com uma arma de combate corpo a corpo estão carregados de poder divino.</p>\n<p>Sempre que você acertar uma criatura com uma arma de combate corpo a corpo, seu dano aumenta em 1d8 pontos de dano radiante. Se você também usar @Compendium[dnd5e.classfeatures.ySMPQ6zNSlvkrl2f]{Destruição Divina} com um ataque, deve adicionar o d8 acima com o dano adicional de Destruição Divina.</p>"
+		},
+		{
+			"id": "Indomitable",
+			"name": "Indomável",
+			"description": "<p>A partir do 9° nível, você pode testar novamente uma salvaguarda na qual tenha falhado. Se fizer isso, deve utilizar a nova jogada, não podendo usar esta característica novamente até completar um descanso longo.</p>\n<p>A partir do 13° nível, você pode usar esta característica duas vezes entre descansos longos, e a partir do 17° nível, três vezes (novamente, entre descansos longos).</p>\n<p><em style=\"box-sizing: border-box; user-select: text; color: #191813; font-size: 13px;\">**Nota do Foundry: Observe que os usos limitados são definidos com o padrão básico de 1 por descanso longo. Ajuste manualmente conforme necessário.</em></p>"
+		},
+		{
+			"id": "Indomitable Might",
+			"name": "Força Indomável",
+			"description": "<p>A partir do 18° nível, caso o seu resultado em um teste de Força seja menor do que o valor da sua Força, você pôde usar o valor da Força no lugar do resultado do teste.</p>"
+		},
+		{
+			"id": "Intimidating Presence",
+			"name": "Presença Intimidante",
+			"description": "<p>A partir do 10° nível, você pode usar sua ação para amedrontar alguém com sua presença ameaçadora.</p><p>Como alvo, escolha uma criatura que você possa ver e que esteja a até 9 metros de distância. Caso ela possa vê-lo ou ouvi-lo, precisa ser bem-sucedida em uma salvaguarda de Sabedoria (CD igual a 8 + seu bônus de proficiência + seu modificador de Carisma), ou ficará amedrontada por você até o fim do seu próximo turno. Nos turnos subsequentes, você poderá usar sua ação para estender a duração deste efeito sobre a criatura amedrontada até o final do seu próximo turno. Este efeito termina se, ao final do seu turno, a criatura estiver fora da sua linha de visão, ou a uma distância superior a 18 metros de você.</p><p>Caso a criatura seja bem-sucedida em sua salvaguarda, ela ficará imune aos efeitos desta característica por 24 horas.</p>"
+		},
+		{
+			"id": "Invocation: Agonizing Blast",
+			"name": "Invocação: Explosão Agonizante",
+			"description": "<p>Ao conjurar @Compendium[dnd5e.spells.Z9p1vezIn95jw1Yw]{Raio Místico}, adicione o seu modificador de Carisma ao dano causado por ela.</p>"
+		},
+		{
+			"id": "Invocation: Armor of Shadows",
+			"name": "Invocação: Armadura de Sombras",
+			"description": "<p>Você pode conjurar @Compendium[dnd5e.spells.CKZTpZlxj7hjjo2H]{Armadura Arcana} em si mesmo à vontade, sem gastar espaços de magia ou componentes materiais.</p>"
+		},
+		{
+			"id": "Invocation: Ascendant Step",
+			"name": "Invocação: Passo Ascendente",
+			"description": "<p>Você pode conjurar @Compendium[dnd5e.spells.MRxldJd6C4bsBo3O]{Levitação} em si mesmo à vontade, sem gastar um espaço de magia ou componentes materiais.</p>"
+		},
+		{
+			"id": "Invocation: Beast Speech",
+			"name": "Invocação: Idioma Bestial",
+			"description": "<p>Você pode conjurar @Compendium[dnd5e.spells.aL1F8fvYLtNzUbKu]{Falar com Animais} à vontade, sem gastar um espaço de magia.</p>"
+		},
+		{
+			"id": "Invocation: Beguiling Influence",
+			"name": "Invocação: Influência Enganadora",
+			"description": "<p>Você ganha proficiência nas perícias Enganação e Persuasão.</p>"
+		},
+		{
+			"id": "Invocation: Bewitching Whispers",
+			"name": "Invocação: Sussurros Sedutores",
+			"description": "<p>Você pode conjurar @Compendium[dnd5e.spells.P6f1PPKPd9BCb742]{Compulsão} uma vez usando um espaço de magia de bruxo. Você não pode fazer isso novamente até terminar um descanso longo.</p>"
+		},
+		{
+			"id": "Invocation: Book of Ancient Secrets",
+			"name": "Invocação: Livro dos Segredos Antigos",
+			"description": "<p>Você pode inscrever rituais mágicos no seu Livro das Sombras. Escolha duas magias de 1 ° círculo que possuam a tag ritual, da lista de magias de qualquer classe (as duas não precisam ser da mesma lista). As magias aparecem no livro e não contam para o número de magias que você conhece. Com o seu Livro de Sombras em mãos, você pode conjurar as magias escolhidas como rituais. Você não pode conjurá-las de outra forma, a não ser que as tenha aprendido por outros meios. Você também pode conjurar uma magia de bruxo que conheça como ritual se ela possuir a tag ritual.</p><p>Em suas aventuras você pode adicionar outras magias rituais ao seu Livro das Sombras. Ao encontrar uma magia desse tipo, pode adicioná-la ao livro caso o círculo dela seja igual ou menor que o seu nível como bruxo (arredondado para cima) e tenha tempo para transcrevê-la. Graças às tintas raras necessárias para a inscrição, o processo leva 2 horas e custa 50 PO por círculo da magia.</p>"
+		},
+		{
+			"id": "Invocation: Chains of Carceri",
+			"name": "Invocação: Correntes de Cárceri",
+			"description": "<p> Você pode conjurar @Compendium[dnd5e.spells.l9Ju5KE7bbn3WpTm]{Imobilizar Monstro} à vontade - mas apenas quando o alvo for um celestial, ínfero ou elemental - sem gastar um espaço de magia ou componentes materiais. Você precisa terminar um descanso longo antes de poder usar esta invocação na mesma criatura novamente.</p>"
+		},
+		{
+			"id": "Invocation: Devil's Sight",
+			"name": "Invocação: Visão Diabólica",
+			"description": "<p>Você pode ver normalmente na escuridão, tanto mágica quanto normal, a uma distância de até 36 metros.</p>"
+		},
+		{
+			"id": "Invocation: Dreadful Word",
+			"name": "Invocação: Vozes Pertubadoras",
+			"description": "<p>Você pode conjurar @Compendium[dnd5e.spells.9hQXdMSmerkTsHDe]{Confusão} uma vez usando um espaço de magia de bruxo. Você só pode tornar a fazê-lo após um descanso longo.</p>"
+		},
+		{
+			"id": "Invocation: Eldritch Sight",
+			"name": "Invocação: Visão Mística",
+			"description": "<p>Você pode conjurar @Compendium[dnd5e.spells.ghXTfe7sgCbgf1Q8]{Detectar Magia} à vontade, sem gastar um espaço de magia.</p>"
+		},
+		{
+			"id": "Invocation: Eldritch Spear",
+			"name": "Invocação: Lança Mística",
+			"description": "<p>Ao conjurar @Compendium[dnd5e.spells.Z9p1vezIn95jw1Yw]{Raio Místico}, o alcance desta magia passa a ser de 90 metros.</p>"
+		},
+		{
+			"id": "Invocation: Eyes of the Rune Keeper",
+			"name": "Invocação: Olhos do Protetor das Runas",
+			"description": "<p>Você pode ler qualquer texto escrito.</p>"
+		},
+		{
+			"id": "Invocation: Fiendish Vigor",
+			"name": "Invocação: Vigor Ínfero",
+			"description": "<p>Você pode conjurar @Compendium[dnd5e.spells.7e3QXF10hLNDEdr6]{Vitalidade Vazia} em si mesmo à vontade como uma magia de 1 ° círculo sem gastar um espaço de magia ou componentes materiais.</p>"
+		},
+		{
+			"id": "Invocation: Gaze of Two Minds",
+			"name": "Invocação: Olhar de Duas Mentes",
+			"description": "<p>Você pode usar sua ação para tocar um humanoide voluntário e perceber tudo através dos sentidos dele até o final de seu próximo turno. Enquanto você e a criatura estiverem no mesmo plano de existência, você pode usar suas ações dos próximos turnos para manter esta conexão, aumentando a duração para até o final do seu próximo turno. Enquanto estiver usando os sentidos do alvo, você se beneficia de qualquer sentido especial que ele possua, passando, contudo, a estar cego e surdo para o que está ao seu redor.</p>"
+		},
+		{
+			"id": "Invocation: Life Drinker",
+			"name": "Invocação: Sorvedouro de Vida",
+			"description": "<p>Ao atingir uma criatura com a sua arma de pacto, ela sofre dano necrótico igual ao seu modificador de Carisma (mínimo de 1).</p>"
+		},
+		{
+			"id": "Invocation: Mask of Many Faces",
+			"name": "Invocação: Máscara das Muitas Faces",
+			"description": "<p>Você pode conjurar @Compendium[dnd5e.spells.A3q2gTNqG6fvNGrv]{Disfarçar-se} à vontade, sem gastar um espaço de magia.</p>"
+		},
+		{
+			"id": "Invocation: Master of Myriad Forms",
+			"name": "Invocação: Mestre das Infindáveis Formas",
+			"description": "<p>Você pode conjurar @Compendium[dnd5e.spells.8RTDOt80u8aBv9qx]{Alterar-se} à vontade, sem gastar um espaço de magia.</p>"
+		},
+		{
+			"id": "Invocation: Minions of Chaos",
+			"name": "Invocação: Lacaios do Caos",
+			"description": "<p>Você pode conjurar @Compendium[dnd5e.spells.1LkZvINag7KqBmDR]{Invocar Elemental} uma vez usando um espaço de magia de bruxo. Você só pode tornar a fazê-lo após um descanso longo.</p>"
+		},
+		{
+			"id": "Invocation: Mire the Mind",
+			"name": "Invocação: Encharcar a Mente",
+			"description": "<p>Você pode conjurar @Compendium[dnd5e.spells.yqUDoxk4x0NWG5Bz]{Lentidão} uma vez usando um espaço de magia de bruxo. Você só pode tornar a fazê-lo após um descanso longo.</p>"
+		},
+		{
+			"id": "Invocation: Misty Visions",
+			"name": "Invocação: Visões Nebulosas",
+			"description": "<p>Você pode conjurar @Compendium[dnd5e.spells.BrBZdCCrJRIVg7YX]{Imagem Silenciosa} à vontade, sem gastar um espaço de magia ou componentes materiais.</p>"
+		},
+		{
+			"id": "Invocation: One With Shadows",
+			"name": "Invocação: Uno com as Sombras",
+			"description": "<p>Quando estiver em uma área de meia-luz ou escuridão, você pode usar sua ação para se tornar invisível, até se mover ou realizar uma ação ou reação.</p>"
+		},
+		{
+			"id": "Invocation: Otherwordly Leap",
+			"name": "Invocação: Salto Sobrenatural",
+			"description": "<p>Você pode conjurar @Compendium[dnd5e.spells.ZrTc23tToJ0JpH2h]{Salto} em si mesmo à vontade, sem gastar um espaço de magia ou componentes materiais.</p>"
+		},
+		{
+			"id": "Invocation: Repelling Blast",
+			"name": "Invocação: Explosão Repulsiva",
+			"description": "<p>Ao atingir uma criatura com @Compendium[dnd5e.spells.Z9p1vezIn95jw1Yw]{Raio Místico}, você pode empurrá-la até 3 metros para longe em uma linha reta.</p>"
+		},
+		{
+			"id": "Invocation: Sculptor of Flesh",
+			"name": "Invocação: Escultor de Carne",
+			"description": "<p>Você pode conjurar @Compendium[dnd5e.spells.04nMsTWkIFvkbXlY]{Polimorfia} uma vez usando um espaço de magia de bruxo. Você só pode tornar a fazê-lo após um descanso longo.</p>"
+		},
+		{
+			"id": "Invocation: Sign of Ill Omen",
+			"name": "Invocação: Sinal do Mal Agouro",
+			"description": "<p>Você pode conjurar @Compendium[dnd5e.spells.pO4zGe5LmFIYqJiL]{Rogar Maldição} uma vez usando um espaço de magia de bruxo. Você só pode tornar a fazê-lo após um descanso longo.</p>"
+		},
+		{
+			"id": "Invocation: Thief of Five Fates",
+			"name": "Invocação: Ladrão dos Cinco Destinos",
+			"description": "<p>Você pode conjurar @Compendium[dnd5e.spells.95K2aUhAGV9qXjnf]{Perdição} uma vez usando um espaço de magia de bruxo. Você só pode tornar a fazê-lo após um descanso longo.</p>"
+		},
+		{
+			"id": "Invocation: Thirsting Blade",
+			"name": "Invocação: Lâmina Sedenta",
+			"description": "<p>Você pode atacar com sua arma de pacto duas vezes, ao invés de uma, sempre que executar a ação Atacar no seu turno.</p>"
+		},
+		{
+			"id": "Invocation: Visions of Distant Realms",
+			"name": "Invocação: Visões dos Reinos Distantes",
+			"description": "<p>Você pode conjurar @Compendium[dnd5e.spells.ImlCJQwR1VL40Qem]{Olho Arcano} à vontade, sem gastar um espaço de magia.</p>"
+		},
+		{
+			"id": "Invocation: Voice of the Chain Master",
+			"name": "Invocação: Voz do Mestre das Correntes",
+			"description": "<p>Você pode se comunicar telepaticamente com seu familiar e perceber através dos sentidos dele enquanto estiverem no mesmo plano de existência. Além disso, ao usar os sentidos de seu familiar, você pode falar através dele com a sua própria voz, mesmo que normalmente ele seja incapaz disso.</p>"
+		},
+		{
+			"id": "Invocation: Whispers of the Grave",
+			"name": "Invocação: Lamento das Sepulturas",
+			"description": "<p>Você pode conjurar @Compendium[dnd5e.spells.I2LUSF5ogc7Bj62e]{Falar com os Mortos} à vontade, sem gastar um espaço de magia.</p>"
+		},
+		{
+			"id": "Invocation: Witch Sight",
+			"name": "Invocação: Visão da Bruxa",
+			"description": "<p>Você pode enxergar a verdadeira forma de qualquer metamorfo ou outra criatura oculta por magias de ilusão ou transmutação, contanto que ela esteja a até 9 metros de distância de você e dentro de sua linha de visão.</p>"
+		},
+		{
+			"id": "Jack of All Trades",
+			"name": "Pau pra Toda Obra",
+			"description": "<p>A partir do 2° nível, você pode adicionar metade do seu bônus de proficiência, arredondado para baixo, a qualquer teste de atributo que realizar e que já não inclua seu bônus de proficiência.</p>"
+		},
+		{
+			"id": "Ki",
+			"name": "Ki",
+			"description": "<p>A partir do 2° nível, seu treinamento permitiu que você controlasse a energia mística do ki. Seu acesso a essa energia é representado por um número de pontos de ki. Seu nível de monge determina o número de pontos que você tem, então um monge de 2º nível tem 2 pontos de ki, um monge de 16º nível tem 16.</p>\n<p>Você pode gastar esses pontos para abastecer várias características de chi. Você começa conhecendo três dessas características: @Compendium[dnd5e.classfeatures.5MwNlVZK7m6VolOH]{Ki: Torrente de Golpes}, @Compendium[dnd5e.classfeatures.TDglPcxIVEzvVSgK]{Ki: Defesa Paciente}, e @Compendium[dnd5e.classfeatures.yrSFIGTaQOH2PFRI]{Ki: Passo do Vento}. Você aprende mais características de ki à medida que adquire níveis nessa classe. </p>\n<p>Quando você gasta um ponto de ki, ele se torna indisponível até você terminar um descanso curto ou longo, no fim deste, todos os pontos de ki gastos volta para você. Você deve gastar, pelo menos, 30 minutos do descanso meditando para recuperar seus pontos de chi.</p>\n<p>Algumas das características de ki requerem que seu alvo realize uma salvaguarda para resistir ao efeito da característica. A CD da salvaguarda é calculada a segui:</p>\n<p><em><strong>CD de salvaguarda de Ki</strong> = 8 + bônus de proficiência + seu modificador de Sabedoria</em></p>\n<p><em>**Nota do Foundry: </em><em>Use isso para rastrear todos os vários usos do ki para o monge. </em><em>Observe que os usos limitados estão definidos como o padrão base de 2 por descanso curto ou longo. Ajuste manualmente conforme necessário.</em></p>"
+		},
+		{
+			"id": "Ki-Empowered Strikes",
+			"name": "Golpes Potencializados com Ki",
+			"description": "<p>A partir do 6° nível, seus ataques desarmados contam como ataques mágicos, para efeito de superar resistência e imunidade a ataques e dano não-mágicos.</p>"
+		},
+		{
+			"id": "Ki: Diamond Soul",
+			"name": "Ki: Alma de Diamante",
+			"description": "<p>Começando no 14° nível, seu domínio do ki lhe garante proficiência em todas as salvaguardas. Além disso, sempre que você realizar uma salvaguarda e falhar, poderá gastar 1 ponto de ki para testá-la novamente, devendo, contudo, ficar com o segundo resultado.</p>"
+		},
+		{
+			"id": "Ki: Empty Body",
+			"name": "Ki: Corpo Vazio",
+			"description": "<p>A partir do 18° nível, você pode usar sua ação para gastar 4 pontos de ki e ficar invisível por 1 minuto. Durante esse tempo, também fica resistente a todos os tipos de dano, exceto à energia.</p>\n<p>Você também pode gastar 8 pontos de ki para conjurar a magia @Compendium[dnd5e.spells.TIoadMIsUKD4edXi]{Projeção Astral}, sem necessitar de componentes materiais, embora não seja possível levar nenhuma outra criatura consigo.</p>"
+		},
+		{
+			"id": "Ki: Flurry of Blows",
+			"name": "Ki: Torrente de Golpes",
+			"description": "<p>Imediatamente após executar a ação Atacar no seu turno, você pode gastar 1 ponto de ki para realizar dois ataques desarmados como sua ação bônus.</p>"
+		},
+		{
+			"id": "Ki: Patient Defense",
+			"name": "Ki: Defesa Paciente",
+			"description": "<p>Você pode usar 1 ponto de ki para executar a ação Esquivar como sua ação bônus do turno.</p>"
+		},
+		{
+			"id": "Ki: Quivering Palm",
+			"name": "Ki: Palma Vibrante",
+			"description": "<p>No 17° nível, você ganha a habilidade de criar vibrações letais no corpo de outra pessoa. Ao atingir uma criatura com um golpe desarmado, você pode usar 3 pontos de ki para iniciar vibrações imperceptíveis, que duram por um número de dias igual ao seu nível de monge. Essas vibrações são inofensivas, a não ser que você use uma ação para encerrá-las. Para fazê-lo, tanto você quanto o alvo devem estar no mesmo plano de existência. Quando você usa essa ação, a criatura precisa realizar uma salvaguarda de Constituição. Se falhar, tem seus pontos de vida reduzidos a O. Se obtiver sucesso, recebe 10d10 pontos de dano necrótico.</p><p>Apenas uma criatura pode ser mantida sob o efeito desta característica. Você pode escolher encerrar as vibrações de maneira inofensiva sem usar uma ação.</p>"
+		},
+		{
+			"id": "Ki: Step of the Wind",
+			"name": "Ki: Passos do Vento",
+			"description": "<p>Você pode gastar 1 ponto de ki para executar a ação Desengajar ou Correr como sua ação bônus do turno. Sua distância de salto é dobrada.</p>"
+		},
+		{
+			"id": "Ki: Stunning Strike",
+			"name": "Ki: Golpe Atordoante",
+			"description": "<p>A partir do 5° nível, você pode interferir no fluxo de ki no corpo de um oponente. Ao atingir uma criatura com uma arma de combate corpo a corpo, você pode gastar 1 ponto de ki para tentar um golpe atordoante. O alvo deve ser bem-sucedido em uma salvaguarda de Constituição, ou ficará atordoado até o final do seu próximo turno.</p>"
+		},
+		{
+			"id": "Land's Stride (Circle of the Land)",
+			"name": "Passo da Terra (Círculo da Terra)",
+			"description": "<p>A partir do 6° nível, movimentar-se através de terreno difícil, não-mágico, não custa a você nenhum movimento adicional. Você também é capaz de mover-se por vegetação não mágica sem ser atrasado e sem receber dano, ainda que ela possua espinhos, espículas ou perigos semelhantes.</p>\n<p>Além disso, você tem vantagem em salvaguardas contra plantas que ou manipuladas magicamente para impedir movimento, como aquelas criadas pela magia @Compendium[dnd5e.spells.gMrWeG8fMDPRFiVe]{Emaranhar}.</p>"
+		},
+		{
+			"id": "Land's Stride (Ranger)",
+			"name": "Passo da Terra (Guardião)",
+			"description": "<p>A partir do 8° nível, mover-se através de terreno difícil, não mágico, não lhe custa movimento adicional. Você também pode passar por vegetação não mágica sem ser atrasado e sem sofrer dano.</p>\n<p>Além disso, você tem vantagem em salvaguardas contra plantas criadas ou manipuladas magicamente para impedir movimento, como aquelas criadas pela magia @Compendium[dnd5e.spells.gMrWeG8fMDPRFiVe]{Emaranhar}.</p>"
+		},
+		{
+			"id": "Lay on Hands",
+			"name": "Cura pelas Mãos",
+			"description": "<p>Seu toque abençoado pode curar ferimentos. Você tem uma reserva de poder curativo que se enche quando você realiza um descanso longo. Com essa reserva, você pode restaurar um número total de pontos de vida igual ao seu nível de paladino x 5.</p>\n<p>Com uma ação, você pode tocar uma criatura e sugar poder da sua reserva para restaurar um número de pontos de vida da criatura, até o máximo de pontos restantes na reserva.</p>\n<p>Alternativamente, você pode gastar 5 pontos de cura da sua reserva de cura para curar o alvo de uma doença ou neutralizar um veneno que o esteja afetando. Você pode curar múltiplas doenças e neutralizar múltiplos venenos com um único uso de Cura pelas Mãos, gastando pontos de vida separadamente para cada um.</p>\n<p>Essa característica não gera nenhum efeito em mortos-vivos e constructos.</p>\n<p><em style=\"box-sizing: border-box; user-select: text; color: #191813; font-size: 13px;\">**Nota do Foundry: Observe que o uso limitado é definido com o padrão básico de 5 pontos de poder de cura por descanso longo. Ajuste manualmente conforme necessário.</em></p>"
+		},
+		{
+			"id": "Magical Secrets",
+			"name": "Segredos Mágicos",
+			"description": "<p>No 10° nível, você usurpou conhecimento mágico de um vasto espectro de disciplinas.</p><p>Escolha duas magias de qualquer classe, incluindo essa. A magia que você escolher deve ser de um circulo que você possa conjurar, como mostrado na tabela O Bardo, ou um truque.</p><p>As magias escolhidas contam como magias de bardo para você e já estão incluídas no número da coluna Magias Conhecidas da tabela O Bardo.</p><p>Você aprende duas magias adicionais de qualquer classe no 14° nível e novamente no 18° nível.</p>"
+		},
+		{
+			"id": "Martial Archetype",
+			"name": "Arquétipo Marcial",
+			"description": "<p>No 3º nível, você escolhe um arquétipo o qual se esforçará para seguir as técnicas e estilos de combate dele, como Campeão. O arquétipo confere a você características especiais no 3º nível e de novo no 7º, 10º, 15º e 18º nível.</p>"
+		},
+		{
+			"id": "Martial Arts",
+			"name": "Artes Marciais",
+			"description": "<p>No 1° nível, sua prática nas artes marciais concede a você maestria nos estilos de combate que utilizam golpes desarmados e armas de monge, que são as espadas curtas e quaisquer armas simples corpo-a-corpo que não tenham a propriedade duas mãos ou pesada. Você ganha os seguintes benefícios enquanto estiver desarmado ou empunhando uma arma de monge e não estiver vestindo nenhuma armadura ou empunhando um escudo:</p>\n<ul>\n<li>\n<p>Você pode usar Destreza ao invés de Força para as jogadas de ataque e dano dos seus golpes desarmados e de suas armas de monge.</p>\n</li>\n<li>\n<p>Você pode rolar um d4 no lugar do dano normal dos seus golpes desarmados e armas de monge. Esse dado muda à medida que você adquire níveis de monge, como mostrado na coluna Artes Marciais na tabela O Monge.</p>\n</li>\n<li>\n<p>Quando você usa a ação de Ataque com um golpe desarmado ou uma arma de monge no seu turno, você pode realizar um golpe desarmado com uma ação bônus. Por exemplo, se você realizar a ação de Ataque com um bordão, você também poderá realizar um golpe desarmado com uma ação bônus, assumindo que você ainda não realizou uma ação bônus nesse turno.</p>\n</li>\n</ul>\n<p>Determinados monastérios usam formas especializadas de armas de monge. Por exemplo, você pode usar uma clava feita por dois pedaços de madeira conectados por uma pequena corrente (chamado de nunchaku) ou uma foice com uma estranha lâmina fina (chamada de kama). Qualquer que seja o nome que você use para uma arma de monge, você pode usar as estatísticas de jogo mostradas para as armas.</p>"
+		},
+		{
+			"id": "Metamagic",
+			"name": "Metamágica",
+			"description": "<p>No 3° nível, você adquire a habilidade de distorcer suas magias para se adequarem às suas necessidades. Você ganha duas das seguintes opções de Metamágica, à sua escolha. Você adquire outra no 10° e 17° nível. Você pode usar apenas uma opção de Metamágica em uma magia quando a conjura, a não ser que esteja descrito o contrário.</p>\n        <p><a class=\"entity-link\" data-pack=\"dnd5e.classfeatures\" data-id=\"zElYrOcCFFMhB6Xl\" draggable=\"true\"><i class=\"fas fa-suitcase\"></i> Magia Cautelosa</a></p>\n        <p><a class=\"entity-link\" data-pack=\"dnd5e.classfeatures\" data-id=\"DZpAa3LzMNBexbmX\" draggable=\"true\"><i class=\"fas fa-suitcase\"></i> Magia Distante</a></p>\n        <p><a class=\"entity-link\" data-pack=\"dnd5e.classfeatures\" data-id=\"IWpe0Y9uAStHGiH1\" draggable=\"true\"><i class=\"fas fa-suitcase\"></i> Magia Potencializada</a></p>\n        <p><a class=\"entity-link\" data-pack=\"dnd5e.classfeatures\" data-id=\"tQxlKyAx9sgPrbgj\" draggable=\"true\"><i class=\"fas fa-suitcase\"></i> Magia Persistente</a></p>\n        <p><a class=\"entity-link\" data-pack=\"dnd5e.classfeatures\" data-id=\"tNG2qi9zhmXEkecA\" draggable=\"true\"><i class=\"fas fa-suitcase\"></i> Magia Agravada</a></p>\n        <p><a class=\"entity-link\" data-pack=\"dnd5e.classfeatures\" data-id=\"nViGf6bZ6DQAJhkw\" draggable=\"true\"><i class=\"fas fa-suitcase\"></i> Magia Acelerada</a></p>\n        <p><a class=\"entity-link\" data-pack=\"dnd5e.classfeatures\" data-id=\"fXa0DMhoVLtbBu9l\" draggable=\"true\"><i class=\"fas fa-suitcase\"></i> Magia Sutil</a></p>\n        <p><a class=\"entity-link\" data-pack=\"dnd5e.classfeatures\" data-id=\"Qb391hakCfmH4w8p\" draggable=\"true\"><i class=\"fas fa-suitcase\"></i> Magia Duplicada</a></p>\n        <p style=\"box-sizing: border-box; user-select: text; color: #191813; font-size: 13px;\">Você pode arrastar suas escolhas acima para a sua ficha de personagem e ela será atualizada automaticamente.</p>"
+		},
+		{
+			"id": "Metamagic: Careful Spell",
+			"name": "Metamágica: Magia Cuidadosa",
+			"description": "<p>Quando você conjurar uma magia que obriga outras criaturas a realizarem uma salvaguarda, você pode proteger algumas dessas criaturas da força total da magia. Para tanto, você gasta 1 ponto de feitiçaria e escolhe um número dessas criaturas até o seu modificador de Carisma (mínimo de uma criatura). Uma criatura escolhida passa automaticamente na salvaguarda contra a magia.</p>"
+		},
+		{
+			"id": "Metamagic: Distant Spell",
+			"name": "Metamágica: Magia Distante",
+			"description": "<p>Quando você conjurar uma magia que tenha distância de 1,5 metro ou maior, você pode gastar 1 ponto de feitiçaria para dobrar o alcance da magia.</p><p>Quando você conjura uma magia com alcance de toque, você pode gastar 1 ponto de feitiçaria para mudar o alcance da magia para 9 metros.</p>"
+		},
+		{
+			"id": "Metamagic: Empowered Spell",
+			"name": "Metamágica: Magia Potencializada",
+			"description": "<p>Quando você rola o dano de uma magia, você pode gastar 1 ponto de feitiçaria para jogar novamente um número de dados de dano, até seu modificador de Carisma (mínimo de um). Você deve usar a nova rolagem.</p><p>Você pode usar Magia Potencializada mesmo que você já tenha usado uma opção diferente de Metamágica durante a conjuração da magia.</p>"
+		},
+		{
+			"id": "Metamagic: Extended Spell",
+			"name": "Metamágica: Magia Estendida",
+			"description": "<p>Quando você conjurar uma magia que tenha duração de 1 minuto ou maior, você pode gastar 1 ponto de feitiçaria para dobrar sua duração, até uma duração máxima de 24 horas.</p>"
+		},
+		{
+			"id": "Metamagic: Heightened Spell",
+			"name": "Metamágica: Magia Aumentada",
+			"description": "<p>Quando você conjura uma magia que obriga uma criatura a realizar uma salvaguarda contra o seu efeito, você pode gastar 3 pontos de feitiçaria para dar desvantagem a um alvo da magia na primeira salvaguarda feita contra ela.</p>"
+		},
+		{
+			"id": "Metamagic: Quickened Spell",
+			"name": "Metamágica: Magia Acelerada",
+			"description": "<p>Quando você conjurar uma magia que tenha um tempo de conjuração de 1 ação, você pode gastar 2 pontos de feitiçaria para mudar o tempo de conjuração para 1 ação bônus para essa magia.</p>"
+		},
+		{
+			"id": "Metamagic: Subtle Spell",
+			"name": "Metamágica: Magia Sutil",
+			"description": "<p>Quando você conjurar uma magia, você pode gastar 1 ponto de feitiçaria para fazê-lo sem qualquer componente somático ou verbal.</p>"
+		},
+		{
+			"id": "Metamagic: Twinned Spell",
+			"name": "Metamágica: Magia Duplicada",
+			"description": "<p>Quando você conjurar uma magia que seja incapaz de ter mais de uma criatura como alvo no circulo atual dela e não possua alcance pessoal, você pode gastar um número de pontos de feitiçaria igual ao circulo da magia para ter uma segunda criatura, no alcance da magia, como alvo (1 ponto de feitiçaria se a magia for um truque).</p>\n<p>Para ser elegível, uma magia deve ser incapaz de alvejar mais de uma criatura no circulo atual da magia. Por exemplo, @Compendium[dnd5e.spells.41JIhpDyM9Anm7cs]{Misseis Mágicos} e @Compendium[dnd5e.spells.7u2obDvuvtZBkTfq]{Raio Ardente} não são elegíveis, mas @Compendium[dnd5e.spells.ctW81uiX56xZR2c5]{Raio de Gelo} é.</p>"
+		},
+		{
+			"id": "Mindless Rage",
+			"name": "Fúria Irracional",
+			"description": "<p>A partir do 6° nível, você não pode ser enfeitiçado ou amedrontado enquanto estiver em fúria. Se você estava enfeitiçado ou amedrontado quando entrou em @Compendium[dnd5e.classfeatures.VoR0SUrNX5EJVPIO]{Fúria}, o efeito é suspenso pela duração da fúria.</p>"
+		},
+		{
+			"id": "Monastic Tradition",
+			"name": "Tradição Monástica",
+			"description": "<p>Quando você alcança o 3° nível, você ingressa numa tradição monástica, como o Caminho da Mão Aberta. Sua tradição concede a você características no 3° nível e novamente no 6°, 11° e 17° nível.</p>"
+		},
+		{
+			"id": "Multiattack",
+			"name": "Ataque Múltiplo",
+			"description": "<p>No 11° nível, você ganha uma das seguintes características, à sua escolha.</p>\n        <p><a class=\"entity-link\" data-pack=\"dnd5e.classfeatures\" data-id=\"l7W6JB9yWLLLtQKP\" draggable=\"true\"><i class=\"fas fa-suitcase\"></i> Saraivada</a></p>\n        <p><a class=\"entity-link\" data-pack=\"dnd5e.classfeatures\" data-id=\"1DY8w3CXeD7PHDXF\" draggable=\"true\"><i class=\"fas fa-suitcase\"></i> Ataque Giratório</a></p>\n        <p style=\"box-sizing: border-box; user-select: text; color: #191813; font-size: 13px;\">Você pode arrastar sua escolha acima para sua ficha de personagem e ela será atualizada automaticamente.</p>"
+		},
+		{
+			"id": "Multiattack: Volley",
+			"name": "Ataque Múltiplo: Saraivada",
+			"description": "<p>Você pode usar sua ação para realizar um ataque à distância contra qualquer número de criatura a até 3 metros de um ponto que você possa ver, no alcance da sua arma. Você deve ter munição para cada alvo, como normal, e você realiza uma jogada de ataque separada para cada alvo.</p>"
+		},
+		{
+			"id": "Multiattack: Whirlwind Attack",
+			"name": "Ataque Múltiplo: Ataque Giratório",
+			"description": "<p>Você pode usar sua ação para realizar um ataque corpo-a-corpo contra qualquer número de criaturas a até 1,5 metro de você, realizando uma jogada de ataque separada para cada alvo.</p>"
+		},
+		{
+			"id": "Mystic Arcanum (6th-Level Spell)",
+			"name": "Arcana Mística (Magia de 6° circulo)",
+			"description": "<p>No 11° nível seu patrono lhe revela um segredo mágico chamado arcana: uma magia de 6° círculo da lista de magias do bruxo à sua escolha.</p>\n<p>Você pode conjurar sua magia arcana uma vez sem gastar um espaço de magia. Você deve terminar um descanso longo antes de poder fazer isso novamente.</p>\n<p>Em níveis mais altos, você ganha mais magias de bruxo que podem ser conjuradas dessa maneira: uma de 7° círculo, à sua escolha, no 13º nível; uma de 8 ° círculo no 15 ° nível e uma de 9° círculo no 17° nível. Você recupera todos os usos da sua Arcana Mística ao terminar um descanso longo.</p>\n<p>Se desejar, edite manualmente esta entrada e anote sua escolha aqui:</p>\n<ul>\n<li><em>Magia de 6° círculo</em></li>\n</ul>"
+		},
+		{
+			"id": "Mystic Arcanum (7th-Level Spell)",
+			"name": "Arcana Mística (Magia de 7° Circulo)",
+			"description": "<p>Escolha uma magia de 7° círculo da lista de magias do bruxo à sua escolha.</p>\n<p>Você pode conjurar sua magia arcana uma vez sem gastar um espaço de magia. Você deve terminar um descanso longo antes de poder fazer isso novamente.</p>\n<p>Em níveis mais altos, você ganha mais magias de bruxo que podem ser conjuradas dessa maneira: uma de 8° círculo no 15° nível e uma de 9° círculo no 17° nível. Você recupera todos os usos da sua Arcana Mística ao terminar um descanso longo.</p>\n<p><span style=\"color: #191813; font-size: 13px;\">Se desejar</span>, edite manualmente esta entrada e anote sua escolha aqui:</p>\n<ul>\n<li><em>Magia de 7° círculo</em></li>\n</ul> "
+		},
+		{
+			"id": "Mystic Arcanum (8th-Level Spell)",
+			"name": "Arcana Mística (Magia de 8° Circulo)",
+			"description": "<p>Escolha uma magia de 8° círculo da lista de magias do bruxo à sua escolha.</p>\n<p>Você pode conjurar sua magia arcana uma vez sem gastar um espaço de magia. Você deve terminar um descanso longo antes de poder fazer isso novamente.</p>\n<p>Em níveis mais altos, você ganha mais magias de bruxo que podem ser conjuradas dessa maneira: uma de 9° círculo no 17° nível. Você recupera todos os usos da sua Arcana Mística ao terminar um descanso longo.</p>\n<p><span style=\"color: #191813; font-size: 13px;\">Se desejar</span>, edite manualmente esta entrada e anote sua escolha aqui:</p>\n<ul>\n<li><em>Magia de 8° círculo</em></li>\n</ul> "
+		},
+		{
+			"id": "Mystic Arcanum (9th-Level Spell)",
+			"name": "Arcana Mística (Magia de 9° Circulo)",
+			"description": "<p>Escolha uma magia de 9° círculo da lista de magias do bruxo à sua escolha.</p>\n<p>Você pode conjurar sua magia arcana uma vez sem gastar um espaço de magia. Você deve terminar um descanso longo antes de poder fazer isso novamente.</p>\n<p>Você recupera todos os usos da sua Arcana Mística ao terminar um descanso longo.</p>\n<p><span style=\"color: #191813; font-size: 13px;\">Se desejar</span>, edite manualmente esta entrada e anote sua escolha aqui:</p>\n<ul>\n<li><em>Magia de 9° círculo</em></li>\n</ul> "
+		},
+		{
+			"id": "Natural Explorer",
+			"name": "Explorador Natural",
+			"description": "<p>Você está particularmente familiarizado com um tipo de ambiente natural e é capaz de viajar e sobreviver nessas regiões. Escolha um tipo de terreno favorito: ártico, litoral, deserto, floresta, campo, montanha ou pântano. Quando você faz um teste de Inteligência ou Sabedoria relacionado ao seu terreno favorito, seu bônus de proficiência é dobrado se você estiver usando uma habilidade na qual você seja proficiente.</p>\n<p>Ao viajar por uma hora ou mais em seu terreno favorito, você ganha os seguintes benefícios:</p>\n<ul>\n<li>Terrenos difíceis não atrasam a viagem do seu grupo.</li>\n<li>Seu grupo não pode se perder, exceto por meios mágicos.</li>\n<li>Mesmo quando você está envolvido em outra atividade durante a viagem (como forrageamento, navegação ou rastreamento), você permanece alerta ao perigo.</li>\n<li>Se estiver viajando sozinho, você pode mover-se furtivamente em um ritmo normal.</li>\n<li>Quando você forrageia, encontra duas vezes mais comida do que normalmente.</li>\n<li>Enquanto rastreia outras criaturas, você também aprende seu número exato, seus tamanhos e há quanto tempo elas passaram pela área.</li>\n</ul>\n<p>Você escolhe terrenos favoritos adicionais no 6° e 10° níveis.</p>\n<p>Se for útil, edite manualmente esta entrada e anote suas escolhas aqui:</p>\n<ul>\n<li><em>1º nível</em></li>\n<li><em>6º nível</em></li>\n<li><em>10º nível</em></li>\n</ul>"
+		},
+		{
+			"id": "Natural Recovery",
+			"name": "Recuperação Natural",
+			"description": "<p>A partir do 2° nível, você pode recuperar um pouco da sua energia mágica ao entrar em meditação e comunhão com a natureza.</p><p>Durante um descanso curto você escolhe espaços gastos de magia que serão recuperados. A somatória dos círculos desses espaços deve ser menor ou igual à metade do seu nível como druida (arredondado para cima), e nenhum deles pode ser de 6° círculo ou superior.  Você não pode usar esta característica novamente ate terminar um descanso longo.</p><p>Por exemplo, se estiver no 4° nível de druida, você pode recuperar até dois espaços de magia, que podem ser um de 2° círculo ou dois de 1 ° círculo.</p>"
+		},
+		{
+			"id": "Nature's Sanctuary",
+			"name": "Santuário Natural",
+			"description": "<p>Quando você atinge o 14º nível, as criaturas do mundo natural sentem sua conexão com a natureza e hesitam em atacá-lo.</p><p>Quando uma criatura besta ou planta o ataca, aquela criatura deve fazer uma salvaguarda de Sabedoria contra sua CD de magias de druida. Em uma falha, a criatura deve escolher um alvo diferente ou o ataque falha automaticamente. Em um teste bem-sucedido, a criatura fica imune a esse efeito por 24 horas.</p><p>A criatura está ciente desse efeito antes de fazer seu ataque contra você.</p>"
+		},
+		{
+			"id": "Nature's Ward",
+			"name": "Proteção Natural",
+			"description": "<p>Ao atingir o 10º nível, você não pode ser encantado ou amedrontado por elementais ou feéricos, e fica imune a venenos e doenças.</p>"
+		},
+		{
+			"id": "Open Hand Technique",
+			"name": "Técnica da Mão Aberta",
+			"description": "<p>Começando quando você escolhe esta tradição no 3º nível, você pode manipular o ki do seu inimigo quando você controla o seu próprio.</p>\n<p>Sempre que você acertar uma criatura com um dos ataques concedidos por seu @Compendium[world.class-features-srd-v2.5MwNlVZK7m6VolOH]{Ki: Rajada de Golpes}, você pode impor um dos seguintes efeitos a esse alvo:</p>\n<ul>\n<li>Ela precisa ser bem-sucedida em uma salvaguarda de Destreza ou cairá.</li>\n<li>Ela deve fazer uma salvaguarda de Força. Se falhar, você pode empurrá-la até 4,5 metros de distância de você.</li>\n<li>Ela não pode executar reações até o final do seu próximo turno.</li>\n</ul>"
+		},
+		{
+			"id": "Otherworldly Patron",
+			"name": "Patrono Sobrenatural",
+			"description": "<p>No 1º, você fez uma barganha com um ser de outro mundo, como o Ínfero. Sua escolha concede a você características no 1º nível e novamente no 6º, 10º e 14º níveis.</p>"
+		},
+		{
+			"id": "Overchannel",
+			"name": "Sobrecarga",
+			"description": "<p>A partir do 14° nível, você pode aumentar o poder de suas magias mais simples. Ao conjurar uma magia de mago de 1 ° ao 5° círculo que cause dano, você pode causar dano máximo.</p>\n<p>Ao fazê-lo pela primeira vez, você não sofre nenhum efeito adverso. Se usar esta característica novamente antes de um descanso longo, sofrerá 2d12 pontos de dano necrótico para cada círculo da magia, imediatamente após conjurá-la. Cada vez que você voltar a usar esta característica antes de um descanso longo, o dano necrótico por círculo da magia aumenta em 1d12. Esse dano ignora resistência e imunidade.</p>\n<p><em>**Nota do Foundry: Observe que o uso limitado é para rastrear a primeira instância segura de Sobrecarga. A fórmula de dano é definida com o padrão básico de 2d12. O teste Versátil é definido como 1d12 para adicionar qualquer dano adicional.</em></p>"
+		},
+		{
+			"id": "Pact Boon",
+			"name": "Dádiva do Pacto",
+			"description": "<p>No 3º nível, seu patrono sobrenatural concede um presente a você por seu serviço leal. Você ganha uma das seguintes características de sua escolha.</p>\n        <p><a class=\"entity-link\" data-pack=\"dnd5e.classfeatures\" data-id=\"9dSSa68mIPoX2ezA\" draggable=\"true\"><i class=\"fas fa-suitcase\"></i> Pacto da Lâmina</a></p>\n        <p><a class=\"entity-link\" data-pack=\"dnd5e.classfeatures\" data-id=\"Ic1CSjvbWKudVUv9\" draggable=\"true\"><i class=\"fas fa-suitcase\"></i> Pacto da Corrente</a></p>\n        <p><a class=\"entity-link\" data-pack=\"dnd5e.classfeatures\" data-id=\"MYM908WLZ1lVvA1u\" draggable=\"true\"><i class=\"fas fa-suitcase\"></i> Pacto do Tomo</a></p>\n        <p><span style=\"color: #191813; font-size: 13px;\">Você pode arrastar sua escolha acima para sua ficha de personagem e ela será atualizada automaticamente.</span></p>"
+		},
+		{
+			"id": "Pact Magic",
+			"name": "Magia de Pacto",
+			"description": "<p>Sua pesquisa arcana e a magia concedida a você por seu patrono proporcionaram-lhe facilidade com os magias.</p>\n<h3>Truques</h3>\n<p>Você conhece dois truques de sua escolha na lista de magias do bruxo. Você aprende truques adicionais de bruxo de sua escolha em níveis mais altos, como mostrado na coluna Truques da tabela O Bruxo.</p>\n<h3>Espaços de Magia</h3>\n<p>A tabela O Bruxo mostra quantos espaços de magia você tem para conjurar suas magias de 1º círculo e superiores. A tabela também mostra qual o círculo desses espaços - todos os seus espaços de magia são do mesmo círculo. Para conjurar uma magia de bruxo de 1º círculo ou maior, você deve gastar um espaço de magia cujo círculo seja igual ou maior que o da magia, recuperando todos os espaços gastos após um período de descanso curto ou longo.</p>\n<p>Por exemplo, no 5º nível você tem dois espaços de magia de 3º círculo. Para conjurar a magia de 1º círculo raio de bruxa, você deve gastar um destes espaços e conjurá-la como uma magia de 3º círculo.</p>\n<h3>Magias Conhecidas de Acordo com o Nível</h3>\n<p>No 1º nível você conhece duas magias de 1º círculo que devem ser escolhidas da tabela de magias do bruxo.</p>\n<p>A coluna Magias da tabela O Bruxo mostra quando você aprende novas magias de bruxo, de 1º círculo e superiores, à sua escolha. Uma magia escolhida por você não pode ser de um círculo maior do que o mostrado na coluna Círculo dos Espaços na tabela para o seu nível. Ao alcançar o 6º nível, por exemplo, você aprende uma nova magia de bruxo de 1º, 2º ou 3º círculos.</p>\n<p>Além disso, ao ganhar níveis nesta classe, você pode trocar uma das magias do bruxo, a qual também deve pertencer a um círculo para o qual você tenha espaços de magia.</p>\n<table border=\"0\" cellspacing=\"0\">\n<thead>\n<tr>\n<td>Nível</td>\n<td>Truques</td>\n<td>Magias</td>\n<td>Espaços de Magia</td>\n<td>Círculo dos Espaços</td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1º</td>\n<td>2</td>\n<td>2</td>\n<td>1</td>\n<td>1º</td>\n</tr>\n<tr>\n<td>2º</td>\n<td>2</td>\n<td>3</td>\n<td>2</td>\n<td>1º</td>\n</tr>\n<tr>\n<td>3º</td>\n<td>2</td>\n<td>4</td>\n<td>2</td>\n<td>2º</td>\n</tr>\n<tr>\n<td>4º</td>\n<td>3</td>\n<td>5</td>\n<td>2</td>\n<td>2º</td>\n</tr>\n<tr>\n<td>5º</td>\n<td>3</td>\n<td>6</td>\n<td>2</td>\n<td>3º</td>\n</tr>\n<tr>\n<td>6º</td>\n<td>3</td>\n<td>7</td>\n<td>2</td>\n<td>3º</td>\n</tr>\n<tr>\n<td>7º</td>\n<td>3</td>\n<td>8</td>\n<td>2</td>\n<td>4º</td>\n</tr>\n<tr>\n<td>8º</td>\n<td>3</td>\n<td>9</td>\n<td>2</td>\n<td>4º</td>\n</tr>\n<tr>\n<td>9º</td>\n<td>3</td>\n<td>10</td>\n<td>2</td>\n<td>5º</td>\n</tr>\n<tr>\n<td>10º</td>\n<td>4</td>\n<td>10</td>\n<td>2</td>\n<td>5º</td>\n</tr>\n<tr>\n<td>11º</td>\n<td>4</td>\n<td>11</td>\n<td>3</td>\n<td>5º</td>\n</tr>\n<tr>\n<td>12º</td>\n<td>4</td>\n<td>11</td>\n<td>3</td>\n<td>5º</td>\n</tr>\n<tr>\n<td>13º</td>\n<td>4</td>\n<td>12</td>\n<td>3</td>\n<td>5º</td>\n</tr>\n<tr>\n<td>14º</td>\n<td>4</td>\n<td>12</td>\n<td>3</td>\n<td>5º</td>\n</tr>\n<tr>\n<td>15º</td>\n<td>4</td>\n<td>13</td>\n<td>3</td>\n<td>5º</td>\n</tr>\n<tr>\n<td>16º</td>\n<td>4</td>\n<td>13</td>\n<td>3</td>\n<td>5º</td>\n</tr>\n<tr>\n<td>17º</td>\n<td>4</td>\n<td>14</td>\n<td>4</td>\n<td>5º</td>\n</tr>\n<tr>\n<td>18º</td>\n<td>4</td>\n<td>14</td>\n<td>4</td>\n<td>5º</td>\n</tr>\n<tr>\n<td>19º</td>\n<td>4</td>\n<td>15</td>\n<td>4</td>\n<td>5º</td>\n</tr>\n<tr>\n<td>20º</td>\n<td>4</td>\n<td>15</td>\n<td>4</td>\n<td>5º</td>\n</tr>\n</tbody>\n</table>\n<h3>Atributo de Conjuração</h3>\n<p>Carisma é o atributo de conjuração para suas magias de bruxo, você deve usá-lo sempre que uma magia fizer referência ao seu atributo de conjuração. Além disso, você usa o seu modificador de Carisma para definir a CD de uma salvaguarda feita para evitar uma magia de bruxo conjurada por você e ao realizar uma jogada de ataque com uma magia de bruxo.</p>\n<p style=\"text-align: center;\"><strong>CD para evitar suas magias</strong> = 8 + seu bônus de proficiência + seu modificador de Carisma</p>\n<p style=\"text-align: center;\"><strong>Modificador de ataque mágico </strong>= seu bônus de proficiência + seu modificador de Carisma</p>\n<h3>Foco de Conjuração</h3>\n<p>Você pode usar um foco arcano como um foco de conjuração para suas magias de bruxo.</p>"
+		},
+		{
+			"id": "Pact of the Blade",
+			"name": "Pacto da Lâmina",
+			"description": "<p>Você pode usar sua ação para criar uma arma de pacto em sua mão vazia. Você escolhe a forma que a arma de combate corpo a corpo assume toda vez que a cria (consulte as opções de armas no capítulo 5). Você é proficiente com essa arma enquanto a empunhar. Ela conta como arma mágica para propósitos de vencer resistência e imunidade a ataques e dano não-mágico.</p><p>Sua arma de pacto desaparece se permanecer a mais de 1,5 metro de distância de você por 1 minuto ou mais. Ela também desaparece se você usar esta característica novamente, se dispensá-la (nenhuma ação é necessária) ou se morrer.</p><p>Você pode transformar uma arma mágica na sua arma de pacto ao executar um ritual especial enquanto segura a arma. Você executa o ritual ao longo de 1 hora, o que pode ser feito durante um descanso curto. Você pode, então, dispensar a arma enviando-a para um espaço extra-dimensional, e a partir de então ela aparece sempre que você criar sua arma de pacto. Você não pode afetar um artefato ou uma arma inteligente dessa maneira. A arma deixa de ser sua arma de pacto se você morrer, se fizer o ritual de 1 hora com uma arma diferente ou se usar o ritual de 1 hora para quebrar o seu vinculo com ela  A arma aparece aos seus pés se ela estiver no espaço extra dimensional quando o laço for quebrado.</p>"
+		},
+		{
+			"id": "Pact of the Chain",
+			"name": "Pacto da Corrente",
+			"description": "<p>Você aprende a magia @Compendium[dnd5e.spells.JGT5bNqu9REL7Fuz]{Convocar Familiar} e pode conjurá-la como um ritual. A magia não conta para a sua lista de magias conhecidas. Ao realizar uma conjuração, você pode escolher uma das formas normais para o seu familiar ou uma das formas especiais a seguir: @Compendium[dnd5e.monsters.dLQiESMsfsXijD5c]{diabrete}, pseudo-dragão, @Compendium[dnd5e.monsters.bwtkdzavdNHISgp4]{quasit} ou @Compendium[dnd5e.monsters.MUpBNDoJEr09bLaO]{sprite}.</p>\n<p>Além disso, ao executar a ação Atacar, você pode renunciar a um de seus ataques para permitir que o seu familiar realize um ataque com a reação dele.</p>"
+		},
+		{
+			"id": "Pact of the Tome",
+			"name": "Pacto do Tomo",
+			"description": "<p>Seu patrono lhe presenteia com um grimório chamado Livro das Sombras. Ao receber esta característica, escolha três truques da lista de magias de qualquer classe (cada um pode ser escolhido de uma lista distinta). Enquanto tiver a posse do livro, você pode conjurar esses truques à vontade. Eles não contam para o número de truques que você conhece. Mesmo que eles não aparecem na lista de magias de bruxo, no que diz respeito a você, eles serão considerados magias de bruxo.</p><p>Se perder o seu Livro das Sombras, você pode realizar uma cerimônia de 1 hora para receber de seu patrono um substituto. Essa cerimônia pode ser feita durante um período de descanso e destrói o livro anterior. Quando você morre, o livro se transforma em cinzas.</p>"
+		},
+		{
+			"id": "Peerless Skill",
+			"name": "Perícia Inigualável",
+			"description": "<p>A partir do 14° nível, ao fazer um teste de atributo, você pode gastar um uso de @Compendium[dnd5e.classfeatures.EeGafsa17CapsH2j]{Inspiração de Bardo}.</p>\n<p>Jogue um dado de Inspiração de Bardo e adicione o número obtido ao resultado do seu teste de atributo.</p>\n<p>Você pode gastar o dado de Inspiração de Bardo depois de jogar o d20 para o teste de atributo, mas antes que o DM diga se foi bem-sucedido ou não.</p>"
+		},
+		{
+			"id": "Perfect Self",
+			"name": "Autoaperfeiçoamento",
+			"description": "<p>No 20° nível, caso tenha gastado todos os seus pontos de ki, ao jogar para iniciativa você recupera 4 pontos de ki.</p>"
+		},
+		{
+			"id": "Persistent Rage",
+			"name": "Fúria Persistente",
+			"description": "<p>A partir do 15° nível, sua @Compendium[dnd5e.classfeatures.VoR0SUrNX5EJVPIO]{Fúria} é tão intensa que só termina mais cedo caso você fique inconsciente ou escolha encerrá-la.</p>"
+		},
+		{
+			"id": "Potent Cantrip",
+			"name": "Truque Potente",
+			"description": "<p>A partir do 6° nível, o dano dos seus truques afeta criaturas mesmo que elas possam evitá-lo. Quando uma criatura é bem-sucedida em uma salvaguarda contra um truque seu, ela sofre metade do dano (se houver), mas não sofre nenhum dos efeitos adicionais.</p>"
+		},
+		{
+			"id": "Primal Champion",
+			"name": "Campeão Primitivo",
+			"description": "<p>No 20° nível, você personifica o poder das áreas selvagens. Seus valores de Força e Constituição aumentam em 4. O valor máximo desses atributos passa a ser 24.</p>"
+		},
+		{
+			"id": "Primal Path",
+			"name": "Trilha Primitiva",
+			"description": "<p>No 3 ° nível, você escolhe uma trilha que molda a natureza da sua fúria, como a Trilha do Berserker. Ambas estão detalhadas ao final da descrição desta classe. Sua escolha lhe concede características no 3° nível e, novamente, no 6°, 10 ° e 14° níveis.</p>"
+		},
+		{
+			"id": "Primeval Awareness",
+			"name": "Consciência Primitiva",
+			"description": "<p>Começando no 3° nível, você pode usar sua ação e gastar um espaço de magia de guardião para focar sua consciência na região ao seu redor. Durante um minuto por círculo do espaço de magia gasto, você pode sentir se as criaturas a seguir estão presentes num raio de 1,5 quilômetros (ou a até 9 quilômetros, caso se trate do seu terreno favorito): aberrações, celestiais, dragões, feéricos, ínferos e mortos-vivos. Esta característica não revela a localização das criaturas ou o seu número.</p>"
+		},
+		{
+			"id": "Purity of Body",
+			"name": "Pureza de Corpo",
+			"description": "<p>No 10° nível, seu domínio sobre o fluxo do ki em seu corpo o torna imune a doenças e venenos.</p>"
+		},
+		{
+			"id": "Purity of Spirit",
+			"name": "Pureza de Espirito",
+			"description": "<p>Começando no 15° nível, você estará sempre sob os efeitos da magia @Compendium[dnd5e.spells.xmDBqZhRVrtLP8h2]{Proteção contra o Bem e o Mal}.</p>"
+		},
+		{
+			"id": "Rage",
+			"name": "Fúria",
+			"description": "<p>Em batalha, você luta com uma ferocidade primitiva. No seu turno, pode entrar em fúria usando sua ação bônus. Enquanto estiver enfurecido e não estiver usando armadura pesada, você recebe os seguintes benefícios:</p>\n<ul>\n<li>\n<p>Você tem vantagem em testes de Força e em salvaguardas baseadas nesse atributo.</p>\n</li>\n<li>\n<p>Ao realizar um ataque com uma arma de combate corpo a corpo usando Força, suas jogadas de dano recebem um bônus que aumenta à medida que você adquire níveis desta classe, conforme mostrado na coluna Dano da Fúria, da tabela O Bárbaro.</p>\n</li>\n<li>\n<p>Você é resistente a dano contundente, cortante e perfurante.</p>\n</li>\n</ul>\n<p>Caso seja capaz de conjurar magias, não poderá conjurá-las ou concentrar-se nelas enquanto estiver em fúria.</p>\n<p>Sua fúria dura um minuto. Ela termina antes disso se você ficar inconsciente ou se, ao final do seu turno, não tiver atacado uma criatura hostil ou sofrido nenhum dano. Você também pode encerrar sua fúria com sua ação bônus.</p>\n<p>Quando tiver entrado em fúria o número de vezes mostrado na coluna Fúria, da tabela O Bárbaro, você precisa concluir um descanso longo antes de entrar em fúria novamente.</p>\n<p><em style=\"box-sizing: border-box; user-select: text; color: #191813; font-size: 13px;\">**Nota do Foundry:  Observe que os usos limitados estão definidos como o padrão base de 2. Ajuste manualmente conforme necessário.</em></p>\n<table style=\"width: 286px; height: 170px;\" border=\"1\">\n<tbody>\n<tr style=\"height: 17px;\">\n<td style=\"width: 112px; height: 17px;\"><strong>Nível de Bárbaro</strong></td>\n<td style=\"width: 68px; height: 17px;\"><strong>Fúria</strong></td>\n<td style=\"width: 96px; height: 17px;\"><strong>Dano de Fúria</strong></td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"width: 112px; height: 17px;\">1º</td>\n<td style=\"width: 68px; height: 17px;\">2</td>\n<td style=\"width: 96px; height: 17px;\">+2</td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"width: 112px; height: 17px;\">2º</td>\n<td style=\"width: 68px; height: 17px;\">2</td>\n<td style=\"width: 96px; height: 17px;\">+2</td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"width: 112px; height: 17px;\">3º</td>\n<td style=\"width: 68px; height: 17px;\">3</td>\n<td style=\"width: 96px; height: 17px;\">+2</td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"width: 112px; height: 17px;\">4º</td>\n<td style=\"width: 68px; height: 17px;\">3</td>\n<td style=\"width: 96px; height: 17px;\">+2</td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"width: 112px; height: 17px;\">5º</td>\n<td style=\"width: 68px; height: 17px;\">3</td>\n<td style=\"width: 96px; height: 17px;\">+2</td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"width: 112px; height: 17px;\">6º</td>\n<td style=\"width: 68px; height: 17px;\">4</td>\n<td style=\"width: 96px; height: 17px;\">+2</td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"width: 112px; height: 17px;\">7º</td>\n<td style=\"width: 68px; height: 17px;\">4</td>\n<td style=\"width: 96px; height: 17px;\">+2</td>\n</tr>\n<tr>\n<td style=\"width: 112px;\">8º</td>\n<td style=\"width: 68px;\">4</td>\n<td style=\"width: 96px;\">+2</td>\n</tr>\n<tr>\n<td style=\"width: 112px;\">9º</td>\n<td style=\"width: 68px;\">4</td>\n<td style=\"width: 96px;\">+3</td>\n</tr>\n<tr>\n<td style=\"width: 112px;\">10º</td>\n<td style=\"width: 68px;\">4</td>\n<td style=\"width: 96px;\">+3</td>\n</tr>\n<tr>\n<td style=\"width: 112px;\">11º</td>\n<td style=\"width: 68px;\">4</td>\n<td style=\"width: 96px;\">+3</td>\n</tr>\n<tr>\n<td style=\"width: 112px;\">12º</td>\n<td style=\"width: 68px;\">5</td>\n<td style=\"width: 96px;\">+3</td>\n</tr>\n<tr>\n<td style=\"width: 112px;\">13º</td>\n<td style=\"width: 68px;\">5</td>\n<td style=\"width: 96px;\">+3</td>\n</tr>\n<tr>\n<td style=\"width: 112px;\">14º</td>\n<td style=\"width: 68px;\">5</td>\n<td style=\"width: 96px;\">+3</td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"width: 112px; height: 17px;\">15º</td>\n<td style=\"width: 68px; height: 17px;\">5</td>\n<td style=\"width: 96px; height: 17px;\">+3</td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"width: 112px; height: 17px;\">16º</td>\n<td style=\"width: 68px; height: 17px;\">5</td>\n<td style=\"width: 96px; height: 17px;\">+4</td>\n</tr>\n<tr>\n<td style=\"width: 112px;\">17º</td>\n<td style=\"width: 68px;\">6</td>\n<td style=\"width: 96px;\">+4</td>\n</tr>\n<tr>\n<td style=\"width: 112px;\">18º</td>\n<td style=\"width: 68px;\">6</td>\n<td style=\"width: 96px;\">+4</td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"width: 112px; height: 17px;\">19º</td>\n<td style=\"width: 68px; height: 17px;\">6</td>\n<td style=\"width: 96px; height: 17px;\">+4</td>\n</tr>\n<tr style=\"height: 17px;\">\n<td style=\"width: 112px; height: 17px;\">20º</td>\n<td style=\"width: 68px; height: 17px;\">Ilimitado</td>\n<td style=\"width: 96px; height: 17px;\">+4</td>\n</tr>\n</tbody>\n</table>\n<p> </p>"
+		},
+		{
+			"id": "Ranger Archetype",
+			"name": "Arquétipo de Guardião",
+			"description": "<p>No 3° nível, você escolhe um arquétipo, o qual se esforça para seguir, como o Caçador. Sua escolha lhe garante características no 3° nível e novamente no 7°, 11 ° e 15° níveis.</p>"
+		},
+		{
+			"id": "Reckless Attack",
+			"name": "Ataque Imprudente",
+			"description": "<p>A partir do 2° nível, você pode deixar de lado qualquer preocupação com a defesa para se entregar de corpo e alma aos ataques ferozes.</p><p>Ao realizar o primeiro ataque do seu turno, você pode decidir atacar de forma imprudente. Ao fazê-lo, por todo esse turno terá vantagem nas jogadas de ataque com armas de combate corpo a corpo que usem Força, embora o mesmo ocorra com as jogadas de ataque feitas contra você.</p>"
+		},
+		{
+			"id": "Relentless Rage",
+			"name": "Fúria Implacável",
+			"description": "<p>A partir do 11 ° nível, sua fúria pode mantê-lo em combate, independentemente da gravidade dos seus ferimentos.</p>\n<p>Se os seus pontos de vida chegarem a O enquanto você estiver em fúria, e não se tratar de uma morte automática, você pode realizar uma salvaguarda de Constituição com CD 10. Se for bem-sucedido, seus pontos de vida sobem para 1.</p>\n<p>Cada vez que usar esta característica, a CD aumenta em 5. Após um período de descanso curto ou longo, ela volta a ser 10.</p>"
+		},
+		{
+			"id": "Reliable Talent",
+			"name": "Talento Confiável",
+			"description": "<p>No 11 ° nível, você refinou suas perícias até se aproximar da perfeição. Sempre que testar um atributo que lhe permita adicionar seu bônus de proficiência, poderá tratar um resultado de 9, ou menor, como 10.</p>"
+		},
+		{
+			"id": "Remarkable Athlete",
+			"name": "Atleta Extraordinario",
+			"description": "<p>Você pode adicionar metade do seu bônus de proficiência (arredondado para cima) em qualquer teste de Força, Destreza ou Constituição que já não faça uso desse bônus.</p><p>Além disso, ao correr e saltar, a distância coberta pelo seu salto aumenta em 30 centímetros para cada ponto do seu modificador de Força.</p>"
+		},
+		{
+			"id": "Retaliation",
+			"name": "Retaliação",
+			"description": "<p>A partir do 14° nível, ao sofrer dano causado por uma criatura que esteja a até 1,5 m de distância, você pode usar sua reação para atacá-la com uma arma de combate corpo a corpo.</p>"
+		},
+		{
+			"id": "Roguish Archetype",
+			"name": "Arquétipo de Ladino",
+			"description": "<p>No 3° nível, você escolhe um arquétipo, o qual seguirá no exercício das suas habilidades de ladino, como Ladrão. Seu arquétipo lhe garante características no 3ª nível, e novamente no 9°, 13° e 17° níveis.</p>"
+		},
+		{
+			"id": "Sacred Oath",
+			"name": "Juramento Sagrado",
+			"description": "<p>No 3° nível, você realiza um voto que o marca como um paladino para sempre. Até esse momento, você seguia em um estágio preparatório, trilhando seu caminho, mas ainda não consagrado a ele. Agora você escolhe um juramento, como o Juramento da Devoção.</p>\n<p>Sua escolha garante a você características no 3° nível e novamente no 7°, 15° e 20° níveis, incluindo Canalizar Divindade e magias de juramento.</p>\n<h3>Magias de Juramento</h3>\n<p>Cada juramento possui uma lista de magias que você obtém ao alcançar os níveis de paladino indicados na descrição do juramento. Uma vez obtida uma magia de juramento, ela sempre estará preparada e não contará para o número de magias que você pode preparar por dia.</p>\n<p>Se você ganhar uma magia de juramento que não aparece na lista de magias de paladino, a magia continua sendo uma magia de paladino para você.</p>\n<h3>Canalizar Divindade</h3>\n<p>@Compendium[dnd5e.classfeatures.8M7uOPhbTxoxxJSo]{Canalizar Divindade}</p>"
+		},
+		{
+			"id": "Sculpt Spells",
+			"name": "Esculpir Magias",
+			"description": "<p>Começando no 2° nível, você pode criar bolsões de relativa segurança dentro dos efeitos de suas magias de evocação. Ao conjurar uma magia de evocação que afete outras criaturas em seu raio de visão, você pode escolher um número de criaturas igual a 1 + o círculo da magia para serem automaticamente bem-sucedidas nas suas salvaguardas contra a magia e, caso normalmente recebessem metade do dano se bem-sucedidas, não receberem nenhum dano.</p>"
+		},
+		{
+			"id": "Second Wind",
+			"name": "Recuperar o Fôlego",
+			"description": "<p>Você possui uma fonte limitada de vitalidade, a qual pode usar para se proteger do perigo. No seu turno, use sua ação bônus para recuperar uma quantidade de pontos de vida igual a 1d10 + seu nível de guerreiro.</p><p>Uma vez usada esta característica, você deve completar um descanso curto ou longo antes de poder utilizá-la novamente.</p>"
+		},
+		{
+			"id": "Second-Story Work",
+			"name": "Andarilho de Telhados",
+			"description": "<p>Ao escolher este arquétipo no 3° nível, você ganha a habilidade de escalar mais rapidamente que o normal, de modo que essa ação passa a não lhe custar mais movimento adicional.</p><p>Além disso, ao saltar em distância, seu alcance aumenta em 30 centímetros para cada ponto do seu modificador de Destreza.</p>"
+		},
+		{
+			"id": "Signature Spells (First Spell)",
+			"name": "Assinatura Mágica (Primeira Magia)",
+			"description": "<p>Ao alcançar o 20° nível, você ganha o domínio de mais duas magias poderosas, que podem ser conjuradas com pouco esforço. Escolha duas magias de mago de 3° círculo em seu grimório como suas assinaturas mágicas. Essas magias estão sempre preparadas, não contam para o seu número de magias preparadas e, no 3° nível, podem ser conjuradas uma vez cada, sem o gasto de um espaço de magia, tornando a ficar disponíveis após um descanso curto ou longo.</p>\n<p>Caso queira conjurar essas magias em um círculo mais alto, precisará gastar um espaço de magia, como de costume.</p>\n<p>Se desejar, edite manualmente esta entrada e anote sua escolha aqui:</p>\n<ul>\n<li><em>Primeira Escolha de Magia</em></li>\n</ul>"
+		},
+		{
+			"id": "Signature Spells (Second Spell)",
+			"name": "Assinatura Mágica (Segunda Magia)",
+			"description": "<p>Ao alcançar o 20° nível, você ganha o domínio de mais duas magias poderosas, que podem ser conjuradas com pouco esforço. Escolha duas magias de mago de 3° círculo em seu grimório como suas assinaturas mágicas. Essas magias estão sempre preparadas, não contam para o seu número de magias preparadas e, no 3° nível, podem ser conjuradas uma vez cada, sem o gasto de um espaço de magia, tornando a ficar disponíveis após um descanso curto ou longo.</p>\n<p>Caso queira conjurar essas magias em um círculo mais alto, precisará gastar um espaço de magia, como de costume.</p>\n<p>Se desejar, edite manualmente esta entrada e anote sua escolha aqui:</p>\n<ul>\n<li><em>Segunda escolha de Magia</em></li>\n</ul>"
+		},
+		{
+			"id": "Slippery Mind",
+			"name": "Mente Escorregadia",
+			"description": "<p>No 15° nível, você adquire uma grande força mental, que lhe garante proficiência em salvaguardas de Sabedoria.</p>"
+		},
+		{
+			"id": "Slow Fall",
+			"name": "Queda Lenta",
+			"description": "<p>A partir do 4° nível, ao sofrer uma queda, você pode usar sua reação para reduzir o dano resultante em uma quantidade equivalente a cinco vezes seu nível de monge.</p>"
+		},
+		{
+			"id": "Sneak Attack",
+			"name": "Ataque Furtivo",
+			"description": "<p>Desde o 1 ° nível, você sabe como golpear sutilmente e explorar a distração do inimigo. Uma vez por turno, você causa 1d6 pontos de dano adicionais, ao atingir uma criatura com um ataque no qual tinha vantagem. O ataque deve usar uma arma de acuidade ou uma arma de combate à distância.</p>\n<p>Você não precisa dessa vantagem se outro inimigo não incapacitado do alvo estiver a até 1,5 metro dele, e você não tiver desvantagem na jogada de ataque.</p>"
+		},
+		{
+			"id": "Song of Rest",
+			"name": "Canção do Descanso",
+			"description": "<p>A partir do 2° nível, durante um descanso curto, você pode usar uma música ou discurso tranquilizador para ajudar a revitalizar seus aliados feridos.</p>\n<p>Ao final do descanso, se você ou quaisquer criaturas amigáveis que possam ouvir sua atuação tiverem recuperado pontos de vida devido ao gasto de um ou mais Dados de Vida, todos recuperam 1d6 pontos de vida a mais.</p>\n<p>A quantidade de pontos de vida adicionais aumenta quando você chega a certos níveis nesta classe: 1d8 no 9° nível, 1d10 no 13° e 1d12 no 17° nível.</p>\n<p><em style=\"box-sizing: border-box; user-select: text; color: #191813; font-size: 13px;\">**Nota do Foundry: Observe que a rolagem de cura é definida com o padrão básico de 1d6. Ajuste manualmente conforme necessário.</em></p>"
+		},
+		{
+			"id": "Sorcerous Origins",
+			"name": "Origem Feiticeira",
+			"description": "<p>Escolha uma origem de feitiçaria que indique a fonte do seu poder mágico inato, como a Linhagem Dracônica.</p>\n<p>Sua escolha lhe concede características logo no 1 ° nível e novamente no 6°, 14° e 18° níveis.</p>"
+		},
+		{
+			"id": "Sorcerous Restoration",
+			"name": "Restauração Feiticeira",
+			"description": "<p>No 20° nível você recupera 4 pontos de feitiçaria ao final de um descanso curto.</p>"
+		},
+		{
+			"id": "Spell Mastery",
+			"name": "Maestria de Magias",
+			"description": "<p>No 18° nível, você alcança domínio suficiente sobre determinadas magias a ponto de poder conjurá-las à vontade. Escolha uma magia de 1 ° e uma de 2° círculo que estejam no seu grimório. Quando as tiver preparadas, poderá conjurá- las em seu círculo mais baixo sem gastar nenhum espaço de magia. Se quiser fazê-lo em círculos mais altos, precisa gastar um espaço de magia, como de costume.</p>\n<p>Ao passar 8 horas estudando, você pode trocar uma ou ambas as magias que escolheu por magias diferentes do mesmo círculo.</p>\n<p>Se desejar, edite manualmente esta entrada e anote suas escolhas aqui:</p>\n<ul>\n<li><em>1º circulo de magia</em></li>\n<li><em>2º circulo de magia</em></li>\n</ul>"
+		},
+		{
+			"id": "Spellcasting (Bard)",
+			"name": "Conjuração (Bardo)",
+			"description": "<p>Você aprendeu a desembaraçar e remodelar o tecido da realidade em consonância com a música e os seus desejos. Suas magias fazem parte de seu vasto repertório, e você pode harmonizá-las a cada situação.</p>\n<h3>Truques</h3>\n<p>Você conhece dois truques, que deve escolher na lista de magias de bardo. Vcoê aprende truques adicionais de bardo em níveis mais altos, conforme mostrado na coluna Truques, da tabela O Bardo.</p>\n<h3>Espaços de Magia</h3>\n<p>A tabela O Bardo mostra quantos espaços de magia você possui para conjurar magias, de acordo com seu nível de bardo. Para conjurar uma magia, você deve usar um espaço de magia igual ou superior ao círculo dela. Você recupera todos os seus espaços de magia usados ao final de um descanso longo.</p>\n<p>Por exemplo, se você conhece a magia de 1º círculo curar ferimentos e possui um espaço de magia de 1º círculo e um de 2º círculo disponíveis, você pode conjurar curar ferimentos usando qualquer um desses espaços.</p>\n<h3>Magias Conhecidas de Acordo com o Nível</h3>\n<p>Você deve escolher quatro magias de 1 º círculo da lista de magias de bardo.</p>\n<p>A coluna Magias, da tabela O Bardo, mostra quando você aprenderá mais magias de bardo. Cada uma dessas magias deve pertencer a um círculo para o qual você tenha espaços de magia, conforme alcança o 3º nível nesta classe, pode aprender uma nova magia de 1º ou 2º círculo.</p>\n<p>Além disso, ao avançar um nível nesta classe, você pode substituir uma das magias de bardo que já conhece por outra magia de bardo, que deve pertencer a um círculo para o qual você tenha espaços de magia.</p>\n<table border=\"1\">\n<thead>\n<tr>\n<td rowspan=\"2\">Nível</td>\n<td rowspan=\"2\">Truques</td>\n<td rowspan=\"2\">Magias</td>\n<td colspan=\"9\">—Espaços de Magia por Nível—</td>\n</tr>\n<tr>\n<td>1º</td>\n<td>2º</td>\n<td>3º</td>\n<td>4º</td>\n<td>5º</td>\n<td>6º</td>\n<td>7º</td>\n<td>8º</td>\n<td>9º</td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1º</td>\n<td>2</td>\n<td>4</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>2º</td>\n<td>2</td>\n<td>5</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>3º</td>\n<td>2</td>\n<td>6</td>\n<td>4</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>4º</td>\n<td>3</td>\n<td>7</td>\n<td>4</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>5º</td>\n<td>3</td>\n<td>8</td>\n<td>4</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>6º</td>\n<td>3</td>\n<td>9</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>7º</td>\n<td>3</td>\n<td>10</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>8º</td>\n<td>3</td>\n<td>11</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>9º</td>\n<td>3</td>\n<td>12</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>10º</td>\n<td>4</td>\n<td>14</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>11º</td>\n<td>4</td>\n<td>15</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>12º</td>\n<td>4</td>\n<td>15</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>13º</td>\n<td>4</td>\n<td>16</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>14º</td>\n<td>4</td>\n<td>18</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>15º</td>\n<td>4</td>\n<td>19</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n</tr>\n<tr>\n<td>16º</td>\n<td>4</td>\n<td>19</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n</tr>\n<tr>\n<td>17º</td>\n<td>4</td>\n<td>20</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>18º</td>\n<td>4</td>\n<td>22</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>19º</td>\n<td>4</td>\n<td>22</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>20º</td>\n<td>4</td>\n<td>22</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>\n<h3>Atributo de Conjuração</h3>\n<p>Carisma é o atributo usado na conjuração das suas magias de bardo. Sua magia vem do corpo e alma, a energia que você investe em suas apresentações Você deve usar seu Carisma sempre que uma magia fizer referência ao atributo de conjuração. Além disso, você usa o seu modificador de Carisma para definir a CD de uma salvaguarda feita para evitar uma magia de bardo conjurada por você e ao realizar uma jogada de ataque com uma magia de bardo.</p>\n<p><strong>CD para evitar suas magias</strong> = 8 + seu bônus de proficiência + seu modificador de Carisma</p>\n<p><strong>Modificador de ataque mágico</strong> = seu bônus de proficiência + seu modificador de Carisma</p>\n<h3>Conjuração Ritual</h3>\n<p>Você pode conjurar qualquer magia de bardo que seja do seu conhecimento na forma de ritual, caso ela possua a propriedade ritual.</p>\n<h3>Foco de Conjuração</h3>\n<p>Você pode usar um instrumento musical (veja @Compendium[dnd5e.rules.bogWrnJqoNlBd0O8]{Equipamentos de Aventura}) como um foco de conjuração para suas magias de bardo.</p>"
+		},
+		{
+			"id": "Spellcasting (Cleric)",
+			"name": "Conjuração (Clérigo)",
+			"description": "<p>Por conta da sua capacidade de canalizar o poder divino, você pode conjurar magias de clérigo.</p>\n<h3>Truques</h3>\n<p>No 1º nível, você conhece três truques da lista de magias de clérigo, à sua escolha. Você escolhe novos truques de clérigo em níveis superiores, conforme mostrado na coluna Truques, da tabela O Clérigo.</p>\n<h3>Preparando e Conjurando Magias</h3>\n<p>A tabela O Clérigo mostra quantos espaços de magia você possuir para conjura magias de clérigo, de acordo com o seu nível. Para conjurar uma magia, você deve usar um espaço de magia igual ou superior ao círculo da magia. Você recupera todos os espaços de magia usados ao final de um descanso longo.</p>\n<p>Você prepara sua lista de magias de clérigo disponíveis para serem conjuradas escolhendo-as a partir da lista de magias de clérigo. Para tanto, escolha um número de magias de clérigo igual ao seu modificador de Sabedoria + seu nível (mínimo de uma magia). As magias devem pertencer a um círculo para o qual você tenha espaços de magia.</p>\n<p>Por exemplo, caso seu clérigo esteja no 3º nível, você tem quatro espaços de magia de 1º círculo e dois de 2º círculo. Com Sabedoria 16, sua lista de magias preparadas pode incluir seis magias de 1º ou 2º círculo, em qualquer combinação, Se você preparar a magia de 1º círculo curar ferimentos, poderá conjurá-la usando um espaço de 1º ou 2º círculo. Conjurar uma magia não a remove da sua lista de magias preparadas.</p>\n<p>Você pode mudar sua lista de magias preparadas ao final de um descanso longo, Preparar uma nova lista de magias exige tempo de oração e meditação: ao menos 1 minuto por círculo de magia, para cada magia da sua lista.</p>\n<table border=\"1\">\n<thead>\n<tr>\n<td rowspan=\"2\">Nível</td>\n<td rowspan=\"2\">Truques</td>\n<td colspan=\"9\">—Espaços de Magia por Nível—</td>\n</tr>\n<tr>\n<td>1º</td>\n<td>2º</td>\n<td>3º</td>\n<td>4º</td>\n<td>5º</td>\n<td>6º</td>\n<td>7º</td>\n<td>8º</td>\n<td>9º</td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1º</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>2º</td>\n<td>3</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>3º</td>\n<td>3</td>\n<td>4</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>4º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>5º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>6º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>7º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>8º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>9º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>10º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>11º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>12º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>13º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>14º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>15º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n</tr>\n<tr>\n<td>16º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n</tr>\n<tr>\n<td>17º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>18º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>19º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>20º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>\n<h3>Atributo de Conjuração</h3>\n<p>Sabedoria é o atributo usado na conjuração de magias de clérigo. Os poderes das suas magias vêm da sua devoção à sua divindade. Você deve usar Sabedoria sempre que uma magia fizer referência ao atributo de conjuração. Além disso, você usa o seu modificador de Sabedoria  para definir a CD de uma salvaguarda feita para evitar uma magia de clérigo conjurada por você e ao realizar uma jogada de ataque com uma magia de clérigo.</p>\n<p><strong>CD para evitar suas magias </strong>= 8 + seu bônus de proficiência + seu modificador de Sabedoria</p>\n<p><strong>Modificador de ataque mágico</strong> = seu bônus de proficiência + seu modificador de Sabedoria</p>\n<h3>Conjuração Ritual</h3>\n<p>Você pode conjurar uma magia de clérigo na forma de ritual, caso ela tenha a propriedade ritual e esteja preparada.</p>\n<h3>Foco de Conjuração</h3>\n<p>Você pode usar um símbolo sagrado (veja @Compendium[dnd5e.rules.bogWrnJqoNlBd0O8]{Equipamentos de Aventura}) como foco de conjuração para suas magias de clérigo.</p>"
+		},
+		{
+			"id": "Spellcasting (Druid)",
+			"name": "Conjuração (Druida)",
+			"description": "<p>Extraindo a essência divina da própria natureza, você pode conjurar magias que moldam essa essência à sua vontade.</p>\n<h3>Truques</h3>\n<p>No 1º nível, você conhece dois truques da lista de magias de druida à sua escolha. Você aprende truques de druida adicionais (à sua escolha) em níveis mais altos, conforme mostrado na coluna Truques na tabela O Druida.</p>\n<h3>Preparando e Conjurando Magias</h3>\n<p>A tabela O Druida mostra quantos espaços de magia você tem para conjurar suas magias conforme seu nível. Para conjurar uma magia, você precisa gastar um espaço de magia equivalente ao círculo da magia ou superior, recuperando todos os espaços usados ao final de um descanso longo.</p>\n<p>Você prepara a lista de magias de druida disponíveis para conjuração a partir da lista de magias de druida. Ao fazer isso, escolha um número de magias igual ao seu modificador de Sabedoria + seu nível de druida (mínimo de uma magia). As magias devem pertencer a um círculo para o qual você tenha espaços de magia.</p>\n<p>Por exemplo, caso seu druida esteja no 3º nível, você pode ter quatro espaços de magia de 1º círculo e dois de 2º. Com Sabedoria 16, sua lista de magias preparadas pode incluir seis magias do 1º ou 2º círculo, em qualquer combinação. Se você preparar a magia de 1º círculo curar ferimentos, poderá conjurá-la usando um espaço de 1º ou 2º círculo. Conjurar uma magia não a remove da sua lista de magias preparadas.</p>\n<p>Você pode mudar sua lista de magias preparadas ao final de um descanso longo. Preparar uma nova lista de magias de druida exige tempo de oração e meditação: ao menos 1 minuto por círculo de cada magia em sua lista.</p>\n<table border=\"1\" cellspacing=\"0\">\n<thead>\n<tr>\n<td rowspan=\"2\">Nível</td>\n<td rowspan=\"2\">Truques</td>\n<td colspan=\"9\">-Espaços de Magia por Nível-</td>\n</tr>\n<tr>\n<td>1º</td>\n<td>2º</td>\n<td>3º</td>\n<td>4º</td>\n<td>5º</td>\n<td>6º</td>\n<td>7º</td>\n<td>8º</td>\n<td>9º</td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1º</td>\n<td>2</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>2º</td>\n<td>2</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>3º</td>\n<td>2</td>\n<td>4</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>4º</td>\n<td>3</td>\n<td>4</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>5º</td>\n<td>3</td>\n<td>4</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>6º</td>\n<td>3</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>7º</td>\n<td>3</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>8º</td>\n<td>3</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>9º</td>\n<td>3</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>10º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>11º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>12º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>13º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>14º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>15º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n</tr>\n<tr>\n<td>16º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n</tr>\n<tr>\n<td>17º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>18º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>19º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>20º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>\n<h3>Atributo de Conjuração</h3>\n<p>Sabedoria é o atributo de conjuração para suas magias de druida, pois sua magia vem da sua devoção e sintonia com a natureza. Use Sabedoria sempre que uma magia se referir ao seu atributo de conjuração. Além disso, você usa seu modificador de Sabedoria para definir a CD de uma salvaguarda feita para evitar uma magia de druida conjurada por você e ao realizar uma jogada de ataque com uma magia de druida.</p>\n<p style=\"text-align: center;\"><strong>CD para evitar suas magias</strong> = 8 + seu bônus de proficiência + seu modificador de Sabedoria</p>\n<p style=\"text-align: center;\"><strong>Modificador de ataque mágico</strong> = seu bônus de proficiência + seu modificador de Sabedoria</p>\n<h3>Conjuração Ritual</h3>\n<p>Caso uma das suas magias de druida preparada possua a propriedade ritual, você pode conjurá-la dessa forma.</p>\n<h3>Foco de Conjuração</h3>\n<p>Você pode usar um foco druídico (veja @Compendium[dnd5e.rules.bogWrnJqoNlBd0O8]{Equipamentos de Aventura}) como foco de conjuração para suas magias de druida.</p>"
+		},
+		{
+			"id": "Spellcasting (Paladin)",
+			"name": "Conjuração (Paladino)",
+			"description": "<p>No 2º nível, você aprende a extrair magia divina da meditação e das orações para conjurar magias da mesma maneira que um clérigo.</p>\n<h3>Preparando e Conjurando Magias</h3>\n<p>A tabela O Paladino, mostra quantos espaços de magia você possui. Para conjurar uma magia, é preciso usar um espaço de magia igual ou superior ao círculo da magia. Todos os espaços de magia usados são recuperados ao completar um descanso longo.</p>\n<p>Você prepara a lista de magias disponíveis para conjuração escolhendo-as a partir da lista de magias de paladino. Ao fazê-lo, escolha um número de magias igual ao seu modificador de Carisma + metade do seu nível de paladino arredondado para baixo (mínimo de uma magia). As magias devem pertencer a um círculo para o qual você tenha espaços de magia.</p>\n<p>Por exemplo, se você é um Paladino de 5º nível, possui quatro espaços de magia de 1º círculo e dois de 2º. Com um Carisma de 14, sua lista de magias preparadas pode incluir quatro magias de 1º ou 2º círculo, em qualquer combinação. Se preparar a magia de 1º círculo curar ferimentos, você pode conjurá-la usando um espaço de 1º ou de 2º círculo. Conjurar uma magia não a remove da sua lista de magias preparadas.</p>\n<p>Você pode mudar sua lista de magias preparadas ao final de um descanso longo. Preparar uma nova lista de magias de paladino requer tempo gasto em orações e meditação: pelo menos 1 minuto por círculo de magia.</p>\n<table border=\"0\" cellspacing=\"0\">\n<thead>\n<tr>\n<td rowspan=\"2\">Nível</td>\n<td colspan=\"5\">-  Espaços de Magia por Nível  -</td>\n</tr>\n<tr>\n<td>1º</td>\n<td>2º</td>\n<td>3º</td>\n<td>4º</td>\n<td>5º</td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1º</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>2º</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>3º</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>4º</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>5º</td>\n<td>4</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>6º</td>\n<td>4</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>7º</td>\n<td>4</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>8º</td>\n<td>4</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>9º</td>\n<td>4</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>10º</td>\n<td>4</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>11º</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>12º</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>13º</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n<td>-</td>\n</tr>\n<tr>\n<td>14º</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n<td>-</td>\n</tr>\n<tr>\n<td>15º</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n</tr>\n<tr>\n<td>16º</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n</tr>\n<tr>\n<td>17º</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n</tr>\n<tr>\n<td>18º</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n</tr>\n<tr>\n<td>19º</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n</tr>\n<tr>\n<td>20º</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n</tr>\n</tbody>\n</table>\n<h3>Atributo de Conjuração</h3>\n<p>Devido ao seu poder derivar da força de suas convicções, Carisma é o atributo usado para a conjuração das suas magias de paladino. Você deve usar Carisma sempre que uma magia fizer referência ao atributo de conjuração. Além disso, use seu modificador nesse atributo para definir a CD de salvaguardas feitas contra suas magias e seus ataques mágicos.</p>\n<p style=\"text-align: center;\"><strong>CD para evitar suas magias</strong> = 8 + seu bônus de proficiência + seu modificador de Carisma</p>\n<p style=\"text-align: center;\"><strong>Modificador de ataque mágico </strong>= seu bônus de proficiência + seu modificador de Carisma</p>\n<h3>Foco de Conjuração</h3>\n<p>Você pode usar um símbolo sagrado como foco de conjuração para suas magias de paladino.</p>"
+		},
+		{
+			"id": "Spellcasting (Ranger)",
+			"name": "Conjuração (Guardião)",
+			"description": "<p>Ao alcançar o 2º nível, você aprendeu como usar a essência da natureza para conjurar magias, assim como um druida.</p>\n<h3>Espaços de Magia</h3>\n<p>A tabela O Guardião mostra quanto espaços de magia você possui para conjurar suas magias de 1º círculo e superiores. Para conjurar uma magia, é preciso usar um espaço de magia igual ou superior ao círculo da magia. Todos os espaços de magia usados são recuperados ao final de um descanso longo.</p>\n<p>Por exemplo,s e você conhece a magia de 1º círculo <em>amizade animal </em>, e possui um espaço de magia de 1º círculo e um de 2º círculo, pode conjurar <em>amizade animal </em>usando qualquer um desses espaços.</p>\n<h3>Magias Conhecidas de Acordo com o Nível</h3>\n<p>Você conche 2 magias de 1º círculo da tabela de magias de guardião, à sua escolha.</p>\n<p>A coluna Magias, da tabela O Guardião, mostra quando você aprende mais magias de guardião à sua escolha. Cada magia deve pertencer a um círculo para o qual você tenha espaços de magia. Por exemplo, ao alcançar o 5º nível nesta classe, você pode aprender uma nova magia de 1º ou 2º círculo.</p>\n<p>Além disso, ao ganhar um nível nesta classe, você pode substituir uma das magias de guardião que conhece por outra da lista de magias do guardião, que também deve pertencer a um círculo para o qual você tenha espaços de magia.</p>\n<table border=\"0\" cellspacing=\"0\">\n<thead>\n<tr>\n<td rowspan=\"2\">Nível</td>\n<td rowspan=\"2\">Magias</td>\n<td colspan=\"5\">- Espaços de Magia por Nível -</td>\n</tr>\n<tr>\n<td>1º</td>\n<td>2º</td>\n<td>3º</td>\n<td>4º</td>\n<td>5º</td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1º</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>2º</td>\n<td>2</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>3º</td>\n<td>3</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>4º</td>\n<td>3</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>5º</td>\n<td>4</td>\n<td>4</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>6º</td>\n<td>4</td>\n<td>4</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>7º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>8º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>9º</td>\n<td>6</td>\n<td>4</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>10º</td>\n<td>6</td>\n<td>4</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>11º</td>\n<td>7</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>12º</td>\n<td>7</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>13º</td>\n<td>8</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n<td>-</td>\n</tr>\n<tr>\n<td>14º</td>\n<td>8</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n<td>-</td>\n</tr>\n<tr>\n<td>15º</td>\n<td>9</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n</tr>\n<tr>\n<td>16º</td>\n<td>9</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n</tr>\n<tr>\n<td>17º</td>\n<td>10</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n</tr>\n<tr>\n<td>18º</td>\n<td>10</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n</tr>\n<tr>\n<td>19º</td>\n<td>11</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n</tr>\n<tr>\n<td>20º</td>\n<td>11</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n</tr>\n</tbody>\n</table>\n<h3>Atributo de Conjuração</h3>\n<p>Devido a sua magia vir da sua sintonia com a natureza, Sabedoria é seu atributo de conjuração. Você usa esse atributo sempre que uma magia fizer referência ao atributo de conjuração. Além disso, você usa os eu modificador de Sabedoria tanto para definir a CD de uma salvaguarda feita para evitar uma magia de guardião conjurada por você, quanto para realizar uma jogada de ataque com uma magia de guardião.</p>\n<p style=\"text-align: center;\"><strong>CD para evitar suas magias </strong>= 8 + seu bônus de proficiência + seu modificador de Sabedoria</p>\n<p style=\"text-align: center;\"><strong>Modificador de ataque mágico </strong>= seu bônus de proficiência + seu modificador de Sabedoria</p>"
+		},
+		{
+			"id": "Spellcasting (Sorcerer)",
+			"name": "Conjuração (Feiticeiro)",
+			"description": "<p>Um evento em seu passado, ou na vida de um de seus pais ou ancestral, deixou uma marca indelével em você, infundindo-o com magia arcana.</p>\n<h3>Truques</h3>\n<p>No 1º nível você conhece quatro truques a serem escolhidos da lista de magias de feiticeiro. Você aprende truques de feiticeiro adicionais em níveis mais altos, conforme mostrado na coluna Truques, da tabela O Feiticeiro.</p>\n<h3>Espaços de Magia</h3>\n<p>A tabela O Feiticeiro mostra quantos espaços de magia você possui para conjurar magias de feiticeiro, de acordo com o seu nível. Para conjurar uma magia, você deve usar um espaço de magia igual ou superior ao círculo da magia, recuperando todos os espaços de magia usados ao final de um descanso longo.</p>\n<p>Por exemplo, se você conhece a magia de 1º círculo mãos flamejantes, e possui um espaço de magia de 1º e outro de 2º círculo, você pode conjurar mãos flamejantes suando qualquer um desses espaços.</p>\n<h3>Magias Conhecidas de Acordo com o Nível</h3>\n<p>No 1º nível você conhece duas magias de 1º círculo da lista de magias do feiticeiro, à sua escolha.</p>\n<p>A coluna Magias, da tabela O Feiticeiro, mostra quando você aprende mais magias de feiticeiro. Cada uma dessas magias deve pertencer a um círculo para o qual você tenha espaços de magia. Por exemplo, ao alcançar o 3º nível nesta classe, você pode aprender uma nova magia de 1º ou 2º círculo.</p>\n<p>Além disso, ao ganhar um nível nesta classe, você pode substituir uma das magias de feiticeiro que conhece por outra magia da lista de magias de feiticeiro, magia esta que também precisa pertencer a um círculo para o qual você tenha espaços de magias.</p>\n<table border=\"0\" cellspacing=\"0\">\n<thead>\n<tr>\n<td rowspan=\"2\">Nível</td>\n<td rowspan=\"2\">Truques</td>\n<td rowspan=\"2\">Magias</td>\n<td colspan=\"9\">—Espaços de Magia por Nível—</td>\n</tr>\n<tr>\n<td>1º</td>\n<td>2º</td>\n<td>3º</td>\n<td>4º</td>\n<td>5º</td>\n<td>6º</td>\n<td>7º</td>\n<td>8º</td>\n<td>9º</td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1º</td>\n<td>4</td>\n<td>2</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>2º</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>3º</td>\n<td>4</td>\n<td>4</td>\n<td>4</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>4º</td>\n<td>5</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>5º</td>\n<td>5</td>\n<td>6</td>\n<td>4</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>6º</td>\n<td>5</td>\n<td>7</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>7º</td>\n<td>5</td>\n<td>8</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>8º</td>\n<td>5</td>\n<td>9</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>9º</td>\n<td>5</td>\n<td>10</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>10º</td>\n<td>6</td>\n<td>11</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>11º</td>\n<td>6</td>\n<td>12</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>12º</td>\n<td>6</td>\n<td>12</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>13º</td>\n<td>6</td>\n<td>13</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>14º</td>\n<td>6</td>\n<td>13</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>15º</td>\n<td>6</td>\n<td>14</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n</tr>\n<tr>\n<td>16º</td>\n<td>6</td>\n<td>14</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n</tr>\n<tr>\n<td>17º</td>\n<td>6</td>\n<td>15</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>18º</td>\n<td>6</td>\n<td>15</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>19º</td>\n<td>6</td>\n<td>15</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>20º</td>\n<td>6</td>\n<td>15</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>\n<h3>Atributo de Conjuração</h3>\n<p>Carisma é o atributo de conjuração para suas magias de feiticeiro, pois o poder da sua magia está em sua capacidade de projetar sua vontade no mundo. Você deve usar Carisma sempre que uma magia fizer referência ao atributo de conjuração. Além disso, você usa os eu modificador de Carisma para definir a CD de uma salvaguarda feita para evitar uma magia de feiticeiro conjurada por você, e ao realizar uma jogada de ataque com uma magia de feiticeiro.</p>\n<p style=\"text-align: center;\"><strong>CD para evitar sua magias </strong>= 8 + seu bônus de proficiência + seu modificador de Carisma</p>\n<p style=\"text-align: center;\"><strong>Modificador de ataque mágico </strong>= seu bônus de proficiência + seu modificador de Carisma</p>\n<h3>Foco de Conjuração</h3>\n<p>Você pode usar um foco arcano como foco de conjuração para suas magias de feiticeiro.</p>"
+		},
+		{
+			"id": "Spellcasting (Wizard)",
+			"name": "Conjuração (Mago)",
+			"description": "<p>Como um estudante de magia arcana, você possui um livro de magias contendo magias que mostram os primeiros vislumbres de seu poder verdadeiro.</p>\n<h3>Truques</h3>\n<p>No 1º nível, você conhece três truques da lista de magias de mago, à sua escolha. Você aprende truques de mago adicionais em níveis mais altos, conforme mostrado na coluna Truques, da tabela O Mago.</p>\n<h3>Livro de Magia/Grimório</h3>\n<p>No 1 ° nível, você possui um livro de magias contendo seis magias de mago de 1º círculo, à sua escolha. Seu livro de magias é o repositório das magias de mago que você conhece, exceto por seus truques, que estão gravados em sua mente.</p>\n<h3>Preparando e Conjurando Magias</h3>\n<p>A tabela O Mago mostra quantos espaços de magia você possui para conjurar suas magias de 1 ° círculo e superiores. Para conjurar uma magia, você deve usar um espaço de magia cujo círculo seja igual ou superior ao círculo da magia. Você recupera todos os espaços de magia usados após um descanso longo.</p>\n<p>É sua responsabilidade preparar a lista de magias de mago disponíveis para conjuração. Para tanto, escolha um número de magias de mago do seu livro de magias igual ao seu modificador de Inteligência + seu nível de mago (mínimo de uma magia). As magias devem pertencer a um círculo para o qual você tenha espaços de magia.</p>\n<p>Por exemplo, se você é um mago de 3° nível, pode ter quatro espaços de magia de 1 ° círculo e dois de 2° círculo. Com uma Inteligência de 16, sua lista de feitiços preparados pode incluir seis magias de 1 ° ou 2° círculo, em qualquer combinação, escolhidas a partir de seu livro de magias. Caso prepare a magia de 1º círculo mísseis mágicos, você pode conjurá-la usando um espaço de magia de 1 ° ou 2° círculo. Conjurar uma magia não a remove da sua lista de magias preparadas.</p>\n<p>Você pode mudar sua lista de magias preparadas após um descanso longo. Preparar uma nova lista de magias de mago exige um gasto de tempo estudando seu livro de magias, memorizando os encantamentos e os gestos que precisam ser feitos a cada conjuração: pelo menos 1 minuto por círculo de cada magia em sua lista.</p>\n<table border=\"0\" cellspacing=\"0\">\n<thead>\n<tr>\n<td rowspan=\"2\">Nível</td>\n<td rowspan=\"2\">Truques</td>\n<td colspan=\"9\">—Espaços de Magia por Nível—</td>\n</tr>\n<tr>\n<td>1º</td>\n<td>2º</td>\n<td>3º</td>\n<td>4º</td>\n<td>5º</td>\n<td>6º</td>\n<td>7º</td>\n<td>8º</td>\n<td>9º</td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1º</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>2º</td>\n<td>3</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>3º</td>\n<td>3</td>\n<td>4</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>4º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>5º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>6º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>7º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>8º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>9º</td>\n<td>4</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>10º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>11º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>12º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>13º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>14º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n<td>-</td>\n</tr>\n<tr>\n<td>15º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n</tr>\n<tr>\n<td>16º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>-</td>\n</tr>\n<tr>\n<td>17º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>18º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>19º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>20º</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>2</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>\n<h3>Atributo de Conjuração</h3>\n<p>Inteligência é seu atributo de conjuração para suas magias de mago, uma vez que você aprendeu suas magias por meio da dedicação aos estudos e da memorização. Você deve usar Inteligência sempre que uma magia fizer referência ao seu atributo de conjuração. Além disso, você usa o seu modificador de Inteligência tanto para definir a CD de uma salvaguarda feita para evitar uma magia de mago conjurada por você, quanto para realizar uma jogada de ataque com uma magia de mago.</p>\n<p><strong>CD para evitar suas magias</strong> = 8 + seu bônus de proficiência+ seu modificador de Inteligência</p>\n<p><strong>Modificador de ataque mágico </strong>= seu bônus de proficiência+ seu modificador de Inteligência</p>\n<h3>Conjuração Ritual</h3>\n<p>Você pode conjurar uma magia de mago como um ritual se ela possuir a propriedade ritual e constar em seu livro de magias. Você não precisa ter a magia preparada.</p>\n<h3>Foco de Conjuração</h3>\n<p>Você pode usar um foco arcano como um foco de conjuração para suas magias de mago.</p>\n<h3>Magias Conhecidas de Acordo com o Nível</h3>\n<p>Toda vez que você sobe de nível de mago, pode adicionar duas magias de mago, à sua escolha, em seu livro de magia gratuitamente. Cada uma delas deve pertencer a um círculo para o qual você tenha espaços de magia, conforme mostrado na tabela O Mago. Em suas aventuras, você pode encontrar outras magias, que poderão ser adicionadas ao seu livro de magias (consulte a barra lateral \"Seu Livro de Magias, O Grimório\").</p>"
+		},
+		{
+			"id": "Stillness of Mind",
+			"name": "Mente Tranquila",
+			"description": "<p>A partir do 7° nível, você pode usar sua ação para encerrar qualquer efeito que o tenha deixado enfeitiçado ou amedrontado.</p>"
+		},
+		{
+			"id": "Stroke of Luck",
+			"name": "Golpe de Sorte",
+			"description": "<p>No 20º nível, você adquire um talento incrível para obter sucesso quando mais precisa. Se um ataque seu erra um alvo que esteja dentro do seu alcance, você pode transformar automaticamente esse erro em um acerto. Alternativamente, ao falhar em um teste de atributo, pode tratar a jogada do d20 como um 20.</p><p>Após usar esta característica, você não pode tornar a usá-la até completar um descanso curto ou longo.</p>"
+		},
+		{
+			"id": "Superior Critical",
+			"name": "Critico Superior",
+			"description": "<p>Seus ataques armados causam acerto crítico em uma jogada com resultados 18, 19 ou 20.</p>"
+		},
+		{
+			"id": "Superior Hunter's Defense",
+			"name": "Defesa do Caçador",
+			"description": "<p>No 15º nível, você ganha uma das seguintes características a seguir, à sua escolha.</p>\n<p>@Compendium[dnd5e.classfeatures.laVHAIOKIsUeezWd]{Evasão}</p>\n<p>@Compendium[dnd5e.classfeatures.Xf763cJoDHPPWSGG]{Lutar Contra a Maré}</p>\n<p>@Compendium[dnd5e.classfeatures.7pyZjz5vlUWV01qQ]{Esquiva Sobrenatural}</p>\n<p>Você pode arrastar sua escolha acima para sua ficha de personagem e ela será atualizada automaticamente.</p>"
+		},
+		{
+			"id": "Superior Hunter's Defense: Evasion",
+			"name": "Defesa do Caçador: Evasão",
+			"description": "<p>Quando submetido a qualquer efeito - como o sopro de fogo de um dragão vermelho ou a magia relâmpago - que lhe permita realizar uma salvaguarda de Destreza para reduzir o dano pela metade, caso obtenha sucesso na salvaguarda, não sofre qualquer dano e, caso obtenha falha, sofre apenas metade do dano.</p>"
+		},
+		{
+			"id": "Superior Hunter's Defense: Stand Against the Tide",
+			"name": "Defesa do Caçador: Lutar Contra a Maré",
+			"description": "<p>Quando uma criatura hostil falha ao atacá-lo, você pode usar sua reação para forçá-la a repetir o ataque contra outra criatura (que não seja ela mesma), à sua escolha.</p>"
+		},
+		{
+			"id": "Superior Hunter's Defense: Uncanny Dodge",
+			"name": "Defesa do Caçador: Esquiva Sobrenatural",
+			"description": "<p>Quando um atacante à sua vista atingi-lo, você pode usar sua reação para reduzir o dano pela metade.</p>"
+		},
+		{
+			"id": "Superior Inspiration",
+			"name": "Inspiração Superior",
+			"description": "<p>No 20° nível, quando jogar a iniciativa e não tiver mais usos de @Compendium[dnd5e.classfeatures.EeGafsa17CapsH2j]{Inspiração de Bardo} disponíveis, você recupera um uso.</p>"
+		},
+		{
+			"id": "Supreme Healing",
+			"name": "Cura Suprema",
+			"description": "<p>A partir do 17° nível, ao invés de jogar dados para determinar a quantidade de pontos de vida restaurados por urna magia, você pode usar diretamente o maior resultado possível. Por exemplo, em vez de recuperar 2d6 pontos de vida de uma criatura, você recupera 12 pontos.</p>"
+		},
+		{
+			"id": "Supreme Sneak",
+			"name": "Furtividade Suprema",
+			"description": "<p>A partir do 9° nível, você tem vantagem em seus testes de Destreza (Furtividade) quando estiver se movendo, durante o mesmo turno, a no máximo a metade do seu deslocamento.</p>"
+		},
+		{
+			"id": "Survivor",
+			"name": "Sobrevivente",
+			"description": "<p>Você alcança o ápice da resistência em combate.</p><p>No começo de cada um dos seus turnos, caso tenha menos do que metade dos seus pontos de vida sobrando, você recupera uma quantidade de pontos de vida igual a 5 + seu modificador de Constituição.</p><p>Você não ganha esse benefício caso esteja com 0 pontos de vida.</p>"
+		},
+		{
+			"id": "Thief's Reflexes",
+			"name": "Reflexos de Ladrão",
+			"description": "<p>Ao chegar no 17° nível, você se tornou perito em fazer emboscadas e escapar rapidamente do perigo. Você passa a ter dois turnos durante a primeira rodada de qualquer combate: o primeiro, realizado na sua iniciativa normal, e o segundo, na sua iniciativa menos 10. Você não pode usar esta característica ao ser surpreendido.</p>"
+		},
+		{
+			"id": "Thieves' Cant",
+			"name": "Gíria de Ladrão",
+			"description": "<p>Durante o seu treinamento de ladino, você aprendeu a gíria do ladrão, uma mistura secreta de dialeto, jargões e códigos, que permite que você oculte mensagens em uma conversa aparentemente normal. Apenas outra criatura que conheça a gíria do ladrão é capaz de entender essas mensagens. Leva quatro vezes mais tempo transmitir uma mensagem desse modo, do que levaria para transmiti-la do modo habitual.</p><p>Além disso, você entende uma série de sinais secretos e símbolos usados para a passagem de mensagens simples e curtas, como, por exemplo, se uma área é perigosa, se se trata do território de uma guilda de ladrões, se há um tesouro por perto, se as pessoas de determinado local são alvos fáceis, ou se darão abrigo a ladrões em fuga.</p>"
+		},
+		{
+			"id": "Timeless Body (Druid)",
+			"name": "Corpo Atemporal (Druida)",
+			"description": "<p>A partir do 18° nível, a magia primal que você domina faz com que você envelheça mais lentamente. A cada 10 anos que se passam, seu corpo envelhece apenas um.</p>"
+		},
+		{
+			"id": "Timeless Body (Monk)",
+			"name": "Corpo Atemporal (Monge)",
+			"description": "<p>No 15° nível, seu ki o sustenta de tal forma que você não sofre mais os efeitos da velhice, e não pode sofrer envelhecimento mágico. Entretanto, você ainda pode morrer por idade avançada. Além disso, não precisa mais de água ou comida.</p>"
+		},
+		{
+			"id": "Tongue of the Sun and Moon",
+			"name": "Idioma do Sol e da Lua",
+			"description": "<p>A partir do 13° nível, você aprende a tocar o ki de outras mentes, sendo capaz de entender todos os idiomas falados. Além disso, toda criatura capaz de entender qualquer idioma passa a entender o que você diz.</p>"
+		},
+		{
+			"id": "Tranquility",
+			"name": "Tranquilidade",
+			"description": "<p>A partir do 11 ° nível, você pode entrar num estado especial de meditação que lhe confere uma aura de paz. Ao final de um descanso longo, você ganha o efeito da magia @Compendium[dnd5e.spells.gvdA9nPuWLck4tBl]{Santuário}, 0 qual dura até o começo do seu próximo descanso longo (a magia pode terminar de forma prematura, conforme as regras normais). A CD da salvaguarda contra a magia é igual a 8 + o seu modificador de Sabedoria + o seu bônus de proficiência.</p>"
+		},
+		{
+			"id": "Unarmored Defense (Barbarian)",
+			"name": "Defesa sem Armadura (Bárbaro)",
+			"description": "<p>Quando não está usando nenhuma armadura, a sua Classe de Armadura é igual a 10 + seu modificador de Destreza + seu modificador de Constituição. Você pode usar um escudo, e ainda assim, obter esse benefício.</p>"
+		},
+		{
+			"id": "Unarmored Defense (Monk)",
+			"name": "Defesa sem Armadura (Monge)",
+			"description": "<p>A partir do 1 ° nível, sempre que não estiver usando nenhuma armadura ou escudo, a sua Classe da Armadura será igual a 10 + seu modificador de Destreza + seu modificador de Sabedoria.</p>"
+		},
+		{
+			"id": "Unarmored Movement",
+			"name": "Movimento sem Armadura",
+			"description": "<p>No 2° nível, seu deslocamento aumenta em 3 metros enquanto você não estiver usando uma armadura ou empunhando um escudo. Esse bônus aumenta quando você alcança certos níveis como monge, conforme mostrado na tabela O Monge.</p>\n<p>No 9° nível, você ganha a habilidade de mover-se sobre superfícies verticais ou líquidas sem cair ou afundar durante o seu deslocamento.</p>\n<table style=\"width: 227px;\" border=\"1\">\n<tbody>\n<tr>\n<td style=\"width: 79px;\"><strong>Nivel de Monge</strong></td>\n<td style=\"width: 141px;\"><strong>Movimento sem Armadura</strong></td>\n</tr>\n<tr>\n<td style=\"width: 79px;\">2º</td>\n<td style=\"width: 141px;\">+3 m.</td>\n</tr>\n<tr>\n<td style=\"width: 79px;\">3º</td>\n<td style=\"width: 141px;\">+3 m.</td>\n</tr>\n<tr>\n<td style=\"width: 79px;\">4º</td>\n<td style=\"width: 141px;\">+3 m.</td>\n</tr>\n<tr>\n<td style=\"width: 79px;\">5º</td>\n<td style=\"width: 141px;\">+3 m.</td>\n</tr>\n<tr>\n<td style=\"width: 79px;\">6º</td>\n<td style=\"width: 141px;\">+4,5 m.</td>\n</tr>\n<tr>\n<td style=\"width: 79px;\">7º</td>\n<td style=\"width: 141px;\">+4,5 m.</td>\n</tr>\n<tr>\n<td style=\"width: 79px;\">8º</td>\n<td style=\"width: 141px;\">+4,5 m.</td>\n</tr>\n<tr>\n<td style=\"width: 79px;\">9º</td>\n<td style=\"width: 141px;\">+4,5 m.</td>\n</tr>\n<tr>\n<td style=\"width: 79px;\">10º</td>\n<td style=\"width: 141px;\">+6 m.</td>\n</tr>\n<tr>\n<td style=\"width: 79px;\">11º</td>\n<td style=\"width: 141px;\">+6 m.</td>\n</tr>\n<tr>\n<td style=\"width: 79px;\">12º</td>\n<td style=\"width: 141px;\">+6 m.</td>\n</tr>\n<tr>\n<td style=\"width: 79px;\">13º</td>\n<td style=\"width: 141px;\">+6 m.</td>\n</tr>\n<tr>\n<td style=\"width: 79px;\">14º</td>\n<td style=\"width: 141px;\">+7,5 m.</td>\n</tr>\n<tr>\n<td style=\"width: 79px;\">15º</td>\n<td style=\"width: 141px;\">+7,5 m.</td>\n</tr>\n<tr>\n<td style=\"width: 79px;\">16º</td>\n<td style=\"width: 141px;\">+7,5 m.</td>\n</tr>\n<tr>\n<td style=\"width: 79px;\">17º</td>\n<td style=\"width: 141px;\">+7,5 m.</td>\n</tr>\n<tr>\n<td style=\"width: 79px;\">18º</td>\n<td style=\"width: 141px;\">+9 m.</td>\n</tr>\n<tr>\n<td style=\"width: 79px;\">19º</td>\n<td style=\"width: 141px;\">+9 m.</td>\n</tr>\n<tr>\n<td style=\"width: 79px;\">20º</td>\n<td style=\"width: 141px;\">+9 m.</td>\n</tr>\n</tbody>\n</table>\n<p> </p>"
+		},
+		{
+			"id": "Uncanny Dodge",
+			"name": "Esquiva Sobrenatural",
+			"description": "<p>A partir do 5° nível, você pode usar sua reação para reduzir o dano sofrido pela metade quando for atingido por um atacante que você possa enxergar.</p>"
+		},
+		{
+			"id": "Use Magic Device",
+			"name": "Usar Dispositivo Mágico",
+			"description": "<p>No 13° nível, você aprendeu o suficiente sobre o funcionamento dos itens mágicos para, mesmo quando não foram feitos para você, ignorar todos os requerimentos de classe, raça e nível na sua utilização.</p>"
+		},
+		{
+			"id": "Vanish",
+			"name": "Desaparecer",
+			"description": "<p>A partir do 14° nível, você pode usar a ação Esconder-se como sua ação bônus. Além disso, não pode ser rastreado por meios não-mágicos, a não ser que escolha deixar rastros.</p>"
+		},
+		{
+			"id": "Wholeness of Body",
+			"name": "Integridade Corporal",
+			"description": "<p>No 6° nível, você adquire a habilidade de curar a si mesmo. Como sua ação no turno, você pode recuperar uma quantidade de pontos de vida igual a três vezes seu nível de monge. É preciso completar um descanso longo antes de utilizar esta característica novamente.</p>"
+		},
+		{
+			"id": "Wild Shape",
+			"name": "Forma Selvagem",
+			"description": "<p>A partir do 2° nível, você pode usar sua ação no turno para se transformar magicamente em um animal que já tenha visto. Esta característica pode ser usada duas vezes. Ambos os usos são recuperados ao final de um descanso curto ou longo.&nbsp;</p>\n<p>O seu nível de druida determina em que tipo de animal você pode se transformar, conforme mostrado na tabela Formas Animais. No 2° nível, por exemplo, você pode se transformar em qualquer animal que tenha nível de desafio (ND) igual a 1/4 ou menor, e que não possua deslocamento de voo ou nado.</p>\n<h4><strong>Forma Animal</strong></h4>\n<table style=\"width: 352px;\" border=\"1\">\n<tbody>\n<tr>\n<td style=\"width: 35px;\"><strong>Nível</strong></td>\n<td style=\"width: 49px;\"><strong>ND Max.</strong></td>\n<td style=\"width: 182px;\"><strong>Limitações</strong></td>\n<td style=\"width: 73px;\"><strong>Exemplo</strong></td>\n</tr>\n<tr>\n<td style=\"width: 35px;\">2º</td>\n<td style=\"width: 49px;\">1/4</td>\n<td style=\"width: 182px;\">Sem deslocamento de voo ou nado</td>\n<td style=\"width: 73px;\">@Compendium[dnd5e.monsters.yawTeS8u2FCfzzZH]{Lobo}</td>\n</tr>\n<tr>\n<td style=\"width: 35px;\">4°</td>\n<td style=\"width: 49px;\">1/2</td>\n<td style=\"width: 182px;\">Sem deslocamento de voo</td>\n<td style=\"width: 73px;\">@Compendium[dnd5e.monsters.8aCTKP5qaBPFOqxM]{Crocodilo}</td>\n</tr>\n<tr>\n<td style=\"width: 35px;\">8°</td>\n<td style=\"width: 49px;\">1</td>\n<td style=\"width: 182px;\">--</td>\n<td style=\"width: 73px;\">@Compendium[dnd5e.monsters.DBCCRXiLn6mIS8hX]{Águia Gigante}</td>\n</tr>\n</tbody>\n</table>\n<p>Você pode assumir a forma de um animal por um número de horas equivalente à metade do seu nível de druida (arredondando para baixo). Ao final desse tempo, pode reverter à sua forma normal, a não ser que gaste outro uso desta característica. Você pode reverter para a sua forma natural utilizando sua ação bônus do turno. A reversão ocorre naturalmente caso você fique inconsciente, com 0 pontos de vida ou morra.</p>\n<p>Enquanto estiver transformado, aplique as regras a seguir:</p>\n<ul>\n<li>\n<p>Suas estatísticas de jogo são substituídas pelas estatísticas do animal, mas você mantém seu alinhamento, personalidade, valores de Inteligência, Sabedoria e Carisma, todas as suas perícias e salvaguardas, além de ganhar as da criatura. Caso esta possua proficiências iguais a algumas das suas e os bônus dos atributos relacionados a elas forem maiores que os seus, utilize os bônus da criatura. Caso esta possua qualquer ação lendária ou de covil, você não pode usá-las.</p>\n</li>\n<li>\n<p>Ao se transformar, você assume os pontos e Dados de Vida do animal. Ao retornar à sua forma normal, contudo, volta a ter a quantidade de pontos de vida que tinha antes da transformação. Caso você reverta à sua forma original como resultado de ter seus pontos de vida reduzidos a 0, qualquer excesso de dano será transferido para sua forma normal. Por exemplo, se você receber 10 pontos de dano na forma animal e possuir apenas 1 ponto de vida restante, você reverte para a sua forma original e recebe 9 pontos de dano. Desde que esse excesso de dano não reduza os pontos de vida da sua forma normal a 0, você não ficará inconsciente.</p>\n</li>\n<li>\n<p>Você não pode conjurar magias, e sua capacidade de falar ou realizar qualquer ação que exija o uso das mãos está limitada às capacidades da sua forma animal. Entretanto, a transformação não quebra sua concentração em uma magia que você já tenha conjurado; nem o impede de executa ações, como invocar relâmpagos, que sejam parte de uma magia que já tenha sido conjurada.</p>\n</li>\n<li>\n<p>Você mantém o benefício de todas as características da sua classe, raça ou outra fonte, podendo usá-las, caso a nova forma seja fisicamente capaz de fazê-lo. No entanto, você não pode usar nenhum dos seus sentidos especiais, como visão no escuro, a menos que sua nova forma também os possua.</p>\n</li>\n<li>\n<p>Você escolhe se o seu equipamento cai em seu espaço, funde-se à nova forma ou é vestido/carregado por ela. O equipamento funciona normalmente, caso o Mestre decida que a nova forma é capaz de usá-lo. Ele não muda de tamanho ou formato para coincidir com a nova forma, e qualquer item que esta não puder usar cai no chão ou se funde a ela. O equipamento fundido não tem utilidade até que você reverta à sua forma original.</p>\n</li>\n</ul>"
+		}
+	]
+}

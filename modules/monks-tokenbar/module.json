@@ -1,0 +1,53 @@
+{
+	"name": "monks-tokenbar",
+	"title": "Monk's TokenBar",
+	"description": "Add a bar with all the current player tokens.  Limit movement, roll saving throws, assign XP.",
+	"version": "1.0.34",
+	"author": "IronMonk, ironmonk88#4075",
+	"socket": true,
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json"
+		},
+		{
+			"lang": "pt-BR",
+			"name": "Português",
+			"path": "lang/pt-BR.json"
+		},
+		{
+			"lang": "cn",
+			"name": "中文",
+			"path": "lang/cn.json"
+		},
+		{
+			"lang": "ja",
+			"name": "日本語",
+			"path": "lang/ja.json"
+		},
+		{
+			"lang": "sv",
+			"name": "Svenska",
+			"path": "lang/sv.json"
+		}
+	],
+	"esmodules": [
+		"monks-tokenbar.js",
+		"monks-tokenbar-api.js",
+		"./apps/tokenbar.js",
+		"./apps/savingthrow.js",
+		"./apps/assignxp.js",
+		"./apps/contestedroll.js",
+		"settings.js"
+	],
+	"styles": [ "css/tokenbar.css" ],
+	"packs": [],
+	"url": "https://github.com/ironmonk88/monks-tokenbar",
+	"download": "https://github.com/ironmonk88/monks-tokenbar/archive/1.0.34.zip",
+	"manifest": "https://github.com/ironmonk88/monks-tokenbar/releases/latest/download/module.json",
+	"bugs": "https://github.com/ironmonk88/monks-tokenbar/issues",
+	"allowBugReporter": true,
+	"minimumCoreVersion": "0.7.0",
+	"compatibleCoreVersion": "0.7.9"
+}

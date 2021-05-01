@@ -1,0 +1,39 @@
+{
+    "name": "_chatcommands",
+    "title": "Library: Chat Commands",
+    "description": "Allows for easy registration of custom chat commands such as /command",
+    "version": "1.3.2",
+    "library": "true",
+    "manifestPlusVersion": "1.0.0",
+    "minimumCoreVersion": "0.6.2",
+    "compatibleCoreVersion": "0.7.9",
+    "authors": [
+        {
+            "name": "Cody Swendrowski",
+            "url": "https://swendrowski.us",
+            "email": "cody@swendrowski.us",
+            "discord": "cswendrowski#9701",
+            "patreon": "ironmoose"
+        },
+        {
+            "name": "The League of Extraordinary FVTT Developers",
+            "url": "https://github.com/League-of-Foundry-Developers",
+            "discord": "https://discord.gg/Es2Bv9MyaR"
+        }
+    ],
+    "esmodules": [
+        "/scripts/module.js"
+    ],
+    "styles": [
+        "styles/chatcommands.css"
+    ],
+    "url": "https://github.com/League-of-Foundry-Developers/FoundryVTT-Chat-Commands-Lib",
+    "manifest": "https://github.com/League-of-Foundry-Developers/Chat-Commands-Lib/releases/latest/download/module.json",
+    "download": "https://github.com/League-of-Foundry-Developers/Chat-Commands-Lib/releases/download/1.3.2/module.zip",
+    "media": [
+        {
+            "type": "icon",
+            "url": "https://avatars2.githubusercontent.com/u/71292812?s=400&u=ccdb4eeb7abf551ca8f314e5a9bfd0479a4d3d41&v=4"
+        }
+    ]
+}

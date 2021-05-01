@@ -1,0 +1,21 @@
+{
+    "name": "smip-compendium",
+    "title": "Sane Magical Item Prices Compendium",
+    "description": "This is an implementation of the Sane Magical Item Prices PDF",
+    "version": "0.5.0",
+    "author": "fohswe#8355",
+    "minimumCoreVersion": "0.6.6",
+    "compatibleCoreVersion": "0.8.5",
+    "packs": [
+        {
+            "name": "sane-magical-item-prices",
+            "label": "Sane Magical Item Prices",
+            "path": "packs/sane-magical-item-prices.db",
+            "entity": "JournalEntry",
+            "system": "dnd5e"
+        }
+    ],
+    "url": "https://gitlab.com/fohswe/smip-compendium",
+    "manifest": "https://gitlab.com/fohswe/smip-compendium/-/raw/master/module.json",
+    "download": "https://gitlab.com/fohswe/smip-compendium/-/archive/0.5/smip-compendium-0.5.zip"
+}

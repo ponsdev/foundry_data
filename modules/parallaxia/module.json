@@ -1,0 +1,28 @@
+{
+  "name": "parallaxia",
+  "title": "Parallaxia",
+  "description": "Entertain your players with animated tiles and systemic nausea",
+  "author": "wonko",
+  "version": "0.2.13",
+  "minimumCoreVersion": "0.7.5",
+  "compatibleCoreVersion": "0.7.5",
+  "keywords": [
+    "visual",
+    "animations",
+    "effects"
+  ],
+  "esmodules": [
+    "./module/parallaxia.js",
+    "./module/ParallaxiaManager.js",
+    "./module/ParallaxiaTile.js",
+    "./module/ParallaxiaTileConfig.js",
+    "./module/logging.js",
+    "./module/controls.js",
+    "./module/util.js"
+  ],
+  "styles": ["./styles/style.css"],
+
+  "url": "https://gitlab.com/reichler/parallaxia",
+  "manifest": "https://gitlab.com/reichler/parallaxia/-/raw/master/parallaxia/module.json",
+  "download": "https://gitlab.com/reichler/parallaxia/-/jobs/artifacts/master/raw/parallaxia.zip?job=build"
+}

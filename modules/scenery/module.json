@@ -1,0 +1,25 @@
+{
+    "name": "scenery",
+    "title": "Scenery - Background Image Variation Manager",
+    "description": "Allows easy import and background image changes for variations such as GM/Player, Night, Seasonal, etc.",
+    "author": "Vance Cole",
+    "version": "0.1.4",
+    "minimumCoreVersion": "0.6.0",
+    "compatibleCoreVersion": "0.7.5",
+    "esmodules": [
+        "./scripts/scenery.js"
+    ],
+    "styles": [
+        "./styles/scenery.css"
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "languages/en.json"
+        }
+    ],
+    "url": "https://github.com/VanceCole/scenery",
+    "manifest": "https://raw.githubusercontent.com/VanceCole/scenery/master/module.json",
+    "download": "https://github.com/VanceCole/scenery/releases/download/0.1.4/module.zip"
+}

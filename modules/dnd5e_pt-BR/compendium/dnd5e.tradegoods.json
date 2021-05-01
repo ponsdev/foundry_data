@@ -1,0 +1,120 @@
+{
+	"label": "Bens de Comércio (SRD)",
+	"entries": [
+		{
+			"id": "Canvas",
+			"name": "Lona",
+			"description": "<p>Um metro quadrado de lona de qualidade e peso médios. Usada para muitos itens e roupas.</p>\n<p>Classificada de 1 a 12, quanto menor o número, melhor a qualidade e maior o peso. A lona de qualidade nº 1 pesa cerca de 700 gramas por metro quadrado, enquanto a nº 12, mais fraca e mais leve, pode pesar apenas 300 gramas.</p>"
+		},
+		{
+			"id": "Chicken",
+			"name": "Frango",
+			"description": "<p>A fonte de omeletes e asas de frango, em média uma franfo adulto pesa de 2 a 4 quilos.</p>"
+		},
+		{
+			"id": "Cinnamon",
+			"name": "Canela",
+			"description": "<p>Retirado da casca interna da canela, um tempero popular, embora um pouco mais raro, entre os chefs do mundo. Adorado pelas crianças quando combinado com açúcar para fazer muitos tipos de doces.</p>"
+		},
+		{
+			"id": "Cloves",
+			"name": "Cravo",
+			"description": "<p>Um tempero forte apreciado por chefs e destiladores, bem trabalhando para dar sabor a carne e ensopados, molhos finos, bebidas quentes como cidra e chá chai, pão, queijos e sobremesas doces, como tortas e bolos de frutas.</p>\n<p>O cravo-da-índia é o botão fino, seco e não abrochado do Syzygium aromaticum, uma árvore sempre-verde da família das murtas.</p>"
+		},
+		{
+			"id": "Copper",
+			"name": "Cobre",
+			"description": "<p>Cobiçado por construtores de navios avançados, alquimistas, alguns joalheiros e chefs, o cobre é geralmente extraído da superfície, mas a mineração subterrânea existe quando as fontes de superfície estão esgotadas ou impossibilitadas de serem localizadas.</p>\n<p>Embora possa ser usado para blindagem, é muito melhor misturado com estanho para tornar a liga de bronze muito mais poderosa para as necessidades militares.</p>"
+		},
+		{
+			"id": "Cotton",
+			"name": "Algodão",
+			"description": "<p>Um metro quadrado de algodão de qualidade e peso habituais. Usado para muitos itens e roupas.</p>\n<p>Muito mais leve, mais confortável e mais fácil de trabalhar do que a tela; no entanto, comparativamente com um corte mais delicado significa que é consequentemente mais cara e potencialmente mais difícil de encontrar.</p>"
+		},
+		{
+			"id": "Cow",
+			"name": "Vaca",
+			"description": "<p>Criatura para agricultores de grandes áreas, as vacas exigem grandes áreas de pastagem plana, o que significa que não são tão comuns quanto os outros animais. No entanto, eles vivem mais e dão muito mais leite. Eles também são uma fonte de couro muito mais durável, menos propenso a rachaduras e resistente ao calor e à sujeira.</p>\n<p>Dependendo do gênero e raça, as vacas adultas podem pesar entre 450 e 800 quilos.</p>"
+		},
+		{
+			"id": "Flour",
+			"name": "Farinha",
+			"description": "<p>Grãos moídos por um moleiro no próximo passo ao longo da cadeia alimentar.</p>"
+		},
+		{
+			"id": "Ginger",
+			"name": "Gengibre",
+			"description": "<p>Especiaria proveniente da raiz fresca ou seca da planta de gengibre Zingiber officinale. Pertence à mesma família do açafrão e do cardamomo.</p>\n<p>Valorizada por chefs e fazedores de doces, amada por crianças e aqueles com gostos mais picantes.</p>"
+		},
+		{
+			"id": "Goat",
+			"name": "Bode",
+			"description": "<p>Uma criatura útil para pequenos agricultores e habitantes das montanhas, as cabras são eficazes para impedir que os pastos cresçam demais, fornecendo leite, queijo e, eventualmente, peles e carne.</p>\n<p>Dependendo da raça, cabras adultas podem variar de 20 até 130 quilos.</p>"
+		},
+		{
+			"id": "Gold",
+			"name": "Ouro",
+			"description": "<p>O ouro é o rei da moeda para muitas civilizações. Geralmente mais comum do que platina, mas nem de longe tão comum quanto outros metais como o ferro, ele atinge o ponto entre raridade e reatividade.</p>\n<p>Ao contrário da prata, o ouro pode ser encontrado mais facilmente na superfície. A mineração de superfície e subterrânea pode ser extremamente lucrativa. As corridas de ouro podem e têm sido uma fonte de grande felicidade e enorme tragédia.</p>"
+		},
+		{
+			"id": "Iron",
+			"name": "Ferro",
+			"description": "<p>Freqüentemente, a matéria prima do metalúrgico, o ferro é apreciado por sua relativa abundância e facilidade de obtenção. O ferro na superfície pode ser encontrado em meteoros e xenólitos caídos, mas é muito mais comumente extraído no subsolo. No entanto, é preciso ter cuidado, caso contrário a ferrugem terá seu preço.</p>"
+		},
+		{
+			"id": "Linen",
+			"name": "Tecido de linho",
+			"description": "<p>Um metro quadrado de linho de qualidade e peso habituais. Usado para muitos itens e roupas.</p>\n<p>Mais duradouro que o algodão, sua durabilidade e respirabilidade o tornam particularmente valorizado em climas quentes.</p>\n<p>Existem diferentes tipos de linhos, com tecidos mais leves a partir de 170 gramas por metro quadrado, e subindo até 425 gramas.</p>"
+		},
+		{
+			"id": "Ox",
+			"name": "Boi",
+			"description": "<p>Essencialmente, um novilho treinado ou diariamente ordenhado que atingiu a idade de 5 anos. Esses animais de carga pesada podem puxar ou transportar até e acima de seu próprio peso corporal. Usados para diversas tarefas, como transportar vagões, debulhar grãos, acionar máquinas que irrigam ou moem grãos e até mesmo montados, os bois são criaturas altamente valorizadas pelos trabalhadores em vários campos.</p>"
+		},
+		{
+			"id": "Pepper",
+			"name": "Pimenta",
+			"description": "<p>Os grãos de pimenta são os pequenos frutos, ou drupas, da planta, uma videira também conhecida como piper nigrum. Altamente valorizado pelos chefs por sua versatilidade e pode ser utilizado em uma pitada pelos aventureiros quando esmagados por distrações e travessuras.</p>"
+		},
+		{
+			"id": "Pig",
+			"name": "Porco",
+			"description": "<p>Uma criatura para agricultores de área média ou maior, os porcos se reproduzem com relativa rapidez e são criaturas robustas que oferecem todo tipo de possibilidades de cozimento para o cozinheiro empreendedor, o principal deles é o bacon. Sua pele também pode ser usada como um couro mais barato, mas é menos resistente ao desgaste em comparação com o cordeiro ou a cabra. Os porcos também são a fonte de banha de porco.</p>\n<p>A maioria dos porcos pesa entre 110 a 120 quilos no abate, pois oferece cortes ideais no varejo e cobertura média de gordura.</p>"
+		},
+		{
+			"id": "Platinum",
+			"name": "Platina",
+			"description": "<p>Muito mais raro que o ouro, a platina pode ser tratada como o auge da riqueza ou o vestígio de uma época passada que pode ser vista com desconfiança ou inveja.</p>\n<p>Ao contrário do ouro, a platina é quase exclusivamente extraída no subsolo.</p>"
+		},
+		{
+			"id": "Saffron",
+			"name": "Açafrão",
+			"description": "<p>É provável que seja um dos ingredientes mais valorizados do mundo, o açafrão é tão caro, porque exige muito trabalho. Feito do Crocus sativus, ou mais comumente o \"açafrão de croco\", são necessárias 80.000 flores de açafrão para produzir 1 quilo de açafrão. Em peso, vale mais que ouro. Valorizado pelo mais exigente dos cozinheiros e boticários, por seus aromas e benefícios à saúde.</p>"
+		},
+		{
+			"id": "Salt",
+			"name": "Sal",
+			"description": "<p>Premiado por chefs e militares como tempero e conservante de suprimentos onde álcool ou vinagre são indesejados.</p>"
+		},
+		{
+			"id": "Sheep",
+			"name": "Ovelha",
+			"description": "<p>Uma criatura útil para os pequenos agricultores e habitantes das terras altas, embora não tão ágil quanto as cabras, eles têm a valiosa capacidade de serem cortados todos os anos, dando às pessoas uma fonte de roupas, tapetes e mantas para camas e cadeiras. Seu tamanho maior também significa que eles são mais valiosos para o abate.</p>\n<p>Dependendo da raça, as ovelhas adultas podem variar de 45 até 150 quilos.</p>"
+		},
+		{
+			"id": "Silk",
+			"name": "Seda",
+			"description": "<p>Um metro quadrado de seda de qualidade e peso habitual. Usado para muitos itens e roupas.</p>\n<p>O melhor e mais desejável dos tecidos comuns, a seda também é a mais leve. A maioria das sedas pesa entre 50 a 100 gramas por metro quadrado. Quanto mais pesada a seda, maior a qualidade, mais durável e mais opaca na cor.</p>"
+		},
+		{
+			"id": "Silver",
+			"name": "Prata",
+			"description": "<p>A prata é apreciada há muito tempo por sua natureza não reativa e facilidade com que pode ser moldada nas melhores decorações, adornos e, é claro, usada como moeda.</p>\n<p>A prata raramente é encontrada em sua forma nativa em pepitas. Normalmente é encontrado misturado com outras substâncias, como enxofre ou cloro, em minérios ou como uma liga parecida com ouro. A prata pode ser encontrada na superfície, mas é muito mais comumente extraída no subsolo. A mineração de prata é lucrativa e pode inspirar corridas de prata.</p>"
+		},
+		{
+			"id": "Wheat",
+			"name": "Trigo",
+			"description": "<p>Um ingrediente comum para pão, cerveja e muito mais; esse item básico costuma constituir a base de uma dieta para pessoas em que suas terras são abertas e relativamente planas, o clima é temperado e a área é segura o suficiente para os agricultores operarem.</p>"
+		}
+	]
+}

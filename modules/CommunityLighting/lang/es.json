@@ -1,0 +1,42 @@
+{
+    "COMMUNITYLIGHTING": {
+        "authors": {
+            "Blitz": {
+                "lights": {
+                    "lightning": {
+                        "name": "Relámpago",
+                        "description": "Un relámpago básico, produce un fogonazo corto al azar",
+                        "intensityDescription": "Controla el brillo del fogonazo",
+                        "speedDescription": "Controla la frecuencia de los relámpagos"
+                    },
+                    "flash": {
+                        "name": "Fogonazo Simple",
+                        "description": "Un fogonazo simple",
+                        "intensityDescription": "Controla cómo de tenue es la luz cuando termina el fogonazo",
+                        "speedDescription": "Controla la frecuencia con la que se producirán los fogonazos"
+                    },
+                    "rgbflash": {
+                        "name": "Fogonazo RGB",
+                        "description": "Un fogonazo simple que va rotando de Rojo-Verde-Azul",
+                        "intensityDescription": "Controla cómo de tenue es la luz cuando termina el fogonazo",
+                        "speedDescription": "Controla la frecuencia con la que se producirán los fogonazos"
+                    },
+                    "policeflash": {
+                        "name": "Luces de Policía",
+                        "description": "Una luz simple que va rotando de Rojo-Azul y que imita las luces de la policía",
+                        "intensityDescription": "Controla cómo de tenue es la luz cuando termina el fogonazo",
+                        "speedDescription": "Controla la frecuencia con la que se producirán los fogonazos"
+                    },
+                    "torch": {
+                        "name": "Antorcha Brillante",
+                        "description": "Versión alternativa y más brillante de la antorcha"
+                    }
+                }
+            }
+        },
+        "settings": {
+            "name": "Ajustes de Iluminación basada en la Comunidad (Community Lighting)",
+            "label": "Abrir la configuración"
+        }
+    }
+}

@@ -1,0 +1,69 @@
+{
+    "name": "healthEstimate",
+    "title": "Health Estimate 2",
+    "description": "Gives players ability to see approximate health status of a token",
+    "version": "2.5.3",
+    "author": "MClemente, Shylight",
+    "scripts": [
+        "./lib/chroma.min.js",
+        "./lib/color-picker.min.js",
+        "./lib/grapick.min.js",
+        "./lib/spectrum.min.js"
+    ],
+    "esmodules": [
+        "./healthEstimate.js"
+    ],
+    "styles": [
+        "./css/healthEstimate.css",
+        "./lib/spectrum.min.css"
+    ],
+    "packs": [
+        {
+            "name": "deathmacro",
+            "label": "Health Estimate Macros",
+            "path": "./packs/macros.db",
+            "module": "healthEstimate",
+            "entity": "Macro"
+        }
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "./lang/en.json"
+        },
+        {
+            "lang": "ru",
+            "name": "Русский (Russian)",
+            "path": "./lang/ru.json"
+        },
+        {
+            "lang": "ko",
+            "name": "한국어 (Korean)",
+            "path": "./lang/ko.json"
+        },
+        {
+            "lang": "fr",
+            "name": "Français (French)",
+            "path": "./lang/fr.json"
+        },
+        {
+            "lang": "cn",
+            "name": "中文 (Chinese)",
+            "path": "./lang/cn.json"
+        },
+        {
+            "lang": "pt-BR",
+            "name": "Português (Brasil)",
+            "path": "./lang/pt-BR.json"
+        }
+    ],
+    "minimumCoreVersion": "0.5.0",
+    "compatibleCoreVersion": "0.7.9",
+    "url": "https://github.com/mclemente/healthEstimate",
+    "manifest": "https://github.com/mclemente/healthEstimate/releases/latest/download/module.json",
+    "download": "https://github.com/mclemente/healthEstimate/releases/download/2.5.3/module.zip",
+    "license": "https://choosealicense.com/licenses/mit/",
+    "bugs": "https://github.com/mclemente/healthEstimate/issues",
+    "allowBugReporter": true
+}

@@ -1,0 +1,50 @@
+{
+  "name": "boteco-brasil",
+  "title": "Ravenscraft",
+  "description": null,
+  "version": "1.0.0",
+  "minimumCoreVersion": "0.0.0",
+  "compatibleCoreVersion": "1.0.0",
+  "scripts": [],
+  "esmodules": [],
+  "styles": [],
+  "packs": [
+    {
+      "entity": "Actor",
+      "label": "Monsters (SRD) Metrified",
+      "name": "monsters-metrified",
+      "package": "world",
+      "path": "packs/monsters-metrified.db",
+      "system": "dnd5e",
+      "absPath": "C:\\Users\\Vinicius\\AppData\\Local\\FoundryVTT\\Data\\worlds\\boteco-brasil\\packs\\monsters-metrified.db"
+    },
+    {
+      "entity": "Item",
+      "label": "Magias (SRD / Métrico) Metrified",
+      "name": "spells-metrified",
+      "package": "world",
+      "path": "packs/spells-metrified.db",
+      "system": "dnd5e",
+      "absPath": "C:\\Users\\Vinicius\\AppData\\Local\\FoundryVTT\\Data\\worlds\\boteco-brasil\\packs\\spells-metrified.db"
+    }
+  ],
+  "languages": [],
+  "authors": [],
+  "keywords": [],
+  "socket": false,
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": "",
+  "readme": "",
+  "bugs": "",
+  "changelog": "",
+  "background": "",
+  "system": "dnd5e",
+  "coreVersion": "0.7.9",
+  "systemVersion": "1.2.4",
+  "nextSession": "2021-05-01T16:00:00.000Z",
+  "availability": 0,
+  "unavailable": false,
+  "id": "boteco-brasil"
+}

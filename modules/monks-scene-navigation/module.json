@@ -1,0 +1,33 @@
+{
+	"name": "monks-scene-navigation",
+	"title": "Monk's Scene Navigation",
+	"description": "Tidy up the scene navigation and let it respect the folder structure",
+	"version": "1.0.11",
+	"author": "IronMonk, ironmonk88#4075",
+	"socket": true,
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json"
+		},
+		{
+			"lang": "es",
+			"name": "Español",
+			"path": "lang/es.json"
+		}
+	],
+	"esmodules": [
+		"monks-scene-navigation.js",
+		"settings.js"
+	],
+	"styles": [ "css/monks-scene-navigation.css" ],
+	"packs": [],
+	"url": "https://github.com/ironmonk88/monks-scene-navigation",
+	"download": "https://github.com/ironmonk88/monks-scene-navigation/archive/1.0.11.zip",
+	"manifest": "https://github.com/ironmonk88/monks-scene-navigation/releases/latest/download/module.json",
+	"bugs": "https://github.com/ironmonk88/monks-scene-navigation/issues",
+	"allowBugReporter": true,
+	"minimumCoreVersion": "0.7.0",
+	"compatibleCoreVersion": "0.7.9"
+}

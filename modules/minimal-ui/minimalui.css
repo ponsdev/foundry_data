@@ -1,0 +1,381 @@
+:root {
+    --hotbarvis: hidden;
+    --hotbarypos: 10px;
+    --hotbarxpos: 400px;
+    --hotbarlh1: 24px;
+    --hotbarlh2: 8px;
+    --hotbarhv: 10px;
+    --hotbarmg: 0px;
+    --hotbarhh: 100%;
+    --hotbarwf: 502px;
+    --hotbarshp: 0px;
+}
+
+#hotbar:hover {
+    bottom: var(--hotbarhv);
+    transition: 0.5s;
+}
+
+#hotbar {
+    left: var(--hotbarxpos);
+    bottom: var(--hotbarypos);
+    visibility: var(--hotbarvis);
+    transition: 0.05s ease-out 0.5s;
+}
+
+#hotbar .bar-controls {
+    background: #191919;
+    height: var(--hotbarhh);
+    margin: var(--hotbarmg) 2px;
+}
+
+#hotbar .bar-controls a.page-control {
+    font-size: 20px;
+}
+
+#hotbar #hotbar-directory-controls {
+    font-size: 14px;
+}
+
+#hotbar .bar-controls span.page-number {
+    line-height: var(--hotbarlh2);
+}
+
+#hotbar #macro-list:hover {
+    border-top: 1px solid var(--bordercolor);
+    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--shadowcolor);
+    transition: 0.5s;
+}
+
+#hotbar #macro-list {
+    border-top: 1px solid var(--bordercolor);
+    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--shadowcolor);
+    flex: 0 0 var(--hotbarwf);
+    transition: 0.05s ease-out 0.5s;
+}
+
+#hotbar .macro:hover {
+    box-shadow: 0 0 10px var(--shadowcolor) inset;
+}
+
+#hotbar #hotbar-directory-controls a {
+    line-height: var(--hotbarlh1);
+}
+:root {
+    --navivis: hidden;
+    --navixpos: 125px;
+    --navilh: 20px;
+    --navifs: 14px;
+    --navilisttop: 16px;
+    --navibuttonsize: 23px;
+    --navithumbmarg: 10px;
+    --navithumbh: unset;
+}
+
+#navigation {
+    left: var(--navixpos);
+    visibility: var(--navivis);
+}
+
+#navigation .nav-item {
+    line-height: var(--navilh);
+    font-size: var(--navifs);
+}
+
+#navigation #nav-toggle {
+    height: var(--navibuttonsize);
+    background: #292929bd;
+}
+
+#navigation #scene-list .scene ul.scene-players {
+    top: var(--navilisttop);
+}
+
+#navigation #scene-list .scene.view, #navigation #scene-list .scene.context {
+    border: 1px solid var(--bordercolor);
+    border-bottom: 1px solid var(--bordercolor);
+    box-shadow: 0 0 var(--shadowstrength) var(--shadowcolor);
+}
+
+.navi-preview {
+    display: none;
+    position: relative;
+    top: var(--navithumbmarg);
+    opacity: 1;
+    border: 1px solid var(--bordercolor);
+    border-bottom: 1px solid var(--bordercolor);
+    box-shadow: 0 0 var(--shadowstrength) var(--shadowcolor);
+}
+
+.hover_preview_container {
+    position: fixed;
+    top: var(--navithumbh);
+}
+
+/** COMPATIBILITY: Monks Scene Navigation */
+
+#navigation .monks-scene-navigation{
+    flex: 0 0 var(--navilh);
+    height: var(--navilh);
+}
+
+#navigation .monks-scene-navigation .scene-list > li.nav-item{
+    height: var(--navilh);
+}
+
+#navigation .monks-scene-navigation .scene-list > li.nav-item a{
+    line-height: var(--navilh);
+    height: var(--navilh);
+    font-size: var(--navifs);
+    padding:0 4px;
+}
+
+#navigation .monks-scene-navigation .scene-list > li.nav-item ul.scene-players{
+    top: var(--navilisttop);
+}
+
+#navigation .monks-scene-navigation .scene-list > li.nav-item.folder a{
+    padding-top:0;
+    border-top:1px;
+}
+
+#navigation .monks-scene-navigation .scene-list > li.nav-item.folder.expanded a{
+    height:calc(var(--navilh) + 6px);
+}
+
+#navigation .monks-scene-navigation .scene-list > li.nav-item.folder-header{
+    line-height: var(--navilh);
+}
+
+#navigation .monks-scene-navigation .scene-list > li.nav-item .navi-preview{
+    top: calc(var(--navithumbmarg) + 15px);
+}
+
+/** --------------- */
+:root {
+    --logovis: hidden;
+    --logoh: 50px;
+    --logow: 100px;
+}
+
+#logo {
+    visibility: var(--logovis);
+    height: var(--logoh);
+    width: var(--logow);
+}
+:root {
+    --minibarw: unset;
+    --minibarbot: unset;
+    --minibartop: unset;
+    --minibarleft: unset;
+}
+
+#minimized-bar {
+    position: absolute;
+    width: var(--minibarw);
+    height: 40px;
+    bottom: var(--minibarbot);
+    top: var(--minibartop);
+    border-radius: 5px;
+    left: var(--minibarleft);
+    opacity: 50%;
+    transition: 0.2s;
+    border: 1px solid var(--bordercolor);
+    box-shadow: 0 0 var(--shadowstrength) 0 var(--shadowcolor);
+}
+
+.window-app.minimized .window-header {
+    border: 1px solid var(--bordercolor);
+    box-shadow: 0 0 var(--shadowstrength) 0 var(--shadowcolor);
+}
+
+.minimized.window-app .window-header a {
+    margin: 0 0 0 2px;
+}
+
+.minimized-highlight {
+    background-color: var(--shadowcolor);
+}
+
+.minimized-pinned {
+    background-color: var(--bordercolor);
+}
+#sidebar {
+    visibility: var(--controlsvis);
+}
+
+#sidebar-tabs {
+    border-bottom: 1px solid var(--bordercolor);
+    box-shadow: 0 0 var(--shadowstrength) var(--shadowcolor);
+}
+
+#sidebar-tabs > .item.active {
+    box-shadow: 0 0 var(--shadowstrength) inset var(--shadowcolor);
+    border: 1px solid var(--bordercolor);
+}
+
+#sidebar.collapsed #sidebar-tabs > .item.active {
+    border-bottom: 1px solid var(--bordercolor);
+}
+
+.tabs .item.active {
+    text-shadow: 0 0 var(--shadowstrength) var(--shadowcolor);
+}
+
+#sidebar-tabs > a:nth-child(n):hover {
+    text-shadow: 0 0 var(--shadowstrength) var(--bordercolor);
+}
+
+:root {
+    --bordercolor: #ff4900bd;
+    --shadowcolor: #ff4900bd;
+    --shadowstrength: 10px;
+}
+:root {
+    --playervis: hidden;
+    --playerfsize: 0px;
+    --playerfsizehv: 12px;
+    --playerwidth: 25px;
+    --playerwidthhv: 150px;
+    --playerslh: 20px;
+    --playerbennies: none;
+    --playerh3w: unset;
+    --playerbot: 10px;
+}
+
+#players:hover {
+    width: var(--playerwidthhv);
+    font-size: var(--playerfsizehv);
+}
+
+#players {
+    width: var(--playerwidth);
+    left: 5px;
+    bottom: var(--playerbot);
+    font-size: var(--playerfsize);
+    visibility: var(--playervis);
+    background: #0000003b;
+}
+
+#players ol li.player {
+    padding: 1px 6px;
+    line-height: var(--playerslh);
+}
+
+#players:hover ol li.player {
+    line-height: 20px;
+}
+
+#players:hover h3 {
+    width: unset;
+}
+
+#players h3 {
+    margin: 0 -2px;
+    border-bottom: 0;
+    width: var(--playerh3w);
+}
+
+.raised-hand {
+    font-size: 12px;
+}
+
+.bennies-count {
+    display: var(--playerbennies);
+}
+
+:root {
+    --controlsvis: hidden;
+    --controlsxpos: 0px;
+    --controlsypos: 20vmin;
+    --controlspad: 7px;
+    --controlsw: 36px;
+    --controlsh: 36px;
+    --controlslh: 36px;
+    --controlsfs: 24px;
+    --controlssubleft: 60px;
+    --controlssubstyle: contents;
+}
+
+#controls {
+    left: var(--controlsxpos);
+    top: 10px;
+    margin-top: var(--controlsypos);
+    border-right: 1px solid var(--bordercolor);
+    box-shadow: 3px 0 var(--shadowstrength) 0 var(--shadowcolor);
+    transition: 0.5s;
+    padding-right: var(--controlspad);
+    background: #0000003b;
+}
+
+#controls:hover {
+    transition: 0.5s;
+}
+
+#controls .control-tool.toggle {
+    background: var(--shadowcolor);
+    border: 0 solid var(--bordercolor);
+}
+
+#controls .control-tool.toggle:hover {
+    background: var(--bordercolor);
+    box-shadow: 0 0 var(--shadowstrength) var(--shadowcolor);
+}
+
+#controls .control-tool.toggle.active {
+    background: var(--bordercolor);
+    box-shadow: 0 0 var(--shadowstrength) var(--bordercolor);
+}
+
+#controls .scene-control, #controls .control-tool {
+    margin: 0 0 2px;
+}
+
+#controls .scene-control.active, #controls .scene-control:hover {
+    border: 1px solid transparent;
+    color: orange;
+    box-shadow: 1px 0 var(--shadowstrength) 0 var(--shadowcolor);
+    padding-right: 2px;
+    padding-left: 1px;
+}
+
+#controls .control-tool.toggle.active, #controls .control-tool.toggle:hover {
+    padding-right: 0;
+    padding-left: 1px;
+}
+
+#controls .control-tool.active, #controls .control-tool {
+    border: 0 solid transparent;
+    padding-right: 0;
+    padding-left: 1px;
+}
+
+#controls .control-tool.active, #controls .control-tool:hover {
+    border: 0 solid transparent;
+    color: yellow;
+    box-shadow: 1px 0 var(--shadowstrength) 0 var(--shadowcolor);
+}
+
+#controls > li:nth-child(n), #controls > li.scene-control > ol > li.control-tool {
+    width: var(--controlsw);
+    height: var(--controlsh);
+    line-height: var(--controlslh);
+    font-size: var(--controlsfs);
+    padding-right: 0;
+    padding-left: 1px;
+}
+
+
+#controls .active .control-tools {
+    display: var(--controlssubstyle);
+    left: var(--controlssubleft);
+    transition: 0.5s;
+    background: #00000059;
+    border: solid 1px var(--bordercolor);
+    box-shadow: 1px 0 var(--shadowstrength) 0 var(--shadowcolor);
+    border-radius: 3px;
+}
+
+#controls:hover .active .control-tools {
+    display: var(--controlssubstyle);
+}

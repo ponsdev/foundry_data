@@ -1,0 +1,93 @@
+<div class="spell-browser">
+    <div class="control-area">
+        <div class="sortcontainer" id="tagfilter">
+            <input class="" name="textFilter" type="text" value="" data-dtype="String" placeholder="{{localize "PF2E.BrowserSearchPlaceholder"}}" title="{{localize "PF2E.BrowserSearchTitle"}}"/>
+            <div class="hint" style="display:none;">
+                {{{localize "PF2E.FeatBrowserSearchHint"}}}
+            </div>
+            <dl id="sorter">
+                <dt>{{localize "PF2E.BrowserSortyByLabel"}}:</dt>
+                <dd><select class="null" name="sortorder">
+                    <option value="true" selected>{{localize "PF2E.BrowserSortyByNameLabel"}}</option>
+                    <option value="false">{{localize "PF2E.BrowserSortyByLevelLabel"}}</option>
+                </select></dd>
+            </dl>
+        </div>
+        <div class="filtercontainer" id="featTypefilter">
+            <h3>{{localize "PF2E.BrowserFilterCategory"}}</h3>
+            <dl style="display:none;">
+              <label><dt><input type="checkbox" name="feattype-ancestry"></dt><dd>{{localize "PF2E.FeatAncestryHeader"}}</dd></label>
+              <label><dt><input type="checkbox" name="feattype-ancestryfeature"></dt><dd>{{localize "PF2E.FeaturesAncestryHeader"}}</dd></label>
+              <label><dt><input type="checkbox" name="feattype-archetype"></dt><dd>{{localize "PF2E.FeatArchetypeHeader"}}</dd></label>
+              <label><dt><input type="checkbox" name="feattype-bonus"></dt><dd>{{localize "PF2E.FeatBonusHeader"}}</dd></label>
+              <label><dt><input type="checkbox" name="feattype-class"></dt><dd>{{localize "PF2E.FeatClassHeader"}}</dd></label>
+              <label><dt><input type="checkbox" name="feattype-classfeature"></dt><dd>{{localize "PF2E.FeaturesClassHeader"}}</dd></label>
+              <label><dt><input type="checkbox" name="feattype-skill"></dt><dd>{{localize "PF2E.FeatSkillHeader"}}</dd></label>
+              <label><dt><input type="checkbox" name="feattype-general"></dt><dd>{{localize "PF2E.FeatGeneralHeader"}}</dd></label>
+              <label><dt><input type="checkbox" name="feattype-pfsboon"></dt><dd>{{localize "PF2E.FeatPFSBoonHeader"}}</dd></label>
+              <label><dt><input type="checkbox" name="feattype-deityboon"></dt><dd>{{localize "PF2E.FeatDeityBoonHeader"}}</dd></label>
+              <label><dt><input type="checkbox" name="feattype-curse"></dt><dd>{{localize "PF2E.FeatCurseHeader"}}</dd></label>
+            </dl>
+        </div>
+        <div class="filtercontainer rangecontainer" id="levelfilter">
+          <h3>{{localize "PF2E.BrowserFilterLevels"}}</h3>
+          <div style="display:none;">
+            <input type="number" name="lowerBound-level" value="1" min="1" max="20">
+            -
+            <input type="number" name="upperBound-level" value="20" min="1" max="20">
+          </div>
+        </div>
+        <div class="filtercontainer" id="classfilter">
+            <h3>{{localize "PF2E.BrowserFilterClass"}}</h3>
+            <dl style="display:none;">
+                {{#each featClasses as |class key|}}
+                    <label><dt><input type="checkbox" name="classes-{{lower key}}"></dt><dd>{{localize class}}</dd></label>
+                {{/each}}
+            </dl>
+        </div>
+        <div class="filtercontainer" id="skillfilter">
+            <h3>{{localize "PF2E.BrowserFilterSkills"}}</h3>
+            <dl style="display:none;">
+                {{#each featSkills as |skill key|}}
+                    <label><dt><input type="checkbox" name="skills-{{lower key}}"></dt><dd>{{localize skill}}</dd></label>
+                {{/each}}
+            </dl>
+        </div>
+        <div class="filtercontainer" id="ancestryfilter">
+            <h3>{{localize "PF2E.BrowserFilterAncestries"}}</h3>
+            <dl style="display:none;">
+                {{#each featAncestry as |ancestry key|}}
+                    <label><dt><input type="checkbox" name="ancestry-{{lower key}}"></dt><dd>{{localize ancestry}}</dd></label>
+                {{/each}}
+            </dl>
+        </div>
+        <div class="filtercontainer" id="raritiesfilter">
+            <h3>{{localize "PF2E.BrowserFilterRarities"}}</h3>
+            <dl style="display:none;">
+                {{#each rarities as |rarity key|}}
+                    <label><dt><input type="checkbox" name="rarity-{{lower key}}"></dt><dd>{{localize rarity}}</dd></label>
+                {{/each}}
+            </dl>
+        </div>
+    </div>
+    <ul>
+        {{#each feats as |feat id|}}
+        <li class="spell flexrow draggable" data-entry-compendium="{{feat.compendium}}" data-entry-id="{{feat._id}}" data-item-category="feats"
+            {{#each feat.data as |attrib id|}}
+                data-{{lower id}}="{{lower attrib.value}}"
+            {{/each}}
+          >
+            <div class="spell-image">
+                <img class="" src="{{feat.img}}" title="{{feat.name}}" width="32" height="32"/>
+            </div>
+            <div class="spell-name">
+                <span class="item-edit"><a>{{feat.name}}</a></span>
+            </div>
+            <div class="spell-tags">
+                <span title="Feat level">{{feat.data.level.formated}}</span>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+
+</div>

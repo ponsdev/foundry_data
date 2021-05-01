@@ -1,0 +1,174 @@
+{{#*inline "settingPartial"}}
+<div class="form-group">
+    <div class="flexcol">
+        <label>{{{localize this.name}}}</label>
+        {{#if this.hint}}
+        <p class="notes">{{{localize this.hint}}}</p>
+        {{/if}}
+    </div>
+    {{#if this.isColor}}
+    <div class="form-fields ws-color-input">
+        <select class="ws-color-value">
+            <option value="custom">{{localize "WHETSTONE.ColorOptionCustom"}}</option>
+            {{#each this.choices as |name k|}}
+            <option value="{{k}}">{{localize name}}</option>
+            {{/each}}
+        </select>
+        <div class="flexrow" style="margin-top: 5px;">
+            <input type="text" name="{{this.key}}" class="ws-color-value" value="{{this.value}}" data-dtype="String"/>
+            <input type="color" class="ws-color-value" value="{{this.value}}" data-edit="{{this.key}}"/>
+        </div>
+        {{#if this.shades}}
+        <div class="flexrow ws-shade-preview" style="margin-top: 5px;">
+            {{{this.shades}}}
+        </div>
+        {{/if}}
+    </div>
+    {{else}}
+    <div class="form-fields">
+
+        {{#if this.isCheckbox}}
+        <input type="checkbox" name="{{this.key}}" data-dtype="Boolean" {{checked this.value}}/>
+
+        {{else if this.isSelect}}
+        <select name="{{this.key}}">
+            {{#select this.value}}
+            {{#each this.choices as |name k|}}
+            <option value="{{k}}">{{localize name}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+
+        {{else if this.isRange}}
+        <input type="range" name="{{this.key}}" data-dtype="Number" value="{{ this.value }}"
+               min="{{ this.range.min }}" max="{{ this.range.max }}" step="{{ this.range.step }}"/>
+        <span class="range-value">{{this.value}}</span>
+
+        {{else}}
+        <input type="text" name="{{this.key}}" value="{{this.value}}" data-dtype="{{this.type}}"/>
+        {{/if}}
+    </div>
+    {{/if}}
+</div>
+{{/inline}}
+
+<form autocomplete="off" onsubmit="event.preventDefault();" class="Whetstone">
+
+    <!-- Sheet Navigation Tabs -->
+    <nav class="sheet-tabs tabs" data-group="sections">
+        <a class="item" data-tab="themeselect">
+            <i class="fas fa-paint-brush"></i> {{localize "WHETSTONE.ThemeSelectTab"}}
+        </a>
+        <a class="item" data-tab="globaloptions">
+            <i class="fas fa-comment-alt"></i> {{localize "WHETSTONE.GlobalOptionsTab"}}
+        </a>
+        <button type="button" class="expand">
+            <i class="fa {{#if expanded}}fa-angle-double-down{{ else }}fa-angle-double-up{{/if}}"></i>
+        </button>
+    </nav>
+
+    <!-- Theme Select Tab -->
+    <div class="tab" data-tab="themeselect">
+        <ul id="theme-list" class="directory-list package-list theme-list">
+         {{#each themes}}
+         <li class="theme package flexcol" data-theme-name="{{this.name}}">
+            <div class="theme-overview package-overview flexrow">
+                {{#if this.img}}
+                <img class="theme-image package-image" src="{{this.img}}" />
+                {{/if}}
+                <div class="flexcol">
+                    <div class="flexrow">
+                        <label class="theme-title package-title checkbox">
+                            <input type="checkbox" class="active" name="{{this.name}}" data-dtype="Boolean" {{checked this.active}}>
+                            {{this.title}}
+                        </label>
+                        {{#if ../expanded}}
+                        {{else}}
+                            {{#if this.systems}}
+                            {{#each this.systems as |version name|}}
+                            <span class="tag version">{{name}} {{version}}</span>
+                            {{/each}}
+                            {{/if}}
+                        {{/if}}
+                    </div>
+                            
+                    {{#if this.authors}}
+                    <ul class="theme-authors">
+                    {{#each this.authors}}
+                        <li class="author"><strong>{{localize "WHETSTONE.Author"}}:</strong> {{this.name}} {{#if this.url}}<a href="{{this.url}}">{{this.contact}}</a>{{/if}}</span>
+                    {{/each}}
+                    </ul>
+                    {{/if}}
+                </div>
+            </div>
+
+            {{#if ../expanded}}
+            <div class="flexrow">
+                <div class="theme-description package-description">
+                    {{this.description}}
+                    <ul class="theme-tags">
+                        {{#if this.systems}}
+                        <li><strong>{{localize "WHETSTONE.Systems"}}:</strong>
+                        {{#each this.systems as |version name|}}
+                        <span class="tag version">{{name}} {{version}}</span>
+                        {{/each}}
+                        </li>
+                        {{/if}}
+                        {{#if this.dependencies}}
+                        <li><strong>{{localize "WHETSTONE.Dependencies"}}:</strong>
+                        {{#each this.dependencies as |name version|}}
+                        <span class="tag javascript">{{name}} {{version}}</span>
+                        {{/each}}
+                        </li>
+                        {{/if}}
+                        {{#if this.compatible}}
+                        <li><strong>{{localize "WHETSTONE.Compatible"}}:</strong>
+                        {{#each this.compatible as |name version|}}
+                        <span class="tag languages">{{name}} {{version}}</span>
+                        {{/each}}
+                        </li>
+                        {{/if}}
+                        {{#if this.conflicts}}
+                        <li><strong>{{localize "WHETSTONE.Conflicts"}}:</strong>
+                        {{#each this.conflicts as |name version|}}
+                        <span class="tag unavailable">{{name}} {{version}}</span>
+                        {{/each}}
+                        </li>
+                        {{/if}}
+                    </ul>
+                </div>
+                {{#if this.preview}}
+                <img class="theme-preview package-image" src="{{this.preview}}" style="margin: 5px auto;max-width: 600px;" />
+                {{/if}}
+            </div>
+            {{/if}}
+
+            <button type="button" class="theme-configure" name="configure" value="{{this.name}}" >
+                <i class="fas fa-paint-brush"></i> {{localize "WHETSTONE.ConfigureTheme"}}
+            </button>
+         </li>
+         {{/each}}
+        </ul>
+    </div>
+
+    <!-- Global Options Tab -->
+    <div class="tab" data-tab="globaloptions" data-group="sections">
+        <div class="settings-list">
+            {{#each globalOptions}}
+            {{> settingPartial}}
+            {{else}}
+            <p class="notes">{{localize 'WHETSTONE.None'}}</p>
+            {{/each}}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="sheet-footer flexrow">
+        <button type="submit" name="submit">
+            <i class="far fa-save"></i> {{localize 'WHETSTONE.Save'}}
+        </button>
+        <button type="button" name="reset">
+            <i class="fas fa-undo"></i> {{localize 'WHETSTONE.Reset'}}
+        </button>
+    </footer>
+</div>

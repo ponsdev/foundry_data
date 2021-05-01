@@ -1,0 +1,13 @@
+a.sound_link {
+  background: #fffad3;
+  padding: 1px 4px;
+  border: 1px solid #4b4a44;
+  border-radius: 2px;
+  white-space: nowrap;
+  word-break: break-all;
+}
+.sound_link:before {
+    content: '\f144';
+    font-family: 'Font Awesome 5 Free';
+    padding-right: 4px;
+  }

@@ -1,0 +1,682 @@
+@font-face {
+  font-family: 'Alegreya';
+  src: url(../fonts/alegreya/Alegreya-BlackItalic.otf) format('truetype') font-italic font-weight-normal,
+    url(../fonts/alegreya/Alegreya-Black.otf) format('truetype') font-weight-normal,
+    url(../fonts/alegreya/Alegreya-BoldItalic.otf) format('truetype') font-italic font-weight-bold,
+    url(../fonts/alegreya/Alegreya-Bold.otf) format('truetype') font-weight-bold,
+    url(../fonts/alegreya/Alegreya-Italic.otf) format('truetype') font-italic,
+    url(../fonts/alegreya/Alegreya-Regular.otf) format('truetype') font-weight-normal,
+    url(../fonts/alegreya/AlegreyaSC-BlackItalic.otf) format('truetype') font-italic font-weight-normal,
+    url(../fonts/alegreya/AlegreyaSC-Black.otf) format('truetype') font-weight-normal,
+    url(../fonts/alegreya/AlegreyaSC-BoldItalic.otf) format('truetype') font-italic font-weight-bold,
+    url(../fonts/alegreya/AlegreyaSC-Bold.otf) format('truetype') font-weight-bold,
+    url(../fonts/alegreya/AlegreyaSC-Italic.otf) format('truetype') font-italic,
+    url(../fonts/alegreya/AlegreyaSC-Regular.otf) format('truetype') font-weight-normal;
+}
+@font-face {
+	font-family:"Mr\. Eaves Small Caps";
+	src: url('../fonts/fifth-edition-font-clones/MrEavesSmallCaps.otf') format('opentype');
+	font-style: normal;
+	font-weight: 400;
+}	
+@font-face {
+	font-family:"Scaly Sans";
+	src: url('../fonts/fifth-edition-font-clones/ScalySans.otf') format('opentype');
+	font-style: normal;
+	font-weight: 400;
+}
+@font-face {
+	font-family:"Awery";
+	src: url('../fonts/awery/Awery.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 400;
+}
+@font-face {
+	font-family:"Awery SmallCaps";
+	src: url('../fonts/awery/Awerysc.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 400;
+}
+}
+@font-face
+	{font-family:"Scaly Sans Caps";
+	src: url('../fonts/fifth-edition-font-clones/ScalySansCaps.otf') format('opentype');
+	font-style: normal;
+	font-weight: 400;
+}	
+@font-face
+	{font-family:"MinionPro-Regular";
+	src: url('../fonts/fifth-edition-font-clones/ScalySansCaps.otf') format('opentype');
+	font-style: normal;
+	font-weight: 400;
+}	
+@font-face
+	{font-family:"Alegreya Sans";
+	src: url('../fonts/alegreya-sans/AlegreyaSans-Regular.otf') format('opentype');
+	font-weight: 400;
+	font-style: normal;
+}	
+@font-face
+	{font-family:"Nodesto Caps Condensed";
+	src: url('../fonts/fifth-edition-font-clones/NodestoCapsCondensed.otf') format('opentype');
+	font-style: normal;
+	font-weight: 400;
+}	
+@font-face
+	{font-family:"Alegreya Sans ExtraBold";
+	font-style: normal;
+	font-weight: 800;
+	src: url('../fonts/alegreya-sans/AlegreyaSans-ExtraBold.otf') format('opentype');
+}	
+@font-face
+	{font-family:"Awery Bold Italic";
+	src: url('../fonts/awery/Awery.ttf') format('truetype');
+	font-style: italic;
+	font-weight: 700;
+}	
+@font-face
+	{font-family:"Awery SmallCaps Bold Italic";
+	src: url('../fonts/awery/Awerysc.ttf') format('truetype');
+	font-style: italic;
+	font-weight: 700;
+}	
+@font-face {
+	font-family:"Bookinsanity";	
+	src: url('../fonts/fifth-edition-font-clones/Bookinsanity.otf') format('opentype');
+	font-style: normal;
+	font-weight: 400;
+}
+
+table tr:nth-child(even) {
+    background-color: #d3c9de;
+}
+
+body, div, dl, dt, dd, h1, h2, h3, h4, h5, h6, p, pre, code, blockquote {
+	margin:0;
+	padding:0;
+	border-width:0;
+}
+body {
+	-epub-hyphens:auto;
+}
+div.Basic-Text-Frame {
+	border-style:solid;
+}
+table.Basic-Table {
+	border-collapse:collapse;
+	border-color:#000000;
+	border-style:solid;
+	border-width:1px;
+	margin-bottom:-4px;
+	margin-top:4px;
+}
+td.Basic-Table {
+	border-left-width:1px;
+	border-left-style:solid;
+	border-left-color:#000000;
+	border-top-width:1px;
+	border-top-style:solid;
+	border-top-color:#000000;
+	border-right-width:1px;
+	border-right-style:solid;
+	border-right-color:#000000;
+	border-bottom-width:1px;
+	border-bottom-style:solid;
+	border-bottom-color:#000000;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:4px;
+	padding-right:4px;
+	vertical-align:top;
+}
+p.Humperdink-s-Styles_DM-Tip {
+	-epub-hyphens:none;
+	color:#000000;
+	font-family:"Nodesto Caps Condensed", serif;
+	font-size:22px;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	orphans:1;
+	page-break-after:auto;
+	page-break-before:auto;
+	text-align:center;
+	text-decoration:none;
+	text-indent:0;
+	text-transform:none;
+	widows:1;
+}
+p.Humperdink-s-Styles_Dramatic-Question {
+	color:#1c0d2c;
+	font-family:Awery, serif;
+	font-size:20px;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	orphans:1;
+	page-break-after:auto;
+	page-break-before:auto;
+	text-align:left;
+	text-decoration:none;
+	text-indent:0;
+	text-transform:none;
+	widows:1;
+}
+p.Humperdink-s-Styles_Para-1, li.Humperdink-s-Styles_Para-1 {
+	-epub-hyphens:none;
+	color:#000000;
+	font-family:Alegreya, serif;
+	font-size:16px;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	orphans:1;
+	page-break-after:auto;
+	page-break-before:auto;
+	text-align:left;
+	text-decoration:none;
+	text-indent:0;
+	text-transform:none;
+	widows:1;
+}
+li.Humperdink-s-Styles_Para-1-Bullets {
+	-epub-hyphens:none;
+	color:#000000;
+	font-family:Alegreya, serif;
+	font-size:16px;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	list-style-position:outside;
+	list-style-type:disc;
+	margin-bottom:3px;
+	margin-left:17px;
+	margin-right:0;
+	margin-top:0;
+	orphans:1;
+	page-break-after:auto;
+	page-break-before:auto;
+	text-align:left;
+	text-decoration:none;
+	text-indent:0;
+	text-transform:none;
+	widows:1;
+}
+p.Humperdink-s-Styles_Para-2 {
+	-epub-hyphens:none;
+	color:#000000;
+	font-family:Alegreya, serif;
+	font-size:16px;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	orphans:1;
+	page-break-after:auto;
+	page-break-before:auto;
+	text-align:left;
+	text-decoration:none;
+	text-indent:9px;
+	text-transform:none;
+	widows:1;
+}
+p.Humperdink-s-Styles_Para-Monster-Block {
+	-epub-hyphens:none;
+	color:#000000;
+	font-family:Alegreya, serif;
+	font-size:16px;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	orphans:1;
+	page-break-after:auto;
+	page-break-before:auto;
+	text-align:center;
+	text-decoration:none;
+	text-indent:0;
+	text-transform:none;
+	widows:1;
+}
+p.Humperdink-s-Styles_Read-aloud {
+	-epub-hyphens:none;
+	color:#000000;
+	background-color:#d3c9de;
+	font-family:"Alegreya Sans", sans-serif;
+	font-size:16px;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.25;
+	margin-bottom:11px;
+	margin-left:17px;
+	margin-right:11px;
+	margin-top:3px;
+	padding:2px;
+	orphans:1;
+	page-break-after:auto;
+	page-break-before:auto;
+	text-align:left;
+	text-decoration:none;
+	text-indent:0;
+	text-transform:none;
+	widows:1;
+}
+li.Humperdink-s-Styles_Synopsis {
+	-epub-hyphens:none;
+	color:#000000;
+	font-family:Awery, serif;
+	font-size:16px;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	list-style-position:outside;
+	margin-bottom:3px;
+	margin-left:17px;
+	margin-right:0;
+	margin-top:0;
+	orphans:1;
+	page-break-after:auto;
+	page-break-before:auto;
+	text-align:left;
+	text-decoration:none;
+	text-indent:0;
+	text-transform:none;
+	widows:1;
+}
+p.Humperdink-s-Styles_Tables-and-Figures {
+	color:#000000;
+	font-family:"Alegreya Sans", sans-serif;
+	font-size:14px;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	orphans:1;
+	page-break-after:auto;
+	page-break-before:auto;
+	text-align:center;
+	text-decoration:none;
+	text-indent:0;
+	text-transform:none;
+	widows:1;
+}
+h2.Humperdink-s-Styles_Title-2 {
+	color:#0d002c;
+	font-family:"Awery SmallCaps", serif;
+	font-size:30px;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:3px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	orphans:1;
+	page-break-after:auto;
+	page-break-before:auto;
+	text-align:left;
+	text-decoration:none;
+	text-indent:0;
+	text-transform:none;
+	widows:1;
+}
+h3.Humperdink-s-Styles_Title-3 {
+	color:#1c0d2c;
+	font-family:"Awery SmallCaps", serif;
+	font-size:28px;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:6px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:6px;
+	orphans:1;
+	page-break-after:auto;
+	page-break-before:auto;
+	text-align:left;
+	text-decoration:underline;
+	text-indent:0;
+	text-transform:none;
+	widows:1;
+}
+h4.Humperdink-s-Styles_Title-4 {
+	color:#0d002c;
+	font-family:"Awery SmallCaps", serif;
+	font-size:20px;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:3px;
+	margin-left:0;
+	margin-right:0;
+	margin-top:6px;
+	orphans:1;
+	page-break-after:auto;
+	page-break-before:auto;
+	text-align:left;
+	text-decoration:underline;
+	text-indent:0;
+	text-transform:none;
+	widows:1;
+}
+p.Humperdink-s-Styles_Written-Clue {
+	-epub-hyphens:none;
+	color:#000000;
+	font-family:"Alegreya Sans", sans-serif;
+	font-size:16px;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.273;
+	margin-bottom:14px;
+	margin-left:11px;
+	margin-right:11px;
+	margin-top:3px;
+	orphans:1;
+	page-break-after:auto;
+	page-break-before:auto;
+	text-align:center;
+	text-decoration:none;
+	text-indent:0;
+	text-transform:none;
+	widows:1;
+}
+p.Basic-Paragraph {
+	color:#000000;
+	font-family:"Minion Pro", serif;
+	font-size:16px;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1.2;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	orphans:1;
+	page-break-after:auto;
+	page-break-before:auto;
+	text-align:left;
+	text-decoration:none;
+	text-indent:0;
+	text-transform:none;
+	widows:1;
+}
+span.Bold-Italic {
+	font-style:italic;
+	font-weight:bold;
+}
+span.Checks-and-Saves {
+	color:#570054;
+	font-style:normal;
+	font-weight:bold;
+}
+span.None {
+	font-style:normal;
+	font-weight:normal;
+}
+table.TableOverride-1 {
+	border-collapse:collapse;
+}
+table.TableOverride-2 {
+	border-collapse:collapse;
+	margin-left:auto;
+	margin-right:auto;
+}
+td.CellOverride-1 {
+	border-bottom-color:#000000;
+	border-bottom-style:solid;
+	border-bottom-width:0px;
+	border-left-color:#000000;
+	border-left-style:solid;
+	border-left-width:0px;
+	border-right-color:#000000;
+	border-right-style:solid;
+	border-right-width:0px;
+	border-top-color:#000000;
+	border-top-style:solid;
+	border-top-width:0px;
+}
+td.CellOverride-2 {
+	border-bottom-color:#000000;
+	border-bottom-style:solid;
+	border-bottom-width:0px;
+	border-left-color:#000000;
+	border-left-style:solid;
+	border-left-width:0px;
+	border-right-color:#000000;
+	border-right-style:solid;
+	border-right-width:0px;
+	border-top-color:#000000;
+	border-top-style:solid;
+	border-top-width:0px;
+	vertical-align:middle;
+}
+td.CellOverride-3 {
+	border-bottom-style:solid;
+	border-bottom-width:0px;
+	border-left-color:#000000;
+	border-left-style:solid;
+	border-left-width:0px;
+	border-right-color:#000000;
+	border-right-style:solid;
+	border-right-width:0px;
+	border-top-color:#000000;
+	border-top-style:solid;
+	border-top-width:0px;
+}
+td.CellOverride-4 {
+	border-bottom-color:#000000;
+	border-bottom-style:solid;
+	border-bottom-width:0px;
+	border-left-color:#000000;
+	border-left-style:solid;
+	border-left-width:0px;
+	border-right-style:solid;
+	border-right-width:0px;
+	border-top-color:#000000;
+	border-top-style:solid;
+	border-top-width:0px;
+}
+td.CellOverride-5 {
+	border-bottom-style:solid;
+	border-bottom-width:0px;
+	border-left-style:solid;
+	border-left-width:0px;
+	border-right-style:solid;
+	border-right-width:0px;
+	border-top-style:solid;
+	border-top-width:0px;
+	padding-bottom:3px;
+	padding-left:3px;
+	padding-right:3px;
+	padding-top:3px;
+	vertical-align:middle;
+}
+td.CellOverride-6 {
+	border-bottom-color:#000000;
+	border-bottom-style:solid;
+	border-bottom-width:0px;
+	border-left-color:#000000;
+	border-left-style:solid;
+	border-left-width:0px;
+	border-right-color:#000000;
+	border-right-style:solid;
+	border-right-width:0px;
+	border-top-style:solid;
+	border-top-width:0px;
+}
+li.ParaOverride-1 {
+	list-style-position:outside;
+	list-style-type:disc;
+	margin-left:18px;
+	text-indent:0px;
+}
+li.ParaOverride-2 {
+	list-style-position:outside;
+	list-style-type:disc;
+	margin-left:17px;
+	text-indent:0px;
+}
+li.ParaOverride-3 {
+	list-style-position:outside;
+	list-style-type:disc;
+	margin-left:17px;
+	page-break-after:always;
+	text-indent:0px;
+}
+p.ParaOverride-4 {
+	margin-bottom:11px;
+}
+p.ParaOverride-5 {
+	-epub-hyphens:none;
+	text-align:center;
+}
+p.ParaOverride-6 {
+	margin-bottom:14px;
+}
+li.ParaOverride-7 {
+	margin-bottom:6px;
+	text-indent:0px;
+}
+p.ParaOverride-8 {
+	margin-bottom:3px;
+}
+p.ParaOverride-9 {
+	margin-bottom:0px;
+	margin-top:0px;
+}
+span.CharOverride-1 {
+	font-style:italic;
+	font-weight:normal;
+}
+span.CharOverride-2 {
+	font-style:normal;
+	font-weight:normal;
+}
+span.CharOverride-3 {
+	font-style:normal;
+	font-weight:bold;
+}
+span.CharOverride-4 {
+	color:#570054;
+	font-style:normal;
+	font-weight:bold;
+}
+span.CharOverride-5 {
+	color:#0d002c;
+	font-family:"Awery SmallCaps", serif;
+	font-size:20px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:underline;
+}
+span.CharOverride-6 {
+	font-style:italic;
+	font-weight:bold;
+}
+span.CharOverride-7 {
+	font-size:14px;
+}
+span.CharOverride-8 {
+	font-family:"Alegreya Sans", sans-serif;
+	font-size:14px;
+	font-style:normal;
+	font-weight:normal;
+}
+h3._idGenParaOverride-1, h4._idGenParaOverride-1, p._idGenParaOverride-1, li._idGenParaOverride-1 {
+	page-break-after:always;
+}
+p._idGenParaOverride-2 {
+	margin-left:0px;
+}
+col._idGenTableRowColumn-1 {
+	width:19px;
+}
+col._idGenTableRowColumn-2 {
+	width:35px;
+}
+col._idGenTableRowColumn-3 {
+	width:187px;
+}
+tr._idGenTableRowColumn-4 {
+	min-height:16px;
+}
+tr._idGenTableRowColumn-5 {
+	background-color:#c7bdd3;
+	min-height:40px;
+}
+tr._idGenTableRowColumn-6 {
+	background-color:#c7bdd3;
+	min-height:64px;
+}
+tr._idGenTableRowColumn-7 {
+	min-height:40px;
+}
+tr._idGenTableRowColumn-8 {
+	background-color:#c7bdd3;
+	min-height:28px;
+}
+tr._idGenTableRowColumn-9 {
+	background-color:#c7bdd3;
+	min-height:16px;
+}
+tr._idGenTableRowColumn-10 {
+	min-height:28px;
+}
+col._idGenTableRowColumn-11 {
+	width:25px;
+}
+col._idGenTableRowColumn-12 {
+	width:46px;
+}
+col._idGenTableRowColumn-13 {
+	width:166px;
+}
+tr._idGenTableRowColumn-14 {
+	min-height:26px;
+}
+tr._idGenTableRowColumn-15 {
+	background-color:#c7bdd3;
+	min-height:26px;
+}
+tr._idGenTableRowColumn-16 {
+	min-height:38px;
+}
+col._idGenTableRowColumn-17 {
+	width:36px;
+}

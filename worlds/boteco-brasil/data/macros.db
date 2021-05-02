@@ -1,1 +1,2 @@
 {"name":"Espada Grande","permission":{"default":0,"fNZMR0wRZYko05MN":3},"type":"script","sort":100001,"flags":{"dnd5e":{"itemMacro":true}},"scope":"global","command":"game.dnd5e.rollItemMacro(\"Espada Grande\");","author":"fNZMR0wRZYko05MN","img":"systems/dnd5e/icons/items/weapons/sword-great.jpg","actorIds":[],"_id":"I4GNNy7pMUjPyfeY"}
+{"name":"New Macro","permission":{"default":0,"YFmckctbQNsXC2Bj":3},"type":"chat","sort":100001,"flags":{},"scope":"global","command":"","author":"YFmckctbQNsXC2Bj","img":"icons/svg/dice-target.svg","actorIds":[],"_id":"ZboxDidzI9XSdBLX"}

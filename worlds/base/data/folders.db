@@ -1,1 +1,5 @@
-{"name":"Tables","type":"RollTable","sort":null,"flags":{},"parent":null,"sorting":"a","_id":"k6TcEIMxak5KnNgG"}
+{"name":"NPC","type":"Actor","sort":null,"flags":{},"parent":null,"sorting":"a","color":"","_id":"4kkrjO2Rjgz0biZB"}
+{"name":"WORLD","type":"Actor","sort":null,"flags":{},"parent":null,"sorting":"a","color":"","_id":"Ite15bcaVucmwhGj"}
+{"name":"PLAYERS","type":"Actor","sort":null,"flags":{},"parent":null,"sorting":"a","color":"","_id":"YXvvsGyLwTIcwSqH"}
+{"name":"Encounters","type":"RollTable","sort":null,"flags":{},"parent":null,"sorting":"a","color":"","_id":"jqd9NYR3a5bDSW3w"}
+{"name":"Items","type":"RollTable","sort":null,"flags":{},"parent":null,"sorting":"a","color":"","_id":"zL2mOseJo1RluPk4"}

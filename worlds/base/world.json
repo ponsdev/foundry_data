@@ -8,7 +8,17 @@
   "scripts": [],
   "esmodules": [],
   "styles": [],
-  "packs": [],
+  "packs": [
+    {
+      "label": "D&D Items",
+      "entity": "Item",
+      "name": "dandd-items",
+      "path": "packs/dandd-items.db",
+      "system": "dnd5e",
+      "package": "world",
+      "absPath": "/home/ec2-user/foundrydata/Data/worlds/base/packs/dandd-items.db"
+    }
+  ],
   "languages": [],
   "authors": [],
   "keywords": [],
@@ -24,5 +34,8 @@
   "system": "dnd5e",
   "coreVersion": "0.7.9",
   "systemVersion": "1.2.4",
-  "nextSession": null
+  "nextSession": null,
+  "availability": 0,
+  "unavailable": false,
+  "id": "base"
 }

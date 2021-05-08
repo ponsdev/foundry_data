@@ -1,1 +1,3 @@
 {"name":"Gamemaster","flags":{},"role":4,"permissions":{},"color":"#9128cc","hotbar":{},"_id":"OdtXtlVcQ2vhw2WQ"}
+{"_id":"OdtXtlVcQ2vhw2WQ","name":"Gamemaster","flags":{"dice-so-nice":{"welcomeMessageShown":true}},"role":4,"permissions":{},"color":"#9128cc","hotbar":{}}
+{"_id":"OdtXtlVcQ2vhw2WQ","name":"Gamemaster","flags":{"dice-so-nice":{"welcomeMessageShown":true,"appearance":{"labelColor":"#FFFFFF","diceColor":"#9128cc","outlineColor":"#9128cc","edgeColor":"#9128cc","texture":"none","material":"auto","font":"auto","colorset":"hunger","system":"standard"}}},"role":4,"permissions":{},"color":"#9128cc","hotbar":{}}

@@ -294,7 +294,10 @@ class FieldMapping {
 
     map(data, translations) {
         let map = {};
-        let value = this.converter ? this.converter(this.extract(data), translations[this.field]) : translations[this.field];
+        let originalValue = this.extract(data);
+        let value = this.converter && originalValue ?
+                this.converter(originalValue, translations[this.field], data) :
+                translations[this.field];
         if(value) {
             this.path.split('.').reduce((a,f,i,r) => { a[f] = (i<r.length-1) ? {} : value; return a[f]; }, map);    
         }
@@ -433,49 +436,21 @@ class TranslatedCompendium extends DecoratedCompendium {
         }
     }
 
-    i18nName(idx) {
-      let translation =
-              this.translations[idx._id] ||
-              this.translations[idx.id] ||
-              this.translations[idx.name] ||
-              { name: this.referenceI18Name(idx) || idx.name };
-      return translation.name;
-    }
-
-    referenceI18Name(idx) {
-        let name = null;
-        if(this.reference) {
-            let referencePack = game.packs.get(this.reference);
-            if(referencePack.translated) {
-                name = referencePack.i18nName(idx);
-            }
-        }
-        return name;
-    }
-
-    getIndex() {
-        return new Promise((resolve, reject) => {
-            this.pack.getIndex().then(index => {
-                this.index = index
-                    .map(idx => mergeObject(idx, { name: this.i18nName(idx) }))
-                    .sort((a, b) => {
-                        if (a.name < b.name)
-                            return -1;
-                        if (a.name > b.name)
-                            return 1;
-                        return 0;
-                    });
-                resolve(this.index);
+    async getIndex() {
+        const idxs = await this.pack.getIndex();
+        return this.index = idxs
+            .map(idx => this.translate(idx))
+            .sort((a, b) => {
+                if (a.name < b.name)
+                    return -1;
+                if (a.name > b.name)
+                    return 1;
+                return 0;
             });
-        });
     }
 
-    getEntry(entryId) {
-        return new Promise((resolve, reject) => {
-            this.pack.getEntry(entryId).then(data => {
-                resolve(this.translate(data));
-            });
-        });
+    async getEntry(entryId) {
+        return this.translate(await this.pack.getEntry(entryId));
     }
 
     hasTranslation(data) {

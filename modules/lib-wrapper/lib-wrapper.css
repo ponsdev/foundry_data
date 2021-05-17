@@ -25,29 +25,29 @@
 .lib-wrapper .active {
   display: block;
 }
-.lib-wrapper .module-priority-group {
+.lib-wrapper .package-priority-group {
   height: 33%;
   margin: auto;
   clear: both;
 }
-.lib-wrapper .module-priority-group select {
+.lib-wrapper .package-priority-group select {
   height: 150px;
 }
-.lib-wrapper .module-priority-group .arrow-btn-group {
+.lib-wrapper .package-priority-group .arrow-btn-group {
   margin: auto;
   position: relative;
   left: 75px;
 }
-.lib-wrapper .module-priority-group .arrow-btn-group:after {
+.lib-wrapper .package-priority-group .arrow-btn-group:after {
   content: "";
   clear: both;
   display: table;
 }
-.lib-wrapper .module-priority-group .arrow-btn-group button {
+.lib-wrapper .package-priority-group .arrow-btn-group button {
   float: left;
   margin: 0;
 }
-.lib-wrapper .module-priority-group .vertical-arrow-btn-group {
+.lib-wrapper .package-priority-group .vertical-arrow-btn-group {
   margin: auto;
   display: flex;
   flex-flow: column wrap;

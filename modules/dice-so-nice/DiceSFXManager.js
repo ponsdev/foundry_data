@@ -69,14 +69,21 @@ export const DiceSFXManager = {
         }
     },
     playSFX : async function(id, box, dicemesh){
-        if(!DiceSFXManager.SFX_CLASS[id])
-            return;
-        let sfxInstance = new DiceSFXManager.SFX_CLASS[id](box, dicemesh);
-        if(typeof sfxInstance.render === 'function')
-            DiceSFXManager.renderQueue.push(sfxInstance);
-        if(sfxInstance.enableGC)
-            DiceSFXManager.garbageCollector.push(sfxInstance);
-        sfxInstance.play();
+        return new Promise((resolve)=>{
+            if(!DiceSFXManager.SFX_CLASS[id])
+                return;
+            let sfxInstance = new DiceSFXManager.SFX_CLASS[id](box, dicemesh);
+
+            sfxInstance.play().then(result => {
+                if(result !== false){
+                    if(typeof sfxInstance.render === 'function')
+                        DiceSFXManager.renderQueue.push(sfxInstance);
+                    if(sfxInstance.enableGC)
+                        DiceSFXManager.garbageCollector.push(sfxInstance);
+                }
+                resolve();
+            });
+        });
     },
     renderSFX : function(){
         let queue = [...DiceSFXManager.renderQueue];

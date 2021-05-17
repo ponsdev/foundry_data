@@ -29,6 +29,10 @@ export class SimpleClockDisplay extends FormApplication {
             .find("#about-time-calendar-hdr")
             .click(event => {
             var _a;
+            if (game.system.id === "pf2e") {
+                ui.notifications.warn("Calendar is fixed for PF2E - no editing", { permanent: true });
+                return;
+            }
             if (["0.5.1", "0.5.0"].includes(game.data.version)) {
                 var calendar_weather = game.modules.find(module => module.id === 'calendar-weather' && module.active);
             }

@@ -29,6 +29,12 @@ class NarratorMenu extends FormApplication {
             BGColor: game.settings.get('narrator-tools', 'BGColor'),
             BGImage: game.settings.get('narrator-tools', 'BGImage'),
             NarrationStartPaused: game.settings.get('narrator-tools', 'NarrationStartPaused'),
+            MessageType: game.settings.get('narrator-tools', 'MessageType'),
+            CHAT_MESSAGE_TYPES: {
+                0: 'Other',
+                1: 'Out of Character',
+                2: 'In Character',
+            },
         };
     }
     /**
@@ -106,13 +112,16 @@ const NarratorTools = {
         this._updateScenery(scenery);
         if (game.user.isGM) {
             const tool = ui.controls.controls[0].tools.find((tool) => tool.name === 'scenery');
-            if (scenery) {
-                $('.control-tool[title=Scenery]')[0].classList.add('active');
-                tool.active = true;
-            }
-            else {
-                $('.control-tool[title=Scenery]')[0].classList.remove('active');
-                tool.active = false;
+            const btn = $('.control-tool[data-tool=scenery]');
+            if (tool && btn) {
+                if (scenery) {
+                    btn[0].classList.add('active');
+                    tool.active = true;
+                }
+                else {
+                    btn[0].classList.remove('active');
+                    tool.active = false;
+                }
             }
         }
         /**Then, we control the narration's behavior */
@@ -166,7 +175,7 @@ const NarratorTools = {
                 this.elements.content[0].style.opacity = '0';
                 this.elements.content.stop();
                 this._timeouts.narrationOpens = setTimeout(() => {
-                    this.elements.content.text(narration.message);
+                    this.elements.content.html(narration.message);
                     this.elements.content[0].style.opacity = '1';
                     this.elements.content[0].style.top = '0px';
                     const height = Math.min(this.elements.content.height() ?? 0, 310);
@@ -220,30 +229,34 @@ const NarratorTools = {
     },
     /**Gets whats selected on screen */
     _getSelectionText() {
+        let html = '';
         const selection = window.getSelection();
-        if (selection)
-            return selection.toString();
-    },
-    /**
-     * Hides the journals context menu
-     * @param e
-     */
-    _hideContextMenu(e) {
-        NarratorTools._menu.hide();
-        document.removeEventListener('click', NarratorTools._hideContextMenu);
+        if (selection?.rangeCount && !selection.isCollapsed) {
+            const fragments = selection.getRangeAt(0).cloneContents();
+            const size = fragments.childNodes.length;
+            for (let i = 0; i < size; i++) {
+                if (fragments.childNodes[i].nodeType == fragments.TEXT_NODE)
+                    html += fragments.childNodes[i].wholeText;
+                else
+                    html += fragments.childNodes[i].outerHTML;
+            }
+        }
+        return html;
     },
     /**The id of the last narration update */
     _id: 0,
     /**
-     * Loads a specific font from the Google Fonts web page
-     * @param font Google font to load
+     * Loads a custom font for the narration style
+     * @param font Font to load
      */
     _loadFont(font) {
         $('#narratorWebFont').remove();
         if (font == '')
             return;
-        const linkRel = $(`<link id="narratorWebFont" href="https://fonts.googleapis.com/css2?family=${font}&display=swap" rel="stylesheet" type="text/css" media="all">`);
-        $('head').append(linkRel);
+        let style = document.createElement('style');
+        style.id = 'narratorWebFont';
+        style.appendChild(document.createTextNode(`@font-face {font-family: NTCustomFont; src: url('${font}');}`));
+        document.head.appendChild(style);
     },
     _menu: undefined,
     /**
@@ -273,7 +286,7 @@ const NarratorTools = {
      */
     _preCreateChatMessage(chatData, options, user) {
         if (game.user.isGM && this.character) {
-            chatData.type = this._msgtype;
+            chatData.type = game.settings.get('narrator-tools', 'MessageType');
             chatData.speaker = { alias: this.character };
         }
     },
@@ -329,12 +342,22 @@ const NarratorTools = {
             };
             NarratorTools._updateStopButton(pause);
         });
-        NarratorTools.elements.buttonClose[0].innerHTML = `<i class="fas fa-times-circle"></i> ${game.i18n.localize('Close')}`;
+        NarratorTools.elements.buttonClose.html(`<i class="fas fa-times-circle"></i> ${game.i18n.localize('Close')}`);
         NarratorTools.elements.buttonClose.on('click', NarratorTools._narrationClose);
         NarratorTools._loadFont(game.settings.get('narrator-tools', 'WebFont'));
         NarratorTools._updateContentStyle();
         this._controller(game.settings.get('narrator-tools', 'sharedState'));
         NarratorTools._pause();
+        document.addEventListener('contextmenu', (ev) => {
+            if (ev.target.classList.contains('editor-content') || $(ev.target).parents('div.editor-content').length) {
+                const time = this._menu.isOpen() ? 100 : 0;
+                this._menu.hide();
+                setTimeout(() => {
+                    this._menu.show(ev.pageX, ev.pageY);
+                }, time);
+            }
+        });
+        document.addEventListener('click', () => NarratorTools._menu.hide());
     },
     /**Initialization routine for 'setup' hook */
     _setup() {
@@ -445,11 +468,14 @@ const NarratorTools = {
             default: false,
             type: Boolean,
         });
+        game.settings.register('narrator-tools', 'MessageType', {
+            name: 'Narration Message Type',
+            scope: 'world',
+            config: false,
+            default: CONST.CHAT_MESSAGE_TYPES.OTHER,
+            type: Number,
+        });
     },
-    /**Specify how the module's messages will be intepreted by foundry and other modules:
-     * OTHER: 0, OOC: 1, IC: 2, EMOTE: 3, WHISPER: 4, ROLL: 5
-     */
-    _msgtype: CONST.CHAT_MESSAGE_TYPES.IC,
     /**
      * Behavior when a chat message is clicked
      * @param event The event wich triggered the handler
@@ -486,9 +512,6 @@ const NarratorTools = {
     _renderChatMessage(message, html, data) {
         const type = message.getFlag('narrator-tools', 'type');
         if (type) {
-            const text = html.find('div.message-content')[0].innerText.match(/^\n *(.*)/);
-            if (text && text[1])
-                html.find('div.message-content')[0].innerText = text[1];
             html.find('.message-sender').text('');
             html.find('.message-metadata')[0].style.display = 'none';
             html[0].classList.add('narrator-chat');
@@ -502,28 +525,6 @@ const NarratorTools = {
                 html[0].classList.add('narrator-notification');
             }
         }
-    },
-    /**
-     * Hook wich triggers when the journal sheet is rendered
-     * @param journalSheet
-     * @param html
-     */
-    _renderJournalSheet(journalSheet, html) {
-        let editor = '.editor-content';
-        // Identifies if there is a Easy MDE Container
-        const MDEContainer = html.find('.EasyMDEContainer').length;
-        if (MDEContainer)
-            editor = '.editor-preview-active';
-        // Sets a timeout in case there is problem concurrency with other modules
-        setTimeout(() => html.find(editor).on('contextmenu', (e) => {
-            e.preventDefault();
-            const time = this._menu.isOpen() ? 100 : 0;
-            this._menu.hide();
-            setTimeout(() => {
-                this._menu.show(e.pageX, e.pageY);
-            }, time);
-            document.addEventListener('click', NarratorTools._hideContextMenu, false);
-        }), 0);
     },
     /**Resize the sidebarBG and frame elements to match the sidebars size */
     _fitSidebar() {
@@ -539,10 +540,10 @@ const NarratorTools = {
     },
     _updateStopButton(pause) {
         if (pause) {
-            NarratorTools.elements.buttonPause[0].innerHTML = `<i class='fas fa-play-circle'></i> ${game.i18n.localize('NT.PlayButton')}`;
+            NarratorTools.elements.buttonPause.html(`<i class='fas fa-play-circle'></i> ${game.i18n.localize('NT.PlayButton')}`);
         }
         else {
-            NarratorTools.elements.buttonPause[0].innerHTML = `<i class='fas fa-pause-circle'></i> ${game.i18n.localize('NT.PauseButton')}`;
+            NarratorTools.elements.buttonPause.html(`<i class='fas fa-pause-circle'></i> ${game.i18n.localize('NT.PauseButton')}`);
         }
     },
     _updateBGColor(color) {
@@ -573,7 +574,7 @@ const NarratorTools = {
             this.elements.content[0].style.opacity = opacity;
             return;
         }
-        this.elements.content[0].style.fontFamily = `${game.settings.get('narrator-tools', 'WebFont')}`;
+        this.elements.content[0].style.fontFamily = `${game.settings.get('narrator-tools', 'WebFont')}` ? 'NTCustomFont' : '';
         this.elements.content[0].style.fontSize = `${game.settings.get('narrator-tools', 'FontSize')}`;
         this.elements.content[0].style.color = `${game.settings.get('narrator-tools', 'TextColor')}`;
         this.elements.content[0].style.textShadow = `${game.settings.get('narrator-tools', 'TextShadow')}`;
@@ -633,7 +634,7 @@ const NarratorTools = {
     createChatMessage(type, message, options = {}) {
         if (!game.user.isGM)
             return;
-        message = message.replace(/\\n|<br>/g, '\n');
+        message = message.replace(/\\n/g, '<br>');
         let chatData = {
             content: message,
             flags: {
@@ -641,7 +642,7 @@ const NarratorTools = {
                     type: type,
                 },
             },
-            type: this._msgtype,
+            type: game.settings.get('narrator-tools', 'MessageType'),
             speaker: {
                 alias: game.i18n.localize('NT.Narrator'),
                 scene: game.user.viewedScene,
@@ -721,5 +722,4 @@ Hooks.on('preCreateChatMessage', NarratorTools._preCreateChatMessage.bind(Narrat
 Hooks.on('renderChatMessage', NarratorTools._renderChatMessage.bind(NarratorTools)); // This hook changes the chat message in case its a narration + triggers
 Hooks.on('getSceneControlButtons', NarratorTools._createSceneryButton.bind(NarratorTools));
 Hooks.on('sidebarCollapse', NarratorTools._fitSidebar.bind(NarratorTools));
-Hooks.on('renderJournalSheet', NarratorTools._renderJournalSheet.bind(NarratorTools));
 Hooks.on('pauseGame', (_pause) => NarratorTools._pause());

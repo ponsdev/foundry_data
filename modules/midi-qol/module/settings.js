@@ -78,7 +78,8 @@ export var configSettings = {
         nearbyAllyRanged: 4,
         incapacitated: true,
         removeHiddenInvis: true,
-        maxDRValue: false
+        maxDRValue: false,
+        distanceIncludesHeight: false
     },
     keepRollStats: false,
     saveStatsEvery: 20,
@@ -110,7 +111,8 @@ export let fetchParams = (silent = false) => {
             nearbyAllyRanged: 4,
             incapacitated: true,
             removeHiddenInvis: true,
-            maxDRValue: false
+            maxDRValue: false,
+            distanceIncludesHeight: false
         };
     }
     if (typeof configSettings.optionalRules.nearbyFoe !== "number") {

@@ -18,7 +18,6 @@ const _updateRealTimeCountDown = "about-time.updateRealTimeCountDown";
 export const _addEvent = "about.time.addEvent";
 let _userId = "";
 let debug;
-debug = true;
 let log = (...args) => {
     console.log("about-time | ", ...args);
 };
@@ -32,6 +31,9 @@ export class PseudoClockMessage {
     }
 }
 export class PseudoClock {
+    static get timeZeroOffset() { return this._timeZeroOffset; }
+    ;
+    static set timeZeroOffset(offset) { this._timeZeroOffset = offset; }
     static get clockStartYear() { return this._clockStartYear; }
     ;
     static setDebug(val) {
@@ -51,7 +53,7 @@ export class PseudoClock {
     }
     static get currentTime() {
         //@ts-ignore
-        return game.time.worldTime;
+        return game.time.worldTime + PseudoClock._timeZeroOffset;
     }
     static _createFromData(data) {
         PseudoClock._running = data._running;
@@ -60,7 +62,7 @@ export class PseudoClock {
         PseudoClock._realTimeInterval = game.settings.get("about-time", "real-time-interval");
         if (!CONFIG.time.roundTime)
             CONFIG.time.roundTime = 6;
-        if (data._currentTime) {
+        if (data._currentTime && false) {
             console.warn("save data contains current time using ", data._currentTime);
             game.settings.set("core", "time", data._currentTime);
         } // else log("No settings saved time found")
@@ -81,11 +83,11 @@ export class PseudoClock {
     }
     static _displayCurrentTime() {
         //@ts-ignore .time
-        console.log(`Elapsed time ${game.time.worldTime}`);
+        console.log(`Elapsed time ${game.time.worldTime + PseudoClock._timeZeroOffset}`);
     }
     static getDHMS() {
         //@ts-ignore .time
-        return DTMod.fromSeconds(game.time.worldTime);
+        return DTMod.fromSeconds(game.time.worldTime + PseudoClock._timeZeroOffset);
     }
     static advanceClock(timeIncrement) {
         if (PseudoClock.isGM)
@@ -96,7 +98,7 @@ export class PseudoClock {
     }
     static setClock(newTime) {
         if (PseudoClock.isGM) {
-            newTime = Math.floor(newTime);
+            newTime = Math.floor(newTime) - PseudoClock._timeZeroOffset;
             game.settings.set("core", "time", newTime);
         }
     }
@@ -191,7 +193,7 @@ export class PseudoClock {
                 if (PseudoClock._isMaster) {
                     log(game.user.name, "responding as master time keeper");
                     //@ts-ignore
-                    let message = new PseudoClockMessage({ action: _masterResponse, userId: _userId, newTime: game.time.worldTime });
+                    let message = new PseudoClockMessage({ action: _masterResponse, userId: _userId, newTime: game.time.worldTime + PseudoClock._timeZeroOffset });
                     PseudoClock._notifyUsers(message);
                 }
                 break;
@@ -362,3 +364,4 @@ export class PseudoClock {
 }
 PseudoClock._saveInterval = 1 * 60 * 1000; // only save every 1 minutes real time. make a param.
 PseudoClock._clockStartYear = 1;
+PseudoClock._timeZeroOffset = 0;

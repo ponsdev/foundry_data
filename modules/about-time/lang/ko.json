@@ -1,3 +1,4 @@
+
 {
   "I18N.LANGUAGE": "한국어",
   "I18N.MAINTAINERS": "KLO",
@@ -26,12 +27,15 @@
   "about-time.current": "현재 날짜 & 시간",
   "about-time.monthDetails": "월 상세",
   "about-time.weekDays": "주간 일자",
+  "about-time.yearNames": "역법 이름",
 
   "about-time.display.advance1min": "1분 진행",
   "about-time.display.advance10min": "10분 진행",
   "about-time.display.advance1h": "1시간 진행",
   "about-time.display.advance8h": "8시간 진행",
-  "about-time.display.advance7am": "다음 날 오전 7시로 진행",
+  "about-time.display.advance7am": "오전 7시로 진행",
+  "about-time.display.advance7pm": "오후 7시로 진행",
+  "about-time.display.advanceMidDay": "정오로 진행",
   "about-time.display.advanceMidnight": "자정으로 진행",
 
   "about-time.countDown.startStop": "의사 시계 시작/정지."

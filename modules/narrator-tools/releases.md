@@ -1,8 +1,26 @@
 # Patch Notes
 
+## 0.56
+
+-   Improved (again) the text selection tool, fixing some bugs
+-   Custom Font configuration now loads fonts directly from a Web or local File Path, instead of using the Google Fonts api
+
+## 0.55
+
+-   Added context-menu support for any `.editor-content`
+-   Improved visuals for WRFP4
+-   Fixed a bug where break-line would not be respected
+-   Selection tool for the context-menu remade
+
+## 0.54
+
+-   Improved visuals for WRFP4
+-   Added new configuration for controlling the messages types
+-   Attempt on fixing some compatibility errors with other modules
+
 ## 0.53
 
--   Corrected bug where some characters might disappear, depending on the module CSS
+-   Corrected bug where some characters might disappear depending on the system's CSS
 
 ## 0.52
 

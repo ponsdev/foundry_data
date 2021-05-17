@@ -136,6 +136,21 @@ Hooks.on('renderSidebarTab', (app, html, data) => {
       get_raw_formula: function(qty, dice, html) {return _dtGetSwadeRawFormula(qty, dice, html)},
       load_dice: function() {return _dtLoadSwadeDice()}
     },
+    fatex: {
+      apply_layout: function(html) {_dtApplyFateLayout(html)},
+      get_raw_formula: function(qty, dice, html) {return _dtGetFateRawFormula(qty, dice, html)},
+      load_dice: function() {return _dtLoadFateDice()}
+    },
+    ModularFate: {
+      apply_layout: function(html) {_dtApplyFateLayout(html)},
+      get_raw_formula: function(qty, dice, html) {return _dtGetFateRawFormula(qty, dice, html)},
+      load_dice: function() {return _dtLoadFateDice()}
+    },
+    'fate-core-official': {
+      apply_layout: function(html) {_dtApplyFateLayout(html)},
+      get_raw_formula: function(qty, dice, html) {return _dtGetFateRawFormula(qty, dice, html)},
+      load_dice: function() {return _dtLoadFateDice()}
+    },
     dnd5e: {
       apply_layout: function(html) {_dtApplyDnd5eLayout(html)},
       get_raw_formula: function(qty, dice, html) {return _dtGetDnd5eRawFormula(qty, dice, html)},
@@ -494,6 +509,31 @@ function _dtApplySwadeLayout(html) {
   });
 }
 
+function _dtApplyFateLayout(html) {
+  html.find('#dice-tray-math').show();
+  html.find('.dice-tray__roll').on('click', event => {
+    event.preventDefault();
+    let spoofed = $.Event('keydown');
+    spoofed.which = 13;
+    spoofed.keycode = 13;
+    spoofed.code = 'Enter';
+    spoofed.key = 'Enter';
+    html.find('#chat-message').trigger(spoofed);
+    html.find('.dice-tray__input').val(0);
+  });
+  html.find("#Layer_1").remove();
+  html.find("#dice-tray-math").remove();
+  html.find("#fate-text").remove();
+  html.find(".dice-tray__buttons.flexrow > button").append(`<a id=fate-text>Fate Dice</a>`);
+  html.find(`.dice-tray__flag--d6`).hide();
+  html.find('#chat-message').keydown(e => {
+    if (e.code == 'Enter' || e.key == 'Enter' || e.keycode == '13') {
+      html.find('.dice-tray__flag').text('');
+      html.find('.dice-tray__flag').addClass('hide');
+    }
+  });
+}
+
 // DICE LOADING BY SYSTEM
 function _dtLoadGenericDice() {
   return {
@@ -541,6 +581,15 @@ function _dtLoadSwadeDice() {
   return all_dice;
 }
 
+function _dtLoadFateDice() {
+  var selected_dice = {
+                   dice: {
+                     d6: 'd6',
+                   }
+                 };
+  return selected_dice;
+}
+
 // --------------------------
 // RAW FORMULAS BY SYSTEM
 function _dtGetGenericRawFormula(qty, dice, html) {
@@ -568,4 +617,9 @@ function _dtGetSwadeRawFormula(qty, dice, html) {
   else {
     return `${qty === '' ? 1 : qty}${dice}${roll_suffix}`;
   }
+}
+
+function _dtGetFateRawFormula(qty, dice, html) {
+  let roll_suffix = 'df';
+  return `4${roll_suffix}`;
 }

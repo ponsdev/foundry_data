@@ -12,27 +12,44 @@ Hooks.once("init", () => {
         return data;
     });
 
-    patch("AmbientLight.prototype.updateSource", "PRE", function () {
-        const source_ = extend(this.source);
-        source_.isLight = true;
-        source_.light = this;
-        return arguments;
-    });
+    if (!isNewerVersion(game.data.version, "0.8.2")) {
+        patch("AmbientLight.prototype.updateSource", "PRE", function () {
+            const source_ = extend(this.source);
+            source_.isLight = true;
+            source_.light = this;
+            return arguments;
+        });
+    }
 
-    patch("PointSource.prototype.initialize", "WRAPPER", function (wrapped, opts) {
+    patch("PointSource.prototype.initialize", "WRAPPER", function (wrapped, data) {
         const this_ = extend(this);
 
-        if (!this_.isLight)
-            return wrapped(opts);
-
-        const localUnrestricted = (opts?.type == null || opts.type === CONST.SOURCE_TYPES.LOCAL) && this_.light.getFlag("perfect-vision", "unrestricted");
-
-        if (localUnrestricted) {
-            opts = opts ?? {};
-            opts.type = CONST.SOURCE_TYPES.UNIVERSAL;
+        if (isNewerVersion(game.data.version, "0.8.2")) {
+            if (this.sourceType !== "light")
+                return wrapped(data);
+        } else {
+            if (!this_.isLight)
+                return wrapped(data);
         }
 
-        const retVal = wrapped(opts);
+        const light = this.object ?? this_.light;
+
+        let document;
+
+        if (isNewerVersion(game.data.version, "0.8")) {
+            document = light.document;
+        } else {
+            document = light;
+        }
+
+        const localUnrestricted = (data?.type == null || data.type === CONST.SOURCE_TYPES.LOCAL) && document.getFlag("perfect-vision", "unrestricted");
+
+        if (localUnrestricted) {
+            data = data ?? {};
+            data.type = CONST.SOURCE_TYPES.UNIVERSAL;
+        }
+
+        const retVal = wrapped(data);
 
         if (localUnrestricted) {
             this.type = CONST.SOURCE_TYPES.LOCAL;
@@ -66,12 +83,27 @@ Hooks.on("updateAmbientLight", (document, change, options, userId, arg) => {
     if (!scene?.isView || !hasProperty(change, "flags.perfect-vision"))
         return;
 
-    const light = canvas.lighting.get(document._id);
+    let id;
+
+    if (isNewerVersion(game.data.version, "0.8")) {
+        id = document.id;
+    } else {
+        id = document._id;
+    }
+
+    const light = canvas.lighting.get(id);
 
     if (light) {
         light.updateSource({ defer: true });
 
-        canvas.addPendingOperation("LightingLayer.refresh", canvas.lighting.refresh, canvas.lighting);
-        canvas.addPendingOperation("SightLayer.refresh", canvas.sight.refresh, canvas.sight);
+        if (isNewerVersion(game.data.version, "0.8.1")) {
+            canvas.perception.schedule({
+                lighting: { refresh: true },
+                sight: { refresh: true }
+            });
+        } else {
+            canvas.addPendingOperation("LightingLayer.refresh", canvas.lighting.refresh, canvas.lighting);
+            canvas.addPendingOperation("SightLayer.refresh", canvas.sight.refresh, canvas.sight);
+        }
     }
 });

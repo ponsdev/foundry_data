@@ -94,4 +94,13 @@ export const registerSettings = function () {
         config: true,
         onChange: ElapsedTime._fetchParams
     });
+    game.settings.register("about-time", "timeZeroOffset", {
+        name: "World Time Zero => calendar date/time",
+        hint: "World Time = 0 => Years/Months/Days Hours:Minutes:Seconds",
+        default: "0/0/0 0:0:0",
+        type: String,
+        scope: 'world',
+        config: true,
+        onChange: ElapsedTime.setOffset
+    });
 };

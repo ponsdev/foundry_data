@@ -45,6 +45,10 @@ export class CombatSidebarCe {
           return;
         }
 
+        if (!game.combat) {
+          return;
+        }
+
         // Retrieve the combatant for this actor, or exit if not valid.
         const combatant = game.combat.combatants.find(c => c._id == $actorRow.data('combatant-id'));
         if (!combatant) {
@@ -245,7 +249,7 @@ export class CombatSidebarCe {
     });
 
     Hooks.on('updateToken', (scene, token, data, options, id) => {
-      if (data.actorData) {
+      if (data.actorData && game.combat) {
         let inCombat = game.combat.combatants.find(c => c.tokenId == token._id);
         if (inCombat) {
           ui.combat.render();

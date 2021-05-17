@@ -246,7 +246,8 @@ export class RollFields {
 				}
 
 				// Add any roll bonuses but only to the first entry
-				if (isFirst && rollData.bonuses) {
+				const isAmmo = item.data.type === "consumable" && item.data.data.consumableType === "ammo";
+				if (isFirst && rollData.bonuses && !isAmmo) {
 					const actionType = `${itemData.actionType}`;
 					const bonus = rollData.bonuses[actionType]?.damage;
 					if (bonus && (parseInt(bonus) !== 0)) {
@@ -475,15 +476,12 @@ export class RollFields {
 				})];
 			case 'description':
 			case 'desc':
-				return [{
-					type: "description",
-					content: TextEditor.enrichHTML(item?.data.data.description.value ?? '').trim()
-				}];
 			case 'text':
-				if (data.text) {
+				const textFieldValue = data.text ?? data.content ?? item?.data.data.description.value;
+				if (textFieldValue) {
 					return [{
 						type: "description",
-						content: TextEditor.enrichHTML(data.text ?? "")
+						content: TextEditor.enrichHTML(textFieldValue ?? '').trim()
 					}];
 				}
 				break;

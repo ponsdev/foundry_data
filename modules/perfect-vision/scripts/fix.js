@@ -25,7 +25,7 @@ PIXI.Renderer.prototype.resize = function (screenWidth, screenHeight) {
 
 Hooks.once("init", () => {
     // https://gitlab.com/foundrynet/foundryvtt/-/issues/4263
-    if (isNewerVersion(game.data.version, "0.7.8")) {
+    if (isNewerVersion(game.data.version, "0.7.8") && isNewerVersion("0.8.2", game.data.version)) {
         let _darknessChanged;
 
         patch("PointSource.prototype.drawLight", "PRE", function (opts) {
@@ -77,23 +77,51 @@ Hooks.once("init", () => {
         });
     }
 
-    // Fix flickering border pixels
-    patch("BackgroundLayer.prototype.draw", "POST", async function () {
-        const retVal = await arguments[0];
+    if (!game.modules.get("grape_juice-isometrics")?.active) {
+        // Fix flickering border pixels
+        if (isNewerVersion(game.data.version, "0.8.1")) {
+            patch("MapLayer.prototype.draw", "POST", async function () {
+                const retVal = await arguments[0];
 
-        const this_ = extend(this);
+                const this_ = extend(this);
 
-        this_.msk = this.addChild(new PIXI.Graphics());
-        this_.msk.beginFill(0xFFFFFF, 1.0).drawShape(canvas.dimensions.sceneRect).endFill();
-        this.mask = this_.msk;
+                if (this_.msk?.parent) {
+                    this_.msk.parent.removeChild(this_.msk);
+                }
 
-        return retVal;
-    });
+                this_.msk = this.addChild(new PIXI.Graphics());
+                this_.msk.beginFill(0xFFFFFF, 1.0).drawShape(canvas.dimensions.sceneRect).endFill();
+                this.mask = this_.msk;
+
+                return retVal;
+            });
+        } else {
+            patch("BackgroundLayer.prototype.draw", "POST", async function () {
+                const retVal = await arguments[0];
+
+                const this_ = extend(this);
+
+                if (this_.msk?.parent) {
+                    this_.msk.parent.removeChild(this_.msk);
+                }
+
+                this_.msk = this.addChild(new PIXI.Graphics());
+                this_.msk.beginFill(0xFFFFFF, 1.0).drawShape(canvas.dimensions.sceneRect).endFill();
+                this.mask = this_.msk;
+
+                return retVal;
+            });
+        }
+    }
 
     patch("EffectsLayer.prototype.draw", "POST", async function () {
         const retVal = await arguments[0];
 
         const this_ = extend(this);
+
+        if (this_.msk?.parent) {
+            this_.msk.parent.removeChild(this_.msk);
+        }
 
         this_.msk = this.addChild(new PIXI.Graphics());
         this_.msk.beginFill(0xFFFFFF, 1.0).drawShape(canvas.dimensions.sceneRect).endFill();
@@ -146,11 +174,13 @@ Hooks.once("init", () => {
     patch("LightingLayer.prototype._drawColorationContainer", "POST", function (c) {
         c.filter.resolution = Math.pow(2, Math.floor(Math.log2(canvas.app.renderer.resolution)));
 
-        if (c.filter instanceof PIXI.filters.FXAAFilter && c.filter.program.uniformData.inputPixel) {
-            c.filter.program = PIXI.Program.from(
-                c.filter.program.vertexSrc.replace(/#define SHADER_NAME .*\n/i, "").replace(/inputPixel/g, "inputSize"),
-                c.filter.program.fragmentSrc.replace(/#define SHADER_NAME .*\n/i, "").replace(/inputPixel/g, "inputSize")
-            );
+        if (!isNewerVersion(PIXI.VERSION, "6.0.3")) {
+            if (c.filter instanceof PIXI.filters.FXAAFilter && c.filter.program.uniformData.inputPixel) {
+                c.filter.program = PIXI.Program.from(
+                    c.filter.program.vertexSrc.replace(/#define SHADER_NAME .*\n/i, "").replace(/inputPixel/g, "inputSize"),
+                    c.filter.program.fragmentSrc.replace(/#define SHADER_NAME .*\n/i, "").replace(/inputPixel/g, "inputSize")
+                );
+            }
         }
 
         return c;
@@ -182,6 +212,13 @@ Hooks.once("init", () => {
 
         return res;
     });
+
+    if (isNewerVersion(game.data.version, "0.8.2")) {
+        patch("AbstractBaseMaskFilter.create", "POST", function (filter) {
+            filter.resolution = Math.pow(2, Math.floor(Math.log2(canvas.app.renderer.resolution)));
+            return filter;
+        });
+    }
 });
 
 // https://gitlab.com/foundrynet/foundryvtt/-/issues/4850

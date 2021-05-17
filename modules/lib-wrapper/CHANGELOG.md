@@ -1,3 +1,43 @@
+# 1.6.0.0 (2021-05-10)
+
+- **[BREAKING]** Remove `libWrapperReady` hook (deprecated since v1.5.0.0, `libWrapper.Ready` should be used instead).
+- Rename all instances of `module` to `package`, given the library now officially supports systems and worlds.
+  - Deprecate `libWrapper.clear_module` method (now `libWrapper.clear_all`) and the `libWrapper.ClearModule` hook (now `libWrapper.ClearAll`).
+  - Deprecate `libWrapper.ModuleError` (now `libWrapper.PackageError`).
+  - Deprecate all `libWrapper.Error.module` getters (now `libWrapper.Error.package_id`).
+- Rewrite module auto-detection functionality to be able to handle systems and worlds correctly.
+  - Allows modules/systems/worlds to co-exist even when they share the same package ID.
+- Make it explicit when a package ID corresponds to a world or system.
+  - Error and warning messages now display `world` and `system` instead of `module`, when applicable.
+  - Display `[World]` and `[System]` next to the package IDs in the settings dialog when packages are not modules.
+- Miscellaneous code clean-up in preparation for future work.
+- Announce compatibility with Foundry 0.8.3.
+
+# 1.5.6.0 (2021-05-05)
+
+- Improve unhandled error detection mechanism.
+- Also detect errors that occur inside `Application.prototype.render`.
+
+# 1.5.5.0 (2021-05-05)
+
+- Fix sorting of unprioritized modules in the settings dialog.
+
+# 1.5.4.0 (2021-05-05)
+
+- Improve support for systems and world scripts. ([Issue #19](https://github.com/ruipin/fvtt-lib-wrapper/issues/19))
+  - World scripts are now supported.
+  - Shim ID/title auto-detection now supports both world scripts and systems.
+- Do not use positive look-behind in regexes. ([Issue #34](https://github.com/ruipin/fvtt-lib-wrapper/issues/34))
+  - This fixes support for Safari Technical Preview. (Note: Safari is still officially unsupported by both Foundry and libWrapper)
+  - Corresponding update to the shim, which will be required if modules wish to support Safari.
+
+# 1.5.3.0 (2021-05-04)
+
+- Improve call stack for hooks ([Issue #32](https://github.com/ruipin/fvtt-lib-wrapper/issues/32))
+  - Changed the `Hooks._call` wrapper to a patched override.
+- Delay evaluation of notifications configuration until `ready` hook.
+- Announce compatibility with Foundry 0.8.2.
+
 # 1.5.2.0 (2021-04-16)
 
 - Versioning updates

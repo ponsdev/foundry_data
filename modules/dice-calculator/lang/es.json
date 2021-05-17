@@ -1,0 +1,23 @@
+{
+  "I18N.LANGUAGE": "Español",
+  "I18N.MAINTAINERS": "@Viriato139ac#0342",
+
+  "DICE_TRAY.Adv": "Ven",
+  "DICE_TRAY.Advantage": "Ventaja (kh)",
+  "DICE_TRAY.Disadvantage": "Desventaja (kl)",
+  "DICE_TRAY.Dis": "Des",
+  "DICE_TRAY.Roll": "Tirar",
+  "DICE_TRAY.RollDice": "Tirar Dados",
+  "DICE_TRAY.Wild": "Salvaje",
+  "DICE_TRAY.Ace": "Explota",
+  "DICE_TRAY.WildDie": "Dado Salvaje",
+  "DICE_TRAY.ExplodingDie": "Dado Explota",
+  "DICE_TRAY.del": "borrar",
+  "DICE_TRAY.clear": "limpiar"
+  "DICE_TRAY.settings.enableDiceTray.name": "Habilitar Dice Tray",
+  "DICE_TRAY.settings.enableDiceTray.hint": "Habilita el lanzador de dados debajo del chat (requiere actualizar).",
+  "DICE_TRAY.settings.enableExtraDiceInSwade.name": "Incluir d20 y d100 en SWEA",
+  "DICE_TRAY.settings.enableExtraDiceInSwade.hint": "Muestra los botones de dados d20 y d100 en SWEA (requiere la recarga que se produce al 'Habilitar Dice Tray').",
+  "DICE_TRAY.settings.enableInlineRolls.name": "Habilitar Tiradas En Línea",
+  "DICE_TRAY.settings.enableInlineRolls.hint": "Activa el procesamiento de tiradas en línea, como por ejemplo [[4d6kh3]], que han sido escritas en mensajes en el chat. NOTA: NO habilitar esta opción si se está usando otro módulo que use la sintaxis de macros [[ ]]. Esa característica se ha añadido al núcleo de Foundry VTT 0.5.2 y se deshabilitará automáticamente cuando actualice a esa versión."
+}

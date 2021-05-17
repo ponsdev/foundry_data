@@ -147,6 +147,16 @@ Hooks.on('init', () => {
     type: Boolean,
   });
 
+  // Hide the dice calculator.
+  game.settings.register('dice-calculator', 'enableDiceCalculator', {
+    name: game.i18n.localize("DICE_TRAY.settings.enableDiceCalculator.name"),
+    hint: game.i18n.localize("DICE_TRAY.settings.enableDiceCalculator.hint"),
+    scope: 'world',
+    config: true,
+    default: true,
+    type: Boolean,
+  });
+
   // Show the d20 and d100
   if (game.system.id == 'swade') {
     game.settings.register('dice-calculator', 'enableExtraDiceInSwade', {
@@ -158,6 +168,38 @@ Hooks.on('init', () => {
       type: Boolean,
     });
   }
+
+  // For older versions of Foundry, add support for inline dice rolls.
+  if (!isNewerVersion(game.data.version, '0.5.1')) {
+    game.settings.register('dice-calculator', 'enableInlineRolls', {
+      name: game.i18n.localize("DICE_TRAY.settings.enableInlineRolls.name"),
+      hint: game.i18n.localize("DICE_TRAY.settings.enableInlineRolls.hint"),
+      scope: 'world',
+      config: true,
+      default: false,
+      type: Boolean,
+    });
+  }
+  // Handle abbreviations for newer versions of Foundry that include dice rolls.
+  else {
+    const original = Actor.prototype.getRollData;
+    Actor.prototype.getRollData = function() {
+      const data = original.call(this);
+      if (data.attr === undefined) {
+        data.attr = data.attributes;
+        data.abil = data.abilities;
+      }
+      return data;
+    };
+  }
+});
+
+Hooks.on('ready', () => {
+  // Exit early if the dice calc is disabled.
+  let diceCalcEnabled = game.settings.get('dice-calculator', 'enableDiceCalculator');
+  if (!diceCalcEnabled) return;
+
+  $(diceIconSelector).addClass('dice-calculator-toggle');
 
   // For older versions of Foundry, add support for inline dice rolls.
   if (!isNewerVersion(game.data.version, '0.5.1')) {

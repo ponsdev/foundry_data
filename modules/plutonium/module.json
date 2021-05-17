@@ -2,7 +2,7 @@
 	"name": "plutonium",
 	"title": "Plutonium",
 	"description": "A 5etools integration for Foundry VTT",
-	"version": "1.27.2",
+	"version": "1.28.2",
 	"author": "Giddy",
 	"keywords": [
 		"import",
@@ -171,6 +171,7 @@
 		"./js/PatcherChatMessage.js",
 		"./js/PatcherDrawing.js",
 		"./js/PatcherGameKeyboard.js",
+		"./js/PatcherItem.js",
 		"./js/PatcherJournalSheet.js",
 		"./js/PatcherJquery.js",
 		"./js/PatcherLibWrapper.js",

@@ -2,7 +2,7 @@
   "name": "about-time",
   "title": "About Time",
   "description": "",
-  "version": "0.1.68",
+  "version": "0.8.4",
   "author": "@tposney",
   "scripts": [],
   "esmodules": ["about-time.js", "module/display/Display.js"],
@@ -48,14 +48,19 @@
       "lang": "it",
       "name": "Italian",
       "path": "lang/it.json"
+    },
+    {
+      "lang": "zh-tw",
+      "name": "正體中文",
+      "path": "lang/zh-tw.json"
     }
   ],
   "minimumCoreVersion": "0.7.2",
-  "compatibleCoreVersion": "0.7.9",
+  "compatibleCoreVersion": "0.8.3",
   "socket": true,
   "bugs": "https://gitlab.com/tposney/about-time/-/issues",
   "allowBugReporter": true,
   "url": "https://gitlab.com/tposney/about-time",
   "manifest": "https://gitlab.com/tposney/about-time/raw/master/package/module.json",
-  "download": "https://gitlab.com/tposney/about-time/raw/master/package/about-time-v0.1.68.zip"
+  "download": "https://gitlab.com/tposney/about-time/raw/master/package/about-time-v0.8.4.zip"
 }

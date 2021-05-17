@@ -2,7 +2,7 @@ name: combat-enhancements
 title: Combat Enhancements
 description: Adds health tracking and drag/drop re-ordering to the combat tracker.
 author: Asacolips
-version: 0.1.8
+version: 0.1.9
 minimumCoreVersion: 0.6.0
 compatibleCoreVersion: 0.7.9
 esmodules:
@@ -13,12 +13,15 @@ languages:
   - lang: en
     name: English
     path: lang/en.json
-  - lang: es
-    name: Español
-    path: lang/es.json
   - lang: pt-BR
     name: Português (Brasil)
     path: lang/pt-BR.json
+  - lang: es
+    name: Español
+    path: lang/es.json
+  - lang: ja
+    name: 日本語
+    path: lang/ja.json
 url: https://gitlab.com/asacolips-projects/foundry-mods/combat-enhancements
 manifest: https://gitlab.com/asacolips-projects/foundry-mods/combat-enhancements/raw/master/module.json
-download: https://gitlab.com/asacolips-projects/foundry-mods/combat-enhancements/-/archive/0.1.8/combat-enhancements-master.zip
+download: https://gitlab.com/asacolips-projects/foundry-mods/combat-enhancements/-/archive/0.1.9/combat-enhancements-master.zip

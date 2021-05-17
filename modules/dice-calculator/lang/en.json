@@ -13,6 +13,8 @@
   "DICE_TRAY.clear": "clear",
   "DICE_TRAY.settings.enableDiceTray.name": "Enable Dice Tray",
   "DICE_TRAY.settings.enableDiceTray.hint": "Enable showing a dice tray below the chat message area (requires reload).",
+  "DICE_TRAY.settings.enableDiceCalculator.name": "Enable Dice Calculator",
+  "DICE_TRAY.settings.enableDiceCalculator.hint": "Enable showing a dice calculator dialog when clicking the d20 icon near the chat box (requires reload).",
   "DICE_TRAY.settings.enableExtraDiceInSwade.name": "Include d20 and d100 in SWADE",
   "DICE_TRAY.settings.enableExtraDiceInSwade.hint": "Enable showing d20 and d100 dice buttons in SWADE (requires 'Enable Dice Tray' reload).",
   "DICE_TRAY.settings.enableInlineRolls.name": "Enable Inline Rolls",

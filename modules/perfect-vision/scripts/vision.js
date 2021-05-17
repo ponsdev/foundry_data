@@ -85,26 +85,50 @@ function computeFov(source, radius, fovCache = null) {
 
 var refreshHookID = null;
 
-function refresh() {
-    if (!canvas?.ready) {
-        if (refreshHookID == null) {
-            refreshHookID = Hooks.once("canvasReady", refresh);
+function refresh({ lighting = true, sight = true, initialize = true } = {}) {
+    if (isNewerVersion(game.data.version, "0.8.1")) {
+        if (canvas?.ready) {
+            canvas.perception.schedule({
+                lighting: { initialize, refresh: lighting },
+                sight: { initialize, refresh: sight }
+            });
+        }
+    } else {
+        if (!canvas?.ready) {
+            if (refreshHookID == null) {
+                refreshHookID = Hooks.once("canvasReady", refresh);
+            }
+
+            return;
         }
 
-        return;
-    }
+        if (refreshHookID != null) {
+            refreshHookID = null;
+            Hooks.off("canvasReady", refresh);
+        }
 
-    if (refreshHookID != null) {
-        refreshHookID = null;
-        Hooks.off("canvasReady", refresh);
-    }
+        if (initialize) {
+            if (lighting) {
+                for (const light of canvas.lighting.placeables) {
+                    light.updateSource({ defer: true });
+                }
+            }
 
-    for (const token of canvas.tokens.placeables) {
-        token.updateSource({ defer: true });
-    }
+            if (sight) {
+                for (const token of canvas.tokens.placeables) {
+                    token.updateSource({ defer: true });
+                }
+            }
+        }
 
-    canvas.lighting.refresh();
-    canvas.sight.refresh();
+        if (lighting) {
+            canvas.lighting.refresh();
+        }
+
+        if (sight) {
+            canvas.sight.refresh();
+        }
+    }
 }
 
 Hooks.once("init", () => {
@@ -131,8 +155,8 @@ Hooks.once("init", () => {
         type: Boolean,
         default: false,
         onChange: () => {
-            if (game.user.isGM && canvas?.ready)
-                canvas.lighting.refresh();
+            if (game.user.isGM)
+                refresh({ sight: false, initialize: false });
         }
     });
 
@@ -268,13 +292,20 @@ Hooks.once("init", () => {
         return (((u / canvas.dimensions.distance) * canvas.dimensions.size) + hw) * Math.sign(units);
     }
 
-    patch("PointSource.prototype.initialize", "WRAPPER", function (wrapped, opts) {
+    patch("PointSource.prototype.initialize", "WRAPPER", function (wrapped, data) {
         const this_ = extend(this);
 
-        if (!this_.isVision)
-            return wrapped(opts);
+        if (isNewerVersion(game.data.version, "0.8.2")) {
+            if (this.sourceType !== "sight")
+                return wrapped(data);
+        } else {
+            if (!this_.isVision)
+                return wrapped(data);
+        }
 
-        const token = this_.token;
+        data = data ?? {};
+
+        const token = this.object ?? this_.token;
         const scene = token.scene ?? token._original?.scene;
         const minR = Math.min(token.w, token.h) * 0.5;
 
@@ -283,13 +314,21 @@ Hooks.once("init", () => {
         let brightVisionInDarkness;
         let brightVisionInDimLight;
 
-        let visionRules = token.getFlag("perfect-vision", "visionRules") || "default";
+        let document;
+
+        if (isNewerVersion(game.data.version, "0.8")) {
+            document = token.document;
+        } else {
+            document = token;
+        }
+
+        let visionRules = document.getFlag("perfect-vision", "visionRules") || "default";
 
         if (visionRules === "custom") {
-            dimVisionInDarkness = token.getFlag("perfect-vision", "dimVisionInDarkness");
-            dimVisionInDimLight = token.getFlag("perfect-vision", "dimVisionInDimLight");
-            brightVisionInDarkness = token.getFlag("perfect-vision", "brightVisionInDarkness");
-            brightVisionInDimLight = token.getFlag("perfect-vision", "brightVisionInDimLight");
+            dimVisionInDarkness = document.getFlag("perfect-vision", "dimVisionInDarkness");
+            dimVisionInDimLight = document.getFlag("perfect-vision", "dimVisionInDimLight");
+            brightVisionInDarkness = document.getFlag("perfect-vision", "brightVisionInDarkness");
+            brightVisionInDimLight = document.getFlag("perfect-vision", "brightVisionInDimLight");
         } else {
             if (visionRules === "default") {
                 visionRules = game.settings.get("perfect-vision", "visionRules");
@@ -308,6 +347,9 @@ Hooks.once("init", () => {
         brightVisionInDarkness = brightVisionInDarkness || game.settings.get("perfect-vision", "brightVisionInDarkness");
         brightVisionInDimLight = brightVisionInDimLight || game.settings.get("perfect-vision", "brightVisionInDimLight");
 
+        const d = canvas.dimensions;
+        const maxR = d.maxR ?? Math.hypot(d.sceneWidth, d.sceneHeight);
+
         let dim = getLightRadius(token, token.data.dimSight);
         let bright = getLightRadius(token, token.data.brightSight);
 
@@ -316,10 +358,14 @@ Hooks.once("init", () => {
         dim = Math.abs(dim);
         bright = Math.abs(bright);
 
-        let sightLimit = parseFloat(token.getFlag("perfect-vision", "sightLimit"));
+        dim = Math.min(dim, maxR);
+        bright = Math.min(bright, maxR);
 
-        if (Number.isNaN(sightLimit))
+        let sightLimit = parseFloat(document.getFlag("perfect-vision", "sightLimit"));
+
+        if (Number.isNaN(sightLimit)) {
             sightLimit = parseFloat(scene?.getFlag("perfect-vision", "sightLimit"));
+        }
 
         if (!Number.isNaN(sightLimit)) {
             sightLimit = Math.max(getLightRadius(token, Math.abs(sightLimit)), minR);
@@ -327,11 +373,11 @@ Hooks.once("init", () => {
             bright = Math.min(bright, sightLimit);
         }
 
-        opts.dim = sign * Math.max(
+        data.dim = sign * Math.max(
             dimVisionInDarkness === "dim" || dimVisionInDarkness === "dim_mono" ? dim : 0,
             brightVisionInDarkness === "dim" || brightVisionInDarkness === "dim_mono" ? bright : 0
         );
-        opts.bright = sign * Math.max(
+        data.bright = sign * Math.max(
             dimVisionInDarkness === "bright" || dimVisionInDarkness === "bright_mono" ? dim : 0,
             brightVisionInDarkness === "bright" || brightVisionInDarkness === "bright_mono" ? bright : 0
         );
@@ -357,14 +403,14 @@ Hooks.once("init", () => {
             brightVisionInDimLight === "bright" ? bright : 0
         );
         const monoVisionColor = hexToRGB(colorStringToHex(
-            token.getFlag("perfect-vision", "monoVisionColor") || game.settings.get("perfect-vision", "monoVisionColor") || "#ffffff"
+            document.getFlag("perfect-vision", "monoVisionColor") || game.settings.get("perfect-vision", "monoVisionColor") || "#ffffff"
         ));
 
-        this_.radius = Math.max(Math.abs(opts.dim), Math.abs(opts.bright));
+        this_.radius = Math.max(Math.abs(data.dim), Math.abs(data.bright));
 
-        opts.dim = opts.dim === 0 && opts.bright === 0 ? minR : opts.dim;
+        data.dim = data.dim === 0 && data.bright === 0 ? minR : data.dim;
 
-        const retVal = wrapped(opts);
+        const retVal = wrapped(data);
 
         this_.fov = this.fov;
 
@@ -375,22 +421,22 @@ Hooks.once("init", () => {
         if (!token._original)
             this_.fovMono = this.fov;
         else
-            delete this_.fovMono;
+            this_.fovMono = null;
 
         if (visionRadiusColor > 0 && !token._original)
             this_.fovColor = computeFov(this, Math.max(visionRadiusColor, minR), fovCache);
         else
-            delete this_.fovColor;
+            this_.fovColor = null;
 
         if (visionRadiusDimToBright > 0 && !token._original)
             this_.fovDimToBright = computeFov(this, Math.max(visionRadiusDimToBright, minR), fovCache);
         else
-            delete this_.fovDimToBright;
+            this_.fovDimToBright = null;
 
         if (monoVisionColor && this_.fovMono)
             this_.monoVisionColor = monoVisionColor;
         else
-            delete this_.monoVisionColor
+            this_.monoVisionColor = null;
 
         if (!Number.isNaN(sightLimit))
             this.los = computeFov(this, sightLimit, fovCache);
@@ -399,11 +445,18 @@ Hooks.once("init", () => {
     });
 
     patch("PointSource.prototype._initializeBlending", "POST", function () {
-        const this_ = extend(this);
+        if (isNewerVersion(game.data.version, "0.8.2")) {
+            if (this.sourceType === "sight") {
+                this.illumination.light.blendMode = PIXI.BLEND_MODES.NORMAL;
+                this.illumination.zIndex *= -1;
+            }
+        } else {
+            const this_ = extend(this);
 
-        if (this_.isVision) {
-            this.illumination.light.blendMode = PIXI.BLEND_MODES.NORMAL;
-            this.illumination.zIndex *= -1;
+            if (this_.isVision) {
+                this.illumination.light.blendMode = PIXI.BLEND_MODES.NORMAL;
+                this.illumination.zIndex *= -1;
+            }
         }
 
         return arguments[0];
@@ -427,7 +480,7 @@ Hooks.once("init", () => {
 
         const sight = canvas.sight.tokenVision && canvas.sight.sources.size > 0;
 
-        if (this_.isVision) {
+        if (this.sourceType === "sight" || this_.type === "vision") {
             if (updateChannels) {
                 const iu = this.illumination.shader.uniforms;
                 grayscale(iu.colorDim, iu.colorDim);
@@ -449,7 +502,7 @@ Hooks.once("init", () => {
             } else if (c_.fov) {
                 const index = c.getChildIndex(c_.fov);
                 c_.fov.destroy();
-                delete c_.fov;
+                c_.fov = null;
                 c.addChildAt(c.fov, index);
                 c.mask = c.fov;
             }
@@ -638,21 +691,23 @@ Hooks.once("init", () => {
                 });
             }
 
-            c_.globalLight2 = new PointSource();
-            c_.globalLight2.initialize(opts);
-            c_.globalLight2.type = CONST.SOURCE_TYPES.LOCAL;
-            c_.globalLight2.dim = 0;
-            c_.globalLight2.bright = 0;
-            c_.globalLight2.ratio = 0;
+            if (!isNewerVersion(game.data.version, "0.8.2")) {
+                c_.globalLight2 = new PointSource();
+                c_.globalLight2.initialize(opts);
+                c_.globalLight2.type = CONST.SOURCE_TYPES.LOCAL;
+                c_.globalLight2.dim = 0;
+                c_.globalLight2.bright = 0;
+                c_.globalLight2.ratio = 0;
 
-            if (!isNewerVersion(game.data.version, "0.8")) {
-                Object.defineProperty(c_.globalLight2, "darknessThreshold", { get: () => this.globalLight ? -Infinity : +Infinity });
-            } else {
-                Object.defineProperty(c_.globalLight2, "darkness", { get: () => this.globalLight ? { min: -Infinity, max: +Infinity } : { min: NaN, max: NaN } });
+                if (!isNewerVersion(game.data.version, "0.8")) {
+                    Object.defineProperty(c_.globalLight2, "darknessThreshold", { get: () => this.globalLight ? -Infinity : +Infinity });
+                } else {
+                    Object.defineProperty(c_.globalLight2, "darkness", { get: () => this.globalLight ? { min: -Infinity, max: +Infinity } : { min: NaN, max: NaN } });
+                }
+
+                c_.globalLight2.illumination.zIndex = -1;
+                c_.globalLight2.illumination.renderable = false;
             }
-
-            c_.globalLight2.illumination.zIndex = -1;
-            c_.globalLight2.illumination.renderable = false;
         }
 
         return c;
@@ -662,9 +717,25 @@ Hooks.once("init", () => {
         const ilm = this.illumination;
         const ilm_ = extend(ilm);
 
-        this.sources.set("PerfectVision.Light.1", ilm_.globalLight);
-        this.sources.set("PerfectVision.Light.2", ilm_.globalLight2);
-        ilm_.globalLight._resetIlluminationUniforms = true;
+        const darknessLevel = Math.clamped(args[0] ?? this.darknessLevel, 0, 1);
+        const sd = canvas.scene.data;
+        const hasGlobalIllumination = sd.globalLight && (!sd.globalLightThreshold || (darknessLevel <= sd.globalLightThreshold));
+
+        if (hasGlobalIllumination) {
+            this.sources.set("PerfectVision.Light.1", ilm_.globalLight);
+
+            if (ilm_.globalLight2) {
+                this.sources.set("PerfectVision.Light.2", ilm_.globalLight2);
+            }
+
+            ilm_.globalLight._resetIlluminationUniforms = true;
+        } else {
+            this.sources.delete("PerfectVision.Light.1");
+
+            if (ilm_.globalLight2) {
+                this.sources.delete("PerfectVision.Light.2");
+            }
+        }
 
         let daylightColor = canvas.scene.getFlag("perfect-vision", "daylightColor");
         let darknessColor = canvas.scene.getFlag("perfect-vision", "darknessColor");
@@ -687,25 +758,29 @@ Hooks.once("init", () => {
         daylightColor = sanitize(daylightColor);
         darknessColor = sanitize(darknessColor);
 
-        if (daylightColor !== ilm_.daylightColor || darknessColor !== ilm_.darknessColor)
+        if (daylightColor !== ilm_.daylightColor || darknessColor !== ilm_.darknessColor) {
+            this.channels = null;
             ilm_.updateChannels = true;
+        }
 
         ilm_.daylightColor = daylightColor;
         ilm_.darknessColor = darknessColor;
 
         const retVal = wrapped(...args);
 
-        delete ilm_.updateChannels;
+        ilm_.updateChannels = null;
 
         return retVal;
     });
 
-    patch("Token.prototype.updateSource", "PRE", function () {
-        const vision_ = extend(this.vision);
-        vision_.isVision = true;
-        vision_.token = this;
-        return arguments;
-    });
+    if (!isNewerVersion(game.data.version, "0.8.2")) {
+        patch("Token.prototype.updateSource", "PRE", function () {
+            const vision_ = extend(this.vision);
+            vision_.isVision = true;
+            vision_.token = this;
+            return arguments;
+        });
+    }
 });
 
 Hooks.on("canvasInit", () => {
@@ -734,15 +809,30 @@ Hooks.on("updateToken", (document, change, options, userId, arg) => {
     if (!scene?.isView || !hasProperty(change, "flags.perfect-vision"))
         return;
 
-    const token = canvas.tokens.get(document._id);
+    let id;
+
+    if (isNewerVersion(game.data.version, "0.8")) {
+        id = document.id;
+    } else {
+        id = document._id;
+    }
+
+    const token = canvas.tokens.get(id);
 
     if (token) {
         token.updateSource({ defer: true });
 
-        canvas.addPendingOperation("LightingLayer.refresh", canvas.lighting.refresh, canvas.lighting);
-        canvas.addPendingOperation("SightLayer.refresh", canvas.sight.refresh, canvas.sight, [{
-            forceUpdateFog: token.hasLimitedVisionAngle
-        }]);
+        if (isNewerVersion(game.data.version, "0.8.1")) {
+            canvas.perception.schedule({
+                lighting: { refresh: true },
+                sight: { refresh: true, forceUpdateFog: token.hasLimitedVisionAngle }
+            });
+        } else {
+            canvas.addPendingOperation("LightingLayer.refresh", canvas.lighting.refresh, canvas.lighting);
+            canvas.addPendingOperation("SightLayer.refresh", canvas.sight.refresh, canvas.sight, [{
+                forceUpdateFog: token.hasLimitedVisionAngle
+            }]);
+        }
     }
 });
 
@@ -750,12 +840,23 @@ Hooks.on("updateScene", (scene, change, options, userId) => {
     if (!scene.isView || !hasProperty(change, "flags.perfect-vision"))
         return;
 
-    for (const token of canvas.tokens.placeables) {
-        token.updateSource({ defer: true });
-    }
+    if (isNewerVersion(game.data.version, "0.8.1")) {
+        canvas.perception.schedule({
+            lighting: { initialize: true, refresh: true },
+            sight: { initialize: true, refresh: true }
+        });
+    } else {
+        for (const light of canvas.lighting.placeables) {
+            light.updateSource({ defer: true });
+        }
 
-    canvas.lighting.refresh();
-    canvas.sight.refresh();
+        for (const token of canvas.tokens.placeables) {
+            token.updateSource({ defer: true });
+        }
+
+        canvas.lighting.refresh();
+        canvas.sight.refresh();
+    }
 });
 
 Hooks.on("lightingRefresh", () => {

@@ -1,6 +1,6 @@
 import { FastPriorityQueue, Quentry } from "./FastPirorityQueue.js";
 import { PseudoClock, PseudoClockMessage, _addEvent } from "./PseudoClock.js";
-import { DTCalc } from "./calendar/DTCalc.js";
+import { calendars, DTCalc } from "./calendar/DTCalc.js";
 import { DateTime } from "./calendar/DateTime.js";
 import { DTMod } from "./calendar/DTMod.js";
 const _moduleSocket = "module.about-time";
@@ -331,11 +331,8 @@ export class ElapsedTime {
                     }
                     else {
                         // @ts-ignore
-                        macro = game.macros.get(qe._handler);
+                        macro = game.macros.get(qe._handler) || game.macros.getName(qe._handler);
                         args = qe._args;
-                        //@ts-ignore
-                        if (!macro)
-                            macro = game.macros.entities.find(m => m.name === qe._handler);
                     }
                     if (ElapsedTime.debug)
                         ElapsedTime.log("Executing macro", macro, args);
@@ -421,6 +418,70 @@ export class ElapsedTime {
             }
         }
     }
+    static setOffset() {
+        let offset = game.settings.get("about-time", "timeZeroOffset") || "";
+        if (game.system.id === "pf2e") {
+            try {
+                const dateTheme = game.settings.get("pf2e", "worldClock.dateTheme");
+                const matches = game.settings.get('pf2e', 'worldClock.worldCreatedOn').match(/\s*(\d*)-(\d*)-(\d*)T(\d*):(\d*):(\d*)\..*/);
+                calendars.Gregorian.clock_start_year = 0;
+                calendars.Gregorian.first_day = 6;
+                const pf2eIndex = Object.keys(calendars).indexOf("Golarian PF2E");
+                const gregIndex = Object.keys(calendars).indexOf("Gregorian");
+                switch (dateTheme) {
+                    case "IC":
+                        DTCalc.createFromData(calendars["Golarian PF2E"]);
+                        game.settings.set("about-time", "calendar", pf2eIndex);
+                        break;
+                    case "AR":
+                        DTCalc.createFromData(calendars["Golarian PF2E"]);
+                        game.settings.set("about-time", "calendar", pf2eIndex);
+                        break;
+                    case "CE":
+                        DTCalc.createFromData(calendars["Gregorian"]);
+                        game.settings.set("about-time", "calendar", gregIndex);
+                        break;
+                    case "AD":
+                        DTCalc.createFromData(calendars["Gregorian"]);
+                        game.settings.set("about-time", "calendar", gregIndex);
+                        break;
+                }
+                const years = Number(matches[1]) + CONFIG.PF2E.worldClock[dateTheme].yearOffset - DTCalc.clockStartYear;
+                const months = Number(matches[2]) - 1;
+                const days = Number(matches[3]) - 1;
+                const hours = Number(matches[4]);
+                const minutes = Number(matches[5]);
+                const seconds = Number(matches[6]);
+                const offsetObj = { years, months, days, hours, minutes, seconds };
+                let secondsOffset = DateTime.create(offsetObj).toSeconds();
+                console.warn(`about-time | Time zero offset is ${secondsOffset} ${offset}: `, DateTime.createFromSeconds(secondsOffset).longDate());
+                PseudoClock.timeZeroOffset = secondsOffset;
+            }
+            catch (err) {
+                console.warn(`Could not set time offset from ${offset} assuming 0`);
+                PseudoClock.timeZeroOffset = 0;
+            }
+        }
+        else if (offset !== "") {
+            try {
+                const matches = offset.match(/\s*(\d*)\/(\d*)\/(\d*)\s*(\d*):(\d*):(\d*)\s*/);
+                const years = Number(matches[1]) - DTCalc.clockStartYear;
+                const months = Number(matches[2]) - 1;
+                const days = Number(matches[3]) - 1;
+                const hours = Number(matches[4]);
+                const minutes = Number(matches[5]);
+                const seconds = Number(matches[6]);
+                const offsetObj = { years, months, days, hours, minutes, seconds };
+                let secondsOffset = DateTime.create(offsetObj).toSeconds();
+                console.warn(`about-time | Time zero offset is ${secondsOffset} ${offset}: `, DateTime.createFromSeconds(secondsOffset).longDate());
+                PseudoClock.timeZeroOffset = secondsOffset;
+            }
+            catch (err) {
+                console.warn(`Could not set time offset from ${offset} assuming 0`);
+                PseudoClock.timeZeroOffset = 0;
+            }
+        }
+    }
     static init() {
         _userId = game.user.id;
         //@ts-ignore
@@ -429,6 +490,7 @@ export class ElapsedTime {
         // find a better way to do this.
         ElapsedTime._fetchParams();
         ElapsedTime._load();
+        ElapsedTime.setOffset();
         Hooks.on("updateWorldTime", ElapsedTime.pseudoClockUpdate);
         Hooks.on("updateCombat", () => {
             if (!PseudoClock.isMaster)

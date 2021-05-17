@@ -13,7 +13,7 @@ export const Gregorian = {
         "November": { days: [30, 30] },
         "December": { days: [31, 31] },
     },
-    "leap_year_rule": "(year) => Math.floor(year / 4) - Math.floor(year / 100) + Math.floor(year / 400)",
+    "leap_year_rule": "(year) => Math.floor(year / 4) - Math.floor(year / 100) + Math.floor(year / 400) + 1",
     "weekdays": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
     "clock_start_year": 1970,
     "first_day": 0,
@@ -41,7 +41,32 @@ export const Golarian = {
     "leap_year_rule": "(year) =>  Math.floor(year / 8 + 1)",
     "weekdays": ["Moonday", "Toilday", "Wealday", "Oathday", "Fireday", "Starday", "Sunday"],
     "clock_start_year": 0,
-    "first_day": 0,
+    "first_day": 4,
+    "notes": {},
+    "hours_per_day": 24,
+    "seconds_per_minute": 60,
+    "minutes_per_hour": 60,
+    "has_year_0": false
+};
+export const GolarianPF2E = {
+    "month_len": {
+        "Abadius": { days: [31, 31] },
+        "Calistril": { days: [28, 29] },
+        "Pharast": { days: [31, 31] },
+        "Gozran": { days: [30, 30] },
+        "Desnus": { days: [31, 31] },
+        "Sarenith": { days: [30, 30] },
+        "Erastus": { days: [31, 31] },
+        "Arodus": { days: [31, 31] },
+        "Rova": { days: [30, 30] },
+        "Lamashan": { days: [31, 31] },
+        "Neth": { days: [30, 30] },
+        "Kuthona": { days: [31, 31] },
+    },
+    "leap_year_rule": "(year) => Math.floor(year / 4) - Math.floor(year / 100) + Math.floor(year / 400) + 1",
+    "weekdays": ["Moonday", "Toilday", "Wealday", "Oathday", "Fireday", "Starday", "Sunday"],
+    "clock_start_year": 0,
+    "first_day": 4,
     "notes": {},
     "hours_per_day": 24,
     "seconds_per_minute": 60,
@@ -452,10 +477,13 @@ export const calendars = {
     "Glorantha": Glorantha,
     "Eberron": Eberron,
     "Dark Sun": DarkSun,
-    "Nehwon (Lankhmar)": Nehwon
+    "Nehwon (Lankhmar)": Nehwon,
+    "Golarian PF2E": GolarianPF2E,
 };
 export class DTCalc {
     static changeDefaultCalendar() {
+        if (game.system.id === "pf2e")
+            return;
         DTCalc.createFromData(calendars[Object.keys(calendars)[game.settings.get("about-time", "calendar")]]);
     }
     static userCalendarChanged() {

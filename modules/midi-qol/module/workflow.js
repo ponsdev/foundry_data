@@ -201,8 +201,8 @@ export class Workflow {
         }
         if (this.noCritFlagSet || noCritKey)
             this.rollOptions.critical = false;
-        else {
-            this.rollOptions.critical = this.isCritical || critKey || this.critFlagSet;
+        else if (this.isCritical || critKey || this.critFlagSet) {
+            this.rollOptions.critical = true;
             this.isCritical = this.rollOptions.critical;
         }
         this.rollOptions.fastForward = fastForwardKey ? !isAutoFastDamage() : isAutoFastDamage();
@@ -338,6 +338,9 @@ export class Workflow {
                 const targetDetails = this.item.data.data.target;
                 if (configSettings.rangeTarget && targetDetails?.units === "ft" && ["creature", "ally", "enemy"].includes(targetDetails?.type)) {
                     this.setRangedTargets(targetDetails);
+                    this.failedSaves = new Set(this.targets);
+                    this.hitTargets = new Set(this.targets);
+                    this.targets = await validTargetTokens(this.targets);
                     return this.next(WORKFLOWSTATES.TEMPLATEPLACED);
                 }
                 return this.next(WORKFLOWSTATES.VALIDATEROLL);
@@ -354,6 +357,8 @@ export class Workflow {
                     return this.next(WORKFLOWSTATES.VALIDATEROLL);
                 const chatMessage = game.messages.get(this.itemCardId);
                 // remove the place template button from the chat card.
+                this.targets = await validTargetTokens(this.targets);
+                this.hitTargets = new Set(this.targets);
                 //@ts-ignore
                 let content = chatMessage && duplicate(chatMessage.data.content);
                 let buttonRe = /<button data-action="placeTemplate">[^<]*<\/button>/;
@@ -495,8 +500,8 @@ export class Workflow {
             case WORKFLOWSTATES.DAMAGEROLLCOMPLETE:
                 if (configSettings.autoTarget === "none" && this.item.hasAreaTarget && !this.item.hasAttack) {
                     // we are not auto targeting so for area effect attacks, without hits (e.g. fireball)
-                    this.targets = validTargetTokens(game.user.targets);
-                    this.hitTargets = validTargetTokens(game.user.targets);
+                    this.targets = await validTargetTokens(game.user.targets);
+                    this.hitTargets = await validTargetTokens(game.user.targets);
                     warn(" damage roll complete for non auto target area effects spells", this);
                 }
                 Hooks.callAll("midi-qol.preDamageRollComplete", this);
@@ -1054,7 +1059,7 @@ export class Workflow {
             let speaker = duplicate(this.speaker);
             speaker.alias = (configSettings.useTokenNames && speaker.token) ? canvas.tokens.get(speaker.token).name : speaker.alias;
             speaker.scene = canvas?.scene?.id;
-            if (validTargetTokens(game.user.targets).size > 0) {
+            if ((await validTargetTokens(game.user.targets)).size > 0) {
                 let chatData = {
                     user: game.user,
                     speaker,
@@ -1472,7 +1477,7 @@ export class Workflow {
             && (canvas.grid.measureDistances([{ ray: new Ray(target.center, token.center) }], { gridSpaces: true })[0] <= minDist)).forEach(token => {
             token.setTarget(true, { user: game.user, releaseOthers: false });
         });
-        this.targets = validTargetTokens(game.user.targets);
+        this.targets = game.user.targets;
         this.saves = new Set();
         this.failedSaves = new Set(this.targets);
         this.hitTargets = new Set(this.targets);
@@ -1562,9 +1567,9 @@ export class TrapWorkflow extends Workflow {
             this.event = duplicate(shiftOnlyEvent);
         this.trapSound = trapSound;
         this.templateLocation = templateLocation;
-        this.saveTargets = validTargetTokens(game.user.targets);
-        this.next(WORKFLOWSTATES.NONE);
+        // this.saveTargets = game.user.targets; 
         this.rollOptions.fastForward = true;
+        this.next(WORKFLOWSTATES.NONE);
     }
     async _next(newState) {
         this.currentState = newState;
@@ -1572,6 +1577,7 @@ export class TrapWorkflow extends Workflow {
         warn("attack workflow.next ", state, this._id, this.targets);
         switch (newState) {
             case WORKFLOWSTATES.NONE:
+                this.saveTargets = await validTargetTokens(game.user.targets);
                 this.effectsAlreadyExpired = [];
                 this.onUseMacroCalled = false;
                 this.itemCardId = (await showItemCard.bind(this.item)(false, this, true))?.id;
@@ -1585,6 +1591,9 @@ export class TrapWorkflow extends Workflow {
                 const targetDetails = this.item.data.data.target;
                 if (configSettings.rangeTarget && targetDetails?.units === "ft" && ["creature", "ally", "enemy"].includes(targetDetails?.type)) {
                     this.setRangedTargets(targetDetails);
+                    this.targets = await validTargetTokens(this.targets);
+                    this.failedSaves = new Set(this.targets);
+                    this.hitTargets = new Set(this.targets);
                     return this.next(WORKFLOWSTATES.TEMPLATEPLACED);
                 }
                 if (!this.item.hasAreaTarget || !this.templateLocation)
@@ -1781,8 +1790,8 @@ export class BetterRollsWorkflow extends Workflow {
                 expireMyEffects.bind(this)(["1Attack", "1Action"]);
                 if (configSettings.autoTarget === "none" && this.item.hasAreaTarget && !this.item.hasAttack) {
                     // we are not auto targeting so for area effect attacks, without hits (e.g. fireball)
-                    this.targets = validTargetTokens(game.user.targets);
-                    this.hitTargets = validTargetTokens(game.user.targets);
+                    this.targets = await validTargetTokens(game.user.targets);
+                    this.hitTargets = await validTargetTokens(game.user.targets);
                 }
                 // apply damage to targets plus saves plus immunities
                 if (this.isFumble) { //TODO: Is this right?

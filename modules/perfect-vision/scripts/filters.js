@@ -121,7 +121,7 @@ function updateLayer(layer) {
     if (!layer)
         return;
 
-    if (layer === canvas.background) {
+    if (layer === canvas.background || layer === canvas.foreground || (!isNewerVersion(game.data.version, "0.8") && layer instanceof BackgroundLayer && layer.iso_layer)) {
         removeFromDisplayObject(layer, monoFilter);
         removeFromDisplayObject(layer.img, monoFilter);
         addLastToDisplayObject(layer.img ?? layer, monoFilter);
@@ -153,11 +153,21 @@ function updatePlaceable(placeable) {
         return;
 
     let sprite;
+    let sight = true;
 
     if (placeable instanceof Token) {
         sprite = placeable.icon;
     } else if (placeable instanceof Tile) {
-        sprite = placeable.tile.img;
+        if (!isNewerVersion(game.data.version, "0.8") && game.modules.get("blood-n-guts")?.active && placeable.layer === canvas.blood) {
+            sprite = placeable.tile;
+            sight = false;
+        } else {
+            if (isNewerVersion(game.data.version, "0.8.1")) {
+                sprite = placeable.tile;
+            } else {
+                sprite = placeable.tile.img;
+            }
+        }
     } else if (placeable instanceof MeasuredTemplate) {
         sprite = placeable.template;
     } else if (placeable instanceof PIXI.DisplayObject) {
@@ -205,18 +215,34 @@ function updatePlaceable(placeable) {
     } else {
         addLastToDisplayObject(sprite, monoFilter);
     }
+
+    if (!sight) {
+        addLastToDisplayObject(sprite, sightFilter);
+    }
 }
 
 function updateAll() {
     let layers = ["background", "effects", "fxmaster"];
     let placeables = [
         ...canvas.tokens.placeables,
-        ...canvas.tiles.placeables,
         ...canvas.templates.placeables,
     ];
 
-    if (canvas.roofs)
-        placeables = [...placeables, canvas.roofs.children];
+    if (isNewerVersion(game.data.version, "0.8.1")) {
+        placeables = [...placeables, ...canvas.background.placeables, ...canvas.foreground.placeables];
+    } else {
+        placeables = [...placeables, ...canvas.tiles.placeables];
+
+        if (!isNewerVersion(game.data.version, "0.8")) {
+            if (game.modules.get("blood-n-guts")?.active) {
+                placeables = [...placeables, ...canvas.blood.placeables];
+            }
+        }
+    }
+
+    if (game.modules.get("roofs")?.active) {
+        placeables = [...placeables, ...canvas.roofs.children];
+    }
 
     for (const layerName of layers) {
         const layer = canvas[layerName];
@@ -224,6 +250,16 @@ function updateAll() {
         if (!layer) continue;
 
         updateLayer(layer);
+    }
+
+    if (!isNewerVersion(game.data.version, "0.8")) {
+        if (game.modules.get("grape_juice-isometrics")?.active) {
+            for (const layer of canvas.stage.children) {
+                if (layer instanceof BackgroundLayer && layer.iso_layer) {
+                    updateLayer(layer);
+                }
+            }
+        }
     }
 
     for (const placeable of placeables) {
@@ -280,21 +316,31 @@ Hooks.once("init", () => {
         return arguments[0];
     });
 
-    patch("TemplateLayer.prototype.deactivate", "POST", function () {
+    patch("TemplateLayer.prototype.deactivate", "PRE", function () {
         for (const template of canvas.templates.placeables) {
             updatePlaceable(template);
         }
 
-        return arguments[0];
+        return arguments;
     });
 
-    patch("BackgroundLayer.prototype.draw", "POST", async function () {
-        const retVal = await arguments[0];
+    if (isNewerVersion(game.data.version, "0.8.1")) {
+        patch("MapLayer.prototype.draw", "POST", async function () {
+            const retVal = await arguments[0];
 
-        updateLayer(this);
+            updateLayer(this);
 
-        return retVal;
-    });
+            return retVal;
+        });
+    } else {
+        patch("BackgroundLayer.prototype.draw", "POST", async function () {
+            const retVal = await arguments[0];
+
+            updateLayer(this);
+
+            return retVal;
+        });
+    }
 
     patch("EffectsLayer.prototype.draw", "POST", async function () {
         const retVal = await arguments[0];
@@ -319,6 +365,22 @@ Hooks.once("init", () => {
 
         return retVal;
     });
+
+    if (!isNewerVersion(game.data.version, "0.8")) {
+        if (game.modules.get("blood-n-guts")?.active) {
+            Hooks.once("ready", () => {
+                patch("Canvas.layers.blood.layerOptions.objectClass.prototype.draw", "POST", async function () {
+                    const retVal = await arguments[0];
+
+                    updatePlaceable(this);
+
+                    return retVal;
+                });
+
+                updateAll();
+            });
+        }
+    }
 
     patch("MeasuredTemplate.prototype.draw", "POST", async function () {
         const retVal = await arguments[0];

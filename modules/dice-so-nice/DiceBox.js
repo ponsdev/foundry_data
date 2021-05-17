@@ -153,8 +153,10 @@ export class DiceBox {
 		return new Promise(async resolve => {
 			game.audio.pending.push(this.preloadSounds.bind(this));
 
-			if (this.config.system != "standard")
+			if (this.config.system != "standard"){
 				this.dicefactory.setSystem(this.config.system);
+				await this.dicefactory.preloadModels(this.config.system);
+			}
 
 			this.sounds = this.config.sounds == '1';
 			this.volume = this.config.soundsVolume;
@@ -185,7 +187,7 @@ export class DiceBox {
 				if (this.dicefactory.bumpMapping) {
 					this.renderer.physicallyCorrectLights = true;
 					this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-					this.renderer.toneMappingExposure = 0.9;
+					this.renderer.toneMappingExposure = 1;
 					this.renderer.outputEncoding = THREE.sRGBEncoding;
 				}
 				await this.loadContextScopedTextures(this.config.boxType);
@@ -326,8 +328,8 @@ export class DiceBox {
 			case 'selector':
 				this.camera.position.z = this.selector.dice.length > 9 ? this.cameraHeight.far : (this.selector.dice.length < 6 ? this.cameraHeight.close : this.cameraHeight.medium);
 				break;
-			case 'throw': case 'afterthrow': default: this.camera.position.z = this.cameraHeight.far;
-
+			default:
+				this.camera.position.z = this.cameraHeight.far;
 		}
 		this.camera.near = 10;
 		this.camera.lookAt(new THREE.Vector3(0, 0, 0));
@@ -339,7 +341,7 @@ export class DiceBox {
 
 		let intensity;
 		if (this.dicefactory.bumpMapping) { //advanced lighting
-			intensity = 0.6;
+			intensity = 1.2;
 		} else {
 			intensity = 0.7;
 			this.light_amb = new THREE.HemisphereLight(this.colors.ambient, this.colors.ground, 1);
@@ -378,7 +380,7 @@ export class DiceBox {
 		this.renderer.render(this.scene, this.camera);
 	}
 
-	update(config) {
+	async update(config) {
 		if (config.autoscale) {
 			this.display.scale = Math.sqrt(this.display.containerWidth * this.display.containerWidth + this.display.containerHeight * this.display.containerHeight) / 13;
 		} else {
@@ -400,8 +402,10 @@ export class DiceBox {
 		this.sounds = config.sounds;
 		this.volume = config.soundsVolume;
 		this.soundsSurface = config.soundsSurface;
-		if (config.system)
+		if (config.system){
 			this.dicefactory.setSystem(config.system);
+			await this.dicefactory.preloadModels(config.system);
+		}
 		this.applyColorsForRoll(config);
 		this.throwingForce = config.throwingForce;
 		this.scene.traverse(object => {
@@ -588,10 +592,10 @@ export class DiceBox {
 		dicemesh.body_sim.diceType = diceobj.type;
 		dicemesh.body_sim.diceMaterial = this.dicefactory.material_rand;
 
-		//dicemesh.meshCannon = this.body2mesh(dicemesh.body_sim,true);
+		/*dicemesh.meshCannon = this.body2mesh(dicemesh.body_sim,true);
 
-		/*var gltfExporter = new GLTFExporter();
-		gltfExporter.parse(dicemesh, function ( result ) {
+		var gltfExporter = new GLTFExporter();
+		gltfExporter.parse(dicemesh.meshCannon, function ( result ) {
 			if ( result instanceof ArrayBuffer ) {
 				saveArrayBuffer( result, 'scene.glb' );
 			} else {
@@ -866,24 +870,22 @@ export class DiceBox {
 		// roll finished
 		if (this.throwFinished("render")) {
 			//if animated dice still on the table, keep animating
-
-			this.running = false;
 			this.rolling = false;
-
-			if (this.callback){
-				this.handleSpecialEffectsInit();
-				this.callback(this.throws);
-			} 
-			this.callback = null;
-			this.throws = null;
-			if (!this.animatedDiceDetected && !this.allowInteractivity && !DiceSFXManager.renderQueue.length)
-				canvas.app.ticker.remove(this.animateThrow, this);;
+			if(this.running){
+				this.handleSpecialEffectsInit().then(()=>{
+					this.callback(this.throws);
+					this.callback = null;
+					this.throws = null;
+					if (!this.animatedDiceDetected && !(this.allowInteractivity && (this.deadDiceList.length + this.diceList.length)>0) && !DiceSFXManager.renderQueue.length)
+						canvas.app.ticker.remove(this.animateThrow, this);
+				});
+			}
+			this.running = false;
 		}
 	}
 
 	start_throw(throws, callback) {
 		if (this.rolling) return;
-		this.isVisible = true;
 		let countNewDice = 0;
 		throws.forEach(notation => {
 			let vector = { x: (Math.random() * 2 - 0.5) * this.display.currentWidth, y: -(Math.random() * 2 - 0.5) * this.display.currentHeight };
@@ -907,7 +909,7 @@ export class DiceBox {
 		if (this.deadDiceList.length + this.diceList.length + countNewDice > maxDiceNumber) {
 			this.clearAll();
 		}
-
+		this.isVisible = true;
 		this.rollDice(throws, callback);
 	}
 
@@ -958,8 +960,9 @@ export class DiceBox {
 
 		if (this.pane) this.scene.remove(this.pane);
 		
-		if(this.config.boxType == "board")
+		if(this.config.boxType == "board"){
 			DiceSFXManager.clearQueue();
+		}
 		this.renderer.render(this.scene, this.camera);
 		this.isVisible = false;
 	}
@@ -1327,13 +1330,15 @@ export class DiceBox {
 		return false;
 	}
 
-	handleSpecialEffectsInit(){
+	async handleSpecialEffectsInit(){
+		let promisesSFX = [];
 		this.diceList.forEach(dice =>{
 			if(dice.specialEffects){
 				dice.specialEffects.forEach(sfx => {
-					DiceSFXManager.playSFX(sfx.specialEffect, this, dice);
+					promisesSFX.push(DiceSFXManager.playSFX(sfx.specialEffect, this, dice));
 				});
 			}
 		});
+		return Promise.all(promisesSFX);
 	}
 }

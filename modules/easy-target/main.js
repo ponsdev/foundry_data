@@ -55,7 +55,7 @@ const EasyTarget = {
 		}
 
 		const tokenCanControl = function (wrapped, ...args) {
-			const [ user, event ] = args;
+			const [, event] = args;
 
 			if (!event) {
 				return wrapped(...args);
@@ -146,7 +146,7 @@ const EasyTarget = {
 		};
 
 		const keyboardManagerOnKeyC = function (wrapped, ...args) {
-			const [ event, up, modifiers ] = args;
+			const [,, modifiers] = args;
 
 			if (!(modifiers.isShift && modifiers.isAlt)) {
 				wrapped(...args);
@@ -248,7 +248,9 @@ Hooks.once('ready', function () {
 });
 
 document.addEventListener('keydown', event => {
-	if (event.altKey && event.key === 'C') {
+	if ((event.altKey && event.key === 'C')
+		|| (event.metaKey && event.shiftKey && event.key === 'c'))
+	{
 		game.user.targets.forEach(token =>
 			token.setTarget(false, {releaseOthers: false, groupSelection: true}));
 		game.user.broadcastActivity({targets: game.user.targets.ids});

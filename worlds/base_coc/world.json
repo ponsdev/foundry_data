@@ -1,0 +1,75 @@
+{
+  "name": "base_coc",
+  "title": "base_coc",
+  "description": "",
+  "authors": [],
+  "flags": {},
+  "version": "1.0.0",
+  "scripts": [],
+  "esmodules": [],
+  "styles": [],
+  "languages": [],
+  "packs": [
+    {
+      "label": "CoC Weapons",
+      "type": "Item",
+      "name": "coc-weapons",
+      "path": "packs/coc-weapons.db",
+      "system": "CoC7",
+      "package": "world",
+      "entity": "Item",
+      "private": false,
+      "absPath": "/home/ec2-user/foundrydata/Data/worlds/base_coc/packs/coc-weapons.db"
+    },
+    {
+      "label": "CoC Occupations",
+      "type": "Item",
+      "name": "coc-occupations",
+      "path": "packs/coc-occupations.db",
+      "system": "CoC7",
+      "package": "world",
+      "entity": "Item",
+      "private": false,
+      "absPath": "/home/ec2-user/foundrydata/Data/worlds/base_coc/packs/coc-occupations.db"
+    },
+    {
+      "label": "CoC Armor",
+      "type": "Item",
+      "name": "coc-armor",
+      "path": "packs/coc-armor.db",
+      "system": "CoC7",
+      "package": "world",
+      "entity": "Item",
+      "private": false
+    },
+    {
+      "label": "CoC Weapons Japan",
+      "type": "Item",
+      "name": "coc-weapons-japan",
+      "path": "packs/coc-weapons-japan.db",
+      "system": "CoC7",
+      "package": "world",
+      "entity": "Item",
+      "private": false,
+      "absPath": "/home/ec2-user/foundrydata/Data/worlds/base_coc/packs/coc-weapons-japan.db"
+    },
+    {
+      "label": "CoC Extra Skills",
+      "type": "Item",
+      "name": "coc-extra-skills",
+      "path": "packs/coc-extra-skills.db",
+      "system": "CoC7",
+      "package": "world",
+      "entity": "Item",
+      "private": false
+    }
+  ],
+  "system": "CoC7",
+  "dependencies": [],
+  "socket": false,
+  "protected": false,
+  "coreVersion": "9.269",
+  "resetKeys": false,
+  "safeMode": false,
+  "systemVersion": "0.7.11"
+}

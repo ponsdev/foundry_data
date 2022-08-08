@@ -1,13 +1,16 @@
 {
   "name": "boteco-brasil",
   "title": "Tirania dos Dragoes",
-  "description": null,
+  "description": "",
+  "authors": [],
+  "flags": {},
   "version": "1.0.0",
   "minimumCoreVersion": "0.0.0",
   "compatibleCoreVersion": "1.0.0",
   "scripts": [],
   "esmodules": [],
   "styles": [],
+  "languages": [],
   "packs": [
     {
       "entity": "Actor",
@@ -16,7 +19,8 @@
       "package": "world",
       "path": "packs/monsters-metrified.db",
       "system": "dnd5e",
-      "absPath": "C:\\Users\\Vinicius\\AppData\\Local\\FoundryVTT\\Data\\worlds\\boteco-brasil\\packs\\monsters-metrified.db"
+      "absPath": "C:\\Users\\Vinicius\\AppData\\Local\\FoundryVTT\\Data\\worlds\\boteco-brasil\\packs\\monsters-metrified.db",
+      "private": false
     },
     {
       "entity": "Item",
@@ -25,26 +29,17 @@
       "package": "world",
       "path": "packs/spells-metrified.db",
       "system": "dnd5e",
-      "absPath": "C:\\Users\\Vinicius\\AppData\\Local\\FoundryVTT\\Data\\worlds\\boteco-brasil\\packs\\spells-metrified.db"
+      "absPath": "C:\\Users\\Vinicius\\AppData\\Local\\FoundryVTT\\Data\\worlds\\boteco-brasil\\packs\\spells-metrified.db",
+      "private": false
     }
   ],
-  "languages": [],
-  "authors": [],
-  "keywords": [],
-  "socket": false,
-  "url": "",
-  "manifest": "",
-  "download": "",
-  "license": "",
-  "readme": "",
-  "bugs": "",
-  "changelog": "",
-  "background": "",
   "system": "dnd5e",
-  "coreVersion": "0.7.9",
-  "systemVersion": "1.2.4",
+  "dependencies": [],
+  "socket": false,
+  "protected": false,
+  "coreVersion": "0.8.9",
   "nextSession": "2021-05-01T16:00:00.000Z",
-  "availability": 0,
-  "unavailable": false,
-  "id": "boteco-brasil"
+  "resetKeys": false,
+  "safeMode": false,
+  "systemVersion": "1.5.5"
 }

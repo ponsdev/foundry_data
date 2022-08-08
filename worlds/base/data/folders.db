@@ -1,4 +1,5 @@
 {"name":"NPC","type":"Actor","sort":null,"flags":{},"parent":null,"sorting":"a","color":"","_id":"4kkrjO2Rjgz0biZB"}
+{"name":"CLASSES FEATURES","type":"Item","parent":null,"sorting":"a","sort":0,"color":null,"flags":{},"_id":"DfQvl83lBICIVitE"}
 {"name":"WORLD","type":"Actor","sort":null,"flags":{},"parent":null,"sorting":"a","color":"","_id":"Ite15bcaVucmwhGj"}
 {"name":"Tables","type":"RollTable","sort":100000,"flags":{},"parent":null,"sorting":"a","_id":"LVffOujmJp4UuS0c"}
 {"name":"PLAYERS","type":"Actor","sort":null,"flags":{},"parent":null,"sorting":"a","color":"","_id":"YXvvsGyLwTIcwSqH"}

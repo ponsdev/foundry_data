@@ -1,1 +1,688 @@
-const _0x1478=['ACTOR_TEMP_NAME','attuned','750401ahTVZh','token','_data','actors','actorType','\x22\x20(','some','TASK_EXIT_SKIPPED_DUPLICATE','section','pGetCompendiumImage','warn','spell','TASK_EXIT_COMPLETE','pImportEntry',')\x20save\x20\x22','_pack','isOverwrite','deleteEmbeddedEntity','replace','identified','itemProperties','actor','_page','proficient','importEntity','_numberCleanRegexp','mystery-man.svg','76886xXhVAt','_pImportEntry_fillConditionsDamage','ABIL_ABVS','sourceJsonToAbv','DND5E','fluff','tokenBar1Attribute','pGetActionWeaponDetails','_props','getActorDamageResImmVulnConditionImm','14CEEZGX','includes','Cannot\x20import\x20','MODULE_NAME_FAKE','tokenDisposition','ImportEntryOpts','assign','weaponType','isTemp','URL_TO_HASH_BUILDER','get','\x22\x20=\x20\x22','getCombinedFoundryData','length','101244zugDSg','updateEntity','senses','flags','_DEFAULT_SAVING_THROW_DATA','_getBiographyValue','name','hasTokenUrl','2CGvuSJ','tokenNameDisplay','attunement','attunementTypes','type','items','_pImportEntry_pGetImportMetadata','img','weight','darkvision','render','337498vZMxpG','_pImportEntry_pFillBase','_pImportEntry_pApplyEffects','_pImportEntry_pFillBase_pGetCompendiumImage','truesight','save','effects','intToBonus','create','_isSkipFolder','abs','size','log','images','weapon','max','insert','tokenIsAddVision','5xgaXqR','isUseTokenImageAsPortrait','\x22\x20(from\x20\x22','tokenBar2Attribute','pAddActorEffects','\x20to\x20actor!','_pImportEntry_hasTokenImage','push','forEach','Importing\x20','_pImportEntry_pHandlePostItemItemUpdates','copy','_pFillWeaponItem','isDataOnly','TASK_EXIT_COMPLETE_DATA_ONLY','26557jMtaHI','slice','1387dDKtgr','_id','631FejfKb','_pImportEntry_pFillItems','exec','damageParts','assumedPb','112249rOADcn','blindsight','find','_actorType','_getActorSheetName','attackBonus','icons/svg/mystery-man.svg','toLowerCase','map','_displayName','action','setFirstSection','getAbilityModNumber','data','postItemItemUpdates','_getSavingThrowData','_pImportEntry_getTokenImage','getTokenUrl','entries','source','getCombinedFoundryFlags'];const _0x2d1b=function(_0x36204b,_0x4c908d){_0x36204b=_0x36204b-0x127;let _0x147808=_0x1478[_0x36204b];return _0x147808;};const _0x1e6cc3=_0x2d1b;(function(_0xe5023f,_0x368847){const _0x1879a8=_0x2d1b;while(!![]){try{const _0x2839f9=parseInt(_0x1879a8(0x14f))*-parseInt(_0x1879a8(0x18c))+parseInt(_0x1879a8(0x17a))+parseInt(_0x1879a8(0x1a4))*parseInt(_0x1879a8(0x16f))+parseInt(_0x1879a8(0x19d))*parseInt(_0x1879a8(0x19f))+parseInt(_0x1879a8(0x19b))*parseInt(_0x1879a8(0x159))+-parseInt(_0x1879a8(0x134))+-parseInt(_0x1879a8(0x167));if(_0x2839f9===_0x368847)break;else _0xe5023f['push'](_0xe5023f['shift']());}catch(_0x183bed){_0xe5023f['push'](_0xe5023f['shift']());}}}(_0x1478,0x8bdf4));import{ImportList}from'./ImportList.js';import{DataConverter}from'./DataConverter.js';import{Vetools}from'./Vetools.js';import{Config}from'./Config.js';import{UtilApplications}from'./UtilApplications.js';import{UtilActors}from'./UtilActors.js';import{LGT}from'./Util.js';import{Consts}from'./Consts.js';import{UtilCompendium}from'./UtilCompendium.js';import{SharedConsts}from'../shared/SharedConsts.js';import{DataConverterItem}from'./DataConverterItem.js';class ImportListActor extends ImportList{constructor(_0x340e28,_0xa79c72,_0x190829,_0x3c897a){const _0x5a96e6=_0x2d1b;super(_0x340e28,_0xa79c72,_0x190829),this[_0x5a96e6(0x1a7)]=_0x3c897a[_0x5a96e6(0x138)],this[_0x5a96e6(0x183)]=![];}async[_0x1e6cc3(0x141)](_0x3f2640,_0x44d83a){const _0x199fee=_0x1e6cc3;_0x44d83a=_0x44d83a||{},console[_0x199fee(0x186)](...LGT,_0x199fee(0x195)+this['_actorType']+'\x20\x22'+_0x3f2640[_0x199fee(0x16d)]+_0x199fee(0x18e)+Parser[_0x199fee(0x152)](_0x3f2640[_0x199fee(0x130)])+'\x22)');if(this['_actor'])throw new Error(_0x199fee(0x15b)+this[_0x199fee(0x1a7)]+_0x199fee(0x191));let _0x339501;const _0x36e547=this['_getDuplicateMeta']({'entity':_0x3f2640});if(_0x36e547['isSkip'])return{'status':UtilApplications[_0x199fee(0x13b)]};else _0x36e547['isOverwrite']?(this[_0x199fee(0x183)]=!![],_0x339501=_0x36e547['existing']):(this[_0x199fee(0x183)]=![],_0x339501=this[_0x199fee(0x143)]?null:await Actor['create']({'name':Consts[_0x199fee(0x132)],'type':this[_0x199fee(0x1a7)]},{'renderSheet':!!_0x44d83a['isTemp'],'temporary':!!_0x44d83a[_0x199fee(0x161)]}));const {dataBuilderOpts:_0x27a2e0,actorData:_0x26b904}=await this[_0x199fee(0x175)](_0x339501,_0x3f2640,_0x44d83a);if(_0x44d83a['isTemp'])return _0x339501=await Actor[_0x199fee(0x182)]({..._0x26b904,'type':this[_0x199fee(0x1a7)]},{'renderSheet':!_0x44d83a[_0x199fee(0x199)],'temporary':!![]}),_0x27a2e0[_0x199fee(0x149)]=_0x339501,await this[_0x199fee(0x1a0)](_0x3f2640,_0x26b904,_0x27a2e0,_0x44d83a),await this[_0x199fee(0x17c)](_0x26b904,_0x27a2e0,_0x44d83a),await this[_0x199fee(0x196)](_0x339501,_0x44d83a,_0x27a2e0),_0x44d83a[_0x199fee(0x199)]?{'imported':_0x339501,'status':UtilApplications[_0x199fee(0x19a)]}:{'imported':_0x339501,'status':UtilApplications[_0x199fee(0x140)]};else{if(this['_pack']){if(_0x36e547[_0x199fee(0x144)]){_0x27a2e0[_0x199fee(0x149)]=_0x339501,Object[_0x199fee(0x15f)](_0x339501[_0x199fee(0x12a)],_0x26b904),_0x339501[_0x199fee(0x12a)][_0x199fee(0x174)]=[],await this['_pImportEntry_pFillItems'](_0x3f2640,_0x26b904,_0x27a2e0,_0x44d83a),await this[_0x199fee(0x17c)](_0x26b904,_0x27a2e0,_0x44d83a);const _0x2670ba=await this[_0x199fee(0x143)][_0x199fee(0x168)](MiscUtil['copy'](_0x339501[_0x199fee(0x12a)]));return await this[_0x199fee(0x196)](_0x2670ba,_0x44d83a,_0x27a2e0),{'imported':_0x339501,'status':UtilApplications[_0x199fee(0x140)]};}else{_0x339501=await Actor[_0x199fee(0x182)]({..._0x26b904,'type':this[_0x199fee(0x1a7)]},{'temporary':!![]}),_0x27a2e0[_0x199fee(0x149)]=_0x339501,await this['_pImportEntry_pFillItems'](_0x3f2640,_0x26b904,_0x27a2e0,_0x44d83a),await this['_pImportEntry_pApplyEffects'](_0x26b904,_0x27a2e0,_0x44d83a);if(_0x339501[_0x199fee(0x136)])_0x339501[_0x199fee(0x136)]=MiscUtil[_0x199fee(0x197)](_0x339501[_0x199fee(0x12a)]);const _0x21915f=await this[_0x199fee(0x143)][_0x199fee(0x14c)](_0x339501);await this[_0x199fee(0x196)](_0x21915f,_0x44d83a,_0x27a2e0);}return{'imported':_0x339501,'status':UtilApplications[_0x199fee(0x140)]};}else{if(_0x36e547['isOverwrite'])await _0x339501[_0x199fee(0x145)]('OwnedItem',_0x339501['data'][_0x199fee(0x174)][_0x199fee(0x1ac)](_0x1a1c53=>_0x1a1c53['id']||_0x1a1c53[_0x199fee(0x19e)]));return await this[_0x199fee(0x1a0)](_0x3f2640,_0x26b904,_0x27a2e0,_0x44d83a),await this['_pImportEntry_pApplyEffects'](_0x26b904,_0x27a2e0,_0x44d83a),await _0x339501['update'](_0x26b904),await game[_0x199fee(0x137)][_0x199fee(0x18a)](_0x339501),await this['_pImportEntry_pHandlePostItemItemUpdates'](_0x339501,_0x44d83a,_0x27a2e0),{'imported':_0x339501,'status':UtilApplications['TASK_EXIT_COMPLETE']};}}}async['_pImportEntry_pApplyEffects'](_0x4f6561,_0x47a2d2,_0x6285bb){const _0x45ac81=_0x1e6cc3;if(!_0x47a2d2['effects']?.[_0x45ac81(0x166)])return;const _0x567ead=_0x6285bb[_0x45ac81(0x161)]||this[_0x45ac81(0x143)]!=null;await UtilActors[_0x45ac81(0x190)](_0x47a2d2[_0x45ac81(0x149)],_0x47a2d2['effects'],_0x567ead);}async['_pImportEntry_pHandlePostItemItemUpdates'](_0x416773,_0x4aedf9,_0x132e41){const _0x4bf945=_0x1e6cc3;if(!_0x132e41['postItemItemUpdates'])return;for(const _0x997e45 of _0x132e41[_0x4bf945(0x12b)]){await _0x997e45({'actor':_0x416773,'isTemp':_0x4aedf9[_0x4bf945(0x161)],'isPack':this[_0x4bf945(0x143)]!=null,'pack':this['_pack']});}}[_0x1e6cc3(0x175)](){throw new Error('Unimplemented!');}[_0x1e6cc3(0x1a0)](){throw new Error('Unimplemented!');}['_pImportEntry_hasTokenImage'](_0x12d3dd){const _0x519cd3=_0x1e6cc3;return this[_0x519cd3(0x157)][_0x519cd3(0x13a)](_0x3dcffe=>Vetools[_0x519cd3(0x16e)](_0x3dcffe,_0x12d3dd));}[_0x1e6cc3(0x12d)](_0x48437e){const _0x3ce6de=_0x1e6cc3,_0x2d6d3e=this[_0x3ce6de(0x157)][_0x3ce6de(0x1a6)](_0x327269=>Vetools[_0x3ce6de(0x16e)](_0x327269,_0x48437e));if(_0x2d6d3e)return Vetools[_0x3ce6de(0x12e)](_0x2d6d3e,_0x48437e);return _0x3ce6de(0x1aa);}async[_0x1e6cc3(0x17b)](_0x298f41,_0x2dbcb1,_0x2e9883,_0x4dfb2a){const _0x379a81=_0x1e6cc3;_0x4dfb2a=_0x4dfb2a||{},_0x2dbcb1[_0x379a81(0x16d)]=this[_0x379a81(0x1a8)](_0x298f41);let _0x1e27a7=_0x4dfb2a[_0x379a81(0x18d)]?null:Vetools['getImageUrlFromFluff'](_0x2e9883);if(!_0x1e27a7){if(this[_0x379a81(0x192)](_0x298f41))_0x1e27a7=this[_0x379a81(0x12d)](_0x298f41);else{const _0x3fdeee=await this[_0x379a81(0x17d)](_0x298f41);if(_0x3fdeee)_0x1e27a7=_0x3fdeee;else _0x1e27a7=this['_pImportEntry_getTokenImage'](_0x298f41);}}_0x2dbcb1[_0x379a81(0x176)]=_0x1e27a7,_0x2dbcb1[_0x379a81(0x173)]=this['_actorType'],_0x2dbcb1[_0x379a81(0x16a)]=this['_getActorFlags'](_0x298f41);}[_0x1e6cc3(0x1a8)](_0x5330b){return DataConverter['getNameWithSourcePart'](_0x5330b);}['_getActorFlags'](_0x2c3af9){const _0x44aa8e=_0x1e6cc3;return{[SharedConsts[_0x44aa8e(0x15c)]]:{'page':this[_0x44aa8e(0x14a)],'source':_0x2c3af9[_0x44aa8e(0x130)],'hash':UrlUtil[_0x44aa8e(0x162)][this[_0x44aa8e(0x14a)]](_0x2c3af9)}};}async[_0x1e6cc3(0x17d)](_0x2562a8){const _0xcb392c=_0x1e6cc3;for(const _0x5f0b6d of this[_0xcb392c(0x157)]){const _0x1bff48=await UtilCompendium[_0xcb392c(0x13d)](_0x5f0b6d,_0x2562a8);if(_0x1bff48&&!_0x1bff48[_0xcb392c(0x1ab)]()[_0xcb392c(0x15a)](_0xcb392c(0x14e)))return _0x1bff48;}return null;}async['_pImportEntry_pFillToken'](_0x4fd346,_0x56d197,_0xfc06f){const _0x5dc5d3=_0x1e6cc3;let _0x52e394=0x1;switch(_0x4fd346['size']||SZ_MEDIUM){case'T':_0x52e394=0.5;break;case'L':_0x52e394=0x2;break;case'H':_0x52e394=0x3;break;case'G':_0x52e394=0x4;break;}let _0x1d14fd=0x0,_0x25d33b=0x0;(_0x4fd346[_0x5dc5d3(0x169)]||[])[_0x5dc5d3(0x194)](_0x18c905=>{const _0xdfc42e=_0x5dc5d3;_0x18c905=_0x18c905[_0xdfc42e(0x146)](Parser[_0xdfc42e(0x14d)],'');const _0x370e2c=/(blindsight|darkvision|tremorsense|truesight)\s*(\d+)/i['exec'](_0x18c905);if(_0x370e2c){const _0x24e59d=Number(_0x370e2c[0x2]);switch(_0x370e2c[0x1]){case _0xdfc42e(0x178):_0x1d14fd=Math[_0xdfc42e(0x189)](_0x1d14fd,_0x24e59d);break;case _0xdfc42e(0x1a5):case'tremorsense':case _0xdfc42e(0x17e):_0x25d33b=Math[_0xdfc42e(0x189)](_0x25d33b,_0x24e59d);break;}}}),_0x56d197[_0x5dc5d3(0x135)]={'displayName':Config[_0x5dc5d3(0x163)](_0xfc06f,_0x5dc5d3(0x170)),'name':UtilApplications['getCleanEntityName'](_0x4fd346[_0x5dc5d3(0x1ad)]||_0x4fd346[_0x5dc5d3(0x16d)]),'img':this['_pImportEntry_getTokenImage'](_0x4fd346),'width':_0x52e394,'height':_0x52e394,'scale':0x1,'elevation':0x0,'lockRotation':![],'rotation':0x0,'vision':Config[_0x5dc5d3(0x163)](_0xfc06f,_0x5dc5d3(0x18b)),'dimSight':_0x1d14fd,'brightSight':_0x25d33b,'dimLight':0x0,'brightLight':0x0,'sightAngle':0x168,'lightAngle':0x168,'actorLink':![],'actorData':{},'disposition':Config[_0x5dc5d3(0x163)](_0xfc06f,_0x5dc5d3(0x15d)),'displayBars':Config[_0x5dc5d3(0x163)](_0xfc06f,'tokenBarDisplay'),'bar1':{'attribute':Config[_0x5dc5d3(0x163)](_0xfc06f,_0x5dc5d3(0x155))},'bar2':{'attribute':Config[_0x5dc5d3(0x163)](_0xfc06f,_0x5dc5d3(0x18f))},'flags':{},'effects':[],'randomImg':![]};}['_pImportEntry_fillData_Abilities'](_0x12657b,_0xf9eb92,_0x4286b2){const _0x382754=_0x1e6cc3,_0x50162f={};Parser[_0x382754(0x151)][_0x382754(0x194)](_0x4c5aac=>{const _0x1122ef=_0x382754;let _0x3d6aee=0x0;const _0x32cb9b=_0x12657b[_0x4c5aac]??0x0,_0x5ead10=Parser[_0x1122ef(0x129)](_0x32cb9b);if(_0x12657b['save']&&_0x12657b[_0x1122ef(0x17f)][_0x4c5aac]){const _0x3b1283=Number(_0x12657b[_0x1122ef(0x17f)][_0x4c5aac]);if(!isNaN(_0x3b1283)){const _0x3203e6=Parser[_0x1122ef(0x129)](_0x32cb9b),_0x2eff62=_0x3203e6+(_0x4286b2[_0x1122ef(0x1a3)]||_0x4286b2['pb']),_0x3da04a=_0x3203e6+0x2*(_0x4286b2[_0x1122ef(0x1a3)]||_0x4286b2['pb']);if(_0x2eff62===_0x3b1283)_0x3d6aee=0x1;else{if(_0x3da04a===_0x3b1283)_0x3d6aee=0x2;else{const _0xaf1192=Math[_0x1122ef(0x184)](_0x3b1283-_0x2eff62),_0x34dac2=Math[_0x1122ef(0x184)](_0x3b1283-_0x3da04a);if(_0xaf1192<_0x34dac2)_0x3d6aee=0x1;else _0x3d6aee=0x2;const _0x271c5d=_0x3d6aee===0x2?_0x3da04a:_0x2eff62;console[_0x1122ef(0x13e)](...LGT,'Creature\x20\x22'+_0x12657b[_0x1122ef(0x16d)]+_0x1122ef(0x139)+_0x12657b[_0x1122ef(0x130)]+_0x1122ef(0x142)+_0x4c5aac+'\x22\x20bonus\x20\x22'+_0x12657b['save'][_0x4c5aac]+'\x22\x20did\x20not\x20match\x20an\x20expected\x20modifier/proficiency\x20amount!\x20A\x20fallback\x20value\x20(\x22'+(_0x3d6aee===0x2?'expert':_0x1122ef(0x14b))+_0x1122ef(0x164)+UiUtil[_0x1122ef(0x181)](_0x271c5d)+'\x22)\x20will\x20be\x20used.');}}}}_0x50162f[_0x4c5aac]={'value':_0x32cb9b,'proficient':_0x3d6aee,'mod':_0x5ead10};}),_0xf9eb92['abilities']=_0x50162f;}[_0x1e6cc3(0x16c)](_0x293ac6,{isImportText:_0xef1f6c,isImportImages:_0xa96ca5}={}){const _0x1f6cab=_0x1e6cc3;if(!_0xef1f6c&&!_0xa96ca5||!_0x293ac6||!(_0x293ac6['entries']&&_0xef1f6c||_0x293ac6['images']&&_0xa96ca5))return'';const _0x309983=_0x293ac6[_0x1f6cab(0x173)]===_0x1f6cab(0x13c)?-0x1:0x2;if(_0x293ac6['type']!==_0x1f6cab(0x13c))Renderer[_0x1f6cab(0x163)]()[_0x1f6cab(0x128)](![]);const _0xb1e556=[];if(_0xa96ca5&&_0x293ac6[_0x1f6cab(0x187)]&&_0x293ac6['images'][_0x1f6cab(0x166)])_0xb1e556[_0x1f6cab(0x193)](_0x293ac6[_0x1f6cab(0x187)][0x0]);if(_0xef1f6c&&_0x293ac6[_0x1f6cab(0x12f)])_0xb1e556[_0x1f6cab(0x193)](..._0x293ac6[_0x1f6cab(0x12f)]);if(_0xa96ca5&&_0x293ac6['images']&&_0x293ac6[_0x1f6cab(0x187)]['length']>0x1)_0xb1e556[_0x1f6cab(0x193)](..._0x293ac6['images'][_0x1f6cab(0x19c)](0x1));return Renderer['get']()[_0x1f6cab(0x128)](!![])[_0x1f6cab(0x179)]({'type':_0x293ac6[_0x1f6cab(0x173)],'entries':_0xb1e556},_0x309983);}[_0x1e6cc3(0x150)](_0x3b17fe,_0xa2af86){const _0x5122cd=_0x1e6cc3;Object[_0x5122cd(0x15f)](_0xa2af86,DataConverter[_0x5122cd(0x158)](_0x3b17fe));}async[_0x1e6cc3(0x198)](_0x97a213,_0x27e5af,_0x25ac58,_0x37161d,{offensiveAbility:_0x5a3aab,damageParts:_0x1fcaf0,formula:_0x1e45d5,rangeShort:_0x57884e,rangeLong:_0x1f5228,actionType:_0x1aa7f7,isProficient:_0x3e7985,description:_0x40a2f2,saveAbility:_0x83e4bf,saveDc:_0x9d28e2,saveScaling:_0x3243b2,attackBonus:_0xc508c9,_foundryData:_0x16ae63,foundryData:_0xe59b5f,_foundryFlags:_0x426bf4,foundryFlags:_0x53e180,img:_0x3c5265,isSiegeWeapon:_0x238262,isMagical:_0x2d22d8}){const _0x286883=_0x1e6cc3,_0x8fbc8e=await DataConverterItem[_0x286883(0x156)]({'size':_0x97a213[_0x286883(0x185)],'action':_0x25ac58,'damageParts':_0x1fcaf0,'isSiegeWeapon':_0x238262,'isMagical':_0x2d22d8}),_0x4c498=DataConverter[_0x286883(0x165)](_0xe59b5f,_0x16ae63),_0xdd8557=DataConverter[_0x286883(0x131)](_0x53e180,_0x426bf4),_0x3e3797={'name':UtilApplications['getCleanEntityName'](Renderer['stripTags'](_0x25ac58[_0x286883(0x16d)]||'')||'\x20'),'type':_0x286883(0x188),'data':{'source':DataConverter['getSourceWithPagePart'](_0x97a213),'description':{'value':_0x40a2f2},'damage':{'parts':_0x8fbc8e[_0x286883(0x1a2)],'versatile':_0x8fbc8e['damageVersatile']},'range':{'value':_0x57884e,'long':_0x1f5228,'units':'ft'},'actionType':_0x1aa7f7,'proficient':_0x3e7985,'quantity':0x1,'weight':_0x8fbc8e[_0x286883(0x177)],'price':_0x8fbc8e['price'],'rarity':_0x8fbc8e['rarity'],'weaponType':_0x8fbc8e[_0x286883(0x160)],'properties':_0x8fbc8e[_0x286883(0x148)],'attuned':_0x8fbc8e[_0x286883(0x133)],'attunement':_0x8fbc8e[_0x286883(0x171)]?CONFIG[_0x286883(0x153)][_0x286883(0x172)]['ATTUNED']:_0x8fbc8e[_0x286883(0x171)],'ability':_0x5a3aab,'equipped':!![],'identified':_0x8fbc8e[_0x286883(0x147)],'activation':{'type':_0x286883(0x127),'cost':0x1,'condition':''},'duration':{'value':null,'units':''},'target':{'value':null,'units':'','type':''},'uses':{'value':0x0,'max':0x0,'per':null},'attackBonus':_0xc508c9||_0x8fbc8e[_0x286883(0x1a9)]||0x0,'chatFlavor':'','critical':null,'formula':_0x1e45d5,'save':{'ability':_0x83e4bf,'dc':_0x9d28e2,'scaling':_0x3243b2},..._0x4c498||{}},'img':_0x8fbc8e[_0x286883(0x176)]||_0x3c5265,'flags':{..._0xdd8557||{}}};_0x37161d['items'][_0x286883(0x193)](_0x3e3797);}[_0x1e6cc3(0x12c)](_0x388501){const _0xda5e1b=_0x1e6cc3;if(!_0x388501)return MiscUtil['copy'](ImportListActor[_0xda5e1b(0x16b)]);let _0x187a4e=![],{saveAbility:_0x3c9f97,saveScaling:_0x4c93cf,saveDc:_0x1c4617}=MiscUtil[_0xda5e1b(0x197)](ImportListActor[_0xda5e1b(0x16b)]);const _0x19a6a0=/(?:{@dc (\d+)}|DC\s*(\d+))\s*(Strength|Dexterity|Constitution|Intelligence|Wisdom|Charisma)/i[_0xda5e1b(0x1a1)](_0x388501);return _0x19a6a0&&(_0x1c4617=Number(_0x19a6a0[0x1]||_0x19a6a0[0x2]),_0x3c9f97=_0x19a6a0[0x3][_0xda5e1b(0x1ab)]()['substring'](0x0,0x3),_0x4c93cf='flat',_0x187a4e=!![]),{'saveAbility':_0x3c9f97,'saveScaling':_0x4c93cf,'saveDc':_0x1c4617,'isFoundParse':_0x187a4e};}}ImportListActor[_0x1e6cc3(0x16b)]={'saveAbility':'','saveScaling':_0x1e6cc3(0x13f),'saveDc':null},ImportListActor[_0x1e6cc3(0x15e)]=class{constructor(_0x255500){const _0x103bed=_0x1e6cc3;_0x255500=_0x255500||{},this['actor']=_0x255500[_0x103bed(0x149)],this[_0x103bed(0x154)]=_0x255500['fluff'],this[_0x103bed(0x174)]=[],this[_0x103bed(0x180)]=[],this[_0x103bed(0x12b)]=[];}};export{ImportListActor};
+import {ImportedDocument, ImportList, ImportSummary} from "./ImportList.js";
+import {DataConverter} from "./DataConverter.js";
+import {Vetools} from "./Vetools.js";
+import {Config} from "./Config.js";
+import {UtilApplications} from "./UtilApplications.js";
+import {UtilActors} from "./UtilActors.js";
+import {LGT} from "./Util.js";
+import {Consts} from "./Consts.js";
+import {UtilCompendium} from "./UtilCompendium.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {DataConverterItem} from "./DataConverterItem.js";
+import {UtilGameSettings} from "./UtilGameSettings.js";
+import {ConfigConsts} from "./ConfigConsts.js";
+import {UtilDataConverter} from "./UtilDataConverter.js";
+import {UtilDocuments} from "./UtilDocuments.js";
+import {UtilTokens} from "./UtilTokens.js";
+
+class ImportListActor extends ImportList {
+	static get FOLDER_TYPE () { return "Actor"; }
+
+	/**
+	 * @param applicationOpts
+	 * @param externalData
+	 * @param subclassOpts
+	 * @param actorImporterOpts Options object.
+	 * @param actorImporterOpts.actorType
+	 * @param actorImporterOpts.DataConverter
+	 */
+	constructor (applicationOpts, externalData, subclassOpts, actorImporterOpts) {
+		super(applicationOpts, externalData, subclassOpts);
+		this._actorType = actorImporterOpts.actorType;
+		this._DataConverter = actorImporterOpts.DataConverter;
+	}
+
+	// region Shared
+	/**
+	 * @param imp
+	 * @param importOpts Options object.
+	 * @param [importOpts.isTemp] if the item should be temporary, and displayed.
+	 * @param [importOpts.isDataOnly] If the item should not be imported, but its data should be returned.
+	 * @param [importOpts.isImportToTempDirectory]
+	 *
+	 * @param [importOpts.isSkipFolder] If the folder-setting step should be skipped.
+	 */
+	async _pImportEntry (imp, importOpts) {
+		importOpts = importOpts || {};
+
+		if ((importOpts.isTemp || importOpts.isDataOnly) && importOpts.isImportToTempDirectory) throw new Error(`Incompatible options "isTemp"/"isDataOnly" and "isImportToTempDirectory" supplied!`);
+		if (this._pack && importOpts.isImportToTempDirectory) throw new Error(`Option "isImportToTempDirectory" cannot be used in conjunction with compendium imports!`);
+
+		console.log(...LGT, `Importing ${this._actorType} "${imp.name}" (from "${Parser.sourceJsonToAbv(imp.source)}")`);
+
+		if (this._actor) throw new Error(`Cannot import ${this._actorType} to actor!`);
+
+		let actor;
+		const duplicateMeta = this._getDuplicateMeta({entity: imp, importOpts});
+		if (duplicateMeta.isSkip) {
+			return new ImportSummary({
+				status: UtilApplications.TASK_EXIT_SKIPPED_DUPLICATE,
+				imported: [
+					new ImportedDocument({
+						isExisting: true,
+						document: duplicateMeta.existing,
+					}),
+				],
+			});
+		} else if (duplicateMeta.isOverwrite) {
+			importOpts.isSkipFolder = true;
+			actor = duplicateMeta.existing;
+		} else {
+			actor = this._pack
+				? null
+				// Create the entity, so we have access to its ID
+				: await Actor.create(
+					{name: Consts.ACTOR_TEMP_NAME, type: this._actorType, flags: {[SharedConsts.MODULE_NAME_FAKE]: {isImporterTempActor: true}}},
+					{renderSheet: !!importOpts.isTemp, temporary: !!importOpts.isTemp},
+				);
+		}
+
+		const {dataBuilderOpts, actorData} = await this._pImportEntry_pGetImportMetadata(actor, imp, importOpts);
+
+		const additionalData = this._DataConverter ? await this._DataConverter._pGetDataSideLoaded(imp) : null;
+		if (additionalData) Object.assign(actorData.data || {}, additionalData);
+
+		const additionalFlags = this._DataConverter ? await this._DataConverter._pGetFlagsSideLoaded(imp) : null;
+		if (additionalFlags) Object.assign(actorData.flags || {}, additionalFlags);
+
+		const imgEffects = actorData.img ?? actorData.token?.img;
+
+		if (importOpts.isTemp) {
+			actor = await Actor.create({...actorData, type: this._actorType}, {renderSheet: !importOpts.isDataOnly, temporary: true});
+			dataBuilderOpts.actor = actor;
+
+			const additionalEffects = this._DataConverter ? await this._DataConverter._pGetEffectsSideLoaded({ent: imp, actor: dataBuilderOpts.actor, img: imgEffects}) : null;
+			if (additionalEffects?.length) dataBuilderOpts.effects.push(...additionalEffects);
+
+			await this._pImportEntry_pFillItems(imp, actorData, dataBuilderOpts, importOpts);
+			await this._pImportEntry_pApplyEffects(dataBuilderOpts, importOpts);
+
+			// Handle any post-item item updates
+			await this._pImportEntry_pHandlePostItemItemUpdates(actor, importOpts, dataBuilderOpts);
+
+			if (importOpts.isDataOnly) {
+				return new ImportSummary({
+					status: UtilApplications.TASK_EXIT_COMPLETE_DATA_ONLY,
+					imported: [
+						new ImportedDocument({
+							document: actor,
+						}),
+					],
+				});
+			}
+
+			return new ImportSummary({
+				status: UtilApplications.TASK_EXIT_COMPLETE,
+				imported: [
+					new ImportedDocument({
+						document: actor,
+					}),
+				],
+			});
+		} else if (this._pack) {
+			if (duplicateMeta.isOverwrite) {
+				dataBuilderOpts.actor = actor;
+
+				const additionalEffects = this._DataConverter ? await this._DataConverter._pGetEffectsSideLoaded({ent: imp, actor: dataBuilderOpts.actor, img: imgEffects}) : null;
+				if (additionalEffects?.length) dataBuilderOpts.effects.push(...additionalEffects);
+
+				await actor.deleteEmbeddedDocuments("Item", actor.items.map(it => it.id));
+				await actor.deleteEmbeddedDocuments("ActiveEffect", actor.effects.map(it => it.id));
+
+				await this._pImportEntry_pFillItems(imp, actorData, dataBuilderOpts, importOpts);
+				await this._pImportEntry_pApplyEffects(dataBuilderOpts, importOpts);
+
+				await UtilDocuments.pUpdateDocument(actor, actorData);
+
+				// Handle any post-item item updates (use the new actor reference, just in case)
+				await this._pImportEntry_pHandlePostItemItemUpdates(actor, importOpts, dataBuilderOpts);
+
+				await this._pImportEntry_pAddToTargetTableIfRequired([actor], duplicateMeta);
+
+				return new ImportSummary({
+					status: UtilApplications.TASK_EXIT_COMPLETE_UPDATE_OVERWRITE,
+					imported: [
+						new ImportedDocument({
+							document: actor,
+						}),
+					],
+				});
+			} else {
+				actor = await Actor.create({...actorData, type: this._actorType}, {temporary: true});
+				dataBuilderOpts.actor = actor;
+
+				const additionalEffects = this._DataConverter ? await this._DataConverter._pGetEffectsSideLoaded({ent: imp, actor: dataBuilderOpts.actor, img: imgEffects}) : null;
+				if (additionalEffects?.length) dataBuilderOpts.effects.push(...additionalEffects);
+
+				await this._pImportEntry_pFillItems(imp, actorData, dataBuilderOpts, importOpts);
+				await this._pImportEntry_pApplyEffects(dataBuilderOpts, importOpts);
+
+				const actorImported = await this._pack.importDocument(actor);
+
+				// Handle any post-item item updates; switch to using the "real" actor, which has IDs populated on items
+				await this._pImportEntry_pHandlePostItemItemUpdates(actorImported, importOpts, dataBuilderOpts);
+
+				await this._pImportEntry_pAddToTargetTableIfRequired([actor], duplicateMeta);
+
+				return new ImportSummary({
+					status: UtilApplications.TASK_EXIT_COMPLETE,
+					imported: [
+						new ImportedDocument({
+							document: actor,
+						}),
+					],
+				});
+			}
+		} else {
+			const additionalEffects = this._DataConverter ? await this._DataConverter._pGetEffectsSideLoaded({ent: imp, actor: dataBuilderOpts.actor, img: imgEffects}) : null;
+			if (additionalEffects?.length) dataBuilderOpts.effects.push(...additionalEffects);
+
+			// If we're updating an existing entity, strip its embedded documents, as passing in an updated
+			//   `items`/`effects` array only adds items.
+			if (duplicateMeta.isOverwrite) {
+				await actor.deleteEmbeddedDocuments("Item", actor.items.map(it => it.id));
+				await actor.deleteEmbeddedDocuments("ActiveEffect", actor.effects.map(it => it.id));
+			}
+
+			await this._pImportEntry_pFillItems(imp, actorData, dataBuilderOpts, importOpts);
+			await this._pImportEntry_pApplyEffects(dataBuilderOpts, importOpts);
+
+			// Set the actor's data
+			await UtilDocuments.pUpdateDocument(actor, actorData);
+
+			await actor.unsetFlag(SharedConsts.MODULE_NAME_FAKE, "isImporterTempActor");
+
+			await game.actors.set(actor.id, actor);
+
+			// Handle any post-item item updates
+			await this._pImportEntry_pHandlePostItemItemUpdates(actor, importOpts, dataBuilderOpts);
+
+			return new ImportSummary({
+				status: duplicateMeta.isOverwrite ? UtilApplications.TASK_EXIT_COMPLETE_UPDATE_OVERWRITE : UtilApplications.TASK_EXIT_COMPLETE,
+				imported: [
+					new ImportedDocument({
+						isExisting: duplicateMeta.isOverwrite,
+						document: actor,
+					}),
+				],
+			});
+		}
+	}
+
+	/** Run after any item effects have been applied. */
+	async _pImportEntry_pApplyEffects (dataBuilderOpts, importOpts) {
+		if (!dataBuilderOpts.effects?.length) return;
+		const isTemporary = importOpts.isTemp || this._pack != null;
+		await UtilActors.pAddActorEffects(dataBuilderOpts.actor, dataBuilderOpts.effects, {isTemporary});
+	}
+
+	async _pImportEntry_pHandlePostItemItemUpdates (actor, importOpts, dataBuilderOpts) {
+		if (!dataBuilderOpts.postItemItemUpdates) return;
+
+		for (const pFnUpdate of dataBuilderOpts.postItemItemUpdates) {
+			await pFnUpdate({
+				actor,
+				isTemp: importOpts.isTemp,
+				isPack: this._pack != null,
+				pack: this._pack,
+			});
+		}
+	}
+
+	_pImportEntry_pGetImportMetadata () { throw new Error(`Unimplemented!`); }
+
+	_pImportEntry_pFillItems () { throw new Error(`Unimplemented!`); }
+
+	_pImportEntry_pHasTokenImage (it) { return this._props.pSerialAwaitSome(prop => Vetools.pHasTokenUrl(prop, it)); }
+
+	async _pImportEntry_pGetTokenImage (it, {isPreferFoundryOverride = null} = {}) {
+		const getters = [
+			this._pImportEntry_pGetTokenImage_fromPlutonium.bind(this, it),
+			this._pImportEntry_pGetTokenImage_fromFoundry.bind(this, it),
+		];
+		if (isPreferFoundryOverride != null) {
+			if (isPreferFoundryOverride) getters.reverse();
+		} else {
+			if (Config.get("import", "isPreferFoundryTokens")) getters.reverse();
+		}
+
+		for (const getter of getters) {
+			const url = await getter();
+			if (url) return url;
+		}
+
+		return Vetools.getBlankTokenUrl();
+	}
+
+	async _pImportEntry_pGetTokenImage_fromPlutonium (it) {
+		const prop = await this._props.pSerialAwaitFind(prop => Vetools.pHasTokenUrl(prop, it));
+		if (prop) return Vetools.pGetTokenUrl(prop, it);
+	}
+
+	async _pImportEntry_pGetTokenImage_fromFoundry (it) {
+		return this._pGetCompendiumToken(it);
+	}
+	// endregion
+
+	// region Base data
+	/**
+	 * @param imp
+	 * @param act
+	 * @param fluff
+	 * @param [opts]
+	 * @param [opts.isUseTokenImageAsPortrait]
+	 * @param [opts.img]
+	 */
+	async _pImportEntry_pFillBase (imp, act, fluff, opts) {
+		opts = opts || {};
+
+		act.name = this._getActorSheetName(imp);
+
+		act.img = opts.img || (await Vetools.pOptionallySaveImageToServerAndGetUrl(
+			await this._pImportEntry_pFillBase_pGetPortraitImagePath(imp, fluff, opts),
+		));
+		act.type = this._actorType;
+
+		act.flags = this._getActorFlags(imp);
+	}
+
+	async _pImportEntry_pFillBase_pGetPortraitImagePath (imp, fluff, opts) {
+		if (imp.foundryImg) return imp.foundryImg;
+
+		const getters = [
+			this._pImportEntry_pFillBase_pGetPortraitImagePath_fromPlutonium.bind(this, imp, fluff, opts),
+			this._pImportEntry_pFillBase_pGetPortraitImagePath_fromFoundry.bind(this, imp, opts),
+		];
+		if (Config.get("import", "isPreferFoundryImages")) getters.reverse();
+
+		for (const getter of getters) {
+			const url = await getter();
+			if (url) return url;
+		}
+
+		// Fallback on using the token. Force the token finder to use our "prefer foundry image" config, to avoid the case
+		//   where a 5etools token is desired as the portrait, but not as the token itself.
+		return this._pImportEntry_pGetTokenImage(imp, {isPreferFoundryOverride: Config.get("import", "isPreferFoundryImages")});
+	}
+
+	async _pImportEntry_pFillBase_pGetPortraitImagePath_fromPlutonium (it, fluff, opts) {
+		if (opts.isUseTokenImageAsPortrait) return null;
+		return Vetools.pGetImageUrlFromFluff(fluff);
+	}
+
+	async _pImportEntry_pFillBase_pGetPortraitImagePath_fromFoundry (it, opts) {
+		if (opts.isUseTokenImageAsPortrait) return null;
+
+		const compendiumImage = await this._pImportEntry_pFillBase_pGetCompendiumImage(it);
+		const compendiumToken = await this._pGetCompendiumToken(it);
+
+		// If the token image is the same as the portrait image, we assume the token image is being re-used, and therefore
+		//   skip returning it here. We will catch it again later in the "fall back on token" step, if required.
+		if (compendiumImage === compendiumToken) return null;
+		return compendiumImage;
+	}
+
+	async _pImportEntry_pFillFolder (it, act, importOpts) {
+		if (importOpts.isSkipFolder) return;
+
+		if (importOpts.isImportToTempDirectory) {
+			const folderId = await this._pImportEntry_pCreateTempDirectoryGetId();
+			if (folderId) act.folder = folderId;
+			return;
+		}
+
+		if (importOpts.isTemp || this._pack) return;
+
+		const folderId = await this._pImportEntry_pGetFolderId(it);
+		if (folderId) act.folder = folderId;
+	}
+
+	_getActorSheetName (it) {
+		return UtilDataConverter.getNameWithSourcePart(it);
+	}
+
+	_getActorFlags (it) {
+		return {
+			[SharedConsts.MODULE_NAME_FAKE]: {
+				page: this._page,
+				source: it.source,
+				hash: UrlUtil.URL_TO_HASH_BUILDER[this._page](it),
+			},
+		};
+	}
+
+	async _pImportEntry_pFillBase_pGetCompendiumImage (it) {
+		for (const prop of this._props) {
+			const fromCompendium = await UtilCompendium.pGetCompendiumImage(prop, it);
+			// Avoid using the default "mystery-man" image
+			if (fromCompendium && !fromCompendium.toLowerCase().includes("mystery-man.svg")) return fromCompendium;
+		}
+		return null;
+	}
+
+	async _pGetCompendiumToken (it) {
+		for (const prop of this._props) {
+			const dataFromCompendium = await UtilCompendium.getSrdCompendiumEntity(prop, it);
+			const tokenUrl = dataFromCompendium?.token?.img;
+			// Avoid using the default "mystery-man" image
+			if (tokenUrl && !tokenUrl.toLowerCase().includes("mystery-man.svg")) return tokenUrl;
+		}
+		return null;
+	}
+	// endregion
+
+	// region Token data
+	async _pImportEntry_pFillToken ({importable, actor, img = null, size = null}) {
+		size = size || [importable.size || SZ_MEDIUM].flat(2)[0] || SZ_MEDIUM;
+		const {dimensions, scale} = UtilTokens.getTokenDimensionsAndScale(size);
+
+		const {dataToken: tmpDataToken} = DataConverter.mutTokenSight({
+			dataAttributesSenses: MiscUtil.get(actor, "data", "attributes", "senses"),
+			dataToken: {
+				dimSight: 0,
+				brightSight: 0,
+			},
+		});
+
+		img = img || (await this._pImportEntry_pGetTokenImage(importable));
+		const isWildcard = (img || "").trim().endsWith("*");
+
+		actor.token = {
+			...this.constructor._getMergedTokenData({
+				configGroup: this._configGroup,
+				maxDimSight: tmpDataToken.dimSight,
+				maxBrightSight: tmpDataToken.brightSight,
+			}),
+			name: UtilApplications.getCleanEntityName(importable._displayName || importable.name),
+			img: await Vetools.pOptionallySaveImageToServerAndGetUrl(
+				img,
+				{imageType: "token"},
+			),
+			width: dimensions ?? 1,
+			height: dimensions ?? 1,
+			scale: scale ?? 1,
+			elevation: 0,
+			rotation: 0,
+
+			actorLink: false,
+			actorData: {},
+			flags: {},
+			effects: [],
+			randomImg: isWildcard,
+		};
+	}
+
+	static _getMergedTokenData ({configGroup, maxDimSight, maxBrightSight}) {
+		const out = UtilGameSettings.getSafe("core", "defaultToken") || {};
+
+		if (Config.get(configGroup, "tokenNameDisplay") !== ConfigConsts.C_USE_GAME_DEFAULT) out.displayName = Config.get(configGroup, "tokenNameDisplay");
+
+		if (Config.get(configGroup, "tokenIsAddVision") !== ConfigConsts.C_USE_GAME_DEFAULT) out.vision = Config.get(configGroup, "tokenIsAddVision") === ConfigConsts.C_BOOL_ENABLED;
+
+		if (Config.get(configGroup, "tokenDisposition") !== ConfigConsts.C_USE_GAME_DEFAULT) out.disposition = Config.get(configGroup, "tokenDisposition");
+
+		if (Config.get(configGroup, "tokenBarDisplay") !== ConfigConsts.C_USE_GAME_DEFAULT) out.displayBars = Config.get(configGroup, "tokenBarDisplay");
+		if (Config.get(configGroup, "tokenBar1Attribute") !== ConfigConsts.C_USE_GAME_DEFAULT) MiscUtil.set(out, "bar1", "attribute", Config.get(configGroup, "tokenBar1Attribute"));
+		if (Config.get(configGroup, "tokenBar2Attribute") !== ConfigConsts.C_USE_GAME_DEFAULT) MiscUtil.set(out, "bar2", "attribute", Config.get(configGroup, "tokenBar2Attribute"));
+
+		if (Config.get(configGroup, "tokenDimSight") !== ConfigConsts.C_USE_GAME_DEFAULT) out.dimSight = maxDimSight;
+		if (Config.get(configGroup, "tokenBrightSight") !== ConfigConsts.C_USE_GAME_DEFAULT) out.brightSight = maxBrightSight;
+
+		// region No default setting available
+		if (Config.get(configGroup, "tokenScale") != null) out.scale = Config.get(configGroup, "tokenScale");
+		// endregion
+
+		// region Unused/use sensible defaults
+
+		// lockRotation: false,
+		// dimLight: 0,
+		// brightLight: 0,
+		// sightAngle: 360,
+		// lightAngle: 360,
+
+		// endregion
+
+		return out;
+	}
+	// endregion
+
+	// region Ability data
+	_pImportEntry_fillData_Abilities (imp, data, dataBuilderOpts) {
+		const out = {};
+
+		Parser.ABIL_ABVS.forEach(ab => {
+			const score = imp[ab] ?? 0;
+
+			const mod = Parser.getAbilityModNumber(score);
+
+			const {profType, bonusSave} = this._pImportEntry_fillData_getAbilitySaveMeta({imp, dataBuilderOpts, score, ab});
+
+			out[ab] = {
+				value: score,
+				proficient: profType ?? 0,
+				mod,
+				bonuses: {
+					check: "",
+					save: bonusSave ?? "",
+				},
+			};
+		});
+
+		data.abilities = out;
+	}
+
+	_pImportEntry_fillData_getAbilitySaveMeta ({imp, dataBuilderOpts, score, ab}) {
+		if (!imp.save?.[ab]) return {profType: 0, bonusSave: 0};
+
+		const mSave = /^\s*(?<number>[-+]?\s*\d+)\s*(?:[-+]|$)/.exec(`${imp.save[ab]}`);
+		if (!mSave) return {profType: 0, bonusSave: 0};
+
+		const saveNum = Number(mSave.groups.number.replace(/\s+/g, ""));
+
+		const abMod = Parser.getAbilityModNumber(score);
+
+		// If the bonus matches the expected ability mod number exactly, it's not really a bonus, so bail out
+		if (saveNum === abMod) return {profType: 0, bonusSave: 0};
+
+		const profValue = abMod + dataBuilderOpts.getSheetPb();
+		const expertValue = abMod + (2 * dataBuilderOpts.getSheetPb());
+
+		if (profValue === saveNum) return {profType: 1, bonusSave: 0};
+		if (expertValue === saveNum) return {profType: 2, bonusSave: 0};
+
+		// region If no proficiency matches exactly with our expected output, fill in the gap with a bonus
+		// Default to the closest value, and fill the missing difference with a bonus
+		const profType = saveNum >= expertValue ? 2 : saveNum >= profValue ? 1 : 0;
+		return {
+			profType,
+			bonusSave: profType === 0 ? saveNum : profType === 1 ? saveNum - profValue : saveNum - expertValue,
+		};
+		// endregion
+	}
+	// endregion
+
+	// region Details
+	async _pGetBiographyValue (entity, fluff, {isImportText, isImportImages, additionalHtml} = {}) {
+		if (
+			(!isImportText && !isImportImages && !additionalHtml)
+			|| ![fluff?.entries && isImportText, fluff?.images && isImportImages, additionalHtml].some(Boolean)
+		) return "";
+
+		return UtilDataConverter.pGetWithDescriptionPlugins(() => {
+			return [
+				isImportImages && fluff?.images?.length
+					? Renderer.get().setFirstSection(true).render({type: "entries", entries: [fluff.images[0]]})
+					: null,
+				isImportText && fluff?.entries?.length
+					? Renderer.utils.getFluffTabContent({entity, fluff, isImageTab: false})
+					: null,
+				additionalHtml || null,
+				isImportImages && fluff?.images && fluff?.images.length > 1
+					? Renderer.get().setFirstSection(true).render({type: "entries", entries: [...fluff.images.slice(1)]})
+					: null,
+			].filter(Boolean).join("");
+		});
+	}
+	// endregion
+
+	// region Traits
+	_pImportEntry_fillConditionsDamage (ent, dataTraits) {
+		Object.assign(dataTraits, DataConverter.getActorDamageResImmVulnConditionImm(ent));
+	}
+	// endregion
+
+	// region Items
+	async _pFillWeaponItem (
+		entity,
+		act,
+		action,
+		dataBuilderOpts,
+		{
+			offensiveAbility,
+			damageParts,
+			formula,
+			rangeShort,
+			rangeLong,
+			actionType,
+			isProficient,
+			description,
+			saveAbility,
+			saveDc,
+			saveScaling,
+			attackBonus,
+			_foundryData,
+			foundryData,
+			_foundryFlags,
+			foundryFlags,
+			img,
+			isSiegeWeapon,
+			isMagical,
+		},
+	) {
+		const combinedFoundryData = DataConverter.getCombinedFoundryData(foundryData, _foundryData);
+		const combinedFoundryFlags = DataConverter.getCombinedFoundryFlags(foundryFlags, _foundryFlags);
+
+		const itemDataAction = {
+			name: UtilApplications.getCleanEntityName(Renderer.stripTags(action.name || "") || " "),
+			type: "weapon",
+			data: {
+				source: UtilDataConverter.getSourceWithPagePart(entity),
+				description: {value: description},
+
+				range: {
+					value: rangeShort,
+					long: rangeLong,
+					units: "ft",
+				},
+				actionType: actionType,
+				proficient: isProficient,
+
+				ability: offensiveAbility,
+				activation: {
+					type: "action",
+					cost: 1,
+				},
+				attackBonus: attackBonus,
+
+				formula,
+				save: {
+					ability: saveAbility,
+					dc: saveDc,
+					scaling: saveScaling,
+				},
+
+				...(combinedFoundryData || {}),
+			},
+			img: img,
+			flags: {
+				...(combinedFoundryFlags || {}),
+			},
+			effects: [],
+		};
+
+		// Flatten objects to make merging easier
+		Object.entries(itemDataAction)
+			.forEach(([prop, values]) => {
+				if (typeof values !== "object" || values instanceof Array) {
+					itemDataAction[prop] = MiscUtil.copy(values);
+					return;
+				}
+
+				itemDataAction[prop] = foundry.utils.flattenObject(values);
+			});
+
+		const itemDataItem = await DataConverterItem.pGetActionWeaponDetails({size: entity.size, action, damageParts, isSiegeWeapon, isMagical, isInfiniteAmmo: true});
+		delete itemDataItem.effects; // Strip effects, as we assume the creature statblock will already include these
+
+		// Prefer the from-action data...
+		const itemDataMerged = foundry.utils.mergeObject(
+			MiscUtil.copy(itemDataItem),
+			MiscUtil.copy(itemDataAction),
+		);
+
+		// ...except in specific cases.
+		//   - Force attune items if they have attunement requirements
+		if (itemDataItem.data["attunement"]) itemDataMerged.data["attunement"] = CONFIG.DND5E.attunementTypes.ATTUNED;
+		//   - Prefer the item image, if there is one
+		if (itemDataItem.img) itemDataMerged.img = itemDataItem.img;
+
+		// The img URL is a raw one until this point
+		itemDataMerged.img = await Vetools.pOptionallySaveImageToServerAndGetUrl(itemDataMerged.img);
+
+		const itemDataMergedExpanded = foundry.utils.expandObject(itemDataMerged);
+
+		dataBuilderOpts.items.push(itemDataMergedExpanded);
+
+		return itemDataMergedExpanded;
+	}
+
+	_getSavingThrowData (strEntries) {
+		if (!strEntries) return MiscUtil.copy(ImportListActor._DEFAULT_SAVING_THROW_DATA);
+
+		let isFoundParse = false;
+		let {
+			saveAbility,
+			saveScaling,
+			saveDc,
+		} = MiscUtil.copy(ImportListActor._DEFAULT_SAVING_THROW_DATA);
+
+		const mDc = /(?:{@dc (\d+)}|DC\s*(\d+))\s*(Strength|Dexterity|Constitution|Intelligence|Wisdom|Charisma)/i.exec(strEntries);
+		if (mDc) {
+			saveDc = Number(mDc[1] || mDc[2]);
+			saveAbility = mDc[3].toLowerCase().substring(0, 3);
+
+			saveScaling = "flat";
+
+			isFoundParse = true;
+		}
+
+		return {saveAbility, saveScaling, saveDc, isFoundParse};
+	}
+	// endregion
+}
+ImportListActor._DEFAULT_SAVING_THROW_DATA = {
+	saveAbility: "",
+	saveScaling: "spell",
+	saveDc: null,
+};
+
+ImportListActor.ImportEntryOpts = class {
+	constructor (opts) {
+		opts = opts || {};
+
+		this.actor = opts.actor;
+		this.fluff = opts.fluff;
+		this.pb = opts.pb || 0;
+
+		this.items = []; // To be filled
+		this.effects = []; // To be filled
+		this.postItemItemUpdates = []; // Update that will be applied after all item updates have been made.
+	}
+
+	getSheetPb () {
+		// As of 2022-06-22, dnd5e does not support "null" CR, so the minimum PB is +2
+		return Math.max(this.pb || 0, 2);
+	}
+};
+
+export {ImportListActor};

@@ -1,1 +1,44 @@
-var _0x4c34=['303yRWnHP','get','1370HiHXGk','isFastAnimations','MODULE_NAME','192428livueN','369694PbWfhL','init','1318QyBEJE','1266980UVFRCU','361778uIhqUp','2788OQRGaN','3769382yGmzPN','7GLJiLw','register','tokens','animate'];var _0x1aff=function(_0x84ec,_0x113b22){_0x84ec=_0x84ec-0xf1;var _0x4c34cd=_0x4c34[_0x84ec];return _0x4c34cd;};var _0x41838e=_0x1aff;(function(_0x149baf,_0x37467b){var _0xfbd826=_0x1aff;while(!![]){try{var _0x22796a=-parseInt(_0xfbd826(0xfe))+-parseInt(_0xfbd826(0x100))*-parseInt(_0xfbd826(0xf5))+parseInt(_0xfbd826(0xfb))+-parseInt(_0xfbd826(0xf7))*parseInt(_0xfbd826(0xfd))+parseInt(_0xfbd826(0xf1))*-parseInt(_0xfbd826(0xfa))+parseInt(_0xfbd826(0xff))+parseInt(_0xfbd826(0x101));if(_0x22796a===_0x37467b)break;else _0x149baf['push'](_0x149baf['shift']());}catch(_0x39573e){_0x149baf['push'](_0x149baf['shift']());}}}(_0x4c34,0xe211e));import{libWrapper,UtilLibWrapper}from'./PatcherLibWrapper.js';import{SharedConsts}from'../shared/SharedConsts.js';import{Config}from'./Config.js';class Patcher_CanvasAnimation{static[_0x41838e(0xfc)](){var _0x19b4bb=_0x41838e;libWrapper[_0x19b4bb(0xf2)](SharedConsts[_0x19b4bb(0xf9)],'Token.prototype.setPosition',function(_0x37991a,_0xa59783,_0x27db33,_0x4be56f,..._0x89cfae){var _0x164be5=_0x19b4bb;return Config[_0x164be5(0xf6)](_0x164be5(0xf3),_0x164be5(0xf8))&&(_0x4be56f=_0x4be56f||{},_0x4be56f[_0x164be5(0xf4)]=![]),_0x37991a(_0xa59783,_0x27db33,_0x4be56f,..._0x89cfae);},UtilLibWrapper['LIBWRAPPER_MODE_WRAPPER']);}}export{Patcher_CanvasAnimation};
+import {UtilLibWrapper} from "./PatcherLibWrapper.js";
+import {Config} from "./Config.js";
+
+class Patcher_CanvasAnimation {
+	static init () {
+		UtilLibWrapper.addPatch(
+			"Token.prototype.setPosition",
+			this._lw_Token_prototype_setPosition,
+			UtilLibWrapper.LIBWRAPPER_MODE_WRAPPER,
+		);
+
+		UtilLibWrapper.addPatch(
+			"Ruler.prototype._getMovementToken",
+			this._lw_Ruler_prototype__getMovementToken,
+			UtilLibWrapper.LIBWRAPPER_MODE_WRAPPER,
+		);
+	}
+
+	static _lw_Token_prototype_setPosition (fn, x, y, opts, ...otherArgs) {
+		if (
+			Config.get("tokens", "isFastAnimations")
+			&& (
+				!Config.get("tokens", "isDisableFastAnimationsForWaypointMovement")
+				|| !Patcher_CanvasAnimation._isTokenMovingAlongRuler(this)
+			)
+		) {
+			opts = opts || {};
+			opts.animate = false;
+		}
+		return fn(x, y, opts, ...otherArgs);
+	}
+
+	static _lw_Ruler_prototype__getMovementToken (fn) {
+		const out = fn();
+		this._plut_tokenLastMoving = out;
+		return out;
+	}
+
+	static _isTokenMovingAlongRuler (token) {
+		return canvas.controls.rulers.children.some(it => it._state === Ruler.STATES.MOVING && it._plut_tokenLastMoving === token);
+	}
+}
+
+export {Patcher_CanvasAnimation};

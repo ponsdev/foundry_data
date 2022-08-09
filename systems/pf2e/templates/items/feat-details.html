@@ -1,40 +1,50 @@
 <div class="form-group">
-    <label>{{localize "PF2E.FeatTypeLabel"}}</label>
-    <select name="data.featType.value" data-dtype="String">
-        {{#select data.featType.value}}
-            {{#each featTypes as |name type|}}
-                <option value="{{type}}">{{localize name}}</option>
-            {{/each}}
-        {{/select}}
-    </select>
+    <label>{{localize "PF2E.ActionActionsLabel"}}</label>
+    <div class="details-container-flex-row">
+        <select name="data.actionType.value" data-dtype="String">
+            {{#select data.actionType.value}}
+                {{#each actionTypes as |name type|}}
+                    <option value="{{type}}">{{localize name}}</option>
+                {{/each}}
+            {{/select}}
+        </select>
+        <select name="data.actions.value" data-dtype="Number">
+            {{#select data.actions.value}}
+                <option value=""></option>
+                {{#each actionsNumber as |name type|}}
+                    <option value="{{type}}">{{localize name}}</option>
+                {{/each}}
+            {{/select}}
+        </select>
+    </div>
 </div>
 
 <div class="form-group">
-    <label>{{localize "PF2E.FeatActionTypeLabel"}}</label>
-    <select name="data.actionType.value" data-dtype="String">
-        {{#select data.actionType.value}}
-            {{#each featActionTypes as |name type|}}
-                <option value="{{type}}">{{localize name}}</option>
-            {{/each}}
-        {{/select}}
-    </select>
-</div>
-
-<div class="form-group">
-    <label>{{localize "PF2E.FeatActionsLabel"}}</label>
-    <select name="data.actions.value" data-dtype="String">
-        {{#select data.actions.value}}
-            <option value=""></option>
-            {{#each actionsNumber as |name type|}}
-                <option value="{{type}}">{{localize name}}</option>
-            {{/each}}
-        {{/select}}
-    </select>
+    <label>{{localize "PF2E.Frequency.Label"}}</label>
+    {{#if data.frequency}}
+        <div class="frequency">
+            <input type="number" name="data.frequency.max" value="{{data.frequency.max}}" />
+            <span>{{localize "PF2E.Frequency.per"}}</span>
+            <select name="data.frequency.per">
+                {{#select data.frequency.per}}
+                    {{#each @root.frequencies as |name type|}}
+                        <option value="{{type}}">{{localize name}}</option>
+                    {{/each}}
+                {{/select}}
+            </select>
+            <a data-action="frequency-delete"><i class="fas fa-fw fa-times"></i></a>
+        </div>
+    {{else}}
+        <span class="frequency empty">
+            {{localize "PF2E.Frequency.AtWill"}}
+            <a data-action="frequency-add">({{localize "PF2E.AddShortLabel"}})</a>
+        </span>
+    {{/if}}
 </div>
 
 <div class="form-group">
     <label>{{localize "PF2E.ActionCategoryLabel"}}</label>
-    <select name="data.actionCategory.value" data-dtype="String">
+    <select name="data.actionCategory.value">
         {{#select data.actionCategory.value}}
             <option value=""></option>
             {{#each categories as |name type|}}
@@ -43,38 +53,40 @@
         {{/select}}
     </select>
 </div>
-
-<div class="form-group">
-    <label>{{localize "PF2E.Rarity"}}</label>
-    <select name="data.traits.rarity.value" data-dtype="String">
-        {{#select data.traits.rarity.value}}
-            {{#each rarity as |label key|}}
-                <option value="{{key}}">{{localize label}}</option>
-            {{/each}}
-        {{/select}}
-    </select>
-</div>
-
+{{#if isFeat}}
+    <div class="form-group">
+        <label>{{localize "PF2E.Item.Feat.TakeMultiple.Label"}}</label>
+        <div class="details-container-flex-row">
+            <select name="data.maxTakable" data-dtype="Number" {{disabled mandatoryTakeOnce}}>
+                {{#select data.maxTakable}}
+                    <option value="1">{{localize "No"}}</option>
+                    <option value="2">{{localize "PF2E.Item.Feat.TakeMultiple.Two"}}</option>
+                    <option value="3">{{localize "PF2E.Item.Feat.TakeMultiple.Three"}}</option>
+                    <option value="4">{{localize "PF2E.Item.Feat.TakeMultiple.Four"}}</option>
+                    <option value="5">{{localize "PF2E.Item.Feat.TakeMultiple.Five"}}</option>
+                    <option value="Infinity">{{localize "PF2E.Item.Feat.TakeMultiple.NoLimit"}}</option>
+                {{/select}}
+            </select>
+            {{#if mandatoryTakeOnce}}<input type="hidden" name="data.maxTakable" value="1" data-dtype="Number" />{{/if}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label>{{localize "PF2E.Item.Feat.OnlyLevel1"}}</label>
+        <input type="checkbox" name="data.onlyLevel1" {{checked (or data.onlyLevel1 hasLineageTrait)}} {{disabled hasLineageTrait}} />
+    </div>
+{{/if}}
 <div class="form-group-stacked tags">
     <label>{{localize "PF2E.FeatPrereqLabel"}}</label>
-    <input type="text" name="data.prerequisites.value" value="{{prerequisites}}" data-dtype="JSON" />
+    <input class="item-tagify" type="text" name="data.prerequisites.value" value="{{prerequisites}}" data-dtype="JSON" />
 </div>
-
-<div class="form-group">
-    <label>{{localize "PF2E.FeatLevelLabel"}}</label>
-    <input type="text" name="data.level.value" value="{{data.level.value}}" data-dtype="Number"/>
-</div>
-
 <div class="form-group-stacked">
     <label>
         {{localize "PF2E.TraitsLabel"}}
-        <a class="trait-selector" data-trait-selector="basic" data-config-types="featTraits" data-property="data.traits"><i class="fas fa-edit"></i></a>
+        <a class="trait-selector" data-trait-selector="basic" data-config-types="featTraits" data-property="data.traits"><i class="fas fa-fw fa-edit"></i></a>
     </label>
-    <ul class="traits-list pf-value pf-large">
+    <ul class="traits-list tags">
         {{#each traits as |trait|}}
-            {{#if trait.selected}}
-                <li class="tag" data-trait="{{trait.value}}">{{localize trait.label}}</li>
-            {{/if}}
+            <li class="tag" data-trait="{{trait.value}}">{{trait.label}}</li>
         {{/each}}
     </ul>
 </div>

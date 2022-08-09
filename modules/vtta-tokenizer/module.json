@@ -1,13 +1,19 @@
 {
+  "id": "vtta-tokenizer",
   "name": "vtta-tokenizer",
   "title": "Tokenizer",
-  "description": "Tiny yet capable in-game token editor, requires trusted user level for uploads.",
-  "version": "3.1.1",
-  "download": "https://github.com/mrprimate/vtta-tokenizer/releases/download/3.1.1/vtta-tokenizer.zip",
-  "manifest": "https://github.com/mrprimate/vtta-tokenizer/releases/download/latest/module.json",
+  "description": "Tiny yet capable in-game token editor",
+  "version": "3.9.2",
+  "download": "https://github.com/mrprimate/tokenizer/releases/download/3.9.2/vtta-tokenizer.zip",
+  "manifest": "https://github.com/mrprimate/tokenizer/releases/download/latest/module.json",
+  "changelog": "https://github.com/MrPrimate/tokenizer/blob/master/CHANGELOG.md",
   "minimumCoreVersion": "0.7.9",
-  "compatibleCoreVersion": "0.8.2",
-  "author": "Sebastian Will (vttassets@gmail.com), MrPrimate (jack@mrprimate.co.uk)",
+  "compatibleCoreVersion": "10",
+  "compatibility": {
+    "minimum": "0.7.9",
+    "verified": 10
+  },
+  "author": "MrPrimate (jack@mrprimate.co.uk), Sebastian Will (vttassets@gmail.com)",
   "languages": [
     {
       "lang": "en",
@@ -23,10 +29,21 @@
       "lang": "es",
       "name": "Spanish",
       "path": "lang/es.json"
+    },
+    {
+      "lang": "ja",
+      "name": "日本語",
+      "path": "lang/ja.json"
     }
   ],
-  "esmodules": ["./src/index.js"],
-  "styles": ["./css/module-settings.css", "./css/default.css", "./src/tokenizer/tokenizer.css"],
+  "esmodules": [
+    "./src/index.js"
+  ],
+  "styles": [
+    "./css/module-settings.css",
+    "./css/default.css",
+    "./css/tokenizer.css"
+  ],
   "packs": [],
-  "url": "https://github.com/mrprimate/vtta-tokenizer/"
+  "url": "https://github.com/mrprimate/tokenizer/"
 }

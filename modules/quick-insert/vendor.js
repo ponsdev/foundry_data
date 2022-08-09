@@ -1,7 +1,7 @@
 /**
- * Fuse.js v6.4.3 - Lightweight fuzzy-search (http://fusejs.io)
+ * Fuse.js v6.4.6 - Lightweight fuzzy-search (http://fusejs.io)
  *
- * Copyright (c) 2020 Kiro Risk (http://kiro.me)
+ * Copyright (c) 2021 Kiro Risk (http://kiro.me)
  * All Rights Reserved. Apache Software License 2.0
  *
  * http://www.apache.org/licenses/LICENSE-2.0
@@ -280,6 +280,7 @@ const SPACE = /[^ ]+/g;
 // Set to 3 decimals to reduce index size.
 function norm(mantissa = 3) {
   const cache = new Map();
+  const m = Math.pow(10, mantissa);
 
   return {
     get(value) {
@@ -289,7 +290,10 @@ function norm(mantissa = 3) {
         return cache.get(numTokens)
       }
 
-      const n = parseFloat((1 / Math.sqrt(numTokens)).toFixed(mantissa));
+      const norm = 1 / Math.sqrt(numTokens);
+
+      // In place of `toFixed(mantissa)`, for faster computation
+      const n = parseFloat(Math.round(norm * m) / m);
 
       cache.set(numTokens, n);
 
@@ -456,42 +460,6 @@ function parseIndex(data, { getFn = Config.getFn } = {}) {
   myIndex.setKeys(keys);
   myIndex.setIndexRecords(records);
   return myIndex
-}
-
-function transformMatches(result, data) {
-  const matches = result.matches;
-  data.matches = [];
-
-  if (!isDefined(matches)) {
-    return
-  }
-
-  matches.forEach((match) => {
-    if (!isDefined(match.indices) || !match.indices.length) {
-      return
-    }
-
-    const { indices, value } = match;
-
-    let obj = {
-      indices,
-      value
-    };
-
-    if (match.key) {
-      obj.key = match.key.src;
-    }
-
-    if (match.idx > -1) {
-      obj.refIndex = match.idx;
-    }
-
-    data.matches.push(obj);
-  });
-}
-
-function transformScore(result, data) {
-  data.score = result.score;
 }
 
 function computeScore(
@@ -1125,7 +1093,7 @@ class IncludeMatch extends BaseMatch {
 
     return {
       isMatch,
-      score: isMatch ? 1 : 0,
+      score: isMatch ? 0 : 1,
       indices
     }
   }
@@ -1433,6 +1401,94 @@ function parse(query, options, { auto = true } = {}) {
   return next(query)
 }
 
+// Practical scoring function
+function computeScore$1(
+  results,
+  { ignoreFieldNorm = Config.ignoreFieldNorm }
+) {
+  results.forEach((result) => {
+    let totalScore = 1;
+
+    result.matches.forEach(({ key, norm, score }) => {
+      const weight = key ? key.weight : null;
+
+      totalScore *= Math.pow(
+        score === 0 && weight ? Number.EPSILON : score,
+        (weight || 1) * (ignoreFieldNorm ? 1 : norm)
+      );
+    });
+
+    result.score = totalScore;
+  });
+}
+
+function transformMatches(result, data) {
+  const matches = result.matches;
+  data.matches = [];
+
+  if (!isDefined(matches)) {
+    return
+  }
+
+  matches.forEach((match) => {
+    if (!isDefined(match.indices) || !match.indices.length) {
+      return
+    }
+
+    const { indices, value } = match;
+
+    let obj = {
+      indices,
+      value
+    };
+
+    if (match.key) {
+      obj.key = match.key.src;
+    }
+
+    if (match.idx > -1) {
+      obj.refIndex = match.idx;
+    }
+
+    data.matches.push(obj);
+  });
+}
+
+function transformScore(result, data) {
+  data.score = result.score;
+}
+
+function format(
+  results,
+  docs,
+  {
+    includeMatches = Config.includeMatches,
+    includeScore = Config.includeScore
+  } = {}
+) {
+  const transformers = [];
+
+  if (includeMatches) transformers.push(transformMatches);
+  if (includeScore) transformers.push(transformScore);
+
+  return results.map((result) => {
+    const { idx } = result;
+
+    const data = {
+      item: docs[idx],
+      refIndex: idx
+    };
+
+    if (transformers.length) {
+      transformers.forEach((transformer) => {
+        transformer(result, data);
+      });
+    }
+
+    return data
+  })
+}
+
 class Fuse {
   constructor(docs, options = {}, index) {
     this.options = { ...Config, ...options };
@@ -1710,56 +1766,7 @@ class Fuse {
   }
 }
 
-// Practical scoring function
-function computeScore$1(results, { ignoreFieldNorm = Config.ignoreFieldNorm }) {
-  results.forEach((result) => {
-    let totalScore = 1;
-
-    result.matches.forEach(({ key, norm, score }) => {
-      const weight = key ? key.weight : null;
-
-      totalScore *= Math.pow(
-        score === 0 && weight ? Number.EPSILON : score,
-        (weight || 1) * (ignoreFieldNorm ? 1 : norm)
-      );
-    });
-
-    result.score = totalScore;
-  });
-}
-
-function format(
-  results,
-  docs,
-  {
-    includeMatches = Config.includeMatches,
-    includeScore = Config.includeScore
-  } = {}
-) {
-  const transformers = [];
-
-  if (includeMatches) transformers.push(transformMatches);
-  if (includeScore) transformers.push(transformScore);
-
-  return results.map((result) => {
-    const { idx } = result;
-
-    const data = {
-      item: docs[idx],
-      refIndex: idx
-    };
-
-    if (transformers.length) {
-      transformers.forEach((transformer) => {
-        transformer(result, data);
-      });
-    }
-
-    return data
-  })
-}
-
-Fuse.version = '6.4.3';
+Fuse.version = '6.4.6';
 Fuse.createIndex = createIndex;
 Fuse.parseIndex = parseIndex;
 Fuse.config = Config;
@@ -1773,12 +1780,6 @@ Fuse.config = Config;
 }
 
 function noop() { }
-function assign(tar, src) {
-    // @ts-ignore
-    for (const k in src)
-        tar[k] = src[k];
-    return tar;
-}
 function run(fn) {
     return fn();
 }
@@ -1798,11 +1799,119 @@ function is_empty(obj) {
     return Object.keys(obj).length === 0;
 }
 
+// Track which nodes are claimed during hydration. Unclaimed nodes can then be removed from the DOM
+// at the end of hydration without touching the remaining nodes.
+let is_hydrating = false;
+function start_hydrating() {
+    is_hydrating = true;
+}
+function end_hydrating() {
+    is_hydrating = false;
+}
+function upper_bound(low, high, key, value) {
+    // Return first index of value larger than input value in the range [low, high)
+    while (low < high) {
+        const mid = low + ((high - low) >> 1);
+        if (key(mid) <= value) {
+            low = mid + 1;
+        }
+        else {
+            high = mid;
+        }
+    }
+    return low;
+}
+function init_hydrate(target) {
+    if (target.hydrate_init)
+        return;
+    target.hydrate_init = true;
+    // We know that all children have claim_order values since the unclaimed have been detached
+    const children = target.childNodes;
+    /*
+    * Reorder claimed children optimally.
+    * We can reorder claimed children optimally by finding the longest subsequence of
+    * nodes that are already claimed in order and only moving the rest. The longest
+    * subsequence subsequence of nodes that are claimed in order can be found by
+    * computing the longest increasing subsequence of .claim_order values.
+    *
+    * This algorithm is optimal in generating the least amount of reorder operations
+    * possible.
+    *
+    * Proof:
+    * We know that, given a set of reordering operations, the nodes that do not move
+    * always form an increasing subsequence, since they do not move among each other
+    * meaning that they must be already ordered among each other. Thus, the maximal
+    * set of nodes that do not move form a longest increasing subsequence.
+    */
+    // Compute longest increasing subsequence
+    // m: subsequence length j => index k of smallest value that ends an increasing subsequence of length j
+    const m = new Int32Array(children.length + 1);
+    // Predecessor indices + 1
+    const p = new Int32Array(children.length);
+    m[0] = -1;
+    let longest = 0;
+    for (let i = 0; i < children.length; i++) {
+        const current = children[i].claim_order;
+        // Find the largest subsequence length such that it ends in a value less than our current value
+        // upper_bound returns first greater value, so we subtract one
+        const seqLen = upper_bound(1, longest + 1, idx => children[m[idx]].claim_order, current) - 1;
+        p[i] = m[seqLen] + 1;
+        const newLen = seqLen + 1;
+        // We can guarantee that current is the smallest value. Otherwise, we would have generated a longer sequence.
+        m[newLen] = i;
+        longest = Math.max(newLen, longest);
+    }
+    // The longest increasing subsequence of nodes (initially reversed)
+    const lis = [];
+    // The rest of the nodes, nodes that will be moved
+    const toMove = [];
+    let last = children.length - 1;
+    for (let cur = m[longest] + 1; cur != 0; cur = p[cur - 1]) {
+        lis.push(children[cur - 1]);
+        for (; last >= cur; last--) {
+            toMove.push(children[last]);
+        }
+        last--;
+    }
+    for (; last >= 0; last--) {
+        toMove.push(children[last]);
+    }
+    lis.reverse();
+    // We sort the nodes being moved to guarantee that their insertion order matches the claim order
+    toMove.sort((a, b) => a.claim_order - b.claim_order);
+    // Finally, we move the nodes
+    for (let i = 0, j = 0; i < toMove.length; i++) {
+        while (j < lis.length && toMove[i].claim_order >= lis[j].claim_order) {
+            j++;
+        }
+        const anchor = j < lis.length ? lis[j] : null;
+        target.insertBefore(toMove[i], anchor);
+    }
+}
 function append(target, node) {
-    target.appendChild(node);
+    if (is_hydrating) {
+        init_hydrate(target);
+        if ((target.actual_end_child === undefined) || ((target.actual_end_child !== null) && (target.actual_end_child.parentElement !== target))) {
+            target.actual_end_child = target.firstChild;
+        }
+        if (node !== target.actual_end_child) {
+            target.insertBefore(node, target.actual_end_child);
+        }
+        else {
+            target.actual_end_child = node.nextSibling;
+        }
+    }
+    else if (node.parentNode !== target) {
+        target.appendChild(node);
+    }
 }
 function insert(target, node, anchor) {
-    target.insertBefore(node, anchor || null);
+    if (is_hydrating && !anchor) {
+        append(target, node);
+    }
+    else if (node.parentNode !== target || (anchor && node.nextSibling !== anchor)) {
+        target.insertBefore(node, anchor || null);
+    }
 }
 function detach(node) {
     node.parentNode.removeChild(node);
@@ -1842,27 +1951,6 @@ function attr(node, attribute, value) {
     else if (node.getAttribute(attribute) !== value)
         node.setAttribute(attribute, value);
 }
-function set_attributes(node, attributes) {
-    // @ts-ignore
-    const descriptors = Object.getOwnPropertyDescriptors(node.__proto__);
-    for (const key in attributes) {
-        if (attributes[key] == null) {
-            node.removeAttribute(key);
-        }
-        else if (key === 'style') {
-            node.style.cssText = attributes[key];
-        }
-        else if (key === '__value') {
-            node.value = node[key] = attributes[key];
-        }
-        else if (descriptors[key] && descriptors[key].set) {
-            node[key] = attributes[key];
-        }
-        else {
-            attr(node, key, attributes[key]);
-        }
-    }
-}
 function children(element) {
     return Array.from(element.childNodes);
 }
@@ -1880,15 +1968,20 @@ function custom_event(type, detail) {
     return e;
 }
 class HtmlTag {
-    constructor(anchor = null) {
-        this.a = anchor;
+    constructor(claimed_nodes) {
         this.e = this.n = null;
+        this.l = claimed_nodes;
     }
     m(html, target, anchor = null) {
         if (!this.e) {
             this.e = element(target.nodeName);
             this.t = target;
-            this.h(html);
+            if (this.l) {
+                this.n = this.l;
+            }
+            else {
+                this.h(html);
+            }
         }
         this.i(anchor);
     }
@@ -2088,56 +2181,24 @@ function update_keyed_each(old_blocks, dirty, get_key, dynamic, ctx, list, looku
         insert(new_blocks[n - 1]);
     return new_blocks;
 }
-
-function get_spread_update(levels, updates) {
-    const update = {};
-    const to_null_out = {};
-    const accounted_for = { $$scope: 1 };
-    let i = levels.length;
-    while (i--) {
-        const o = levels[i];
-        const n = updates[i];
-        if (n) {
-            for (const key in o) {
-                if (!(key in n))
-                    to_null_out[key] = 1;
-            }
-            for (const key in n) {
-                if (!accounted_for[key]) {
-                    update[key] = n[key];
-                    accounted_for[key] = 1;
-                }
-            }
-            levels[i] = n;
-        }
-        else {
-            for (const key in o) {
-                accounted_for[key] = 1;
-            }
-        }
-    }
-    for (const key in to_null_out) {
-        if (!(key in update))
-            update[key] = undefined;
-    }
-    return update;
-}
-function mount_component(component, target, anchor) {
+function mount_component(component, target, anchor, customElement) {
     const { fragment, on_mount, on_destroy, after_update } = component.$$;
     fragment && fragment.m(target, anchor);
-    // onMount happens before the initial afterUpdate
-    add_render_callback(() => {
-        const new_on_destroy = on_mount.map(run).filter(is_function);
-        if (on_destroy) {
-            on_destroy.push(...new_on_destroy);
-        }
-        else {
-            // Edge case - component was destroyed immediately,
-            // most likely as a result of a binding initialising
-            run_all(new_on_destroy);
-        }
-        component.$$.on_mount = [];
-    });
+    if (!customElement) {
+        // onMount happens before the initial afterUpdate
+        add_render_callback(() => {
+            const new_on_destroy = on_mount.map(run).filter(is_function);
+            if (on_destroy) {
+                on_destroy.push(...new_on_destroy);
+            }
+            else {
+                // Edge case - component was destroyed immediately,
+                // most likely as a result of a binding initialising
+                run_all(new_on_destroy);
+            }
+            component.$$.on_mount = [];
+        });
+    }
     after_update.forEach(add_render_callback);
 }
 function destroy_component(component, detaching) {
@@ -2162,7 +2223,6 @@ function make_dirty(component, i) {
 function init(component, options, instance, create_fragment, not_equal, props, dirty = [-1]) {
     const parent_component = current_component;
     set_current_component(component);
-    const prop_values = options.props || {};
     const $$ = component.$$ = {
         fragment: null,
         ctx: null,
@@ -2174,9 +2234,10 @@ function init(component, options, instance, create_fragment, not_equal, props, d
         // lifecycle
         on_mount: [],
         on_destroy: [],
+        on_disconnect: [],
         before_update: [],
         after_update: [],
-        context: new Map(parent_component ? parent_component.$$.context : []),
+        context: new Map(parent_component ? parent_component.$$.context : options.context || []),
         // everything else
         callbacks: blank_object(),
         dirty,
@@ -2184,7 +2245,7 @@ function init(component, options, instance, create_fragment, not_equal, props, d
     };
     let ready = false;
     $$.ctx = instance
-        ? instance(component, prop_values, (i, ret, ...rest) => {
+        ? instance(component, options.props || {}, (i, ret, ...rest) => {
             const value = rest.length ? rest[0] : ret;
             if ($$.ctx && not_equal($$.ctx[i], $$.ctx[i] = value)) {
                 if (!$$.skip_bound && $$.bound[i])
@@ -2202,6 +2263,7 @@ function init(component, options, instance, create_fragment, not_equal, props, d
     $$.fragment = create_fragment ? create_fragment($$.ctx) : false;
     if (options.target) {
         if (options.hydrate) {
+            start_hydrating();
             const nodes = children(options.target);
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             $$.fragment && $$.fragment.l(nodes);
@@ -2213,7 +2275,8 @@ function init(component, options, instance, create_fragment, not_equal, props, d
         }
         if (options.intro)
             transition_in(component.$$.fragment);
-        mount_component(component, options.target, options.anchor);
+        mount_component(component, options.target, options.anchor, options.customElement);
+        end_hydrating();
         flush();
     }
     set_current_component(parent_component);
@@ -2244,5 +2307,5 @@ class SvelteComponent {
     }
 }
 
-export { Fuse, HtmlTag, SvelteComponent, afterUpdate, append, assign, attr, binding_callbacks, createEventDispatcher, destroy_block, destroy_each, detach, element, empty, get_spread_update, init, insert, listen, noop, safe_not_equal, set_attributes, set_data, space, stop_propagation, text, toggle_class, update_keyed_each };
+export { Fuse, HtmlTag, SvelteComponent, afterUpdate, append, attr, binding_callbacks, createEventDispatcher, destroy_block, destroy_each, detach, element, empty, init, insert, listen, noop, run_all, safe_not_equal, set_data, space, stop_propagation, text, toggle_class, update_keyed_each };
 //# sourceMappingURL=vendor.js.map

@@ -1,6 +1,6 @@
 export class WarningSystem {
     constructor() {}
-  
+
     static validateAboutTime() {
       if (game.data.version === "0.5.1") {
         var aboutTime = game.modules.find(module => module.id === 'about-time' && module.active);
@@ -11,20 +11,20 @@ export class WarningSystem {
         return WarningSystem.generateDialog();
       }
     }
-  
+
     static generateDialog() {
       new Dialog({
-        title: game.i18n.localize("CWMISC.AboutTimeMissing"),
-        content: game.i18n.localize("CWMISC.AboutTimeMissingHelp"),
+        title: game.i18n.localize("cw.misc.AboutTimeMissing"),
+        content: game.i18n.localize("cw.misc.AboutTimeMissingHelp"),
         buttons: {
           one: {
             icon: '<i class="fas fa-check"></i>',
-            label: game.i18n.localize("CWMISC.AboutTimeGitlab"),
+            label: game.i18n.localize("cw.misc.AboutTimeGitlab"),
             callback: () => window.open('https://gitlab.com/tposney/about-time/-/tree/master/src', '_blank', "fullscreen=no")
           },
           two: {
             icon: '<i class="fas fa-times"></i>',
-            label:  game.i18n.localize("CWMISC.Disregard"),
+            label:  game.i18n.localize("cw.misc.Disregard"),
             callback: () => {}
           }
         },
@@ -33,4 +33,3 @@ export class WarningSystem {
       }).render(true);
     }
   }
-  

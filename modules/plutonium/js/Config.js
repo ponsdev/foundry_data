@@ -1,45 +1,1418 @@
-const _0x22f6=['setTemp','toLowerCase','version','/template/_GenericForm.handlebars','$tabHeader','entries','\x20<span\x20class=\x22cfg__disp-player-editable\x22\x20title=\x22Player\x20Editable\x22>†</span>','\x20result','295156pEILBO','pInit','\x22\x20was\x20not\x20a\x20number!','_getDefaultPlayerConfig','plutonium.configUpdate','_saveConfigDebounced','MODULE_LOCATION','Plutonium\x20backend\x20not\x20detected.\x20Some\x20features\x20may\x20be\x20unavailable.\x20If\x20you\x20have\x20not\x20attempted\x20to\x20install\x20the\x20backend\x20mod\x20(see:\x20the\x20module\x20README),\x20please\x20ignore\x20the\x20above\x20404.\x20Alternatively,\x20you\x20can\x20disable\x20the\x20backend\x20check\x20in\x20the\x20config.','ve-hidden','registerMenu','change','mr-2','Failed\x20to\x20save','isModuleActive','type','_isPlayerEditable','/template/Config.handlebars','_getDefaultGmConfig','prop','append','join','activateListeners','json','_SETTINGS_KEY','DEFAULT_CONFIG_','_pInit_pRegisterSettings','disabled','Failed\x20to\x20apply','114965UltBaB','isGM','w-initial','number','modules','cfg__btn-tab-header--muted','then','1XfeXET','isNullable','MODULE_NAME','(This\x20setting\x20is\x20disabled\x20due\x20to\x20incompatibility\x20with\x20one\x20or\x20more\x20other\x20active\x20modules:\x20','push','<button\x20class=\x22btn\x20btn-5et\x20btn-sm\x20ml-2\x22>Changelog</button>','lbs','cbSearch','_onSubmit','isReloadRequired','keys','<option\x20value=\x22-1\x22>(None)</option>','_CONFIG_TEMP','_getDefaultConfig','toggleVe','_isNullable','\x20<span\x20class=\x22cfg__disp-requires-refresh\x22\x20title=\x22Requires\x20Refresh\x22>‡</span>','cfg__row--no-match','close','defaultOptions','click','isMetric','fromObject','_$getBtnSave','callAll','max','<input\x20type=\x22text\x22\x20class=\x22cfg__ipt-string\x22>','P_GET_BACKEND_VERSION','module.','settingsHacks','default','settings','values','_pSaveConfig','.config','Applied!','_INSTANCE','find','copy','196732eQAGVS','stringify','73981VyKZjn','string','1jbGvcV','initialVisibleGroup','help','_SOCKET_ID','escapeQuotes','<input\x20type=\x22checkbox\x22>','boolean','/api/plutonium','_setVisibleGroup','_pInit_initCompatibilityTempOverrides','pSet','backendEndpoint','preventDefault','isGameSettingsButton','cfg__disp-row-count-tab-header--has-results','Config\x20Editor','isPlayer','_CONFIG','assign','compatibilityModeValues','_is_getKeyMeta','name','isHideGmOnlyConfig','config','misc','render','catch','application/json','emit','settingsAdvanced','Plutonium\x20backend\x20detected\x20was\x20skipped.\x20Some\x20features\x20may\x20be\x20unavailable.','mergeMap','register','Could\x20not\x20find\x20config\x20group\x20\x22','Open\x20Config\x20Editor','user','empty','open','119402eDUjZU','_tabMetas','.\x20If\x20you\x20encounter\x20unexpected\x20issues,\x20consider\x20disabling\x20either\x20module.','warn','_getIncompatibleModuleIds','$row','getVersion','<div\x20class=\x22cfg__disp-row-count-tab-header\x20ve-hidden\x20flex-vh-center\x22></div>','2oXiLOm','value','$tabBody','_SETTINGS_KEY_LAST_ACTIVE_TAB','world','_populateMissingConfigValues','handleGmConfigUpdate','_state','sort','<div\x20class=\x22cfg__head-tab-section\x20my-1\x20help\x22\x20title=\x22These\x20settings\x20may\x20be\x20incompatible\x20with\x20other\x20modules,\x20or\x20even\x20Foundry\x20itself.\x20If\x20something\x20doesn\x27t\x20work,\x20turn\x20these\x20off\x20first.\x22>Experimental\x20Settings</div>','checked','_getIsDisabledMessage','_fnsHandleUpdate','data','</button>','_isCanSetConfig','(This\x20setting\x20is\x20controlled\x20by\x20the\x20GM)','<input\x20type=\x22text\x22\x20placeholder=\x22Find\x20setting...\x22>','_DEFAULT_CONFIG__SORTED','146955xePkpE','config.ixLastActiveTab','text','SRD\x20Module','_CLIENT_SETTINGS_KEY','_ixActiveTab','pGet','forEach','constructor','socket','choices','<select\x20class=\x22cfg__sel-enum\x20w-100\x22></select>','ascSortLower','mr-4','Configure\x20','Saved!','_GET_BACKEND_VERSION_RESOLVE','isPlayerEditable','Applying...','cfg__wrp-string-picker','<option/>','reduce','><span\x20class=\x22fas\x20fa-cogs\x22></span>','bindTypingEnd','post','getMaxWindowHeight','Could\x20not\x20convert\x20units--\x22','<button\x20class=\x22mx-0\x20','findIndex','<button\x20class=\x22btn\x20btn-xs\x20ml-auto\x22\x20title=\x22Reset\x20Settings\x20for\x20This\x20Tab\x22><i\x20class=\x22fa\x20fa-undo-alt\x22></i></button>','length','_CONFIG_PLAYER','<hr\x20class=\x22cfg__hr-tab-section\x22>','_setActiveTab','addClass','<div\x20class=\x22cfg__head-tab-section\x20my-1\x22>Advanced\x20Settings</div>','bringToFront','get','throttle','_getAllSettings','pHandleButtonClick','stub','toggleClass','filter','trim','DUR_INLINE_NOTIFY','appendTo','log','title','Plutonium\x20Config','cfg__btn-tab-header--active','val','map','_activateListeners_getTabMeta','$getPickString','POUNDS_TO_KILOGRAMS','345089bJGEuA','$getDirButton','isStreamerMode','config.update'];const _0x33cf=function(_0x3ef1d8,_0x46e0fd){_0x3ef1d8=_0x3ef1d8-0x1ea;let _0x22f6f2=_0x22f6[_0x3ef1d8];return _0x22f6f2;};const _0x4dbffd=_0x33cf;(function(_0x3cccf8,_0x9890c6){const _0x3553ec=_0x33cf;while(!![]){try{const _0x5d9ed3=parseInt(_0x3553ec(0x243))+parseInt(_0x3553ec(0x1ec))*-parseInt(_0x3553ec(0x28d))+parseInt(_0x3553ec(0x266))*parseInt(_0x3553ec(0x1ff))+-parseInt(_0x3553ec(0x291))*-parseInt(_0x3553ec(0x28f))+-parseInt(_0x3553ec(0x2b7))+-parseInt(_0x3553ec(0x25f))+parseInt(_0x3553ec(0x237));if(_0x5d9ed3===_0x9890c6)break;else _0x3cccf8['push'](_0x3cccf8['shift']());}catch(_0x56682d){_0x3cccf8['push'](_0x3cccf8['shift']());}}}(_0x22f6,0x38f86));import{SharedConsts}from'../shared/SharedConsts.js';import{Util,LGT}from'./Util.js';import{Consts}from'./Consts.js';import{UtilApplications}from'./UtilApplications.js';import{Changelog}from'./Changelog.js';import{ConfigConsts}from'./ConfigConsts.js';import{UtilCompat}from'./UtilCompat.js';class ModuleSettingsStub extends FormApplication{static get[_0x4dbffd(0x279)](){const _0x55ba98=_0x4dbffd;return mergeObject(super[_0x55ba98(0x279)],{'title':'Opening...','template':SharedConsts[_0x55ba98(0x249)]+_0x55ba98(0x23e),'width':0x64,'height':0x64});}async[_0x4dbffd(0x2aa)](..._0x23323a){const _0x40592e=_0x4dbffd,_0x2eaeee=await super[_0x40592e(0x2aa)](..._0x23323a);return setTimeout(async()=>{const _0x151795=_0x40592e;Config[_0x151795(0x227)](),await this[_0x151795(0x278)]();},0x1e),_0x2eaeee;}[_0x4dbffd(0x26e)](){}['_updateObject'](){}}class Config extends Application{static get[_0x4dbffd(0x29c)](){const _0x57739b=_0x4dbffd;return ROUTE_PREFIX?'/'+ROUTE_PREFIX+'/api/plutonium':_0x57739b(0x298);}static async[_0x4dbffd(0x244)](){const _0x98dd4f=_0x4dbffd;await this['_pInit_pRegisterSettings']();let _0x4273ed=await game[_0x98dd4f(0x285)][_0x98dd4f(0x224)](SharedConsts['MODULE_NAME'],Config[_0x98dd4f(0x25a)]);if(_0x4273ed==null||!Object[_0x98dd4f(0x270)](_0x4273ed)[_0x98dd4f(0x21d)])Config[_0x98dd4f(0x2a2)]=Config[_0x98dd4f(0x254)]();else{Config[_0x98dd4f(0x2a2)]=_0x4273ed;const _0x4db518=this[_0x98dd4f(0x1f1)](Config[_0x98dd4f(0x2a2)],{'isPlayer':![]});if(_0x4db518)Config[_0x98dd4f(0x248)]();}game[_0x98dd4f(0x208)]['on'](this[_0x98dd4f(0x294)],_0x443f47=>{const _0x2fa674=_0x98dd4f;switch(_0x443f47['type']){case _0x2fa674(0x23a):{const _0x2ce5dc=_0x443f47[_0x2fa674(0x2a8)];Object[_0x2fa674(0x2a3)](Config[_0x2fa674(0x2a2)],_0x2ce5dc);if(!game['user'][_0x2fa674(0x260)]&&this[_0x2fa674(0x28a)])this['_INSTANCE'][_0x2fa674(0x1f2)](_0x2ce5dc);Hooks[_0x2fa674(0x27e)](_0x2fa674(0x247));break;}}});if(!game[_0x98dd4f(0x2b4)]['isGM']){const _0x30a5f8=await StorageUtil[_0x98dd4f(0x205)](Config[_0x98dd4f(0x203)]);if(_0x30a5f8==null)Config['_CONFIG_PLAYER']=Config[_0x98dd4f(0x246)]();else{Config[_0x98dd4f(0x21e)]=_0x30a5f8;const _0x8cebbb=this[_0x98dd4f(0x1f1)](Config[_0x98dd4f(0x21e)],{'isPlayer':!![]});if(_0x8cebbb)Config[_0x98dd4f(0x248)]();}}this[_0x98dd4f(0x29a)](),!Config[_0x98dd4f(0x224)](_0x98dd4f(0x2a9),'isSkipBackendCheck')?fetch(Config[_0x98dd4f(0x29c)],{'method':_0x98dd4f(0x217),'headers':{'Content-Type':_0x98dd4f(0x2ac)},'body':JSON[_0x98dd4f(0x28e)]({'type':_0x98dd4f(0x1ea)})})[_0x98dd4f(0x265)](_0x43b482=>_0x43b482[_0x98dd4f(0x259)]())[_0x98dd4f(0x265)](_0x2287af=>{const _0x560e4e=_0x98dd4f;Config[_0x560e4e(0x20f)](_0x2287af[_0x560e4e(0x23d)]),console['log'](...LGT,'Compatible\x20Plutonium\x20backend\x20(v'+_0x2287af[_0x560e4e(0x23d)]+')\x20detected.'),Hooks[_0x560e4e(0x27e)]('plutonium.configUpdate');})[_0x98dd4f(0x2ab)](()=>{const _0x2a254d=_0x98dd4f;Config['_GET_BACKEND_VERSION_RESOLVE'](![]),console[_0x2a254d(0x2ba)](...LGT,_0x2a254d(0x24a)),Hooks['callAll'](_0x2a254d(0x247));}):(Config[_0x98dd4f(0x20f)](![]),console[_0x98dd4f(0x22e)](...LGT,_0x98dd4f(0x2af))),game[_0x98dd4f(0x285)][_0x98dd4f(0x24c)](SharedConsts['MODULE_NAME'],_0x98dd4f(0x228),{'label':_0x98dd4f(0x2b3),'icon':'fas\x20fa-cogs','type':ModuleSettingsStub});}static[_0x4dbffd(0x29a)](){const _0x397ef2=_0x4dbffd;Config[_0x397ef2(0x1fe)]['forEach'](([_0xe2637c,_0x35d082])=>{const _0x4908d7=_0x397ef2,_0x13eacc=this[_0x4908d7(0x226)](_0x35d082);Object['entries'](_0x13eacc)[_0x4908d7(0x206)](([_0x336418,_0x1c1e2f])=>{const _0x259b98=_0x4908d7;if(!_0x1c1e2f[_0x259b98(0x2a4)])return;Object[_0x259b98(0x240)](_0x1c1e2f[_0x259b98(0x2a4)])[_0x259b98(0x28b)](([_0x195f48,_0x4c6b5b])=>{const _0x48a927=_0x259b98;if(!UtilCompat[_0x48a927(0x250)](_0x195f48))return![];Config[_0x48a927(0x23b)](_0xe2637c,_0x336418,_0x4c6b5b),console[_0x48a927(0x2ba)](...LGT,game[_0x48a927(0x263)][_0x48a927(0x224)](_0x195f48)[_0x48a927(0x1f9)][_0x48a927(0x22f)]+'\x20detected!\x20Setting\x20compatibility\x20config:\x20'+_0xe2637c+'.'+_0x336418+'\x20=\x20'+(_0x4c6b5b!=null?JSON['stringify'](_0x4c6b5b):_0x4c6b5b)+_0x48a927(0x2b9));});});});}static async[_0x4dbffd(0x25c)](){const _0x5516b6=_0x4dbffd;await game[_0x5516b6(0x285)][_0x5516b6(0x2b1)](SharedConsts[_0x5516b6(0x268)],Config[_0x5516b6(0x25a)],{'name':_0x5516b6(0x230),'hint':_0x5516b6(0x230),'default':{},'type':Object,'scope':_0x5516b6(0x1f0),'onChange':_0x230765=>{}});}static[_0x4dbffd(0x1f1)](_0x3ff319,_0x10f42c){const _0x31bb14=_0x4dbffd;_0x10f42c=_0x10f42c||{};const _0x3c60c3=!!_0x10f42c[_0x31bb14(0x2a1)];let _0x5e46c6=![];return Object[_0x31bb14(0x240)](this[_0x31bb14(0x273)]({'isPlayer':_0x3c60c3}))[_0x31bb14(0x206)](([_0x84be10,_0x47469f])=>{const _0x5ed698=_0x31bb14;!_0x3ff319[_0x84be10]?(_0x3ff319[_0x84be10]=_0x47469f,_0x5e46c6=!![]):Object['entries'](_0x47469f)[_0x5ed698(0x206)](([_0x3c8e98,_0x418c1e])=>{_0x3ff319[_0x84be10][_0x3c8e98]===undefined&&(_0x3ff319[_0x84be10][_0x3c8e98]=_0x418c1e,_0x5e46c6=!![]);});}),_0x5e46c6;}static[_0x4dbffd(0x238)](_0x2da99e){const _0x54156d=_0x4dbffd;_0x2da99e=_0x2da99e||{};const _0x3208de=_0x54156d(0x20d)+(Config[_0x54156d(0x224)]('ui',_0x54156d(0x239))?_0x54156d(0x202):'Plutonium');return $(_0x54156d(0x21a)+(_0x2da99e['isGameSettingsButton']?'cfg__btn-open-alt':_0x54156d(0x261))+'\x22\x20'+(_0x2da99e[_0x54156d(0x29e)]?'':'title=\x22'+_0x3208de+'\x22')+_0x54156d(0x215)+(_0x2da99e[_0x54156d(0x29e)]?'\x20'+_0x3208de:'')+_0x54156d(0x1fa))[_0x54156d(0x27a)](_0x81465f=>this[_0x54156d(0x227)](_0x81465f));}static[_0x4dbffd(0x227)](_0x3e8a1d,_0x195ca0){const _0x12443f=_0x4dbffd;if(_0x3e8a1d)_0x3e8a1d[_0x12443f(0x29d)]();if(Config[_0x12443f(0x28a)]){Config[_0x12443f(0x28a)][_0x12443f(0x2aa)](!![]),Config[_0x12443f(0x28a)]['maximize'](),UtilApplications[_0x12443f(0x223)](Config[_0x12443f(0x28a)]);if(_0x195ca0)Config['_INSTANCE'][_0x12443f(0x299)](_0x195ca0);return;}Config[_0x12443f(0x28a)]=new Config({'initialVisibleGroup':_0x195ca0}),Config[_0x12443f(0x28a)][_0x12443f(0x2aa)](!![]);}static['_getDefaultGmConfig'](){return this['_getDefaultConfig']({'isPlayer':![]});}static['_getDefaultPlayerConfig'](){const _0x9421e6=_0x4dbffd;return this[_0x9421e6(0x273)]({'isPlayer':!![]});}static['_getDefaultConfig'](_0x49385d){const _0x8b80e0=_0x4dbffd;_0x49385d=_0x49385d||{};const _0x4fe2af=_0x49385d['isPlayer'],_0x8c371a=MiscUtil['copy'](Config[_0x8b80e0(0x1fe)]),_0x318b59={};return _0x8c371a[_0x8b80e0(0x206)](([_0x3937ed,_0x24478e])=>{const _0x372a41=_0x8b80e0,_0x2d8128=_0x318b59[_0x3937ed]={},_0x19cfe1=_0x5bce27=>Object[_0x372a41(0x240)](_0x5bce27)[_0x372a41(0x206)](([_0x521599,_0x17cdf6])=>{const _0x51e857=_0x372a41;if(_0x4fe2af){if(_0x17cdf6[_0x51e857(0x210)])_0x2d8128[_0x521599]=null;}else _0x2d8128[_0x521599]=_0x17cdf6['default'];});if(_0x24478e[_0x372a41(0x285)])_0x19cfe1(_0x24478e[_0x372a41(0x285)]);if(_0x24478e[_0x372a41(0x283)])_0x19cfe1(_0x24478e[_0x372a41(0x283)]);if(_0x24478e[_0x372a41(0x2ae)])_0x19cfe1(_0x24478e[_0x372a41(0x2ae)]);}),_0x318b59;}static['_isPlayerEditable'](_0x53fc37,_0x51b14e){const _0xeb106=_0x4dbffd,_0x3904ef=this[_0xeb106(0x2a5)](_0x53fc37,_0x51b14e);return!!_0x3904ef?.[_0xeb106(0x210)];}static[_0x4dbffd(0x275)](_0x39c3c6,_0x41802e){const _0x2af415=_0x4dbffd,_0x52cfd5=this[_0x2af415(0x2a5)](_0x39c3c6,_0x41802e);return!!_0x52cfd5?.[_0x2af415(0x267)];}static[_0x4dbffd(0x2a5)](_0x1384fc,_0x2f3605){const _0x5b8802=_0x4dbffd,_0x110d54=ConfigConsts[_0x5b8802(0x25b)][_0x1384fc];return(_0x110d54[_0x5b8802(0x285)]||{})[_0x2f3605]||(_0x110d54[_0x5b8802(0x283)]||{})[_0x2f3605]||(_0x110d54[_0x5b8802(0x2ae)]||{})[_0x2f3605];}static['_getAllSettings'](_0x2be698){const _0x4d7011=_0x4dbffd,_0x699d1b={};if(_0x2be698[_0x4d7011(0x285)])Object[_0x4d7011(0x2a3)](_0x699d1b,MiscUtil[_0x4d7011(0x28c)](_0x2be698[_0x4d7011(0x285)]));if(_0x2be698['settingsHacks'])Object[_0x4d7011(0x2a3)](_0x699d1b,MiscUtil['copy'](_0x2be698[_0x4d7011(0x283)]));if(_0x2be698[_0x4d7011(0x2ae)])Object[_0x4d7011(0x2a3)](_0x699d1b,MiscUtil[_0x4d7011(0x28c)](_0x2be698[_0x4d7011(0x2ae)]));return _0x699d1b;}static['set'](_0x20ec10,_0x4f9a72,_0x20e781){const _0x2bba61=_0x4dbffd;if(!this[_0x2bba61(0x1fb)](_0x20ec10,_0x4f9a72))return;const _0xd964db=game[_0x2bba61(0x2b4)]['isGM']?Config[_0x2bba61(0x2a2)]:Config[_0x2bba61(0x21e)];(_0xd964db[_0x20ec10]=_0xd964db[_0x20ec10]||{})[_0x4f9a72]=_0x20e781,Config['_saveConfigDebounced'](),Hooks[_0x2bba61(0x27e)](_0x2bba61(0x247));}static[_0x4dbffd(0x23b)](_0x22973d,_0x1321e5,_0x278904){const _0x398da3=_0x4dbffd;if(!this[_0x398da3(0x1fb)](_0x22973d,_0x1321e5))return;(Config[_0x398da3(0x272)][_0x22973d]=Config[_0x398da3(0x272)][_0x22973d]||{})[_0x1321e5]=_0x278904,Hooks[_0x398da3(0x27e)]('plutonium.configUpdate');}static[_0x4dbffd(0x1fb)](_0x1f6b6e,_0x23f31e){const _0x42fd35=_0x4dbffd;return game[_0x42fd35(0x2b4)]['isGM']||this[_0x42fd35(0x252)](_0x1f6b6e,_0x23f31e);}static async[_0x4dbffd(0x287)](){const _0x553ff1=_0x4dbffd;if(game['user'][_0x553ff1(0x260)]){await game['settings']['set'](SharedConsts[_0x553ff1(0x268)],Config['_SETTINGS_KEY'],MiscUtil[_0x553ff1(0x28c)](Config[_0x553ff1(0x2a2)]));const _0x9a2c3d={'type':_0x553ff1(0x23a),'config':MiscUtil['copy'](this[_0x553ff1(0x2a2)])};game[_0x553ff1(0x208)][_0x553ff1(0x2ad)](Config['_SOCKET_ID'],_0x9a2c3d);}else await StorageUtil[_0x553ff1(0x29b)](Config[_0x553ff1(0x203)],MiscUtil[_0x553ff1(0x28c)](Config[_0x553ff1(0x21e)]));}static['get'](_0x400428,_0x1621d4){const _0x4311d6=_0x4dbffd;if(Config[_0x4311d6(0x272)][_0x400428]?.[_0x1621d4]!==undefined)return Config[_0x4311d6(0x272)][_0x400428][_0x1621d4];if(!game[_0x4311d6(0x2b4)][_0x4311d6(0x260)]&&this[_0x4311d6(0x252)](_0x400428,_0x1621d4)){const _0x128679=(Config[_0x4311d6(0x21e)][_0x400428]||{})[_0x1621d4];if(this[_0x4311d6(0x275)](_0x400428,_0x1621d4)&&_0x128679===null||_0x128679!=null)return _0x128679;}return(Config[_0x4311d6(0x2a2)][_0x400428]||{})[_0x1621d4];}constructor(_0x179223){const _0x2c0400=_0x4dbffd;_0x179223=_0x179223||{},super({'width':0x2d0,'height':Util[_0x2c0400(0x218)](),'title':_0x2c0400(0x2a0),'template':SharedConsts[_0x2c0400(0x249)]+_0x2c0400(0x253),'resizable':!![]}),this['_ixActiveTab']=null,this[_0x2c0400(0x2b8)]=null,this[_0x2c0400(0x1f8)]=[];if(_0x179223['initialVisibleGroup']){const _0x1602c0=Config[_0x2c0400(0x1fe)][_0x2c0400(0x21b)](([_0x4ab100])=>_0x4ab100===_0x179223['initialVisibleGroup']);if(!~_0x1602c0)throw new Error(_0x2c0400(0x2b2)+_0x179223[_0x2c0400(0x292)]+'\x22');this[_0x2c0400(0x204)]=_0x1602c0;}Config[_0x2c0400(0x28a)]=this;}static get[_0x4dbffd(0x1fe)](){const _0x2f3655=_0x4dbffd;return Object[_0x2f3655(0x240)](ConfigConsts[_0x2f3655(0x25b)])[_0x2f3655(0x1f4)](([_0x16b29a,_0x18b8be],[_0x47fde1,_0x1efb72])=>SortUtil[_0x2f3655(0x20b)](_0x18b8be[_0x2f3655(0x2a6)],_0x1efb72[_0x2f3655(0x2a6)]));}[_0x4dbffd(0x299)](_0x255ccf){const _0x5a587d=_0x4dbffd,_0x114398=Config[_0x5a587d(0x1fe)][_0x5a587d(0x21b)](([_0xc8d786])=>_0xc8d786===_0x255ccf);if(!~_0x114398)throw new Error(_0x5a587d(0x2b2)+_0x255ccf+'\x22');this[_0x5a587d(0x220)](_0x114398);}['_$getBtnSave']({DRAFT_GM:_0x1cccd5,DRAFT_PLAYER:_0x233035,isClose:_0x10573e,textSaving:_0x5d5a24,textSaved:_0x18fca3,text:_0x5a51f6,textFailed:_0x2372e5}){let _0x1748d8=null;const _0x250409=$('<button\x20class=\x22btn\x20btn-5et\x20btn-default\x20min-w-100p\x22>'+_0x5a51f6+'</button>')['click'](async()=>{const _0xb69bdc=_0x33cf;if(_0x250409[_0xb69bdc(0x255)](_0xb69bdc(0x25d)))return;clearTimeout(_0x1748d8);try{_0x250409['prop']('disabled',!![])['text'](_0x5d5a24);const _0x9259b=game[_0xb69bdc(0x2b4)][_0xb69bdc(0x260)]?Config[_0xb69bdc(0x2a2)]:Config[_0xb69bdc(0x21e)],_0x1fefbd=game[_0xb69bdc(0x2b4)]['isGM']?_0x1cccd5:_0x233035;Object[_0xb69bdc(0x2a3)](_0x9259b,_0x1fefbd),await Config['_pSaveConfig'](),Hooks[_0xb69bdc(0x27e)](_0xb69bdc(0x247)),_0x250409[_0xb69bdc(0x201)](_0x18fca3)[_0xb69bdc(0x255)](_0xb69bdc(0x25d),![]),_0x1748d8=setTimeout(()=>_0x250409[_0xb69bdc(0x201)](_0x5a51f6),VeCt[_0xb69bdc(0x22c)]);}catch(_0x3144fd){_0x250409[_0xb69bdc(0x201)](_0x2372e5),_0x1748d8=setTimeout(()=>_0x250409[_0xb69bdc(0x201)](_0x5a51f6)['prop'](_0xb69bdc(0x25d),![]),VeCt['DUR_INLINE_NOTIFY']*0x2);}if(_0x10573e)await this[_0xb69bdc(0x278)]();});return _0x250409;}[_0x4dbffd(0x258)](_0x4a95f5){const _0x4f81db=_0x4dbffd;super['activateListeners'](_0x4a95f5),_0x4a95f5[_0x4f81db(0x2b5)](),(async()=>{const _0x1355ec=_0x4f81db;if(this[_0x1355ec(0x204)]==null)this[_0x1355ec(0x204)]=await StorageUtil['pGet'](Config[_0x1355ec(0x1ef)]);if(this[_0x1355ec(0x204)]==null)this[_0x1355ec(0x204)]=0x0;const _0x1daa33=MiscUtil[_0x1355ec(0x28c)](Config['_CONFIG']),_0x3cabba=MiscUtil[_0x1355ec(0x28c)](Config[_0x1355ec(0x21e)]),_0x6c9eab=Config[_0x1355ec(0x224)]('ui',_0x1355ec(0x2a7));this[_0x1355ec(0x2b8)]=Config[_0x1355ec(0x1fe)][_0x1355ec(0x233)](([_0x218d74,_0x22fe8d],_0x57dcef)=>this['_activateListeners_getTabMeta']({'DRAFT_GM':_0x1daa33,'DRAFT_PLAYER':_0x3cabba,'groupKey':_0x218d74,'groupVals':_0x22fe8d,'ixTab':_0x57dcef,'isHideUnavailable':_0x6c9eab}));const _0x4e36d1=this[_0x1355ec(0x27d)]({'DRAFT_GM':_0x1daa33,'DRAFT_PLAYER':_0x3cabba,'textSaving':_0x1355ec(0x211),'textSaved':_0x1355ec(0x289),'textFailed':_0x1355ec(0x25e),'text':'Apply'}),_0x2064c7=this[_0x1355ec(0x27d)]({'DRAFT_GM':_0x1daa33,'DRAFT_PLAYER':_0x3cabba,'isClose':!![],'textSaving':'Saving...','textSaved':_0x1355ec(0x20e),'textFailed':_0x1355ec(0x24f),'text':'OK'}),_0x3d2bf0=$('<button\x20class=\x22btn\x20btn-5et\x20btn-default\x20min-w-100p\x22>Cancel</button>')[_0x1355ec(0x27a)](()=>this[_0x1355ec(0x278)]()),_0x10d9be=$(_0x1355ec(0x1fd));UiUtil[_0x1355ec(0x216)]({'$ipt':_0x10d9be,'fnKeyup':()=>{const _0x2f0fae=_0x1355ec,_0x3b5de6=_0x10d9be[_0x2f0fae(0x232)]()[_0x2f0fae(0x23c)]()[_0x2f0fae(0x22b)]();this['_tabMetas'][_0x2f0fae(0x206)](_0x50baef=>_0x50baef?_0x50baef[_0x2f0fae(0x26d)](_0x3b5de6):null);}});const _0x418ca7=$(_0x1355ec(0x26b))[_0x1355ec(0x27a)](()=>Changelog[_0x1355ec(0x2b6)]());$$`<div class="flex-col w-100 h-100">
-				<div class="w-100 p-1 no-shrink cfg__wrp-search flex-v-center">
-					${_0x10d9be}
-					${_0x418ca7}
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {Util, LGT} from "./Util.js";
+import {UtilApplications} from "./UtilApplications.js";
+import {ConfigConsts} from "./ConfigConsts.js";
+import {UtilCompat} from "./UtilCompat.js";
+import {UtilGameSettings} from "./UtilGameSettings.js";
+import {UtilHooks} from "./UtilHooks.js";
+import {UtilKeybinding} from "./UtilKeybinding.js";
+
+class ModuleSettingsStub extends FormApplication {
+	static get defaultOptions () {
+		return foundry.utils.mergeObject(super.defaultOptions, {
+			title: `Opening...`,
+			template: `${SharedConsts.MODULE_LOCATION}/template/_GenericForm.hbs`,
+			width: 100,
+			height: 100,
+		});
+	}
+
+	/** Defer to the main config app */
+	async render (...args) {
+		const out = await super.render(...args);
+		setTimeout(async () => {
+			Config.pHandleButtonClick();
+			await this.close();
+		}, 30);
+		return out;
+	}
+
+	_onSubmit () { /* No-op */ }
+	_updateObject () { /* No-op */ }
+}
+
+class Config extends Application {
+	// region API
+	static api_getWikiSummary () {
+		return this._getWikiSummary();
+	}
+
+	static api_getWikiSummaryMarkdown () {
+		return this._getWikiSummaryMarkdown();
+	}
+	// endregion
+
+	static _IS_INIT = false;
+
+	static get backendEndpoint () { return ROUTE_PREFIX ? `/${ROUTE_PREFIX}/api/plutonium` : "/api/plutonium"; }
+	static get isInit () { return this._IS_INIT; }
+
+	static prePreInit () {
+		this._preInit_registerKeybinds();
+	}
+
+	static _preInit_registerKeybinds () {
+		game.keybindings.register(
+			SharedConsts.MODULE_NAME,
+			"Config__open",
+			{
+				name: "Open Config",
+				editable: [],
+				onDown: () => {
+					this._pOpen();
+					return true;
+				},
+			},
+		);
+
+		game.keybindings.register(
+			SharedConsts.MODULE_NAME,
+			"Config__setRivetTargetForCharacter",
+			{
+				name: "Set Player Character as Rivet Target",
+				editable: [],
+				onDown: () => {
+					const actor = UtilKeybinding.getPlayerActor({minRole: Config.get("import", "minimumRole")});
+					if (!actor) return true;
+					Config.setRivetTargetActor(actor);
+					return true;
+				},
+			},
+		);
+
+		game.keybindings.register(
+			SharedConsts.MODULE_NAME,
+			"Config__setRivetTargetForCurrentSheet",
+			{
+				name: "Set Current Sheet as Rivet Target",
+				editable: [],
+				onDown: () => {
+					const meta = UtilKeybinding.getCurrentImportableSheetDocumentMeta({isRequireActor: true, isRequireOwnership: true, minRole: Config.get("import", "minimumRole")});
+					if (!meta?.actor) return true;
+					Config.setRivetTargetActor(meta.actor);
+					return true;
+				},
+			},
+		);
+
+		game.keybindings.register(
+			SharedConsts.MODULE_NAME,
+			"Config__setRivetTargetForCurrentToken",
+			{
+				name: "Set Current Token as Rivet Target",
+				editable: [],
+				onDown: () => {
+					const actor = UtilKeybinding.getCurrentSelectedTokenActor({isRequireOwnership: true, minRole: Config.get("import", "minimumRole")});
+					if (!actor) return true;
+					Config.setRivetTargetActor(actor);
+					return true;
+				},
+			},
+		);
+
+		game.keybindings.register(
+			SharedConsts.MODULE_NAME,
+			"Config__clearRivetTarget",
+			{
+				name: "Clear Rivet Target",
+				editable: [],
+				onDown: () => {
+					Config.setRivetTargetActor(null);
+					return true;
+				},
+			},
+		);
+
+		game.keybindings.register(
+			SharedConsts.MODULE_NAME,
+			"Config__openBugReportForm",
+			{
+				name: "Report Bug",
+				editable: [],
+				onDown: () => {
+					Config._doShowBugReportForm();
+					return true;
+				},
+			},
+		);
+	}
+
+	static async pInit () {
+		await this._pInit_pRegisterSettings();
+
+		let loadedConfig = UtilGameSettings.getSafe(SharedConsts.MODULE_NAME, Config._SETTINGS_KEY);
+
+		if (loadedConfig == null || !Object.keys(loadedConfig).length) Config._CONFIG = Config._getDefaultGmConfig();
+		else {
+			Config._CONFIG = loadedConfig;
+			const anyMods = this._populateMissingConfigValues(Config._CONFIG, {isPlayer: false});
+			if (anyMods) Config._saveConfigDebounced();
+		}
+
+		// region Socket handling
+		game.socket.on(this._SOCKET_ID, data => {
+			switch (data.type) {
+				case "config.update": {
+					const receivedConfig = data.config;
+
+					const old = MiscUtil.copy(Config._CONFIG);
+
+					Object.assign(Config._CONFIG, receivedConfig);
+
+					if (!game.user.isGM && this._INSTANCE) this._INSTANCE._handleGmConfigUpdate(receivedConfig);
+
+					UtilHooks.callAll(
+						UtilHooks.HK_CONFIG_UPDATE,
+						{
+							previous: old,
+							current: MiscUtil.copy(Config._CONFIG),
+						},
+					);
+
+					break;
+				}
+			}
+		});
+		// endregion
+
+		// region Player override
+		if (!game.user.isGM) {
+			const loadedConfigPlayer = await StorageUtil.pGet(Config._CLIENT_SETTINGS_KEY);
+			if (loadedConfigPlayer == null) Config._CONFIG_PLAYER = Config._getDefaultPlayerConfig();
+			else {
+				Config._CONFIG_PLAYER = loadedConfigPlayer;
+				const anyMods = this._populateMissingConfigValues(Config._CONFIG_PLAYER, {isPlayer: true});
+				if (anyMods) Config._saveConfigDebounced();
+			}
+		}
+		// endregion
+
+		// region Module compatibility overrides
+		this._pInit_initCompatibilityTempOverrides();
+		// endregion
+
+		// region Backend check
+		if (!Config.get("misc", "isSkipBackendCheck")) {
+			fetch(
+				Config.backendEndpoint,
+				{
+					method: "post",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						type: "getVersion",
+					}),
+				},
+			)
+				.then(resp => resp.json())
+				.then(json => {
+					Config._GET_BACKEND_VERSION_RESOLVE(json.version);
+					console.log(...LGT, `Compatible Plutonium backend (v${json.version}) detected.`);
+					UtilHooks.callAll(UtilHooks.HK_CONFIG_UPDATE);
+				})
+				.catch(() => {
+					Config._GET_BACKEND_VERSION_RESOLVE(false);
+					console.warn(...LGT, `Plutonium backend not detected. Some features may be unavailable. If you have not attempted to install the backend mod (see: the module README), please ignore the above 404. Alternatively, you can disable the backend check in the config.`);
+					UtilHooks.callAll(UtilHooks.HK_CONFIG_UPDATE);
+				});
+		} else {
+			Config._GET_BACKEND_VERSION_RESOLVE(false);
+			console.log(...LGT, `Plutonium backend detected was skipped. Some features may be unavailable.`);
+		}
+		// endregion
+
+		// Add a fake config button to the module settings tab
+		game.settings.registerMenu(SharedConsts.MODULE_NAME, "stub", {
+			label: "Open Config Editor",
+			icon: "fas fa-fw fa-cogs",
+			type: ModuleSettingsStub,
+		});
+		// endregion
+
+		this._IS_INIT = true;
+	}
+
+	static _pInit_initCompatibilityTempOverrides () {
+		ConfigConsts.getDefaultConfigSortedFlat_()
+			.forEach(([groupKey, allGroupSettings]) => {
+				Object.entries(allGroupSettings)
+					.forEach(([key, meta]) => {
+						if (!meta.compatibilityModeValues) return;
+
+						// This is a `.find` so we only apply the first compatibility value, regardless of how many
+						//   incompatible modules are loaded.
+						Object.entries(meta.compatibilityModeValues)
+							.find(([moduleId, compatibilityValueRaw]) => {
+								const compatibilityValue = meta.type === "enum" ? this._getEnumValueValue(compatibilityValueRaw) : compatibilityValueRaw;
+								const compatibilityValueDisplay = meta.type === "enum" ? compatibilityValueRaw.name || compatibilityValue : compatibilityValue;
+
+								if (!UtilCompat.isModuleActive(moduleId)) return false;
+
+								// Only log if we actually made a change
+								const isLog = !CollectionUtil.deepEquals(compatibilityValue, Config.get(groupKey, key));
+
+								Config.setTemp(groupKey, key, compatibilityValue, {isSkipPermissionCheck: true});
+								if (isLog) {
+									console.warn(...LGT, `${game.modules.get(moduleId).data.title} detected! Setting compatibility config: ${groupKey}.${key} = ${compatibilityValueDisplay != null ? JSON.stringify(compatibilityValueDisplay) : compatibilityValueDisplay}. If you encounter unexpected issues, consider disabling either module.`);
+								}
+							});
+					});
+			});
+	}
+
+	static async _pInit_pRegisterSettings () {
+		await game.settings.register(
+			SharedConsts.MODULE_NAME,
+			Config._SETTINGS_KEY,
+			{
+				name: "Config",
+				default: {},
+				type: Object,
+				scope: "world",
+				onChange: data => {
+					// No-op; the change will be received/handled as a socket message
+				},
+			},
+		);
+	}
+
+	/**
+	 * @param CONFIG
+	 * @param [opts]
+	 * @param [opts.isPlayer]
+	 */
+	static _populateMissingConfigValues (CONFIG, opts) {
+		opts = opts || {};
+		const isPlayer = !!opts.isPlayer;
+
+		let anyMods = false;
+
+		// Update the loaded config with any extra defaults it does not track
+		Object.entries(this._getDefaultConfig({isPlayer}))
+			.forEach(([groupKey, groupVals]) => {
+				// Add any missing groups
+				if (!CONFIG[groupKey]) {
+					CONFIG[groupKey] = groupVals;
+					anyMods = true;
+				} else {
+					// Add any missing properties to existing groups
+					Object.entries(groupVals).forEach(([k, v]) => {
+						if (CONFIG[groupKey][k] === undefined) {
+							CONFIG[groupKey][k] = v;
+							anyMods = true;
+						}
+					});
+				}
+			});
+
+		return anyMods;
+	}
+
+	/**
+	 * @param [opts]
+	 * @param [opts.isGameSettingsButton]
+	 */
+	static $getDirButton (opts) {
+		opts = opts || {};
+
+		const text = `Configure ${Config.get("ui", "isStreamerMode") ? "SRD Module" : "Plutonium"}`;
+
+		return $(`<button class="mx-0 ${opts.isGameSettingsButton ? `cfg__btn-open-alt` : "w-initial"}" ${opts.isGameSettingsButton ? `` : `title="${text}"`}><span class="fas fa-fw fa-cogs"></span>${opts.isGameSettingsButton ? ` ${text}` : ``}</button>`)
+			.click(evt => this.pHandleButtonClick(evt));
+	}
+
+	static pHandleButtonClick (evt, initialVisibleGroup) {
+		if (evt) evt.preventDefault();
+
+		return this._pOpen({initialVisibleGroup});
+	}
+
+	static _pOpen ({initialVisibleGroup = null} = {}) {
+		if (Config._INSTANCE) {
+			Config._INSTANCE.render(true);
+			Config._INSTANCE.maximize();
+			UtilApplications.bringToFront(Config._INSTANCE);
+			if (initialVisibleGroup) Config._INSTANCE._setVisibleGroup(initialVisibleGroup);
+			return;
+		}
+
+		Config._INSTANCE = new Config({initialVisibleGroup});
+		Config._INSTANCE.render(true);
+	}
+
+	static _getDefaultGmConfig () { return this._getDefaultConfig({isPlayer: false}); }
+	static _getDefaultPlayerConfig () { return this._getDefaultConfig({isPlayer: true}); }
+
+	/**
+	 * @param [opts]
+	 * @param [opts.isPlayer]
+	 */
+	static _getDefaultConfig (opts) {
+		opts = opts || {};
+		const isPlayer = opts.isPlayer;
+
+		const defaultTemplate = MiscUtil.copy(ConfigConsts.getDefaultConfigSorted_());
+		const out = {};
+
+		defaultTemplate
+			.forEach(([groupKey, groupVals]) => {
+				const group = (out[groupKey] = {});
+
+				const assignDefaults = settings => Object.entries(settings).forEach(([k, meta]) => {
+					if (isPlayer) {
+						// Default all player versions to "null", which will pass them through to the underlying GM config
+						if (meta.isPlayerEditable) group[k] = null;
+					} else group[k] = meta.default;
+				});
+
+				if (groupVals.settings) assignDefaults(groupVals.settings);
+				if (groupVals.settingsHacks) assignDefaults(groupVals.settingsHacks);
+				if (groupVals.settingsAdvanced) assignDefaults(groupVals.settingsAdvanced);
+			});
+
+		return out;
+	}
+
+	static _isPlayerEditable (group, key) {
+		const meta = this._is_getKeyMeta(group, key);
+		return !!meta?.isPlayerEditable;
+	}
+
+	static _isNullable (group, key) {
+		const meta = this._is_getKeyMeta(group, key);
+		return !!meta?.isNullable;
+	}
+
+	static _is_getKeyMeta (groupKey, key) {
+		return ConfigConsts.getDefaultConfigSortedFlat_()
+			.find(([groupKey_]) => groupKey_ === groupKey)[1][key];
+	}
+
+	static set (group, key, val) {
+		if (!this._isCanSetConfig(group, key)) return;
+
+		const prevVal = Config.get(group, key);
+
+		const TARGET = game.user.isGM ? Config._CONFIG : Config._CONFIG_PLAYER;
+		(TARGET[group] = TARGET[group] || {})[key] = val;
+		Config._saveConfigDebounced();
+
+		this._fireConfigUpdateHook(group, key, prevVal, val);
+	}
+
+	static setTemp (group, key, val, {isSkipPermissionCheck = false} = {}) {
+		// Allow the "permission" check to be skipped, as some config options need to be hard-set early/without syncing a
+		//   GMs config, to avoid e.g. module incompatibilities.
+		if (!isSkipPermissionCheck && !this._isCanSetConfig(group, key)) return;
+
+		const prevVal = Config.get(group, key);
+
+		(Config._CONFIG_TEMP[group] = Config._CONFIG_TEMP[group] || {})[key] = val;
+
+		this._fireConfigUpdateHook(group, key, prevVal, val);
+	}
+
+	static setRivetTargetActor (actor) {
+		if (!actor) {
+			ui.notifications.info(`Cleared Rivet import target. Rivet will now import to an appropriate directory.`);
+			Config.set("rivet", "targetActorId", null);
+			return;
+		}
+
+		// For synthetic actors, use the full "scene -> token" UUID
+		const actorId = actor.isToken ? actor.uuid : actor.id;
+
+		Config.set("rivet", "targetActorId", actorId);
+		ui.notifications.info(`Set Rivet import target. Rivet will now import to Actor "${actor.name}" (${actorId}). This can be changed in the Config.`);
+	}
+
+	static _fireConfigUpdateHook (group, key, oldVal, newVal) {
+		UtilHooks.callAll(
+			UtilHooks.HK_CONFIG_UPDATE,
+			{
+				previous: {
+					[group]: {
+						[key]: oldVal,
+					},
+				},
+				current: {
+					[group]: {
+						[key]: newVal,
+					},
+				},
+			},
+		);
+	}
+
+	static _isCanSetConfig (group, key) { return game.user.isGM || this._isPlayerEditable(group, key); }
+
+	static async _pSaveConfig () {
+		if (game.user.isGM) {
+			await game.settings.set(SharedConsts.MODULE_NAME, Config._SETTINGS_KEY, MiscUtil.copy(Config._CONFIG));
+
+			// If the GM changes the config, notify other connected instances
+			//   Directly send a copy of our config, as opposed to allowing it to save to world settings. This wastes
+			//   more bandwidth, but *should* be more reliable as it does not have to rely on timing-based hacks
+			const data = {
+				type: "config.update",
+				config: MiscUtil.copy(this._CONFIG),
+			};
+
+			game.socket.emit(Config._SOCKET_ID, data);
+		} else {
+			await StorageUtil.pSet(Config._CLIENT_SETTINGS_KEY, MiscUtil.copy(Config._CONFIG_PLAYER));
+		}
+	}
+
+	static get (group, key) {
+		// Avoid fancy "is nullable" checking here, as temp values should be up-to-date with the current schema
+		if (Config._CONFIG_TEMP[group]?.[key] !== undefined) return Config._CONFIG_TEMP[group][key];
+
+		if (!game.user.isGM && this._isPlayerEditable(group, key)) {
+			const playerValue = (Config._CONFIG_PLAYER[group] || {})[key];
+
+			if ((this._isNullable(group, key) && playerValue === null) || playerValue != null) return this._get_getValidValue(group, key, playerValue);
+		}
+
+		const out = (Config._CONFIG[group] || {})[key];
+		return this._get_getValidValue(group, key, out);
+	}
+
+	static _get_getValidValue (groupKey, key, value) {
+		const meta = ConfigConsts.getDefaultConfigSortedFlat_()
+			.find(([groupKey_]) => groupKey_ === groupKey)[1][key];
+
+		if (meta.type !== "enum") return value;
+
+		if (meta.isNullable && value == null) return value;
+
+		// If the value isn't one we allow, return a default value
+		const enumValues = this._getEnumValues(meta);
+		if (value == null || !enumValues.some(it => (it.value ?? it) === value)) return meta.default ?? (enumValues[0].value ?? enumValues[0]);
+		return value;
+	}
+
+	static _getDisplayLabels (group, key) {
+		const defaultConfig = ConfigConsts.getDefaultConfig_();
+
+		const displayGroup = defaultConfig[group]?.name;
+		const displayKey = defaultConfig[group]?.settings?.[key]?.name
+			|| defaultConfig[group]?.settingsAdvanced?.[key]?.name
+			|| defaultConfig[group]?.settingsHacks?.[key]?.name;
+		return {displayGroup, displayKey};
+	}
+
+	static handleFailedInitConfigApplication (group, key, error) {
+		const {displayGroup, displayKey} = Config._getDisplayLabels(group, key);
+		ui.notifications.error(`Failed to apply Config "${displayKey}" -> "${displayGroup}" during initial load! ${VeCt.STR_SEE_CONSOLE}`);
+		if (error) console.error(...LGT, error);
+	}
+
+	/**
+	 *
+	 * @param [opts]
+	 * @param [opts.initialVisibleGroup]
+	 */
+	constructor (opts) {
+		opts = opts || {};
+
+		super({
+			width: 720,
+			height: Util.getMaxWindowHeight(),
+			title: "Config Editor",
+			template: `${SharedConsts.MODULE_LOCATION}/template/Config.hbs`,
+			resizable: true,
+		});
+
+		this._ixActiveTab = null;
+		this._tabMetas = null;
+		this._fnsHandleUpdate = {};
+
+		if (opts.initialVisibleGroup) {
+			const ix = ConfigConsts.getDefaultConfigSorted_().findIndex(([groupKey]) => groupKey === opts.initialVisibleGroup);
+			if (!~ix) throw new Error(`Could not find config group "${opts.initialVisibleGroup}"`);
+			this._ixActiveTab = ix;
+		}
+
+		this._DRAFT_GM = null;
+		this._DRAFT_PLAYER = null;
+
+		Config._INSTANCE = this;
+	}
+
+	_addFnHandleUpdate (group, key, fn) {
+		const target = MiscUtil.getOrSet(this._fnsHandleUpdate, group, key, []);
+		target.push(fn);
+	}
+
+	_callFnsHandleUpdate (group, key) {
+		const fns = MiscUtil.get(this._fnsHandleUpdate, group, key);
+		(fns || []).forEach(fn => fn());
+	}
+
+	_setVisibleGroup (visibleGroup) {
+		const ix = ConfigConsts.getDefaultConfigSorted_().findIndex(([groupKey]) => groupKey === visibleGroup);
+		if (!~ix) throw new Error(`Could not find config group "${visibleGroup}"`);
+		this._setActiveTab(ix);
+	}
+
+	_$getBtnSave ({isClose, textSaving, textSaved, text, textFailed}) {
+		let tmtBtnSaveNotification = null;
+		const $btnSave = $(`<button class="btn btn-5et btn-default min-w-100p">${text}</button>`)
+			.click(async () => {
+				if ($btnSave.prop("disabled")) return;
+
+				clearTimeout(tmtBtnSaveNotification);
+
+				try {
+					$btnSave.prop("disabled", true).text(textSaving);
+
+					const TARGET = game.user.isGM ? Config._CONFIG : Config._CONFIG_PLAYER;
+					const DRAFT = game.user.isGM ? this._DRAFT_GM : this._DRAFT_PLAYER;
+
+					const old = MiscUtil.copy(TARGET);
+
+					Object.assign(TARGET, MiscUtil.copy(DRAFT));
+
+					await Config._pSaveConfig();
+
+					UtilHooks.callAll(
+						UtilHooks.HK_CONFIG_UPDATE,
+						{
+							previous: old,
+							current: MiscUtil.copy(TARGET),
+						},
+					);
+
+					$btnSave.text(textSaved).prop("disabled", false);
+					tmtBtnSaveNotification = setTimeout(() => $btnSave.text(text), VeCt.DUR_INLINE_NOTIFY);
+				} catch (e) {
+					$btnSave.text(textFailed);
+					tmtBtnSaveNotification = setTimeout(() => $btnSave.text(text).prop("disabled", false), VeCt.DUR_INLINE_NOTIFY * 2);
+				}
+
+				if (isClose) await this.close();
+			});
+
+		return $btnSave;
+	}
+
+	activateListeners ($html) {
+		super.activateListeners($html);
+		$html.empty();
+
+		(async () => {
+			if (this._ixActiveTab == null) this._ixActiveTab = await StorageUtil.pGet(Config._SETTINGS_KEY_LAST_ACTIVE_TAB);
+			if (this._ixActiveTab == null) this._ixActiveTab = 0;
+
+			this._DRAFT_GM = MiscUtil.copy(Config._CONFIG);
+			this._DRAFT_PLAYER = MiscUtil.copy(Config._CONFIG_PLAYER);
+
+			const isHideUnavailable = Config.get("ui", "isHideGmOnlyConfig");
+
+			this._tabMetas = ConfigConsts.getDefaultConfigSorted_()
+				.map(([groupKey, groupVals], i) => this._activateListeners_getTabMeta({
+					groupKey,
+					groupVals,
+					ixTab: i,
+					isHideUnavailable,
+				}));
+
+			const $btnApply = this._$getBtnSave({
+				textSaving: "Applying...",
+				textSaved: "Applied!",
+				textFailed: "Failed to apply",
+				text: "Apply",
+			});
+
+			const $btnSave = this._$getBtnSave({
+				isClose: true,
+				textSaving: "Saving...",
+				textSaved: "Saved!",
+				textFailed: "Failed to save",
+				text: "OK",
+			});
+
+			const $btnCancel = $(`<button class="btn btn-5et btn-default min-w-100p">Cancel</button>`)
+				.click(() => this.close());
+
+			const $iptSearch = $(`<input type="search" placeholder="Find setting..." class="input-xs form-control">`);
+			UiUtil.bindTypingEnd({
+				$ipt: $iptSearch,
+				fnKeyup: () => {
+					const searchVal = $iptSearch.val().toLowerCase().trim();
+					this._tabMetas.forEach(it => it ? it.cbSearch(searchVal) : null);
+				},
+			});
+
+			const $btnChangelog = $(`<button class="btn btn-5et btn-xs ml-1">Changelog</button>`)
+				.click(async () => {
+					const {Changelog} = await import("./Changelog.js");
+					Changelog.open();
+				});
+
+			const $btnReportBug = $(`<button class="btn btn-5et btn-xs ml-1"><i class="fas fa-bug"></i> Report a Bug</button>`)
+				.click(() => Config._doShowBugReportForm());
+
+			const $btnPatreon = $(`<a class="btn btn-5et btn-xs ml-1" href="https://www.patreon.com/Giddy5e" rel="noopener noreferrer"><i class="fab fa-patreon"></i> Become a Patron</a>`);
+
+			const $btnResetAll = $(`<button class="btn btn-5et btn-xs ml-1" title="Reset All Settings"><i class="fa fa-undo-alt"></i></button>`)
+				.click(async () => {
+					const isContinue = await InputUiUtil.pGetUserBoolean({
+						title: "Reset All",
+						htmlDescription: "Are you sure you want to reset all config settings?",
+						textNo: "Cancel",
+						textYes: "Continue",
+					});
+					if (!isContinue) return;
+
+					this._tabMetas.filter(Boolean).forEach(it => (it.fnsReset || []).forEach(fn => fn()));
+				});
+
+			$$`<div class="ve-flex-col w-100 h-100">
+				<div class="w-100 p-1 no-shrink cfg__wrp-search ve-flex-v-center">
+					${$iptSearch}
+					${this._activateListeners_$getWrpImportExport()}
+					${$btnChangelog}
+					${$btnReportBug}
+					${$btnPatreon}
+					${$btnResetAll}
 				</div>
 
-				<div class="flex w-100 h-100 min-h-0">
-					<div class="flex-col h-100 overflow-y-auto no-shrink cfg__wrp-tab-headers pb-1">
-						${this[_0x1355ec(0x2b8)]['map'](_0x10aaa5=>_0x10aaa5?_0x10aaa5[_0x1355ec(0x23f)]:null)}
+				<div class="ve-flex w-100 h-100 min-h-0">
+					<div class="ve-flex-col h-100 overflow-y-auto no-shrink cfg__wrp-tab-headers pb-1">
+						${this._tabMetas.map(it => it ? it.$tabHeader : null)}
 					</div>
 
 					<div class="w-100 h-100 overflow-y-auto p-2">
-						${this['_tabMetas'][_0x1355ec(0x233)](_0xdd98dd=>_0xdd98dd?_0xdd98dd[_0x1355ec(0x1ee)]:null)}
+						${this._tabMetas.map(it => it ? it.$tabBody : null)}
 					</div>
 				</div>
 
 				<div class="w-100 p-1 no-shrink cfg__wrp-save">
-					<div class="flex-h-right">
-						${_0x2064c7[_0x1355ec(0x221)](_0x1355ec(0x24e))}
-						${_0x3d2bf0[_0x1355ec(0x221)](_0x1355ec(0x24e))}
-						${_0x4e36d1[_0x1355ec(0x221)](_0x1355ec(0x20c))}
+					<div class="ve-flex-h-right">
+						${$btnSave.addClass("mr-2")}
+						${$btnCancel.addClass("mr-2")}
+						${$btnApply.addClass("mr-4")}
 					</div>
 				</div>
-			</div>`['appendTo'](_0x4a95f5);})();}[_0x4dbffd(0x234)]({DRAFT_GM:_0x1ab6df,DRAFT_PLAYER:_0x24e75d,groupKey:_0x4f0d57,groupVals:_0x1dd7ac,ixTab:_0x452c9a,isHideUnavailable:_0x2c5c52}){const _0x1033d2=_0x4dbffd,_0x490de5=$(_0x1033d2(0x1eb)),_0x155464=$$`<div class="relative cfg__btn-tab-header px-2 py-1 ml-1 mt-1 ${_0x452c9a===this[_0x1033d2(0x204)]?_0x1033d2(0x231):''}">
-				${_0x1dd7ac[_0x1033d2(0x2a6)][_0x1033d2(0x295)]()}
-				${_0x490de5}
-			</div>`['click'](()=>this[_0x1033d2(0x220)](_0x452c9a)),_0x4f8fa7=[],_0x4d9e7d=$(_0x1033d2(0x21c))[_0x1033d2(0x27a)](()=>_0x4f8fa7['forEach'](_0x25a185=>_0x25a185())),_0x58237d=_0x1f0d61=>{const _0x1f4d29=_0x1033d2;return Object[_0x1f4d29(0x240)](_0x1f0d61)[_0x1f4d29(0x233)](([_0x50be93,_0xf46a4c])=>{const _0x566a73=_0x1f4d29,_0x1f4486=Config['_isPlayerEditable'](_0x4f0d57,_0x50be93),_0x6a6cc7=!_0x1f4486&&!game[_0x566a73(0x2b4)][_0x566a73(0x260)],_0x631a70=Config[_0x566a73(0x2bb)](_0x4f0d57,_0x50be93),_0x550fbd=_0x631a70[_0x566a73(0x21d)]>0x0,_0x233be0=_0x6a6cc7||_0x550fbd;if(_0x2c5c52&&_0x6a6cc7)return;const _0x48f596=game[_0x566a73(0x2b4)][_0x566a73(0x260)]?_0x1ab6df:_0x24e75d,_0x29b20a=Config['get'](_0x4f0d57,_0x50be93);let _0x3f4180,_0x27aca2;switch(_0xf46a4c['type']){case _0x566a73(0x297):{_0x3f4180=$(_0x566a73(0x296))['prop']('checked',_0x29b20a)[_0x566a73(0x24d)](()=>{const _0x1cb8e4=_0x566a73;if(_0x233be0)return;_0x48f596[_0x4f0d57][_0x50be93]=_0x3f4180[_0x1cb8e4(0x255)]('checked');});if(_0xf46a4c['default']!==undefined)_0x4f8fa7['push'](()=>_0x3f4180[_0x566a73(0x255)](_0x566a73(0x1f6),_0xf46a4c[_0x566a73(0x284)])[_0x566a73(0x24d)]());if(_0x233be0)this[_0x566a73(0x1f8)]['push'](()=>_0x3f4180[_0x566a73(0x255)](_0x566a73(0x1f6),Config[_0x566a73(0x224)](_0x4f0d57,_0x50be93)));break;}case'enum':{const _0x19bb2f=typeof _0xf46a4c['values']==='function'?_0xf46a4c[_0x566a73(0x286)]():_0xf46a4c[_0x566a73(0x286)];_0x3f4180=$(_0x566a73(0x20a))[_0x566a73(0x24d)](()=>{const _0x5eb491=_0x566a73;if(_0x233be0)return;const _0x22c433=Number(_0x3f4180[_0x5eb491(0x232)]());if(~_0x22c433)_0x48f596[_0x4f0d57][_0x50be93]=_0x19bb2f[_0x22c433]['value']!==undefined?_0x19bb2f[_0x22c433][_0x5eb491(0x1ed)]:_0x19bb2f[_0x22c433];else{if(_0xf46a4c['isNullable'])_0x48f596[_0x4f0d57][_0x50be93]=null;else _0x48f596[_0x4f0d57][_0x50be93]=_0x19bb2f[0x0]['value']!==undefined?_0x19bb2f[0x0][_0x5eb491(0x1ed)]:_0x19bb2f[0x0];}_0x334bc7(_0x48f596[_0x4f0d57][_0x50be93]);});if(_0xf46a4c['isNullable'])_0x3f4180[_0x566a73(0x256)](_0x566a73(0x271));_0x19bb2f[_0x566a73(0x206)]((_0x303167,_0x5de105)=>$(_0x566a73(0x213),{'value':_0x5de105,'text':_0x303167[_0x566a73(0x2a6)]??_0x303167[_0x566a73(0x1ed)]??_0x303167})[_0x566a73(0x22f)](_0x303167[_0x566a73(0x293)])[_0x566a73(0x22d)](_0x3f4180));const _0x334bc7=_0x30f7ab=>{const _0x5a5749=_0x566a73;if(_0xf46a4c[_0x5a5749(0x267)]&&_0x30f7ab==null)_0x3f4180['val']('-1');else{if(_0x30f7ab!=null){const _0x3b4e06=_0x19bb2f[_0x5a5749(0x21b)](_0x8b9e98=>(_0x8b9e98['value']!==undefined?_0x8b9e98[_0x5a5749(0x1ed)]:_0x8b9e98)===_0x30f7ab);if(~_0x3b4e06)_0x3f4180[_0x5a5749(0x232)](''+_0x3b4e06);else _0x3f4180[_0x5a5749(0x232)]('0');}}};_0x334bc7(_0x29b20a);_0xf46a4c[_0x566a73(0x284)]!==undefined&&_0x4f8fa7[_0x566a73(0x26a)](()=>{const _0x1f3b05=_0x566a73,_0x426dd0=_0x19bb2f[_0x1f3b05(0x21b)](_0x231886=>(_0x231886['value']==null?_0x231886:_0x231886['value'])===_0xf46a4c[_0x1f3b05(0x284)]);_0x3f4180[_0x1f3b05(0x232)](''+_0x426dd0)[_0x1f3b05(0x24d)]();});if(_0x233be0)this[_0x566a73(0x1f8)][_0x566a73(0x26a)](()=>_0x334bc7(Config[_0x566a73(0x224)](_0x4f0d57,_0x50be93)));break;}case _0x566a73(0x290):{_0x3f4180=$(_0x566a73(0x280))[_0x566a73(0x232)](_0x29b20a)[_0x566a73(0x24d)](()=>{const _0x10c5cd=_0x566a73;if(_0x233be0)return;const _0x319640=_0x3f4180['val']()[_0x10c5cd(0x22b)]();!_0x319640&&!_0xf46a4c[_0x10c5cd(0x267)]?(_0x48f596[_0x4f0d57][_0x50be93]=_0xf46a4c[_0x10c5cd(0x284)],_0x3f4180['val'](_0xf46a4c[_0x10c5cd(0x284)])):_0x48f596[_0x4f0d57][_0x50be93]=_0x319640;});if(_0xf46a4c['default']!==undefined)_0x4f8fa7['push'](()=>_0x3f4180[_0x566a73(0x232)](_0xf46a4c['default'])[_0x566a73(0x24d)]());if(_0x233be0)this[_0x566a73(0x1f8)][_0x566a73(0x26a)](()=>_0x3f4180['val'](Config[_0x566a73(0x224)](_0x4f0d57,_0x50be93)));break;}case _0x566a73(0x262):{const _0x487a74=isNaN(_0x29b20a)?0x0:Number(_0x29b20a);_0x3f4180=$('<input\x20type=\x22text\x22\x20class=\x22cfg__ipt-number\x22>')[_0x566a73(0x232)](_0x487a74)[_0x566a73(0x24d)](()=>{const _0x8335ec=_0x566a73;if(_0x233be0)return;const _0x1b0d0c=_0x3f4180['val']()[_0x8335ec(0x22b)](),_0x5c95c8=_0xf46a4c[_0x8335ec(0x267)]?null:_0xf46a4c[_0x8335ec(0x284)],_0x109726={'fallbackOnNaN':_0x5c95c8};if(_0xf46a4c['min'])_0x109726['min']=_0xf46a4c['min'];if(_0xf46a4c[_0x8335ec(0x27f)])_0x109726[_0x8335ec(0x27f)]=_0xf46a4c[_0x8335ec(0x27f)];const _0x386d9d=UiUtil['strToNumber'](_0x1b0d0c,_0x5c95c8,_0x109726);_0x48f596[_0x4f0d57][_0x50be93]=_0x386d9d,_0x3f4180['val'](_0x386d9d);});if(_0xf46a4c[_0x566a73(0x284)]!==undefined)_0x4f8fa7[_0x566a73(0x26a)](()=>_0x3f4180[_0x566a73(0x232)](_0xf46a4c[_0x566a73(0x284)])[_0x566a73(0x24d)]());if(_0x233be0)this[_0x566a73(0x1f8)][_0x566a73(0x26a)](()=>_0x3f4180[_0x566a73(0x232)](Config[_0x566a73(0x224)](_0x4f0d57,_0x50be93)));break;}case'multipleChoice':{const _0x551bd6=[],_0x2f7665=[];_0x27aca2=()=>{const _0x234f49=_0x566a73;_0x551bd6[_0x234f49(0x206)](_0x2ece5e=>_0x2ece5e[_0x234f49(0x22f)](this['constructor'][_0x234f49(0x1f7)]({'isDisabledPlayer':_0x6a6cc7,'isDisabledCompatibility':_0x550fbd,'incompatibleModuleNames':_0x631a70}))),_0x2f7665[_0x234f49(0x206)](_0x2d7687=>_0x2d7687[_0x234f49(0x255)](_0x234f49(0x25d),!![]));};const _0x41b500=()=>{const _0x2d20fa=_0x566a73;_0x48f596[_0x4f0d57][_0x50be93]=_0x2f7665[_0x2d20fa(0x2b0)]((_0x3b23c5,_0x92ac56)=>({[_0x92ac56]:_0x3b23c5[_0x2d20fa(0x255)](_0x2d20fa(0x1f6))}));},_0x323e2f=_0xf46a4c[_0x566a73(0x209)][_0x566a73(0x233)]((_0x5d8d5b,_0x2e8a10)=>{const _0x51b422=_0x566a73,_0x1f09d4=$(_0x51b422(0x296))[_0x51b422(0x255)](_0x51b422(0x1f6),!!_0x29b20a[_0x2e8a10])[_0x51b422(0x24d)](()=>{if(_0x233be0)return;_0x41b500();});_0x2f7665[_0x51b422(0x26a)](_0x1f09d4);if(_0x233be0)this['_fnsHandleUpdate'][_0x51b422(0x26a)](()=>_0x3f4180[_0x51b422(0x255)](_0x51b422(0x1f6),!!Config[_0x51b422(0x224)](_0x4f0d57,_0x50be93)[_0x2e8a10]));const _0x1651a6=$$`<label class="split-v-center m-0 stripe-even py-1">
-									<div class="ve-small">${_0x5d8d5b[_0x51b422(0x295)]()}</div>
-									${_0x1f09d4}
-								</label>`;return _0x551bd6[_0x51b422(0x26a)](_0x1651a6),_0x1651a6;});_0xf46a4c[_0x566a73(0x284)]!==undefined&&_0x4f8fa7[_0x566a73(0x26a)](()=>{const _0xe69cd6=_0x566a73;_0x2f7665[_0xe69cd6(0x206)]((_0x5688ed,_0x20280b)=>{const _0x41a5da=_0xe69cd6;_0x5688ed[_0x41a5da(0x255)]('checked',!!_0xf46a4c['default'][_0x20280b]);}),_0x41b500();});_0x3f4180=$$`<div class="flex-col cfg__wrp-multi-choice w-100">${_0x323e2f}</div>`;break;}case'arrayStringShort':{const _0x286ef0=_0x29b20a instanceof Array?MiscUtil['copy'](_0x29b20a):[],_0x1dd3b1=BaseComponent[_0x566a73(0x27c)]({'values':_0x286ef0},_0x566a73(0x286));_0x3f4180=ComponentUiUtil[_0x566a73(0x235)](_0x1dd3b1,_0x566a73(0x286),{'isCaseInsensitive':!![]})['addClass'](_0x566a73(0x212)),_0x1dd3b1['_addHookBase'](_0x566a73(0x286),()=>{const _0xb3afba=_0x566a73;_0x48f596[_0x4f0d57][_0x50be93]=_0x1dd3b1[_0xb3afba(0x1f3)]['values'];});if(_0xf46a4c[_0x566a73(0x284)]!==undefined)_0x4f8fa7['push'](()=>_0x1dd3b1[_0x566a73(0x1f3)][_0x566a73(0x286)]=[..._0xf46a4c['default']]);if(_0x233be0)this[_0x566a73(0x1f8)][_0x566a73(0x26a)](()=>_0x1dd3b1['_state'][_0x566a73(0x286)]=[...Config['get'](_0x4f0d57,_0x50be93)||[]]);break;}default:throw new Error('Unhandled\x20type\x20\x22'+_0xf46a4c[_0x566a73(0x251)]+'\x22');}if(_0x233be0){if(_0x27aca2)_0x27aca2();else _0x3f4180[_0x566a73(0x255)](_0x566a73(0x25d),!![])[_0x566a73(0x22f)](this[_0x566a73(0x207)]['_getIsDisabledMessage']({'isDisabledPlayer':_0x6a6cc7,'isDisabledCompatibility':_0x550fbd,'incompatibleModuleNames':_0x631a70}));}const _0x23c935=$$`<label class="split-v-center py-1 cfg__row" title="${_0xf46a4c[_0x566a73(0x293)][_0x566a73(0x295)]()}">
-						<div>${_0xf46a4c[_0x566a73(0x2a6)][_0x566a73(0x295)]()}${_0x1f4486&&game[_0x566a73(0x2b4)][_0x566a73(0x260)]?_0x566a73(0x241):''}${_0xf46a4c[_0x566a73(0x26f)]?_0x566a73(0x276):''}</div>${_0x3f4180}
-					</label>`,_0x155154=[_0xf46a4c[_0x566a73(0x293)],_0xf46a4c['name']][_0x566a73(0x22a)](Boolean)[_0x566a73(0x257)]('\x20--\x20')[_0x566a73(0x23c)]()[_0x566a73(0x22b)](),_0xa166c6=_0x2973ab=>{const _0x5357ca=_0x566a73,_0x42a305=!_0x155154['includes'](_0x2973ab);return _0x23c935['toggleClass'](_0x5357ca(0x277),_0x42a305),_0x42a305;};return{'$row':_0x23c935,'cbSearch':_0xa166c6};})['filter'](Boolean);};let _0x4509b4=_0x1dd7ac['settings']?_0x58237d(_0x1dd7ac[_0x1033d2(0x285)]):null;if(_0x4509b4&&!_0x4509b4['length'])_0x4509b4=null;let _0x437add=_0x1dd7ac['settingsHacks']?_0x58237d(_0x1dd7ac[_0x1033d2(0x283)]):null;if(_0x437add&&!_0x437add[_0x1033d2(0x21d)])_0x437add=null;let _0x48a384=_0x1dd7ac['settingsAdvanced']?_0x58237d(_0x1dd7ac[_0x1033d2(0x2ae)]):null;if(_0x48a384&&!_0x48a384[_0x1033d2(0x21d)])_0x48a384=null;if(!_0x4509b4&&!_0x437add&&!_0x48a384)return null;const _0x179be0=$$`<div class="flex-col h-100 w-100 ${_0x452c9a===this[_0x1033d2(0x204)]?'':'ve-hidden'}">
-		<div class="flex-v-center">
-			${_0x4d9e7d}
+			</div>`.appendTo($html);
+		})();
+	}
+
+	static _doShowBugReportForm () {
+		new class TempApplication extends Application {
+			constructor () {
+				super({
+					title: "Report a Bug",
+					template: `${SharedConsts.MODULE_LOCATION}/template/_Generic.hbs`,
+					width: 800,
+					height: 600,
+					resizable: true,
+				});
+			}
+
+			activateListeners ($html) {
+				const $btnCopy = $(`<button name="btn-copy" class="btn btn-5et btn-xs">Copy to Clipboard</button>`)
+					.click(async () => {
+						await MiscUtil.pCopyTextToClipboard($iptReport.val());
+						JqueryUtil.showCopiedEffect($btnCopy);
+					});
+
+				const $iptReport = $(`<textarea name="ipt-report mb-3" class="w-100 h-100"></textarea>`);
+
+				Config.P_GET_BACKEND_VERSION.then(ver => {
+					$iptReport
+						.val(`**Support Request**
+
+**Issue Description**: PLEASE FILL, e.g. "When I import a goblin, my game crashes"
+**Environment/OS**: PLEASE FILL, e.g. "Self hosted on Windows"/"The Forge"/etc.
+**Browser Extensions**: FILL IF RELEVANT, e.g. "Beyond20"
+
+**Reproduction Steps**: PLEASE FILL, e.g. "1) Create a new actor compendium; 2) Import a goblin to that compendium"
+
+**Console Log**: PLEASE FILL [${VeCt.STR_SEE_CONSOLE}]
+
+---
+
+**Browser**: ${navigator.userAgent}
+**Backend installed**: ${ver}
+**Foundry & DND system Version**: Foundry ${game.version}, ${game.data.system.id} ${game.data.system.data.version}
+**Modules Installed**:
+${[...game.modules].filter(([, data]) => data.active).map(([, data]) => `${data.id}==${data.data?.version}`).sort(SortUtil.ascSortLower).join("\n")}
+`);
+				});
+
+				$$`<p>Please copy and fill out the following form, and post the result in our <a href="https://discord.gg/nGvRCDs" target="_blank" rel="noopener noreferrer">Discord</a> (<span class="code">#plutonium-or-rivet-issues</span> channel):</p>
+					<div class="ve-flex-h-right mb-2">${$btnCopy}</div>
+					${$iptReport}`.appendTo($html);
+			}
+		}().render(true);
+	}
+
+	_activateListeners_$getWrpImportExport () {
+		if (!game.user.isGM) return null;
+
+		const $btnExport = $(`<button class="btn btn-5et btn-xs"><i class="fas fa-file-export fa-fw"></i> Export Config</button>`)
+			.click(() => {
+				DataUtil.userDownload(
+					`${SharedConsts.MODULE_NAME}-config`,
+					{
+						config: MiscUtil.copy(this.constructor._CONFIG),
+					},
+					{
+						propVersion: "moduleVersion",
+						fileType: "config",
+						valVersion: game.modules.get(SharedConsts.MODULE_NAME).data.version,
+					},
+				);
+			});
+
+		const $btnImport = $(`<button class="btn btn-5et btn-xs"><i class="fas fa-file-import fa-fw"></i> Import Config</button>`)
+			.click(async () => {
+				const {jsons, errors} = await DataUtil.pUserUpload({
+					expectedFileType: "config",
+					propVersion: "moduleVersion",
+				});
+
+				DataUtil.doHandleFileLoadErrorsGeneric(errors);
+
+				if (!jsons?.length) return;
+
+				const config = jsons[0]?.config;
+				if (!config) return ui.notifications.warn(`Could not find exported config in file!`);
+
+				this.constructor._populateMissingConfigValues(config, {isPlayer: false});
+
+				const old = MiscUtil.copy(Config._CONFIG);
+
+				this._handleGmConfigUpdate(config);
+
+				await Config._pSaveConfig();
+
+				UtilHooks.callAll(
+					UtilHooks.HK_CONFIG_UPDATE,
+					{
+						previous: old,
+						current: MiscUtil.copy(Config._CONFIG),
+					},
+				);
+
+				ui.notifications.info(`Config applied!`);
+			});
+
+		return $$`<div class="btn-group ml-1 ve-flex-vh-center">
+			${$btnExport}
+			${$btnImport}
+		</div>`;
+	}
+
+	_activateListeners_getTabMeta ({groupKey, groupVals, ixTab, isHideUnavailable}) {
+		const $dispResultCount = $(`<div class="cfg__disp-row-count-tab-header ve-hidden ve-flex-vh-center"></div>`);
+
+		const $tabHeader = $$`<div class="relative cfg__btn-tab-header px-2 py-1 ml-1 mt-1 ${ixTab === this._ixActiveTab ? "cfg__btn-tab-header--active" : ""}">
+				${groupVals.name.escapeQuotes()}
+				${$dispResultCount}
+			</div>`
+			.click(() => this._setActiveTab(ixTab));
+
+		const fnsReset = [];
+
+		const $btnResetTab = $(`<button class="btn btn-xs ml-auto" title="Reset Settings for This Tab"><i class="fa fa-undo-alt"></i></button>`)
+			.click(() => fnsReset.forEach(it => it()));
+
+		const getRowMeta = settings => {
+			return Object.entries(settings)
+				.map(([k, meta]) => {
+					if (meta.default === undefined) throw new Error(`No "default" config value exists for "${groupKey}.${k}"! This is a bug!`);
+
+					const isPlayerEditable = Config._isPlayerEditable(groupKey, k);
+					const isDisabledPlayer = !isPlayerEditable && !game.user.isGM;
+					const incompatibleModuleNames = Config._getIncompatibleModuleIds(groupKey, k);
+					const isDisabledCompatibility = incompatibleModuleNames.length > 0;
+					const isDisabled = isDisabledPlayer || isDisabledCompatibility;
+
+					if (isHideUnavailable && isDisabledPlayer) return;
+
+					const DRAFT = game.user.isGM ? this._DRAFT_GM : this._DRAFT_PLAYER;
+
+					const current = Config.get(groupKey, k);
+
+					const $btnResetRow = $(`<button class="btn btn-xxs ml-1 cfg__btn-reset-row" title="Reset"><i class="fa fa-undo-alt"></i></button>`)
+						.click(evt => {
+							evt.stopPropagation();
+							evt.preventDefault();
+							fnReset();
+						});
+					let cbIsDefault = () => $btnResetRow.toggleClass("ve-muted", CollectionUtil.deepEquals(DRAFT[groupKey][k], meta.default));
+					cbIsDefault();
+
+					let $ele,
+						fnDisable, // Allow the "disable this setting" function to be overridden
+						fnReset;
+					let isLabel = true;
+					switch (meta.type) {
+						case "boolean": {
+							$ele = $(`<input type="checkbox">`)
+								.change(() => {
+									if (isDisabled) return;
+
+									DRAFT[groupKey][k] = $ele.prop("checked");
+									doUpdate(DRAFT[groupKey][k]);
+								});
+
+							const doUpdate = (val) => {
+								$ele.prop("checked", val);
+								cbIsDefault();
+							};
+
+							doUpdate(current);
+
+							fnReset = () => $ele.prop("checked", meta.default).change();
+							this._addFnHandleUpdate(groupKey, k, () => doUpdate(Config.get(groupKey, k)));
+
+							break;
+						}
+
+						case "enum": {
+							const values = this.constructor._getEnumValues(meta);
+
+							$ele = $(`<select class="w-100"></select>`)
+								.change(() => {
+									if (isDisabled) return;
+
+									const ixSel = Number($ele.val());
+									if (~ixSel) {
+										DRAFT[groupKey][k] = this.constructor._getEnumValueValue(values[ixSel]);
+									} else {
+										if (meta.isNullable) DRAFT[groupKey][k] = null;
+										else DRAFT[groupKey][k] = this.constructor._getEnumValueValue(values[0]);
+									}
+									// Ensure the select displays whatever we chose to set as our update
+									doUpdate(DRAFT[groupKey][k]);
+								});
+
+							if (meta.isNullable) $ele.append(`<option value="-1">(None)</option>`);
+							values.forEach((it, i) => $(`<option/>`, {value: i, text: it.name ?? it.value ?? it}).title(it.help).appendTo($ele));
+
+							const doUpdate = (val) => {
+								if (meta.isNullable && val == null) $ele.val("-1");
+								else if (val != null) {
+									const ixCurrent = values.findIndex(it => this.constructor._getEnumValueValue(it) === val);
+									if (~ixCurrent) $ele.val(`${ixCurrent}`);
+									else $ele.val("0");
+								}
+								cbIsDefault();
+							};
+
+							doUpdate(current);
+
+							fnReset = () => {
+								const ixDefault = values.findIndex(it => (it.value == null ? it : it.value) === meta.default);
+								$ele.val(`${ixDefault}`).change();
+							};
+							this._addFnHandleUpdate(groupKey, k, () => doUpdate(Config.get(groupKey, k)));
+
+							break;
+						}
+
+						case "string":
+						case "url":
+						case "color": {
+							const iptType = meta.type === "color" ? "color" : "text";
+
+							$ele = $(`<input type="${iptType}" class="w-100">`)
+								.placeholder(meta.placeholder)
+								.change(() => {
+									if (isDisabled) return;
+
+									const val = $ele.val().trim();
+									if (!val && !meta.isNullable) {
+										DRAFT[groupKey][k] = meta.default;
+										$ele.val(meta.default);
+									} else {
+										DRAFT[groupKey][k] = (meta.isNullable && !val) ? null : val;
+									}
+
+									doUpdate(DRAFT[groupKey][k]);
+								});
+
+							const doUpdate = (val) => {
+								$ele.val(val);
+								cbIsDefault();
+							};
+
+							doUpdate(current);
+
+							fnReset = () => $ele.val(meta.default).change();
+							this._addFnHandleUpdate(groupKey, k, () => doUpdate(Config.get(groupKey, k)));
+
+							break;
+						}
+
+						case "percentage":
+						case "number": { // Note that this is _not_ "integer"
+							const cur = (current == null || isNaN(current)) ? meta.default : Number(current);
+
+							$ele = $(`<input type="text" class="w-100 text-right">`)
+								.placeholder(meta.placeholder)
+								.change(() => {
+									if (isDisabled) return;
+
+									const rawVal = $ele.val().trim();
+
+									if (!rawVal && meta.isNullable) {
+										DRAFT[groupKey][k] = null;
+										$ele.val(null);
+
+										return void cbIsDefault();
+									}
+
+									const defaultVal = meta.isNullable ? null : meta.default;
+									const opts = {fallbackOnNaN: defaultVal};
+									if (meta.min) opts.min = meta.min;
+									if (meta.max) opts.max = meta.max;
+
+									const num = UiUtil.strToNumber(rawVal, defaultVal, opts);
+									DRAFT[groupKey][k] = num;
+									$ele.val(num);
+
+									doUpdate(DRAFT[groupKey][k]);
+								});
+
+							const doUpdate = (val) => {
+								$ele.val(val);
+								cbIsDefault();
+							};
+
+							doUpdate(cur);
+
+							fnReset = () => $ele.val(meta.default).change();
+							this._addFnHandleUpdate(groupKey, k, () => doUpdate(Config.get(groupKey, k)));
+
+							break;
+						}
+
+						case "multipleChoice": {
+							isLabel = false;
+
+							const $labels = [];
+							const cbMetas = [];
+
+							fnDisable = () => {
+								$labels.forEach($lbl => $lbl.title(this.constructor._getIsDisabledMessage({isDisabledPlayer, isDisabledCompatibility, incompatibleModuleNames})));
+								cbMetas.forEach(({$cb}) => $cb.prop("disabled", true));
+							};
+
+							// Only compare `true` values; having additional/fewer `false` values is irrelevant
+							cbIsDefault = () => $btnResetRow.toggleClass("ve-muted", CollectionUtil.deepEquals(Object.entries(DRAFT[groupKey][k] || {}).filter(([, v]) => v), Object.entries(meta.default || {}).filter(([, v]) => v)));
+
+							const handleUpdate = () => {
+								DRAFT[groupKey][k] = cbMetas.mergeMap(({$cb, value}) => ({[value]: $cb.prop("checked")}));
+								cbIsDefault();
+							};
+
+							const $rows = meta.choices.map((it, i) => {
+								const name = it.name ?? it;
+								const value = it.value ?? i;
+
+								const $cb = $(`<input type="checkbox">`)
+									.prop("checked", !!current[value])
+									.change(() => {
+										if (isDisabled) return;
+										handleUpdate();
+									});
+								cbMetas.push({$cb, value});
+
+								this._addFnHandleUpdate(groupKey, k, () => {
+									$ele.prop("checked", !!Config.get(groupKey, k)[i]);
+									cbIsDefault();
+								});
+
+								const $lbl = $$`<label class="split-v-center m-0 stripe-even py-1">
+									<div class="ve-small">${name.escapeQuotes()}</div>
+									${$cb}
+								</label>`;
+								$labels.push($lbl);
+								return $lbl;
+							});
+
+							fnReset = () => {
+								cbMetas.forEach(({$cb, value}) => {
+									$cb.prop("checked", !!meta.default[value]);
+								});
+								handleUpdate();
+							};
+
+							$ele = $$`<div class="ve-flex-col w-100">${$rows}</div>`;
+
+							break;
+						}
+
+						case "arrayStringShort": {
+							isLabel = false;
+
+							const cur = current instanceof Array ? MiscUtil.copy(current) : [];
+
+							const comp = BaseComponent.fromObject({values: cur}, "values");
+							$ele = ComponentUiUtil.$getPickString(comp, "values", {isCaseInsensitive: !meta.isCaseSensitive});
+							comp._addHookBase("values", () => {
+								DRAFT[groupKey][k] = comp._state.values;
+								cbIsDefault();
+							});
+
+							fnReset = () => comp._state.values = [...meta.default];
+							this._addFnHandleUpdate(groupKey, k, () => {
+								comp._state.values = [...Config.get(groupKey, k) || []];
+								cbIsDefault();
+							});
+
+							break;
+						}
+
+						// TODO(future) expand as required
+						default: throw new Error(`Unhandled type "${meta.type}"`);
+					}
+
+					if (isDisabled) {
+						if (fnDisable) fnDisable();
+						else $ele.prop("disabled", true).title(this.constructor._getIsDisabledMessage({isDisabledPlayer, isDisabledCompatibility, incompatibleModuleNames}));
+					}
+
+					fnsReset.push(fnReset);
+
+					const isWideInput = ["url", "arrayStringShort"].includes(meta.type);
+
+					const $row = $$`<${isLabel ? "label" : "div"} class="split-v-center py-1 cfg__row w-100" title="${meta.help.escapeQuotes()}">
+						<div class="ve-flex-v-center cfg__disp-name ${isWideInput ? `cfg__disp-name--narrow` : ""}">
+							<div>${meta.name}</div>
+							${isPlayerEditable && game.user.isGM ? ` <span class="cfg__disp-player-editable ml-1" title="Player Editable">†</span>` : ""}${meta.isReloadRequired ? ` <span class="cfg__disp-requires-refresh ml-1" title="Requires Refresh">‡</span>` : ""}
+						</div>
+						<div class="ve-flex-v-center ve-flex-h-right w-100 cfg__wrp-input ${isWideInput ? `cfg__wrp-input--wide` : ""}">
+							${$ele}
+							${$btnResetRow}
+						</div>
+					</${isLabel ? "label" : "div"}>`;
+
+					const searchKey = [meta.help, meta.name].filter(Boolean).join(" -- ").toLowerCase().trim();
+					const cbSearch = (searchTerm) => {
+						const isNoMatch = searchTerm && !searchKey.includes(searchTerm);
+						const isHidden = meta.unlockCode && meta.unlockCode !== searchTerm;
+
+						$row.toggleClass("cfg__row--no-match", !!isNoMatch);
+						if (meta.unlockCode && !isHidden) $row.removeClass("cfg__row--no-match");
+						$row.toggleVe(!isHidden);
+
+						return isNoMatch || isHidden;
+					};
+					cbSearch("");
+
+					return {
+						$row,
+						cbSearch,
+					};
+				})
+				.filter(Boolean);
+		};
+
+		let metasSettings = groupVals.settings ? getRowMeta(groupVals.settings) : null;
+		if (metasSettings && !metasSettings.length) metasSettings = null;
+		let metasSettingsHacks = groupVals.settingsHacks ? getRowMeta(groupVals.settingsHacks) : null;
+		if (metasSettingsHacks && !metasSettingsHacks.length) metasSettingsHacks = null;
+		let metasSettingsAdvanced = groupVals.settingsAdvanced ? getRowMeta(groupVals.settingsAdvanced) : null;
+		if (metasSettingsAdvanced && !metasSettingsAdvanced.length) metasSettingsAdvanced = null;
+
+		if (!metasSettings && !metasSettingsHacks && !metasSettingsAdvanced) return null;
+
+		const $tabBody = $$`<div class="ve-flex-col h-100 w-100 ${ixTab === this._ixActiveTab ? "" : "ve-hidden"}">
+		<div class="ve-flex-v-center">
+			${$btnResetTab}
 		</div>
 		<hr class="w-100 my-1">
 
-		${_0x4509b4?$$`<div class="w-100 flex-col">${_0x4509b4[_0x1033d2(0x233)](_0x34bc66=>_0x34bc66[_0x1033d2(0x2bc)])}</div>`:null}
+		${metasSettings ? $$`<div class="w-100 ve-flex-col">${metasSettings.map(it => it.$row)}</div>` : null}
 
-		${_0x437add?(_0x4509b4?_0x1033d2(0x21f):'')+_0x1033d2(0x1f5):''}
-		${_0x437add?$$`<div class="w-100 flex-col">${_0x437add[_0x1033d2(0x233)](_0x12b297=>_0x12b297[_0x1033d2(0x2bc)])}</div>`:null}
+		${metasSettingsHacks ? `${metasSettings ? `<hr class="cfg__hr-tab-section">` : ""}<div class="cfg__head-tab-section my-1 help" title="These settings may be incompatible with other modules, or even Foundry itself. If something doesn't work, turn these off first.">Experimental Settings</div>` : ""}
+		${metasSettingsHacks ? $$`<div class="w-100 ve-flex-col">${metasSettingsHacks.map(it => it.$row)}</div>` : null}
 
-		${_0x48a384?(_0x4509b4||_0x437add?_0x1033d2(0x21f):'')+_0x1033d2(0x222):''}
-		${_0x48a384?$$`<div class="w-100 flex-col">${_0x48a384[_0x1033d2(0x233)](_0xe31712=>_0xe31712[_0x1033d2(0x2bc)])}</div>`:null}
-		</div>`,_0x51bde1=[_0x4509b4||[],_0x437add||[],_0x48a384||[]][_0x1033d2(0x233)](_0x4facb1=>_0x4facb1[_0x1033d2(0x21d)])[_0x1033d2(0x214)]((_0x570679,_0x10ce32)=>_0x570679+_0x10ce32,0x0),_0x14ac59=_0x52e769=>{const _0x3b4335=_0x1033d2,_0x401308=(_0x4509b4||[])[_0x3b4335(0x233)](_0xd69d00=>_0xd69d00[_0x3b4335(0x26d)](_0x52e769))['reduce']((_0x33b47c,_0x573c94)=>_0x33b47c+_0x573c94,0x0)+(_0x437add||[])['map'](_0x5a25f3=>_0x5a25f3[_0x3b4335(0x26d)](_0x52e769))[_0x3b4335(0x214)]((_0x26087e,_0xe0943d)=>_0x26087e+_0xe0943d,0x0)+(_0x48a384||[])['map'](_0x2ef887=>_0x2ef887[_0x3b4335(0x26d)](_0x52e769))[_0x3b4335(0x214)]((_0x1bf9cf,_0x43f547)=>_0x1bf9cf+_0x43f547,0x0);if(_0x51bde1){const _0x320ed2=_0x51bde1-_0x401308;_0x155464[_0x3b4335(0x229)](_0x3b4335(0x264),_0x320ed2===0x0),_0x490de5[_0x3b4335(0x201)](_0x320ed2)[_0x3b4335(0x22f)](_0x320ed2+_0x3b4335(0x242)+(_0x320ed2===0x1?'':'s'))[_0x3b4335(0x229)](_0x3b4335(0x29f),!!_0x320ed2)[_0x3b4335(0x274)](_0x52e769);}};return{'$tabHeader':_0x155464,'$tabBody':_0x179be0,'cbSearch':_0x14ac59};}[_0x4dbffd(0x220)](_0x58fb86){const _0x25b2b8=_0x4dbffd;this[_0x25b2b8(0x2b8)]['map']((_0xbb4bca,_0x3e7636)=>{const _0x4da14d=_0x25b2b8;if(!_0xbb4bca)return;_0xbb4bca[_0x4da14d(0x23f)]['toggleClass']('cfg__btn-tab-header--active',_0x58fb86===_0x3e7636),_0xbb4bca[_0x4da14d(0x1ee)][_0x4da14d(0x229)](_0x4da14d(0x24b),_0x58fb86!==_0x3e7636);}),this[_0x25b2b8(0x204)]=_0x58fb86,StorageUtil[_0x25b2b8(0x29b)](Config[_0x25b2b8(0x1ef)],_0x58fb86)['then'](null);}['handleGmConfigUpdate'](_0x26b334){const _0x39dcb3=_0x4dbffd;Object[_0x39dcb3(0x2a3)](Config[_0x39dcb3(0x2a2)],_0x26b334),this['_fnsHandleUpdate']['forEach'](_0x4628a6=>_0x4628a6());}async[_0x4dbffd(0x278)](..._0x53627c){const _0x162d77=_0x4dbffd;await super['close'](..._0x53627c),Config[_0x162d77(0x28a)]=null;}static[_0x4dbffd(0x2bb)](_0x4015c4,_0x2e2856){const _0x2bbcf6=_0x4dbffd,_0x4c22fa=this[_0x2bbcf6(0x226)](ConfigConsts['DEFAULT_CONFIG_'][_0x4015c4]);if(!_0x4c22fa[_0x2e2856]?.[_0x2bbcf6(0x2a4)])return[];return Object[_0x2bbcf6(0x270)](_0x4c22fa[_0x2e2856][_0x2bbcf6(0x2a4)])[_0x2bbcf6(0x22a)](_0x5d7353=>UtilCompat[_0x2bbcf6(0x250)](_0x5d7353));}static[_0x4dbffd(0x1f7)]({isDisabledPlayer:_0x7e409f,isDisabledCompatibility:_0x5ed141,incompatibleModuleNames:_0x4a4984}){const _0x8a9c59=_0x4dbffd;if(_0x7e409f)return _0x8a9c59(0x1fc);if(_0x5ed141)return _0x8a9c59(0x269)+_0x4a4984['map'](_0x14e024=>'\x22'+_0x14e024+'\x22')[_0x8a9c59(0x257)](',\x20')+')';return null;}static['getMetricNumber'](_0x3b9a7f,_0x323427,_0x3a16c3,_0x54c455){const _0x4a9a3e=_0x4dbffd;if(isNaN(_0x323427))throw new Error(_0x4a9a3e(0x219)+_0x323427+_0x4a9a3e(0x245));_0x323427=Number(_0x323427);if(!_0x323427)return _0x323427;if(!Config[_0x4a9a3e(0x224)](_0x3b9a7f,_0x4a9a3e(0x27b)))return _0x323427;switch(_0x3a16c3){case'mi':case UNT_MILES:return _0x323427*Consts['MILES_TO_KILOMETRES'];case'ft':case UNT_FEET:return _0x323427*Consts['FEET_TO_METRES'];case'lb':case _0x4a9a3e(0x26c):return _0x323427*Consts[_0x4a9a3e(0x236)];default:return _0x323427;}}}Config[_0x4dbffd(0x28a)]=null,Config[_0x4dbffd(0x281)]=new Promise(_0x1fa47c=>Config[_0x4dbffd(0x20f)]=_0x1fa47c),Config['_SETTINGS_KEY']=_0x4dbffd(0x2a8),Config[_0x4dbffd(0x203)]=SharedConsts[_0x4dbffd(0x268)]+_0x4dbffd(0x288),Config[_0x4dbffd(0x1ef)]=_0x4dbffd(0x200),Config[_0x4dbffd(0x294)]=_0x4dbffd(0x282)+SharedConsts[_0x4dbffd(0x268)],Config[_0x4dbffd(0x248)]=MiscUtil[_0x4dbffd(0x225)](Config[_0x4dbffd(0x287)],0x64),Config[_0x4dbffd(0x2a2)]={},Config[_0x4dbffd(0x21e)]={},Config[_0x4dbffd(0x272)]={};export{Config};
+		${metasSettingsAdvanced ? `${metasSettings || metasSettingsHacks ? `<hr class="cfg__hr-tab-section">` : ""}<div class="cfg__head-tab-section my-1">Advanced Settings</div>` : ""}
+		${metasSettingsAdvanced ? $$`<div class="w-100 ve-flex-col">${metasSettingsAdvanced.map(it => it.$row)}</div>` : null}
+		</div>`;
+
+		const totalRows = [
+			metasSettings || [],
+			metasSettingsHacks || [],
+			metasSettingsAdvanced || [],
+		].map(it => it.length).sum();
+
+		const cbSearch = (searchTerm) => {
+			const cntHiddenRows = (metasSettings || []).map(it => Number(it.cbSearch(searchTerm) || 0)).sum()
+				+ (metasSettingsHacks || []).map(it => Number(it.cbSearch(searchTerm) || 0)).sum()
+				+ (metasSettingsAdvanced || []).map(it => Number(it.cbSearch(searchTerm) || 0)).sum();
+
+			if (totalRows) {
+				const cntVisibleRows = totalRows - cntHiddenRows;
+				$tabHeader.toggleClass("cfg__btn-tab-header--muted", cntVisibleRows === 0);
+				$dispResultCount
+					.text(cntVisibleRows)
+					.title(`${cntVisibleRows} result${cntVisibleRows === 1 ? "" : "s"}`)
+					.toggleClass("cfg__disp-row-count-tab-header--has-results", !!cntVisibleRows)
+					.toggleVe(searchTerm);
+			}
+		};
+
+		return {$tabHeader, $tabBody, cbSearch, fnsReset};
+	}
+
+	_setActiveTab (ix) {
+		this._tabMetas.map((it, i) => {
+			if (!it) return;
+			it.$tabHeader.toggleClass("cfg__btn-tab-header--active", ix === i);
+			it.$tabBody.toggleClass("ve-hidden", ix !== i);
+		});
+		this._ixActiveTab = ix;
+		StorageUtil.pSet(Config._SETTINGS_KEY_LAST_ACTIVE_TAB, ix).then(null);
+	}
+
+	/**
+	 * NOTE: This is player-only.
+	 * Update all the GM-specified config options, and reflect this in any editor windows we have open.
+	 * @param receivedConfig
+	 */
+	_handleGmConfigUpdate (receivedConfig) {
+		Object.assign(Config._CONFIG, receivedConfig);
+		Object.assign(this._DRAFT_GM, MiscUtil.copy(Config._CONFIG));
+
+		Object.entries(receivedConfig || {})
+			.forEach(([group, meta]) => {
+				Object.keys(meta || {})
+					.forEach(key => this._callFnsHandleUpdate(group, key));
+			});
+	}
+
+	async close (...args) {
+		await super.close(...args);
+		Config._INSTANCE = null;
+	}
+
+	static _getIncompatibleModuleIds (groupKey, key) {
+		const groupSettings = ConfigConsts.getDefaultConfigSortedFlat_().find(([groupKey_]) => groupKey_ === groupKey)[1];
+		if (!groupSettings[key]?.compatibilityModeValues) return [];
+		return Object.keys(groupSettings[key].compatibilityModeValues).filter(moduleId => UtilCompat.isModuleActive(moduleId));
+	}
+
+	static _getIsDisabledMessage ({isDisabledPlayer, isDisabledCompatibility, incompatibleModuleNames}) {
+		if (isDisabledPlayer) return `(This setting is controlled by the GM)`;
+		if (isDisabledCompatibility) return `(This setting is disabled due to incompatibility with one or more other active modules: ${incompatibleModuleNames.map(it => `"${it}"`).join(", ")})`;
+		return null;
+	}
+
+	static _getEnumValues (meta) {
+		return typeof meta.values === "function" ? meta.values() : meta.values;
+	}
+
+	static _getEnumValueValue (val) {
+		return val.value !== undefined ? val.value : val;
+	}
+
+	// region external
+	static isUseMetricDistance ({configGroup, configKey = "isMetricDistance"}) {
+		return Config.get("import", "isGlobalMetricDistance") || Config.get(configGroup, configKey);
+	}
+
+	static isUseMetricWeight ({configGroup, configKey = "isMetricWeight"}) {
+		// Respect the global system setting, if enabled
+		if (UtilGameSettings.getSafe("dnd5e", "metricWeightUnits")) return true;
+
+		return Config.get("import", "isGlobalMetricWeight") || Config.get(configGroup, configKey);
+	}
+
+	static getMetricNumberDistance ({configGroup, originalValue, originalUnit, configKey = "isMetricDistance"}) {
+		return this._getMetricNumber({configGroup, originalValue, originalUnit, configKey, fnIsUse: Config.isUseMetricDistance.bind(Config)});
+	}
+
+	static getMetricNumberWeight ({configGroup, originalValue, originalUnit, configKey = "isMetricWeight"}) {
+		return this._getMetricNumber({configGroup, originalValue, originalUnit, configKey, fnIsUse: Config.isUseMetricWeight.bind(Config)});
+	}
+
+	static _getMetricNumber ({configGroup, originalValue, originalUnit, configKey, fnIsUse}) {
+		if (!fnIsUse({configGroup, configKey})) return originalValue;
+		return Parser.metric.getMetricNumber({originalValue, originalUnit, toFixed: 3});
+	}
+
+	static getMetricUnitDistance ({configGroup, originalUnit, configKey = "isMetricDistance", isShortForm = true, isPlural = false}) {
+		return this._getMetricUnit({configGroup, originalUnit, configKey, isShortForm, isPlural, fnIsUse: Config.isUseMetricDistance.bind(Config)});
+	}
+
+	static getMetricUnitWeight ({configGroup, originalUnit, configKey = "isMetricWeight", isShortForm = true, isPlural = false}) {
+		return this._getMetricUnit({configGroup, originalUnit, configKey, isShortForm, isPlural, fnIsUse: Config.isUseMetricWeight.bind(Config)});
+	}
+
+	static _getMetricUnit ({configGroup, originalUnit, configKey, isShortForm, isPlural, fnIsUse}) {
+		if (!fnIsUse({configGroup, configKey})) {
+			if (!isShortForm) return originalUnit;
+			switch (originalUnit) {
+				case UNT_FEET: return "ft";
+				case UNT_MILES: return "mi";
+				default: return originalUnit;
+			}
+		}
+		return Parser.metric.getMetricUnit({originalUnit, isShortForm, isPlural});
+	}
+
+	static getSpellPointsKey ({actorType}) {
+		return actorType === "character" ? "spellPointsMode" : "spellPointsModeNpc";
+	}
+
+	static getSpellPointsResource ({isValueKey = false, isMaxKey = false} = {}) {
+		return this._getSpellPsiPointsResource({configGroup: "importSpell", configKey: "spellPointsResource", configKeyCustom: "spellPointsResourceCustom", isValueKey, isMaxKey});
+	}
+
+	static getPsiPointsResource ({isValueKey = false, isMaxKey = false} = {}) {
+		return this._getSpellPsiPointsResource({configGroup: "importPsionic", configKey: "psiPointsResource", configKeyCustom: "psiPointsResourceCustom", isValueKey, isMaxKey});
+	}
+
+	static _getSpellPsiPointsResource ({configGroup, configKey, configKeyCustom, isValueKey = false, isMaxKey = false} = {}) {
+		if (Config.get(configGroup, configKey) === ConfigConsts.C_SPELL_POINTS_RESOURCE__SHEET_ITEM) return ConfigConsts.C_SPELL_POINTS_RESOURCE__SHEET_ITEM;
+
+		if (isValueKey && isMaxKey) throw new Error(`Only one of "isValue" and "isMax" may be specified!`);
+		const out = Config.get(configGroup, configKey) === ConfigConsts.C_SPELL_POINTS_RESOURCE__ATTRIBUTE_CUSTOM
+			? Config.get(configGroup, configKeyCustom)
+			: Config.get(configGroup, configKey);
+		return isValueKey ? `${out}.value` : isMaxKey ? `${out}.max` : out;
+	}
+	// endregion
+
+	static _getWikiSummary () {
+		const getDefaultValue = (setting) => {
+			switch (setting.type) {
+				case "boolean":
+				case "string":
+				case "url":
+				case "color":
+				case "percentage":
+				case "number": return setting.default;
+
+				case "enum": {
+					if (setting.default == null) return undefined;
+					const value = this._getEnumValues(setting).find(it => (it?.value ?? it) === setting.default);
+					return value?.name ?? value;
+				}
+
+				case "multipleChoice": {
+					return (setting.choices || [])
+						.filter((it, i) => !!setting.default?.[i])
+						.join("; ");
+				}
+
+				case "arrayStringShort": return (setting.default || []).join("; ");
+				default: throw new Error(`Unhandled setting type "${setting.type}"!`);
+			}
+		};
+
+		const getOptions = (setting) => {
+			switch (setting.type) {
+				case "enum": {
+					return this._getEnumValues(setting).map(value => {
+						if (typeof value === "string") {
+							return ({name: value});
+						}
+						if (!value.name) {
+							return {name: value.value};
+						}
+						return value;
+					});
+				}
+
+				case "multipleChoice": {
+					return (setting.choices || []).map(choice => ({name: choice.name ?? choice.value ?? choice}));
+				}
+
+				default: return null;
+			}
+		};
+
+		const getGroupSummary = (settings, type) => {
+			return Object.values(settings || {})
+				.filter(({unlockCode}) => !unlockCode)
+				.map(setting => {
+					const defaultValue = getDefaultValue(setting);
+					const options = getOptions(setting);
+
+					return {
+						name: setting.name,
+						description: setting.help,
+						type,
+						isPlayerEditable: !!setting.isPlayerEditable,
+						isReloadRequired: !!setting.isReloadRequired,
+						default: defaultValue,
+						options,
+					};
+				});
+		};
+
+		return ConfigConsts.getDefaultConfigSorted_().map(([, group]) => {
+			return {
+				groupName: group.name,
+				settings: [
+					...getGroupSummary(group.settings, "standard"),
+					...getGroupSummary(group.settingsHacks, "hacks"),
+					...getGroupSummary(group.settingsAdvanced, "advanced"),
+				],
+			};
+		});
+	}
+
+	static _getWikiSummaryMarkdown () {
+		return this._getWikiSummary()
+			.map(group => {
+				let markdown = `## ${group.groupName}\n`;
+				markdown += "TODO: Add description\n";
+
+				const settingsTypes = {};
+				group.settings.forEach(setting => {
+					const typeName = setting.type.toTitleCase();
+					settingsTypes[typeName] = [...(settingsTypes[typeName] || []), setting];
+				});
+
+				Object.entries(settingsTypes)
+					.forEach(([typeName, settings]) => {
+						markdown += `### ${typeName}\n`;
+						settings.forEach(setting => {
+							markdown += `- **${setting.name}**${(!setting.default && setting.default !== false) ? "" : ` *(default: ${setting.default})*`} - ${setting.description}\n`;
+
+							if (setting.options) {
+								if (setting.options.length > 10 && setting.options[0].value === ConfigConsts.C_USE_GAME_DEFAULT) {
+									markdown += `	- *${setting.options[0].name}*\n`;
+									markdown += "	- *Use one of many custom values*\n";
+								} else {
+									markdown += "	Possible options are:\n";
+									setting.options.forEach(option => markdown += `	- *${option.name}*${option.help ? `: ${option.help}` : ""}\n`);
+								}
+							}
+						});
+					});
+
+				return markdown.replaceAll(/((&quot;)|")/g, "`");
+			})
+			.join("");
+	}
+}
+Config._INSTANCE = null;
+Config.P_GET_BACKEND_VERSION = new Promise(resolve => Config._GET_BACKEND_VERSION_RESOLVE = resolve);
+Config._SETTINGS_KEY = `config`;
+Config._CLIENT_SETTINGS_KEY = `${SharedConsts.MODULE_NAME}.config`;
+Config._SETTINGS_KEY_LAST_ACTIVE_TAB = `config.ixLastActiveTab`;
+Config._SOCKET_ID = `module.${SharedConsts.MODULE_NAME}`;
+Config._saveConfigDebounced = MiscUtil.throttle(Config._pSaveConfig, 100);
+Config._CONFIG = {};
+Config._CONFIG_PLAYER = {};
+Config._CONFIG_TEMP = {}; // In-memory overrides
+
+// region Caches
+Config._CACHE_DEFAULT_CONFIG_SORTED = null;
+Config._CACHE_DEFAULT_CONFIG_SORTED_FLAT = null;
+// endregion
+
+export {Config};

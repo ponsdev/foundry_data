@@ -1,158 +1,12 @@
-import { Fuse, SvelteComponent, init, safe_not_equal, element, attr, insert, update_keyed_each, detach, empty, noop as noop$1, createEventDispatcher, afterUpdate, space, text, set_attributes, toggle_class, append, listen, set_data, stop_propagation, get_spread_update, destroy_each, destroy_block, assign, binding_callbacks, HtmlTag } from './vendor.js';
+import { Fuse, SvelteComponent, init, safe_not_equal, element, attr, insert, update_keyed_each, detach, empty, noop, createEventDispatcher, afterUpdate, space, text, toggle_class, append, listen, stop_propagation, set_data, destroy_each, run_all, destroy_block, binding_callbacks, HtmlTag } from './vendor.js';
 
 const MODULE_NAME = "quick-insert";
-const SAVE_SETTINGS_REVISION = 1;
-var settings;
-(function (settings) {
-    settings["QUICKOPEN"] = "quickOpen";
-    settings["ENABLE_GLOBAL_CONTEXT"] = "enableGlobalContext";
-    settings["INDEXING_DISABLED"] = "indexingDisabled";
-    settings["FILTERS_CLIENT"] = "filtersClient";
-    settings["FILTERS_WORLD"] = "filtersWorld";
-    settings["FILTERS_SHEETS"] = "filtersSheets";
-    settings["FILTERS_SHEETS_ENABLED"] = "filtersSheetsEnabled";
-    settings["GM_ONLY"] = "gmOnly";
-    settings["INDEX_GUARD_ENABLED"] = "indexGuardEnabled";
-    settings["AUTOMATIC_INDEXING"] = "automaticIndexing";
-    settings["INDEX_TIMEOUT"] = "indexTimeout";
-    settings["SEARCH_BUTTON"] = "searchButton";
-})(settings || (settings = {}));
-const noop = () => {
-    return;
-};
-const moduleSettings = [
-    {
-        setting: settings.GM_ONLY,
-        name: "QUICKINSERT.SettingsGmOnly",
-        hint: "QUICKINSERT.SettingsGmOnlyHint",
-        type: Boolean,
-        default: false,
-        scope: "world",
-    },
-    {
-        setting: settings.FILTERS_SHEETS_ENABLED,
-        name: "QUICKINSERT.SettingsFiltersSheetsEnabled",
-        hint: "QUICKINSERT.SettingsFiltersSheetsEnabledHint",
-        type: Boolean,
-        default: true,
-        scope: "world",
-    },
-    {
-        setting: settings.INDEX_GUARD_ENABLED,
-        name: "QUICKINSERT.SettingsIndexGuardEnabled",
-        hint: "QUICKINSERT.SettingsIndexGuardEnabledHint",
-        type: Boolean,
-        default: false,
-        scope: "world",
-    },
-    {
-        setting: settings.AUTOMATIC_INDEXING,
-        name: "QUICKINSERT.SettingsAutomaticIndexing",
-        hint: "QUICKINSERT.SettingsAutomaticIndexingHint",
-        type: Number,
-        choices: {
-            3000: "QUICKINSERT.SettingsAutomaticIndexing3s",
-            5000: "QUICKINSERT.SettingsAutomaticIndexing5s",
-            10000: "QUICKINSERT.SettingsAutomaticIndexing10s",
-            "-1": "QUICKINSERT.SettingsAutomaticIndexingOnFirstOpen",
-        },
-        default: -1,
-        scope: "client",
-    },
-    {
-        setting: settings.INDEX_TIMEOUT,
-        name: "QUICKINSERT.SettingsIndexTimeout",
-        hint: "QUICKINSERT.SettingsIndexTimeoutHint",
-        type: Number,
-        choices: {
-            1500: "QUICKINSERT.SettingsIndexTimeout1_5s",
-            3000: "QUICKINSERT.SettingsIndexTimeout3s",
-            7000: "QUICKINSERT.SettingsIndexTimeout7s",
-            9500: "QUICKINSERT.SettingsIndexTimeou9_5s",
-        },
-        default: 1500,
-        scope: "world",
-    },
-    {
-        setting: settings.SEARCH_BUTTON,
-        name: "QUICKINSERT.SettingsSearchButton",
-        hint: "QUICKINSERT.SettingsSearchButtonHint",
-        type: Boolean,
-        default: false,
-        scope: "client",
-    },
-    {
-        setting: settings.QUICKOPEN,
-        name: "QUICKINSERT.SettingsQuickOpen",
-        hint: "QUICKINSERT.SettingsQuickOpenHint",
-        type: window.Azzu.SettingsTypes.KeyBinding,
-        default: "Ctrl +  ",
-    },
-    {
-        setting: settings.ENABLE_GLOBAL_CONTEXT,
-        name: "QUICKINSERT.SettingsEnableGlobalContext",
-        hint: "QUICKINSERT.SettingsEnableGlobalContextHint",
-        type: Boolean,
-        default: true,
-    },
-    {
-        setting: settings.INDEXING_DISABLED,
-        name: "Things that have indexing disabled",
-        type: Object,
-        default: {
-            entities: {
-                Macro: [1, 2],
-                Scene: [1, 2],
-                Playlist: [1, 2],
-                RollTable: [1, 2],
-            },
-            packs: {},
-        },
-        scope: "world",
-        config: false, // Doesn't show up in config
-    },
-    {
-        setting: settings.FILTERS_CLIENT,
-        name: "Own filters",
-        type: Object,
-        default: {
-            saveRev: SAVE_SETTINGS_REVISION,
-            disabled: [],
-            filters: [],
-        },
-        config: false, // Doesn't show up in config
-    },
-    {
-        setting: settings.FILTERS_WORLD,
-        name: "World filters",
-        type: Object,
-        default: {
-            saveRev: SAVE_SETTINGS_REVISION,
-            filters: [],
-        },
-        scope: "world",
-        config: false, // Doesn't show up in config
-    },
-    {
-        setting: settings.FILTERS_SHEETS,
-        name: "Sheet filters",
-        type: Object,
-        default: {},
-        scope: "world",
-        config: false, // Doesn't show up in config
-    },
-];
-function registerSetting(callback, { setting, ...options }) {
+function registerSetting(setting, callback, { ...options }) {
     game.settings.register(MODULE_NAME, setting, {
         config: true,
         scope: "client",
         ...options,
-        onChange: callback || noop,
-    });
-}
-function registerSettings(callbacks = {}) {
-    moduleSettings.forEach(item => {
-        registerSetting(callbacks[item.setting], item);
+        onChange: callback || undefined,
     });
 }
 function getSetting(setting) {
@@ -165,11 +19,35 @@ function registerMenu({ menu, ...options }) {
     game.settings.registerMenu(MODULE_NAME, menu, options);
 }
 
+const SAVE_SETTINGS_REVISION = 1;
+var ModuleSetting;
+(function (ModuleSetting) {
+    // QUICKOPEN = "quickOpen", // dead setting
+    ModuleSetting["ENABLE_GLOBAL_CONTEXT"] = "enableGlobalContext";
+    ModuleSetting["INDEXING_DISABLED"] = "indexingDisabled";
+    ModuleSetting["FILTERS_CLIENT"] = "filtersClient";
+    ModuleSetting["FILTERS_WORLD"] = "filtersWorld";
+    ModuleSetting["FILTERS_SHEETS"] = "filtersSheets";
+    ModuleSetting["FILTERS_SHEETS_ENABLED"] = "filtersSheetsEnabled";
+    ModuleSetting["GM_ONLY"] = "gmOnly";
+    ModuleSetting["AUTOMATIC_INDEXING"] = "automaticIndexing";
+    ModuleSetting["INDEX_TIMEOUT"] = "indexTimeout";
+    ModuleSetting["SEARCH_BUTTON"] = "searchButton";
+    ModuleSetting["KEY_BIND"] = "keyBind";
+    ModuleSetting["DEFAULT_ACTION_SCENE"] = "defaultSceneAction";
+    ModuleSetting["DEFAULT_ACTION_ROLL_TABLE"] = "defaultActionRollTable";
+    ModuleSetting["DEFAULT_ACTION_MACRO"] = "defaultActionMacro";
+})(ModuleSetting || (ModuleSetting = {}));
+
 const i18n = (name, replacements) => {
-    if (replacements) {
-        return game.i18n.format(`QUICKINSERT.${name}`, replacements);
+    let namespace = "QUICKINSERT";
+    if (name.includes(".")) {
+        [namespace, name] = name.split(".", 2);
     }
-    return game.i18n.localize(`QUICKINSERT.${name}`);
+    if (replacements) {
+        return game.i18n.format(`${namespace}.${name}`, replacements);
+    }
+    return game.i18n.localize(`${namespace}.${name}`);
 };
 function isTextInputElement(element) {
     return (element.tagName == "TEXTAREA" ||
@@ -180,23 +58,25 @@ const ALPHA = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 function randomId(idLength = 10) {
     const values = new Uint8Array(idLength);
     window.crypto.getRandomValues(values);
-    return String.fromCharCode(...values.map(x => ALPHA.charCodeAt(x % ALPHA.length)));
+    return String.fromCharCode(...values.map((x) => ALPHA.charCodeAt(x % ALPHA.length)));
 }
 // Some black magic from the internet,
 // places caret at end of contenteditable
 function placeCaretAtEnd(el) {
+    if (!el)
+        return;
     el.focus();
     const range = document.createRange();
     range.selectNodeContents(el);
     range.collapse(false);
     const sel = window.getSelection();
-    sel.removeAllRanges();
-    sel.addRange(range);
+    sel?.removeAllRanges();
+    sel?.addRange(range);
 }
 // Simple utility function for async waiting
 // Nicer to await waitFor(100) than nesting setTimeout callback hell
 function resolveAfter(msec) {
-    return new Promise(res => setTimeout(res, msec));
+    return new Promise((res) => setTimeout(res, msec));
 }
 class TimeoutError extends Error {
     constructor(timeoutMsec) {
@@ -210,93 +90,116 @@ function withDeadline(p, timeoutMsec) {
     ]);
 }
 function permissionListEq(a, b) {
-    return a.length === b.length && [...a].every(value => b.includes(value));
+    return a.length === b.length && [...a].every((value) => b.includes(value));
+}
+// Match keybinds even if it's in input fields or with explicit context
+function customKeybindHandler(evt, context) {
+    if (evt.isComposing || (!evt.key && !evt.code)) {
+        return;
+    }
+    if (!context && !game.keyboard?.hasFocus)
+        return;
+    //@ts-expect-error keyboard types not yet implemented
+    const ctx = KeyboardManager.getKeyboardEventContext(evt);
+    if (context) {
+        ctx._quick_insert_extra = { context };
+    }
+    //@ts-expect-error keyboard types not yet implemented
+    const actions = KeyboardManager._getMatchingActions(ctx)
+        .map((action) => 
+    //@ts-expect-error keyboard types not yet implemented
+    game.keybindings.actions.get(action.action))
+        .filter((action) => action.textInput);
+    if (!actions.length)
+        return;
+    let handled = false;
+    for (const action of actions) {
+        //@ts-expect-error keyboard types not yet implemented
+        handled = KeyboardManager._executeKeybind(action, ctx);
+        if (handled)
+            break;
+    }
+    if (handled) {
+        evt.preventDefault();
+        evt.stopPropagation();
+    }
 }
 
-var EntityType;
-(function (EntityType) {
-    EntityType["ACTOR"] = "Actor";
-    EntityType["ITEM"] = "Item";
-    EntityType["JOURNALENTRY"] = "JournalEntry";
-    EntityType["MACRO"] = "Macro";
-    EntityType["PLAYLIST"] = "Playlist";
-    EntityType["ROLLTABLE"] = "RollTable";
-    EntityType["SCENE"] = "Scene";
-    EntityType["USER"] = "User";
-    EntityType["FOLDER"] = "Folder";
-})(EntityType || (EntityType = {}));
-const IndexedEntityTypes = [
-    EntityType.ACTOR,
-    EntityType.ITEM,
-    EntityType.JOURNALENTRY,
-    EntityType.MACRO,
-    // EntityType.PLAYLIST, // TODO: Play on selection? Open sidebar?
-    EntityType.ROLLTABLE,
-    EntityType.SCENE,
-    // EntityType.USER,
+var DocumentType;
+(function (DocumentType) {
+    DocumentType["ACTOR"] = "Actor";
+    DocumentType["ITEM"] = "Item";
+    DocumentType["JOURNALENTRY"] = "JournalEntry";
+    DocumentType["MACRO"] = "Macro";
+    DocumentType["ROLLTABLE"] = "RollTable";
+    DocumentType["SCENE"] = "Scene";
+})(DocumentType || (DocumentType = {}));
+const IndexedDocumentTypes = [
+    DocumentType.ACTOR,
+    DocumentType.ITEM,
+    DocumentType.JOURNALENTRY,
+    DocumentType.MACRO,
+    DocumentType.ROLLTABLE,
+    DocumentType.SCENE,
 ];
-const EntityCollections = {
-    [EntityType.ACTOR]: "actors",
-    [EntityType.ITEM]: "items",
-    [EntityType.JOURNALENTRY]: "journal",
-    [EntityType.MACRO]: "macros",
-    [EntityType.PLAYLIST]: "playlists",
-    [EntityType.ROLLTABLE]: "tables",
-    [EntityType.SCENE]: "scenes",
-    [EntityType.USER]: "users",
+const DocumentMeta = {
+    [DocumentType.ACTOR]: CONFIG.Actor.documentClass.metadata,
+    [DocumentType.ITEM]: CONFIG.Item.documentClass.metadata,
+    [DocumentType.JOURNALENTRY]: CONFIG.JournalEntry.documentClass.metadata,
+    [DocumentType.MACRO]: CONFIG.Macro.documentClass.metadata,
+    [DocumentType.ROLLTABLE]: CONFIG.RollTable.documentClass.metadata,
+    [DocumentType.SCENE]: CONFIG.Scene.documentClass.metadata,
 };
-const ignoredFolderNames = { _fql_quests: true };
-function enabledEntityTypes() {
-    const disabled = getSetting(settings.INDEXING_DISABLED);
-    return IndexedEntityTypes.filter(t => 
+const documentIcons = {
+    [DocumentType.ACTOR]: "fa-user",
+    [DocumentType.ITEM]: "fa-suitcase",
+    [DocumentType.JOURNALENTRY]: "fa-book-open",
+    [DocumentType.MACRO]: "fa-terminal",
+    [DocumentType.ROLLTABLE]: "fa-th-list",
+    [DocumentType.SCENE]: "fa-map",
+};
+function getCollectionFromType(type) {
     //@ts-ignore
-    !disabled?.entities?.[t]?.includes(game.user.role));
+    return CONFIG[type].collection.instance;
+}
+const ignoredFolderNames = { _fql_quests: true };
+function enabledDocumentTypes() {
+    const disabled = getSetting(ModuleSetting.INDEXING_DISABLED);
+    return IndexedDocumentTypes.filter((t) => !disabled?.entities?.[t]?.includes(game.user?.role));
 }
 function packEnabled(pack) {
-    const disabled = getSetting(settings.INDEXING_DISABLED);
+    const disabled = getSetting(ModuleSetting.INDEXING_DISABLED);
     // Pack entity type enabled?
-    //@ts-ignore
-    if (disabled?.entities?.[pack.entity]?.includes(game.user.role)) {
+    // @ts-expect-error metadata "entity" renamed to "type"
+    if (disabled?.entities?.[pack.metadata.type]?.includes(game.user?.role)) {
         return false;
     }
     // Pack enabled?
-    //@ts-ignore
-    if (disabled?.packs?.[pack.collection]?.includes(game.user.role)) {
+    if (disabled?.packs?.[pack.collection]?.includes(game.user?.role)) {
         return false;
     }
     // Pack entity type indexed?
-    if (!IndexedEntityTypes.includes(pack.entity)) {
+    // @ts-expect-error metadata "entity" renamed to "type"
+    if (!IndexedDocumentTypes.includes(pack.metadata.type)) {
         return false;
     }
     // Not hidden?
-    return !(pack.private && !game.user.isGM);
+    return !(pack.private && !game.user?.isGM);
 }
-const entityIcons = {
-    Actor: "fa-user",
-    Item: "fa-suitcase",
-    JournalEntry: "fa-book-open",
-    Macro: "fa-terminal",
-    Playlist: "fa-music",
-    RollTable: "fa-th-list",
-    Scene: "fa-map",
-    User: "fa-users",
-};
 class SearchItem {
-    constructor(id, name, img) {
-        this.id = id;
-        this.name = name;
-        this.img = img;
+    constructor(data) {
+        this.id = data.id;
+        this.uuid = data.uuid;
+        this.name = data.name;
+        this.documentType = data.documentType;
+        this.img = data.img;
     }
-    // Get the draggable attributes in order to make custom elements
-    get draggableAttrs() {
+    // Get the drag data for drag operations
+    get dragData() {
         return {};
     }
     // Get the html for an icon that represents the item
     get icon() {
-        return "";
-    }
-    // Get a clickable (preferrably draggable) link to the entity
-    get link() {
         return "";
     }
     // Reference the entity in a journal, chat or other places that support it
@@ -324,70 +227,71 @@ class SearchItem {
     }
 }
 class EntitySearchItem extends SearchItem {
-    constructor(entity) {
-        super(entity.id, entity.name, entity.data["img"]);
-        const folder = entity.folder;
+    constructor(data) {
+        super(data);
+        const folder = data.folder;
         if (folder) {
             this.folder = {
                 id: folder.id,
                 name: folder.name,
             };
         }
-        this.entityType = entity.entity;
-        this.uuid = `${this.entityType}.${this.id}`;
     }
     static fromEntities(entities) {
         return entities
-            .filter(e => {
-            return e.visible && !(e.folder && ignoredFolderNames[e.folder.name]);
+            .filter((e) => {
+            return (e.visible && !(e.folder?.name && ignoredFolderNames[e.folder.name]));
         })
-            .map(this.fromEntity);
+            .map(this.fromDocument);
     }
-    static fromEntity(entity) {
-        if (ui["PDFoundry"] && "pdfoundry" in entity.data.flags) {
-            return new PDFoundySearchItem(entity);
+    static fromDocument(doc) {
+        if ("PDFoundry" in ui && "pdfoundry" in doc.data.flags) {
+            return new PDFoundySearchItem({
+                id: doc.id,
+                uuid: doc.uuid,
+                name: doc.name,
+                documentType: doc.documentName,
+                img: "img" in doc ? doc.img : doc.data.img,
+            });
         }
-        return new EntitySearchItem(entity);
+        return new EntitySearchItem({
+            id: doc.id,
+            uuid: doc.uuid,
+            name: doc.name,
+            documentType: doc.documentName,
+            img: "img" in doc ? doc.img : doc.data.img,
+        });
     }
-    // Get the draggable attributes in order to make custom elements
-    get draggableAttrs() {
+    // Get the drag data for drag operations
+    get dragData() {
         return {
-            draggable: "true",
-            "data-entity": this.entityType,
-            "data-id": this.id,
+            type: this.documentType,
+            id: this.id,
         };
     }
-    // Get the draggable attributes in order to make custom elements
-    get draggableAttrString() {
-        return `draggable="true" data-entity="${this.entityType}" data-id="${this.id}"`;
-    }
     get icon() {
-        return `<i class="fas ${entityIcons[this.entityType]} entity-icon"></i>`;
-    }
-    // Get a draggable and clickable link to the entity
-    get link() {
-        return `<a class="entity-link" ${this.draggableAttrs}>${this.icon} ${this.name}</a>`;
+        return `<i class="fas ${documentIcons[this.documentType]} entity-icon"></i>`;
     }
     // Reference the entity in a journal, chat or other places that support it
     get journalLink() {
-        return `@${this.entityType}[${this.id}]{${this.name}}`;
+        return `@${this.documentType}[${this.id}]{${this.name}}`;
     }
     // Reference the entity in a script
     get script() {
-        return `game.${EntityCollections[this.entityType]}.get("${this.id}")`;
+        return `game.${DocumentMeta[this.documentType].collection}.get("${this.id}")`;
     }
     // Short tagline that explains where/what this is
     get tagline() {
         if (this.folder) {
-            return `${this.folder.name} - ${this.entityType}`;
+            return `${this.folder.name} - ${this.documentType}`;
         }
-        return `${this.entityType}`;
+        return `${this.documentType}`;
     }
     async show() {
-        (await this.get())?.sheet.render(true);
+        (await this.get())?.sheet?.render(true);
     }
     async get() {
-        return getCollectionFromType(this.entityType).get(this.id);
+        return getCollectionFromType(this.documentType).get(this.id);
     }
 }
 class PDFoundySearchItem extends EntitySearchItem {
@@ -404,36 +308,35 @@ class PDFoundySearchItem extends EntitySearchItem {
 }
 class CompendiumSearchItem extends SearchItem {
     constructor(pack, item) {
-        super(item._id, item.name, item.img);
-        this.package = pack.collection;
+        const packName = pack.collection;
+        super({
+            id: item._id,
+            uuid: `Compendium.${packName}.${item._id}`,
+            name: item.name,
+            // @ts-expect-error metadata "entity" renamed to "type"
+            documentType: pack.metadata.type,
+            img: item.img,
+        });
+        this.package = packName;
         this.packageName = pack?.metadata?.label || pack.title;
-        this.entityType = pack.entity;
+        // @ts-expect-error metadata "entity" renamed to "type"
+        this.documentType = pack.metadata.type;
         this.uuid = `Compendium.${this.package}.${this.id}`;
     }
     static fromCompendium(compendium) {
         const cIndex = compendium.index;
         return cIndex.map((item) => new CompendiumSearchItem(compendium, item));
     }
-    // Get the draggable attributes in order to make custom elements
-    get draggableAttrs() {
+    // Get the drag data for drag operations
+    get dragData() {
         return {
-            draggable: "true",
-            "data-pack": this.package,
-            "data-id": this.id,
-            "data-lookup": this.id,
+            type: this.documentType,
+            pack: this.package,
+            id: this.id,
         };
     }
-    // Get the draggable attributes in order to make custom elements
-    get draggableAttrsString() {
-        // data-id is kept for pre-5.5 compat
-        return `draggable="true" data-pack="${this.package}" data-id="${this.id}" data-lookup="${this.id}"`;
-    }
     get icon() {
-        return `<i class="fas ${entityIcons[this.entityType]} entity-icon"></i>`;
-    }
-    // Get a draggable and clickable link to the entity
-    get link() {
-        return `<a class="entity-link" ${this.draggableAttrs}>${this.icon} ${this.name}</a>`;
+        return `<i class="fas ${documentIcons[this.documentType]} entity-icon"></i>`;
     }
     // Reference the entity in a journal, chat or other places that support it
     get journalLink() {
@@ -448,11 +351,22 @@ class CompendiumSearchItem extends SearchItem {
         return `${this.packageName}`;
     }
     async show() {
-        (await this.get())?.sheet.render(true);
+        (await this.get())?.sheet?.render(true);
     }
     async get() {
-        return await fromUuid(this.uuid);
+        return (await fromUuid(this.uuid));
     }
+}
+function searchItemFromDocument(document) {
+    if (document.compendium) {
+        return new CompendiumSearchItem(document.compendium, {
+            _id: document.id,
+            name: document.name,
+            //@ts-ignore
+            img: document.img,
+        });
+    }
+    return EntitySearchItem.fromDocument(document);
 }
 function isEntity(item) {
     return item instanceof EntitySearchItem;
@@ -477,12 +391,13 @@ class FuseSearchIndex {
         this.fuse.add(item);
     }
     removeByUuid(uuid) {
-        this.fuse.remove(i => i?.uuid == uuid);
+        this.fuse.remove((i) => i?.uuid == uuid);
     }
     search(query) {
-        return this.fuse
-            .search(query)
-            .map(res => ({ item: res.item, match: res.matches }));
+        return this.fuse.search(query).map((res) => ({
+            item: res.item,
+            match: res.matches,
+        }));
     }
 }
 class SearchLib {
@@ -490,13 +405,17 @@ class SearchLib {
         this.index = new FuseSearchIndex();
     }
     indexCompendium(compendium) {
+        if (!compendium)
+            return;
         if (packEnabled(compendium)) {
             const index = CompendiumSearchItem.fromCompendium(compendium);
             this.index.addAll(index);
         }
     }
-    async indexCompendiums(refresh = false) {
-        for await (const res of loadIndexes(refresh)) {
+    async indexCompendiums() {
+        if (!game.packs)
+            return;
+        for await (const res of loadIndexes()) {
             if (res.error) {
                 console.log("Quick Insert | Index loading failure", res);
                 continue;
@@ -505,9 +424,9 @@ class SearchLib {
             this.indexCompendium(game.packs.get(res.pack));
         }
     }
-    indexDefaults() {
-        for (const type of enabledEntityTypes()) {
-            this.index.addAll(EntitySearchItem.fromEntities(getCollectionFromType(type).entities));
+    indexDocuments() {
+        for (const type of enabledDocumentTypes()) {
+            this.index.addAll(EntitySearchItem.fromEntities(getCollectionFromType(type).contents));
         }
     }
     addItem(item) {
@@ -529,6 +448,8 @@ class SearchLib {
 }
 function formatMatch(result, formatFn) {
     const match = result.match[0];
+    if (!match.value)
+        return "";
     let text = match.value;
     [...match.indices].reverse().forEach(([start, end]) => {
         // if (start === end) return;
@@ -539,11 +460,14 @@ function formatMatch(result, formatFn) {
     });
     return text;
 }
-// refresh = request new index for all compendiums
-async function* loadIndexes(refresh) {
+async function* loadIndexes() {
+    if (!game.packs) {
+        console.error("Can't load indexes before packs are initialized");
+        return;
+    }
     // Information about failures
     const failures = {};
-    const timeout = getSetting(settings.INDEX_TIMEOUT);
+    const timeout = getSetting(ModuleSetting.INDEX_TIMEOUT);
     const packsRemaining = [];
     for (const pack of game.packs) {
         if (packEnabled(pack)) {
@@ -553,36 +477,35 @@ async function* loadIndexes(refresh) {
     }
     while (packsRemaining.length > 0) {
         const pack = packsRemaining.shift();
+        if (!pack)
+            break;
         let promise;
-        // Refresh pack index
-        if (refresh || pack.index.length === 0) {
-            try {
-                promise = failures[pack.collection].waiting ?? pack.getIndex();
-                await withDeadline(promise, timeout * (failures[pack.collection].errors + 1));
+        try {
+            promise = failures[pack.collection].waiting ?? pack.getIndex();
+            await withDeadline(promise, timeout * (failures[pack.collection].errors + 1));
+        }
+        catch (error) {
+            ++failures[pack.collection].errors;
+            if (error instanceof TimeoutError) {
+                failures[pack.collection].waiting = promise;
             }
-            catch (error) {
-                ++failures[pack.collection].errors;
-                if (error instanceof TimeoutError) {
-                    failures[pack.collection].waiting = promise;
-                }
-                else {
-                    delete failures[pack.collection].waiting;
-                }
-                yield {
-                    error: error,
-                    pack: pack.collection,
-                    packsLeft: packsRemaining.length,
-                    errorCount: failures[pack.collection].errors,
-                };
-                if (failures[pack.collection].errors <= 4) {
-                    // Pack failed, will be retried later.
-                    packsRemaining.push(pack);
-                }
-                else {
-                    console.warn(`Quick Insert | Package "${pack.collection}" could not be indexed `);
-                }
-                continue;
+            else {
+                delete failures[pack.collection].waiting;
             }
+            yield {
+                error: error,
+                pack: pack.collection,
+                packsLeft: packsRemaining.length,
+                errorCount: failures[pack.collection].errors,
+            };
+            if (failures[pack.collection].errors <= 4) {
+                // Pack failed, will be retried later.
+                packsRemaining.push(pack);
+            }
+            else {
+                console.warn(`Quick Insert | Package "${pack.collection}" could not be indexed `);
+            }
+            continue;
         }
         yield {
             pack: pack.collection,
@@ -591,9 +514,6 @@ async function* loadIndexes(refresh) {
         };
     }
 }
-function getCollectionFromType(type) {
-    return game[EntityCollections[type]];
-}
 
 var FilterType;
 (function (FilterType) {
@@ -601,236 +521,6 @@ var FilterType;
     FilterType[FilterType["World"] = 1] = "World";
     FilterType[FilterType["Client"] = 2] = "Client";
 })(FilterType || (FilterType = {}));
-class SearchFilterCollection {
-    constructor() {
-        this.disabled = [];
-        this.dirty = true;
-        this.defaultFilters = [];
-        this.clientFilters = [];
-        this.worldFilters = [];
-        this.combinedFilters = [];
-    }
-    get filters() {
-        if (this.dirty) {
-            this.combinedFilters = [
-                ...this.defaultFilters,
-                ...this.worldFilters,
-                ...this.clientFilters,
-            ];
-            this.combinedFilters.forEach(f => (f.disabled = this.disabled.includes(f.id)));
-            this.dirty = false;
-        }
-        return this.combinedFilters;
-    }
-    // Someone changed the filters, will be saved etc.
-    filtersChanged(which) {
-        if (which === FilterType.Client) {
-            this.saveClient();
-        }
-        else if (which === FilterType.World) {
-            this.saveWorld();
-        }
-        else {
-            this.save();
-        }
-    }
-    search(query) {
-        if (!query) {
-            return [...this.filters];
-        }
-        return this.filters.filter(f => f.tag.includes(query));
-    }
-    getFilter(id) {
-        return this.filters.find(f => f.id == id);
-    }
-    getFilterByTag(tag) {
-        return this.filters.filter(f => !f.disabled).find(f => f.tag == tag);
-    }
-    addFilter(filter) {
-        if (filter.type == FilterType.World) {
-            this.worldFilters.push(filter);
-            this.filtersChanged(filter.type);
-        }
-        else if (filter.type == FilterType.Client) {
-            this.clientFilters.push(filter);
-            this.filtersChanged(filter.type);
-        }
-    }
-    deleteFilter(id) {
-        const f = this.filters.find(f => f.id === id);
-        if (f.type == FilterType.World) {
-            const x = this.worldFilters.findIndex(f => f.id === id);
-            if (x != -1) {
-                this.worldFilters.splice(x, 1);
-            }
-        }
-        else if (f.type == FilterType.Client) {
-            const x = this.clientFilters.findIndex(f => f.id === id);
-            if (x != -1) {
-                this.clientFilters.splice(x, 1);
-            }
-        }
-        this.filtersChanged(f.type);
-    }
-    resetFilters() {
-        this.defaultFilters = [];
-        this.clientFilters = [];
-        this.worldFilters = [];
-        this.combinedFilters = [];
-        this.dirty = false;
-    }
-    loadDefaultFilters() {
-        this.loadCompendiumFilters();
-        // this.loadDirectoryFilters();
-        this.loadEntityFilters();
-        this.dirty = true;
-    }
-    loadEntityFilters() {
-        this.defaultFilters = this.defaultFilters.concat(enabledEntityTypes().map(type => {
-            return {
-                id: EntityCollections[type],
-                type: FilterType.Default,
-                tag: EntityCollections[type],
-                subTitle: `${game.i18n.localize(`ENTITY.${getCollectionFromType(type).entity}`)}`,
-                filterConfig: {
-                    folders: "any",
-                    compendiums: "any",
-                    entities: [getCollectionFromType(type).entity],
-                },
-            };
-        }));
-    }
-    loadDirectoryFilters() {
-        // TODO: find a way to find directories that the user is allowed to see
-        if (!game.user.isGM)
-            return;
-        this.defaultFilters = this.defaultFilters.concat(enabledEntityTypes().map(type => {
-            return {
-                id: `dir.${EntityCollections[type]}`,
-                type: FilterType.Default,
-                tag: `dir.${EntityCollections[type]}`,
-                subTitle: getCollectionFromType(type).directory?.title,
-                filterConfig: {
-                    folders: "any",
-                    compendiums: [],
-                    entities: [getCollectionFromType(type).entity],
-                },
-            };
-        }));
-    }
-    loadCompendiumFilters() {
-        this.defaultFilters = this.defaultFilters.concat(game.packs
-            .map(pack => {
-            if (!packEnabled(pack))
-                return null;
-            return {
-                id: pack.collection,
-                type: FilterType.Default,
-                tag: pack.collection,
-                subTitle: pack.metadata.label,
-                filterConfig: {
-                    folders: [],
-                    compendiums: [pack.collection],
-                    entities: "any",
-                },
-            };
-        })
-            .filter(f => f != null));
-    }
-    loadClientSave() {
-        const clientSave = getSetting(settings.FILTERS_CLIENT);
-        this.disabled = clientSave.disabled || [];
-        this.clientFilters = clientSave.filters || [];
-        this.dirty = true;
-    }
-    loadWorldSave() {
-        const worldSave = getSetting(settings.FILTERS_WORLD);
-        this.worldFilters = worldSave.filters || [];
-        this.dirty = true;
-    }
-    loadSave() {
-        this.loadClientSave();
-        this.loadWorldSave();
-        Hooks.call("QuickInsert:FiltersUpdated");
-    }
-    saveWorld() {
-        if (!game.user.isGM)
-            return;
-        const worldSave = {
-            filters: [],
-        };
-        for (const filter of this.worldFilters) {
-            delete filter.disabled;
-            worldSave.filters.push(filter);
-        }
-        setSetting(settings.FILTERS_WORLD, worldSave);
-    }
-    saveClient() {
-        const clientSave = {
-            disabled: [],
-            filters: [],
-        };
-        for (const filter of [
-            ...this.defaultFilters,
-            ...this.worldFilters,
-            ...this.clientFilters,
-        ]) {
-            if (filter.disabled) {
-                clientSave.disabled.push(filter.id);
-            }
-            if (filter.type === FilterType.Client) {
-                clientSave.filters.push(filter);
-            }
-        }
-        setSetting(settings.FILTERS_CLIENT, clientSave);
-    }
-    save() {
-        this.saveClient();
-        this.saveWorld();
-    }
-}
-// Is parentFolder inside targetFolder?
-function isInFolder(parentFolder, targetFolder) {
-    while (parentFolder) {
-        if (parentFolder === targetFolder)
-            return true;
-        parentFolder = game.folders.get(parentFolder)?.data.parent;
-    }
-    return false;
-}
-function matchFilterConfig(config, item) {
-    let folderMatch = false;
-    let compendiumMatch = false;
-    let entityMatch = true;
-    if (isEntity(item.item)) {
-        if (config.folders === "any") {
-            folderMatch = true;
-        }
-        else {
-            for (const f of config.folders) {
-                if (isInFolder(item.item.folder?.id, f)) {
-                    folderMatch = true;
-                    break;
-                }
-            }
-        }
-    }
-    else if (isCompendiumEntity(item.item)) {
-        if (config.compendiums == "any") {
-            compendiumMatch = true;
-        }
-        else {
-            compendiumMatch = config.compendiums.includes(item.item.package);
-        }
-    }
-    if (config.entities == "any") {
-        entityMatch = true;
-    }
-    else {
-        entityMatch = config.entities.includes(item.item.entityType);
-    }
-    return (folderMatch || compendiumMatch) && entityMatch;
-}
 
 var ContextMode;
 (function (ContextMode) {
@@ -862,6 +552,8 @@ class BrowseContext extends SearchContext {
 class InputContext extends SearchContext {
     constructor(input) {
         super();
+        this.selectionStart = null;
+        this.selectionEnd = null;
         this.input = input;
         const targetRect = input.getBoundingClientRect();
         const bodyRect = document.body.getBoundingClientRect();
@@ -874,16 +566,23 @@ class InputContext extends SearchContext {
         };
         this.selectionStart = input.selectionStart;
         this.selectionEnd = input.selectionEnd;
-        if (this.selectionStart != this.selectionEnd) {
-            this.startText = this.input.value.slice(this.selectionStart, this.selectionEnd);
+        if (this.selectionStart !== null && this.selectionEnd !== null) {
+            if (this.selectionStart != this.selectionEnd) {
+                this.startText = this.input.value.slice(this.selectionStart, this.selectionEnd);
+            }
         }
         $(input).addClass("quick-insert-context");
     }
     insertResult(result) {
-        this.input.value =
-            this.input.value.slice(0, this.selectionStart) +
-                result +
-                this.input.value.slice(this.selectionEnd);
+        if (this.selectionStart !== null && this.selectionEnd !== null) {
+            this.input.value =
+                this.input.value.slice(0, this.selectionStart) +
+                    result +
+                    this.input.value.slice(this.selectionEnd);
+        }
+        else {
+            this.input.value = result;
+        }
     }
     onSubmit(item) {
         if (typeof item == "string") {
@@ -925,10 +624,10 @@ class RollTableContext extends InputContext {
         const appId = row.closest(".window-app").data("appid");
         const app = ui.windows[parseInt(appId)];
         if (isEntity(item)) {
-            app.object.updateEmbeddedEntity("TableResult", [
+            app.object.updateEmbeddedDocuments("TableResult", [
                 {
                     _id: resultId,
-                    collection: item.entityType,
+                    collection: item.documentType,
                     type: 1,
                     resultId: item.id,
                     text: item.name,
@@ -937,7 +636,7 @@ class RollTableContext extends InputContext {
             ]);
         }
         else if (isCompendiumEntity(item)) {
-            app.object.updateEmbeddedEntity("TableResult", [
+            app.object.updateEmbeddedDocuments("TableResult", [
                 {
                     _id: resultId,
                     collection: item.package,
@@ -964,6 +663,7 @@ class TinyMCEContext extends SearchContext {
             maxHeight: top + 20,
         };
         this.editor = editor;
+        this.startText = editor.selection.getContent().trim();
     }
     onSubmit(item) {
         if (typeof item == "string") {
@@ -978,10 +678,10 @@ class TinyMCEContext extends SearchContext {
     }
 }
 class CharacterSheetContext extends SearchContext {
-    constructor(entitySheet, anchor) {
+    constructor(documentSheet, anchor) {
         super();
-        this.restrictTypes = [EntityType.ITEM];
-        this.entitySheet = entitySheet;
+        this.restrictTypes = [DocumentType.ITEM];
+        this.documentSheet = documentSheet;
         this.anchor = anchor;
         const targetRect = anchor.get()[0].getBoundingClientRect();
         const bodyRect = document.body.getBoundingClientRect();
@@ -996,16 +696,11 @@ class CharacterSheetContext extends SearchContext {
     onSubmit(item) {
         if (typeof item == "string")
             return;
-        fromUuid(item.uuid).then(e => {
-            if (isNewerVersion(game.data.version, "0.7.8")) {
-                //@ts-ignore
-                return this.entitySheet._onDropItem({}, e);
-            }
-            if (isNewerVersion(game.data.version, "0.6.9")) {
-                //@ts-ignore
-                return this.entitySheet._onDropItemCreate(e);
-            }
-            this.entitySheet.entity.createEmbeddedEntity("OwnedItem", e);
+        //@ts-ignore
+        return this.documentSheet._onDropItem({}, {
+            id: item.id,
+            type: item.documentType,
+            ...(item instanceof CompendiumSearchItem && { pack: item.package }),
         });
     }
 }
@@ -1014,8 +709,7 @@ function identifyContext(target) {
         if (target.name === "command") {
             if (target
                 .closest(".macro-sheet")
-                .querySelector('select[name="type"]').value ===
-                "script") {
+                ?.querySelector('select[name="type"]')?.value === "script") {
                 return new ScriptMacroContext(target);
             }
             return new InputContext(target);
@@ -1030,7 +724,7 @@ function identifyContext(target) {
         }
     }
     // No/unknown context, browse only.
-    if (getSetting(settings.ENABLE_GLOBAL_CONTEXT) === true) {
+    if (getSetting(ModuleSetting.ENABLE_GLOBAL_CONTEXT) === true) {
         return new BrowseContext();
     }
     return null;
@@ -1052,32 +746,266 @@ class EmbeddedContext extends BrowseContext {
     }
 }
 
+class SearchFilterCollection {
+    constructor() {
+        this.disabled = [];
+        this.dirty = true;
+        this.defaultFilters = [];
+        this.clientFilters = [];
+        this.worldFilters = [];
+        this.combinedFilters = [];
+    }
+    get filters() {
+        if (this.dirty) {
+            this.combinedFilters = [
+                ...this.defaultFilters,
+                ...this.worldFilters,
+                ...this.clientFilters,
+            ];
+            this.combinedFilters.forEach((f) => (f.disabled = this.disabled.includes(f.id)));
+            this.dirty = false;
+        }
+        return this.combinedFilters;
+    }
+    // Someone changed the filters, will be saved etc.
+    filtersChanged(which) {
+        if (which === FilterType.Client) {
+            this.saveClient();
+        }
+        else if (which === FilterType.World) {
+            this.saveWorld();
+        }
+        else {
+            this.save();
+        }
+    }
+    search(query) {
+        if (!query) {
+            return [...this.filters];
+        }
+        return this.filters.filter((f) => f.tag.includes(query));
+    }
+    getFilter(id) {
+        return this.filters.find((f) => f.id == id);
+    }
+    getFilterByTag(tag) {
+        return this.filters.filter((f) => !f.disabled).find((f) => f.tag == tag);
+    }
+    addFilter(filter) {
+        if (filter.type == FilterType.World) {
+            this.worldFilters.push(filter);
+            this.filtersChanged(filter.type);
+        }
+        else if (filter.type == FilterType.Client) {
+            this.clientFilters.push(filter);
+            this.filtersChanged(filter.type);
+        }
+    }
+    deleteFilter(id) {
+        const f = this.filters.find((f) => f.id === id);
+        if (!f)
+            return;
+        if (f.type == FilterType.World) {
+            const x = this.worldFilters.findIndex((f) => f.id === id);
+            if (x != -1) {
+                this.worldFilters.splice(x, 1);
+            }
+        }
+        else if (f.type == FilterType.Client) {
+            const x = this.clientFilters.findIndex((f) => f.id === id);
+            if (x != -1) {
+                this.clientFilters.splice(x, 1);
+            }
+        }
+        this.filtersChanged(f.type);
+    }
+    resetFilters() {
+        this.defaultFilters = [];
+        this.clientFilters = [];
+        this.worldFilters = [];
+        this.combinedFilters = [];
+        this.dirty = false;
+    }
+    loadDefaultFilters() {
+        this.loadCompendiumFilters();
+        // this.loadDirectoryFilters();
+        this.loadEntityFilters();
+        this.dirty = true;
+    }
+    loadEntityFilters() {
+        this.defaultFilters = this.defaultFilters.concat(enabledDocumentTypes().map((type) => {
+            const metadata = DocumentMeta[type];
+            return {
+                id: metadata.collection,
+                type: FilterType.Default,
+                tag: metadata.collection,
+                subTitle: `${game.i18n.localize(metadata.label)}`,
+                filterConfig: {
+                    folders: "any",
+                    compendiums: "any",
+                    entities: [metadata.name],
+                },
+            };
+        }));
+    }
+    loadDirectoryFilters() {
+        // TODO: find a way to find directories that the user is allowed to see
+        if (!game.user?.isGM)
+            return;
+        this.defaultFilters = this.defaultFilters.concat(enabledDocumentTypes().map((type) => {
+            const metadata = DocumentMeta[type];
+            return {
+                id: `dir.${metadata.collection}`,
+                type: FilterType.Default,
+                tag: `dir.${metadata.collection}`,
+                subTitle: getCollectionFromType(type).directory?.title,
+                filterConfig: {
+                    folders: "any",
+                    compendiums: [],
+                    entities: [metadata.name],
+                },
+            };
+        }));
+    }
+    loadCompendiumFilters() {
+        if (!game.packs)
+            return;
+        this.defaultFilters = this.defaultFilters.concat(game.packs.filter(packEnabled).map((pack) => {
+            return {
+                id: pack.collection,
+                type: FilterType.Default,
+                tag: pack.collection,
+                subTitle: pack.metadata.label,
+                filterConfig: {
+                    folders: [],
+                    compendiums: [pack.collection],
+                    entities: "any",
+                },
+            };
+        }));
+    }
+    loadClientSave() {
+        const clientSave = getSetting(ModuleSetting.FILTERS_CLIENT);
+        this.disabled = clientSave.disabled || [];
+        this.clientFilters = clientSave.filters || [];
+        this.dirty = true;
+    }
+    loadWorldSave() {
+        const worldSave = getSetting(ModuleSetting.FILTERS_WORLD);
+        this.worldFilters = worldSave.filters || [];
+        this.dirty = true;
+    }
+    loadSave() {
+        this.loadClientSave();
+        this.loadWorldSave();
+        Hooks.call("QuickInsert:FiltersUpdated");
+    }
+    saveWorld() {
+        if (!game.user?.isGM)
+            return;
+        const worldSave = {
+            filters: [],
+        };
+        for (const filter of this.worldFilters) {
+            delete filter.disabled;
+            worldSave.filters.push(filter);
+        }
+        setSetting(ModuleSetting.FILTERS_WORLD, worldSave);
+    }
+    saveClient() {
+        const clientSave = {
+            disabled: [],
+            filters: [],
+        };
+        for (const filter of [
+            ...this.defaultFilters,
+            ...this.worldFilters,
+            ...this.clientFilters,
+        ]) {
+            if (filter.disabled) {
+                clientSave.disabled.push(filter.id);
+            }
+            if (filter.type === FilterType.Client) {
+                clientSave.filters.push(filter);
+            }
+        }
+        setSetting(ModuleSetting.FILTERS_CLIENT, clientSave);
+    }
+    save() {
+        this.saveClient();
+        this.saveWorld();
+    }
+}
+// Is parentFolder inside targetFolder?
+function isInFolder(parentFolder, targetFolder) {
+    while (parentFolder) {
+        if (parentFolder === targetFolder)
+            return true;
+        parentFolder = game.folders?.get(parentFolder)?.data?.parent;
+    }
+    return false;
+}
+function matchFilterConfig(config, item) {
+    let folderMatch = false;
+    let compendiumMatch = false;
+    let entityMatch = true;
+    if (isEntity(item.item)) {
+        if (config.folders === "any") {
+            folderMatch = true;
+        }
+        else {
+            for (const f of config.folders) {
+                if (isInFolder(item.item.folder?.id, f)) {
+                    folderMatch = true;
+                    break;
+                }
+            }
+        }
+    }
+    else if (isCompendiumEntity(item.item)) {
+        if (config.compendiums == "any") {
+            compendiumMatch = true;
+        }
+        else {
+            compendiumMatch = config.compendiums.includes(item.item.package);
+        }
+    }
+    if (config.entities == "any") {
+        entityMatch = true;
+    }
+    else {
+        entityMatch = config.entities.includes(item.item.documentType);
+    }
+    return (folderMatch || compendiumMatch) && entityMatch;
+}
+
 // Module singleton class that contains everything
 class QuickInsertCore {
-    matchBoundKeyEvent(event) {
-        if (this.app.embeddedMode || !event)
-            return false;
-        let keySetting = getSetting(settings.QUICKOPEN);
-        // keybinds ending with space are trimmed by 0.7.x settings window
-        if (keySetting.endsWith("+")) {
-            keySetting = keySetting + "  ";
-        }
-        const key = window.Azzu.SettingsTypes.KeyBinding.parse(keySetting);
-        if (key.key === " " &&
-            canvas.ready &&
-            canvas.controls?.ruler?.waypoints?.length > 0) {
-            return false;
-        }
-        return (window.Azzu.SettingsTypes.KeyBinding.eventIsForBinding(event, key) &&
-            !$(document.activeElement)
-                .closest(".app.window-app")
-                .is("#client-settings"));
+    constructor() {
+        this.filters = new SearchFilterCollection();
+    }
+    get hasIndex() {
+        return Boolean(this.searchLib?.index);
+    }
+    /**
+     * Incorrect to match like this with new keybinds!
+     * @deprecated
+     */
+    matchBoundKeyEvent() {
+        return false;
+    }
+    // If the global key binds are not enough - e.g. in a custom editor,
+    // include the custom search context!
+    handleKeybind(evt, context) {
+        if (!context)
+            throw new Error("A custom context is required!");
+        customKeybindHandler(evt, context);
     }
     open(context) {
-        this.app.render(true, { context });
+        this.app?.render(true, { context });
     }
     toggle(context) {
-        if (this.app.open) {
+        if (this.app?.open) {
             this.app.closeDialog();
         }
         else {
@@ -1085,32 +1013,33 @@ class QuickInsertCore {
         }
     }
     search(text, filter = null, max = 100) {
-        return this.searchLib.search(text, filter, max);
+        return this.searchLib?.search(text, filter, max) || [];
     }
     async forceIndex() {
-        return loadSearchIndex(true);
+        return loadSearchIndex();
     }
 }
 const QuickInsert = new QuickInsertCore();
 // Ensure that only one loadSearchIndex function is running at any one time.
 let isLoading = false;
-async function loadSearchIndex(refresh) {
+async function loadSearchIndex() {
     if (isLoading)
         return;
     isLoading = true;
     console.log("Quick Insert | Preparing search index...");
     const start = performance.now();
     QuickInsert.searchLib = new SearchLib();
-    QuickInsert.searchLib.indexDefaults();
+    QuickInsert.searchLib.indexDocuments();
     QuickInsert.filters.resetFilters();
     QuickInsert.filters.loadDefaultFilters();
     QuickInsert.filters.loadSave();
-    console.log(`Quick Insert | Indexing compendiums with timeout set to ${getSetting(settings.INDEX_TIMEOUT)}ms`);
-    await QuickInsert.searchLib.indexCompendiums(refresh);
+    console.log(`Quick Insert | Indexing compendiums with timeout set to ${getSetting(ModuleSetting.INDEX_TIMEOUT)}ms`);
+    await QuickInsert.searchLib.indexCompendiums();
     console.log(`Quick Insert | Search index and filters completed. Indexed ${
     // @ts-ignore
     QuickInsert.searchLib?.index?.fuse._docs.length || 0} items in ${performance.now() - start}ms`);
     isLoading = false;
+    Hooks.callAll("QuickInsert:IndexCompleted", QuickInsert);
 }
 
 function parseFilterConfig(collections) {
@@ -1139,7 +1068,7 @@ function parseFilterConfig(collections) {
                 filters.compendiums.push(rest);
             }
         }
-        else if (base === "Entity") {
+        else if (base === "Document" || base === "Entity") {
             if (rest === "Any") {
                 filters.entities = "any";
             }
@@ -1165,6 +1094,7 @@ class FilterEditor extends Application {
                 ".collection-list.entity-list",
             ],
         });
+        this.searchInput = "";
         this.filter = filter;
         this.idPrefix = new RegExp(`^${this.filter.id}_`);
     }
@@ -1181,14 +1111,14 @@ class FilterEditor extends Application {
         return super.render(force, options);
     }
     isEditable() {
-        return (this.filter.type == FilterType.Client ||
-            (this.filter.type == FilterType.World && game.user.isGM));
+        return Boolean(this.filter.type == FilterType.Client ||
+            (this.filter.type == FilterType.World && game.user?.isGM));
     }
     fixAny(type, form, formData) {
         form
             .find(`input[name^="${this.filter.id}_${type}."].disabled`)
             .removeClass("disabled");
-        const selectedAny = formData.find(r => r.name.endsWith(".Any"));
+        const selectedAny = formData.find((r) => r.name.endsWith(".Any"));
         if (selectedAny) {
             const other = form.find(`input[name^="${this.filter.id}_${type}."]:not(input[name="${this.filter.id}_${selectedAny.name}"])`);
             other.prop("checked", false);
@@ -1196,7 +1126,7 @@ class FilterEditor extends Application {
         }
     }
     close() {
-        if (this.element.find(".quick-insert").length > 0) {
+        if (this.element.find(".quick-insert").length > 0 && QuickInsert.app) {
             QuickInsert.app.embeddedMode = false;
             QuickInsert.app.closeDialog();
         }
@@ -1205,18 +1135,18 @@ class FilterEditor extends Application {
     processForm() {
         const form = this.element.find("form");
         let formData = form.serializeArray();
-        formData.forEach(d => {
+        formData.forEach((d) => {
             d.name = this.unPrefix(d.name);
         });
-        const name = formData.find(p => p.name == "name").value.trim();
-        const title = formData.find(p => p.name == "title").value;
-        formData = formData.filter(p => p.name != "name" && p.name != "title");
-        const compendiums = formData.filter(r => r.name.startsWith("Compendium."));
-        const folders = formData.filter(r => r.name.startsWith("Folder."));
-        const entity = formData.filter(r => r.name.startsWith("Entity."));
+        const name = formData.find((p) => p.name == "name")?.value.trim();
+        const title = formData.find((p) => p.name == "title")?.value;
+        formData = formData.filter((p) => p.name != "name" && p.name != "title");
+        const compendiums = formData.filter((r) => r.name.startsWith("Compendium."));
+        const folders = formData.filter((r) => r.name.startsWith("Folder."));
+        const entity = formData.filter((r) => r.name.startsWith("Document."));
         this.fixAny("Compendium", form, compendiums);
         this.fixAny("Folder", form, folders);
-        this.fixAny("Entity", form, entity);
+        this.fixAny("Document", form, entity);
         return {
             name,
             title,
@@ -1227,7 +1157,7 @@ class FilterEditor extends Application {
         if (!this.isEditable())
             return;
         const { name, title, formData } = this.processForm();
-        const config = parseFilterConfig(formData.map(x => x.name));
+        const config = parseFilterConfig(formData.map((x) => x.name));
         const oldTag = this.filter.tag;
         if (name != "") {
             this.filter.tag = name;
@@ -1235,21 +1165,21 @@ class FilterEditor extends Application {
         this.filter.subTitle = title;
         this.filter.filterConfig = config;
         // Hacky way to keep/update state of input
-        this.searchInput = QuickInsert.app.input
-            .text()
-            .replace(`@${oldTag}`, "")
-            .trim();
+        this.searchInput =
+            QuickInsert.app?.input?.text().replace(`@${oldTag}`, "").trim() || "";
         QuickInsert.filters.filtersChanged(this.filter.type);
     }
     attachQuickInsert() {
         const context = new EmbeddedContext();
         context.filter = this.filter;
         context.startText = this.searchInput;
+        if (!QuickInsert.app)
+            return;
         if (QuickInsert.app.embeddedMode) {
             this.element.find(".example-out").append(QuickInsert.app.element);
         }
         else {
-            Hooks.once(`render${QuickInsert.app.constructor.name}`, app => {
+            Hooks.once(`render${QuickInsert.app?.constructor.name}`, (app) => {
                 this.element.find(".example-out").append(app.element);
             });
         }
@@ -1259,64 +1189,67 @@ class FilterEditor extends Application {
     activateListeners() {
         this.attachQuickInsert();
         const form = this.element.find("form");
-        form.change(() => {
+        form.on("change", () => {
             this.formChange();
         });
         this.processForm();
         if (this.filter.type == FilterType.Default ||
-            (this.filter.type == FilterType.World && !game.user.isGM)) {
+            (this.filter.type == FilterType.World && !game.user?.isGM)) {
             this.element.find("input").prop("disabled", true);
         }
-        this.element.find(".open-here").on("click", evt => {
+        this.element.find(".open-here").on("click", (evt) => {
             evt.preventDefault();
             this.attachQuickInsert();
         });
     }
     getData() {
         let folders = [];
-        if (game.user.isGM) {
-            folders = game.folders.map(folder => ({
-                label: folder.name,
-                name: this.prefix(`Folder.${folder._id}`),
-                selected: this.filter.filterConfig.folders.includes(folder._id),
-            }));
+        if (!game.packs)
+            return {};
+        if (game.user?.isGM) {
+            folders =
+                game.folders?.map((folder) => ({
+                    label: folder.name,
+                    name: this.prefix(`Folder.${folder.id}`),
+                    selected: this.filter.filterConfig?.folders.includes(folder.id),
+                })) || [];
         }
         return {
             tag: this.filter.tag,
             subTitle: this.filter.subTitle,
             isDefault: this.filter.type === FilterType.Default,
-            forbiddenWorld: this.filter.type == FilterType.World && !game.user.isGM,
+            forbiddenWorld: this.filter.type == FilterType.World && !game.user?.isGM,
             collections: [
                 {
                     name: this.prefix("Compendium.Any"),
                     label: i18n("FilterEditorCompendiumAny"),
-                    selected: this.filter.filterConfig.compendiums === "any",
+                    selected: this.filter.filterConfig?.compendiums === "any",
                 },
                 ...game.packs
-                    .filter(pack => packEnabled(pack))
-                    .map(pack => ({
+                    .filter((pack) => packEnabled(pack))
+                    .map((pack) => ({
                     name: this.prefix(`Compendium.${pack.collection}`),
                     label: `${pack.metadata.label} - ${pack.collection}`,
-                    selected: this.filter.filterConfig.compendiums.includes(pack.collection),
+                    selected: this.filter.filterConfig?.compendiums.includes(pack.collection),
                 })),
             ],
-            entityTypes: [
+            documentTypes: [
                 {
-                    name: this.prefix("Entity.Any"),
+                    name: this.prefix("Document.Any"),
                     label: i18n("FilterEditorEntityAny"),
-                    selected: this.filter.filterConfig.entities === "any",
+                    selected: this.filter.filterConfig?.entities === "any",
                 },
-                ...enabledEntityTypes().map(type => ({
-                    name: this.prefix(`Entity.${type}`),
-                    label: game.i18n.localize(`ENTITY.${type}`),
-                    selected: this.filter.filterConfig.entities.includes(type),
+                ...enabledDocumentTypes().map((type) => ({
+                    name: this.prefix(`Document.${type}`),
+                    label: game.i18n.localize(`DOCUMENT.${type}`),
+                    selected: this.filter.filterConfig?.entities.includes(type),
                 })),
             ],
             folders: [
                 {
                     name: this.prefix("Folder.Any"),
                     label: i18n("FilterEditorFolderAny"),
-                    selected: this.filter.filterConfig.folders === "any",
+                    selected: this.filter.filterConfig?.folders === "any",
                 },
                 ...folders,
             ],
@@ -1347,19 +1280,18 @@ function cloneFilterConfig(original) {
     return res;
 }
 class FilterList extends FormApplication {
-    constructor(object, options = {}) {
-        super(object, options);
+    constructor() {
+        super(...arguments);
         this.filterEditors = {};
         this.onFiltersUpdated = () => {
             this.render(true);
             Object.entries(this.filterEditors).forEach(([id, editor]) => {
-                editor.filter = QuickInsert.filters.getFilter(id);
+                const filter = QuickInsert.filters.getFilter(id);
+                if (filter)
+                    editor.filter = filter;
                 editor.rendered && editor.render(true);
             });
         };
-    }
-    get element() {
-        return super.element;
     }
     static get defaultOptions() {
         return {
@@ -1376,23 +1308,23 @@ class FilterList extends FormApplication {
     getData() {
         return {
             filters: [
-                ...QuickInsert.filters.filters.map(filter => ({
+                ...QuickInsert.filters.filters.map((filter) => ({
                     id: filter.id,
                     icon: typeIcons[filter.type],
                     tag: filter.tag,
                     subTitle: filter.subTitle,
                     disabled: filter.disabled,
                     deletable: filter.type == FilterType.Client ||
-                        (filter.type == FilterType.World && game.user.isGM),
+                        (filter.type == FilterType.World && game.user?.isGM),
                 })),
             ],
         };
     }
-    render(...arg) {
+    render(force, options) {
         if (this._state <= 0) {
             Hooks.on("QuickInsert:FiltersUpdated", this.onFiltersUpdated);
         }
-        return super.render(...arg);
+        return super.render(force, options);
     }
     close() {
         Hooks.off("QuickInsert:FiltersUpdated", this.onFiltersUpdated);
@@ -1402,32 +1334,40 @@ class FilterList extends FormApplication {
         this.element.find(".create-filter").on("click", () => {
             this.newFilter();
         });
-        this.element.find("i.delete").on("click", evt => {
-            const id = evt.target.closest("tr").dataset["id"];
-            QuickInsert.filters.deleteFilter(id);
+        this.element.find("i.delete").on("click", (evt) => {
+            const id = evt.target.closest("tr")?.dataset["id"];
+            if (id)
+                QuickInsert.filters.deleteFilter(id);
         });
-        this.element.find("i.edit").on("click", evt => {
-            const id = evt.target.closest("tr").dataset["id"];
-            this.editFilter(id);
+        this.element.find("i.edit").on("click", (evt) => {
+            const id = evt.target.closest("tr")?.dataset["id"];
+            if (id)
+                this.editFilter(id);
         });
-        this.element.find("i.duplicate").on("click", evt => {
-            const id = evt.target.closest("tr").dataset["id"];
-            this.newFilter(QuickInsert.filters.filters.find(f => f.id === id));
+        this.element.find("i.duplicate").on("click", (evt) => {
+            const id = evt.target.closest("tr")?.dataset["id"];
+            this.newFilter(QuickInsert.filters.filters.find((f) => f.id === id));
         });
-        this.element.find("i.enable").on("click", evt => {
-            const id = evt.target.closest("tr").dataset["id"];
-            QuickInsert.filters.filters.find(f => f.id === id).disabled = false;
+        this.element.find("i.enable").on("click", (evt) => {
+            const id = evt.target.closest("tr")?.dataset["id"];
+            const filter = QuickInsert.filters.filters.find((f) => f.id === id);
+            if (filter)
+                filter.disabled = false;
             QuickInsert.filters.filtersChanged(FilterType.Client);
         });
-        this.element.find("i.disable").on("click", evt => {
-            const id = evt.target.closest("tr").dataset["id"];
-            QuickInsert.filters.filters.find(f => f.id === id).disabled = true;
+        this.element.find("i.disable").on("click", (evt) => {
+            const id = evt.target.closest("tr")?.dataset["id"];
+            const filter = QuickInsert.filters.filters.find((f) => f.id === id);
+            if (filter)
+                filter.disabled = true;
             QuickInsert.filters.filtersChanged(FilterType.Client);
         });
     }
     editFilter(id) {
         if (!this.filterEditors[id]) {
-            this.filterEditors[id] = new FilterEditor(QuickInsert.filters.filters.find(f => f.id === id));
+            const filter = QuickInsert.filters.filters.find((f) => f.id === id);
+            if (filter)
+                this.filterEditors[id] = new FilterEditor(filter);
         }
         this.filterEditors[id].render(true);
     }
@@ -1445,24 +1385,26 @@ class FilterList extends FormApplication {
                 ? i18n("FilterListDuplicateFilterTitle", { original: original.tag })
                 : i18n("FilterListNewFilterTitle"),
             content: `
-  <div class="new-filter-name">
-    @<input type="text" name="name" id="name" value="" placeholder="${i18n("FilterListFilterTagPlaceholder")}" pattern="[A-Za-z0-9\\._-]+" minlength="1">
-  </div>
-  ${game.user.isGM ? scope : ""}
-`,
+        <div class="new-filter-name">
+          @<input type="text" name="name" id="name" value="" placeholder="${i18n("FilterListFilterTagPlaceholder")}" pattern="[A-Za-z0-9\\._-]+" minlength="1">
+        </div>
+        ${game.user?.isGM ? scope : ""}
+      `,
             buttons: {
                 apply: {
                     icon: "<i class='fas fa-plus'></i>",
                     label: i18n("FilterListCreateFilter"),
                     callback: async (html) => {
+                        if (!("find" in html))
+                            return;
                         const input = html.find("input");
                         const val = html.find("input").val();
                         const selected = html.find("select").val();
-                        if (input.get(0).checkValidity() && val !== "") {
+                        if (input.get(0)?.checkValidity() && val !== "") {
                             this.createFilter(val, selected === "world" ? FilterType.World : FilterType.Client, original);
                         }
                         else {
-                            ui.notifications.error(`Incorrect filter tag: "${val}"`);
+                            ui.notifications?.error(`Incorrect filter tag: "${val}"`);
                         }
                     },
                 },
@@ -1482,7 +1424,7 @@ class FilterList extends FormApplication {
                 type: scope,
                 tag,
                 subTitle: `${original.subTitle} (Copy)`,
-                filterConfig: cloneFilterConfig(original.filterConfig),
+                filterConfig: original.filterConfig && cloneFilterConfig(original.filterConfig),
             });
             return;
         }
@@ -1526,12 +1468,12 @@ class SheetFilters extends FormApplication {
     }
     getData() {
         const filters = QuickInsert.filters.filters;
-        const customFilters = getSetting(settings.FILTERS_SHEETS).baseFilters;
+        const customFilters = getSetting(ModuleSetting.FILTERS_SHEETS).baseFilters;
         return {
             filters: Object.entries(customFilters).map(([key, filter]) => ({
                 key,
                 noFilter: filter === "",
-                options: filters.map(f => ({
+                options: filters.map((f) => ({
                     ...f,
                     selected: filter === f.tag || filter === f.id,
                 })),
@@ -1542,7 +1484,7 @@ class SheetFilters extends FormApplication {
         super.activateListeners(html);
     }
     async _updateObject(event, formData) {
-        setSetting(settings.FILTERS_SHEETS, {
+        setSetting(ModuleSetting.FILTERS_SHEETS, {
             baseFilters: formData,
         });
     }
@@ -1566,8 +1508,11 @@ async function importSystemIntegration() {
         case "sfrpg":
             system = await import('./sfrpg.js');
             break;
+        case "demonlord":
+            system = await import('./demonlord.js');
+            break;
         default:
-            return null;
+            return;
     }
     return {
         id: game.system.id,
@@ -1578,20 +1523,15 @@ async function importSystemIntegration() {
 function registerTinyMCEPlugin() {
     // TinyMCE addon registration
     tinymce.PluginManager.add("quickinsert", function (editor) {
-        editor.on("keydown", evt => {
-            if (QuickInsert.matchBoundKeyEvent(evt)) {
-                evt.stopPropagation();
-                evt.preventDefault();
-                const context = new TinyMCEContext(editor);
-                context.startText = editor.selection.getContent().trim();
-                QuickInsert.open(context);
-            }
+        editor.on("keydown", (evt) => {
+            const context = new TinyMCEContext(editor);
+            customKeybindHandler(evt, context);
         });
         editor.ui.registry.addButton("quickinsert", {
             tooltip: "Quick Insert",
             icon: "search",
             onAction: function () {
-                if (QuickInsert.app.embeddedMode)
+                if (QuickInsert.app?.embeddedMode)
                     return;
                 // Open window
                 QuickInsert.open(new TinyMCEContext(editor));
@@ -1602,38 +1542,42 @@ function registerTinyMCEPlugin() {
     CONFIG.TinyMCE.toolbar = CONFIG.TinyMCE.toolbar + " quickinsert";
 }
 
-const ENTITYACTIONS = {
-    show: item => item.show(),
-    roll: item => item.get().then(e => e.draw()),
-    viewScene: item => item.get().then(e => e.view()),
-    activateScene: item => item.get().then(e => {
-        game.user.isGM && e.activate();
+const DOCUMENTACTIONS = {
+    show: (item) => item.show(),
+    roll: (item) => item.get().then((d) => d.draw()),
+    viewScene: (item) => item.get().then((d) => d.view()),
+    activateScene: (item) => item.get().then((d) => {
+        game.user?.isGM && d.activate();
     }),
-    execute: item => item.get().then(e => e.execute()),
-    insert: item => item,
-    rollInsert: item => item.get().then(async (e) => {
-        const roll = e.roll();
-        for (const res of roll.results) {
-            if (res.resultId == "") {
-                return res.text;
+    execute: (item) => item.get().then((d) => d.execute()),
+    insert: (item) => item,
+    rollInsert: (item) => item.get().then(async (d) => {
+        const roll = await d.roll();
+        for (const { data } of roll.results) {
+            if (data.resultId == "") {
+                return data.text;
             }
-            if (res.collection.includes(".")) {
-                const pack = game.packs.get(res.collection);
+            if (data.collection.includes(".")) {
+                if (!game.packs)
+                    return;
+                const pack = game.packs.get(data.collection);
+                if (!pack)
+                    return;
                 const indexItem = game.packs
-                    .get(res.collection)
-                    .index.find(i => i._id === res.resultId);
-                return new CompendiumSearchItem(pack, indexItem);
+                    .get(data.collection)
+                    ?.index.find((i) => i._id === data.resultId);
+                return indexItem && new CompendiumSearchItem(pack, indexItem);
             }
             else {
-                const entity = getCollectionFromType(res.collection).get(res.resultId);
-                return new EntitySearchItem(entity);
+                const entity = getCollectionFromType(data.collection).get(data.resultId);
+                return entity ? new EntitySearchItem(entity) : null;
             }
         }
     }),
 };
-const BrowseEntityActions = (() => {
+const BrowseDocumentActions = (() => {
     const actions = {
-        [EntityType.SCENE]: [
+        [DocumentType.SCENE]: [
             {
                 id: "activateScene",
                 icon: "fas fa-bullseye",
@@ -1650,7 +1594,7 @@ const BrowseEntityActions = (() => {
                 title: "Configure",
             },
         ],
-        [EntityType.ROLLTABLE]: [
+        [DocumentType.ROLLTABLE]: [
             {
                 id: "roll",
                 icon: "fas fa-dice-d20",
@@ -1658,11 +1602,11 @@ const BrowseEntityActions = (() => {
             },
             {
                 id: "show",
-                icon: `fas ${entityIcons[EntityType.ROLLTABLE]}`,
+                icon: `fas ${documentIcons[DocumentType.ROLLTABLE]}`,
                 title: "Edit",
             },
         ],
-        [EntityType.MACRO]: [
+        [DocumentType.MACRO]: [
             {
                 id: "execute",
                 icon: "fas fa-play",
@@ -1670,18 +1614,18 @@ const BrowseEntityActions = (() => {
             },
             {
                 id: "show",
-                icon: `fas ${entityIcons[EntityType.ROLLTABLE]}`,
+                icon: `fas ${documentIcons[DocumentType.ROLLTABLE]}`,
                 title: "Edit",
             },
         ],
     };
-    IndexedEntityTypes.forEach(type => {
-        if (actions[type])
+    IndexedDocumentTypes.forEach((type) => {
+        if (type in actions)
             return;
         actions[type] = [
             {
                 id: "show",
-                icon: `fas ${entityIcons[type]}`,
+                icon: `fas ${documentIcons[type]}`,
                 title: "Show",
             },
         ];
@@ -1694,16 +1638,16 @@ const insertAction = {
     icon: `fas fa-plus`,
     title: "Insert",
 };
-const InsertEntityActions = (() => {
+const InsertDocumentActions = (() => {
     const actions = {
-        [EntityType.SCENE]: [
+        [DocumentType.SCENE]: [
             {
                 id: "show",
                 icon: "fas fa-cogs",
                 title: "Configure",
             },
         ],
-        [EntityType.ROLLTABLE]: [
+        [DocumentType.ROLLTABLE]: [
             {
                 id: "rollInsert",
                 icon: "fas fa-play",
@@ -1711,19 +1655,19 @@ const InsertEntityActions = (() => {
             },
             {
                 id: "show",
-                icon: `fas ${entityIcons[EntityType.ROLLTABLE]}`,
+                icon: `fas ${documentIcons[DocumentType.ROLLTABLE]}`,
                 title: "Show",
             },
         ],
     };
     // Add others
-    IndexedEntityTypes.forEach(type => {
+    IndexedDocumentTypes.forEach((type) => {
         if (!actions[type]) {
             // If nothing else, add "Show"
             actions[type] = [
                 {
                     id: "show",
-                    icon: `fas ${entityIcons[type]}`,
+                    icon: `fas ${documentIcons[type]}`,
                     title: "Show",
                 },
             ];
@@ -1732,37 +1676,56 @@ const InsertEntityActions = (() => {
     });
     return actions;
 })();
+function getActions(type, isInsertContext) {
+    return isInsertContext
+        ? InsertDocumentActions[type]
+        : BrowseDocumentActions[type];
+}
+function defaultAction(type, isInsertContext) {
+    if (!isInsertContext) {
+        switch (type) {
+            case DocumentType.SCENE:
+                return getSetting(ModuleSetting.DEFAULT_ACTION_SCENE);
+            case DocumentType.ROLLTABLE:
+                return getSetting(ModuleSetting.DEFAULT_ACTION_ROLL_TABLE);
+            case DocumentType.MACRO:
+                return getSetting(ModuleSetting.DEFAULT_ACTION_MACRO);
+        }
+    }
+    const actions = getActions(type, isInsertContext);
+    return actions[actions.length - 1].id;
+}
 
-/* src/app/SearchResults.svelte generated by Svelte v3.31.0 */
+/* src/app/SearchResults.svelte generated by Svelte v3.38.3 */
 
-function get_each_context(ctx, list, i) {
+function get_each_context$1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[10] = list[i].item;
-	child_ctx[11] = list[i].match;
-	child_ctx[12] = list[i].actions;
-	child_ctx[13] = list[i].defaultAction;
-	child_ctx[15] = i;
+	child_ctx[11] = list[i].item;
+	child_ctx[12] = list[i].match;
+	child_ctx[13] = list[i].actions;
+	child_ctx[14] = list[i].defaultAction;
+	child_ctx[16] = i;
 	return child_ctx;
 }
 
 function get_each_context_1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[16] = list[i];
+	child_ctx[17] = list[i];
 	return child_ctx;
 }
 
-// (18:0) {#if active}
-function create_if_block(ctx) {
+// (20:0) {#if active}
+function create_if_block$1(ctx) {
 	let ul;
 	let each_blocks = [];
 	let each_1_lookup = new Map();
 	let each_value = /*results*/ ctx[1];
-	const get_key = ctx => /*item*/ ctx[10].uuid;
+	const get_key = ctx => /*item*/ ctx[11].uuid;
 
 	for (let i = 0; i < each_value.length; i += 1) {
-		let child_ctx = get_each_context(ctx, each_value, i);
+		let child_ctx = get_each_context$1(ctx, each_value, i);
 		let key = get_key(child_ctx);
-		each_1_lookup.set(key, each_blocks[i] = create_each_block(key, child_ctx));
+		each_1_lookup.set(key, each_blocks[i] = create_each_block$1(key, child_ctx));
 	}
 
 	return {
@@ -1782,12 +1745,12 @@ function create_if_block(ctx) {
 				each_blocks[i].m(ul, null);
 			}
 
-			/*ul_binding*/ ctx[8](ul);
+			/*ul_binding*/ ctx[9](ul);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*results, selectedIndex, callAction, selectedAction, formatMatch*/ 46) {
-				const each_value = /*results*/ ctx[1];
-				each_blocks = update_keyed_each(each_blocks, dirty, get_key, 1, ctx, each_value, each_1_lookup, ul, destroy_block, create_each_block, null, get_each_context);
+			if (dirty & /*results, selectedIndex, JSON, callAction, selectedAction, formatMatch*/ 46) {
+				each_value = /*results*/ ctx[1];
+				each_blocks = update_keyed_each(each_blocks, dirty, get_key, 1, ctx, each_value, each_1_lookup, ul, destroy_block, create_each_block$1, null, get_each_context$1);
 			}
 		},
 		d(detaching) {
@@ -1797,28 +1760,29 @@ function create_if_block(ctx) {
 				each_blocks[i].d();
 			}
 
-			/*ul_binding*/ ctx[8](null);
+			/*ul_binding*/ ctx[9](null);
 		}
 	};
 }
 
-// (30:10) {:else}
+// (38:10) {:else}
 function create_else_block(ctx) {
 	let html_tag;
-	let raw_value = /*item*/ ctx[10].icon + "";
+	let raw_value = /*item*/ ctx[11].icon + "";
 	let html_anchor;
 
 	return {
 		c() {
+			html_tag = new HtmlTag();
 			html_anchor = empty();
-			html_tag = new HtmlTag(html_anchor);
+			html_tag.a = html_anchor;
 		},
 		m(target, anchor) {
 			html_tag.m(raw_value, target, anchor);
 			insert(target, html_anchor, anchor);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*results*/ 2 && raw_value !== (raw_value = /*item*/ ctx[10].icon + "")) html_tag.p(raw_value);
+			if (dirty & /*results*/ 2 && raw_value !== (raw_value = /*item*/ ctx[11].icon + "")) html_tag.p(raw_value);
 		},
 		d(detaching) {
 			if (detaching) detach(html_anchor);
@@ -1827,7 +1791,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (28:10) {#if item.img}
+// (36:10) {#if item.img}
 function create_if_block_1(ctx) {
 	let img;
 	let img_src_value;
@@ -1835,13 +1799,13 @@ function create_if_block_1(ctx) {
 	return {
 		c() {
 			img = element("img");
-			if (img.src !== (img_src_value = /*item*/ ctx[10].img)) attr(img, "src", img_src_value);
+			if (img.src !== (img_src_value = /*item*/ ctx[11].img)) attr(img, "src", img_src_value);
 		},
 		m(target, anchor) {
 			insert(target, img, anchor);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*results*/ 2 && img.src !== (img_src_value = /*item*/ ctx[10].img)) {
+			if (dirty & /*results*/ 2 && img.src !== (img_src_value = /*item*/ ctx[11].img)) {
 				attr(img, "src", img_src_value);
 			}
 		},
@@ -1851,7 +1815,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (37:12) {#each actions as action}
+// (49:12) {#each actions as action}
 function create_each_block_1(ctx) {
 	let i;
 	let i_class_value;
@@ -1861,19 +1825,19 @@ function create_each_block_1(ctx) {
 	let dispose;
 
 	function click_handler(...args) {
-		return /*click_handler*/ ctx[6](/*action*/ ctx[16], /*item*/ ctx[10], ...args);
+		return /*click_handler*/ ctx[6](/*action*/ ctx[17], /*item*/ ctx[11], ...args);
 	}
 
 	return {
 		c() {
 			i = element("i");
-			attr(i, "class", i_class_value = "" + (/*action*/ ctx[16].icon + " action-icon"));
-			attr(i, "title", i_title_value = "" + (/*action*/ ctx[16].title + " '" + /*item*/ ctx[10].name + "'"));
-			attr(i, "data-action-id", i_data_action_id_value = /*action*/ ctx[16].id);
+			attr(i, "class", i_class_value = "" + (/*action*/ ctx[17].icon + " action-icon"));
+			attr(i, "title", i_title_value = "" + (/*action*/ ctx[17].title + " '" + /*item*/ ctx[11].name + "'"));
+			attr(i, "data-action-id", i_data_action_id_value = /*action*/ ctx[17].id);
 
-			toggle_class(i, "selected", /*i*/ ctx[15] === /*selectedIndex*/ ctx[2] && (/*selectedAction*/ ctx[3]
-			? /*action*/ ctx[16].id === /*selectedAction*/ ctx[3]
-			: /*action*/ ctx[16].id == /*defaultAction*/ ctx[13]));
+			toggle_class(i, "selected", /*i*/ ctx[16] === /*selectedIndex*/ ctx[2] && (/*selectedAction*/ ctx[3]
+			? /*action*/ ctx[17].id === /*selectedAction*/ ctx[3]
+			: /*action*/ ctx[17].id == /*defaultAction*/ ctx[14]));
 		},
 		m(target, anchor) {
 			insert(target, i, anchor);
@@ -1886,22 +1850,22 @@ function create_each_block_1(ctx) {
 		p(new_ctx, dirty) {
 			ctx = new_ctx;
 
-			if (dirty & /*results*/ 2 && i_class_value !== (i_class_value = "" + (/*action*/ ctx[16].icon + " action-icon"))) {
+			if (dirty & /*results*/ 2 && i_class_value !== (i_class_value = "" + (/*action*/ ctx[17].icon + " action-icon"))) {
 				attr(i, "class", i_class_value);
 			}
 
-			if (dirty & /*results*/ 2 && i_title_value !== (i_title_value = "" + (/*action*/ ctx[16].title + " '" + /*item*/ ctx[10].name + "'"))) {
+			if (dirty & /*results*/ 2 && i_title_value !== (i_title_value = "" + (/*action*/ ctx[17].title + " '" + /*item*/ ctx[11].name + "'"))) {
 				attr(i, "title", i_title_value);
 			}
 
-			if (dirty & /*results*/ 2 && i_data_action_id_value !== (i_data_action_id_value = /*action*/ ctx[16].id)) {
+			if (dirty & /*results*/ 2 && i_data_action_id_value !== (i_data_action_id_value = /*action*/ ctx[17].id)) {
 				attr(i, "data-action-id", i_data_action_id_value);
 			}
 
 			if (dirty & /*results, results, selectedIndex, selectedAction*/ 14) {
-				toggle_class(i, "selected", /*i*/ ctx[15] === /*selectedIndex*/ ctx[2] && (/*selectedAction*/ ctx[3]
-				? /*action*/ ctx[16].id === /*selectedAction*/ ctx[3]
-				: /*action*/ ctx[16].id == /*defaultAction*/ ctx[13]));
+				toggle_class(i, "selected", /*i*/ ctx[16] === /*selectedIndex*/ ctx[2] && (/*selectedAction*/ ctx[3]
+				? /*action*/ ctx[17].id === /*selectedAction*/ ctx[3]
+				: /*action*/ ctx[17].id == /*defaultAction*/ ctx[14]));
 			}
 		},
 		d(detaching) {
@@ -1912,8 +1876,8 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (20:4) {#each results as { item, match, actions, defaultAction }
-function create_each_block(key_1, ctx) {
+// (22:4) {#each results as { item, match, actions, defaultAction }
+function create_each_block$1(key_1, ctx) {
 	let li;
 	let a;
 	let t0;
@@ -1921,15 +1885,15 @@ function create_each_block(key_1, ctx) {
 
 	let raw_value = formatMatch(
 		{
-			item: /*item*/ ctx[10],
-			match: /*match*/ ctx[11]
+			item: /*item*/ ctx[11],
+			match: /*match*/ ctx[12]
 		},
 		func
 	) + "";
 
 	let t1;
 	let span1;
-	let t2_value = /*item*/ ctx[10].tagline + "";
+	let t2_value = /*item*/ ctx[11].tagline + "";
 	let t2;
 	let t3;
 	let span2;
@@ -1939,35 +1903,25 @@ function create_each_block(key_1, ctx) {
 	let dispose;
 
 	function select_block_type(ctx, dirty) {
-		if (/*item*/ ctx[10].img) return create_if_block_1;
+		if (/*item*/ ctx[11].img) return create_if_block_1;
 		return create_else_block;
 	}
 
 	let current_block_type = select_block_type(ctx);
 	let if_block = current_block_type(ctx);
-	let each_value_1 = /*actions*/ ctx[12];
+	let each_value_1 = /*actions*/ ctx[13];
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value_1.length; i += 1) {
 		each_blocks[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
 	}
 
-	let a_levels = [
-		{ class: "entity-link" },
-		{
-			title: a_title_value = "" + (/*item*/ ctx[10].name + ", " + /*item*/ ctx[10].tagline)
-		},
-		/*item*/ ctx[10].draggableAttrs
-	];
-
-	let a_data = {};
-
-	for (let i = 0; i < a_levels.length; i += 1) {
-		a_data = assign(a_data, a_levels[i]);
+	function dragstart_handler(...args) {
+		return /*dragstart_handler*/ ctx[7](/*item*/ ctx[11], ...args);
 	}
 
 	function click_handler_1(...args) {
-		return /*click_handler_1*/ ctx[7](/*defaultAction*/ ctx[13], /*item*/ ctx[10], ...args);
+		return /*click_handler_1*/ ctx[8](/*defaultAction*/ ctx[14], /*item*/ ctx[11], ...args);
 	}
 
 	return {
@@ -1993,8 +1947,9 @@ function create_each_block(key_1, ctx) {
 			attr(span0, "class", "title");
 			attr(span1, "class", "sub");
 			attr(span2, "class", "action-icons");
-			set_attributes(a, a_data);
-			toggle_class(li, "search-selected", /*i*/ ctx[15] === /*selectedIndex*/ ctx[2]);
+			attr(a, "draggable", "true");
+			attr(a, "title", a_title_value = "" + (/*item*/ ctx[11].name + ", " + /*item*/ ctx[11].tagline));
+			toggle_class(li, "search-selected", /*i*/ ctx[16] === /*selectedIndex*/ ctx[2]);
 			this.first = li;
 		},
 		m(target, anchor) {
@@ -2017,7 +1972,11 @@ function create_each_block(key_1, ctx) {
 			append(li, t4);
 
 			if (!mounted) {
-				dispose = listen(a, "click", stop_propagation(click_handler_1));
+				dispose = [
+					listen(a, "dragstart", dragstart_handler),
+					listen(a, "click", stop_propagation(click_handler_1))
+				];
+
 				mounted = true;
 			}
 		},
@@ -2038,15 +1997,15 @@ function create_each_block(key_1, ctx) {
 
 			if (dirty & /*results*/ 2 && raw_value !== (raw_value = formatMatch(
 				{
-					item: /*item*/ ctx[10],
-					match: /*match*/ ctx[11]
+					item: /*item*/ ctx[11],
+					match: /*match*/ ctx[12]
 				},
 				func
 			) + "")) span0.innerHTML = raw_value;
-			if (dirty & /*results*/ 2 && t2_value !== (t2_value = /*item*/ ctx[10].tagline + "")) set_data(t2, t2_value);
+			if (dirty & /*results*/ 2 && t2_value !== (t2_value = /*item*/ ctx[11].tagline + "")) set_data(t2, t2_value);
 
 			if (dirty & /*results, selectedIndex, selectedAction, callAction*/ 46) {
-				each_value_1 = /*actions*/ ctx[12];
+				each_value_1 = /*actions*/ ctx[13];
 				let i;
 
 				for (i = 0; i < each_value_1.length; i += 1) {
@@ -2068,14 +2027,12 @@ function create_each_block(key_1, ctx) {
 				each_blocks.length = each_value_1.length;
 			}
 
-			set_attributes(a, a_data = get_spread_update(a_levels, [
-				{ class: "entity-link" },
-				dirty & /*results*/ 2 && a_title_value !== (a_title_value = "" + (/*item*/ ctx[10].name + ", " + /*item*/ ctx[10].tagline)) && { title: a_title_value },
-				dirty & /*results*/ 2 && /*item*/ ctx[10].draggableAttrs
-			]));
+			if (dirty & /*results*/ 2 && a_title_value !== (a_title_value = "" + (/*item*/ ctx[11].name + ", " + /*item*/ ctx[11].tagline))) {
+				attr(a, "title", a_title_value);
+			}
 
 			if (dirty & /*results, selectedIndex*/ 6) {
-				toggle_class(li, "search-selected", /*i*/ ctx[15] === /*selectedIndex*/ ctx[2]);
+				toggle_class(li, "search-selected", /*i*/ ctx[16] === /*selectedIndex*/ ctx[2]);
 			}
 		},
 		d(detaching) {
@@ -2083,14 +2040,14 @@ function create_each_block(key_1, ctx) {
 			if_block.d();
 			destroy_each(each_blocks, detaching);
 			mounted = false;
-			dispose();
+			run_all(dispose);
 		}
 	};
 }
 
-function create_fragment(ctx) {
+function create_fragment$1(ctx) {
 	let if_block_anchor;
-	let if_block = /*active*/ ctx[0] && create_if_block(ctx);
+	let if_block = /*active*/ ctx[0] && create_if_block$1(ctx);
 
 	return {
 		c() {
@@ -2106,7 +2063,7 @@ function create_fragment(ctx) {
 				if (if_block) {
 					if_block.p(ctx, dirty);
 				} else {
-					if_block = create_if_block(ctx);
+					if_block = create_if_block$1(ctx);
 					if_block.c();
 					if_block.m(if_block_anchor.parentNode, if_block_anchor);
 				}
@@ -2115,8 +2072,8 @@ function create_fragment(ctx) {
 				if_block = null;
 			}
 		},
-		i: noop$1,
-		o: noop$1,
+		i: noop,
+		o: noop,
 		d(detaching) {
 			if (if_block) if_block.d(detaching);
 			if (detaching) detach(if_block_anchor);
@@ -2126,17 +2083,24 @@ function create_fragment(ctx) {
 
 const func = str => `<strong>${str}</strong>`;
 
-function instance($$self, $$props, $$invalidate) {
+function instance$1($$self, $$props, $$invalidate) {
+	
 	
 	const dispatch = createEventDispatcher();
-	let { active } = $$props;
-	let { results } = $$props;
-	let { selectedIndex } = $$props;
-	let { selectedAction } = $$props;
+	let { active = false } = $$props;
+	let { results = [] } = $$props;
+	let { selectedIndex = 0 } = $$props;
+	let { selectedAction = "show" } = $$props;
 	let resultList;
 
 	afterUpdate(() => {
-		resultList?.children[selectedIndex]?.scrollIntoView({ block: "nearest" });
+		var _a;
+
+		(_a = resultList === null || resultList === void 0
+		? void 0
+		: resultList.children[selectedIndex]) === null || _a === void 0
+		? void 0
+		: _a.scrollIntoView({ block: "nearest" });
 	});
 
 	function callAction(actionId, item, shiftKey) {
@@ -2144,6 +2108,7 @@ function instance($$self, $$props, $$invalidate) {
 	}
 
 	const click_handler = (action, item, e) => callAction(action.id, item, e.shiftKey);
+	const dragstart_handler = (item, event) => event.dataTransfer?.setData("text/plain", JSON.stringify(item.dragData));
 	const click_handler_1 = (defaultAction, item, e) => callAction(defaultAction, item, e.shiftKey);
 
 	function ul_binding($$value) {
@@ -2168,6 +2133,7 @@ function instance($$self, $$props, $$invalidate) {
 		resultList,
 		callAction,
 		click_handler,
+		dragstart_handler,
 		click_handler_1,
 		ul_binding
 	];
@@ -2177,7 +2143,7 @@ class SearchResults extends SvelteComponent {
 	constructor(options) {
 		super();
 
-		init(this, options, instance, create_fragment, safe_not_equal, {
+		init(this, options, instance$1, create_fragment$1, safe_not_equal, {
 			active: 0,
 			results: 1,
 			selectedIndex: 2,
@@ -2186,17 +2152,17 @@ class SearchResults extends SvelteComponent {
 	}
 }
 
-/* src/app/SearchFiltersResults.svelte generated by Svelte v3.31.0 */
+/* src/app/SearchFiltersResults.svelte generated by Svelte v3.38.3 */
 
-function get_each_context$1(ctx, list, i) {
+function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
 	child_ctx[8] = list[i];
 	child_ctx[10] = i;
 	return child_ctx;
 }
 
-// (16:0) {#if active}
-function create_if_block$1(ctx) {
+// (17:0) {#if active}
+function create_if_block(ctx) {
 	let ul;
 	let each_blocks = [];
 	let each_1_lookup = new Map();
@@ -2204,9 +2170,9 @@ function create_if_block$1(ctx) {
 	const get_key = ctx => /*item*/ ctx[8].id;
 
 	for (let i = 0; i < each_value.length; i += 1) {
-		let child_ctx = get_each_context$1(ctx, each_value, i);
+		let child_ctx = get_each_context(ctx, each_value, i);
 		let key = get_key(child_ctx);
-		each_1_lookup.set(key, each_blocks[i] = create_each_block$1(key, child_ctx));
+		each_1_lookup.set(key, each_blocks[i] = create_each_block(key, child_ctx));
 	}
 
 	return {
@@ -2230,8 +2196,8 @@ function create_if_block$1(ctx) {
 		},
 		p(ctx, dirty) {
 			if (dirty & /*results, selectedIndex, selected*/ 22) {
-				const each_value = /*results*/ ctx[1];
-				each_blocks = update_keyed_each(each_blocks, dirty, get_key, 1, ctx, each_value, each_1_lookup, ul, destroy_block, create_each_block$1, null, get_each_context$1);
+				each_value = /*results*/ ctx[1];
+				each_blocks = update_keyed_each(each_blocks, dirty, get_key, 1, ctx, each_value, each_1_lookup, ul, destroy_block, create_each_block, null, get_each_context);
 			}
 		},
 		d(detaching) {
@@ -2246,8 +2212,8 @@ function create_if_block$1(ctx) {
 	};
 }
 
-// (18:4) {#each results as item, i (item.id)}
-function create_each_block$1(key_1, ctx) {
+// (19:4) {#each results as item, i (item.id)}
+function create_each_block(key_1, ctx) {
 	let li;
 	let a;
 	let span0;
@@ -2317,9 +2283,9 @@ function create_each_block$1(key_1, ctx) {
 	};
 }
 
-function create_fragment$1(ctx) {
+function create_fragment(ctx) {
 	let if_block_anchor;
-	let if_block = /*active*/ ctx[0] && create_if_block$1(ctx);
+	let if_block = /*active*/ ctx[0] && create_if_block(ctx);
 
 	return {
 		c() {
@@ -2335,7 +2301,7 @@ function create_fragment$1(ctx) {
 				if (if_block) {
 					if_block.p(ctx, dirty);
 				} else {
-					if_block = create_if_block$1(ctx);
+					if_block = create_if_block(ctx);
 					if_block.c();
 					if_block.m(if_block_anchor.parentNode, if_block_anchor);
 				}
@@ -2344,8 +2310,8 @@ function create_fragment$1(ctx) {
 				if_block = null;
 			}
 		},
-		i: noop$1,
-		o: noop$1,
+		i: noop,
+		o: noop,
 		d(detaching) {
 			if (if_block) if_block.d(detaching);
 			if (detaching) detach(if_block_anchor);
@@ -2353,16 +2319,22 @@ function create_fragment$1(ctx) {
 	};
 }
 
-function instance$1($$self, $$props, $$invalidate) {
+function instance($$self, $$props, $$invalidate) {
 	
 	const dispatch = createEventDispatcher();
-	let { active } = $$props;
+	let { active = false } = $$props;
 	let { results = [] } = $$props;
-	let { selectedIndex } = $$props;
+	let { selectedIndex = 0 } = $$props;
 	let resultList;
 
 	afterUpdate(() => {
-		resultList?.children[selectedIndex]?.scrollIntoView({ block: "nearest" });
+		var _a;
+
+		(_a = resultList === null || resultList === void 0
+		? void 0
+		: resultList.children[selectedIndex]) === null || _a === void 0
+		? void 0
+		: _a.scrollIntoView({ block: "nearest" });
 	});
 
 	function selected(index) {
@@ -2398,29 +2370,33 @@ function instance$1($$self, $$props, $$invalidate) {
 class SearchFiltersResults extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance$1, create_fragment$1, safe_not_equal, { active: 0, results: 1, selectedIndex: 2 });
+		init(this, options, instance, create_fragment, safe_not_equal, { active: 0, results: 1, selectedIndex: 2 });
 	}
 }
 
-class SearchMode {
+// A search controller controls a specific search output.
+// This lets us implement multiple different searches with the same search app,
+// e.g. entities and filters, or maybe in the future; commands, open windows, etc.
+class SearchController {
     constructor(app) {
+        this.results = [];
         this.selectedIndex = -1;
         this.selectedAction = null;
         this.app = app;
     }
     get isInsertMode() {
-        return (this.app.attachedContext.mode == undefined ||
+        return (this.app.attachedContext?.mode == undefined ||
             this.app.attachedContext.mode == ContextMode.Insert);
     }
     activate() {
-        this.view?.$$set({ active: true });
+        this.view?.$$set?.({ active: true });
     }
     deactivate() {
-        this.view?.$$set({ active: false });
+        this.view?.$$set?.({ active: false });
     }
     selectNext() {
         this.selectedIndex = (this.selectedIndex + 1) % this.results.length;
-        this.view.$$set({
+        this.view?.$$set?.({
             selectedIndex: this.selectedIndex,
             selectedAction: (this.selectedAction = null),
         });
@@ -2428,31 +2404,23 @@ class SearchMode {
     selectPrevious() {
         this.selectedIndex =
             this.selectedIndex > 0 ? this.selectedIndex - 1 : this.results.length - 1;
-        this.view.$$set({
+        this.view?.$$set?.({
             selectedIndex: this.selectedIndex,
             selectedAction: (this.selectedAction = null),
         });
     }
 }
-function getActions(type, isInsertContext) {
-    return isInsertContext
-        ? InsertEntityActions[type]
-        : BrowseEntityActions[type];
-}
-function defaultAction(type, isInsertContext) {
-    const actions = getActions(type, isInsertContext);
-    return actions[actions.length - 1].id;
-}
-class SearchEntitiesMode extends SearchMode {
+class DocumentController extends SearchController {
     constructor() {
         super(...arguments);
+        this.results = [];
         this.selectedAction = null; // null means use defaultAction
         this.search = (textInput) => {
             if (!QuickInsert.searchLib)
                 return;
             textInput = textInput.trim();
             if (textInput.length == 0) {
-                this.view.$$set({
+                this.view?.$$set?.({
                     results: [],
                     selectedIndex: (this.selectedIndex = -1),
                 });
@@ -2460,26 +2428,29 @@ class SearchEntitiesMode extends SearchMode {
             }
             // Set a lower maximum if search is single char (single-character search is fast, but rendering is slow).
             const max = textInput.length == 1 ? 20 : 100;
-            let results;
+            let results = [];
             if (this.app.selectedFilter) {
                 if (this.app.selectedFilter.filterConfig) {
-                    results = QuickInsert.searchLib.search(textInput, item => matchFilterConfig(this.app.selectedFilter.filterConfig, item), max);
+                    results = QuickInsert.searchLib.search(textInput, (item) => this.app.selectedFilter?.filterConfig
+                        ? matchFilterConfig(this.app.selectedFilter.filterConfig, item)
+                        : true, max);
                 }
             }
             else {
-                results = QuickInsert.searchLib.search(textInput, undefined, max);
+                results = QuickInsert.searchLib.search(textInput, null, max);
             }
-            if (this.app.attachedContext.restrictTypes &&
+            if (this.app.attachedContext &&
+                this.app.attachedContext.restrictTypes &&
                 this.app.attachedContext.restrictTypes.length > 0) {
-                results = results.filter(i => this.app.attachedContext.restrictTypes.includes(i.item.entityType));
+                results = results.filter((i) => this.app.attachedContext?.restrictTypes?.includes(i.item.documentType));
             }
-            this.results = results.map(res => ({
+            this.results = results.map((res) => ({
                 item: res.item,
                 match: res.match,
-                actions: getActions(res.item.entityType, this.isInsertMode),
-                defaultAction: defaultAction(res.item.entityType, this.isInsertMode),
+                actions: getActions(res.item.documentType, this.isInsertMode),
+                defaultAction: defaultAction(res.item.documentType, this.isInsertMode),
             }));
-            this.view.$$set({
+            this.view?.$$set?.({
                 results: this.results.reverse(),
                 selectedIndex: (this.selectedIndex = this.results.length - 1),
                 selectedAction: (this.selectedAction = null),
@@ -2492,38 +2463,34 @@ class SearchEntitiesMode extends SearchMode {
             return;
         let idx;
         if (this.selectedAction) {
-            idx = actions.findIndex(a => a.id == this.selectedAction);
+            idx = actions.findIndex((a) => a.id == this.selectedAction);
         }
         else {
-            idx = actions.findIndex(a => a.id == this.results[index].defaultAction);
+            idx = actions.findIndex((a) => a.id == this.results[index].defaultAction);
         }
         const nextIdx = (idx + 1) % actions.length;
-        this.view.$$set({
+        this.view?.$$set?.({
             selectedAction: (this.selectedAction = actions[nextIdx].id),
         });
     }
     onEnter(index, evt) {
         // TODO: get selected action
-        this.onAction(this.selectedAction || this.results[index].defaultAction, this.results[index].item, evt.shiftKey);
+        this.onAction(this.selectedAction || this.results[index].defaultAction, this.results[index].item, Boolean(evt.shiftKey));
     }
     async onAction(actionId, item, shiftKey) {
-        console.info("Quick Insert | Action", actionId, item.name);
-        const res = ENTITYACTIONS[actionId](item);
-        if (this.isInsertMode) {
-            const val = await res;
+        console.info(`Quick Insert | Invoked Action [${actionId}] on [${item.name}] shiftKey:${shiftKey}`);
+        const val = await DOCUMENTACTIONS[actionId](item);
+        if (val && this.isInsertMode) {
             this.app.keepOpen = shiftKey; // Keep open until onSubmit completes
-            this.app.attachedContext.onSubmit(val);
+            this.app.attachedContext?.onSubmit(val);
         }
-        if (this.app.attachedContext.allowMultiple === false || !shiftKey) {
+        if (this.app.attachedContext?.allowMultiple === false || !shiftKey) {
             this.app.closeDialog();
-        }
-        else {
-            this.app.resetInput();
         }
         this.app.keepOpen = false;
     }
 }
-class SearchFiltersMode extends SearchMode {
+class FilterController extends SearchController {
     constructor() {
         super(...arguments);
         this.results = [];
@@ -2555,9 +2522,9 @@ class SearchFiltersMode extends SearchMode {
             }
         }
         this.results = QuickInsert.filters.filters
-            .filter(f => !f.disabled)
-            .filter(f => f.tag.includes(cleanedInput));
-        this.view.$$set({
+            .filter((f) => !f.disabled)
+            .filter((f) => f.tag.includes(cleanedInput));
+        this.view?.$$set?.({
             results: this.results,
             selectedIndex: (this.selectedIndex = this.results.length - 1),
         });
@@ -2580,9 +2547,10 @@ class SearchApp extends Application {
         this.keepOpen = false;
         this.mode = ActiveMode.Search;
         this.selectedFilter = null;
+        this.attachedContext = null;
         this.embeddedMode = false;
-        this.searchFiltersMode = new SearchFiltersMode(this);
-        this.searchEntitiesMode = new SearchEntitiesMode(this);
+        this.filterController = new FilterController(this);
+        this.documentController = new DocumentController(this);
         this._checkFocus = () => {
             if (this.debug || this.embeddedMode)
                 return;
@@ -2590,7 +2558,11 @@ class SearchApp extends Application {
                 this.closeDialog();
             }
         };
-        this._onKeyTab = () => !this.embeddedMode && this.searchMode.onTab(this.searchMode.selectedIndex);
+        this._onKeyTab = (evt) => {
+            evt.preventDefault();
+            if (!this.embeddedMode)
+                this.controller.onTab(this.controller.selectedIndex);
+        };
         this._onKeyEsc = (evt) => {
             if (this.embeddedMode)
                 return;
@@ -2598,46 +2570,55 @@ class SearchApp extends Application {
             evt.stopPropagation();
             this.closeDialog();
         };
-        this._onKeyDown = () => this.selectNext();
-        this._onKeyUp = () => this.selectPrevious();
+        this._onKeyDown = (evt) => {
+            evt.preventDefault();
+            this.selectNext();
+        };
+        this._onKeyUp = (evt) => {
+            evt.preventDefault();
+            this.selectPrevious();
+        };
         this._onKeyEnter = (evt) => {
-            if (this.searchMode.selectedIndex > -1) {
-                this.searchMode.onEnter(this.searchMode.selectedIndex, evt);
+            evt.preventDefault();
+            evt.stopImmediatePropagation();
+            if (this.controller.selectedIndex > -1) {
+                this.controller.onEnter(this.controller.selectedIndex, evt);
             }
         };
     }
     get open() {
         return this._state > 0;
     }
-    get searchMode() {
+    get controller() {
         if (this.mode === ActiveMode.Filter) {
-            return this.searchFiltersMode;
+            return this.filterController;
         }
-        else if (this.mode === ActiveMode.Search) {
-            return this.searchEntitiesMode;
-        }
+        return this.documentController;
     }
     activateMode(mode) {
-        this.searchMode.deactivate();
+        this.controller?.deactivate();
         this.mode = mode;
-        this.searchMode.activate();
+        this.controller?.activate();
     }
     resetInput(full = false) {
         if (!full && this.selectedFilter) {
             this.setFilterTag(this.selectedFilter);
         }
         else {
-            this.input.html("");
+            this.input?.html("");
         }
+        this.text = undefined;
         this.focusInput();
     }
     selectNext() {
-        this.searchMode.selectNext();
+        this.controller?.selectNext();
     }
     selectPrevious() {
-        this.searchMode.selectPrevious();
+        this.controller?.selectPrevious();
     }
     setFilterTag(filter) {
+        if (!this.input)
+            return;
         const focus = this.input.is(":focus");
         this.input.html("");
         const editable = this.embeddedMode ? `contenteditable="false"` : "";
@@ -2661,26 +2642,32 @@ class SearchApp extends Application {
         }
         // Try to infer context
         const target = document.activeElement;
-        this.attachedContext = identifyContext(target);
+        if (target) {
+            this.attachedContext = identifyContext(target);
+        }
         if (!this.attachedContext) {
             return null;
         }
+        //@ts-expect-error Keyup events don't clear downKeys when focusing the input
+        game.keyboard.downKeys = new Set();
         return super.render(force, options);
     }
     showHint(notice) {
-        this.hint.html(notice);
+        this.hint?.html(notice);
     }
     focusInput() {
+        if (!this.input)
+            return;
         placeCaretAtEnd(this.input.get(0));
         this.inputFocus = true;
     }
     activateListeners(html) {
         // (Re-)set position
         html.removeAttr("style");
-        if (this.attachedContext.spawnCSS) {
+        if (this.attachedContext?.spawnCSS) {
             html.css(this.attachedContext.spawnCSS);
         }
-        if (this.attachedContext.classes) {
+        if (this.attachedContext?.classes) {
             html.addClass(this.attachedContext.classes);
         }
         this.input = html.find(".search-editable-input");
@@ -2688,25 +2675,26 @@ class SearchApp extends Application {
         this.input.on("input", () => {
             this.searchInput();
         });
-        this.input.on("dragstart", evt => evt.stopPropagation());
-        const keyCodeBinds = {
-            13: this._onKeyEnter,
-            40: this._onKeyDown,
-            38: this._onKeyUp,
-            27: this._onKeyEsc,
-            9: this._onKeyTab,
-        };
-        this.input.on("keydown", evt => {
-            if (keyCodeBinds[evt.which]) {
-                evt.preventDefault();
-                keyCodeBinds[evt.which](evt);
+        this.input.on("dragstart", (evt) => evt.stopPropagation());
+        this.input.on("keydown", (evt) => {
+            switch (evt.which) {
+                case 13:
+                    return this._onKeyEnter(evt);
+                case 40:
+                    return this._onKeyDown(evt);
+                case 38:
+                    return this._onKeyUp(evt);
+                case 27:
+                    return this._onKeyEsc(evt);
+                case 9:
+                    return this._onKeyTab(evt);
             }
         });
         $(this.element).hover(() => {
             this.mouseFocus = true;
             this._checkFocus();
-        }, e => {
-            if (e.originalEvent.shiftKey)
+        }, (e) => {
+            if (e.originalEvent?.shiftKey)
                 return;
             this.mouseFocus = false;
             this._checkFocus();
@@ -2720,51 +2708,48 @@ class SearchApp extends Application {
             this._checkFocus();
         });
         this.focusInput();
-        this.searchEntitiesMode.view = new SearchResults({
-            target: this.element.get(0),
-            props: {
-                results: [],
-            },
-        });
-        this.searchFiltersMode.view = new SearchFiltersResults({
-            target: this.element.get(0),
-            props: {
-                results: [],
-            },
-        });
-        this.searchEntitiesMode.view.$on("callAction", data => {
+        const node = this.element.get(0);
+        if (node) {
+            this.documentController.view = new SearchResults({
+                target: node,
+            });
+            this.filterController.view = new SearchFiltersResults({
+                target: node,
+            });
+        }
+        this.documentController.view?.$on("callAction", (data) => {
             const { actionId, item, shiftKey } = data.detail;
-            this.searchEntitiesMode.onAction(actionId, item, shiftKey);
+            this.documentController.onAction(actionId, item, shiftKey);
         });
-        this.searchFiltersMode.view.$on("selected", data => {
+        this.filterController.view?.$on("selected", (data) => {
             const { index } = data.detail;
-            this.searchFiltersMode.onClick(index);
+            this.filterController.onClick(index);
         });
-        if (this.attachedContext.filter) {
+        if (this.attachedContext?.filter) {
             this.activateMode(ActiveMode.Filter);
             if (typeof this.attachedContext.filter === "string") {
                 const found = QuickInsert.filters.getFilterByTag(this.attachedContext.filter) ??
                     QuickInsert.filters.getFilter(this.attachedContext.filter);
                 if (found) {
-                    this.searchFiltersMode.selectFilter(found);
+                    this.filterController.selectFilter(found);
                 }
             }
             else {
-                this.searchFiltersMode.selectFilter(this.attachedContext.filter);
+                this.filterController.selectFilter(this.attachedContext.filter);
             }
         }
-        if (this.attachedContext.startText) {
+        if (this.attachedContext?.startText) {
             this.input.append(this.attachedContext.startText);
             this.focusInput();
             this.searchInput();
         }
         if (!QuickInsert.searchLib) {
             this.showHint(`<i class="fas fa-spinner"></i> Loading index...`);
-            loadSearchIndex(true)
+            loadSearchIndex()
                 .then(() => {
                 this.showHint(`Index loaded successfully`);
             })
-                .catch(reason => {
+                .catch((reason) => {
                 this.showHint(`Failed to load index ${reason}`);
             });
             // @ts-ignore
@@ -2774,7 +2759,12 @@ class SearchApp extends Application {
         }
     }
     searchInput() {
+        if (!this.input)
+            return;
         const text = this.input.text();
+        if (this.text === text)
+            return;
+        this.text = text;
         const breaker = $(this.input).find(".breaker");
         this.showHint("");
         if (this.selectedFilter) {
@@ -2792,29 +2782,26 @@ class SearchApp extends Application {
                 this.focusInput();
                 this.selectedFilter = null;
                 this.activateMode(ActiveMode.Filter);
-                this.searchFiltersMode.search(text.substr(1).trim());
+                this.filterController.search(text.substr(1).trim());
             }
             else {
                 this.activateMode(ActiveMode.Search);
                 const search = text.replace(`@${this.selectedFilter.tag}`, "").trim();
-                this.searchEntitiesMode.search(search);
+                this.documentController.search(search);
             }
         }
         else if (text.startsWith("@")) {
             this.activateMode(ActiveMode.Filter);
-            this.searchFiltersMode.search(text.substr(1));
+            this.filterController.search(text.substr(1));
         }
         else {
             this.activateMode(ActiveMode.Search);
-            this.searchEntitiesMode.search(text);
+            this.documentController.search(text);
         }
     }
 }
 
 class IndexingSettings extends FormApplication {
-    get element() {
-        return super.element;
-    }
     static get defaultOptions() {
         return {
             ...super.defaultOptions,
@@ -2826,19 +2813,21 @@ class IndexingSettings extends FormApplication {
         };
     }
     getData() {
-        const disabled = getSetting(settings.INDEXING_DISABLED);
+        if (!game.packs)
+            return null;
+        const disabled = getSetting(ModuleSetting.INDEXING_DISABLED);
         return {
-            entityTypes: IndexedEntityTypes.map(type => ({
+            documentTypes: IndexedDocumentTypes.map((type) => ({
                 type,
-                title: `ENTITY.${type}`,
-                values: [1, 2, 3, 4].map(role => ({
+                title: `DOCUMENT.${type}`,
+                values: [1, 2, 3, 4].map((role) => ({
                     role,
                     disabled: disabled?.entities?.[type]?.includes(role),
                 })),
             })),
-            compendiums: [...game.packs.keys()].map(pack => ({
+            compendiums: [...game.packs.keys()].map((pack) => ({
                 pack,
-                values: [1, 2, 3, 4].map(role => ({
+                values: [1, 2, 3, 4].map((role) => ({
                     role,
                     disabled: disabled?.packs?.[pack]?.includes(role),
                 })),
@@ -2848,7 +2837,7 @@ class IndexingSettings extends FormApplication {
     activateListeners(html) {
         super.activateListeners(html);
         // Set initial state for all
-        const disabled = getSetting(settings.INDEXING_DISABLED);
+        const disabled = getSetting(ModuleSetting.INDEXING_DISABLED);
         Object.entries(disabled.packs).forEach(([pack, val]) => {
             const check = html.find(`[data-disable="${pack}"]`);
             if (permissionListEq(val, [1, 2, 3, 4])) {
@@ -2868,7 +2857,9 @@ class IndexingSettings extends FormApplication {
         // Regular check change -> updates root check
         html.find(".form-fields input").on("change", function () {
             const compendium = this.name.slice(0, -2);
-            const checks = html.find(`input[name^="${compendium}."]`).toArray();
+            const checks = html
+                .find(`input[name^="${compendium}."]`)
+                .toArray();
             if (checks.every((e) => e.checked)) {
                 html
                     .find(`[data-disable="${compendium}"]`)
@@ -2889,7 +2880,7 @@ class IndexingSettings extends FormApplication {
             }
         });
         // Deselect all button
-        html.find("button.deselect-all").on("click", e => {
+        html.find("button.deselect-all").on("click", (e) => {
             e.preventDefault();
             e.stopPropagation();
             html
@@ -2898,7 +2889,7 @@ class IndexingSettings extends FormApplication {
                 .prop("indeterminate", false);
         });
         // Select all button
-        html.find("button.select-all").on("click", e => {
+        html.find("button.select-all").on("click", (e) => {
             e.preventDefault();
             e.stopPropagation();
             html
@@ -2927,12 +2918,161 @@ class IndexingSettings extends FormApplication {
                 }
             }
         }
-        setSetting(settings.INDEXING_DISABLED, res);
+        setSetting(ModuleSetting.INDEXING_DISABLED, res);
     }
 }
 
+const moduleSettings = {
+    [ModuleSetting.GM_ONLY]: {
+        setting: ModuleSetting.GM_ONLY,
+        name: "QUICKINSERT.SettingsGmOnly",
+        hint: "QUICKINSERT.SettingsGmOnlyHint",
+        type: Boolean,
+        default: false,
+        scope: "world",
+    },
+    [ModuleSetting.FILTERS_SHEETS_ENABLED]: {
+        setting: ModuleSetting.FILTERS_SHEETS_ENABLED,
+        name: "QUICKINSERT.SettingsFiltersSheetsEnabled",
+        hint: "QUICKINSERT.SettingsFiltersSheetsEnabledHint",
+        type: Boolean,
+        default: true,
+        scope: "world",
+    },
+    [ModuleSetting.AUTOMATIC_INDEXING]: {
+        setting: ModuleSetting.AUTOMATIC_INDEXING,
+        name: "QUICKINSERT.SettingsAutomaticIndexing",
+        hint: "QUICKINSERT.SettingsAutomaticIndexingHint",
+        type: Number,
+        choices: {
+            3000: "QUICKINSERT.SettingsAutomaticIndexing3s",
+            5000: "QUICKINSERT.SettingsAutomaticIndexing5s",
+            10000: "QUICKINSERT.SettingsAutomaticIndexing10s",
+            "-1": "QUICKINSERT.SettingsAutomaticIndexingOnFirstOpen",
+        },
+        default: -1,
+        scope: "client",
+    },
+    [ModuleSetting.INDEX_TIMEOUT]: {
+        setting: ModuleSetting.INDEX_TIMEOUT,
+        name: "QUICKINSERT.SettingsIndexTimeout",
+        hint: "QUICKINSERT.SettingsIndexTimeoutHint",
+        type: Number,
+        choices: {
+            1500: "QUICKINSERT.SettingsIndexTimeout1_5s",
+            3000: "QUICKINSERT.SettingsIndexTimeout3s",
+            7000: "QUICKINSERT.SettingsIndexTimeout7s",
+            9500: "QUICKINSERT.SettingsIndexTimeou9_5s",
+        },
+        default: 1500,
+        scope: "world",
+    },
+    [ModuleSetting.SEARCH_BUTTON]: {
+        setting: ModuleSetting.SEARCH_BUTTON,
+        name: "QUICKINSERT.SettingsSearchButton",
+        hint: "QUICKINSERT.SettingsSearchButtonHint",
+        type: Boolean,
+        default: false,
+        scope: "client",
+    },
+    [ModuleSetting.ENABLE_GLOBAL_CONTEXT]: {
+        setting: ModuleSetting.ENABLE_GLOBAL_CONTEXT,
+        name: "QUICKINSERT.SettingsEnableGlobalContext",
+        hint: "QUICKINSERT.SettingsEnableGlobalContextHint",
+        type: Boolean,
+        default: true,
+    },
+    [ModuleSetting.DEFAULT_ACTION_SCENE]: {
+        setting: ModuleSetting.DEFAULT_ACTION_SCENE,
+        name: "QUICKINSERT.SettingsDefaultActionScene",
+        hint: "QUICKINSERT.SettingsDefaultActionSceneHint",
+        type: String,
+        choices: {
+            show: "SCENES.Configure",
+            viewScene: "SCENES.View",
+            activateScene: "SCENES.Activate",
+        },
+        default: "show",
+    },
+    [ModuleSetting.DEFAULT_ACTION_ROLL_TABLE]: {
+        setting: ModuleSetting.DEFAULT_ACTION_ROLL_TABLE,
+        name: "QUICKINSERT.SettingsDefaultActionRollTable",
+        hint: "QUICKINSERT.SettingsDefaultActionRollTableHint",
+        type: String,
+        choices: {
+            show: "QUICKINSERT.ActionEdit",
+            roll: "TABLE.Roll",
+        },
+        default: "show",
+    },
+    [ModuleSetting.DEFAULT_ACTION_MACRO]: {
+        setting: ModuleSetting.DEFAULT_ACTION_MACRO,
+        name: "QUICKINSERT.SettingsDefaultActionMacro",
+        hint: "QUICKINSERT.SettingsDefaultActionMacroHint",
+        type: String,
+        choices: {
+            show: "QUICKINSERT.ActionEdit",
+            execute: "QUICKINSERT.ActionExecute",
+        },
+        default: "show",
+    },
+    [ModuleSetting.INDEXING_DISABLED]: {
+        setting: ModuleSetting.INDEXING_DISABLED,
+        name: "Things that have indexing disabled",
+        type: Object,
+        default: {
+            entities: {
+                Macro: [1, 2],
+                Scene: [1, 2],
+                Playlist: [1, 2],
+                RollTable: [1, 2],
+            },
+            packs: {},
+        },
+        scope: "world",
+        config: false, // Doesn't show up in config
+    },
+    [ModuleSetting.FILTERS_CLIENT]: {
+        setting: ModuleSetting.FILTERS_CLIENT,
+        name: "Own filters",
+        type: Object,
+        default: {
+            saveRev: SAVE_SETTINGS_REVISION,
+            disabled: [],
+            filters: [],
+        },
+        config: false, // Doesn't show up in config
+    },
+    [ModuleSetting.FILTERS_WORLD]: {
+        setting: ModuleSetting.FILTERS_WORLD,
+        name: "World filters",
+        type: Object,
+        default: {
+            saveRev: SAVE_SETTINGS_REVISION,
+            filters: [],
+        },
+        scope: "world",
+        config: false, // Doesn't show up in config
+    },
+    [ModuleSetting.FILTERS_SHEETS]: {
+        setting: ModuleSetting.FILTERS_SHEETS,
+        name: "Sheet filters",
+        type: Object,
+        default: {},
+        scope: "world",
+        config: false, // Doesn't show up in config
+    },
+};
+function registerSettings(callbacks = {}) {
+    Object.entries(moduleSettings).forEach(([setting, item]) => {
+        registerSetting(setting, (value) => {
+            callbacks[item.setting]?.(value);
+        }, item);
+    });
+}
+
 function quickInsertDisabled() {
-    return !game.user.isGM && getSetting(settings.GM_ONLY);
+    return !game.user?.isGM && getSetting(ModuleSetting.GM_ONLY);
 }
 // Client is currently reindexing?
 let reIndexing = false;
@@ -2943,6 +3083,7 @@ Hooks.once("init", async function () {
         label: "QUICKINSERT.SettingsIndexingSettingsLabel",
         icon: "fas fa-search",
         type: IndexingSettings,
+        restricted: false,
     });
     registerMenu({
         menu: "filterMenu",
@@ -2950,66 +3091,61 @@ Hooks.once("init", async function () {
         label: "QUICKINSERT.SettingsFilterMenuLabel",
         icon: "fas fa-filter",
         type: FilterList,
+        restricted: false,
     });
     registerSettings({
-        [settings.FILTERS_WORLD]: () => {
+        [ModuleSetting.FILTERS_WORLD]: () => {
             if (quickInsertDisabled())
                 return;
             QuickInsert.filters.loadSave();
         },
-        [settings.FILTERS_CLIENT]: () => {
+        [ModuleSetting.FILTERS_CLIENT]: () => {
             if (quickInsertDisabled())
                 return;
             QuickInsert.filters.loadSave();
         },
-        [settings.INDEXING_DISABLED]: async () => {
+        [ModuleSetting.INDEXING_DISABLED]: async () => {
             if (quickInsertDisabled())
                 return;
             // Active users will start reindexing in deterministic order, once per 300ms
             if (reIndexing)
                 return;
             reIndexing = true;
-            const order = [...game.users.entities]
-                .filter(u => u.active)
-                .map(u => u.id)
-                .indexOf(game.userId);
-            await resolveAfter(order * 300);
+            if (game.users && game.userId !== null) {
+                const order = [...game.users.contents]
+                    .filter((u) => u.active)
+                    .map((u) => u.id)
+                    .indexOf(game.userId);
+                await resolveAfter(order * 300);
+            }
             await QuickInsert.forceIndex();
             reIndexing = false;
         },
-        [settings.INDEX_GUARD_ENABLED]: val => {
-            if (quickInsertDisabled())
-                return;
-            if (val) {
-                localStorage.setItem("IndexGuardEnabled", "enabled");
-            }
-            else {
-                localStorage.removeItem("IndexGuardEnabled");
-            }
-            window.location.reload();
+    });
+    //@ts-expect-error keyboard types not yet implemented
+    game.keybindings.register("quick-insert", ModuleSetting.KEY_BIND, {
+        name: "QUICKINSERT.SettingsQuickOpen",
+        textInput: true,
+        editable: [
+            //@ts-expect-error keyboard types not yet implemented
+            { key: "Space", modifiers: [KeyboardManager.MODIFIER_KEYS.CONTROL] },
+        ],
+        onDown: (ctx) => {
+            QuickInsert.toggle(ctx._quick_insert_extra?.context);
+            return true;
         },
+        precedence: CONST.KEYBINDING_PRECEDENCE.NORMAL,
     });
 });
 Hooks.once("ready", function () {
     if (quickInsertDisabled())
         return;
     console.log("Quick Insert | Initializing...");
-    // Ensure index guard setting is synced with local storage.
-    if (getSetting(settings.INDEX_GUARD_ENABLED)) {
-        if (!localStorage.getItem("IndexGuardEnabled")) {
-            localStorage.setItem("IndexGuardEnabled", "enabled");
-        }
-    }
-    else {
-        if (localStorage.getItem("IndexGuardEnabled")) {
-            localStorage.removeItem("IndexGuardEnabled");
-        }
-    }
     // Initialize application base
     QuickInsert.filters = new SearchFilterCollection();
     QuickInsert.app = new SearchApp();
     registerTinyMCEPlugin();
-    importSystemIntegration().then(systemIntegration => {
+    importSystemIntegration().then((systemIntegration) => {
         if (systemIntegration) {
             QuickInsert.systemIntegration = systemIntegration;
             QuickInsert.systemIntegration.init();
@@ -3020,54 +3156,57 @@ Hooks.once("ready", function () {
                     label: "QUICKINSERT.SettingsSheetFiltersLabel",
                     icon: "fas fa-filter",
                     type: SheetFilters,
+                    restricted: false,
                 });
             }
         }
     });
-    document.addEventListener("keydown", evt => {
-        if (QuickInsert.matchBoundKeyEvent(evt)) {
-            evt.stopPropagation();
-            evt.preventDefault();
-            QuickInsert.toggle();
-        }
+    document.addEventListener("keydown", (evt) => {
+        // Allow in input fields...
+        customKeybindHandler(evt);
     });
-    enabledEntityTypes().forEach(type => {
-        Hooks.on(`create${type}`, entity => {
-            if (!entity.visible)
+    enabledDocumentTypes().forEach((type) => {
+        Hooks.on(`create${type}`, (document) => {
+            if (document.parent || !document.visible)
                 return;
-            QuickInsert.searchLib?.addItem(EntitySearchItem.fromEntity(entity));
+            QuickInsert.searchLib?.addItem(EntitySearchItem.fromDocument(document));
         });
-        Hooks.on(`update${type}`, entity => {
-            if (!entity.visible) {
-                QuickInsert.searchLib?.removeItem(entity.uuid);
+        Hooks.on(`update${type}`, (document) => {
+            if (document.parent)
+                return;
+            if (!document.visible) {
+                QuickInsert.searchLib?.removeItem(document.uuid);
                 return;
             }
-            QuickInsert.searchLib?.replaceItem(EntitySearchItem.fromEntity(entity));
+            QuickInsert.searchLib?.replaceItem(searchItemFromDocument(document));
         });
-        Hooks.on(`delete${type}`, entity => {
-            QuickInsert.searchLib?.removeItem(entity.uuid);
+        Hooks.on(`delete${type}`, (document) => {
+            if (document.parent)
+                return;
+            QuickInsert.searchLib?.removeItem(document.uuid);
         });
     });
     console.log("Quick Insert | Search Application ready");
-    const indexDelay = getSetting(settings.AUTOMATIC_INDEXING);
+    const indexDelay = getSetting(ModuleSetting.AUTOMATIC_INDEXING);
     if (indexDelay != -1) {
         setTimeout(() => {
             console.log("Quick Insert | Automatic indexing initiated");
-            loadSearchIndex(false);
-        }, getSetting(settings.AUTOMATIC_INDEXING));
+            loadSearchIndex();
+        }, indexDelay);
     }
 });
 Hooks.on("renderSceneControls", (controls, html) => {
-    if (!getSetting(settings.SEARCH_BUTTON))
+    if (!getSetting(ModuleSetting.SEARCH_BUTTON))
         return;
     const searchBtn = $(`<li class="scene-control" title="Quick Insert" class="quick-insert-open">
           <i class="fas fa-search"></i>
       </li>`);
-    html.append(searchBtn);
+    html.children(".main-controls").append(searchBtn);
     searchBtn.on("click", () => QuickInsert.open());
 });
 // Exports and API usage
+//@ts-ignore
 globalThis.QuickInsert = QuickInsert;
 
-export { CharacterSheetContext, QuickInsert, SearchContext, getSetting, setSetting, settings };
+export { CharacterSheetContext, ModuleSetting, QuickInsert, SearchContext, getSetting, setSetting };
 //# sourceMappingURL=quick-insert.js.map

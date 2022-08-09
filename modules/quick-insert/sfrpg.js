@@ -1,4 +1,4 @@
-import { CharacterSheetContext, getSetting, settings, QuickInsert, setSetting } from './quick-insert.js';
+import { CharacterSheetContext, getSetting, ModuleSetting, QuickInsert, setSetting } from './quick-insert.js';
 import './vendor.js';
 
 // Starfinder integration
@@ -23,10 +23,10 @@ const defaultSheetFilters = {
     augmentation: "sfrpg.equipment",
 };
 class SfrpgSheetContext extends CharacterSheetContext {
-    constructor(entitySheet, anchor, sheetType, insertType) {
-        super(entitySheet, anchor);
+    constructor(documentSheet, anchor, sheetType, insertType) {
+        super(documentSheet, anchor);
         if (sheetType && insertType) {
-            const sheetFilters = getSetting(settings.FILTERS_SHEETS).baseFilters;
+            const sheetFilters = getSetting(ModuleSetting.FILTERS_SHEETS).baseFilters;
             this.filter =
                 sheetFilters[`${sheetType}.${insertType}`] || sheetFilters[insertType];
         }
@@ -50,16 +50,16 @@ function sheetSfrpgRenderHook(app, sheetType) {
     });
 }
 function init() {
-    if (game.user.isGM) {
-        const customFilters = getSetting(settings.FILTERS_SHEETS).baseFilters;
-        setSetting(settings.FILTERS_SHEETS, {
+    if (game.user?.isGM) {
+        const customFilters = getSetting(ModuleSetting.FILTERS_SHEETS).baseFilters;
+        setSetting(ModuleSetting.FILTERS_SHEETS, {
             baseFilters: {
                 ...defaultSheetFilters,
                 ...customFilters,
             },
         });
     }
-    Hooks.on("renderActorSheetSFRPGCharacter", app => getSetting(settings.FILTERS_SHEETS_ENABLED) &&
+    Hooks.on("renderActorSheetSFRPGCharacter", (app) => getSetting(ModuleSetting.FILTERS_SHEETS_ENABLED) &&
         sheetSfrpgRenderHook(app, "character"));
     console.log("Quick Insert | sfrpg system extensions initiated");
 }

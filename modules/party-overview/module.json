@@ -1,11 +1,10 @@
 {
+    "id": "party-overview",
     "name": "party-overview",
     "title": "Party Overview",
     "description": "Provides an instant overview about vital stats of the players active in the current scene",
-    "version": "2.4.2",
-    "author": "Sebastian Will (vttassets@gmail.com), Chris Wachal (Zamrod#9326)",
-    "minimumCoreVersion": "0.5.5",
-    "compatibleCoreVersion": "0.7.9",
+    "version": "2.14.2",
+    "minimumCoreVersion": "0.8.9",
     "languages": [
         {
             "lang": "en",
@@ -21,25 +20,44 @@
             "lang": "pt-BR",
             "name": "Português Brasileiro",
             "path": "lang/pt-BR.json"
+        },
+        {
+            "lang": "es",
+            "name": "Español",
+            "path": "lang/es.json"
+        },
+        {
+            "lang": "ja",
+            "name": "日本語",
+            "path": "lang/ja.json"
         }
     ],
-    "systems": [
-        "dnd5e",
-        "pf2e",
-        "wfrp4e",
-        "swade"
-    ],
     "esmodules": [
-        "./src/index.js"
+        "party-overview.js"
     ],
     "styles": [
-        "./style/module-settings.css",
-        "./style/party-overview.css",
-        "./style/module-settings.css"
+        "style/party-overview.css"
     ],
-    "packs": [],
-    "url": "http://github.com/League-of-Foundry-Developers/party-overview",
-    "bugs": "http://github.com/League-of-Foundry-Developers/party-overview/issues",
-    "manifest": "https://github.com/League-of-Foundry-Developers/party-overview/releases/latest/download/module.json",
-    "download": "https://github.com/League-of-Foundry-Developers/party-overview/releases/download/2.4.2/module.zip"
+    "url": "http://github.com/mclemente/party-overview",
+    "bugs": "http://github.com/mclemente/party-overview/issues",
+    "manifest": "https://github.com/mclemente/party-overview/releases/latest/download/module.json",
+    "download": "https://github.com/mclemente/party-overview/releases/download/2.14.2/module.zip",
+    "authors": [
+        {
+            "name": "Matheus Clemente",
+            "discord": "mclemente#5524"
+        },
+        {
+            "name": "Sebastian Will",
+            "email": "vttassets@gmail.com"
+        },
+        {
+            "name": "Chris Wachal",
+            "discord": "Zamrod#9326"
+        }
+    ],
+    "compatibility": {
+        "minimum": "0.8.9",
+        "verified": "10.273"
+    }
 }

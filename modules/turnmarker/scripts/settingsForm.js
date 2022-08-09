@@ -41,6 +41,8 @@ export class SettingsForm extends FormApplication {
             announce: Settings.shouldAnnounceTurns(),
             announceImage: Settings.getIncludeAnnounceImage(),
             announceTokenName: Settings.getAnnounceTokenName(),
+            announceTurnMarkerAlias: Settings.getAnnounceTurnMarkerAlias(),
+            announcePlayerNames: Settings.getAnnouncePlayerNames(),
             // Start Marker Settings
             startMarkerEnabled: Settings.getIsEnabled("startmarker"),
             startMarkerPath: Settings.getStartMarkerPath()
@@ -65,6 +67,8 @@ export class SettingsForm extends FormApplication {
         Settings.setAnnounceActors(d.announceActors);
         Settings.setIncludeAnnounceImage(d.announceImage);
         Settings.setAnnounceTokenName(d.announceTokenName);
+        Settings.setAnnounceTurnMarkerAlias(d.announceTurnMarkerAlias);
+        Settings.setAnnouncePlayerNames(d.announcePlayerNames);
         Settings.setIsEnabled("startmarker", d.startMarkerEnabled);
         Settings.setStartMarkerPath(d.startMarkerPath);
 
@@ -139,7 +143,6 @@ export class SettingsForm extends FormApplication {
         } else {
             markerSelect[0].disabled = true;
             const ext = this.getExtension(customImage[0].value);
-            console.warn(ext);
             if (videos.includes(ext.toLowerCase())) {
                 markerVideoPreview.attr('src', customImage[0].value);
                 markerImgPreview.addClass('hidden');
@@ -166,7 +169,6 @@ export class SettingsForm extends FormApplication {
         } else {
             onDeckMarkerSelect[0].disabled = true;
             const ext = this.getExtension(customDeckImage[0].value);
-            console.warn(ext);
             if (videos.includes(ext.toLowerCase())) {
                 deckMarkerVideoPreview.attr('src', customDeckImage[0].value);
                 deckMarkerImgPreview.addClass('hidden');

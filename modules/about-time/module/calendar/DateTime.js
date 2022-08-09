@@ -1,159 +1,156 @@
-/**
- * A class to represent data times. Uses to DTCalc to support arbitrary calendars.
- * Support DateTime arithmetic via DTMod
- */
 import { DTMod } from "./DTMod.js";
-import { DTCalc } from "./DTCalc.js";
-import { PseudoClock } from "../PseudoClock.js";
-export class DateTime extends DTMod {
-    constructor({ years = 0, months = 0, days = 0, hours = 0, minutes = 0, seconds = 0 }) {
-        super(new DTMod({ years: years, months, days, hours, minutes, seconds }));
+import { ElapsedTime } from "../ElapsedTime.js";
+let warn = (...args) => {
+    if (ElapsedTime.debug)
+        console.warn("about-time | ", ...args);
+};
+let log = (...args) => {
+    console.log("about-time | ", ...args);
+};
+var compatShim = true;
+export function clockStatus() {
+    //@ts-ignore
+    return window.SimpleCalendar.api.clockStatus();
+}
+export function secondsToInterval(seconds) {
+    //@ts-ignore
+    const interval = window.SimpleCalendar.api.secondsToInterval(secondds);
+    // compat shim
+    return intervalSCtoAT(interval);
+}
+export function currentWorldTime() {
+    //@ts-ignore
+    return game.time.worldTime;
+    // look at window.SimpleCalendar.api.timestamp()
+}
+export function timestamp() {
+    //@ts-ignore
+    return window.SimpleCalendar.api.timestamp();
+}
+export function dateToTimestamp(date) {
+    date = intervalATtoSC(date);
+    //@ts-ignore
+    return window.SimpleCalendar.api.dateToTimestamp(date);
+}
+export function intervalATtoSC(interval) {
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+    const newInterval = {};
+    // if (compatShim && ((interval.years || interval.months || interval.days || interval.hours || interval.minutes || interval.seconds) !== undefined)) {
+    if (_e = (_d = (_c = (_b = (_a = interval.years, (_a !== null && _a !== void 0 ? _a : interval.months)), (_b !== null && _b !== void 0 ? _b : interval.days)), (_c !== null && _c !== void 0 ? _c : interval.hours)), (_d !== null && _d !== void 0 ? _d : interval.minutes)), (_e !== null && _e !== void 0 ? _e : interval.seconds)) {
+        warn("About time | DT Mod notation has changed plese use .year/.month/.day/.hour/.minute/.sceond", interval);
+        warn("About time | DT Mod deprecated - use SimpleCalendar.api instead");
+    }
+    newInterval.year = (_f = interval.year, (_f !== null && _f !== void 0 ? _f : interval.years));
+    newInterval.month = (_g = interval.month, (_g !== null && _g !== void 0 ? _g : interval.months));
+    newInterval.day = (_h = interval.day, (_h !== null && _h !== void 0 ? _h : interval.days));
+    newInterval.hour = (_j = interval.hour, (_j !== null && _j !== void 0 ? _j : interval.hours));
+    newInterval.minute = (_k = interval.minute, (_k !== null && _k !== void 0 ? _k : interval.minutes));
+    newInterval.second = (_l = interval.second, (_l !== null && _l !== void 0 ? _l : interval.seconds));
+    // }
+    return newInterval;
+}
+export function intervalSCtoAT(interval) {
+    var _a, _b, _c, _d, _e, _f;
+    const newInterval = {};
+    if (compatShim) {
+        newInterval.years = (_a = interval.year, (_a !== null && _a !== void 0 ? _a : interval.years));
+        newInterval.months = (_b = interval.month, (_b !== null && _b !== void 0 ? _b : interval.months));
+        newInterval.days = (_c = interval.day, (_c !== null && _c !== void 0 ? _c : interval.days));
+        newInterval.hours = (_d = interval.hour, (_d !== null && _d !== void 0 ? _d : interval.hours));
+        newInterval.minutes = (_e = interval.minute, (_e !== null && _e !== void 0 ? _e : interval.minutes));
+        newInterval.seconds = (_f = interval.second, (_f !== null && _f !== void 0 ? _f : interval.seconds));
+    }
+    return newInterval;
+}
+export function padNumber(n, digits = 2) {
+    return `${n}`.padStart(digits, "0");
+}
+export class DateTime {
+    constructor(timestamp) {
+        warn("abput-time | DateTime deprecated - use SimpleClaendar.api instead");
+        this._timestamp = timestamp;
+        //@ts-ignore
+        this._dateForm = window.SimpleCalendar.api.timestampToDate(this._timestamp);
         return this;
     }
+    get years() { return this._dateForm.year; }
+    get months() { return this._dateForm.month; }
+    get days() { return this._dateForm.day; }
+    get hours() { return this._dateForm.hour; }
+    get minutes() { return this._dateForm.minute; }
+    get seconds() { return this._dateForm.second; }
+    get timestamp() { return this._timestamp; }
+    ;
+    set timesteamp(timestamp) { this._timestamp = timestamp; }
+    ;
     /**
      * returns a new DateTime. convenience method to support DateTime.create({...})
      * If no year is specified defaults to clock start year.
      * NOTE days and months are 0 index, January 1st (in gregorian calendar) is {months: 0, days: 0}
      * @param p
      */
-    static create({ years = DTCalc.clockStartYear, months = 0, days = 0, hours = 0, minutes = 0, seconds = 0 } = {}) {
-        let dt = new DateTime({ years, months, days, hours, minutes, seconds });
-        return dt.normalize();
+    static create({ years = 0, months = 0, days = 0, hours = 0, minutes = 0, seconds = 0 }) {
+        //@ts-ignore
+        return new DateTime(window.SimpleCalendar.api.dateToTimestamp({ year: years, month: months, day: days, hour: hours, minute: minutes, second: seconds }));
+    }
+    static createFromDateTime(dt) {
+        return new DateTime(dt.timestamp);
     }
     /**
      * return a DateTime representint the current game time clock.
      */
     static now() {
-        let dt = new DateTime({ years: DTCalc.clockStartYear, seconds: PseudoClock.currentTime });
-        return dt.normalize();
-    }
-    /**
-     * Date arithmetic can result in strange DateTimes like
-     * {years:2020, months: -1, days: -1, hours: 0, minutes:0, seconds: -1}
-     * 1 month and 1 day and 1 second before 00:00:00) on January 1st 2020.
-       {years: 2019, months: 10, days: 28, hours: 23, minutes: 59, seconds: 59}
-       29 November 2019 adn 23 hours, 59 minutes and 59 seconds.
-     */
-    normalize() {
-        if (!DTCalc.dpy || !DTCalc.dpm) {
-            console.warn("about-time | calendar not initialised - cannot construct date/time");
-            return null;
-        }
-        let totalSeconds = this.seconds + this.minutes * DTCalc.spm + this.hours * DTCalc.sph;
-        // correct for negative time;
-        let numDays = Math.floor(totalSeconds / DTCalc.spd);
-        this.seconds = totalSeconds - numDays * DTCalc.spd;
-        this.days += numDays;
-        this.hours = Math.floor(this.seconds / DTCalc.sph);
-        this.seconds = this.seconds % DTCalc.sph;
-        this.minutes = Math.floor(this.seconds / DTCalc.spm);
-        this.seconds = this.seconds % DTCalc.spm;
-        // add in whole monhts - deail with negative months as well
-        let yearsOfMonths = Math.floor(this.months / DTCalc.mpy);
-        this.years += yearsOfMonths;
-        this.months -= (yearsOfMonths * DTCalc.mpy);
-        /*
-         Work out how many years of days assuming every year is a leap year
-          (we can add at least these many years)
-        reduce days by the acutal number
-        */
-        let tempYears = Math.floor(this.days / DTCalc.dpy[1]);
-        if (tempYears !== 0) { // reduce by number of whole years
-            this.days -= (DTCalc.numLeapYears(this.years - 1 + tempYears) - DTCalc.numLeapYears(this.years - 1));
-            this.years += tempYears;
-            this.days -= tempYears * DTCalc.dpy[0];
-        }
-        tempYears = Math.floor(this.days / DTCalc.dpy[1]);
-        if (tempYears !== 0) { // If there were enough leap years we mights till have a number of years left
-            this.days -= (DTCalc.numLeapYears(this.years - 1 + tempYears) - DTCalc.numLeapYears(this.years - 1));
-            this.years += tempYears;
-            this.days -= tempYears * DTCalc.dpy[0];
-        }
-        if (this.days >= DTCalc.daysInYear(this.years)) { // is this a problem for days after feb 29
-            this.days -= DTCalc.daysInYear(this.years);
-            this.years += 1;
-        }
-        // If negative days keep adding months of days until we get positive days is at most 1 year of days.
-        while (this.days < 0) {
-            if (this.months === 0) {
-                this.months = DTCalc.mpy;
-                this.years -= 1;
-            }
-            this.months -= 1;
-            this.days += DTCalc.dpm[this.months][DTCalc.isLeapYear(this.years)];
-        }
-        // process left over days to see if there are whole monhts
-        while (this.days >= DTCalc.dpm[this.months][DTCalc.isLeapYear(this.years)]) {
-            this.days -= DTCalc.dpm[this.months][DTCalc.isLeapYear(this.years)];
-            this.months += 1;
-            if (this.months === DTCalc.mpy) {
-                this.months = 0;
-                this.years += 1;
-            }
-        }
-        return this;
-    }
-    rawAdd(increment) {
-        this.years = Math.floor(this.years + (increment.years || 0));
-        this.months = Math.floor(this.months + (increment.months || 0));
-        this.days = Math.floor(this.days + (increment.days || 0));
-        this.hours = Math.floor(this.hours + (increment.hours || 0));
-        this.minutes = Math.floor(this.minutes + (increment.minutes || 0));
-        this.seconds = Math.floor(this.seconds + (increment.seconds || 0));
-        return this;
+        warn("about-time | now() deprecated. Use timestamps game.time.worldTime");
+        //@ts-ignore
+        return new DateTime(game.time.worldTime);
     }
     /**
      *
      * @param increment DTMod. Add the icrement to a DateTime and return the normailized result.
      */
     add(increment) {
-        this.rawAdd(increment);
-        this.normalize();
+        if (increment instanceof DTMod) {
+            const scInterval = intervalATtoSC(increment.interval);
+            //@ts-ignore
+            const ts = window.SimpleCalendar.api.timestampPlusInterval(this._timestamp, scInterval);
+            // console.error("diff is ", (ts - this._timestamp) / 24/ 60 / 60);
+            //@ts-ignore
+            this._timestamp = window.SimpleCalendar.api.timestampPlusInterval(this._timestamp, scInterval);
+        }
+        else {
+            const scInterval = intervalATtoSC(increment);
+            //@ts-ignore
+            const ts = window.SimpleCalendar.api.timestampPlusInterval(this._timestamp, scInterval);
+            // console.error("diff is ", (ts - this._timestamp) / 24/ 60 / 60);
+            //@ts-ignore
+            this._timestamp = window.SimpleCalendar.api.timestampPlusInterval(this._timestamp, scInterval);
+        }
+        //@ts-ignore
+        this._dateForm = window.SimpleCalendar.api.timestampToDate(this._timestamp);
         return this;
     }
-    setAbsolute({ years = null, months = null, days = null, hours = null, minutes = null, seconds = null } = {}) {
-        this.years = years === null ? this.years : years;
-        this.months = months === null ? this.months : months;
-        this.days = days === null ? this.days : days;
-        this.hours = hours === null ? this.hours : hours;
-        this.minutes = minutes === null ? this.minutes : minutes;
-        this.seconds = seconds === null ? this.seconds : seconds;
-        return this.normalize();
+    setAbsolute(spec = { years: 0, months: 0, days: 0, hours: 0, minutes: 0, seconds: 0 }) {
+        const scInterval = intervalATtoSC(spec);
+        //@ts-ignore
+        this._timestamp = window.SimpleCalendar.api.dateToTimestamp(scInterval);
+        //@ts-ignore
+        this._dateForm = window.SimpleCalendar.api.timestampToDate(this._timestamp);
+        return this;
     }
     /**
      *
      * @param seconds convert the number of seconds to a DateTime. Requires a start year which defualts to clockStartYear
      * @param startYear
      */
-    static createFromSeconds(seconds, startYear = DTCalc.clockStartYear) {
-        if (DTCalc.debug)
-            DTCalc.log("craeate from seconds", DateTime.create({ years: startYear, seconds: seconds }), DateTime.create({ years: startYear, seconds: seconds }).normalize());
-        return DateTime.create({ years: startYear, seconds: seconds }).normalize();
+    static createFromSeconds(seconds) {
+        return new DateTime(seconds);
     }
     /**
      * retun the number of days represented by a date. Return the residual hours minutes seconds as well.
      */
     toDays() {
-        let days = this.days;
-        let monthsPerYear = DTCalc.dpm.length;
-        // roll up the time part to days.
-        let seconds = DTCalc.timeToSeconds({ hours: this.hours, minutes: this.minutes, seconds: this.seconds });
-        let time = DTMod.fromSeconds(seconds);
-        days += time.days;
-        delete time.days;
-        // How many years worth on months in the spec.
-        let yearsOfMonths = (Math.floor(this.months / monthsPerYear));
-        let calcYear = this.years + yearsOfMonths;
-        let months = this.months - yearsOfMonths;
-        // add in the days for the number of months
-        for (let i = 0; i < months; i++) {
-            days += DTCalc.dpm[i][DTCalc.isLeapYear(calcYear)];
-        }
-        days += calcYear * DTCalc.dpy[0];
-        days += DTCalc.numLeapYears(calcYear - 1) * (DTCalc.dpy[1] - DTCalc.dpy[0]);
-        if (DTCalc.debug)
-            DTCalc.log("DateTime toDays", days, DateTime.create({ days, hours: time.hours, minutes: time.minutes, seconds: time.seconds }));
-        return { days: days, time };
+        //@ts-ignore
+        return { days: Math.floor(this._timestamp / window.SimpleCalendar.api.timestampPlusInterval(0, { day: 1 })) };
     }
     /**
      * return the number of days between d1 and d2
@@ -167,128 +164,88 @@ export class DateTime extends DTMod {
      * return the dow for a given DateTime (0=Monday or equivalent)
      */
     dow() {
-        // 1. No intercalary days, number of days since start is enough to calc dow
-        if (DTCalc.yearlyICDays === 0) {
-            return ((this.toDays().days + DTCalc.firstDay) % DTCalc.dpw + DTCalc.dpw) % DTCalc.dpw;
-        }
-        // 2. Intercalary days but no leap ears - every year is the same length.
-        if (DTCalc.numLeapYears(this.years) === 0) {
-            // no leap years, so fixed legth year so can do a division by year
-            let days = this.toDays().days;
-            let precession = Math.floor(days / DTCalc.dpy[0]) * DTCalc.yearlyICDays;
-            days -= precession;
-            // now account for the days to date
-            days -= DTCalc.cumICDays[this.months];
-            return (days + DTCalc.firstDay) % DTCalc.dpw;
-        }
-        if (true || !game.settings.get("about-time", "newDowCalc")) {
-            // 3. Leap years and intercalary days so hope that weekday reset at the start of the month.
-            // Assume day resets at start of each month.
-            return this.days % DTCalc.dpw;
-            // 4. Leap years and intercalary days.
-            // Pretend we have a calemdar with no intercalary days in it
-        }
-        else { // assumes starts at year 0
-            // Start with elapsed days
-            let days = this.toDays().days;
-            // subtract intercalary days for non leap years
-            days -= Math.max((this.years - 1) * DTCalc.yearlyICDays, 0);
-            days = DTCalc.leapYearRule(this.years); // The ICDays calc assumes every years is a leap year
-            days -= DTCalc.cumICDays[this.months];
-            console.log("dow calc", this.toDays().days, this.years, DTCalc.yearlyICDays, (this.years - 1) * DTCalc.yearlyICDays);
-            console.log("dow calc", this.months, DTCalc.cumICDays[this.months], days % DTCalc.dpw, this.days);
-            return days % DTCalc.dpw;
-        }
+        //@ts-ignore
+        return window.SimpleCalendar.api.timestampToDate(game.time.worldTime).dayOfTheWeek;
     }
     /**
      * Adjust the calendar so that the dow() of this will be dow
      * @param dow the new dow for this.
      */
     setCalDow(dow) {
-        if (DTCalc.debug)
-            DTCalc.log("DateTime: setting first day ", dow, this.dow(), DTCalc.firstDay);
-        DTCalc.setFirstDay(((dow % DTCalc.dpw) - this.dow() + DTCalc.dpw + DTCalc.firstDay) % DTCalc.dpw);
+        console.error("setting cal dow not supported");
     }
     /**
      * convert the date to a number of Seconds.
      */
     toSeconds() {
-        if (DTCalc.debug)
-            DTCalc.log("calcseconds", this.years, this.months, this.days, this.hours, this.minutes, this.seconds);
-        let days = this.toDays();
-        return DTCalc.timeToSeconds({ days: days.days, hours: days.time.hours, minutes: days.time.minutes, seconds: days.time.seconds });
+        return this._timestamp;
     }
     /**
      * Some formatting methods
      */
     shortDate() {
-        let pad = DTCalc.padNumber;
-        let yearD = this.years - (this.years < 1 && !DTCalc.hasYearZero ? 1 : 0);
-        if (DTCalc.namedYears[this.years])
-            yearD = DTCalc.namedYears[this.years];
-        else if (DTCalc.hasYearNames) {
-            const yearNum = this.years % DTCalc.yearNames.length + (this.years < 0 ? DTCalc.yearNames.length : 0);
-            yearD = DTCalc.yearNames[yearNum];
-        }
-        let monthNum = this.months + 1 - DTCalc.cumICDays[this.months];
-        let dayNum = DTCalc.ICMonths[this.months] ? 0 : this.days + 1;
-        if (["ja"].includes(game.settings.get("core", "language"))) {
-            return {
-                date: `${pad(dayNum, 2)}/${pad(monthNum, 2)}/${yearD}}`,
-                time: `${pad(this.hours, 2)}:${pad(this.minutes, 2)}:${pad(this.seconds, 2)}`
-            };
-        }
-        else {
-            return {
-                date: `${yearD}/${pad(monthNum, 2)}/${pad(dayNum, 2)}`,
-                time: `${pad(this.hours, 2)}:${pad(this.minutes, 2)}:${pad(this.seconds, 2)}`
-            };
-        }
+        //@ts-ignore
+        let dobj = window.SimpleCalendar.api.timestampToDate(this.timestamp);
+        return { date: `${dobj.year}/${dobj.month + 1}/${dobj.day + 1}`, time: `${dobj.hour}:${dobj.minute}:${dobj.second}` };
     }
     longDate() {
-        return this.longDateSelect({});
+        //@ts-ignore
+        const date = window.SimpleCalendar.api.timestampToDate(this.timestamp);
+        return {
+            year: date.year,
+            years: date.year,
+            month: date.month + 1,
+            months: date.month + 1,
+            day: date.day + 1,
+            days: date.day + 1,
+            hour: date.hour,
+            minute: date.minute,
+            second: date.second,
+            hours: date.hour,
+            minutes: date.minute,
+            seconds: date.second,
+            monthString: date.monthName,
+            dowString: date.weekdays[date.dayOfTheWeek]
+        };
+    }
+    asSpec() {
+        return this.longDate();
     }
     longDateExtended() {
-        let yearName = undefined;
-        if (DTCalc.namedYears[this.years])
-            yearName = DTCalc.namedYears[this.years];
-        else if (DTCalc.hasYearNames) {
-            const yearNum = this.years % DTCalc.yearNames.length + (this.years < 0 ? DTCalc.yearNames.length : 0);
-            yearName = " " + DTCalc.yearNames[yearNum];
-        }
+        //@ts-ignore
+        const dateObj = window.SimpleCalendar.api.timestampToDate(this.timestamp);
         return {
-            day: this.days + 1,
-            dow: this.dow(),
-            dowString: DTCalc.weekDays[this.dow()],
-            month: this.months + 1,
-            monthString: DTCalc.months[this.months],
-            year: this.years - (this.years < 1 && !DTCalc.hasYearZero ? 1 : 0),
-            hour: this.hours,
-            minute: this.minutes,
-            second: this.seconds,
-            yearName: DTCalc.hasYearNames ? " " + yearName : undefined
+            year: dateObj.year,
+            years: dateObj.year,
+            month: dateObj.month + 1,
+            months: dateObj.month + 1,
+            day: dateObj.day + 1,
+            days: dateObj.day + 1,
+            hour: dateObj.hour,
+            hours: dateObj.hour,
+            minute: dateObj.minute,
+            minutes: dateObj.minute,
+            second: dateObj.second,
+            seconds: dateObj.second,
+            dow: dateObj.dayOfTheWeek,
+            dowString: dateObj.weekdays[dateObj.dayOfTheWeek],
+            monthString: dateObj.monthName,
+            yearName: dateObj.yearName
         };
     }
     longDateSelect({ day = true, month = true, year = true, hours = true, minutes = true, seconds = true, monthDay = true }) {
-        let pad = DTCalc.padNumber;
-        let yearD = this.years - (this.years < 1 && !DTCalc.hasYearZero ? 1 : 0);
-        if (DTCalc.ICMonths[this.months]) {
-            return {
-                "date": `${DTCalc.months[this.months]} ${yearD}`,
-                "time": `${pad(this.hours, 2)}:${pad(this.minutes, 2)}:${pad(this.seconds, 2)}`
-            };
-        }
-        let years = year ? `  ${yearD}` : "";
-        if (DTCalc.namedYears[this.years])
-            years = " " + DTCalc.namedYears[this.years];
-        else if (DTCalc.hasYearNames)
-            years = " " + DTCalc.yearNames[this.years % DTCalc.yearNames.length];
-        let months = month ? ` ${DTCalc.months[this.months]}` : "";
-        let days = day ? `${DTCalc.weekDays[this.dow()]}` : "";
-        let monthDays = monthDay ? ` ${pad(this.days + 1, 2)}` : "";
+        const pad = padNumber;
+        //@ts-ignore
+        const dateObj = window.SimpleCalendar.api.timestampToDate(this.timestamp);
+        let years = year ? `  ${dateObj.year}` : "";
+        if (dateObj.yearName)
+            years = dateObj.yearName;
+        let months = month ? ` ${dateObj.monthName}` : "";
+        let days = day ? `${dateObj.weekdays[dateObj.dayOfTheWeek]}` : "";
+        let monthDays = monthDay ? ` ${pad(dateObj.day + 1, 2)}` : "";
         return {
             "date": `${days}${months}${monthDays}${years}`,
-            "time": `${pad(this.hours, 2)}:${pad(this.minutes, 2)}:${pad(this.seconds, 2)}`
+            "time": `${pad(dateObj.hour, 2)}:${pad(dateObj.minute, 2)}:${pad(dateObj.second, 2)}`
         };
     }
 }

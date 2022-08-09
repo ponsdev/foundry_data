@@ -1,14 +1,28 @@
 .gm-screen-config .hidden {
   display: none;
 }
+.gm-screen-config .reorder-row {
+  cursor: grab;
+}
+.gm-screen-config .gm-screen-icon-button {
+  align-self: center;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  line-height: normal;
+  padding: 0;
+}
+.gm-screen-config .gm-screen-icon-button > i {
+  margin-right: 0;
+}
+.gm-screen-config .gm-screen-icon-button:hover, .gm-screen-config .gm-screen-icon-button:focus {
+  box-shadow: none;
+  text-shadow: 0 0 5px red;
+}
 
 /* Expand the GM Screen Sideways when Sidebar is Collapsed */
 :root {
-  --sidebar-width: 310px;
-}
-
-#sidebar.app.collapsed ~ .gm-screen-app {
-  --sidebar-width: 30px;
+  --gm-screen-ui-right-width: 310px;
 }
 
 .gm-screen-app {
@@ -21,11 +35,11 @@
    */
 }
 .gm-screen-app.gm-screen-drawer {
-  width: calc(var(--gm-screen-width) / 100 * (100vw - var(--gm-screen-right-offset) - var(--sidebar-width)));
+  width: calc( var(--gm-screen-width) / 100 * (100vw - var(--gm-screen-right-offset) - var(--gm-screen-ui-right-width)) );
   height: var(--gm-screen-height);
   top: 100%;
   position: fixed;
-  right: calc(var(--sidebar-width) + var(--gm-screen-right-offset));
+  right: calc(var(--gm-screen-ui-right-width) + var(--gm-screen-right-offset));
   transform: translateY(0);
   transition: all 400ms ease-in-out;
   z-index: 99;
@@ -91,7 +105,7 @@
   text-shadow: 0 0 10px red;
 }
 .gm-screen-app .gm-screen-actions .active {
-  background: url(/ui/parchment.jpg) repeat;
+  background: url(../../ui/parchment.jpg) repeat;
   text-shadow: none;
 }
 .gm-screen-app .gm-screen-actions .item:not(.active) {
@@ -104,10 +118,14 @@
   margin-right: 0;
 }
 .gm-screen-app .gm-screen-actions .meta-actions button {
-  background: url(/ui/parchment.jpg) repeat;
+  background: url(../../ui/parchment.jpg) repeat;
 }
 .gm-screen-app .gm-screen-actions > * {
   flex: unset;
+}
+.gm-screen-app .gm-screen-actions .gm-screen-tabs {
+  display: flex;
+  gap: 5px;
 }
 .gm-screen-app .gm-screen-grid {
   display: grid;
@@ -122,20 +140,48 @@
   display: flex;
   flex-direction: column;
   box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2), 0 0 5px rgba(0, 0, 0, 0.2);
-  padding: 2px;
   border-radius: 5px;
+}
+.gm-screen-app .gm-screen-grid-cell:hover .gm-screen-grid-cell-hint {
+  opacity: 0.3;
+}
+.gm-screen-app .gm-screen-grid-cell-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1 1 100%;
+  width: 100%;
+  margin: 0;
+  font-size: 1em;
+}
+.gm-screen-app .gm-screen-grid-cell-hint {
+  border-radius: 5px;
+  border: rgba(0, 0, 0, 0.25) dashed 5px;
+  display: flex;
+  margin: auto;
+  opacity: 0;
+  padding: 10px;
+  place-content: center;
+  place-items: center;
+  transition: opacity 300ms ease-in-out 500ms;
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
+}
+.gm-screen-app .gm-screen-grid-cell-hint h6 {
+  font-size: 1em;
+  max-width: 60ch;
+  text-align: center;
+  margin: 0;
 }
 .gm-screen-app .gm-screen-grid-cell-header {
   align-items: center;
   display: flex;
   width: 100%;
+  padding: 2px;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .gm-screen-app .gm-screen-grid-cell-header > :not(:last-child) {
   margin-right: 5px;
-}
-.gm-screen-app .gm-screen-grid-cell-header > select {
-  flex: 1 1 100%;
-  width: 100%;
 }
 .gm-screen-app .gm-screen-grid-cell-header > a {
   display: block;
@@ -154,12 +200,15 @@
   overflow-y: auto;
   overflow-x: hidden;
   position: relative;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2), 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 0 2px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .gm-screen-app .gm-screen-grid-cell-content {
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 2px;
   position: relative;
   flex: 1;
   display: flex;

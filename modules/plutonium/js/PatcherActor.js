@@ -1,1 +1,243 @@
-const _0x42d1=['1aTmnoL','getKeyFromCustomKey','copy','LIBWRAPPER_MODE_MIXED','overrides','null','138187ZiJlEI','disabled','sort','error','map','changes','getAvailableEffectsLookup','MODULE_NAME_FAKE','length','_applyActiveEffects_getFullRollData','undefined','string','array','entityClass','148742CgTwbE','184771ocWbIA','36276fYrKqN','boolean','Actor.prototype.applyActiveEffects','792481tSEGnZ','getActiveEffectType','1puOQWM','startsWith','1jiMEmA','effects','1VNRrvs','reduce','warn','data','isUseExtendedActiveEffectsParser','handleHookApplyActiveEffect','_applyActiveEffects','58299EfkPEh','get','key','value','priority','register','MODULE_NAME','data.attributes.ac.value','_applyActiveEffects_mutValues','1APIJVo','object','apply','size','total','number','Actor','init','forEach','190709KUZzlL'];const _0x383e=function(_0x1e8365,_0x2e578d){_0x1e8365=_0x1e8365-0x17b;let _0x42d101=_0x42d1[_0x1e8365];return _0x42d101;};const _0x5ce93f=_0x383e;(function(_0x59ed61,_0xd6395a){const _0x457b45=_0x383e;while(!![]){try{const _0x1aeaa3=parseInt(_0x457b45(0x193))*-parseInt(_0x457b45(0x1b3))+parseInt(_0x457b45(0x1b1))*-parseInt(_0x457b45(0x19a))+-parseInt(_0x457b45(0x181))+-parseInt(_0x457b45(0x1a8))+-parseInt(_0x457b45(0x1aa))*-parseInt(_0x457b45(0x194))+-parseInt(_0x457b45(0x1af))*parseInt(_0x457b45(0x1a9))+-parseInt(_0x457b45(0x18a))*-parseInt(_0x457b45(0x1ad));if(_0x1aeaa3===_0xd6395a)break;else _0x59ed61['push'](_0x59ed61['shift']());}catch(_0x177fab){_0x59ed61['push'](_0x59ed61['shift']());}}}(_0x42d1,0x1a611));import{libWrapper,UtilLibWrapper}from'./PatcherLibWrapper.js';import{SharedConsts}from'../shared/SharedConsts.js';import{Config}from'./Config.js';import{UtilActiveEffects}from'./UtilActiveEffects.js';import{LGT,Util}from'./Util.js';class Patcher_Actor{static[_0x5ce93f(0x191)](){const _0x4ef409=_0x5ce93f;libWrapper[_0x4ef409(0x186)](SharedConsts[_0x4ef409(0x187)],_0x4ef409(0x1ac),function(_0x54a802,..._0x2f66f8){const _0x36b01c=_0x4ef409;if(!Config['get']('actor',_0x36b01c(0x17e)))return _0x54a802(..._0x2f66f8);return Patcher_Actor[_0x36b01c(0x180)](this,..._0x2f66f8);},UtilLibWrapper[_0x4ef409(0x197)]);}static[_0x5ce93f(0x180)](_0x1e0ae4){const _0x48b699=_0x5ce93f;if(!_0x1e0ae4[_0x48b699(0x1b2)]||!_0x1e0ae4[_0x48b699(0x1b2)][_0x48b699(0x18d)]&&!_0x1e0ae4[_0x48b699(0x1b2)][_0x48b699(0x1a2)])return;const _0x51cc1f={},_0x4b4a0b=_0x1e0ae4[_0x48b699(0x1b2)][_0x48b699(0x17b)]((_0x4cd501,_0x33f406)=>{const _0xeadbd1=_0x48b699;if(_0x33f406[_0xeadbd1(0x17d)][_0xeadbd1(0x19b)])return _0x4cd501;return _0x4cd501['concat'](_0x33f406[_0xeadbd1(0x17d)][_0xeadbd1(0x19f)][_0xeadbd1(0x19e)](_0x9930ab=>{const _0x2ba88b=_0xeadbd1;return _0x9930ab=duplicate(_0x9930ab),_0x9930ab['effect']=_0x33f406,_0x9930ab['priority']=_0x9930ab[_0x2ba88b(0x185)]??_0x9930ab['mode']*0xa,_0x9930ab;}));},[]);_0x4b4a0b[_0x48b699(0x19c)]((_0x168262,_0x200cb2)=>_0x168262[_0x48b699(0x185)]-_0x200cb2[_0x48b699(0x185)]),Patcher_Actor[_0x48b699(0x189)](_0x1e0ae4,_0x4b4a0b);for(let _0x2e5091 of _0x4b4a0b){const _0x57a01d=_0x2e5091['effect'][_0x48b699(0x18c)](_0x1e0ae4,_0x2e5091);if(_0x57a01d!==null)_0x51cc1f[_0x2e5091[_0x48b699(0x183)]]=_0x57a01d;}_0x1e0ae4[_0x48b699(0x198)]=expandObject(_0x51cc1f);}static[_0x5ce93f(0x189)](_0x46691d,_0x54d759){const _0x4741dc=_0x5ce93f;if(!_0x54d759[_0x4741dc(0x1a2)])return;let _0x2b8c2e;const _0x3de646=UtilActiveEffects[_0x4741dc(0x1a0)](_0x46691d,{'isActorEffect':!![]});_0x54d759[_0x4741dc(0x192)](_0x48eeb3=>{const _0x282d26=_0x4741dc;if(typeof _0x48eeb3[_0x282d26(0x184)]!==_0x282d26(0x1a5))return;const _0x42084e=UtilActiveEffects[_0x282d26(0x1ae)](_0x3de646,_0x48eeb3[_0x282d26(0x183)]);if(_0x42084e==null)return;switch(_0x42084e){case _0x282d26(0x18b):case _0x282d26(0x1a6):{try{_0x48eeb3[_0x282d26(0x184)]=eval(_0x48eeb3['value']);}catch(_0x299673){if(Util['isDebug']())console[_0x282d26(0x19d)](...LGT,_0x299673);}break;}case _0x282d26(0x199):case _0x282d26(0x18f):case _0x282d26(0x1ab):{if(!_0x2b8c2e)_0x2b8c2e=Patcher_Actor[_0x282d26(0x1a3)](_0x46691d);try{const _0xd4e4d0=new Roll(_0x48eeb3['value'],_0x2b8c2e);_0xd4e4d0['roll'](),_0x48eeb3[_0x282d26(0x184)]=_0xd4e4d0[_0x282d26(0x18e)];if(_0x42084e==='boolean')_0x48eeb3[_0x282d26(0x184)]=!!_0x48eeb3['value'];}catch(_0xcc52e3){if(Util['isDebug']())console[_0x282d26(0x19d)](...LGT,_0xcc52e3);}break;}case _0x282d26(0x1a5):case _0x282d26(0x1a4):default:break;}});}static[_0x5ce93f(0x1a3)](_0x5a0e86){const _0x51ce87=_0x5ce93f,_0x5edca9=MiscUtil[_0x51ce87(0x196)](_0x5a0e86[_0x51ce87(0x17d)]);_0x5edca9[_0x51ce87(0x1b2)]=[];const _0x49efad=new CONFIG[(_0x51ce87(0x190))][(_0x51ce87(0x1a7))]({..._0x5edca9});return _0x49efad['prepareData'](),_0x49efad['getRollData']();}static[_0x5ce93f(0x17f)](_0xb5271f,_0x35523e){const _0x1fd679=_0x5ce93f;if(!Config[_0x1fd679(0x182)]('actor',_0x1fd679(0x17e)))return;if(!(_0x35523e[_0x1fd679(0x183)]||'')[_0x1fd679(0x1b0)](SharedConsts[_0x1fd679(0x1a1)]))return;const _0x3fcabe=UtilActiveEffects[_0x1fd679(0x195)](_0x35523e['key']);switch(_0x3fcabe){case _0x1fd679(0x188):{const {value:_0xa49254}=_0x35523e,_0x178391=getProperty(_0xb5271f[_0x1fd679(0x17d)],_0x3fcabe);if(typeof _0x178391===_0x1fd679(0x18f)&&_0x178391>=Number(_0xa49254))return null;setProperty(_0xb5271f[_0x1fd679(0x17d)],_0x3fcabe,_0xa49254);return;}default:console[_0x1fd679(0x17c)](...LGT,'Unhandled\x20custom\x20active\x20effect\x20key:\x20'+_0x3fcabe);}}}export{Patcher_Actor};
+import {UtilLibWrapper} from "./PatcherLibWrapper.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {Config} from "./Config.js";
+import {UtilActiveEffects} from "./UtilActiveEffects.js";
+import {LGT, Util} from "./Util.js";
+import {Patcher_RollData} from "./PatcherRollData.js";
+import {UtilHooks} from "./UtilHooks.js";
+import {UtilCompat} from "./UtilCompat.js";
+
+class Patcher_Actor {
+	static init () {
+		this._init_tryPatchGetRollData();
+		this._init_tryPatchApplyActiveEffects();
+	}
+
+	static _init_tryPatchGetRollData () {
+		try {
+			UtilLibWrapper.addPatch(
+				"CONFIG.Actor.documentClass.prototype.getRollData",
+				this._lw_CONFIG_Actor_documentClass_prototype_getRollData,
+				UtilLibWrapper.LIBWRAPPER_MODE_WRAPPER,
+			);
+		} catch (e) {
+			console.error(...LGT, `Failed to bind getRollData handler!`, e);
+		}
+	}
+
+	static _HAS_RUN_LATE_INIT_PREPARE_ACTOR_DATA = false;
+	static lateInit () {
+		if (!Config.get("actor", "isUseExtendedActiveEffectsParser")) return;
+
+		if (!UtilCompat.isObsidianActive()) return this._lateInit_prepareActorData();
+		Hooks.once("obsidian.actorsPrepared", () => this._lateInit_prepareActorData());
+	}
+
+	static _lateInit_prepareActorData () {
+		(CONFIG.Actor.collection.instance.contents || []).forEach(ent => {
+			try {
+				ent.prepareData();
+			} catch (e) {
+				const msg = `Failed to apply custom active effect parsing to actor "${ent.id}"!`;
+				ui.notifications.error(`${msg} ${VeCt.STR_SEE_CONSOLE}`);
+				console.error(...LGT, msg);
+				console.error(e);
+			}
+		});
+
+		this._HAS_RUN_LATE_INIT_PREPARE_ACTOR_DATA = true;
+	}
+
+	static _lw_CONFIG_Actor_documentClass_prototype_getRollData (fn, ...args) {
+		const out = fn(...args);
+		return Patcher_Actor._getRollData(this, out);
+	}
+
+	static _getRollData (actor, rollData) {
+		if (!rollData) return rollData;
+		Object.assign(rollData, Patcher_RollData.getAdditionalRollDataBase(actor));
+		Patcher_RollData.addBabeleCompatibilityRollData(rollData, actor);
+		return rollData;
+	}
+
+	static _init_tryPatchApplyActiveEffects () {
+		UtilLibWrapper.addPatch(
+			"Actor.prototype.applyActiveEffects",
+			this._lw_Actor_prototype_applyActiveEffects,
+			UtilLibWrapper.LIBWRAPPER_MODE_MIXED,
+		);
+
+		UtilHooks.on(UtilHooks.HK_CONFIG_UPDATE, () => this._handleConfigUpdate());
+	}
+
+	static _lw_Actor_prototype_applyActiveEffects (fn, ...args) {
+		if (!Config.get("actor", "isUseExtendedActiveEffectsParser")) return fn(...args);
+		return Patcher_Actor._applyActiveEffects(this, ...args);
+	}
+
+	static _handleConfigUpdate () {
+		if (!this._HAS_RUN_LATE_INIT_PREPARE_ACTOR_DATA) return;
+
+		CONFIG.Actor.collection.instance.contents.forEach(act => {
+			act.prepareData();
+			if (act.sheet?.element?.length) act.sheet.render();
+		});
+	}
+
+	/** Based on `Actor.applyActiveEffects` */
+	static _applyActiveEffects (actor) {
+		if (!actor.effects || (!actor.effects.size && !actor.effects.length)) return;
+
+		const overrides = {};
+
+		// Organize non-disabled effects by their application priority
+		const changes = actor.effects.reduce((changes, e) => {
+			if (e.data.disabled || e.isSuppressed) return changes;
+			return changes.concat(e.data.changes.map(c => {
+				c = foundry.utils.duplicate(c);
+				c.effect = e;
+				c.priority = c.priority ?? (c.mode * 10);
+				return c;
+			}));
+		}, []);
+		changes.sort((a, b) => a.priority - b.priority);
+
+		Patcher_Actor._applyActiveEffects_mutValues(actor, changes);
+
+		// Apply all changes
+		for (let change of changes) {
+			const result = change.effect.apply(actor, change);
+			if (result !== null) overrides[change.key] = result;
+		}
+
+		// Expand the set of final overrides
+		actor.overrides = foundry.utils.expandObject(overrides);
+	}
+
+	static _applyActiveEffects_mutValues (actor, changes) {
+		if (!changes.length) return;
+
+		// region Custom implementation--resolve roll syntax/variables
+		//   Note that the effects are already `duplicate`'d (i.e. copied) above, so we can freely mutate them.
+		//   Try to avoid unnecessary evaluations, to avoid throwing a bunch of exceptions, and nuking performance etc.
+		let rollData; // (Lazy init)
+		const activeEffectsLookup = UtilActiveEffects.getAvailableEffectsLookup(actor, {isActorEffect: true});
+
+		changes.forEach(it => {
+			// Apply custom parsing only to strings
+			if (typeof it.value !== "string") return;
+
+			const type = UtilActiveEffects.getActiveEffectType(activeEffectsLookup, it.key);
+
+			switch (type) {
+				// Try to evaluate these, as the user may have e.g. entered e.g. damage parts
+				case "object":
+				case "array": {
+					try {
+						// eslint-disable-next-line no-eval
+						it.value = eval(it.value);
+					} catch (e) {
+						// Ignore exceptions, and use the text as-is
+						if (Util.isDebug()) console.error(...LGT, e);
+					}
+					break;
+				}
+
+				// These could be anything--optimistically apply the dice syntax
+				case undefined:
+				case null:
+				case "null":
+				case "number": // We've got a string, and should have a number--try to convert by parsing as a dice expression
+				case "boolean": { // As above, but we'll convert to a boolean at the end
+					if (!rollData) rollData = Patcher_Actor._applyActiveEffects_getFullRollData(actor);
+
+					try {
+						it.value = this._getEvaluatedExpression(actor, it.value, rollData);
+
+						// If we're expecting a boolean, forcibly convert
+						if (type === "boolean") it.value = !!it.value;
+					} catch (e) {
+						// Ignore exceptions, and use the value as-is
+						if (Util.isDebug()) console.error(...LGT, e);
+					}
+
+					break;
+				}
+
+				case "string": // Avoid modifying if the desired output is a string
+				case "undefined": // Should never occur? (since the model is defined as JSON)
+				default: break;
+			}
+		});
+		// endregion
+	}
+
+	/**
+	 * With the deprecation of "sync" rolls in v9+, we can no longer rely on using `Roll( ... )` to evaluate expressions.
+	 * Therefore, run a custom version through the 5etools dice engine. Note that this may not 1:1 match the Foundry
+	 * parser, but should be close enough for "simple" expressions.
+	 */
+	static _getEvaluatedExpression (actor, expression, rollData) {
+		if (!`${expression || ""}`.trim()) return 0;
+
+		const expressionMerged = expression
+			.replace(/@(?<path>[-a-zA-Z0-9.]+)/g, (...m) => {
+				const out = foundry.utils.getProperty(rollData, m.last().path);
+				if (out === undefined) {
+					console.warn(...LGT, `Failed to resolve attribute "${m.last().path}" in expression "${expression}" for actor "${actor.name}" (${actor.id})`);
+					return 0;
+				}
+				return out;
+			})
+			// Handle tokens which the dice parser doesn't like
+			.replace(/\btrue\b/g, 1)
+			.replace(/\bfalse\b/g, 0)
+			.replace(/\bnull\b/g, 0)
+		;
+		let wrpTree;
+		try {
+			wrpTree = Renderer.dice.lang.getTree3(expressionMerged, false);
+		} catch (e) {
+			console.warn(...LGT, `Failed to parse expression "${expression}" ("${expressionMerged}" with roll data applied) in actor (${actor.name}) ${actor.id} active effects`, e.message);
+			return 0;
+		}
+
+		return wrpTree.tree.evl({});
+	}
+
+	static _applyActiveEffects_getFullRollData (actor) {
+		const cpyActorData = MiscUtil.copy(actor.data);
+		cpyActorData.effects = [];
+		// eslint-disable-next-line new-cap
+		const cpyActor = new CONFIG.Actor.documentClass({...cpyActorData});
+		cpyActor.prepareData();
+		return cpyActor.getRollData();
+	}
+
+	/** Called when applying "CUSTOM" active effects. */
+	static handleHookApplyActiveEffect (actor, change) {
+		if (!Config.get("actor", "isUseExtendedActiveEffectsParser")) return;
+		if (!(change.key || "").startsWith(SharedConsts.MODULE_NAME_FAKE)) return;
+
+		const key = UtilActiveEffects.getKeyFromCustomKey(change.key);
+
+		switch (key) {
+			// region Deprecated in favor of using the base "priority" system
+			//   Left here as an informative example and so legacy props are handled.
+			case "data.attributes.ac.flat": {
+				// region Based on `ActiveEffect._applyOverride` ("UPGRADE" mode)
+				const {value} = change;
+				const current = foundry.utils.getProperty(actor.data, key);
+				if ((typeof (current) === "number") && (current >= Number(value))) return null;
+				setProperty(actor.data, key, value);
+				return;
+				// endregion
+			}
+			// endregion
+
+			default: console.warn(...LGT, `Unhandled custom active effect key: ${key}`);
+		}
+	}
+}
+
+export {Patcher_Actor};

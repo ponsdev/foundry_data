@@ -1,102 +1,80 @@
-import { ValidSpec, aboutTimeInstalled, confirmDelete, cubActive, conditionalVisibilityActive } from "../dae.js";
+import { confirmDelete, cubActive, ceActive, atlActive, daeSystemClass } from "../dae.js";
 import { i18n, confirmAction, daeSpecialDurations, daeMacroRepeats, log } from "../../dae.js";
+import { ValidSpec } from "../Systems/DAESystem.js";
+export var otherFields = [];
+export function addAutoFields(fields) {
+    fields.forEach(f => {
+        if (!otherFields.includes(f))
+            otherFields.push(f);
+    });
+    otherFields.sort();
+}
 export class DAEActiveEffectConfig extends ActiveEffectConfig {
     constructor(object = {}, options = {}) {
         super(object, options);
         this.tokenMagicEffects = {};
         //@ts-ignore
         if (game.modules.get("tokenmagic")?.active) {
-            game.settings.get("tokenmagic", "presets").forEach(preset => {
+            globalThis.TokenMagic.getPresets().forEach(preset => {
                 this.tokenMagicEffects[preset.name] = preset.name;
             });
         }
         else
             this.tokenMagicEffects["invalid"] = "module not installed";
-        this.fieldsList = Object.keys(ValidSpec.allSpecsObj);
+        let validSpecsToUse = ValidSpec.specs["union"];
+        //@ts-ignore documentClass
+        if (this.object.parent instanceof CONFIG.Actor.documentClass) {
+            validSpecsToUse = ValidSpec.specs[this.object.parent.type];
+        }
+        this.fieldsList = Object.keys(validSpecsToUse.allSpecsObj);
+        this.fieldsList = this.fieldsList.concat(otherFields);
         //@ts-ignore
-        if (window.MidiQOL?.midiFlags)
-            this.fieldsList = this.fieldsList.concat(window.MidiQOL.midiFlags);
+        // if (window.MidiQOL?.midiFlags)  this.fieldsList = this.fieldsList.concat(window.MidiQOL.midiFlags);
         this.fieldsList.sort();
         //@ts-ignore
-        log(`There are ${this.fieldsList.length} fields to choose from of which ${window.MidiQOL?.midiFlags?.length || 0} come from midi-qol and ${ValidSpec.allSpecs.length} from dae`);
-        if (game.system.id === "dnd5e") {
-            this.fieldsList = this.fieldsList.join(", ");
-            this.traitList = duplicate(CONFIG.DND5E.damageResistanceTypes);
-            Object.keys(CONFIG.DND5E.damageResistanceTypes).forEach(type => {
-                this.traitList[`-${type}`] = `-${CONFIG.DND5E.damageResistanceTypes[type]}`;
-            });
-            this.languageList = duplicate(CONFIG.DND5E.languages);
-            Object.keys(CONFIG.DND5E.languages).forEach(type => {
-                this.languageList[`-${type}`] = `-${CONFIG.DND5E.languages[type]}`;
-            });
-            this.conditionList = duplicate(CONFIG.DND5E.conditionTypes);
-            Object.keys(CONFIG.DND5E.conditionTypes).forEach(type => {
-                this.conditionList[`-${type}`] = `-${CONFIG.DND5E.conditionTypes[type]}`;
-            });
-            this.toolProfList = duplicate(CONFIG.DND5E.toolProficiencies);
-            Object.keys(CONFIG.DND5E.toolProficiencies).forEach(type => {
-                this.toolProfList[`-${type}`] = `-${CONFIG.DND5E.toolProficiencies[type]}`;
-            });
-            this.armorProfList = duplicate(CONFIG.DND5E.armorProficiencies);
-            Object.keys(CONFIG.DND5E.armorProficiencies).forEach(type => {
-                this.armorProfList[`-${type}`] = `-${CONFIG.DND5E.armorProficiencies[type]}`;
-            });
-            this.weaponProfList = duplicate(CONFIG.DND5E.weaponProficiencies);
-            Object.keys(CONFIG.DND5E.weaponProficiencies).forEach(type => {
-                this.weaponProfList[`-${type}`] = `-${CONFIG.DND5E.weaponProficiencies[type]}`;
-            });
-        }
-        else {
-            this.fieldsList = this.fieldsList.join(", ");
-            this.traitList = duplicate(CONFIG.SW5E.damageResistanceTypes);
-            Object.keys(CONFIG.SW5E.damageResistanceTypes).forEach(type => {
-                this.traitList[`-${type}`] = `-${CONFIG.SW5E.damageResistanceTypes[type]}`;
-            });
-            this.languageList = duplicate(CONFIG.SW5E.languages);
-            Object.keys(CONFIG.SW5E.languages).forEach(type => {
-                this.languageList[`-${type}`] = `-${CONFIG.SW5E.languages[type]}`;
-            });
-            this.conditionList = duplicate(CONFIG.SW5E.conditionTypes);
-            Object.keys(CONFIG.SW5E.conditionTypes).forEach(type => {
-                this.conditionList[`-${type}`] = `-${CONFIG.SW5E.conditionTypes[type]}`;
-            });
-            this.toolProfList = duplicate(CONFIG.SW5E.toolProficiencies);
-            Object.keys(CONFIG.SW5E.toolProficiencies).forEach(type => {
-                this.toolProfList[`-${type}`] = `-${CONFIG.SW5E.toolProficiencies[type]}`;
-            });
-            this.armorProfList = duplicate(CONFIG.SW5E.armorProficiencies);
-            Object.keys(CONFIG.SW5E.armorProficiencies).forEach(type => {
-                this.armorProfList[`-${type}`] = `-${CONFIG.SW5E.armorProficiencies[type]}`;
-            });
-            this.weaponProfList = duplicate(CONFIG.SW5E.weaponProficiencies);
-            Object.keys(CONFIG.SW5E.weaponProficiencies).forEach(type => {
-                this.weaponProfList[`-${type}`] = `-${CONFIG.SW5E.weaponProficiencies[type]}`;
-            });
-        }
+        log(`There are ${this.fieldsList.length} fields to choose from of which ${window.MidiQOL?.midiFlags?.length || 0} come from midi-qol and ${validSpecsToUse.allSpecs.length} from dae`);
+        this.fieldsList = this.fieldsList.join(", ");
+        daeSystemClass.configureLists(this);
         if (cubActive) {
             this.cubConditionList = {};
             game.cub.conditions?.forEach(cubc => {
                 this.cubConditionList[cubc.name] = cubc.name;
             });
         }
-        const ConditionalVisibilityNames = ["invisible", "hidden", "obscured", "indarkness"];
-        const ConditionalVisibilityVisionNames = ["blindsight", "devilssight", "seeinvisible", "tremorsense", "truesight"];
-        if (conditionalVisibilityActive) {
-            this.ConditionalVisibilityList = {};
-            ConditionalVisibilityNames.forEach(cvc => {
-                this.ConditionalVisibilityList[cvc] = i18n(`CONVIS.${cvc}`);
-            });
-            this.ConditionalVisibilityVisionList = {};
-            ConditionalVisibilityVisionNames.forEach(cvc => {
-                this.ConditionalVisibilityVisionList[cvc] = i18n(`CONVIS.${cvc}`);
+        this.statusEffectList = {};
+        let efl = CONFIG.statusEffects
+            .filter(se => se.id)
+            .map(se => {
+            if (se.id.startsWith("combat-utility-belt."))
+                return { id: se.id, label: `${se.label} (CUB)` };
+            if (se.id.startsWith("Convenient Effect:"))
+                return { id: se.id, label: `${se.label} (CE)` };
+            return { id: se.id, label: i18n(se.label) };
+        })
+            .sort((a, b) => a.label < b.label ? -1 : 1);
+        efl.forEach(se => {
+            this.statusEffectList[se.id] = se.label;
+        });
+        if (ceActive) {
+            this.ceEffectList = {};
+            game.dfreds.effects?.all.forEach(ceEffect => {
+                this.ceEffectList[ceEffect.name] = ceEffect.name;
             });
         }
-        this.validFields = ValidSpec.allSpecs
+        if (atlActive) {
+            this.ATLPresets = {};
+            game.settings.get("ATL", "presets").forEach(preset => this.ATLPresets[preset.name] = preset.name);
+        }
+        this.validFields = { "__": "" };
+        this.validFields = validSpecsToUse.allSpecs
             .filter(e => e._fieldSpec.includes(""))
             .reduce((mods, em) => {
             mods[em._fieldSpec] = em._label;
             return mods;
-        }, {});
+        }, this.validFields);
+        for (let field of otherFields) {
+            this.validFields[field] = field;
+        }
     }
     /** @override */
     static get defaultOptions() {
@@ -125,52 +103,27 @@ export class DAEActiveEffectConfig extends ActiveEffectConfig {
     }
     /* ----------------------------------------- */
     getOptionsForSpec(spec) {
-        if (spec === "data.traits.languages.value")
-            return this.languageList;
-        if (spec === "data.traits.ci.value")
-            return this.conditionList;
-        if (spec === "data.traits.toolProf.value")
-            return this.toolProfList;
-        if (spec === "data.traits.armorProf.value")
-            return this.armorProfList;
-        if (spec === "data.traits.weaponProf.value")
-            return this.weaponProfList;
-        if (["data.traits.di.value", "data.traits.dr.value", "data.traits.dv.value"].includes(spec))
-            return this.traitList;
-        if (spec.includes("data.skills") && spec.includes("value"))
-            return { 0: "Not Proficient", 0.5: "Half Proficiency", 1: "Proficient", 2: "Expertise" };
-        if (spec.includes("data.skills") && spec.includes("ability")) {
-            if (game.system.id === "dnd5e")
-                return CONFIG.DND5E.abilities;
-            else
-                return CONFIG.SW5E.abilities;
-        }
         if (spec.includes("tokenMagic"))
             return this.tokenMagicEffects;
         if (spec === "macro.CUB")
             return this.cubConditionList;
+        if (spec === "macro.CE")
+            return this.ceEffectList;
+        if (spec === "StatusEffect")
+            return this.statusEffectList;
         if (spec === "macro.ConditionalVisibility")
             return this.ConditionalVisibilityList;
         if (spec === "macro.ConditionalVisibilityVision")
             return this.ConditionalVisibilityVisionList;
-        /*
-            blindsight: false
-        devilssight: false
-        hidden: false
-        indarkness: false
-        invisible: false
-        obscured: false
-        seeinvisible: true
-        tremorsense: false
-        truesight: false
-        */
-        if (spec === "data.traits.size")
-            return CONFIG.DND5E.actorSizes;
-        return false;
+        if (spec === "ATL.preset")
+            return this.ATLPresets;
+        return daeSystemClass.getOptionsForSpec(spec);
     }
     /** @override */
     async getData(options) {
         const data = super.getData(options);
+        let validSpecsToUse = ValidSpec.specs["union"]; // TODO this needs to be thought about
+        await daeSystemClass.editConfig();
         //@ts-ignore
         const allModes = Object.entries(CONST.ACTIVE_EFFECT_MODES)
             .reduce((obj, e) => {
@@ -178,13 +131,22 @@ export class DAEActiveEffectConfig extends ActiveEffectConfig {
             obj[e[1]] = game.i18n.localize("EFFECT.MODE_" + e[0]);
             return obj;
         }, {});
+        data.modes = allModes;
         //@ts-ignore
         data.specialDuration = daeSpecialDurations;
         data.macroRepeats = daeMacroRepeats;
+        const translations = geti18nTranslations();
+        data.stackableOptions = translations.stackableOptions ?? { "none": "Effects do not stack", "multi": "Stacking effects apply the effect multiple times", "count": "each stack increase stack count by 1" };
         if (this.object.parent) {
-            data.isItem = this.object.parent.__proto__.constructor.name === CONFIG.Item.entityClass.name;
-            data.isActor = this.object.parent.__proto__.constructor.name === CONFIG.Actor.entityClass.name;
+            //@ts-ignore documentClass
+            data.isItem = this.object.parent instanceof CONFIG.Item.documentClass;
+            //@ts-ignore documentClass
+            data.isActor = this.object.parent instanceof CONFIG.Actor.documentClass;
         }
+        if (data.isItem)
+            validSpecsToUse = ValidSpec.specs["union"]; // TODO think about what it means to edit an item effect
+        if (data.isActor)
+            validSpecsToUse = ValidSpec.specs[this.object.parent.type];
         data.validFields = this.validFields;
         data.submitText = "EFFECT.Submit";
         //@ts-ignore
@@ -193,39 +155,47 @@ export class DAEActiveEffectConfig extends ActiveEffectConfig {
                 //@ts-ignore
                 change.modes = allModes; //change.mode ? allModes: [allModes[CONST.ACTIVE_EFFECT_MODES.CUSTOM]];
             }
-            else if ([-1, undefined].includes(ValidSpec.allSpecsObj[change.key]?.forcedMode)) {
+            else if ([-1, undefined].includes(validSpecsToUse.allSpecsObj[change.key]?.forcedMode)) {
                 change.modes = allModes;
             }
             else {
-                change.modes = [allModes[ValidSpec.allSpecsObj[change.key]?.forcedMode]];
+                const mode = {};
+                mode[validSpecsToUse.allSpecsObj[change.key]?.forcedMode] = allModes[validSpecsToUse.allSpecsObj[change.key]?.forcedMode];
+                change.modes = mode;
             }
             change.options = this.getOptionsForSpec(change.key);
             if (!change.priority)
                 change.priority = change.mode * 10;
         });
-        if (aboutTimeInstalled && data.effect.duration?.startTime) {
-            //@ts-ignore
-            const Gametime = window.Gametime;
-            const startTime = Gametime.DT.createFromSeconds(data.effect.duration.startTime).shortDate();
-            data.startTimeString = (startTime.date + " " + startTime.time) || "";
+        const simpleCalendar = globalThis.SimpleCalendar?.api;
+        if (simpleCalendar && data.effect.duration?.startTime) {
+            const dateTime = simpleCalendar.formatDateTime(simpleCalendar.timestampToDate(data.effect.duration.startTime));
+            data.startTimeString = dateTime.date + " " + dateTime.time;
             if (data.effect.duration.seconds) {
-                const endTime = Gametime.DT.createFromSeconds(data.effect.duration.startTime + data.effect.duration.seconds).shortDate();
-                data.durationString = endTime.date + " " + endTime.time;
+                const duration = simpleCalendar.formatDateTime(simpleCalendar.timestampToDate(data.effect.duration.startTime + data.effect.duration.seconds));
+                data.durationString = duration.date + " " + duration.time;
             }
         }
-        if (!data.effect.flags.dae?.specialDuration)
+        setProperty(data.effect, "flags.dae.durationExpression", this.object.data.flags?.dae?.durationExpression);
+        if (!data.effect.flags.dae?.specialDuration || !(data.effect.flags.dae.specialDuration instanceof Array))
             setProperty(data.effect.flags, "dae.specialDuration", []);
-        if (typeof data.effect.flags.dae?.specialDuration === "string") {
-            data.effect.flags.dae.specialDuration = [data.effect.flags.dae.specialDuration];
-        }
-        data.sourceName = await this.object.sourceName;
+        data.sourceName = this.object.sourceName;
         data.fieldsList = this.fieldsList;
         return data;
     }
     _keySelected(event) {
         const target = event.target;
         // $(target.parentElement.parentElement.children[1]).find(".keylist").val(ValidSpec.allSpecs[target.selectedIndex].fieldSpec)
-        $(target.parentElement.parentElement.parentElement.children[0]).find(".awesomplete").val(ValidSpec.allSpecs[target.selectedIndex].fieldSpec);
+        if (target.selectedIndex === 0)
+            return; // Account for dummy element 0
+        $(target.parentElement.parentElement.parentElement.children[0]).find(".awesomplete").val(target.value);
+        /*
+            if (!ValidSpec.allSpecs[selected]) { // otherfields
+              $(target.parentElement.parentElement.parentElement.children[0]).find(".awesomplete").val(selected)
+            } else {
+              $(target.parentElement.parentElement.parentElement.children[0]).find(".awesomplete").val(ValidSpec.allSpecs[target.selectedIndex-1].fieldSpec)
+            }
+            */
         return this.submit({ preventClose: true }).then(() => this.render());
     }
     /* ----------------------------------------- */
@@ -301,46 +271,30 @@ export class DAEActiveEffectConfig extends ActiveEffectConfig {
         if (!formData.changes)
             formData.changes = [];
         formData.changes = Object.values(formData.changes);
-        for (let c of formData.changes) {
-            if (typeof ValidSpec.allSpecsObj[c.key]?.sampleValue === "number") {
-                //@ts-ignore
-                if (Number.isNumeric(c.value))
-                    c.value = parseFloat(c.value);
-            }
-            if (typeof ValidSpec.allSpecsObj[c.key]?.sampleValue === "string") {
-                if (typeof c.value === "number")
-                    c.value = `${c.value}`;
-            }
-            // stored mode is a selection index ok for the list, but not "forced Mode"
-            if (ValidSpec.allSpecsObj[c.key]?.forcedMode !== -1)
-                c.mode = ValidSpec.allSpecsObj[c.key]?.forcedMode || c.mode;
-            //@ts-ignore
-            c.priority = Number.isNumeric(c.priority) ? parseInt(c.priority) : c.mode * 10;
-        }
-        if (formData.flags?.dae?.specialDuration) {
+        if (formData.flags?.dae?.specialDuration && typeof formData.flags.dae.specialDuration !== "string") {
             const newSpecDur = [];
             Object.values(formData.flags?.dae?.specialDuration).forEach(value => newSpecDur.push(value));
             formData.flags.dae.specialDuration = newSpecDur;
         }
+        else
+            setProperty(formData, "flags.dae.specialDuration", []);
         //@ts-ignore isNumeric
-        if (Number.isNumeric(formData.duration.startTime)) {
+        if (Number.isNumeric(formData.duration.startTime) && Math.abs(Number(formData.duration.startTime) < 3600)) {
             let startTime = parseInt(formData.duration.startTime);
-            if (startTime <= 3600) { // Only acdept durations of 1 hour or less as the start time field
+            if (Math.abs(startTime) <= 3600) { // Only acdept durations of 1 hour or less as the start time field
                 formData.duration.startTime = game.time.worldTime + parseInt(formData.duration.startTime);
             }
         }
+        else if (this.object.parent.isOwned)
+            formData.duration.startTime = null;
         setProperty(formData, "flags.dae.transfer", formData.transfer);
-        //setProperty(formData, "flags.dae", {stackable: formData.flags.dae.stackable});
-        if (this.object.parent.isOwned) { // we are editing an owned item
-            let itemData = this.object.parent.data;
-            itemData.effects.forEach(efData => {
-                if (efData._id == this.object.id)
-                    mergeObject(efData, expandObject(formData), { overwrite: true, inplace: true });
-            });
-            this.object.parent.actor.updateOwnedItem(itemData);
-        }
-        else {
-            return this.object.update(formData);
-        }
+        await this.object.update(formData);
     }
+}
+export function geti18nTranslations() {
+    let translations = game.i18n.translations["dae"];
+    //@ts-ignore _fallback not accessible
+    if (!translations)
+        translations = game.i18n._fallback["dae"];
+    return translations ?? {};
 }

@@ -1,35 +1,33 @@
 import { log } from "../helpers.js";
 import { TEMPLATES } from "../constants.js";
 export class CompactJournalEntryDisplay extends JournalSheet {
-    constructor(options, cellId) {
-        super(options);
-        log(false, 'CompactJournalEntryDisplay constructor', {
-            options,
-            cellId,
-        });
-        this.cellId = cellId;
+    constructor(object, options) {
+        super(object, options);
+        this.cellId = options.cellId;
+    }
+    get isEditable() {
+        return false;
     }
     static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
-            // template: TEMPLATES.compactJournalEntry,
+        return foundry.utils.mergeObject(super.defaultOptions, {
             editable: false,
             popOut: false,
         });
     }
     /** @override */
     get template() {
-        // @ts-ignore
         if (this._sheetMode === 'image')
             return ImagePopout.defaultOptions.template;
         return TEMPLATES.compactJournalEntry;
     }
-    _replaceHTML(element, html, options) {
+    _replaceHTML(element, html) {
+        $(this.cellId).find('.gm-screen-grid-cell-title').text(this.title);
         const gridCellContent = $(this.cellId).find('.gm-screen-grid-cell-content');
-        //@ts-ignore
         gridCellContent.html(html);
         this._element = html;
     }
-    _injectHTML(html, options) {
+    _injectHTML(html) {
+        $(this.cellId).find('.gm-screen-grid-cell-title').text(this.title);
         const gridCellContent = $(this.cellId).find('.gm-screen-grid-cell-content');
         log(false, 'CompactJournalEntryDisplay _injectHTML', {
             cellId: this.cellId,

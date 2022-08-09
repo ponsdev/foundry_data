@@ -1,51 +1,26 @@
 <div>
-    <nav class="tabs" data-group="party">
-        <li class="item" data-tab="general">General</li>
-        <li class="item" data-tab="languages">Languages</li>
-        <li class="item" data-tab="currencies">Wealth</li>
-        <li class="item" data-tab="background">Background</li>
-    </nav>
+    {{> "modules/party-overview/templates/parts/Tabs.html"}}
     <section class="content">
         <div class="tab" data-tab="general" data-group="party">
             <div class="table-row header">
-                <div class="button">
-                    <button class="btn-filter">
-                        <i class="fas fa-filter {{#ifEquals mode 'SHOW_ALL'}}inactive{{/ifEquals}}"></i>
-                        {{#ifEquals mode 'SHOW_VISIBLE' }}<i class="fas fa-eye"></i>{{/ifEquals}}
-                        {{#ifEquals mode 'SHOW_HIDDEN' }}<i class="fas fa-eye-slash"></i>{{/ifEquals}}
-                    </button>
-                </div>
+                {{> "modules/party-overview/templates/parts/FilterButton.html"}}
                 <div class="text">Name</div>
-                <div class="num" title="Inspiration"><span>&#x1f340;</span></div>
-                <div class="num" title="Health"><i class="fas fa-heart"></i></div>
-                <div class="num" title="Armor Class"><i class="fas fa-shield-alt"></i></div>
-                <div class="num" title="Passive Perception"><i class="far fa-eye"></i></div>
-                <div class="num" title="Passive Investigation"><i class="fas fa-search"></i></div>
-                <div class="num" title="Passive Insight"><i class="fas fa-brain"></i></div>
-                <div class="num" title="Passive Stealth"><i class="fas fa-user-secret"></i></div>
+                <div class="num" title="{{localize "DND5E.Inspiration"}}"><span>&#x1f340;</span></div>
+                <div class="num" title="{{localize "DND5E.HitPoints"}}"><i class="fas fa-heart"></i></div>
+                <div class="num" title="{{localize "DND5E.ArmorClass"}}"><i class="fas fa-shield-alt"></i></div>
+                <div class="num" title="{{localize "DND5E.SkillPrc"}}"><i class="far fa-eye"></i></div>
+                <div class="num" title="{{localize "DND5E.SkillInv"}}"><i class="fas fa-search"></i></div>
+                <div class="num" title="{{localize "DND5E.SkillIns"}}"><i class="fas fa-brain"></i></div>
+                <div class="num" title="{{localize "DND5E.SkillSte"}}"><i class="fas fa-user-secret"></i></div>
+                {{#unless disableExperienceTracking}}<div class="num" title="{{localize "party-overview.EXPERIENCE"}}">{{localize "party-overview.XP"}}</div>{{/unless}}
             </div>
 
             {{#each actors as | actor | }}
             <div class="table-row">
-                <div class="button">
-                    <button class="btn-toggle-visibility" data-actor="{{actor.id }}">
-                        {{#if actor.isHidden }}<i class="value fas fa-eye-slash"></i>{{else}}<i
-                            class="value fas fa-eye"></i>{{/if}}
-                    </button>
-                </div>
+                {{> "modules/party-overview/templates/parts/ToggleVisibilityButton.html" actor=actor}}
                 <div class="text">{{ actor.shortestName }}</div>
 
-                <!--
-                {
-                    value: value,
-                    max: max,
-                    tempValue: tempValue,
-                    tempMaxValue: tempMaxValue,
-                    totalValue: value + tempValue,
-                    totalMaxValue = max + tempMaxValue
-                }
-                -->
-                <div class="num">{{#if actor.inspiration}} <i class="fas fa-dice-d20"></i> {{/if}}</div>
+                <div class="num">{{#if actor.inspiration}}<i class="fas fa-check"></i>{{else}}<i class="value fas fa-times" style="color: gray"></i>{{/if}}</div>
                 <div class="num">
                     <span style="display: block; border-bottom: thin solid black">
                         <span name="hpCurrent" class="{{#if actor.hp.tempValue }}adjusted{{/if}}"
@@ -58,127 +33,126 @@
                             class="{{#if actor.hp.tempMaxValue }}adjusted{{/if}}">{{ actor.hp.totalMaxValue }}</span>
                     </span>
                 </div>
-                <div class="num">{{ actor.ac }}</div>
+                <div class="num">{{ actor.armor }}</div>
                 <div class="num">{{ actor.passives.perception }}</div>
                 <div class="num">{{ actor.passives.investigation }}</div>
                 <div class="num">{{ actor.passives.insight }}</div>
                 <div class="num">{{ actor.passives.stealth }}</div>
+                {{#unless ../disableExperienceTracking}}
+                <div class="num">
+                    <span style="display: block; border-bottom: thin solid black">
+                        <span >{{ actor.experience.value }}</span>
+                    </span>
+                    <span style="display: block">
+                        <span>{{ actor.experience.max }}</span>
+                    </span>
+                </div>
+                {{/unless}}
             </div>
             {{/each}}
         </div>
         <!-- Languages -->
-        <div class="tab" data-tab="languages" data-group="party">
-            <div class="table-row header">
-                <div class="button">
-                    <button class="btn-filter">
-                        <i class="fas fa-filter {{#ifEquals mode 'SHOW_ALL'}}inactive{{/ifEquals}}"></i>
-                        {{#ifEquals mode 'SHOW_VISIBLE' }}<i class="fas fa-eye"></i>{{/ifEquals}}
-                        {{#ifEquals mode 'SHOW_HIDDEN' }}<i class="fas fa-eye-slash"></i>{{/ifEquals}}
-                    </button>
-                </div>
-                <div class="text">Name</div>
-                {{#each languages as | language | }}
-                <div class="text icon">{{language}}</div>
-                {{/each}}
-            </div>
-
-            {{#each actors as | actor | }}
-            <div class="table-row">
-                <div class="button">
-                    <button class="btn-toggle-visibility" data-actor="{{actor.id }}">
-                        {{#if actor.isHidden }}<i class="value fas fa-eye-slash"></i>{{else}}<i
-                            class="value fas fa-eye"></i>{{/if}}
-                    </button>
-                </div>
-                <div class="text">{{ actor.shortestName }}</div>
-                {{#each actor.languages as | language | }}
-                <div class="text icon">{{#if language}}<i class="fas fa-check"></i>{{else}}<i class="value fas fa-times"
-                        style="color: gray"></i>{{/if}}</div>
-                {{/each}}
-            </div>
-            {{/each}}
-        </div>
+        {{> "modules/party-overview/templates/parts/Languages.html"}}
 
         <!-- Currency -->
         <div class="tab" data-tab="currencies" data-group="party">
             <div class="table-row header">
-                <div class="button">
-                    <button class="btn-filter">
-                        <i class="fas fa-filter {{#ifEquals mode 'SHOW_ALL'}}inactive{{/ifEquals}}"></i>
-                        {{#ifEquals mode 'SHOW_VISIBLE' }}<i class="fas fa-eye"></i>{{/ifEquals}}
-                        {{#ifEquals mode 'SHOW_HIDDEN' }}<i class="fas fa-eye-slash"></i>{{/ifEquals}}
-                    </button>
-                </div>
-                <div class="text">Name</div>
-                <div class="text icon">Platinum</div>
-                <div class="text icon">Gold</div>
-                <div class="text icon">Electrum</div>
-                <div class="text icon">Silver</div>
-                <div class="text icon">Copper</div>
-                <div class="text icon">Gold (Total)</div>
+                {{> "modules/party-overview/templates/parts/FilterButton.html"}}
+                <div class="text">{{localize "party-overview.NAME"}}</div>
+                <div class="num icon">{{localize "DND5E.CurrencyPP"}}</div>
+                <div class="num icon">{{localize "DND5E.CurrencyGP"}}</div>
+                <div class="num icon">{{localize "DND5E.CurrencyEP"}}</div>
+                <div class="num icon">{{localize "DND5E.CurrencySP"}}</div>
+                <div class="num icon">{{localize "DND5E.CurrencyCP"}}</div>
+                <div class="num icon">{{localize "DND5E.CurrencyGP"}} ({{localize "party-overview.TOTAL"}})</div>
             </div>
 
             {{#each actors as | actor | }}
             <div class="table-row">
-                <div class="button">
-                    <button class="btn-toggle-visibility" data-actor="{{actor.id }}">
-                        {{#if actor.isHidden }}<i class="value fas fa-eye-slash"></i>{{else}}<i
-                            class="value fas fa-eye"></i>{{/if}}
-                    </button>
-                </div>
+                {{> "modules/party-overview/templates/parts/ToggleVisibilityButton.html" actor=actor}}
                 <div class="text">{{ actor.shortestName }}</div>
-                <div class="text icon">{{currency.pp}}</div>
-                <div class="text icon">{{currency.gp}}</div>
-                <div class="text icon">{{currency.ep}}</div>
-                <div class="text icon">{{currency.sp}}</div>
-                <div class="text icon">{{currency.cp}}</div>
-                <div class="text icon"><b>{{actor.totalGP}}</b></div>
+                <div class="num">{{currency.pp}}</div>
+                <div class="num">{{currency.gp}}</div>
+                <div class="num">{{currency.ep}}</div>
+                <div class="num">{{currency.sp}}</div>
+                <div class="num">{{currency.cp}}</div>
+                <div class="num"><b>{{actor.totalGP}}</b></div>
             </div>
             {{/each}}
             <div class="table-row">
                 <div class="button">
 
                 </div>
-                <div class="text">TOTAL</div>
-                <div class="text icon">{{totalCurrency.pp}}</div>
-                <div class="text icon">{{totalCurrency.gp}}</div>
-                <div class="text icon">{{totalCurrency.ep}}</div>
-                <div class="text icon">{{totalCurrency.sp}}</div>
-                <div class="text icon">{{totalCurrency.cp}}</div>
-                <div class="text icon"><b>{{totalPartyGP}}</b></div>
+                <div class="text">Total</div>
+                <div class="num">{{totalCurrency.pp}}</div>
+                <div class="num">{{totalCurrency.gp}}</div>
+                <div class="num">{{totalCurrency.ep}}</div>
+                <div class="num">{{totalCurrency.sp}}</div>
+                <div class="num">{{totalCurrency.cp}}</div>
+                <div class="num"><b>{{totalPartyGP}}</b></div>
             </div>
         </div>
 
-         <!-- Background -->
+    <!-- Proficencies-->
+        {{> "modules/party-overview/templates/parts/DND5E-Proficiencies.html"}}
+
+        <!-- Background -->
         <div class="tab" data-tab="background" data-group="party">
             <div class="table-row header">
-                <div class="button">
-                    <button class="btn-filter">
-                        <i class="fas fa-filter {{#ifEquals mode 'SHOW_ALL'}}inactive{{/ifEquals}}"></i>
-                        {{#ifEquals mode 'SHOW_VISIBLE' }}<i class="fas fa-eye"></i>{{/ifEquals}}
-                        {{#ifEquals mode 'SHOW_HIDDEN' }}<i class="fas fa-eye-slash"></i>{{/ifEquals}}
-                    </button>
-                </div>
-                <div class="text">Name</div>
-                <div class="text icon">Traits</div>
-                <div class="text icon">Ideals</div>
-                <div class="text icon">Flaw</div>
-                <div class="text icon">Bond</div>
+                {{> "modules/party-overview/templates/parts/FilterButton.html"}}
+                <div class="text">{{localize "party-overview.NAME"}}</div>
+                <div class="text icon">{{localize "party-overview.DND5E.Traits"}}</div>
+                <div class="text icon">{{localize "DND5E.Ideals"}}</div>
+                <div class="text icon">{{localize "DND5E.Flaws"}}</div>
+                <div class="text icon">{{localize "DND5E.Bonds"}}</div>
             </div>
 
             {{#each actors as | actor | }}
             <div class="table-row">
-                <div class="button">
-                    <button class="btn-toggle-visibility" data-actor="{{actor.id }}">
-                        {{#if actor.isHidden }}<i class="value fas fa-eye-slash"></i>{{else}}<i
-                            class="value fas fa-eye"></i>{{/if}}
-                    </button>
-                </div>
-                <div class="text">{{ actor.shortestName }} {{#if actor.inspiration}} <span title="Inspiration">&#x1f340;</span> {{/if}}</div>
+                {{> "modules/party-overview/templates/parts/ToggleVisibilityButton.html" actor=actor}}
+                <div class="text">{{ actor.shortestName }}</div>
                 <div class="text background">{{actor.background.trait}}</div>
                 <div class="text background">{{actor.background.ideal}}</div>
                 <div class="text background">{{actor.background.flaw}}</div>
                 <div class="text background">{{actor.background.bond}}</div>
+            </div>
+            {{/each}}
+        </div>
+
+        <!-- Saving Throws -->
+        <div class="tab" data-tab="saves" data-group="party">
+            <div class="table-row header">
+            {{> "modules/party-overview/templates/parts/FilterButton.html"}}
+            <div class="text">{{localize "party-overview.NAME"}}</div>
+            {{#each saves as | ability | }}
+            <div class="text" style="flex: 1; text-transform: capitalize;" title="{{ability.long}}">{{ability.short}}</div>
+            {{/each}}
+        </div>
+
+        {{#each actors as | actor | }}
+        <div class="table-row">
+            {{> "modules/party-overview/templates/parts/ToggleVisibilityButton.html" actor=actor}}
+            <div class="text">{{ actor.shortestName }}</div>
+            {{#each actor.abilities as | ability | }}
+            <div class="text" style="flex: 1">{{numberFormat ability.save decimals=0 sign=true}}</div>
+            {{/each}}
+        </div>
+        {{/each}}
+        </div>
+
+        <!-- Saving Throws -->
+        <div class="tab" data-tab="tools" data-group="party">
+            <div class="table-row header">
+                {{> "modules/party-overview/templates/parts/FilterButton.html"}}
+                <div class="text">{{localize "party-overview.NAME"}}</div>
+                <div class="text">{{localize "DND5E.TraitToolProf"}}</div>
+            </div>
+
+            {{#each actors as | actor | }}
+            <div class="table-row">
+                {{> "modules/party-overview/templates/parts/ToggleVisibilityButton.html" actor=actor}}
+                <div class="text">{{ actor.shortestName }}</div>
+                <div class="text party-overview-no-ellipsis">{{#each actor.tools as | tool | }}{{tool}}{{#unless @last}}, {{/unless}}{{/each}}</div>
             </div>
             {{/each}}
         </div>

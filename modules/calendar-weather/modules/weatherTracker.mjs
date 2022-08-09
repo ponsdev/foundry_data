@@ -25,7 +25,7 @@ export class WeatherTracker {
       max: 100,
       min: 0
     };
-  
+
     load(newData) {
       this.outputToChat = game.settings.get('calendar-weather', 'weatherDisplay');
       if (!newData) return this;
@@ -49,42 +49,42 @@ export class WeatherTracker {
       this.tempRange = newData.tempRange;
       return this;
     }
-  
+
     rand(min, max) {
       return Math.floor(Math.random() * (max - min + 1) + min);
     }
-  
+
     extremeWeather() {
       let roll = this.rand(1, 5);
       let event = "";
       if (this.isVolcanic) {
-        return game.i18n.localize("VolcanoE");
+        return game.i18n.localize("cw.weather.tracker.extreme.VolcanoEruption");
       }
       switch (roll) {
         case 1:
-          event = game.i18n.localize("Tornado");
+          event = game.i18n.localize("cw.weather.tracker.extreme.Tornado");
           break;
         case 2:
-          event = game.i18n.localize("Hurricane");
+          event = game.i18n.localize("cw.weather.tracker.extreme.Hurricane");
           break;
         case 3:
-          event = game.i18n.localize("Drought");
+          event = game.i18n.localize("cw.weather.tracker.extreme.Drought");
           this.humidity = -5;
           break;
         case 4:
-          event = game.i18n.localize("Baseball");
+          event = game.i18n.localize("cw.weather.tracker.extreme.BaseballHail");
           break;
         case 5:
           if (this.temp <= 32) {
-            event = game.i18n.localize("Blizzard");
+            event = game.i18n.localize("cw.weather.tracker.extreme.Blizzard");
           } else {
-            event = game.i18n.localize("Monsoon");
+            event = game.i18n.localize("cw.weather.tracker.extreme.Monsoon");
           }
           break;
       }
-      return game.i18n.localize("Xtrem") + event;
+      return game.i18n.localize("cw.weather.tracker.extreme.Extreme") + event;
     }
-  
+
     setClimate(climate) {
       this.isVolcanic = false;
       switch (climate) {
@@ -171,7 +171,7 @@ export class WeatherTracker {
           break;
       }
     }
-  
+
     genPrecip(roll) {
       let fxAvailable = false;
       let weather = "";
@@ -203,9 +203,9 @@ export class WeatherTracker {
       }
       if (roll <= 3) {
         if (this.isVolcanic) {
-          weather = game.i18n.localize("AshenW");
+          weather = game.i18n.localize("cw.weather.tracker.normal.Ashen");
         } else {
-          weather = game.i18n.localize("ClearW");
+          weather = game.i18n.localize("cw.weather.tracker.normal.Clear");
         }
       } else if (roll <= 6) {
         this.humidity += 1;
@@ -221,7 +221,7 @@ export class WeatherTracker {
                 apply_tint: true
               }
           })
-          weather = game.i18n.localize("DarkW");
+          weather = game.i18n.localize("cw.weather.tracker.normal.Dark");
         } else {
           effects.push({
               type: 'clouds',
@@ -234,11 +234,11 @@ export class WeatherTracker {
                 apply_tint: true
               }
           })
-          weather = game.i18n.localize("ScatteredW");
+          weather = game.i18n.localize("cw.weather.tracker.normal.Scattered");
         }
       } else if (roll == 7) {
         if (this.isVolcanic) {
-          weather = game.i18n.localize("SunAshW");
+          weather = game.i18n.localize("cw.weather.tracker.normal.SunAsh");
         } else {
           if (this.temp < 25) {
             effects.push({
@@ -263,7 +263,7 @@ export class WeatherTracker {
                   apply_tint: true
                 }
             })
-            weather = game.i18n.localize("OvercastW");
+            weather = game.i18n.localize("cw.weather.tracker.normal.Overcast");
           } else if (this.temp < 32) {
             effects.push({
                 type: 'clouds',
@@ -294,7 +294,7 @@ export class WeatherTracker {
                   direction: "50",
                 }
             })
-            weather = game.i18n.localize("OvercastLightW");
+            weather = game.i18n.localize("cw.weather.tracker.normal.OvercastLight");
           } else {
             effects.push({
                 type: 'clouds',
@@ -318,7 +318,7 @@ export class WeatherTracker {
                   apply_tint: true
                 }
             })
-            weather = game.i18n.localize("OvercastDrizzleW");
+            weather = game.i18n.localize("cw.weather.tracker.normal.OvercastDrizzle");
           }
         }
       } else if (roll == 8) {
@@ -349,7 +349,7 @@ export class WeatherTracker {
                 apply_tint: true
               }
           })
-          weather = game.i18n.localize("AshfallW");
+          weather = game.i18n.localize("cw.weather.tracker.normal.Ashfall");
         } else {
           if (this.temp < 25) {
             effects.push({
@@ -363,7 +363,7 @@ export class WeatherTracker {
                   apply_tint: true
                 }
             })
-            weather = game.i18n.localize("LightSnowW");
+            weather = game.i18n.localize("cw.weather.tracker.normal.LightSnow");
           } else if (this.temp < 32) {
             effects.push({
                 type: 'snow',
@@ -387,7 +387,7 @@ export class WeatherTracker {
                   apply_tint: true
                 }
             })
-            weather = game.i18n.localize("LightRainW");
+            weather = game.i18n.localize("cw.weather.tracker.normal.LightRain");
           } else {
             effects.push({
                 type: 'rain',
@@ -400,10 +400,10 @@ export class WeatherTracker {
                   apply_tint: true
                 }
             })
-            weather = game.i18n.localize("ModerateRainW");
+            weather = game.i18n.localize("cw.weather.tracker.normal.ModerateRainW");
           }
         }
-  
+
       } else if (roll == 9) {
         this.humidity -= 2;
         if (this.climate == "desert") {
@@ -432,7 +432,7 @@ export class WeatherTracker {
                 apply_tint: true
               }
           })
-          weather = game.i18n.localize("FireyRainW");
+          weather = game.i18n.localize("cw.weather.tracker.normal.FireyRain");
         } else {
           if (this.temp < 25) {
             effects.push({
@@ -441,7 +441,7 @@ export class WeatherTracker {
                   density: "72",
                 }
             })
-            weather = game.i18n.localize("LargeSnowW");
+            weather = game.i18n.localize("cw.weather.tracker.normal.LargeSnow");
           } else if (this.temp < 32) {
             effects.push({
                 type: 'snow',
@@ -465,7 +465,7 @@ export class WeatherTracker {
                   apply_tint: true
                 }
             })
-            weather = game.i18n.localize("LargeFreezingRainW");
+            weather = game.i18n.localize("cw.weather.tracker.normal.LargeFreezingRain");
           } else {
             effects.push({
                 type: 'rain',
@@ -478,10 +478,10 @@ export class WeatherTracker {
                   apply_tint: true
                 }
             })
-            weather = game.i18n.localize("HeavyRainW");
+            weather = game.i18n.localize("cw.weather.tracker.normal.HeavyRain");
           }
         }
-  
+
       } else if (roll >= 10) {
         this.humidity -= 2;
         if (this.climate == "desert") {
@@ -535,7 +535,7 @@ export class WeatherTracker {
                   apply_tint: true
                 }
             })
-            weather = game.i18n.localize("EarthquakeW");
+            weather = game.i18n.localize("cw.weather.tracker.normal.Earthquake");
           } else {
             if (this.temp < 25) {
               effects.push({
@@ -558,7 +558,7 @@ export class WeatherTracker {
                   direction: "50",
                 }
               })
-              weather = game.i18n.localize("BlizzardW");
+              weather = game.i18n.localize("cw.weather.tracker.normal.Blizzard");
             } else if (this.temp < 32) {
               effects.push({
                   type: 'snow',
@@ -591,7 +591,7 @@ export class WeatherTracker {
                   direction: "50",
                 }
               })
-              weather = game.i18n.localize("IcestormW");
+              weather = game.i18n.localize("cw.weather.tracker.normal.Icestorm");
             } else {
               effects.push({
                   type: 'rain',
@@ -624,10 +624,10 @@ export class WeatherTracker {
                   direction: "50",
                 }
               })
-              weather = game.i18n.localize("TorrentialRainW");
+              weather = game.i18n.localize("cw.weather.tracker.normal.TorrentialRain");
             }
           }
-  
+
         }
       }
       this.weatherFX = effects
@@ -636,7 +636,7 @@ export class WeatherTracker {
       }
       return weather;
     }
-  
+
     output() {
       let tempOut = "";
       if (game.settings.get('calendar-weather', 'useCelcius')) {
@@ -648,13 +648,13 @@ export class WeatherTracker {
       let chatOut = "<b>" + tempOut + "</b> - " + this.precipitation;
       ChatMessage.create({
         speaker: {
-          alias: game.i18n.localize("TodayW"),
+          alias: game.i18n.localize("cw.weather.tracker.Today"),
         },
         whisper: messageLvl,
         content: chatOut,
       });
     }
-  
+
     generate(force = false) {
       let roll = this.rand(1, 6)
       roll = roll + this.humidity + this.climateHumidity + Math.floor(this.seasonHumidity)
@@ -669,7 +669,7 @@ export class WeatherTracker {
       if (this.climate == "tropical") {
         season = this.seasonTemp * 0.5;
       }
-  
+
       if (force) {
         this.temp = this.rand(this.lastTemp - 5, this.lastTemp + 5) + season + climate + (this.rand(1,20) === 20 ? 20 : 0);
       } else if (this.rand(1, 3) === 3) {
@@ -677,7 +677,7 @@ export class WeatherTracker {
       } else {
          this.temp = this.rand(this.lastTemp - 5, this.lastTemp + 5) + Math.floor(climate / 20 + season / 20);
       }
-      
+
       if(this.temp > this.tempRange.max){
         this.temp = this.rand(this.temp+5, this.temp+10)
       } else if (this.temp < this.tempRange.min) {
@@ -690,7 +690,7 @@ export class WeatherTracker {
       //Morrslieb weather events
       let morrTrigger = (this.rand(1, 400) == 1 || cwdtData.dt.months[Gametime.DTNow().months].name == "Hexenstag" || cwdtData.dt.months[Gametime.DTNow().months].name == "Geheimnistag")
       if (morrTrigger && game.data.system.data.name == "wfrp4e" && Gametime.isMaster()) {
-        this.precipitation = game.i18n.localize("MorrsliebFull");
+        this.precipitation = game.i18n.localize("cw.weather.tracker.MorrsliebFull");
       } else {
         this.precipitation = this.genPrecip(roll);
       }
@@ -698,12 +698,12 @@ export class WeatherTracker {
         this.output();
       }
     }
-  
+
     loadFX() {
       if (game.modules.get("fxmaster")?.active && Gametime.isMaster() && this.showFX && this.weatherFX)
         Hooks.call("updateWeather", this.weatherFX);
     }
-  
+
     setSeason(season) {
       this.season = season.name;
       if (season.temp == "-") {
@@ -749,17 +749,17 @@ export class WeatherTracker {
       }
       this.seasonColor = season.color;
     }
-  
+
     lightCycle() {
       let dt = Gametime.DTNow();
       let newDarkness = 0;
       if (this.doNightCycle && Gametime.isMaster()) {
-        if (this.precipitation == game.i18n.localize("MorrsliebFull") && game.data.system.data.name == "wfrp4e" && Gametime.isMaster()) {
+        if (this.precipitation == game.i18n.localize("cw.weather.tracker.MorrsliebFull") && game.data.system.data.name == "wfrp4e" && Gametime.isMaster()) {
           if (!canvas.scene.getFlag("wfrp4e", "morrslieb")) {
             console.log("calendar-weather | Activating Morrslieb")
             WFRP_Utility.toggleMorrslieb()
           }
-        } else if (this.precipitation != game.i18n.localize("MorrsliebFull") && game.data.system.data.name == "wfrp4e" && Gametime.isMaster()) {
+        } else if (this.precipitation != game.i18n.localize("cw.weather.tracker.MorrsliebFull") && game.data.system.data.name == "wfrp4e" && Gametime.isMaster()) {
           if (canvas.scene.getFlag("wfrp4e", "morrslieb")) {
             console.log("calendar-weather | Deactivating Morrslieb")
             WFRP_Utility.toggleMorrslieb()
@@ -826,13 +826,13 @@ export class WeatherTracker {
         }
         if (dt.hours == dusk) {
           newDarkness = (dt.minutes * 60 + dt.seconds) * 0.0002778;
-          
+
           if(game.modules.get("fxmaster")?.active && Gametime.isMaster() && this.showFX && bloodMoon){
             Hooks.call("switchFilter", {
               name: "bloodMoon",
               type: "color",
               options: { red: 1, green: 0, blue: 0.2 },
-            })            
+            })
           }
 
           canvas.scene.update({
@@ -861,4 +861,4 @@ export class WeatherTracker {
       }
     }
   }
-  
+

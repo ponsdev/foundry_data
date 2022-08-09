@@ -1,1 +1,15 @@
-var _0x1e27=['628885gDDKJr','716827jSDNdq','3xxxywt','plutonium.configUpdate','443594NnfGDJ','2003rBJYwL','setInternalLinksDisabled','481YWzFdR','8386GFrKGZ','3225PqvtpN','get','1BtlrxG','1241995rlQHcE','338oVNejD','189ABhLZq','_handleConfigUpdate','init'];var _0x1a12=function(_0x18e417,_0x5f3a23){_0x18e417=_0x18e417-0x6d;var _0x1e2759=_0x1e27[_0x18e417];return _0x1e2759;};var _0x161aa7=_0x1a12;(function(_0x9b328c,_0x44ea55){var _0x4ff4d8=_0x1a12;while(!![]){try{var _0x1defc3=-parseInt(_0x4ff4d8(0x6f))*-parseInt(_0x4ff4d8(0x77))+-parseInt(_0x4ff4d8(0x7b))+-parseInt(_0x4ff4d8(0x7c))*-parseInt(_0x4ff4d8(0x75))+parseInt(_0x4ff4d8(0x7d))*parseInt(_0x4ff4d8(0x6e))+-parseInt(_0x4ff4d8(0x76))+parseInt(_0x4ff4d8(0x73))*parseInt(_0x4ff4d8(0x71))+-parseInt(_0x4ff4d8(0x72))*parseInt(_0x4ff4d8(0x78));if(_0x1defc3===_0x44ea55)break;else _0x9b328c['push'](_0x9b328c['shift']());}catch(_0xc37ff1){_0x9b328c['push'](_0x9b328c['shift']());}}}(_0x1e27,0xc832e));import{Config}from'./Config.js';class UtilRenderer{static[_0x161aa7(0x7a)](){var _0x59b6ff=_0x161aa7;Hooks['on'](_0x59b6ff(0x6d),()=>this[_0x59b6ff(0x79)]()),this[_0x59b6ff(0x79)]();}static['_handleConfigUpdate'](){var _0x49a5ad=_0x161aa7;Renderer[_0x49a5ad(0x74)]()[_0x49a5ad(0x70)](Config[_0x49a5ad(0x74)]('import','isRendererLinksDisabled'));}}export{UtilRenderer};
+import {Config} from "./Config.js";
+import {UtilHooks} from "./UtilHooks.js";
+
+class UtilRenderer {
+	static init () {
+		UtilHooks.on(UtilHooks.HK_CONFIG_UPDATE, () => this._handleConfigUpdate());
+		this._handleConfigUpdate();
+	}
+
+	static _handleConfigUpdate () {
+		Renderer.get().setInternalLinksDisabled(Config.get("import", "isRendererLinksDisabled"));
+	}
+}
+
+export {UtilRenderer};

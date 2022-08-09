@@ -1,7 +1,8 @@
 // import {ItemEffectSelector} from "./apps/daeSelector"
-import { ValidSpec, cubActive, confirmDelete, aboutTimeInstalled } from "../dae.js";
+import { confirmDelete, simpleCalendarInstalled } from "../dae.js";
 import { i18n, confirmAction, daeSpecialDurations } from "../../dae.js";
-import { DAEActiveEffectConfig } from "./DAEActiveEffectConfig.js";
+import { EditOwnedItemEffectsActiveEffect } from "../editItemEffects/classes/owned-item-effect.js";
+import { ValidSpec } from "../Systems/DAESystem.js";
 export class ActiveEffects extends FormApplication {
     constructor() {
         super(...arguments);
@@ -11,6 +12,7 @@ export class ActiveEffects extends FormApplication {
         this.effectHookIdc = null;
         this.effectHookIdd = null;
         this.effectHookIdt = null;
+        this.effectHookIda = null;
         this.timeHookId = null;
         this.combatHookId = null;
     }
@@ -23,6 +25,7 @@ export class ActiveEffects extends FormApplication {
         options.submitOnClose = true;
         options.height = 400;
         options.width = 600;
+        options.resizable = true;
         return options;
     }
     get id() {
@@ -43,9 +46,9 @@ export class ActiveEffects extends FormApplication {
         let actives = this.object.effects.map(ae => {
             let newAe = duplicate(ae.data);
             newAe.duration = duplicate(ae.duration);
-            if (aboutTimeInstalled && newAe.duration?.type === "seconds") {
-                //@ts-ignore
-                newAe.duration.label = window.Gametime.DTM.timeString(ae.duration.remaining);
+            if (simpleCalendarInstalled && newAe.duration?.type === "seconds") {
+                const simpleCalendar = globalThis.SimpleCalendar?.api;
+                simpleCalendar.formatDateTime(simpleCalendar.timestampToDate(ae.duration.remaining)).time;
             }
             else if (newAe.duration.label) {
                 newAe.duration.label = newAe.duration.label.replace("Seconds", "s").replace("Rounds", "R").replace("Turns", "T");
@@ -66,7 +69,11 @@ export class ActiveEffects extends FormApplication {
                 return newAe;
             }
             newAe.changes.map(change => {
-                change.label = ValidSpec.allSpecsObj[change.key]?.label || change.key;
+                //@ts-ignore documentClass
+                if (this.object instanceof CONFIG.Item.documentClass)
+                    change.label = ValidSpec.specs["union"].allSpecsObj[change.key]?.label || change.key;
+                else
+                    change.label = ValidSpec.specs[this.object.type].allSpecsObj[change.key]?.label || change.key;
                 if (typeof change.value === "string" && change.value.length > 40) {
                     change.value = change.value.substring(0, 30) + " ... ";
                 }
@@ -96,16 +103,15 @@ export class ActiveEffects extends FormApplication {
             }
             e.transfer = e.transfer ?? e.flags?.dae?.transfer ?? true;
         });
-        let efl = CONFIG.statusEffects.map(se => { return { "id": se.id, "label": i18n(se.label) }; }).sort((a, b) => a.label < b.label ? -1 : 1);
+        let efl = CONFIG.statusEffects
+            .map(se => { return { "id": se.id, "label": se.id?.startsWith("combat-utility-belt.") ? `${se.label} (CUB)` : i18n(se.label) }; })
+            .sort((a, b) => a.label < b.label ? -1 : 1);
         this.effectList = { "new": "new" };
         efl.forEach(se => {
-            if (cubActive && game.cub.getCondition(se.label) && se.id.startsWith("combat-utility-belt")) {
-                this.effectList[se.id] = se.label + " (CUB)";
-            }
-            else
-                this.effectList[se.id] = se.label;
+            this.effectList[se.id] = se.label;
         });
-        const isItem = this.object.__proto__.constructor.name === CONFIG.Item.entityClass.name;
+        //@ts-ignore documentClass;
+        const isItem = this.object instanceof CONFIG.Item.documentClass;
         let data = {
             actives: actives,
             isGM: game.user.isGM,
@@ -113,7 +119,7 @@ export class ActiveEffects extends FormApplication {
             isOwned: this.object.isOwned,
             flags: this.object.data.flags,
             modes: modeKeys,
-            validSpecs: ValidSpec.allSpecsObj,
+            validSpecs: isItem ? ValidSpec.specs["union"].allSpecsObj : ValidSpec.specs[this.object.type],
             //@ts-ignore
             // canEdit: game.user.isGM || (playersCanSeeEffects === "edit" && game.user.isTrusted),
             canEdit: true,
@@ -161,33 +167,33 @@ export class ActiveEffects extends FormApplication {
         const filterLists = html.find(".filter-list");
         filterLists.each(this._initializeFilterItemList.bind(this));
         filterLists.on("click", ".filter-item", this._onToggleFilter.bind(this));
-        /*
-          html.find('.change-delete').click(async ev => {
-            let effect_id = $(ev.currentTarget).parents(".dae-change-list").attr("effect-id");
-            let change_id = $(ev.currentTarget).parents(".dae-change-list").attr("change-id");
-            var effect;
-            // li.slideUp(200);
-            effect = duplicate(this.object.data.effects.find(ef=>ef._id === effect_id));
-            effect.changes.splice(parseInt(change_id),1);
-            confirmAction(confirmDelete, () => {
-                this.object.updateEmbeddedEntity("ActiveEffect", effect).then(() => this.render());
-              });
-          });
-        */
         html.find('.refresh').click(async (ev) => {
             return this.submit({ preventClose: true }).then(() => this.render());
         });
         // Delete Effect
         html.find('.effect-delete').click(async (ev) => {
             const effect_id = $(ev.currentTarget).parents(".effect-header").attr("effect-id");
-            confirmAction(confirmDelete, () => {
-                this.object.deleteEmbeddedEntity("ActiveEffect", effect_id).then(() => this.render());
-            });
+            //@ts-ignore
+            if (this.object instanceof CONFIG.Actor.documentClass) {
+                confirmAction(confirmDelete, () => {
+                    this.object.deleteEmbeddedDocuments("ActiveEffect", [effect_id]);
+                });
+            }
+            else {
+                let effect = this.object.effects.get(effect_id);
+                effect = new EditOwnedItemEffectsActiveEffect(effect.data, effect.parent);
+                confirmAction(confirmDelete, () => {
+                    effect.delete({});
+                });
+            }
         });
         html.find('.effect-edit').click(async (ev) => {
+            if (this.object.parent instanceof Item)
+                return; // TODO Think about editing effects on items in bags
             const effect_id = $(ev.currentTarget).parents(".effect-header").attr("effect-id");
             let effect = this.object.effects.get(effect_id);
-            new DAEActiveEffectConfig(effect).render(true);
+            const ownedItemEffect = new EditOwnedItemEffectsActiveEffect(effect.data, effect.parent);
+            return ownedItemEffect.sheet.render(true);
         });
         html.find('.effect-add').click(async (ev) => {
             let effect_name = $(ev.currentTarget).parents(".effect-header").find(".newEffect option:selected").text();
@@ -209,14 +215,25 @@ export class ActiveEffects extends FormApplication {
                 AEDATA["flags.core.statusId"] = id;
             }
             //@ts-ignore
-            const effectId = (await this.object.createEmbeddedEntity("ActiveEffect", AEDATA))._id;
-            let effect = this.object.effects.get(effectId);
-            new DAEActiveEffectConfig(effect).render(true);
-            this.render();
+            if (this.object instanceof CONFIG.Actor.documentClass) {
+                this.object.createEmbeddedDocuments("ActiveEffect", [AEDATA]);
+            }
+            else {
+                let parent = this.object;
+                //@ts-ignore
+                const created = new EditOwnedItemEffectsActiveEffect(duplicate(AEDATA), this.object);
+                //@ts-ignore
+                created.create();
+            }
         });
-        // this.hookId = Hooks.on("updateActor", () => this.render(true))
-        function efhandler(type, object) {
-            if (this.object.id === object.id) {
+        function efhandler(type, effect, data, options, user) {
+            if (this.object.id === effect.parent.id) {
+                setTimeout(() => this.render(), 0);
+            }
+        }
+        ;
+        function itmHandler(item, data, options, user) {
+            if (this.object.id === item.id) {
                 setTimeout(() => this.render(), 0);
             }
         }
@@ -226,10 +243,13 @@ export class ActiveEffects extends FormApplication {
             if (Array.from(this.object.effects).some(ef => ef.isTemporary))
                 setTimeout(() => this.render(), 0);
         }
-        function tkHandler(scene, tokenData, update) {
-            if (tokenData.actorId !== this.object.id)
+        function tkHandler(token, update, options, user) {
+            if (token.actor.id !== this.object.id)
                 return;
-            if (!update.actorData?.effects)
+            setTimeout(() => this.render(), 0);
+        }
+        function actHandler(actor, updates, options, user) {
+            if (actor.id !== this.object.id)
                 return;
             setTimeout(() => this.render(), 0);
         }
@@ -239,10 +259,12 @@ export class ActiveEffects extends FormApplication {
             this.effectHookIdc = Hooks.on("createActiveEffect", efhandler.bind(this, "create"));
         if (!this.effectHookIdd)
             this.effectHookIdd = Hooks.on("deleteActiveEffect", efhandler.bind(this, "delete"));
+        if (!this.itemHookId)
+            this.itemHookId = Hooks.on("updateItem", itmHandler.bind(this));
         if (!this.effectHookIdt)
             this.effectHookIdt = Hooks.on("updateToken", tkHandler.bind(this));
-        if (!this.itemHookId)
-            this.itemHookId = Hooks.on("updateOwnedItem", efhandler.bind(this, "owneditem"));
+        if (!this.effectHookIda)
+            this.effectHookIda = Hooks.on("updateActor", actHandler.bind(this));
         if (!this.timeHookId)
             this.timeHookId = Hooks.on("updateWorldTime", tmHandler.bind(this));
         if (!this.combatHookId)
@@ -254,7 +276,8 @@ export class ActiveEffects extends FormApplication {
         Hooks.off("deleteActiveEffect", this.effectHookIdd);
         Hooks.off("updateWorldTime", this.timeHookId);
         Hooks.off("updateToken", this.effectHookIdt);
-        Hooks.off("updateOwnedItem", this.itemHookId);
+        Hooks.off("updateActor", this.effectHookIda);
+        Hooks.off("updateItem", this.itemHookId);
         Hooks.off("updateCombat", this.combatHookId);
         return super.close();
     }

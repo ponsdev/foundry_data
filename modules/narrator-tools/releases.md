@@ -1,5 +1,53 @@
 # Patch Notes
 
+## 0.74
+
+-   Fixed issue on font FilePicker
+
+## 0.73
+
+-   Adds more commands for chat-commands-lib
+-   Fixed sideBar width issue
+-   Narrations now preserve HTML code
+
+## 0.72
+
+-   Changes the scenery-button CSS to work properly with other modules
+-   Adds support for chat-commands-lib
+
+## 0.70
+
+-   Compatibility for Foundry V9
+
+## 0.62
+
+-   Messages are now queued at `NarratorTools.messagesQueue`, the first message is never queued
+    -   New narrations can be queued by pushing at the the same object
+    -   Using `/narrate` or `NarratorTools.chatMessage.narrate` overrides the queue
+
+## 0.61
+
+-   Copy Button is now optional and set in the configuration menu
+
+## 0.60
+
+-   New copy button to copy a narration's content
+-   Narration's are now stripped of html tags
+
+## 0.59
+
+-   Chat commands now respect newlines properly
+-   Update to korean translation
+
+## 0.58
+
+-   The scenery button now resides on the controls layer side and no longer is using the ui controls app
+
+## 0.57
+
+-   Full compatibility with 0.8.6
+-   Added permission settings
+
 ## 0.56
 
 -   Improved (again) the text selection tool, fixing some bugs

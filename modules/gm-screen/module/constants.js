@@ -7,6 +7,7 @@ export const TEMPLATES = {
     screenGrid: `modules/${MODULE_ID}/templates/parts/screen-grid.hbs`,
     compactRollTable: `modules/${MODULE_ID}/templates/parts/compact-roll-table.hbs`,
     compactJournalEntry: `modules/${MODULE_ID}/templates/parts/compact-journal-entry.hbs`,
+    entitySheetInjection: `modules/${MODULE_ID}/templates/parts/entity-sheet-injection.hbs`,
     grids: {
         tableRow: `modules/${MODULE_ID}/templates/parts/settings-grid-config-table-row.hbs`,
     },

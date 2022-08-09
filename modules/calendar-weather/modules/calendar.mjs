@@ -20,11 +20,11 @@ export class Calendar extends Application {
       options.resizable = false;
       return options;
     }
-  
+
     getData() {
       return cwdtData;
     }
-  
+
     getPlayerDisp() {
       return this.showToPlayers;
     }
@@ -49,7 +49,7 @@ export class Calendar extends Application {
         check();
       });
     }
-  
+
     loadSettings() {
       let data = game.settings.get('calendar-weather', 'dateTime');
       if(game.user.data.flags.calendarWeather){
@@ -94,7 +94,7 @@ export class Calendar extends Application {
               cwdtData.dt.timeDisp = now.shortDate().time;
             }
           }, timeout * 1000 + 100);
-  
+
         } else {
           this.populateData();
           let timeout = game.settings.get("about-time", "election-timeout");
@@ -131,20 +131,20 @@ export class Calendar extends Application {
         cwdtData.dt.genDateWordy();
       }
     }
-  
+
     checkEventBoxes() {
       this.eventsForm.checkBoxes();
       return;
     }
-  
+
     populateData() {
       cwdtData.dt = new DateTime();
-      let newMonth1 = new Month(game.i18n.localize("DefMonth"), 30, 30, true, "1");
+      let newMonth1 = new Month(game.i18n.localize("cw.calendar.settings.DefMonth"), 30, 30, true, "1");
       cwdtData.dt.addMonth(newMonth1);
-      cwdtData.dt.addWeekday(game.i18n.localize("Monday"));
-      cwdtData.dt.addWeekday(game.i18n.localize("Tuesday"));
-      cwdtData.dt.addWeekday(game.i18n.localize("Wednesday"));
-      cwdtData.dt.addWeekday(game.i18n.localize("Thursday"));
+      cwdtData.dt.addWeekday(game.i18n.localize("cw.calendar.Monday"));
+      cwdtData.dt.addWeekday(game.i18n.localize("cw.calendar.Tuesday"));
+      cwdtData.dt.addWeekday(game.i18n.localize("cw.calendar.Wednesday"));
+      cwdtData.dt.addWeekday(game.i18n.localize("cw.calendar.Thursday"));
       cwdtData.dt.setDayLength(24);
       cwdtData.dt.settings = [];
       cwdtData.dt.events = [];
@@ -154,19 +154,19 @@ export class Calendar extends Application {
       DateTime.updateDTC();
       cwdtData.dt.setEra("AD");
     }
-  
+
     settingsOpen(isOpen) {
       this.isOpen = isOpen;
       if (isOpen) {
         game.Gametime.stopRunning();
         console.log("calendar-weather | Pausing real time clock.");
-      } 
+      }
       // else {
       //   game.Gametime.startRunning();
       //   console.log("calendar-weather | Resuming real time clock.");
       // }
     }
-  
+
     rebuild(obj) {
       cwdtData.dt = new DateTime();
       if (obj.months.length != 0) {
@@ -188,7 +188,7 @@ export class Calendar extends Application {
         days
       }));
       cwdtData.dt.numDayOfTheWeek = obj.numDayOfTheWeek;
-  
+
       if (obj.dateWordy != "") {
         cwdtData.dt.dateWordy = obj.dateWordy;
       } else cwdtData.dt.genDateWordy();
@@ -198,9 +198,9 @@ export class Calendar extends Application {
       if (obj.dateNum != "") {
         cwdtData.dt.dateNum = obj.dateNum;
       }
-  
+
     }
-  
+
     setEvents(newData) {
       let data = JSON.parse(newData);
       cwdtData.dt.seasons = data.seasons;
@@ -210,7 +210,7 @@ export class Calendar extends Application {
       cwdtData.dt.checkEvents();
       cwdtData.dt.checkMoons(true);
     }
-  
+
     updateSettings() {
       if (game.user.isGM) {
         game.settings.set("calendar-weather", "dateTime", this.toObject());
@@ -260,7 +260,7 @@ export class Calendar extends Application {
         );
       }
     }
-  
+
     updateDisplay() {
       let now = Gametime.DTNow();
 
@@ -273,10 +273,10 @@ export class Calendar extends Application {
 
       let temp = document.getElementById("calendar-weather--temp");
       if (temp && this) {
-       
+
         if (game.settings.get( "calendar-weather", "useCelcius")) {
           temp.innerHTML = cwdtData.dt.getWeatherObj().cTemp + " °C";
-        } else {  
+        } else {
           temp.innerHTML = cwdtData.dt.getWeatherObj().temp + " °F";
         }
         document.getElementById("calendar-weather-precip").innerHTML = cwdtData.dt.getWeatherObj().precipitation;
@@ -308,11 +308,11 @@ export class Calendar extends Application {
     //   document.getElementById("calendar-weather-units").innerHTML = units;
     //   Hooks.callAll('calendarWeatherUpdateUnits', this.data.isC);
     // }
-  
-  
+
+
       game.Gametime._save(true);
     }
-  
+
     toObject() {
       return {
         months: cwdtData.dt.months,
@@ -325,7 +325,7 @@ export class Calendar extends Application {
         currentWeekday: cwdtData.dt.currentWeekday,
         dateWordy: cwdtData.dt.dateWordy,
         era: cwdtData.dt.era,
-        dayLength: cwdtData.dt.dayLength,
+        dayLength: cwdtData.dt.dayLength || 24,
         timeDisp: cwdtData.dt.timeDisp,
         dateNum: cwdtData.dt.dateNum,
         weather: cwdtData.dt.weather,
@@ -354,7 +354,7 @@ export class Calendar extends Application {
       cwdtData.dt.checkEvents();
       let form = new CalendarForm(JSON.stringify(this.toObject()));
 
-      // toggle date format 
+      // toggle date format
       html.find(toggleDateFormat).click(ev =>{
         ev.preventDefault();
         ev.currentTarget.classList.toggle('altFormat');
@@ -480,7 +480,7 @@ export class Calendar extends Application {
         let isRightMB = false;
         if ("which" in ev) { // Gecko (Firefox), WebKit (Safari/Chrome) & Opera
           isRightMB = ev.which == 3;
-        } else if ("button" in ev) { // IE, Opera 
+        } else if ("button" in ev) { // IE, Opera
           isRightMB = ev.button == 2;
         }
 
@@ -495,11 +495,11 @@ export class Calendar extends Application {
               e.preventDefault();
               pos3 = e.clientX;
               pos4 = e.clientY;
-              
+
               document.onmouseup = closeDragElement;
               document.onmousemove = elementDrag;
             }
-          
+
             function elementDrag(e) {
               e = e || window.event;
               e.preventDefault();
@@ -515,7 +515,7 @@ export class Calendar extends Application {
               elmnt.style.position = 'fixed';
               elmnt.style.zIndex = 100;
             }
-          
+
             function closeDragElement() {
               // stop moving when mouse button is released:
               elmnt.onmousedown = null;
@@ -537,7 +537,7 @@ export class Calendar extends Application {
           Calendar.resetPos();
         }
       });
-     
+
       html.find(events).click(ev => {
         ev.preventDefault();
         if (game.user.isGM) {

@@ -1,0 +1,21 @@
+{
+	"name": "imagemapper",
+	"title": "Compendium Image Mapper",
+	"description": "A tool to quickly map many images to compendium entries",
+	"version": "0.9.2",
+	"author": "Wilco#7302",
+	"scripts": [],
+	"esmodules": ["imagemapper.js"],
+	"styles": ["imagemapper.css"],
+	"packs": [],
+	"languages": [],
+	"minimumCoreVersion": "0.8.5",
+	"compatibleCoreVersion": "0.8.7",
+	"url": "https://gitlab.com/Wilco7302/compendium-image-mapper",
+	"manifest": "https://gitlab.com/Wilco7302/compendium-image-mapper/-/raw/master/dist/module.json",
+	"download": "https://gitlab.com/Wilco7302/compendium-image-mapper/-/raw/master/package/imagemapper-v0.9.2.zip",
+	"license": "",
+	"readme": "",
+	"bugs": "",
+	"changelog": ""
+}

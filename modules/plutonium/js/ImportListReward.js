@@ -1,1 +1,190 @@
-const _0x5e18=['sourceLong','Import\x20Supernatural\x20Gifts\x20and\x20Rewards','1gomEwf','5etools','SOURCE_TYP_BREW','_content','text-center','isToken','supernatural\x20gifts\x20and\x20rewards','Type','2657zSuvdZ','sourceJsonToColor','764364ADwlly','Importing\x20supernatural\x20gift/reward\x20\x22','_isPreviewable','DATA_URL_REWARDS','Item','update','source','Name','835382shTeFA','isStreamerMode','Source','length','_pImportEntry_pImportToDirectoryGeneric','_list','pAddActorItems','keys','items','Supernatural\x20Gifts\x20and\x20Rewards','DataSourceUrl','SOURCE_TYP_OFFICIAL_ALL','pImportEntry','_activateListeners_absorbListItems','3790VmZZCv','isCancelled','sourceJsonToFull','322852vZrKRH','constructor','entity','_page','_titleSearch','getData','isTemp','sheet','pGetSources','doAbsorbItems','reward','getImportedEmbed','_pImportEntry_pFillItems','SOURCE_TYP_CUSTOM','_pImportEntry_pImportToActor','sourceJsonToAbv','_pImportEntry_pImportToDirectoryGeneric_pGetImportableData','188KXlWNh','pGetHomebrewSources','absorbFnBindListeners','mutateForFilters','pGetRewardItem','_actor','4FWprSc','401330lplnwV','_titleButtonRun','name','sourceShort','type','ImportEntryOpts','URL_TO_HASH_BUILDER','DataSourceFile','sourceClassName','556YuHBaT','\x22\x20(from\x20\x22','map','_pageFilter','SRD','push','PG_REWARDS','_isRadio','94777ABVKva','data'];const _0x53a3=function(_0x65b2cc,_0x7597d2){_0x65b2cc=_0x65b2cc-0x157;let _0x5e1844=_0x5e18[_0x65b2cc];return _0x5e1844;};const _0x149cac=_0x53a3;(function(_0xc92f8b,_0x5f2db8){const _0x3298fc=_0x53a3;while(!![]){try{const _0x9060a4=-parseInt(_0x3298fc(0x180))+parseInt(_0x3298fc(0x159))+-parseInt(_0x3298fc(0x16e))*parseInt(_0x3298fc(0x16a))+parseInt(_0x3298fc(0x162))*-parseInt(_0x3298fc(0x176))+parseInt(_0x3298fc(0x1a2))*parseInt(_0x3298fc(0x18e))+parseInt(_0x3298fc(0x178))+parseInt(_0x3298fc(0x191))*parseInt(_0x3298fc(0x158));if(_0x9060a4===_0x5f2db8)break;else _0xc92f8b['push'](_0xc92f8b['shift']());}catch(_0x367d2a){_0xc92f8b['push'](_0xc92f8b['shift']());}}}(_0x5e18,0xba13b));import{Vetools}from'./Vetools.js';import{LGT}from'./Util.js';import{Config}from'./Config.js';import{UtilList2}from'./UtilList2.js';import{UtilApplications}from'./UtilApplications.js';import{UtilDataSource}from'./UtilDataSource.js';import{DataConverterReward}from'./DataConverterReward.js';import{ImportListCharacter}from'./ImportListCharacter.js';import{UtilActors}from'./UtilActors.js';import{DataConverter}from'./DataConverter.js';class ImportListReward extends ImportListCharacter{constructor(_0x5801ae){const _0x3e3e60=_0x53a3;_0x5801ae=_0x5801ae||{},super({'title':_0x3e3e60(0x16d)},_0x5801ae,{'props':[_0x3e3e60(0x19b)],'titleSearch':_0x3e3e60(0x174),'sidebarTab':_0x3e3e60(0x188),'gameProp':'items','defaultFolderPath':[_0x3e3e60(0x189)],'folderType':_0x3e3e60(0x17c),'pageFilter':new PageFilterRewards(),'page':UrlUtil[_0x3e3e60(0x168)],'isPreviewable':!![],'isDedupable':!![]});}async[_0x149cac(0x199)](){const _0x450f3e=_0x149cac;return[new UtilDataSource[(_0x450f3e(0x18a))](Config['get']('ui',_0x450f3e(0x181))?_0x450f3e(0x166):_0x450f3e(0x16f),Vetools[_0x450f3e(0x17b)],{'filterTypes':[UtilDataSource[_0x450f3e(0x18b)]],'isDefault':!![]}),new UtilDataSource[(_0x450f3e(0x18a))]('Custom\x20URL','',{'filterTypes':[UtilDataSource[_0x450f3e(0x19e)]]}),new UtilDataSource[(_0x450f3e(0x160))]('Upload\x20File',{'filterTypes':[UtilDataSource[_0x450f3e(0x19e)]]}),...(await Vetools[_0x450f3e(0x1a3)](_0x450f3e(0x19b)))[_0x450f3e(0x164)](({name:_0x2845ef,url:_0x1a7a91})=>new UtilDataSource[(_0x450f3e(0x18a))](_0x2845ef,_0x1a7a91,{'filterTypes':[UtilDataSource[_0x450f3e(0x170)]]}))];}[_0x149cac(0x196)](){const _0x2d97f7=_0x149cac;return{'isPreviewable':this[_0x2d97f7(0x17a)],'titleButtonRun':this[_0x2d97f7(0x15a)],'titleSearch':this[_0x2d97f7(0x195)],'cols':[{'name':_0x2d97f7(0x175),'width':0x2,'field':_0x2d97f7(0x15d),'rowClassName':_0x2d97f7(0x172)},{'name':_0x2d97f7(0x17f),'width':0x7,'field':_0x2d97f7(0x15b)},{'name':_0x2d97f7(0x182),'width':0x2,'field':'source','titleProp':_0x2d97f7(0x16c),'displayProp':_0x2d97f7(0x15c),'classNameProp':_0x2d97f7(0x161),'rowClassName':_0x2d97f7(0x172)}],'rows':this[_0x2d97f7(0x171)][_0x2d97f7(0x164)]((_0x15f077,_0x13b369)=>{const _0x392c12=_0x2d97f7;return this[_0x392c12(0x165)][_0x392c12(0x192)][_0x392c12(0x1a5)](_0x15f077),{'name':_0x15f077[_0x392c12(0x15b)],'type':_0x15f077[_0x392c12(0x15d)],'source':_0x15f077['source'],'sourceShort':Parser['sourceJsonToAbv'](_0x15f077[_0x392c12(0x17e)]),'sourceLong':Parser[_0x392c12(0x190)](_0x15f077['source']),'sourceClassName':Parser[_0x392c12(0x177)](_0x15f077[_0x392c12(0x17e)]),'ix':_0x13b369};})};}[_0x149cac(0x18d)](){const _0x891774=_0x149cac;this[_0x891774(0x185)][_0x891774(0x19a)](this['_content'],{'fnGetName':_0x123f6d=>_0x123f6d[_0x891774(0x15b)],'fnGetValues':_0x3c8fe4=>({'source':_0x3c8fe4[_0x891774(0x17e)],'type':_0x3c8fe4['type'],'hash':UrlUtil[_0x891774(0x15f)][this[_0x891774(0x194)]](_0x3c8fe4)}),'fnGetData':UtilList2['absorbFnGetData'],'fnBindListeners':_0x6f2ec7=>this[_0x891774(0x169)]?UtilList2['absorbFnBindListenersRadio'](this[_0x891774(0x185)],_0x6f2ec7):UtilList2[_0x891774(0x1a4)](this[_0x891774(0x185)],_0x6f2ec7)});}async[_0x149cac(0x18c)](_0x419653,_0x103245){const _0x35c16f=_0x149cac;_0x103245=_0x103245||{},console['log'](...LGT,_0x35c16f(0x179)+_0x419653[_0x35c16f(0x15b)]+_0x35c16f(0x163)+Parser[_0x35c16f(0x1a0)](_0x419653['source'])+'\x22)');if(_0x103245[_0x35c16f(0x197)])return this[_0x35c16f(0x184)](_0x419653,_0x103245);else{if(this[_0x35c16f(0x157)])return this['_pImportEntry_pImportToActor'](_0x419653,_0x103245);else return this[_0x35c16f(0x184)](_0x419653,_0x103245);}}async[_0x149cac(0x19f)](_0x2d1623,_0x416f09){const _0x176d4b=_0x149cac,_0x3d3671={'data':{}},_0x7d1531=new ImportListCharacter[(_0x176d4b(0x15e))]({'isCharactermancer':_0x416f09['isCharactermancer']});await this['_pImportEntry_pFillItems'](_0x2d1623,_0x3d3671,_0x7d1531);if(_0x7d1531[_0x176d4b(0x18f)])return{'status':UtilApplications['TASK_EXIT_CANCELLED']};if(Object[_0x176d4b(0x187)](_0x3d3671[_0x176d4b(0x16b)])[_0x176d4b(0x183)])await this[_0x176d4b(0x157)][_0x176d4b(0x17d)](_0x3d3671);if(this[_0x176d4b(0x157)][_0x176d4b(0x173)])this[_0x176d4b(0x157)][_0x176d4b(0x198)]['render']();return{'imported':{'name':_0x2d1623[_0x176d4b(0x15b)],'actor':this[_0x176d4b(0x157)]},'status':UtilApplications['TASK_EXIT_COMPLETE']};}async[_0x149cac(0x19d)](_0x254214,_0x3de081,_0xd64a4){const _0x3887d0=_0x149cac,_0x5bbbd8=await DataConverterReward[_0x3887d0(0x1a6)](_0x254214,{'isActorItem':!![]});_0xd64a4[_0x3887d0(0x188)][_0x3887d0(0x167)](_0x5bbbd8);const _0x178e4d=await UtilActors[_0x3887d0(0x186)](this['_actor'],_0xd64a4[_0x3887d0(0x188)]),_0x53b412=[];if(await DataConverterReward['pHasRewardSideLoadedEffects'](this[_0x3887d0(0x157)],_0x254214)){const _0x45d87d=DataConverter[_0x3887d0(0x19c)](_0x178e4d,_0x5bbbd8);if(_0x45d87d)_0x53b412[_0x3887d0(0x167)](...await DataConverterReward['pGetRewardItemEffects'](this[_0x3887d0(0x157)],_0x254214,_0x45d87d[_0x3887d0(0x193)]));}await UtilActors['pAddActorEffects'](this['_actor'],_0x53b412);}[_0x149cac(0x1a1)](_0x4757ce,_0x1d5b76){const _0x41c76b=_0x149cac;return DataConverterReward[_0x41c76b(0x1a6)](_0x4757ce,_0x1d5b76);}}export{ImportListReward};
+import {Vetools} from "./Vetools.js";
+import {Config} from "./Config.js";
+import {UtilList2} from "./UtilList2.js";
+import {UtilDataSource} from "./UtilDataSource.js";
+import {DataConverterReward} from "./DataConverterReward.js";
+import {ImportListFeature} from "./ImportListFeature.js";
+import {MixinUserChooseImporter} from "./ImportList.js";
+
+class ImportListReward extends ImportListFeature {
+	static get ID () { return "rewards"; }
+	static get DISPLAY_NAME_TYPE_PLURAL () { return "Supernatural Gifts & Rewards"; }
+
+	static _ = this.registerImpl(this);
+
+	// region External
+	static init () {
+		this._initCreateSheetItemHook({
+			prop: "reward",
+			importerName: "Reward",
+		});
+	}
+	// endregion
+
+	constructor (externalData = {}, applicationOptsOverride = {}, subclassOptsOverride = {}) {
+		super(
+			{
+				title: "Import Supernatural Gifts and Rewards",
+				...applicationOptsOverride,
+			},
+			externalData,
+			{
+				props: ["reward"],
+				dirsHomebrew: ["reward"],
+				titleSearch: "supernatural gifts and rewards",
+				sidebarTab: "items",
+				gameProp: "items",
+				defaultFolderPath: ["Supernatural Gifts and Rewards"],
+				pageFilter: new PageFilterRewards(),
+				page: UrlUtil.PG_REWARDS,
+				isPreviewable: true,
+				isDedupable: true,
+				configGroup: "importReward",
+				...subclassOptsOverride,
+			},
+			{
+				titleLog: "supernatural gift/reward",
+			},
+		);
+	}
+
+	async _pGetSources () {
+		return [
+			new UtilDataSource.DataSourceUrl(
+				Config.get("ui", "isStreamerMode") ? "SRD" : "5etools",
+				Vetools.DATA_URL_REWARDS,
+				{
+					filterTypes: [UtilDataSource.SOURCE_TYP_OFFICIAL_ALL],
+					isDefault: true,
+				},
+			),
+			new UtilDataSource.DataSourceUrl(
+				"Custom URL",
+				"",
+				{
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			new UtilDataSource.DataSourceFile(
+				"Upload File",
+				{
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			...(await this._pGetSourcesHomebrew()),
+		];
+	}
+
+	getData () {
+		return {
+			...super.getData(),
+			cols: [
+				{
+					name: "Type",
+					width: 2,
+					field: "type",
+					rowClassName: "text-center",
+				},
+				{
+					name: "Name",
+					width: 7,
+					field: "name",
+				},
+				{
+					name: "Source",
+					width: 2,
+					field: "source",
+					titleProp: "sourceLong",
+					displayProp: "sourceShort",
+					classNameProp: "sourceClassName",
+					styleProp: "sourceStyle",
+					rowClassName: "text-center",
+				},
+			],
+			rows: this._content.map((it, ix) => {
+				this._pageFilter.constructor.mutateForFilters(it);
+
+				return {
+					name: it.name,
+					type: it.type,
+					source: it.source,
+					sourceShort: Parser.sourceJsonToAbv(it.source),
+					sourceLong: Parser.sourceJsonToFull(it.source),
+					sourceClassName: Parser.sourceJsonToColor(it.source),
+					sourceStyle: BrewUtil2.sourceJsonToStylePart(it.source),
+					ix,
+				};
+			}),
+		};
+	}
+
+	_renderInner_absorbListItems () {
+		this._list.doAbsorbItems(
+			this._content,
+			{
+				fnGetName: it => it.name,
+				// values used for sorting/search
+				fnGetValues: it => ({
+					source: it.source,
+					type: it.type,
+					hash: UrlUtil.URL_TO_HASH_BUILDER[this._page](it),
+				}),
+				fnGetData: UtilList2.absorbFnGetData,
+				fnBindListeners: it => this._isRadio
+					? UtilList2.absorbFnBindListenersRadio(this._list, it)
+					: UtilList2.absorbFnBindListeners(this._list, it),
+			},
+		);
+	}
+
+	static async _pGetEntityItem (actor, feature) { return DataConverterReward.pGetRewardItem(feature, {actor}); }
+
+	static async _pGetSideData (actor, feature) {
+		return DataConverterReward.pGetSideLoadedMatch(feature);
+	}
+
+	static async _pHasSideLoadedEffects (actor, feature) { return DataConverterReward.pHasRewardSideLoadedEffects(actor, feature); }
+
+	static async _pGetItemEffects (actor, feature, importedEmbed, dataBuilderOpts) {
+		return DataConverterReward.pGetRewardItemEffects(
+			actor,
+			feature,
+			importedEmbed,
+		);
+	}
+
+	async _pMutActorUpdateFeature (it, actUpdate, dataBuilderOpts) {
+		await DataConverterReward.pMutActorUpdateReward(this._actor, actUpdate, it, dataBuilderOpts);
+	}
+
+	_pImportEntry_pImportToDirectoryGeneric_pGetImportableData (it, getItemOpts) {
+		return DataConverterReward.pGetRewardItem(it, getItemOpts);
+	}
+
+	static async _pGetDereferencedFeatureItem (feature) {
+		return DataConverterReward.pGetDereferencedRewardFeatureItem(feature);
+	}
+
+	static async _pGetInitFeatureLoadeds (feature, {actor} = {}) {
+		return DataConverterReward.pGetInitRewardFeatureLoadeds(feature, {actor});
+	}
+}
+
+/**
+ * @mixes MixinUserChooseImporter
+ */
+ImportListReward.UserChoose = class extends MixinUserChooseImporter(ImportListReward) {
+	constructor (externalData) {
+		super(
+			externalData,
+			{
+				title: "Select Supernatural Gift or Reward",
+			},
+			{
+				titleButtonRun: "Select",
+			},
+		);
+	}
+};
+
+export {ImportListReward};

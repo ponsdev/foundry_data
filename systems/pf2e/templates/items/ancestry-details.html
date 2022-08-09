@@ -1,7 +1,7 @@
 <div class="form-group">
     <label>{{localize "PF2E.Rarity"}}</label>
-    <select name="data.traits.rarity.value" data-dtype="String">
-        {{#select data.traits.rarity.value}}
+    <select name="data.traits.rarity" data-dtype="String">
+        {{#select data.traits.rarity}}
             {{#each rarities}}
                 <option value="{{@key}}">{{localize this.label}}</option>
             {{/each}}
@@ -29,22 +29,30 @@
     <label>{{localize "PF2E.Reach"}}</label>
     <input type="number" name="data.reach" value="{{data.reach}}" data-dtype="Number" />
 </div>
-
 <div class="form-group">
     <label>{{localize "PF2E.SpeedFeet"}}</label>
     <input type="number" name="data.speed" value="{{data.speed}}" data-dtype="Number" />
 </div>
-
+<div class="form-group">
+    <label>{{localize "PF2E.Item.Ancestry.Vision.Label"}}</label>
+    <select name="data.vision">
+        {{#select data.vision}}
+            <option value="normal">{{localize "PF2E.Item.Ancestry.Vision.Normal"}}</option>
+            <option value="lowLightVision">{{localize "PF2E.SensesLowLightVision"}}</option>
+            <option value="darkvision">{{localize "PF2E.SensesDarkvision"}}</option>
+        {{/select}}
+    </select>
+</div>
 {{#each data.boosts as |boost idx|}}
     <div class="form-group form-group-trait">
         <label class="pf-title">
             {{localize "PF2E.AbilityBoost"}}
-            <a class="trait-selector" data-trait-selector="basic" data-config-types="abilities" data-property="data.boosts.{{idx}}" data-no-custom="true"><i class="fas fa-edit"></i></a>
+            <a class="trait-selector" data-trait-selector="basic" data-title="PF2E.AbilityBoost" data-config-types="abilities" data-property="data.boosts.{{idx}}" data-no-custom="true"><i class="fas fa-edit"></i></a>
         </label>
 
         <ul class="abc-traits-list">
             {{#each (lookup ../selectedBoosts idx) as |v k|}}
-                <span class="tag {{k}}">{{localize v}}</span>
+                <span class="tag-legacy {{k}}">{{localize v}}</span>
             {{/each}}
         </ul>
     </div>
@@ -54,13 +62,13 @@
     <div class="form-group form-group-trait">
         <label class="pf-title">
             {{localize "PF2E.AbilityFlaw"}}
-            <a class="trait-selector" data-trait-selector="basic" data-config-types="abilities" data-property="data.flaws.{{idx}}" data-no-custom="true"><i class="fas fa-edit"></i></a>
+            <a class="trait-selector" data-trait-selector="basic" data-title="PF2E.AbilityFlaw" data-config-types="abilities" data-property="data.flaws.{{idx}}" data-no-custom="true"><i class="fas fa-edit"></i></a>
         </label>
 
         {{lookup selectedFlaws @idx}}
         <ul class="abc-traits-list">
             {{#each (lookup ../selectedFlaws idx) as |v k|}}
-                <span class="tag {{k}}">{{localize v}}</span>
+                <span class="tag-legacy {{k}}">{{localize v}}</span>
             {{/each}}
         </ul>
     </div>
@@ -69,13 +77,13 @@
 <div class="form-group form-group-trait">
     <label class="pf-title">
         {{localize "PF2E.Languages"}}
-        <a class="trait-selector" data-trait-selector="basic" data-config-types="languages" data-property="data.languages"><i class="fas fa-edit"></i></a>
+        <a class="trait-selector" data-trait-selector="basic" data-title="PF2E.Languages" data-config-types="languages" data-property="data.languages"><i class="fas fa-edit"></i></a>
     </label>
 
     <ul class="abc-traits-list">
         {{#each languages}}
             {{#if this.selected}}
-                <span class="tag {{@key}}">
+                <span class="tag-legacy {{@key}}">
                     {{localize this.label}}
                 </span>
             {{/if}}
@@ -86,7 +94,7 @@
 <div class="form-group additional-language">
     <label class="pf-title">
         {{localize "PF2E.LanguagesAdditional"}}
-        <a class="trait-selector" data-trait-selector="basic" data-config-types="languages" data-property="data.additionalLanguages"><i class="fas fa-edit"></i></a>
+        <a class="trait-selector" data-trait-selector="basic" data-title="PF2E.LanguagesAdditional" data-config-types="languages" data-property="data.additionalLanguages"><i class="fas fa-edit"></i></a>
     </label>
 
     <input type="number" name="data.additionalLanguages.count" value="{{data.additionalLanguages.count}}" data-dtype="Number" />
@@ -97,14 +105,13 @@
     <ul class="abc-traits-list">
         {{#each additionalLanguages}}
             {{#if this.selected}}
-                <span class="tag {{@key}}">
+                <span class="tag-legacy {{@key}}">
                     {{localize this.label}}
                 </span>
             {{/if}}
         {{/each}}
     </ul>
 </div>
-
 <div class="form-group form-group-trait">
     <label>
         {{localize "PF2E.TraitsLabel"}}
@@ -113,22 +120,22 @@
     <ul class="abc-traits-list">
         {{#each traits}}
             {{#if this.selected}}
-                <span class="tag {{@key}}">{{localize this.label}}</span>
+                <span class="tag-legacy {{@key}}">{{localize this.label}}</span>
             {{/if}}
         {{/each}}
     </ul>
 </div>
 
 {{~#*inline "abcItems"~}}
-<ul class='abc-items'>
+<ul class="item-refs">
     {{~#each items as |item i|}}
-    <li class="abc-item" data-pack-id="{{item.pack}}" data-index="{{i}}" data-item-id="{{item.id}}">
-        <img class="-item-image" src="{{item.img}}">
-        <div class="abc-item-name">{{item.name}}{{#unless item.pack}}<i class="fa fa-globe" title="{{localize "PF2E.AncestryFeatures"}}"></i>{{/unless}}</div>
-        <input value="{{item.name}}" name="{{@partial-block}}items.{{i}}.name" type="hidden" data-dtype='String'>
-        <input value="{{item.pack}}" name="{{@partial-block}}items.{{i}}.pack" type="hidden" data-dtype='String'>
-        <input value="{{item.id}}" name="{{@partial-block}}items.{{i}}.id" type="hidden" data-dtype='String'>
-        <a class="abc-item-remove" data-action='remove'><i class="fa fa-times"></i></a>
+    <li data-pack-id="{{item.pack}}" data-index="{{i}}" data-item-id="{{item.id}}">
+        <img src="{{item.img}}">
+        <div class="name">{{item.name}}{{#unless item.pack}}<i class="fa fa-globe" title="{{localize "PF2E.AncestryFeatures"}}"></i>{{/unless}}</div>
+        <input value="{{item.name}}" name="{{@partial-block}}items.{{i}}.name" type="hidden" data-dtype="String">
+        <input value="{{item.pack}}" name="{{@partial-block}}items.{{i}}.pack" type="hidden" data-dtype="String">
+        <input value="{{item.id}}" name="{{@partial-block}}items.{{i}}.id" type="hidden" data-dtype="String">
+        <a class="remove" data-action="remove"><i class="fa fa-times"></i></a>
         {{#if item.items~}}
             {{#> abcItems item}}{{@partial-block}}items.{{i}}.{{/abcItems}}
                 {{~/if}}
@@ -137,7 +144,7 @@
 </ul>
 {{~/inline~}}
 
-<div class="form-group-stacked abc-list" data-valid-drops="ancestryfeature">
+<div class="form-group-stacked item-ref-group" data-valid-drops="ancestryfeature">
     <label for="data.traits">
         {{localize "PF2E.AncestryFeatures"}}
     </label>

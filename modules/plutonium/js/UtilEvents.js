@@ -1,1 +1,219 @@
-const _0x5899=['body','stopPropagation','364976bxOnJd','1mwSCNA','permission','entities','preventDefault','_id','startsWith','1LZuHTt','dice','click','[data-packed-dice]','11VpWzNk','data','160753fbZmQs','46013IvTksm','54787vdQUWl','user','doShowSheetItem','!plut-comp','attr','parse','itemId','data-plutonium-actor-sheet-item','content','198376AzWFBf','!plut','52522QOccgc','onclick','pRollerClickUseData','9343NZpnOq','actorId'];const _0x4ce6=function(_0x18d32b,_0x5a75d6){_0x18d32b=_0x18d32b-0x19a;let _0x58997e=_0x5899[_0x18d32b];return _0x58997e;};const _0x12660c=_0x4ce6;(function(_0x4bc521,_0x448bfe){const _0x5f1e2a=_0x4ce6;while(!![]){try{const _0x43e423=-parseInt(_0x5f1e2a(0x1a8))*-parseInt(_0x5f1e2a(0x1ba))+-parseInt(_0x5f1e2a(0x1b7))+parseInt(_0x5f1e2a(0x1ac))*parseInt(_0x5f1e2a(0x1a4))+parseInt(_0x5f1e2a(0x1ab))+-parseInt(_0x5f1e2a(0x1aa))*-parseInt(_0x5f1e2a(0x19e))+parseInt(_0x5f1e2a(0x1b5))+-parseInt(_0x5f1e2a(0x19d));if(_0x43e423===_0x448bfe)break;else _0x4bc521['push'](_0x4bc521['shift']());}catch(_0x5522b2){_0x4bc521['push'](_0x4bc521['shift']());}}}(_0x5899,0x23734));import{UtilActors}from'./UtilActors.js';class UtilEvents{static['init'](){const _0x21c9e2=_0x4ce6;$(document[_0x21c9e2(0x19b)])['on'](_0x21c9e2(0x1a6),'['+UtilEvents['LINK_DATA_SHEET_ITEM']+']',function(_0x311b95){const _0xfd8d12=_0x21c9e2;_0x311b95[_0xfd8d12(0x1a1)](),_0x311b95[_0xfd8d12(0x19c)]();const _0x1d182c=$(this),_0x2436bf=JSON[_0xfd8d12(0x1b1)](_0x1d182c[_0xfd8d12(0x1b0)](UtilEvents['LINK_DATA_SHEET_ITEM']));UtilActors[_0xfd8d12(0x1ae)](_0x311b95,_0x2436bf[_0xfd8d12(0x19a)],_0x2436bf[_0xfd8d12(0x1b2)]);}),$(document[_0x21c9e2(0x19b)])['on'](_0x21c9e2(0x1a6),_0x21c9e2(0x1a7),function(_0x4f4a4f){const _0x36861c=_0x21c9e2,_0x234d1e=$(this);if(!_0x234d1e['attr'](_0x36861c(0x1b8)))Renderer[_0x36861c(0x1a5)][_0x36861c(0x1b9)](_0x4f4a4f,this);}),Hooks['on']('preCreateChatMessage',(_0x1a08b3,_0xd372e9)=>{const _0x52d602=_0x21c9e2;if(_0xd372e9[_0x52d602(0x1b4)]&&_0xd372e9[_0x52d602(0x1b4)][_0x52d602(0x1a3)]&&_0xd372e9[_0x52d602(0x1b4)]['startsWith'](_0x52d602(0x1b6))){if(_0xd372e9[_0x52d602(0x1b4)]===_0x52d602(0x1af)){const _0x425994=User['collection'][_0x52d602(0x1a0)]['find'](_0x3b5f04=>(_0x3b5f04[_0x52d602(0x1a2)]||_0x3b5f04[_0x52d602(0x1a9)][_0x52d602(0x1a2)])===_0xd372e9[_0x52d602(0x1ad)]);if(_0x425994&&_0x425994['data'][_0x52d602(0x19f)]===0x4){}}}});}}UtilEvents['LINK_DATA_SHEET_ITEM']=_0x12660c(0x1b3);export{UtilEvents};
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {Config} from "./Config.js";
+import {LGT} from "./Util.js";
+
+class UtilEvents {
+	static init () {
+		this.bindDocumentHandlers();
+	}
+
+	static bindDocumentHandlers ({element = document.body} = {}) {
+		$(element)
+			.on(`click`, `[data-packed-dice]`, function (evt) {
+				const $this = $(this);
+				// Only do the fake click if the element doesn't already have its click handler.
+				//  This is useful for e.g. when the other attributes get stripped before posting to chat.
+				if (!$this.attr("onclick")) Renderer.dice.pRollerClickUseData(evt, this);
+			})
+
+			// region Hover replacements
+			// (Based on `Renderer._renderLink_getHoverString`)
+			.on(`mouseover`, `[data-plut-hover]`, function (evt) {
+				const isPreload = !!evt.currentTarget.dataset.plutHoverPreload;
+				const preloadUid = evt.currentTarget.dataset.plutHoverPreloadUid;
+				const page = evt.currentTarget.dataset.plutHoverPage;
+				const source = evt.currentTarget.dataset.plutHoverSource;
+				let hash = evt.currentTarget.dataset.plutHoverHash;
+				const preloadId = evt.currentTarget.dataset.plutHoverPreloadId;
+				const hashPreEncoded = !!evt.currentTarget.dataset.plutHoverHashPreEncoded;
+				const pageHover = evt.currentTarget.dataset.plutHoverPageHover || page;
+				let hashHover = evt.currentTarget.dataset.plutHoverHashHover;
+				const hashPreEncodedHover = !!evt.currentTarget.dataset.plutHoverHashPreEncodedHover;
+				const subhashesHover = evt.currentTarget.dataset.plutHoverSubhashesHover;
+				const isFauxPage = evt.currentTarget.dataset.plutHoverIsFauxPage;
+
+				if (isPreload) {
+					if (preloadId == null) return;
+					const preloadOptions = evt.currentTarget.dataset.plutHoverPreloadOptions;
+					Renderer.hover.handlePredefinedMouseOver(evt, this, preloadId, preloadOptions ? JSON.parse(preloadOptions) : undefined);
+					return;
+				}
+
+				if (!pageHover || !source || !hash) return;
+
+				if (!hashPreEncoded) hash = UrlUtil.encodeForHash(hash);
+				if (hashHover && !hashPreEncodedHover) hashHover = UrlUtil.encodeForHash(hashHover);
+				if (!hashHover) hashHover = hash;
+
+				if (subhashesHover) {
+					const parsed = JSON.parse(subhashesHover);
+					hashHover += Renderer.utils.getLinkSubhashString(parsed);
+				}
+
+				const hoverMeta = {
+					page: pageHover,
+					source: source,
+					hash: hashHover,
+					preloadId: preloadId,
+					// Delay the appearance of the hover window if the user is pointing at a draggable element
+					isDelay: !!evt.currentTarget.dataset.plutRichLink,
+					isFauxPage: !!isFauxPage,
+				};
+				Renderer.hover.pHandleLinkMouseOver(evt, this, hoverMeta).then(null);
+			})
+			.on(`mouseleave`, `[data-plut-hover]`, function (evt) {
+				Renderer.hover.handleLinkMouseLeave(evt, this);
+			})
+			.on(`mousemove`, `[data-plut-hover]`, function (evt) {
+				Renderer.hover.handleLinkMouseMove(evt, this);
+			})
+			// endregion
+
+			// region Drag-drop of `@<tag>[...]` content
+			.on(`dragstart`, `[data-plut-rich-link]`, function (evt) {
+				// Based on `TextEditor._onDragEntityLink`
+
+				const entityType = evt.currentTarget.dataset.plutRichLinkEntityType;
+				const page = evt.currentTarget.dataset.plutHoverPage;
+				const source = evt.currentTarget.dataset.plutHoverSource;
+				let hash = evt.currentTarget.dataset.plutHoverHash;
+				const hashPreEncoded = !!evt.currentTarget.dataset.plutHoverHashPreEncoded;
+				const subhashesHover = evt.currentTarget.dataset.plutHoverSubhashesHover;
+
+				if (!page || !source || !hash || !entityType) return;
+
+				if (!hashPreEncoded) hash = UrlUtil.encodeForHash(hash);
+
+				if (subhashesHover) {
+					const parsed = JSON.parse(subhashesHover);
+					hash += Renderer.utils.getLinkSubhashString(parsed);
+				}
+
+				evt.stopPropagation();
+				evt.originalEvent.dataTransfer.setData(
+					"text/plain",
+					JSON.stringify({
+						type: entityType,
+						subType: UtilEvents.EVT_DATA_SUBTYPE__HOVER,
+						page,
+						source,
+						hash,
+						originalText: evt.currentTarget.dataset.plutRichLinkOriginalText,
+					}),
+				);
+			})
+			// endregion
+
+			// region `"@ActorEmbeddedItem[...][...]{...}"` links
+			.on(`click`, `[data-plut-owned-link]`, function (evt) {
+				const entityType = evt.currentTarget.dataset.parentEntity;
+				const ownedItemType = evt.currentTarget.dataset.childEntity; // N.b. currently unused, as we only support items
+				const parentId = evt.currentTarget.dataset.parentId;
+				const childId = evt.currentTarget.dataset.childId;
+
+				const config = CONFIG[entityType];
+				const parentEntity = config.collection.instance.get(parentId);
+				if (!parentEntity) {
+					const msg = `Could not find ${entityType} "${parentId}"!`;
+					console.warn(...LGT, msg);
+					return ui.notifications.warn(msg);
+				}
+
+				if (parentEntity.permission < CONST.ENTITY_PERMISSIONS.OBSERVER) return ui.notifications.warn(`You do not have permissions to view this ${entityType}.`);
+
+				const childEntity = parentEntity.items.get(childId);
+
+				if (childEntity.permission < CONST.ENTITY_PERMISSIONS.OBSERVER) return ui.notifications.warn(`You do not have permissions to view this ${ownedItemType}.`);
+
+				if (Config.get("text", "isAutoRollActorEmbeddedDocumentTags") || evt.shiftKey) {
+					childEntity.roll();
+					return;
+				}
+
+				childEntity.sheet.render(true);
+			})
+			// endregion
+
+			// region `"@Folder[...]{...}"` links
+			.on(`click`, `[data-plut-folder-link]`, async function (evt) {
+				const folderId = evt.currentTarget.dataset.entityId;
+				const folderEntity = CONFIG.Folder.collection.instance.get(folderId);
+				if (!folderEntity) return;
+
+				if (folderEntity.permission < CONST.ENTITY_PERMISSIONS.OBSERVER) return ui.notifications.warn(`You do not have permissions to view this Folder.`);
+
+				const sidebarTabName = CONFIG[folderEntity.type]?.documentClass?.metadata?.collection;
+				if (!sidebarTabName) return;
+				await ui.sidebar.activateTab(sidebarTabName);
+
+				const sidebarTab = ui.sidebar.tabs[sidebarTabName];
+				const $eleFolder = sidebarTab.element.find(`[data-folder-id="${folderEntity.id}"]`);
+
+				if (!folderEntity.expanded) {
+					// region Based on `SidebarDirectory._toggleFolder`
+					game.folders._expanded[folderEntity.id] = true;
+
+					$eleFolder.removeClass("collapsed");
+
+					// Resize container
+					if (sidebarTab.popOut) this.setPosition();
+					// endregion
+				}
+
+				$eleFolder[0].scrollIntoView({block: "center"});
+
+				// Briefly make the folder glow
+				$eleFolder.addClass("jlnk__folder-pulse-1s");
+				setTimeout(() => $eleFolder.removeClass("jlnk__folder-pulse-1s"), 1000);
+			})
+			// endregion
+		;
+
+		Renderer.events.bindGeneric({element});
+
+		UtilEvents._ADDITIONAL_DOCUMENT_HANDLERS.forEach(({eventType, selector, fnEvent}) => this._doBindHandler({element, eventType, selector, fnEvent}));
+
+		UtilEvents._BOUND_DOCUMENT_ELEMENTS.add(element);
+	}
+
+	static registerDocumentHandler ({eventType, selector, fnEvent}) {
+		UtilEvents._ADDITIONAL_DOCUMENT_HANDLERS.push({eventType, selector, fnEvent});
+		UtilEvents._BOUND_DOCUMENT_ELEMENTS.forEach(element => this._doBindHandler({element, eventType, selector, fnEvent}));
+	}
+
+	static _doBindHandler ({element, eventType, selector, fnEvent}) {
+		$(element).on(eventType, selector, fnEvent);
+	}
+
+	static unbindDocumentHandlers ({element = document.body} = {}) {
+		// N.b. actual unbinding unimplemented; we assume that this is called if the window is closing
+		UtilEvents._BOUND_DOCUMENT_ELEMENTS.delete(element);
+	}
+
+	static getDropJson (evt) {
+		let data;
+		for (const mimeType of UtilEvents._MIME_TYPES_DROP_JSON) {
+			if (!evt.dataTransfer.types.includes(mimeType)) continue;
+
+			try {
+				const rawJson = evt.dataTransfer.getData(mimeType);
+				if (!rawJson) return;
+				data = JSON.parse(rawJson);
+			} catch (e) {
+				// Do nothing
+			}
+		}
+		return data;
+	}
+}
+// In order of preference/priority.
+// Note: avoid using e.g. `"application/json"`, as TinyMCE blocks drops which are not plain text.
+//   We support it regardless, as some drop sources (e.g. 5etools' Loot Generator) require it.
+UtilEvents._MIME_TYPES_DROP_JSON = ["application/json", "text/plain"];
+UtilEvents.EVT_DATA_SUBTYPE__HOVER = `${SharedConsts.MODULE_NAME_FAKE}.Hover`;
+UtilEvents.EVT_DATA_SUBTYPE__IMPORT = `${SharedConsts.MODULE_NAME_FAKE}.Import`;
+
+UtilEvents._BOUND_DOCUMENT_ELEMENTS = new Set();
+UtilEvents._ADDITIONAL_DOCUMENT_HANDLERS = [];
+
+export {UtilEvents};

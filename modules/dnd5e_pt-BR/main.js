@@ -1,39 +1,15 @@
-/* global Hooks, game, Babele, mergeObject, Actors */
+/* global Hooks, game, Babele, mergeObject */
 
-/**
- * @author Caua539
- */
+import { feetToMeters, mileToKilometers, poundsToKilograms } from './src/converters.js';
 
-import { DND5E } from '../../systems/dnd5e/module/config.js';
-import Actor from '../../systems/dnd5e/module/actor/sheets/character.js';
-import NPC from '../../systems/dnd5e/module/actor/sheets/npc.js';
-import * as Converters from './src/converters.js';
+function enableConverters () {
+  game.settings.set('dnd5e', 'metricWeightUnits', isEnabled());
+  window.location.reload();
+}
 
-// Translate non localized strings from the DND5E.CONFIG
-Hooks.once('ready', function () {
-  const lang = game.i18n.lang;
-  if (lang === 'pt-BR') {
-    DND5E.armorProficiencies = {
-      lgt: 'Armaduras Leves',
-      med: 'Armaduras Médias',
-      hvy: 'Armaduras Pesadas',
-      shl: 'Escudos'
-    };
-
-    DND5E.abilityActivationTypes = {
-      none: 'Nenhuma',
-      action: 'Ação',
-      bonus: 'Ação Bônus',
-      reaction: 'Reação',
-      minute: 'Minuto(s)',
-      hour: 'Hora(s)',
-      day: 'Dia(s)',
-      special: 'Especial',
-      legendary: 'Ação Lendária',
-      lair: 'Ação de Covil'
-    };
-  }
-});
+function isEnabled () {
+  return game.settings.get('dnd5e_pt-BR', 'converters');
+}
 
 Hooks.once('init', () => {
   game.settings.register('dnd5e_pt-BR', 'converters', {
@@ -43,55 +19,74 @@ Hooks.once('init', () => {
     type: Boolean,
     config: true,
     default: false,
-    onChange: () => window.location.reload()
+    onChange: () => enableConverters()
   });
 
   if (typeof Babele !== 'undefined') {
     Babele.get().register({
       module: 'dnd5e_pt-BR',
       lang: 'pt-BR',
-      dir: 'compendium'
+      dir: 'lang/pt-BR/compendium'
     });
   }
 
-  if (game.settings.get('dnd5e_pt-BR', 'converters')) {
-    Babele.get().registerConverters({
-      range: range => Converters.range(range),
-      weight: value => Converters.weight(value),
-      target: target => Converters.target(target)
-    });
-  }
+  Babele.get().registerConverters({
+    range: range => {
+      if (range) {
+        if (!isEnabled()) {
+          return range;
+        }
+
+        if (range.units === 'ft') {
+          return mergeObject(range, {
+            value: feetToMeters(range.value),
+            long: feetToMeters(range.long),
+            units: 'm'
+          });
+        }
+
+        if (range.units === 'mi') {
+          return mergeObject(range, {
+            value: mileToKilometers(range.value),
+            long: mileToKilometers(range.long),
+            units: 'km'
+          });
+        }
+      }
+    },
+    target: target => {
+      if (target) {
+        if (!isEnabled()) {
+          return target;
+        }
+
+        if (target.units === 'ft') {
+          return mergeObject(target, {
+            value: feetToMeters(target.value),
+            units: 'm'
+          });
+        }
+
+        if (target.units === 'mi') {
+          return mergeObject(target, {
+            value: mileToKilometers(target.value),
+            units: 'km'
+          });
+        }
+      }
+    },
+    weight: value => {
+      if (!isEnabled()) {
+        return value;
+      }
+
+      return poundsToKilograms(value);
+    }
+  });
 });
 
-export class ActorSheet5eCharacter extends Actor {
-  static get defaultOptions () {
-    return mergeObject(super.defaultOptions, {
-      classes: ['ptbr5e', 'dnd5e', 'sheet', 'actor', 'character'],
-      width: 800
-    });
-  }
-}
-
-export class ActorSheet5eNPC extends NPC {
-  static get defaultOptions () {
-    return mergeObject(super.defaultOptions, {
-      classes: ['ptbr5e', 'dnd5e', 'sheet', 'actor', 'npc'],
-      width: 700
-    });
-  }
-}
-
-Hooks.once('ready', function () {
-  const lang = game.i18n.lang;
-  if (lang === 'pt-BR') {
-    Actors.registerSheet('dnd5e', ActorSheet5eCharacter, {
-      types: ['character'],
-      makeDefault: true
-    });
-
-    Actors.registerSheet('dnd5e', ActorSheet5eNPC, {
-      types: ['npc'],
-      makeDefault: true
-    });
+Hooks.on('createScene', (scene) => {
+  if (isEnabled()) {
+    scene.update({ gridUnits: 'm', gridDistance: 1.5 });
   }
 });

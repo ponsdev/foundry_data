@@ -11,24 +11,18 @@ export class Triggler {
      * Creates a button for the Condition Lab
      * @param {Object} html the html element where the button will be created
      */
-    static _createTrigglerButton(html) {
+    static async _createTrigglerButton(html) {
         if (!game.user.isGM) {
             return;
         }
 
         const cubDiv = html.find("#combat-utility-belt");
-
-        const trigglerButton = $(
-            `<button id="triggler-form" data-action="triggler">
-                    <i class="fas fa-angle-double-right"></i><i class="fas fa-angle-double-left"></i> ${DEFAULT_CONFIG.triggler.form.title}
-                </button>`
-        );
+        const trigglerButton = await renderTemplate(DEFAULT_CONFIG.triggler.templatePaths.trigglerButton);
+        const $button = $(trigglerButton);
         
-        cubDiv.append(trigglerButton);
+        cubDiv.append($button);
 
-        trigglerButton.click(ev => {
-            new TrigglerForm().render(true);
-        });
+        $button.on("click", (event) => new TrigglerForm().render(true));
     }
 
     /**
@@ -37,10 +31,12 @@ export class Triggler {
      * @param {*} target 
      */
     static async _executeTrigger(trigger, target) {
+        const actor = target instanceof Actor ? target : (target instanceof TokenDocument || target instanceof Token) ? target.actor : null;
+        const token = target instanceof TokenDocument ? target : target instanceof Token ? target.data : null;
         const conditionMap = Sidekick.getSetting(SETTING_KEYS.enhancedConditions.map);
         const matchedApplyConditions = conditionMap.filter(m => m.applyTrigger === trigger.id);
         const matchedRemoveConditions = conditionMap.filter(m => m.removeTrigger === trigger.id);
-        const matchedMacros = game.macros.entities.filter(m => m.getFlag(NAME, DEFAULT_CONFIG.triggler.flags.macro) === trigger.id);
+        const matchedMacros = game.macros.contents.filter(m => m.getFlag(NAME, DEFAULT_CONFIG.triggler.flags.macro) === trigger.id);
         const applyConditionNames = matchedApplyConditions.map(c => c.name);
         const removeConditionNames = matchedRemoveConditions.map(c => c.name);
 
@@ -48,7 +44,7 @@ export class Triggler {
         if (removeConditionNames.length) await EnhancedConditions.removeCondition(removeConditionNames, target, {warn: false});
 
         for (const macro of matchedMacros) {
-            await macro.execute();
+            await macro.execute({actor, token});
         }
     }
 
@@ -60,18 +56,30 @@ export class Triggler {
      * @param {*} entryPoint2
      */
     static async _processUpdate(entity, update, entryPoint1, entryPoint2) {
+        if (!entity || !update) return;
+
         // if (entryPoint1 && !hasProperty(update, entryPoint1)) {
         //     return;
         // }
         
         const triggers = Sidekick.getSetting(SETTING_KEYS.triggler.triggers);
-        const entityType = entity instanceof Actor ? "Actor" : entity instanceof Token ? "Token" : null;
+        const entityType = entity instanceof Actor ? "Actor" : (entity instanceof Token || entity instanceof TokenDocument) ? "Token" : null;
 
         if (!entityType) {
             return;
         }
 
-        const hasPlayerOwner = !!(entityType === "Actor" ? entity.hasPlayerOwner : entityType === "Token" ? entity.actor.hasPlayerOwner : null);
+        /**
+         * Avoid issues with Multi-Level Tokens by ignoring clone tokens
+         * @see Issue #491
+         */
+        if(entity.data?.flags 
+            && ("multilevel-tokens" in entity.data.flags) 
+            && ("stoken" in entity.data.flags["multilevel-tokens"])) {
+                return;
+        }
+
+        const hasPlayerOwner = !!(entity.hasPlayerOwner ?? entity.document?.hasPlayerOwner);
 
         /**
          * process each trigger in turn, checking for a match in the update payload,
@@ -85,11 +93,7 @@ export class Triggler {
             const npcOnly = trigger.npcOnly;
             const notZero = trigger.notZero;
 
-            if (pcOnly && !hasPlayerOwner) {
-                continue;
-            }
-
-            if (npcOnly && hasPlayerOwner) {
+            if ((pcOnly && !hasPlayerOwner) || (npcOnly && hasPlayerOwner)) {
                 continue;
             }
 
@@ -259,7 +263,7 @@ export class Triggler {
      * @param {*} userId 
      */
     static _onUpdateActor(actor, update, options, userId) {
-        if (game.userId !== userId) {
+        if (game.userId !== userId || actor.isToken) {
             return;
         }
 
@@ -271,22 +275,16 @@ export class Triggler {
 
     /**
      * Update token handler
-     * @param {*} scene 
-     * @param {*} tokenData 
+     * @param {Token} token
      * @param {*} update 
      * @param {*} options 
      * @param {*} userId 
      */
-    static _onUpdateToken(scene, tokenData, update, options, userId) {
+    static _onUpdateToken(token, update, options, userId) {
         if (game.userId !== userId) {
             return;
         }
 
-        // if (!hasProperty(update, "actorData.data")) {
-        //     return;
-        // }
-
-        const token = canvas.tokens.get(tokenData._id);
         const actorDataProp = `actorData.data`;
         const actorProp = `actor.data.data`;
         

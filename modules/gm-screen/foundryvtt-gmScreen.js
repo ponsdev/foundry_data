@@ -1,18 +1,18 @@
 // Import TypeScript modules
 import { MODULE_ABBREV, MODULE_ID, MyHooks, MySettings, TEMPLATES } from "./module/constants.js";
 import { GmScreenSettings } from "./module/classes/GmScreenSettings.js";
-import { getUserViewableGrids, log } from "./module/helpers.js";
+import { getGame, getUserViewableGrids, log } from "./module/helpers.js";
 import { GmScreenApplication } from "./module/classes/GmScreenApplication.js";
 import { _gmScreenMigrate } from "./module/migration.js";
 let gmScreenInstance;
 function toggleGmScreenOpen(isOpen) {
-    const gmScreenConfig = game.settings.get(MODULE_ID, MySettings.gmScreenConfig);
+    const gmScreenConfig = getGame().settings.get(MODULE_ID, MySettings.gmScreenConfig);
     const userViewableGrids = getUserViewableGrids(gmScreenConfig);
     if (!Object.keys(userViewableGrids).length) {
-        ui.notifications.notify(game.i18n.localize(`${MODULE_ABBREV}.warnings.noGrids`), 'error');
+        ui.notifications?.notify(getGame().i18n.localize(`${MODULE_ABBREV}.warnings.noGrids`), 'error');
         return;
     }
-    const displayDrawer = game.settings.get(MODULE_ID, MySettings.displayDrawer);
+    const displayDrawer = getGame().settings.get(MODULE_ID, MySettings.displayDrawer);
     if (displayDrawer && !!gmScreenInstance) {
         gmScreenInstance.toggleGmScreenVisibility(isOpen);
         return;
@@ -29,7 +29,6 @@ function toggleGmScreenOpen(isOpen) {
             if (gmScreenInstance._minimized) {
                 gmScreenInstance.maximize();
             }
-            //@ts-ignore
             gmScreenInstance.bringToTop();
         }
         else {
@@ -81,35 +80,38 @@ Hooks.once('init', async function () {
 Hooks.once('ready', async function () {
     await _gmScreenMigrate();
     window[MODULE_ID] = { migration: _gmScreenMigrate };
-    const displayDrawer = game.settings.get(MODULE_ID, MySettings.displayDrawer);
+    const displayDrawer = getGame().settings.get(MODULE_ID, MySettings.displayDrawer);
     // Do anything once the module is ready
     if (displayDrawer) {
         gmScreenInstance = new GmScreenApplication();
         gmScreenInstance.render(true);
     }
-    game.modules.get(MODULE_ID).api = {
-        toggleGmScreenVisibility: toggleGmScreenOpen,
-        refreshGmScreen: refreshGmScreen,
-    };
+    const gmScreenModuleData = getGame().modules.get(MODULE_ID);
+    if (gmScreenModuleData) {
+        gmScreenModuleData.api = {
+            toggleGmScreenVisibility: toggleGmScreenOpen,
+            refreshGmScreen: refreshGmScreen,
+        };
+    }
     window[MODULE_ID] = {
         toggleGmScreenVisibility: (...args) => {
-            console.warn(MODULE_ID, 'Deprecation Warning:', 'window["gm-screen"]?.toggleGmScreenVisibility is deprecated in favor of game.modules.get("gm-screen")?.api?.toggleGmScreenVisibility and will be removed in a future update.');
-            game.modules.get(MODULE_ID)?.api.toggleGmScreenVisibility(...args);
+            console.warn(MODULE_ID, 'Deprecation Warning:', 'window["gm-screen"]?.toggleGmScreenVisibility is deprecated in favor of getGame().modules.get("gm-screen")?.api?.toggleGmScreenVisibility and will be removed in a future update.');
+            gmScreenModuleData?.api?.toggleGmScreenVisibility(...args);
         },
         refreshGmScreen: (...args) => {
-            console.warn(MODULE_ID, 'Deprecation Warning:', 'window["gm-screen"]?.refreshGmScreen is deprecated in favor of game.modules.get("gm-screen")?.api?.refreshGmScreen and will be removed in a future update.');
-            game.modules.get(MODULE_ID)?.api.refreshGmScreen(...args);
+            console.warn(MODULE_ID, 'Deprecation Warning:', 'window["gm-screen"]?.refreshGmScreen is deprecated in favor of getGame().modules.get("gm-screen")?.api?.refreshGmScreen and will be removed in a future update.');
+            gmScreenModuleData?.api?.refreshGmScreen(...args);
         },
     };
-    if (game.user.isGM) {
-        game.settings.set(MODULE_ID, MySettings.reset, false);
+    if (getGame().user?.isGM) {
+        getGame().settings.set(MODULE_ID, MySettings.reset, false);
     }
     Hooks.callAll(MyHooks.ready);
 });
 function _addGmScreenButton(html) {
     const actionButtons = html.find('.action-buttons');
     const gmScreenButtonHtml = `<button class="gm-screen-button">
-          <i class="fas fa-book-reader"></i> ${game.i18n.localize(`${MODULE_ABBREV}.gmScreen.Open`)}
+          <i class="fas fa-book-reader"></i> ${getGame().i18n.localize(`${MODULE_ABBREV}.gmScreen.Open`)}
       </button>`;
     actionButtons.append(gmScreenButtonHtml);
     const gmScreenButton = html.find('button.gm-screen-button');
@@ -119,25 +121,60 @@ function _addGmScreenButton(html) {
     });
 }
 Hooks.on('renderJournalDirectory', (app, html, data) => {
-    const displayDrawer = game.settings.get(MODULE_ID, MySettings.displayDrawer);
+    const displayDrawer = getGame().settings.get(MODULE_ID, MySettings.displayDrawer);
     if (!displayDrawer) {
         _addGmScreenButton(html);
     }
 });
 // when gm screen in non-drawer mode is closed call MyHooks.openClose with isOpen: false
 Hooks.on('closeGmScreenApplication', (app, html, data) => {
-    const displayDrawer = game.settings.get(MODULE_ID, MySettings.displayDrawer);
+    const displayDrawer = getGame().settings.get(MODULE_ID, MySettings.displayDrawer);
     if (!displayDrawer) {
         Hooks.callAll(MyHooks.openClose, app, { isOpen: false });
     }
 });
 // when gm screen in non-drawer mode is opened call MyHooks.openClose with isOpen: true
 Hooks.on('renderGmScreenApplication', (app, html, data) => {
-    const displayDrawer = game.settings.get(MODULE_ID, MySettings.displayDrawer);
+    const displayDrawer = getGame().settings.get(MODULE_ID, MySettings.displayDrawer);
     if (!displayDrawer) {
         Hooks.callAll(MyHooks.openClose, app, { isOpen: true });
     }
 });
 Hooks.once('devModeReady', ({ registerPackageDebugFlag }) => {
     registerPackageDebugFlag(MODULE_ID);
+});
+/* Entity Sheet Override */
+Hooks.on('renderEntitySheetConfig', async (app, html, data) => {
+    if (!getGame().user?.isGM) {
+        return;
+    }
+    const htmlToInject = await renderTemplate(TEMPLATES['entitySheetInjection'], {
+        ...data,
+        gmScreenSheetClass: app.object.getFlag(MODULE_ID, 'gmScreenSheetClass'),
+    });
+    log(false, 'rendering entity sheet config', {
+        htmlToInject,
+        target: html.find('[name=submit]'),
+        current: app.object.getFlag(MODULE_ID, 'gmScreenSheetClass'),
+    });
+    html.find('[name=submit]').before(htmlToInject);
+    html.on('change', 'select[name=gmScreenSheetClass]', (event) => {
+        log(false, 'custom change listener firing', {
+            event,
+            value: event.target.value,
+        });
+        app.object.setFlag(MODULE_ID, 'gmScreenSheetClass', event.target.value);
+    });
+    app.setPosition({ height: 'auto' });
+});
+/**
+ * Hacky way to ensure our drawer stays in the right place as the sidebar collapses and uncollapses
+ */
+Hooks.on('collapseSidebar', () => {
+    const uiRight = document.querySelector('#ui-right');
+    if (!uiRight) {
+        return;
+    }
+    const uiRightStyles = getComputedStyle(uiRight);
+    document.querySelector('body')?.style.setProperty('--gm-screen-ui-right-width', uiRightStyles.width);
 });

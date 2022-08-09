@@ -1,8 +1,8 @@
 export default class Control {
   constructor(layer) {
-    //, layerId) {
+    // , layerId) {
     this.layer = layer;
-    //this.layerId = layerId;
+    // this.layerId = layerId;
     this.view = document.createElement('div');
     this.view.setAttribute('data-layer', this.layer.id);
     this.view.classList.add('view-layer-control');
@@ -14,9 +14,9 @@ export default class Control {
     let colorManagementSection = document.createElement('div');
     colorManagementSection.name = 'color-management';
     colorManagementSection.classList.add('section');
-    var title = document.createElement('span');
-    title.innerHTML = 'Color';
-    colorManagementSection.appendChild(title);
+    let colorManagementTitle = document.createElement('span');
+    colorManagementTitle.innerHTML = 'Color';
+    colorManagementSection.appendChild(colorManagementTitle);
 
     // the color picker element, which is hidden
     this.colorSelector = document.createElement('input');
@@ -25,14 +25,14 @@ export default class Control {
 
     // a nicer looking proxy for the color picker
     this.colorSelectorProxy = document.createElement('div');
-    this.colorSelectorProxy.title = "Edit tint"
+    this.colorSelectorProxy.title = "Edit tint";
     this.colorSelectorProxy.classList.add('color-picker', 'transparent');
-    this.colorSelectorProxy.addEventListener('click', event => {
+    this.colorSelectorProxy.addEventListener('click', () => {
       this.colorSelector.click();
     });
 
     // listen to the color Selector onChange Event to update the layer's background color
-    this.colorSelector.addEventListener('change', event => {
+    this.colorSelector.addEventListener('change', (event) => {
       this.colorSelectorProxy.style.backgroundColor = event.target.value;
       this.colorSelectorProxy.classList.remove('transparent');
       this.view.dispatchEvent(
@@ -47,11 +47,11 @@ export default class Control {
     this.clearColor.disabled = true;
     this.clearColor.classList.add('danger');
     this.clearColor.title = "Clear tint";
-    var buttonText = document.createElement('i');
-    buttonText.classList.add('fas', 'fa-minus-circle');
-    this.clearColor.appendChild(buttonText);
+    let clearButtonText = document.createElement('i');
+    clearButtonText.classList.add('fas', 'fa-minus-circle');
+    this.clearColor.appendChild(clearButtonText);
 
-    this.clearColor.addEventListener('click', event => {
+    this.clearColor.addEventListener('click', (event) => {
       event.preventDefault();
       this.view.dispatchEvent(
         new CustomEvent('color', {
@@ -62,13 +62,13 @@ export default class Control {
 
     // get color from canvas
     this.getColor = document.createElement('button');
-    this.getColor.title = "Pick tint color from canvas"
-    var buttonText = document.createElement('i');
-    buttonText.classList.add('fas', 'fa-eye-dropper');
-    this.getColor.appendChild(buttonText);
+    this.getColor.title = "Pick tint color from canvas";
+    let colorButtonText = document.createElement('i');
+    colorButtonText.classList.add('fas', 'fa-eye-dropper');
+    this.getColor.appendChild(colorButtonText);
 
     // dispatch the request for color picking
-    this.getColor.addEventListener('click', event => {
+    this.getColor.addEventListener('click', (event) => {
       event.preventDefault();
       if (this.getColor.classList.contains('active')) {
         this.getColor.classList.remove('active');
@@ -88,22 +88,22 @@ export default class Control {
     });
 
     let maskManagementSection = document.createElement('div');
-    maskManagementSection.name = 'color-management';
+    maskManagementSection.name = 'mask-management';
     maskManagementSection.classList.add('section');
-    var title = document.createElement('span');
-    title.innerHTML = 'Mask';
-    maskManagementSection.appendChild(title);
+    let maskManagementTitle = document.createElement('span');
+    maskManagementTitle.innerHTML = 'Mask';
+    maskManagementSection.appendChild(maskManagementTitle);
 
     // Set the mask of this layer
     this.maskControl = document.createElement('button');
     this.maskControl.classList.add('mask-control');
     this.maskControl.title = "Toggle masking";
-    var buttonText = document.createElement('i');
-    buttonText.classList.add('fas', 'fa-mask');
-    this.maskControl.appendChild(buttonText);
+    let maskButtonText = document.createElement('i');
+    maskButtonText.classList.add('fas', 'fa-mask');
+    this.maskControl.appendChild(maskButtonText);
 
     // send a mask event when clicked
-    this.maskControl.addEventListener('click', event => {
+    this.maskControl.addEventListener('click', (event) => {
       event.preventDefault();
       this.view.dispatchEvent(new CustomEvent('mask', { detail: { layerId: this.layer.id } }));
     });
@@ -111,20 +111,20 @@ export default class Control {
     let positionManagementSection = document.createElement('div');
     positionManagementSection.name = 'position-management';
     positionManagementSection.classList.add('section');
-    var title = document.createElement('span');
-    title.innerHTML = 'Transform';
-    positionManagementSection.appendChild(title);
+    let positionManagementTitle = document.createElement('span');
+    positionManagementTitle.innerHTML = 'Transform';
+    positionManagementSection.appendChild(positionManagementTitle);
 
     // Makes the layer active for translating/ scaling
     this.activeControl = document.createElement('button');
     this.activeControl.title = "Enable/disable transformations";
     this.activeControl.classList.add('mask-control');
-    var buttonText = document.createElement('i');
-    buttonText.classList.add('fas', 'fa-lock');
-    this.activeControl.appendChild(buttonText);
+    let activeButtonText = document.createElement('i');
+    activeButtonText.classList.add('fas', 'fa-lock');
+    this.activeControl.appendChild(activeButtonText);
 
     // send an activate event when clicked
-    this.activeControl.addEventListener('click', event => {
+    this.activeControl.addEventListener('click', (event) => {
       event.preventDefault();
       if (this.activeControl.classList.contains('active')) {
         this.view.dispatchEvent(new CustomEvent('deactivate', { detail: { layerId: this.layer.id } }));
@@ -133,36 +133,98 @@ export default class Control {
       }
     });
 
-    // centers the layer on the view
-    this.centerControl = document.createElement('button');
-    this.centerControl.classList.add('center-control');
-    this.centerControl.title = "Center layer";
-    var buttonText = document.createElement('i');
-    buttonText.classList.add('fas', 'fa-compress-arrows-alt');
-    this.centerControl.appendChild(buttonText);
+    // Makes flips the layer
+    this.flipControl = document.createElement('button');
+    this.flipControl.title = "Flip/Mirror layer";
+    this.flipControl.classList.add('flip-control');
+    let flipButtonText = document.createElement('i');
+    flipButtonText.classList.add('fas', 'fa-people-arrows');
+    this.flipControl.appendChild(flipButtonText);
 
     // send an activate event when clicked
-    this.centerControl.addEventListener('click', event => {
+    this.flipControl.addEventListener('click', (event) => {
       event.preventDefault();
-      this.view.dispatchEvent(new CustomEvent('center', { detail: { layerId: this.layer.id } }));
+      this.view.dispatchEvent(new CustomEvent('flip', { detail: { layerId: this.layer.id } }));
     });
+
+    // resets the layer on the view
+    this.resetControl = document.createElement('button');
+    this.resetControl.classList.add('reset-control');
+    this.resetControl.title = "Reset layer";
+    let resetButtonText = document.createElement('i');
+    resetButtonText.classList.add('fas', 'fa-compress-arrows-alt');
+    this.resetControl.appendChild(resetButtonText);
+
+    // send an activate event when clicked
+    this.resetControl.addEventListener('click', (event) => {
+      event.preventDefault();
+      this.view.dispatchEvent(new CustomEvent('reset', { detail: { layerId: this.layer.id } }));
+    });
+
+    // resets the layer on the view
+    let opacityManagementSection = document.createElement('div');
+
+    this.opacityControl = document.createElement('button');
+    this.opacityControl.classList.add('opacity-control');
+    this.opacityControl.title = "Opacity";
+
+    let opacityButtonText = document.createElement('i');
+    opacityButtonText.classList.add('fas', 'fa-adjust');
+    this.opacityControl.appendChild(opacityButtonText);
+
+    // this.opacitySliderSpan = document.createElement('span');
+    this.opacitySliderSpan = document.createElement('div');
+    this.opacitySliderSpan.classList.add('popup');
+    // this.opacitySliderSpan.classList.add("property-attribution");
+
+    this.opacitySliderControl = document.createElement('input');
+    this.opacitySliderControl.type = 'range';
+    this.opacitySliderControl.min = 0;
+    this.opacitySliderControl.max = 100;
+    this.opacitySliderControl.value = 100;
+    this.opacitySliderControl.title = "Opacity";
+    this.opacitySliderControl.name = "opacity";
+
+    this.opacitySliderSpan.appendChild(this.opacitySliderControl);
+
+    // send an activate event when clicked
+    this.opacityControl.addEventListener('click', (event) => {
+      event.preventDefault();
+      this.opacitySliderSpan.classList.toggle("show");
+    });
+
+    this.opacitySliderSpan.addEventListener('mouseleave', () => {
+      this.opacitySliderSpan.classList.remove("show");
+    });
+
+    this.opacitySliderControl.addEventListener('input', (event) => {
+      event.preventDefault();
+      const detail = {
+        layerId: this.layer.id,
+        opacity: event.target.value,
+      };
+      this.view.dispatchEvent(new CustomEvent('opacity', { detail }));
+    });
+
+    opacityManagementSection.appendChild(this.opacityControl);
+    opacityManagementSection.appendChild(this.opacitySliderSpan);
 
     // the move up/down order section
     let moveManagementSection = document.createElement('div');
     moveManagementSection.classList.add('move-control');
-    moveManagementSection.name = 'color-management';
+    moveManagementSection.name = 'move-management';
     moveManagementSection.classList.add('section');
 
     // moving up
     this.moveUpControl = document.createElement('button');
     this.moveUpControl.classList.add('move-control', 'move-up');
     this.moveUpControl.title = "Move layer up";
-    var buttonText = document.createElement('i');
-    buttonText.classList.add('fas', 'fa-caret-up');
-    this.moveUpControl.appendChild(buttonText);
+    let moveUpButtonText = document.createElement('i');
+    moveUpButtonText.classList.add('fas', 'fa-caret-up');
+    this.moveUpControl.appendChild(moveUpButtonText);
 
     // moving up event dispatcher
-    this.moveUpControl.addEventListener('click', event => {
+    this.moveUpControl.addEventListener('click', (event) => {
       event.preventDefault();
       this.view.dispatchEvent(
         new CustomEvent('move', {
@@ -175,12 +237,12 @@ export default class Control {
     this.moveDownControl = document.createElement('button');
     this.moveDownControl.classList.add('move-control', 'move-down');
     this.moveDownControl.title = "Move layer down";
-    var buttonText = document.createElement('i');
-    buttonText.classList.add('fas', 'fa-caret-down');
-    this.moveDownControl.appendChild(buttonText);
+    let moveDownButtonText = document.createElement('i');
+    moveDownButtonText.classList.add('fas', 'fa-caret-down');
+    this.moveDownControl.appendChild(moveDownButtonText);
 
     // moving down event dispatcher
-    this.moveDownControl.addEventListener('click', event => {
+    this.moveDownControl.addEventListener('click', (event) => {
       event.preventDefault();
       this.view.dispatchEvent(
         new CustomEvent('move', {
@@ -198,11 +260,11 @@ export default class Control {
     this.deleteControl = document.createElement('button');
     this.deleteControl.classList.add('delete-control');
     this.deleteControl.title = "Delete layer (cannot be undone)";
-    var buttonText = document.createElement('i');
-    buttonText.classList.add('fas', 'fa-trash-alt');
-    this.deleteControl.appendChild(buttonText);
+    let deleteButtonText = document.createElement('i');
+    deleteButtonText.classList.add('fas', 'fa-trash-alt');
+    this.deleteControl.appendChild(deleteButtonText);
 
-    this.deleteControl.addEventListener('click', event => {
+    this.deleteControl.addEventListener('click', (event) => {
       event.preventDefault();
       this.view.dispatchEvent(
         new CustomEvent('delete', {
@@ -213,17 +275,24 @@ export default class Control {
 
     // push all elements to the control's view
     this.view.appendChild(previewSection);
-    previewSection.appendChild(this.layer.view);
-    this.view.appendChild(colorManagementSection);
-    colorManagementSection.appendChild(this.colorSelector);
-    colorManagementSection.appendChild(this.colorSelectorProxy);
-    colorManagementSection.appendChild(this.clearColor);
-    colorManagementSection.appendChild(this.getColor);
+    previewSection.appendChild(this.layer.canvas);
     this.view.appendChild(maskManagementSection);
     maskManagementSection.appendChild(this.maskControl);
-    this.view.appendChild(positionManagementSection);
-    positionManagementSection.appendChild(this.activeControl);
-    positionManagementSection.appendChild(this.centerControl);
+    if (this.layer.colorLayer) {
+      this.view.appendChild(colorManagementSection);
+      colorManagementSection.appendChild(this.colorSelector);
+      colorManagementSection.appendChild(this.colorSelectorProxy);
+      colorManagementSection.appendChild(this.clearColor);
+      colorManagementSection.appendChild(this.getColor);
+      colorManagementSection.appendChild(opacityManagementSection);
+      this.maskControl.disabled = true;
+    } else {
+      this.view.appendChild(positionManagementSection);
+      positionManagementSection.appendChild(this.activeControl);
+      positionManagementSection.appendChild(this.flipControl);
+      positionManagementSection.appendChild(this.resetControl);
+      positionManagementSection.appendChild(opacityManagementSection);
+    }
     this.view.appendChild(moveManagementSection);
     moveManagementSection.appendChild(this.moveUpControl);
     moveManagementSection.appendChild(this.moveDownControl);
@@ -241,7 +310,7 @@ export default class Control {
     }
 
     // is this layer active?
-    if (this.layer.isActive) {
+    if (this.layer.active) {
       this.activeControl.classList.add('active');
       this.activeControl.firstChild.classList.remove('fa-lock');
       this.activeControl.firstChild.classList.add('fa-lock-open');

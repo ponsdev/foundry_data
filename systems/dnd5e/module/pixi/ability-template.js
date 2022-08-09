@@ -9,7 +9,7 @@ export default class AbilityTemplate extends MeasuredTemplate {
   /**
    * A factory method to create an AbilityTemplate instance using provided data from an Item5e instance
    * @param {Item5e} item               The Item object for which to construct the template
-   * @return {AbilityTemplate|null}     The template object, or null if the item does not produce a template
+   * @returns {AbilityTemplate|null}     The template object, or null if the item does not produce a template
    */
   static fromItem(item) {
     const target = getProperty(item.data, "data.target") || {};
@@ -19,7 +19,7 @@ export default class AbilityTemplate extends MeasuredTemplate {
     // Prepare template data
     const templateData = {
       t: templateShape,
-      user: game.user._id,
+      user: game.user.id,
       distance: target.value,
       direction: 0,
       x: 0,
@@ -45,10 +45,12 @@ export default class AbilityTemplate extends MeasuredTemplate {
     }
 
     // Return the template constructed from the item data
-    const template = new this(templateData);
-    template.item = item;
-    template.actorSheet = item.actor?.sheet || null;
-    return template;
+    const cls = CONFIG.MeasuredTemplate.documentClass;
+    const template = new cls(templateData, {parent: canvas.scene});
+    const object = new this(template);
+    object.item = item;
+    object.actorSheet = item.actor?.sheet || null;
+    return object;
   }
 
   /* -------------------------------------------- */
@@ -65,7 +67,7 @@ export default class AbilityTemplate extends MeasuredTemplate {
     this.layer.preview.addChild(this);
 
     // Hide the sheet that originated the preview
-    if ( this.actorSheet ) this.actorSheet.minimize();
+    this.actorSheet?.minimize();
 
     // Activate interactivity
     this.activatePreviewListeners(initialLayer);
@@ -88,34 +90,30 @@ export default class AbilityTemplate extends MeasuredTemplate {
       if ( now - moveTime <= 20 ) return;
       const center = event.data.getLocalPosition(this.layer);
       const snapped = canvas.grid.getSnappedPosition(center.x, center.y, 2);
-      this.data.x = snapped.x;
-      this.data.y = snapped.y;
+      if ( game.release.generation < 10 ) this.data.update({x: snapped.x, y: snapped.y});
+      else this.document.updateSource({x: snapped.x, y: snapped.y});
       this.refresh();
       moveTime = now;
     };
 
     // Cancel the workflow (right-click)
     handlers.rc = event => {
-      this.layer.preview.removeChildren();
+      this.layer._onDragLeftCancel(event);
       canvas.stage.off("mousemove", handlers.mm);
       canvas.stage.off("mousedown", handlers.lc);
       canvas.app.view.oncontextmenu = null;
       canvas.app.view.onwheel = null;
       initialLayer.activate();
-      this.actorSheet.maximize();
+      this.actorSheet?.maximize();
     };
 
     // Confirm the workflow (left-click)
     handlers.lc = event => {
       handlers.rc(event);
-
-      // Confirm final snapped position
-      const destination = canvas.grid.getSnappedPosition(this.x, this.y, 2);
-      this.data.x = destination.x;
-      this.data.y = destination.y;
-
-      // Create the template
-      canvas.scene.createEmbeddedEntity("MeasuredTemplate", this.data);
+      const destination = canvas.grid.getSnappedPosition(this.data.x, this.data.y, 2);
+      if ( game.release.generation < 10 ) this.data.update(destination);
+      else this.document.updateSource(destination);
+      canvas.scene.createEmbeddedDocuments("MeasuredTemplate", [this.data.toObject()]);
     };
 
     // Rotate the template by 3 degree increments (mouse-wheel)
@@ -124,7 +122,9 @@ export default class AbilityTemplate extends MeasuredTemplate {
       event.stopPropagation();
       let delta = canvas.grid.type > CONST.GRID_TYPES.SQUARE ? 30 : 15;
       let snap = event.shiftKey ? delta : 5;
-      this.data.direction += (snap * Math.sign(event.deltaY));
+      const update = {direction: this.data.direction + (snap * Math.sign(event.deltaY))};
+      if ( game.release.generation < 10 ) this.data.update(update);
+      else this.document.updateSource(update);
       this.refresh();
     };
 

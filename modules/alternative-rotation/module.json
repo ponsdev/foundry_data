@@ -1,17 +1,49 @@
 {
     "name": "alternative-rotation",
     "title": "Alternative Rotation",
-    "description": "Rotate tokens by dragging in a direction",
-    "author": "shem",
-    "version": "1.1.0",
-    "minimumCoreVersion": "0.6.0",
-    "compatibleCoreVersion": "0.7.9",
+    "description": "Rotate tokens towards your cursor with a hotkey",
+    "version": "2.1.2",
+    "minimumCoreVersion": "9",
+    "compatibleCoreVersion": "9",
     "esmodules": [
         "scripts/alternative-rotation.js"
     ],
     "url": "https://github.com/itamarcu/AlternativeRotation",
     "manifest": "https://github.com/itamarcu/AlternativeRotation/releases/latest/download/module.json",
-    "download": "https://github.com/itamarcu/AlternativeRotation/releases/download/1.1.0/module.zip",
-    "readme": "https://raw.githubusercontent.com/itamarcu/AlternativeRotation/master/README.md",
-    "bugs": "https://github.com/itamarcu/AlternativeRotation/issues"
+    "download": "https://github.com/itamarcu/AlternativeRotation/releases/download/2.1.2/module.zip",
+    "readme": "https://github.com/itamarcu/AlternativeRotation/blob/master/Readme.md",
+    "bugs": "https://github.com/itamarcu/AlternativeRotation/issues",
+    "license": "https://github.com/itamarcu/AlternativeRotation/blob/master/License.txt",
+    "changelog": "https://github.com/itamarcu/AlternativeRotation/blob/master/Changelog.md",
+    "dependencies": [
+        {
+            "name": "lib-wrapper"
+        }
+    ],
+    "authors": [
+        {
+            "name": "shem",
+            "email": "itamarcu+foundry@gmail.com",
+            "discord": "shem#0226",
+            "reddit": "u/Shemetz"
+        }
+    ],
+    "manifestPlusVersion": "1.2.0",
+    "media": [
+        {
+            "type": "screenshot",
+            "url": "https://raw.githubusercontent.com/itamarcu/AlternativeRotation/master/metadata/simple_rotation_demo.gif",
+            "caption": "Demo gif of Alternative Rotation"
+        },
+        {
+            "type": "icon",
+            "url": "https://raw.githubusercontent.com/itamarcu/AlternativeRotation/master/metadata/icon.png",
+            "caption": "Alternative Rotation"
+        },
+        {
+            "type": "cover",
+            "url": "https://raw.githubusercontent.com/itamarcu/AlternativeRotation/master/metadata/thumbnail.png",
+            "caption": "Alternative Rotation"
+        }
+    ]
 }

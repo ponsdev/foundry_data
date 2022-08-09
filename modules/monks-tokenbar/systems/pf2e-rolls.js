@@ -12,9 +12,10 @@ export class PF2eRolls extends BaseRolls {
             { id: "skill", text: i18n("MonksTokenBar.Skill"), groups: this.config.skills }
         ].concat(this._requestoptions);
 
+        /*
         this._defaultSetting = mergeObject(this._defaultSetting, {
             stat2: "attributes.perception.value + 10"
-        });
+        });*/
     }
 
     get _supportedSystem() {
@@ -23,15 +24,20 @@ export class PF2eRolls extends BaseRolls {
 
     static activateHooks() {
         Hooks.on("preCreateChatMessage", (message, option, userid) => {
-            if (message?.flags?.pf2e?.context != undefined && (message.flags.pf2e.context?.options?.includes("ignore") || message.flags.pf2e.context.type == 'ignore'))
+            let ctx = message.getFlag('pf2e', 'context');
+            if (ctx != undefined && (ctx.options?.includes("ignore") || ctx.type == 'ignore'))
                 return false;
             else
                 return true;
         });
     }
 
+    get defaultStats() {
+        return [{ stat: "attributes.ac.value", icon: "fa-shield-alt" }, { stat: "attributes.perception.value + 10", icon: "fa-eye" }];
+    }
+
     defaultRequest(app) {
-        let allPlayers = (app.tokens.filter(t => t.actor?.hasPlayerOwner).length == app.tokens.length);
+        let allPlayers = (app.entries.filter(t => t.actor?.hasPlayerOwner).length == app.entries.length);
         return (allPlayers ? 'attribute:perception' : null);
     }
 
@@ -39,40 +45,97 @@ export class PF2eRolls extends BaseRolls {
         return 'ability:str';
     }
 
-    roll({ id, actor, request, requesttype, fastForward = false }, callback, e) {
+    getXP(actor) {
+        return actor.data.data.details.xp;
+    }
+
+    get useDegrees() {
+        return true;
+    }
+
+    rollSuccess(roll, dc) {
+        let total = roll.total;
+        let success = (total >= dc) ? 1 : 0;
+        if (total >= dc + 10) success++;
+        if (total <= dc - 10) success--;
+
+        const diceResult = roll.terms[0]?.results?.find(r => r.active)?.result;
+        if (diceResult === 1) success--;
+        if (diceResult === 20) success++;
+
+        if (success > 0)
+            return (success > 1 ? "success" : true);
+        else
+            return (success < 0 ? "failed" : false);
+    }
+
+    roll({ id, actor, request, rollMode, requesttype, fastForward = false }, callback, e) {
         let rollfn = null;
         let opts = request;
         if (requesttype == 'attribute') {
-            if (actor.data.data.attributes[request]?.roll) {
-                opts = actor.getRollOptions(["all", request]);
-                rollfn = actor.data.data.attributes[request].roll;
-            } else
-                rollfn = actor.rollAttribute;
-        }
-        else if (requesttype == 'ability') {
-            rollfn = function (event, abilityName) {
-                const skl = this.data.data.abilities[abilityName],
-                    flavor = `${CONFIG.PF2E.abilities[abilityName]} Check`;
-                return DicePF2e.d20Roll({
-                    event: event,
-                    parts: ["@mod"],
+            rollfn = function (event, attributeName) {
+                const attribute = actor.data.data.attributes[attributeName];
+                if (!attribute)
+                    return;
+                const parts = ["@mod", "@itemBonus"],
+                    configAttributes = CONFIG.PF2E.attributes;
+                const flavor = `${game.i18n.localize(configAttributes[attributeName])} Check`;
+
+                return game.pf2e.Dice.d20Roll({
+                    event,
+                    rollMode,
+                    parts,
                     data: {
-                        mod: skl.mod
+                        mod: attribute.value
                     },
                     title: flavor,
                     speaker: ChatMessage.getSpeaker({
-                        actor: this
+                        actor: actor
                     }),
-                    rollType: 'ignore'
+                    rollType: 'ignore',
+                    shipDialog: fastForward
+                });
+            }
+        }
+        else if (requesttype == 'ability') {
+            rollfn = function (event, abilityName) {
+                const bonus = actor.data.data.abilities[abilityName].mod,
+                    title = game.i18n.localize(`PF2E.AbilityCheck.${abilityName}`),
+                    data = { bonus },
+                    speaker = ChatMessage.getSpeaker({
+                        actor: actor
+                    });
+                return game.pf2e.Dice.d20Roll({
+                    event,
+                    rollMode,
+                    parts: ["@bonus"],
+                    data: data,
+                    title: title,
+                    speaker: speaker,
+                    rollType: 'ignore',
+                    shipDialog: fastForward
                 });
             }
         }
         else if (requesttype == 'save') {
-            if (actor.data.data.saves[request]?.roll) {
-                opts = actor.getRollOptions(["all", "saving-throw", request]);
-                rollfn = actor.data.data?.saves[request].roll;
-            } else
-                rollfn = actor.rollSave;
+            rollfn = function (event, saveName) {
+                const save = actor.data.data.saves[saveName],
+                    flavor = `${game.i18n.localize(CONFIG.PF2E.saves[saveName])} Save Check`;
+                return game.pf2e.Dice.d20Roll({
+                    event,
+                    rollMode,
+                    parts: ["@mod", "@itemBonus"],
+                    data: {
+                        mod: save.value
+                    },
+                    title: flavor,
+                    speaker: ChatMessage.getSpeaker({
+                        actor: actor
+                    }),
+                    rollType: 'ignore',
+                    shipDialog: fastForward
+                })
+            }
         }
         else if (requesttype == 'skill') {
             if (actor.data.data?.skills[request]?.roll) {
@@ -84,7 +147,7 @@ export class PF2eRolls extends BaseRolls {
 
         if (rollfn != undefined) {
             try {
-                if (requesttype == 'ability')
+                if (requesttype != 'skill')
                     return rollfn.call(actor, e, opts).then((roll) => { return callback(roll); }).catch(() => { return { id: id, error: true, msg: i18n("MonksTokenBar.UnknownError") } });
                 else {
                     opts.push("ignore");
@@ -92,7 +155,7 @@ export class PF2eRolls extends BaseRolls {
                         rollfn.call(actor, { event: e, options: opts, callback: function (roll) { resolve(callback(roll)); } });
                     }).catch(() => { return { id: id, error: true, msg: i18n("MonksTokenBar.UnknownError") } });
                 }
-            } catch
+            } catch(err)
             {
                 return { id: id, error: true, msg: i18n("MonksTokenBar.UnknownError") };
             }
@@ -103,12 +166,12 @@ export class PF2eRolls extends BaseRolls {
     async assignXP(msgactor) {
         let actor = game.actors.get(msgactor.id);
         await actor.update({
-            "data.details.xp.value": actor.data.data.details.xp.value + msgactor.xp
+            "data.details.xp.value": parseInt(actor.data.data.details.xp.value) + parseInt(msgactor.xp)
         });
 
         if (setting("send-levelup-whisper") && actor.data.data.details.xp.value >= actor.data.data.details.xp.max) {
             ChatMessage.create({
-                user: game.user._id,
+                user: game.user.id,
                 content: i18n("MonksTokenBar.Levelup"),
                 whisper: ChatMessage.getWhisperRecipients(actor.data.name)
             }).then(() => { });

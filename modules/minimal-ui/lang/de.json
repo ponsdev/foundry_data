@@ -1,0 +1,83 @@
+{
+  "I18N.LANGUAGE": "Deutsch",
+  "I18N.MAINTAINERS": "@Grayhead#7822",
+
+  "MinimalUI.SettingsAlwaysVisible": "Immer sichtbar",
+  "MinimalUI.SettingsStartVisible": "Starte sichtbar",
+  "MinimalUI.SettingsPartiallyVisible": "Teilweise sichtbar",
+  "MinimalUI.SettingsAutoHide": "Automatisch verstecken",
+  "MinimalUI.SettingsAutoHidePlus": "Automatisch verstecken Plus",
+  "MinimalUI.SettingsClickToggle": "Click umschalten",
+  "MinimalUI.SettingsCollapsed": "Starte eingeklappt",
+  "MinimalUI.SettingsOnlyGM": "Nur für die SL sichtbar",
+  "MinimalUI.SettingsHide": "Komplett versteckt",
+
+  "MinimalUI.SettingsSmall": "Klein",
+  "MinimalUI.SettingsDefault": "Nichts ändern",
+  "MinimalUI.SettingsStandard": "Standard",
+  "MinimalUI.SettingsBig": "Groß",
+
+  "MinimalUI.Enabled": "Angeschaltet",
+  "MinimalUI.Disabled": "Ausgeschaltet",
+
+  "MinimalUI.LogoStyleName": "Anzeige des Foundry Logos",
+  "MinimalUI.LogoStyleHint": "Sichtbarkeit und Größe des Foundry Logos einstellen",
+  "MinimalUI.LogoBehaviourName": "Verhalten des Foundry Logos",
+  "MinimalUI.LogoBehaviourHint": "Nutze das Foundry Logo, um visuelle Elemente ein- und auszuschalten (wenn überhaupt sichtbar).",
+  "MinimalUI.LogoBehaviourToggle": "Klick auf Logo versteckt alle UI Elemente",
+  "MinimalUI.LogoBehaviourToggleNoChat": "Klick auf Logo versteckt alle UI Elemente außer Chat",
+  "MinimalUI.LogoImageName": "Bild des Foundry Logos",
+  "MinimalUI.LogoImageHint": "Das Bild sollte 100x50 Pixel groß sein.",
+
+  "MinimalUI.ControlsSizeName": "Größe der linken Steuerung",
+  "MinimalUI.ControlsSizeHint": "Wähle die Größe des linke Steuerungsbereichs.",
+  "MinimalUI.ControlsSubHideName": "Left Controls Submenu Style",
+  "MinimalUI.ControlsSubHideHint": "Whether to show the sub-menu buttons on mouse hover",
+
+  "MinimalUI.HotbarStyleName": "Makro Hotbar",
+  "MinimalUI.HotbarStyleHint": "Hotbar Aussehen einstellen. 'Automatisch verstecken' wird mit angepassten Hotbar Modulen ignoriert.",
+  "MinimalUI.HotbarPositionName": "Position Makro Hotbar",
+  "MinimalUI.HotbarPositionHint": "Horizontale Position der Makro Hotbar",
+  "MinimalUI.HotbarPositionMaxLeft": "Links (Standard in Foundry)",
+  "MinimalUI.HotbarPositionExtremeLeft": "Ganz links",
+  "MinimalUI.HotbarPositionCenterLeft": "Links zentriert",
+  "MinimalUI.HotbarPositionCenter": "Zentriert",
+  "MinimalUI.HotbarPositionCenterRight": "Rechts zentriert",
+  "MinimalUI.HotbarPositionManual": "Manuell",
+  "MinimalUI.HotbarPPositionName": "Pixel Position der Makro Hotbar",
+  "MinimalUI.HotbarPPositionHint": "Wenn die Makro Position auf 'Manuell' gestellt ist, wird hier die horizontale Position in Pixel eingestellt.",
+
+  "MinimalUI.NavigationStyleName": "Stil der Szenen Navigation",
+  "MinimalUI.NavigationStyleHint": "Verhalten der Szenen Navigation einstellen.",
+  "MinimalUI.NavigationSizeName": "Größe der Szenen Navigation",
+  "MinimalUI.NavigationSizeHint": "Größe der Szenen Navigation anpassen, wenn sichtbar.",
+
+  "MinimalUI.PlayersBehaviourName": "Verhalten der Spielerliste",
+  "MinimalUI.PlayersBehaviourHint": "Dartellung der Spielerlisten einstellen",
+  "MinimalUI.PlayersSizeName": "Größe der Spielerliste",
+  "MinimalUI.PlayersSizeHint": "Wähle zwischen der normalen Größe und einer kleineren Version.",
+
+  "MinimalUI.PlayersShowPingName" : "Ping Logger in minimierter Spielerliste",
+  "MinimalUI.PlayersShowPingHint" : "Ping trotz automatisch versteckter Spielerliste anzeigen?",
+  "MinimalUI.PlayersShowPing"  : "Zeigen",
+  "MinimalUI.PlayersHidePing"  : "Verstecken",
+
+  "MinimalUI.SidebarStyleName": "Verhalten des rechten Bereichs",
+  "MinimalUI.SidebarStyleHint": "Einstellen, ob der rechte Bereich eingeklappt starten soll oder nicht",
+
+  "MinimalUI.BorderColorName": "Farbe der Ränder",
+  "MinimalUI.BorderColorHint": "Farbe der Ränder für Bereiche und Knöpfe",
+  "MinimalUI.ShadowColorName": "Farbe des Schattens",
+  "MinimalUI.ShadowColorHint": "Farbe des Schattens um Bereiche und Knöpfe herum",
+  "MinimalUI.ShadowStrengthName": "Schattenstärke",
+  "MinimalUI.ShadowStrengthHint": "Wie düster und schattig sollen die Ränder sein? Standard: 5",
+  "MinimalUI.TransparencyPercentageName": "Opazität ohne Überstreichung",
+  "MinimalUI.TransparencyPercentageHint": "Wie opak sollen die Steuerelemente sein, bis sie mit der Maus überstrichen werden? Standard: 75",
+  "MinimalUI.ColorPicker": "Farbwahl",
+
+  "MinimalUI.NoCameraBehaviorName": "Kein Kamera-Verhalten",
+  "MinimalUI.NoCameraBehaviorHint": "Was macht man mit Spielern, deren Kamera ausgeschaltet ist? Hinweis: Hidden Mod erlaubt es nicht, die Kamera ein- und auszuschalten. Sobald die Kamera deaktiviert ist, kann sie nicht wieder aktiviert werden, es sei denn, man wechselt in einen anderen Modus. Verwenden Sie den Standard- oder den reduzierten Modus zum Umschalten.",
+  "MinimalUI.NoCameraBehaviorReduced": "Reduziert",
+  "MinimalUI.NoCameraBehaviorHidden": "Versteckt"
+
+}

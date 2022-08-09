@@ -1,1 +1,17 @@
-var _0x3b7f=['12BjcJqo','fa-external-link-alt','699814iUgWcI','1DMNDHN','25115wBFIjj','fa-eye','_EVT_NAMESPACE','3cZNuBG','3yEgyEY','88751kIrMFA','73862YiAZOT','321531xudsZP','1euGymP','3rMfbLt','_HOOK_NAME','Pop\x20Out','347733bklIKA','421925ltILsQ','_TOOL_LIST','renderItemSheet','pop__mnu-btn-open'];var _0x20dd=function(_0xc42593,_0x158906){_0xc42593=_0xc42593-0xca;var _0x3b7fda=_0x3b7f[_0xc42593];return _0x3b7fda;};var _0x432c59=_0x20dd;(function(_0xf4d3cd,_0x29e51d){var _0x24b3b3=_0x20dd;while(!![]){try{var _0x2bdb7f=parseInt(_0x24b3b3(0xcd))*-parseInt(_0x24b3b3(0xcf))+-parseInt(_0x24b3b3(0xd6))*parseInt(_0x24b3b3(0xd2))+parseInt(_0x24b3b3(0xdb))*-parseInt(_0x24b3b3(0xca))+-parseInt(_0x24b3b3(0xd7))+-parseInt(_0x24b3b3(0xd0))*parseInt(_0x24b3b3(0xce))+parseInt(_0x24b3b3(0xde))*-parseInt(_0x24b3b3(0xd1))+parseInt(_0x24b3b3(0xd3))*parseInt(_0x24b3b3(0xdd));if(_0x2bdb7f===_0x29e51d)break;else _0xf4d3cd['push'](_0xf4d3cd['shift']());}catch(_0x851fe7){_0xf4d3cd['push'](_0xf4d3cd['shift']());}}}(_0x3b7f,0x3579a));import{MenuTitle}from'./MenuTitle.js';import{PopoutSheet}from'./PopoutSheet.js';import{ShowSheet}from'./ShowSheet.js';class MenuTitleItem extends MenuTitle{}MenuTitleItem[_0x432c59(0xd4)]=_0x432c59(0xd9),MenuTitleItem[_0x432c59(0xcc)]='plutonium-item-title-menu',MenuTitleItem[_0x432c59(0xd8)]=[{'name':'Show\x20Players','Class':ShowSheet,'iconClass':_0x432c59(0xcb),'isRequireOwner':!![]},{'name':_0x432c59(0xd5),'Class':PopoutSheet,'iconClass':_0x432c59(0xdc),'additionalClassesButton':'pop__mnu-btn-open','additionalClassesPreSpacer':_0x432c59(0xda)}];export{MenuTitleItem};
+import {MenuTitle} from "./MenuTitle.js";
+import {ShowSheet} from "./ShowSheet.js";
+import {MenuToolInfo} from "./UtilMenu.js";
+
+class MenuTitleItem extends MenuTitle {}
+MenuTitleItem._HOOK_NAME = "renderItemSheet";
+MenuTitleItem._EVT_NAMESPACE = "plutonium-item-title-menu";
+MenuTitleItem._TOOL_LIST = [
+	new MenuToolInfo({
+		name: "Show Players",
+		Class: ShowSheet,
+		iconClass: "fa-eye",
+		isRequireOwner: true,
+	}),
+];
+
+export {MenuTitleItem};

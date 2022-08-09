@@ -1,1 +1,91 @@
-const _0x48b1=['_activateListeners_initBtnReset','teardown','_pageFilter','_collection','274833tsGnMk','warn','_sidebarTab','name','notifications','_activateListeners_pInitListAndFilters','Moved\x20','Please\x20select\x20something\x20to\x20folderize!','...','_collectionName','_list','getData','map','4MlXjlH','_$btnReset','/template/CollectionFolderizer.handlebars','_activateListeners_initBtnRun','1buoNGp','10683lNwGOj','_pMoveItem','getMaxWindowHeight','render','find','get','STR_SEE_CONSOLE','349196zLdWTk','80842nHSJsP','update','Task','121856SObIOG','activateListeners','No\x20target\x20folder\x20selected!','[name=\x22sel-folder\x22]','Move\x20Complete','2524LxDnmC','53FKwLXU','pRunTasks','getFolderList','Failed\x20to\x20move\x20','click','activateTab','close','_gameProp','210125KqZjcC','repeat'];const _0x253b=function(_0x2426d6,_0x59abe1){_0x2426d6=_0x2426d6-0x192;let _0x48b1a8=_0x48b1[_0x2426d6];return _0x48b1a8;};const _0x22ce19=_0x253b;(function(_0x5ad3a0,_0x4ca972){const _0x49b55d=_0x253b;while(!![]){try{const _0x5b4b76=parseInt(_0x49b55d(0x1ab))+-parseInt(_0x49b55d(0x1a5))+parseInt(_0x49b55d(0x1bd))*-parseInt(_0x49b55d(0x19d))+parseInt(_0x49b55d(0x197))*parseInt(_0x49b55d(0x1bc))+parseInt(_0x49b55d(0x193))+parseInt(_0x49b55d(0x194))*parseInt(_0x49b55d(0x1b8))+-parseInt(_0x49b55d(0x19c));if(_0x5b4b76===_0x4ca972)break;else _0x5ad3a0['push'](_0x5ad3a0['shift']());}catch(_0x3f222a){_0x5ad3a0['push'](_0x5ad3a0['shift']());}}}(_0x48b1,0x46e65));import{SharedConsts}from'../shared/SharedConsts.js';import{UtilApplications}from'./UtilApplications.js';import{Util}from'./Util.js';import{BaseCollectionTool}from'./BaseCollectionTool.js';import{AppFilterBasic}from'./FilterApplications.js';class CollectionFolderizer extends BaseCollectionTool{constructor(_0x1b6bc6){const _0x146c2=_0x253b;super({'title':'Bulk\x20Directory\x20Mover','template':SharedConsts['MODULE_LOCATION']+_0x146c2(0x1ba),'height':Util[_0x146c2(0x1bf)](),'width':0x280,'resizable':!![]},_0x1b6bc6),this[_0x146c2(0x1a9)]=new AppFilterBasic(),this[_0x146c2(0x1b5)]=null,this[_0x146c2(0x1b9)]=null;}['activateListeners'](_0x11bb13){const _0x5aee02=_0x253b;super[_0x5aee02(0x198)](_0x11bb13),this[_0x5aee02(0x1bb)](_0x11bb13),this[_0x5aee02(0x1a7)](_0x11bb13),this[_0x5aee02(0x1b0)](_0x11bb13);}[_0x22ce19(0x1bb)](_0x13db59){const _0xd1dac7=_0x22ce19;_0x13db59[_0xd1dac7(0x1c1)]('[name=\x22btn-run\x22]')[_0xd1dac7(0x1a1)](async()=>{const _0x2e3ed3=_0xd1dac7;if(!this[_0x2e3ed3(0x1b5)])return;const _0x2e7d96=_0x13db59['find'](_0x2e3ed3(0x19a))['val']();if(!_0x2e7d96)return ui[_0x2e3ed3(0x1af)][_0x2e3ed3(0x1ac)](_0x2e3ed3(0x199));const _0x59408b=this['_getSelectedIds']();if(!_0x59408b['length'])return ui[_0x2e3ed3(0x1af)][_0x2e3ed3(0x1ac)](_0x2e3ed3(0x1b2));this[_0x2e3ed3(0x1a3)](),ui['sidebar'][_0x2e3ed3(0x1a2)](this[_0x2e3ed3(0x1ad)]);const _0x3e1d7c=_0x59408b['map'](({id:_0x5b10f0,name:_0x3d5613})=>new Util[(_0x2e3ed3(0x196))](_0x3d5613,()=>this[_0x2e3ed3(0x1be)](_0x5b10f0,_0x2e7d96)));await UtilApplications[_0x2e3ed3(0x19e)](_0x3e1d7c,{'titleInitial':'Moving...','titleComplete':_0x2e3ed3(0x19b),'fnGetRowRunningText':_0x22cbd5=>'Moving\x20'+_0x22cbd5+_0x2e3ed3(0x1b3),'fnGetRowSuccessText':_0x18f1ca=>_0x2e3ed3(0x1b1)+_0x18f1ca+'.','fnGetRowErrorText':_0x3c4183=>_0x2e3ed3(0x1a0)+_0x3c4183+'!\x20'+VeCt[_0x2e3ed3(0x192)]}),game[this[_0x2e3ed3(0x1a4)]][_0x2e3ed3(0x1c0)]();});}async[_0x22ce19(0x1be)](_0x421074,_0x1d5908){const _0x4e506f=_0x22ce19;await this[_0x4e506f(0x1aa)][_0x4e506f(0x1c2)](_0x421074)[_0x4e506f(0x195)]({'folder':_0x1d5908});}['getData'](){const _0xb6842d=_0x22ce19;return this['_rows']=this['_mapEntitiesToRows'](),{...super[_0xb6842d(0x1b6)](),'titleSearch':this[_0xb6842d(0x1b4)]+'s','folders':UtilApplications[_0xb6842d(0x19f)](this['_folderType'])[_0xb6842d(0x1b7)](_0xcfbbd0=>({'id':_0xcfbbd0['id'],'name':''+(_0xcfbbd0['depth']>0x1?'\x20'+'-'[_0xb6842d(0x1a6)](_0xcfbbd0['depth']-0x1)+'\x20':'')+_0xcfbbd0[_0xb6842d(0x1ae)]})),'rows':this['_rows']};}[_0x22ce19(0x1a3)](..._0x5a5174){const _0xa9f05d=_0x22ce19;return this[_0xa9f05d(0x1a9)][_0xa9f05d(0x1a8)](),super[_0xa9f05d(0x1a3)](..._0x5a5174);}}export{CollectionFolderizer};
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {UtilApplications} from "./UtilApplications.js";
+import {Util} from "./Util.js";
+import {BaseCollectionTool} from "./BaseCollectionTool.js";
+import {AppFilterBasic} from "./FilterApplications.js";
+
+class CollectionFolderizer extends BaseCollectionTool {
+	constructor (collectionName) {
+		super(
+			{
+				title: "Bulk Directory Mover",
+				template: `${SharedConsts.MODULE_LOCATION}/template/CollectionFolderizer.hbs`,
+				height: Util.getMaxWindowHeight(),
+				width: 640,
+				resizable: true,
+			},
+			collectionName,
+		);
+
+		// Local fields
+		this._pageFilter = new AppFilterBasic();
+
+		this._list = null;
+		this._$btnReset = null;
+	}
+
+	activateListeners ($html) {
+		super.activateListeners($html);
+
+		this._activateListeners_initBtnRun($html);
+		this._activateListeners_initBtnReset($html);
+		this._activateListeners_pInitListAndFilters($html);
+	}
+
+	_activateListeners_initBtnRun ($html) {
+		$html.find(`[name="btn-run"]`).click(async () => {
+			if (!this._list) return;
+
+			const targetFolder = $html.find(`[name="sel-folder"]`).val();
+			if (!targetFolder) return ui.notifications.warn("No target folder selected!");
+
+			const selIds = this._getSelectedIds();
+
+			if (!selIds.length) return ui.notifications.warn(`Please select something to folderize!`);
+
+			this.close();
+			ui.sidebar.activateTab(this._sidebarTab);
+
+			// Do this sequentially to avoid deadlock
+			const tasks = selIds.map(({id, name}) => new Util.Task(name, () => this._pMoveItem(id, targetFolder)));
+			await UtilApplications.pRunTasks(
+				tasks,
+				{
+					titleInitial: "Moving...",
+					titleComplete: "Move Complete",
+					fnGetRowRunningText: (taskName) => `Moving ${taskName}...`,
+					fnGetRowSuccessText: (taskName) => `Moved ${taskName}.`,
+					fnGetRowErrorText: (taskName) => `Failed to move ${taskName}! ${VeCt.STR_SEE_CONSOLE}`,
+				},
+			);
+
+			game[this._gameProp].render();
+		});
+	}
+
+	async _pMoveItem (id, targetFolder) {
+		await this._collection.get(id).update({folder: targetFolder});
+	}
+
+	/**
+	 * Used by template engine.
+	 */
+	getData () {
+		this._rows = this._mapEntitiesToRows();
+
+		return {
+			...super.getData(),
+			titleSearch: `${this._collectionName}s`,
+			folders: UtilApplications.getFolderList(this._folderType)
+				.map(it => ({id: it.id, name: `${it.depth > 1 ? ` ${"-".repeat(it.depth - 1)} ` : ""}${it.name}`})),
+			rows: this._rows,
+		};
+	}
+
+	close (...args) {
+		this._pageFilter.teardown();
+		return super.close(...args);
+	}
+}
+
+export {CollectionFolderizer};

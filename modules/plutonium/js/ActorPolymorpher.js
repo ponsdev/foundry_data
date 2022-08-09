@@ -1,1 +1,266 @@
-const _0x3f0e=['get','\x22\x20not\x20found!','Actor\x20\x22','filter','data-plut-actor-delete','system-wide\x20player\x20polymorphing\x20is\x20disabled','ImportList','dnd5e','_doFakeActorDrop','DND5E.Polymorph','Cancel','ITEM_CREATE','23017DazMKV','76PaqLjf','warn','originalActor','actor','26171dDqqdD','you\x20lack\x20item\x20creation\x20permissions','click','settings','currentTarget','buttonsAdditional','entities','Creatures','notfications','_init_gm','24811OtMMTF','render','with','<i\x20class=\x22fas\x20fa-times\x22></i>','Select','you\x20lack\x20actor\x20creation\x20permissions','actorPolymorpher','transformTokens','data','attr','13OtUcwu','i18n','init','mix','delete','Creature','3eaSjvT','isGM','_init_player','localize','transformOptions','940250uavxtw','join','DND5E','accept','Select\x20Source','_isActorTransformed','18345UWwjql','DND5E.PolymorphPromptTitle','length','<i\x20class=\x22fas\x20fa-check\x22></i>','users','Select\x20Creature','polymorphSettings','allowPolymorphing','transformInto','.restore-transformation','DND5E.PolymorphAcceptSettings','body','This\x20actor\x20does\x20not\x20appear\x20to\x20be\x20transformed—this\x20may\x20be\x20a\x20bug!','dialog','info','<i\x20class=\x22fas\x20fa-pastafarianism\x22></i>','can','map','set','notifications','Open\x20List','create','406232cDLCdh','Cannot\x20polymorph:\x20','Select\x20with\x20CR\x20Scaling/Rename','44768tgezcv','find','\x20has\x20transformed\x20back\x20into\x20their\x20original\x20form,\x20and\x20requests\x20you\x20delete\x20their\x20temporary\x20polymorphed\x20actor\x20\x22','[data-plut-actor-delete]','collection','Deleted\x20actor\x20\x22','user','escapeQuotes','btn-run-mods','<i\x20class=\x22fas\x20fa-paw\x22></i>','checked','getData','name','flags','59VuWItz','userId'];const _0xc590=function(_0x3be473,_0x25aa8b){_0x3be473=_0x3be473-0x12b;let _0x3f0e17=_0x3f0e[_0x3be473];return _0x3f0e17;};const _0xd75524=_0xc590;(function(_0x55b4cb,_0x29085a){const _0x41b0e7=_0xc590;while(!![]){try{const _0x465cce=-parseInt(_0x41b0e7(0x175))+parseInt(_0x41b0e7(0x135))+parseInt(_0x41b0e7(0x151))+parseInt(_0x41b0e7(0x189))*-parseInt(_0x41b0e7(0x154))+-parseInt(_0x41b0e7(0x171))*-parseInt(_0x41b0e7(0x170))+-parseInt(_0x41b0e7(0x130))*parseInt(_0x41b0e7(0x13b))+-parseInt(_0x41b0e7(0x17f))*parseInt(_0x41b0e7(0x162));if(_0x465cce===_0x29085a)break;else _0x55b4cb['push'](_0x55b4cb['shift']());}catch(_0x56ee55){_0x55b4cb['push'](_0x55b4cb['shift']());}}}(_0x3f0e,0xec81f));import{ImportListCreature}from'./ImportListCreature.js';import{MixinUserChooseImporter}from'./ImportList.js';class ActorPolymorpher{static[_0xd75524(0x12c)](){const _0x2ad01e=_0xd75524;if(game['user']['isGM'])this['_init_gm']();else this[_0x2ad01e(0x132)]();}static['_isActorTransformed'](_0x85a39a){const _0x4bc8b6=_0xd75524;if(MiscUtil[_0x4bc8b6(0x164)](_0x85a39a['data'][_0x4bc8b6(0x161)],_0x4bc8b6(0x16b),_0x4bc8b6(0x173)))return!![];if(MiscUtil[_0x4bc8b6(0x164)](_0x85a39a[_0x4bc8b6(0x187)][_0x4bc8b6(0x161)],'dnd5e',_0x4bc8b6(0x134)))return!![];return![];}static[_0xd75524(0x132)](){const _0x4f83ae=_0xd75524;$(document[_0x4f83ae(0x146)])['on'](_0x4f83ae(0x177),_0x4f83ae(0x144),_0x56b7dc=>{const _0x31777a=_0x4f83ae,_0x47010b=$(_0x56b7dc[_0x31777a(0x179)])['closest']('.sheet.actor')['attr']('id')['replace']('actor-',''),_0x239ac8=Actor['collection']['get'](_0x47010b);if(!this['_isActorTransformed'](_0x239ac8)){const _0x3f6288=_0x31777a(0x147);console[_0x31777a(0x172)](_0x3f6288),ui[_0x31777a(0x17d)]['warn'](_0x3f6288);}ChatMessage[_0x31777a(0x150)]({'sound':'sounds/notify.wav','content':'<p>'+game[_0x31777a(0x15a)][_0x31777a(0x160)]+_0x31777a(0x156)+_0x239ac8[_0x31777a(0x160)][_0x31777a(0x15b)]()+'.\x22\x20Proceed?</p><div><button\x20data-plut-actor-delete=\x22'+_0x47010b+'\x22>Delete</button></div>','user':game[_0x31777a(0x163)],'type':0x4,'whisper':game[_0x31777a(0x13f)][_0x31777a(0x17b)][_0x31777a(0x167)](_0x45c1fc=>_0x45c1fc[_0x31777a(0x131)])[_0x31777a(0x14c)](_0x3566e4=>_0x3566e4['id'])});});}static[_0xd75524(0x17e)](){const _0x474d65=_0xd75524;$(document[_0x474d65(0x146)])['on']('click',_0x474d65(0x157),async _0x20bb7b=>{const _0x239b97=_0x474d65,_0x22e737=$(_0x20bb7b[_0x239b97(0x179)])[_0x239b97(0x188)](_0x239b97(0x168)),_0x18b423=Actor[_0x239b97(0x158)][_0x239b97(0x164)](_0x22e737);if(!_0x18b423)return ui[_0x239b97(0x14e)][_0x239b97(0x172)](_0x239b97(0x166)+_0x22e737+_0x239b97(0x165));if(!this[_0x239b97(0x13a)](_0x18b423)){const _0x47d58e=await InputUiUtil['pGetUserBoolean']({'title':'Are\x20You\x20Sure?','htmlDescription':'This\x20actor\x20does\x20not\x20appear\x20to\x20be\x20transformed.\x20Are\x20you\x20sure\x20you\x20want\x20to\x20delete\x20this\x20actor,\x20which\x20may\x20be\x20an\x20original\x20actor?'});if(!_0x47d58e)return;}await _0x18b423[_0x239b97(0x12e)](),ui[_0x239b97(0x14e)][_0x239b97(0x149)](_0x239b97(0x159)+_0x18b423[_0x239b97(0x160)]+'\x22');});}static async['pHandleButtonClick'](_0x5d7109,_0x5e700f,_0x241d6e,_0x4a0b9c){const _0x26c4c7=_0xd75524;if(!game[_0x26c4c7(0x15a)][_0x26c4c7(0x131)]){const _0x171273=[game[_0x26c4c7(0x15a)][_0x26c4c7(0x14b)]('ACTOR_CREATE')?'':_0x26c4c7(0x184),game[_0x26c4c7(0x15a)][_0x26c4c7(0x14b)](_0x26c4c7(0x16f))?'':_0x26c4c7(0x176),game[_0x26c4c7(0x178)]['get'](_0x26c4c7(0x16b),_0x26c4c7(0x142))?'':_0x26c4c7(0x169)][_0x26c4c7(0x167)](Boolean);if(_0x171273[_0x26c4c7(0x13d)])return ui[_0x26c4c7(0x14e)][_0x26c4c7(0x172)](_0x26c4c7(0x152)+_0x171273[_0x26c4c7(0x136)](';\x20'));}const _0x5e8c83=await ActorPolymorpher[_0x26c4c7(0x16a)]['pGetUserChoice']({'id':'creatures-actorPolymorpher','name':_0x26c4c7(0x17c),'singleName':_0x26c4c7(0x12f),'wizardTitleWindow':_0x26c4c7(0x139),'wizardTitlePanel3':'Configure\x20and\x20Open\x20List','wizardTitleButtonOpenImporter':_0x26c4c7(0x14f)},_0x26c4c7(0x185));if(_0x5e8c83==null)return;await this[_0x26c4c7(0x16c)](_0x5e700f[_0x26c4c7(0x174)],_0x5e8c83);}static async[_0xd75524(0x16c)](_0x1e9a6a,_0x2fb092){const _0x5b2cb4=_0xd75524,_0x5e4c75=_0x1afcf1=>{const _0x524c90=_0xc590,_0x37fde7={};_0x1afcf1[_0x524c90(0x155)]('input')['each']((_0x21fd13,_0x51466e)=>{const _0x23b35c=_0x524c90;_0x37fde7[_0x51466e[_0x23b35c(0x160)]]=_0x51466e[_0x23b35c(0x15e)];});const _0xccd9c1=mergeObject(game[_0x524c90(0x178)][_0x524c90(0x164)](_0x524c90(0x16b),_0x524c90(0x141))||{},_0x37fde7);return game[_0x524c90(0x178)][_0x524c90(0x14d)]('dnd5e',_0x524c90(0x141),_0xccd9c1),_0xccd9c1;};return new Dialog({'title':game['i18n']['localize'](_0x5b2cb4(0x13c)),'content':{'options':game[_0x5b2cb4(0x178)][_0x5b2cb4(0x164)](_0x5b2cb4(0x16b),_0x5b2cb4(0x141)),'i18n':CONFIG[_0x5b2cb4(0x137)][_0x5b2cb4(0x141)],'isToken':_0x1e9a6a['isToken']},'default':_0x5b2cb4(0x138),'buttons':{'accept':{'icon':_0x5b2cb4(0x13e),'label':game[_0x5b2cb4(0x12b)]['localize'](_0x5b2cb4(0x145)),'callback':_0x339df3=>_0x1e9a6a[_0x5b2cb4(0x143)](_0x2fb092,_0x5e4c75(_0x339df3))},'wildshape':{'icon':_0x5b2cb4(0x15d),'label':game['i18n'][_0x5b2cb4(0x133)]('DND5E.PolymorphWildShape'),'callback':_0x18eb6b=>_0x1e9a6a['transformInto'](_0x2fb092,{'keepBio':!![],'keepClass':!![],'keepMental':!![],'mergeSaves':!![],'mergeSkills':!![],'transformTokens':_0x5e4c75(_0x18eb6b)[_0x5b2cb4(0x186)]})},'polymorph':{'icon':_0x5b2cb4(0x14a),'label':game['i18n'][_0x5b2cb4(0x133)](_0x5b2cb4(0x16d)),'callback':_0x1e2e1d=>_0x1e9a6a[_0x5b2cb4(0x143)](_0x2fb092,{'transformTokens':_0x5e4c75(_0x1e2e1d)[_0x5b2cb4(0x186)]})},'cancel':{'icon':_0x5b2cb4(0x182),'label':game[_0x5b2cb4(0x12b)][_0x5b2cb4(0x133)](_0x5b2cb4(0x16e))}}},{'classes':[_0x5b2cb4(0x148),_0x5b2cb4(0x16b)],'width':0x258,'template':'systems/dnd5e/templates/apps/polymorph-prompt.html'})[_0x5b2cb4(0x180)](!![]);}}ActorPolymorpher['ImportList']=class extends MiscUtil[_0xd75524(0x12d)](ImportListCreature)[_0xd75524(0x181)](MixinUserChooseImporter){constructor(_0xf21ce9){const _0x311942=_0xd75524;super(_0xf21ce9,{'title':_0x311942(0x140)},{'titleButtonRun':_0x311942(0x183)});}[_0xd75524(0x15f)](){const _0x25fb17=_0xd75524,_0x1a1a28=super['getData']();return _0x1a1a28[_0x25fb17(0x17a)]=[{'name':_0x25fb17(0x15c),'text':_0x25fb17(0x153)}],_0x1a1a28;}};export{ActorPolymorpher};
+import {ImportListCreature} from "./ImportListCreature.js";
+import {MixinUserChooseImporter} from "./ImportList.js";
+import {UtilGameSettings} from "./UtilGameSettings.js";
+import {Config} from "./Config.js";
+import {Util} from "./Util.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {UtilKeybinding} from "./UtilKeybinding.js";
+import {UtilChat} from "./UtilChat.js";
+
+class ActorPolymorpher {
+	// region External
+	static prePreInit () {
+		this._preInit_registerKeybinds();
+	}
+
+	static _preInit_registerKeybinds () {
+		const doKeybindingOpenForCharacter = () => {
+			const actor = UtilKeybinding.getPlayerActor({minRole: Config.get("tools", "minimumRolePolymorph")});
+			if (!actor) return true;
+			this._pOpen({actor});
+			return true;
+		};
+
+		const doKeybindingOpenForCurrentSheet = () => {
+			const meta = UtilKeybinding.getCurrentImportableSheetDocumentMeta({isRequireActor: true, isRequireOwnership: true, minRole: Config.get("tools", "minimumRolePolymorph")});
+			if (!meta?.actor) return true;
+			this._pOpen({...meta});
+			return true;
+		};
+
+		game.keybindings.register(
+			SharedConsts.MODULE_NAME,
+			"ActorPolymorpher__openForCharacter",
+			{
+				name: "Open Polymorpher Targeting Player Character",
+				editable: [],
+				onDown: () => doKeybindingOpenForCharacter(),
+			},
+		);
+
+		game.keybindings.register(
+			SharedConsts.MODULE_NAME,
+			"ActorPolymorpher__openForCurrentSheet",
+			{
+				name: "Open Polymorpher Targeting Current Sheet",
+				editable: [],
+				onDown: () => doKeybindingOpenForCurrentSheet(),
+			},
+		);
+	}
+
+	static init () {
+		if (game.user.isGM) this._init_gm();
+		else this._init_player();
+	}
+
+	static _isActorTransformed (actor) {
+		if (MiscUtil.get(actor.data.flags, "dnd5e", "originalActor")) return true;
+		if (MiscUtil.get(actor.data.flags, "dnd5e", "transformOptions")) return true;
+		return false;
+	}
+
+	static _pSendPlayerUndoTransformationRequest ({actorId}) {
+		const actor = CONFIG.Actor.collection.instance.get(actorId);
+		return UtilChat.pSendGmOnlyMessage({
+			content: `<p>${game.user.name} has transformed back into their original form, and requests you delete their temporary polymorphed actor "${actor.name.escapeQuotes()}." Proceed?</p><div><button data-plut-poly-actor-delete="${actorId}">Delete</button></div>`,
+		});
+	}
+
+	static _pSendPlayerDeleteTempActorRequest ({actorId}) {
+		const actor = CONFIG.Actor.collection.instance.get(actorId);
+		return UtilChat.pSendGmOnlyMessage({
+			content: `<p>${game.user.name} requests you delete their temporary polymorph template actor "${actor.name.escapeQuotes()}." Proceed?</p><div><button data-plut-poly-temp-actor-delete="${actorId}">Delete</button></div>`,
+		});
+	}
+
+	static _init_player () {
+		// When a player clicks the "restore transformation" button, whisper a prompt to the GM(s)
+		$(document.body)
+			.on("click", `.restore-transformation`, evt => {
+				const actorId = $(evt.currentTarget).closest(`.sheet.actor`).attr("id").replace("actor-", "");
+				const actor = CONFIG.Actor.collection.instance.get(actorId);
+
+				if (!this._isActorTransformed(actor)) {
+					const msg = `This actor does not appear to be transformed\u2014this may be a bug!`;
+					console.warn(msg);
+					ui.notfications.warn(msg);
+				}
+
+				this._pSendPlayerUndoTransformationRequest({actorId});
+			});
+	}
+
+	static _init_gm () {
+		$(document.body)
+			.on("click", `[data-plut-poly-actor-delete]`, async evt => {
+				const actorId = $(evt.currentTarget).attr("data-plut-poly-actor-delete");
+				const actor = CONFIG.Actor.collection.instance.get(actorId);
+				if (!actor) return ui.notifications.warn(`Actor "${actorId}" not found!`);
+
+				if (!this._isActorTransformed(actor)) {
+					const isDeleteAnyway = await InputUiUtil.pGetUserBoolean({title: "Are You Sure?", htmlDescription: `This actor does not appear to be transformed. Are you sure you want to delete this actor, which may be an original actor?`});
+					if (!isDeleteAnyway) return;
+				}
+
+				await actor.delete();
+				ui.notifications.info(`Deleted actor "${actor.name}"`);
+
+				await UtilChat.pDeleteMessage({ele: evt.currentTarget});
+			})
+			.on("click", `[data-plut-poly-temp-actor-delete]`, async evt => {
+				const actorId = $(evt.currentTarget).attr("data-plut-poly-temp-actor-delete");
+				const actor = CONFIG.Actor.collection.instance.get(actorId);
+				if (!actor) return ui.notifications.warn(`Actor "${actorId}" not found!`);
+
+				await actor.delete();
+				ui.notifications.info(`Deleted actor "${actor.name}"`);
+
+				await UtilChat.pDeleteMessage({ele: evt.currentTarget});
+			});
+	}
+
+	static async pHandleButtonClick (evt, app, $html, data) {
+		return this._pOpen({actor: app.actor});
+	}
+
+	static async _pOpen ({actor}) {
+		if (!game.user.isGM) {
+			const messages = [
+				game.user.can("ACTOR_CREATE") ? "" : "you lack actor creation permissions",
+				// FIXME(Future) This is required only for "temp" actor+item creation, which we currently hack around
+				// game.user.can("ITEM_CREATE") ? "" : "you lack item creation permissions",
+				UtilGameSettings.getSafe("dnd5e", "allowPolymorphing") ? "" : "system-wide player polymorphing is disabled",
+			].filter(Boolean);
+
+			if (messages.length) return ui.notifications.warn(`Cannot polymorph: ${messages.join("; ")}`);
+		}
+
+		const sourceActor = await ActorPolymorpher.ImportList.pGetUserChoice(
+			{
+				id: "creatures-actorPolymorpher",
+				name: "Creatures",
+				singleName: "Creature",
+
+				wizardTitleWindow: `Select Source (Polymorphing Actor "${actor.name}")`,
+				wizardTitlePanel3: "Configure and Open List",
+				wizardTitleButtonOpenImporter: "Open List",
+			},
+			"actorPolymorpher",
+		);
+		if (sourceActor == null) return;
+
+		try {
+			await this._doFakeActorDrop(actor, sourceActor);
+		} catch (e) {
+			console.error(e);
+		}
+
+		if (Util.Fvtt.canUserCreateFolders()) {
+			if (sourceActor.folder.children.length || sourceActor.folder.content.length > 1) {
+				const isDeleteAnyway = await InputUiUtil.pGetUserBoolean({title: "Delete Temp Folder?", htmlDescription: `The temp folder "${Config.get("import", "tempFolderName")}" contains more contents than expected.<br>Delete it anyway?`});
+				if (!isDeleteAnyway) return;
+			}
+			await sourceActor.folder.delete({deleteSubfolders: true, deleteContents: true});
+			return;
+		}
+
+		this._pSendPlayerDeleteTempActorRequest({actorId: sourceActor.id});
+	}
+
+	// endregion
+
+	// region Based on `Actor5e._onDropActor`
+	static async _doFakeActorDrop (actor, sourceActor) {
+		// Define a function to record polymorph settings for future use
+		const rememberOptions = html => {
+			const options = {};
+			html.find("input").each((i, el) => {
+				options[el.name] = el.checked;
+			});
+			const settings = foundry.utils.mergeObject(UtilGameSettings.getSafe("dnd5e", "polymorphSettings") || {}, options);
+			game.settings.set("dnd5e", "polymorphSettings", settings);
+			return settings;
+		};
+
+		// Create and render the Dialog
+		return new Dialog({
+			title: game.i18n.localize("DND5E.PolymorphPromptTitle"),
+			content: {
+				options: UtilGameSettings.getSafe("dnd5e", "polymorphSettings"),
+				i18n: CONFIG.DND5E.polymorphSettings,
+				isToken: actor.isToken,
+			},
+			default: "accept",
+			buttons: {
+				accept: {
+					icon: `<i class="fas fa-fw fa-check"></i>`,
+					label: game.i18n.localize("DND5E.PolymorphAcceptSettings"),
+					callback: html => actor.transformInto(sourceActor, rememberOptions(html)),
+				},
+				wildshape: {
+					icon: `<i class="fas fa-fw fa-paw"></i>`,
+					label: game.i18n.localize("DND5E.PolymorphWildShape"),
+					callback: html => actor.transformInto(sourceActor, {
+						keepBio: true,
+						keepClass: true,
+						keepMental: true,
+						mergeSaves: true,
+						mergeSkills: true,
+						transformTokens: rememberOptions(html).transformTokens,
+					}),
+				},
+				polymorph: {
+					icon: `<i class="fas fa-fw fa-pastafarianism"></i>`,
+					label: game.i18n.localize("DND5E.Polymorph"),
+					callback: html => actor.transformInto(sourceActor, {
+						transformTokens: rememberOptions(html).transformTokens,
+					}),
+				},
+				cancel: {
+					icon: `<i class="fas fa-fw fa-times"></i>`,
+					label: game.i18n.localize("Cancel"),
+				},
+			},
+		}, {
+			classes: ["dialog", "dnd5e"],
+			width: 600,
+			template: "systems/dnd5e/templates/apps/polymorph-prompt.html",
+		}).render(true);
+	}
+	// endregion
+}
+
+/**
+ * @mixes MixinUserChooseImporter
+ */
+ActorPolymorpher.ImportList = class extends MixinUserChooseImporter(ImportListCreature) {
+	constructor (externalData) {
+		super(
+			externalData,
+			{
+				title: "Select Creature",
+			},
+			{
+				titleButtonRun: "Select",
+				isNotDroppable: false,
+			},
+			{
+				isForceImportToTempDirectory: true,
+			},
+		);
+	}
+
+	getData () {
+		const out = super.getData();
+		out.buttonsAdditional = [
+			{
+				name: "btn-run-mods",
+				text: "Customize and Select...",
+			},
+		];
+		return out;
+	}
+};
+
+export {ActorPolymorpher};

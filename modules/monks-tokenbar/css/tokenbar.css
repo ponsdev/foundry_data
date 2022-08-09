@@ -4,7 +4,9 @@
     /*height: 92px;*/
     pointer-events: none;
     flex-wrap: nowrap;
-    display:flex !important;
+    display: flex !important;
+    align-items: flex-end;
+    width: fit-content;
 }
 
 #tokenbar-window #tokenbar {
@@ -20,6 +22,7 @@ body #tokenbar-window:first-child{
 
 #tokenbar .bar-controls {
     flex: 0 0 auto;
+    flex-basis: fit-content;
     height: 92px;
     margin: 0 2px;
     text-align: center;
@@ -29,6 +32,7 @@ body #tokenbar-window:first-child{
     box-shadow: 0 0 3px #444 inset;
     border-radius: 3px;
     flex-wrap: nowrap;
+    align-self: flex-end;
 }
 
 #tokenbar .bar-controls > div{
@@ -57,7 +61,6 @@ body #tokenbar-window:first-child{
 }
 
 #tokenbar .bar-controls .tokenbar-buttons div i {
-    cursor: pointer;
     border-radius: 6px;
     border: 1px solid transparent;
     width: 24px;
@@ -65,14 +68,18 @@ body #tokenbar-window:first-child{
     padding-top: 4px;
 }
 
-#tokenbar .bar-controls .tokenbar-buttons div:not(.disabled):hover {
+#tokenbar:not(.hidectrl) .bar-controls .tokenbar-buttons div i {
+    cursor: pointer;
+}
+
+#tokenbar:not(.hidectrl) .bar-controls .tokenbar-buttons div:not(.disabled):hover {
     filter: drop-shadow( 0 0 5px red);
 }
 
-#tokenbar .bar-controls .tokenbar-buttons div.active:hover,
-#tokenbar[movement="free"] #movement-free:not(.disabled):hover,
-#tokenbar[movement="none"] #movement-none:not(.disabled):hover,
-#tokenbar[movement="combat"] #movement-combat:not(.disabled):hover {
+#tokenbar:not(.hidectrl) .bar-controls .tokenbar-buttons div.active:hover,
+#tokenbar[movement="free"]:not(.hidectrl) #movement-free:not(.disabled):hover,
+#tokenbar[movement="none"]:not(.hidectrl) #movement-none:not(.disabled):hover,
+#tokenbar[movement="combat"]:not(.hidectrl) #movement-combat:not(.disabled):hover {
     filter: none;
 }
 
@@ -84,10 +91,10 @@ body #tokenbar-window:first-child{
     border: 1px solid #ff6400;
 }
 
-#tokenbar .bar-controls .tokenbar-buttons div.active:not(.disabled):hover i,
-#tokenbar[movement="free"] #movement-free:not(.disabled):hover i,
-#tokenbar[movement="none"] #movement-none:not(.disabled):hover i,
-#tokenbar[movement="combat"] #movement-combat:not(.disabled):hover i {
+#tokenbar:not(.hidectrl) .bar-controls .tokenbar-buttons div.active:not(.disabled):hover i,
+#tokenbar[movement="free"]:not(.hidectrl) #movement-free:not(.disabled):hover i,
+#tokenbar[movement="none"]:not(.hidectrl) #movement-none:not(.disabled):hover i,
+#tokenbar[movement="combat"]:not(.hidectrl) #movement-combat:not(.disabled):hover i {
     color: #ffc163;
 }
 
@@ -104,7 +111,8 @@ body #tokenbar-window:first-child{
 
 #token-action-bar {
     flex: 1 1 auto;
-    height: 92px;
+    /*height: 92px;*/
+    height: fit-content;
     pointer-events: all;
     flex-wrap: nowrap;
     /*overflow: hidden;
@@ -113,10 +121,6 @@ body #tokenbar-window:first-child{
 
 #tokenbar.hidectrl .dialog-col {
     display: none;
-}
-
-#tokenbar.hidexp .assign-xp {
-    visibility: hidden;
 }
 
 #tokenbar-window #token-action-bar {
@@ -137,6 +141,7 @@ body #tokenbar-window:first-child{
     border: 1px solid #000;
     border-radius: 3px;
     flex-wrap: nowrap;
+    align-items: flex-end;
 }
 
 #tokenbar .token-list:empty{
@@ -147,14 +152,15 @@ body #tokenbar-window:first-child{
     position: relative;
     flex: 0 0 50px;
     width: 50px;
-    height: 90px;
+    /*height: 90px;*/
     border: 1px solid #000;
     border-radius: 2px;
     background: rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 5px #000 inset;
     cursor: pointer;
     justify-content: flex-end;
-    transition: width 0.4s linear;
+    transition: width 0.4s linear, height 0.4s linear;
+    height: fit-content;
 }
 
 /*#tokenbar #token-action-bar.closed {
@@ -177,6 +183,8 @@ body #tokenbar-window:first-child{
 #tokenbar .token .token-content {
     flex: 0 0 48px;
     height: 48px;
+    justify-content: center;
+    display: flex;
 }
 
 #tokenbar .token .token-stats.hidden {
@@ -191,12 +199,13 @@ body #tokenbar-window:first-child{
     color: #f0f0e0;
     font-weight: bold;
     pointer-events: none;
-    flex: 0 0 18px;
+    flex: 0 0 19px;
     flex-wrap:nowrap;
 }
 
-#tokenbar .token .token-stat i{
-    padding-top:2px;
+#tokenbar .token .token-stat i {
+    padding-top: 2px;
+    flex: 0 0 17px;
 }
 
 #tokenbar .token .token-stat span{
@@ -224,9 +233,9 @@ body #tokenbar-window:first-child{
     position: absolute;
     width: calc(100% + 4px);
     height: 10px;
-    top: 100%;
     margin-top: -8px;
     left: 0px;
+    bottom:-2px;
     border: 2px solid rgba(0, 0, 0, 0.9);
     border-radius: 3px;
     background-color: rgba(0, 0, 0, 0.5);
@@ -234,7 +243,7 @@ body #tokenbar-window:first-child{
 }
 
 #tokenbar .resource[resource="2"] {
-    top: 36px;
+    bottom: 40px;
     margin-top:0px;
 }
 
@@ -263,7 +272,8 @@ body #tokenbar-window:first-child{
     word-break: break-all;
 }
 
-#tokenbar .token .context-items li:nth-child(5) {
+#tokenbar .token .context-items li:nth-child(5),
+#tokenbar .token .context-items li:nth-child(7) {
     border-top: 2px groove #444; /*#23221d;*/
 }
 
@@ -282,6 +292,7 @@ body #tokenbar-window:first-child{
     background: rgba(0, 0, 0, 0.5);
     text-align: center;
     line-height: 22px;
+    z-index: 2;
 }
 
 #tokenbar .token .movement-icon[movement=""],
@@ -314,11 +325,32 @@ body #tokenbar-window:first-child{
     background: rgba(0, 0, 0, 0.5);
     text-align: center;
     line-height: 22px;
-    display:none;
+    display: none;
     font-size: 10px;
+    z-index: 2;
 }
 
 #tokenbar .token .inspiration-icon[inspiration="true"] {
+    display:inline-block;
+}
+
+#tokenbar .token .panning-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: 0px;
+    left: 0px;
+    color: #ffc163;
+    filter: drop-shadow( 0 0 5px black);
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    line-height: 22px;
+    display: none;
+    font-size: 10px;
+    z-index: 2;
+}
+
+#tokenbar .token .panning-icon[no-panning="true"] {
     display:inline-block;
 }
 /*-----------------------------Dialog Styles-------------------------------------*/
@@ -335,7 +367,7 @@ body #tokenbar-window:first-child{
     color: #191813;
 }
 
-.monks-tokenbar .sheet input[type="text"],
+.monks-tokenbar:not(.editstats) .sheet input[type="text"],
 .monks-tokenbar .sheet input[type="number"] {
     background: none;
     border: 1px solid transparent;
@@ -344,7 +376,7 @@ body #tokenbar-window:first-child{
     color: #191813;
 }
 
-.monks-tokenbar .item.disabled input,
+.monks-tokenbar .item.disabled input[type="text"],
 .monks-tokenbar .item.disabled select {
     display: none;
 }
@@ -494,6 +526,7 @@ body #tokenbar-window:first-child{
     background: rgba(0, 0, 0, 0.05);
     border: 2px groove #eeede0;
     font-weight: bold;
+    flex-wrap: nowrap;
 }
 
 .monks-tokenbar .sheet .items-list .items-header .item-control{
@@ -689,6 +722,18 @@ body #tokenbar-window:first-child{
     order: 0;
 }
 
+.monks-tokenbar li.item .dice-roll .dice-total .dice-result.reveal .smoke-screen {
+    display:none;
+}
+
+.monks-tokenbar li.item .dice-roll .dice-total .dice-result .total {
+    display: none;
+}
+
+.monks-tokenbar li.item .dice-roll .dice-total .dice-result.reveal .total {
+    display: block;
+}
+
 .monks-tokenbar.assignxp li.item .dice-roll .dice-total a {
     font-size: 12px;
 }
@@ -718,12 +763,12 @@ body #tokenbar-window:first-child{
 }
 
 .monks-tokenbar li.item .dice-roll .dice-total a.result-passed.selected,
-.monks-tokenbar li.item .dice-roll .dice-total .dice-result.success{
+.monks-tokenbar li.item .dice-roll .dice-total .dice-result.success .total{
     color: #468847;
 }
 
 .monks-tokenbar li.item .dice-roll .dice-total a.result-failed.selected,
-.monks-tokenbar li.item .dice-roll .dice-total .dice-result.fail {
+.monks-tokenbar li.item .dice-roll .dice-total .dice-result.fail .total {
     color: #b94a48;
 }
 
@@ -756,14 +801,13 @@ body #tokenbar-window:first-child{
     display: none !important;
 }
 
-.grab-message {
+.monks-tokenbar .footer-button {
     width: 24px;
     height: 18px;
     float: right;
     font-size: 12px;
     line-height: 12px;
     padding: 0px 4px;
-    margin: 0px;
 }
 
 .grabbing .grab-message {
@@ -780,4 +824,210 @@ body #tokenbar-window:first-child{
 #lootables.dual {
     transform: translateX(-50%);
     margin-right: 10px;
+}
+
+.monks-tokenbar.editstats .dialog-content div.icon,
+.monks-tokenbar.editstats .dialog-content div.remove,
+.monks-tokenbar.editstats .dialog-content div.add {
+    cursor: pointer;
+}
+
+.monks-tokenbar.editstats .font-picker {
+    position: absolute;
+    top: 0px;
+    left: 30px;
+    width: 308px;
+    height: 200px;
+    border: 1px solid #C0C0C0;
+    background: url(../../../ui/denim075.png) repeat;
+    border-radius: 5px;
+    box-shadow: 0 0 20px #000;
+    display: none;
+}
+
+.monks-tokenbar.editstats .font-picker header {
+    flex: 0 0 18px;
+    overflow: hidden;
+    padding: 0 8px;
+    line-height: 18px;
+    border-bottom: 1px solid #000;
+    color: #f0f0e0;
+    justify-content: flex-end;
+}
+
+.monks-tokenbar.editstats .font-picker section {
+    background: url(../../../ui/parchment.jpg) repeat;
+    overflow-y: auto;
+    height: calc(100% - 20px);
+}
+
+.monks-tokenbar.editstats .font-picker section > div {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.monks-tokenbar.editstats .tt-hint {
+    color: #999
+}
+
+.monks-tokenbar.editstats .tt-menu {
+    width: 314px;
+    margin: 4px 0;
+    padding: 4px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    overflow: hidden;
+}
+
+.monks-tokenbar.editstats .tt-suggestion {
+    padding: 3px;
+}
+
+.monks-tokenbar.editstats .tt-suggestion:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: #0097cf;
+}
+
+.monks-tokenbar.editstats .tt-suggestion.tt-cursor {
+    color: #fff;
+    background-color: #0097cf;
+}
+
+.monks-tokenbar.editstats .tt-suggestion p {
+    margin: 0;
+}
+
+li.chat-message.message .message-content .monks-tokenbar *.noselect,
+li.chat-message.message .message-content .monks-tokenbar *.noselect * {
+    -webkit-touch-callout: none !important; /* iOS Safari */
+    -webkit-user-select: none !important; /* Safari */
+    -khtml-user-select: none !important; /* Konqueror HTML */
+    -moz-user-select: none !important; /* Old versions of Firefox */
+    -ms-user-select: none !important; /* Internet Explorer/Edge */
+    user-select: none !important; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+#tokenbar.vertical {
+    align-items: flex-start;
+    align-content: flex-start;
+    vertical-align: top;
+    flex-direction: column;
+    min-width: 105px;
+}
+
+#tokenbar.vertical #tokenbar-controls {
+    align-self: flex-start;
+    min-width: calc(100% - 4px);
+    height: unset;
+    flex-direction: column;
+}
+
+#tokenbar.vertical #tokenbar-controls div#tokenbar-move-handle{
+    height: 10px;
+    width: 100%;
+}
+
+#tokenbar.vertical #tokenbar-controls .tokenbar-buttons {
+    flex-direction: row;
+    width: unset;
+    height: 30px;
+    margin-left: 4px;
+}
+
+#tokenbar.vertical #token-action-bar {
+    flex-direction: column;
+    margin-top: 2px;
+}
+
+#tokenbar.vertical #token-action-bar .token-list{
+    width: 102px;
+    flex-direction: column;
+}
+
+#tokenbar.vertical #token-action-bar .token-list .token{
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+    width: 100px;
+    justify-content: flex-start;
+}
+
+#tokenbar.vertical #token-action-bar .token-list .token .token-stats {
+    flex: 0 0 48px;
+    justify-content: flex-start;
+}
+
+#tokenbar.vertical #token-action-bar .token-list .token .token-content {
+    width: 48px;
+}
+
+#tokenbar.vertical #token-action-bar .token-list .token .token-content .panning-icon {
+    top: 28px;
+}
+
+#tokenbar.vertical #token-action-bar .token-list .token .token-content .inspiration-icon {
+    left: 30px;
+    top: 0px;
+}
+
+#tokenbar.vertical #token-action-bar .token-list .token .token-content .resource {
+    width: 48px;
+}
+
+#tokenbar.vertical #token-action-bar .token-list .token .token-content .resource[resource="2"] {
+    top: -2px;
+}
+
+.group-header {
+    font-weight: bold;
+    padding: 8px 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.included-items {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    box-sizing: content-box;
+}
+
+.included-items > div{
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 2px;
+    border: 1px solid #C0C0C0;
+    border-radius: 4px;
+    margin:2px;
+}
+
+.included-items > input[type="checkbox"]:checked + div {
+    color: #ff6400;
+}
+
+#lootables .dialog-buttons {
+    flex: 0 0 32px;
+}
+
+#lootables .item-list {
+    max-height: 200px;
+    overflow-y: auto;
+    height: 200px;
+}
+
+.editstats .stat-name > * {
+    width: 100%;
+}
+
+.monks-tokenbar.editstats .sheet .stat-name input[type="text"] {
+    text-align:left;
 }

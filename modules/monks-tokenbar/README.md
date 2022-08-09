@@ -35,11 +35,12 @@ Clicking on the contested roll button will open a dialog to facilitate a contest
 If a token is selected and another is set as a target it will automatically fill the two slots.  Otherwise the next token clicked will fill the next avaialble slot.  Individually select what roll each token will make.  
 Clicking request will add a chat message and prompt players to roll the contested roll requested.  After both partied have rolled it will show which one won the contested roll.
 
-Guide to Roll Mode: 
+Guide to Roll Mode:
+
 Public Roll will show everyone who's involved and their roll.  
 Private GM Roll will show the player everyone else involved but will only reveal their own roll/success.  
 Blind Roll will only show the player that they're involved and will not show the result of the roll.  
-Blind mode won't show the players at all.  The GM will have to roll the dice themselves.
+Self Roll won't show the players at all.  The GM will have to roll the dice themselves.
 
 ### Assign XP Dialog
 ![monks-tokenbar](screenshots/AssignXP.webp)
@@ -63,7 +64,11 @@ Please feel free to contact me on discord if you have any questions or concerns.
 
 ## Support
 
-If you feel like being generous, stop by my <a href="https://www.patreon.com/ironmonk">patreon</a>.  Not necessary but definitely appreciated.
+If you feel like being generous, stop by my <a href="https://www.patreon.com/ironmonk">patreon</a>.
+
+Or [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R7BH5MT)
+
+Not necessary but definitely appreciated.
 
 ## License
 This Foundry VTT module, writen by Ironmonk, is licensed under [GNU GPLv3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), supplemented by [Commons Clause](https://commonsclause.com/).

@@ -1,18 +1,825 @@
-const _0x3aab=['1042368ZaNNML','1hbNcVJ','-level\x20spell\x20at\x20this\x20level.','<div>—</div>','You\x20have\x20selected\x20to\x20learn\x20a\x20','676954mwHRvR','setValues','$dispStatic','_getFormData_handleKnownProgressionGeneric','addClass','manc-sp__sel-slot-level\x20text-center\x20p-0\x20clickable','_spellLevelMax','title','_spellLevel','spellsKnownProgressionFixedAllowHigherLevel','length','spellLevelHigh','_getFormData_handleKnownProgressionFixed_noChoice','push','curLevel','spellsKnownProgressionFixed','fixed','casterProgression','_state','getCasterProgressionMeta','max','_hkRow_doAdjustElements','37LChnwL','_doPopulateFixedKnownState','_getFormData_handleKnownProgressionFixed_choice','_getPropsLevel','_geSpellLevelSelValues','_doPopulateState_forLevel_doPopulateForNumSpells','targetLevel','CASTER_TYPE_TO_PROGRESSION','_getFormData_handleKnownProgressionGeneric_noChoice','forEach','747157PlvXuO','getDefaultFormData','_doPulseFixedLearnedProgression','_doPopulateState_forLevel_doReset','_getFormData_handleKnownProgressionFixed','_addHookBase','_doPopulateFixedKnownState_forLevel','1050766RveqUZ','_doPopulateGenericKnownState','_doPopulateGenericKnownState_forLevel','spellsKnownAllowLowerLevel','_getFormData_handleKnownProgressionGeneric_choice','[+]','_doPopulateState_forLevel_isDoReset','min','This\x20box\x20indicates\x20you\x20will\x20learn\x20a\x20','$sel','click','_className','_getSpellLevelDisplay','_getPropsGeneral','spellsKnownProgression','spellsKnownAllowHigherLevel','$getSelEnum','getFormData','101vFPDoe','<div\x20class=\x22flex-vh-center\x20manc-sp__sel-slot-level\x20text-center\x20ve-muted\x22></div>','<div\x20class=\x22col-10\x20flex-v-center\x20flex-wrap\x22></div>','spellsKnownProgressionFixedAllowLowerLevel','<div\x20class=\x22py-1\x20clickable\x20ve-muted\x22>[+]</div>','hideVe','CHAR_MAX_LEVEL','toggleVe','10012FkNtal','[‒]','map','text','_getDefaultState','_isShowStaticFixedValue','constructor','_getPropsSpell','924388TacOMT','_isAnyChoice','generic','appendTo','_getFormData_handleKnownProgression_choice','-level\x20sp.','12553titcdc','pulseFixedLearnedProgression'];const _0x2a20=function(_0x1ce54e,_0x55a821){_0x1ce54e=_0x1ce54e-0x194;let _0x3aab05=_0x3aab[_0x1ce54e];return _0x3aab05;};const _0x44160b=_0x2a20;(function(_0x1920c3,_0x3433c2){const _0x3565ad=_0x2a20;while(!![]){try{const _0x5c4a96=parseInt(_0x3565ad(0x196))+-parseInt(_0x3565ad(0x1be))*-parseInt(_0x3565ad(0x1db))+parseInt(_0x3565ad(0x1c1))*-parseInt(_0x3565ad(0x1e5))+-parseInt(_0x3565ad(0x1b8))+parseInt(_0x3565ad(0x1c0))+parseInt(_0x3565ad(0x1a8))*-parseInt(_0x3565ad(0x1b0))+parseInt(_0x3565ad(0x1c5));if(_0x5c4a96===_0x3433c2)break;else _0x1920c3['push'](_0x1920c3['shift']());}catch(_0x1b4425){_0x1920c3['push'](_0x1920c3['shift']());}}}(_0x3aab,0x86b70));import{UtilActors}from'./UtilActors.js';import{Consts}from'./Consts.js';import{Charactermancer_Util}from'./UtilCharactermancer.js';class Charactermancer_Spell_SlotLevelSelect extends BaseComponent{constructor(_0x150e70){const _0x1d4fe8=_0x2a20;super(),this[_0x1d4fe8(0x1a1)]=_0x150e70;}set[_0x44160b(0x1d3)](_0x1dd8d5){const _0x2f1f6b=_0x44160b;this['_state'][_0x2f1f6b(0x1d3)]=_0x1dd8d5;}set['targetLevel'](_0x1a4d73){const _0x749980=_0x44160b;this[_0x749980(0x1d7)][_0x749980(0x1e1)]=_0x1a4d73;}set[_0x44160b(0x1a4)](_0x1c7494){const _0x186e36=_0x44160b;this[_0x186e36(0x1d7)][_0x186e36(0x1a4)]=_0x1c7494;}set['casterProgression'](_0x377261){const _0x3d36a0=_0x44160b;this[_0x3d36a0(0x1d7)][_0x3d36a0(0x1d6)]=_0x377261;}set[_0x44160b(0x1d4)](_0xdfee6c){const _0xfaf43d=_0x44160b;this[_0xfaf43d(0x1d7)][_0xfaf43d(0x1d4)]=_0xdfee6c;}set[_0x44160b(0x1ab)](_0x3b0d36){const _0x19049b=_0x44160b;this[_0x19049b(0x1d7)][_0x19049b(0x1ab)]=_0x3b0d36;}set[_0x44160b(0x1ce)](_0x59ca7c){const _0x4576bf=_0x44160b;this[_0x4576bf(0x1d7)][_0x4576bf(0x1ce)]=_0x59ca7c;}['addHookPulseFixedLearnedProgression'](_0x36f10d){const _0x12548a=_0x44160b;this[_0x12548a(0x194)](_0x12548a(0x1bf),_0x36f10d);}[_0x44160b(0x1e7)](){const _0xfc99a1=_0x44160b;this[_0xfc99a1(0x1d7)][_0xfc99a1(0x1bf)]=!this['_state'][_0xfc99a1(0x1bf)];}['render'](_0x17b7fe){const _0x3e2f0f=_0x44160b,_0x184601=$('<div\x20class=\x22flex-col\x20w-100\x22></div>')['appendTo'](_0x17b7fe['empty']()),_0x840e5f=()=>_0x184601[_0x3e2f0f(0x1af)](this[_0x3e2f0f(0x1b9)]());this[_0x3e2f0f(0x194)](_0x3e2f0f(0x1d3),_0x840e5f),this[_0x3e2f0f(0x194)](_0x3e2f0f(0x1e1),_0x840e5f),this[_0x3e2f0f(0x194)](_0x3e2f0f(0x1d6),_0x840e5f),this[_0x3e2f0f(0x194)](_0x3e2f0f(0x1d4),_0x840e5f),this[_0x3e2f0f(0x194)](_0x3e2f0f(0x1ab),_0x840e5f),this[_0x3e2f0f(0x194)](_0x3e2f0f(0x1ce),_0x840e5f),this[_0x3e2f0f(0x194)]('spellsKnownProgression',_0x840e5f),_0x840e5f();const _0x50e2dc=()=>this[_0x3e2f0f(0x197)]();this[_0x3e2f0f(0x194)]('curLevel',_0x50e2dc),this['_addHookBase'](_0x3e2f0f(0x1e1),_0x50e2dc),this[_0x3e2f0f(0x194)](_0x3e2f0f(0x1d6),_0x50e2dc),this[_0x3e2f0f(0x194)]('spellsKnownProgression',_0x50e2dc),this[_0x3e2f0f(0x194)]('spellsKnownAllowLowerLevel',_0x50e2dc),this['_addHookBase'](_0x3e2f0f(0x1a5),_0x50e2dc),_0x50e2dc();const _0x5f1ada=()=>this['_doPopulateFixedKnownState']();this[_0x3e2f0f(0x194)](_0x3e2f0f(0x1d3),_0x5f1ada),this['_addHookBase'](_0x3e2f0f(0x1e1),_0x5f1ada),this[_0x3e2f0f(0x194)](_0x3e2f0f(0x1d6),_0x5f1ada),this[_0x3e2f0f(0x194)](_0x3e2f0f(0x1d4),_0x5f1ada),this['_addHookBase'](_0x3e2f0f(0x1ab),_0x5f1ada),this['_addHookBase'](_0x3e2f0f(0x1ce),_0x5f1ada),_0x5f1ada();const _0x109d29=$(_0x3e2f0f(0x1ac))[_0x3e2f0f(0x1a0)](()=>{const _0x527adf=_0x3e2f0f;_0x109d29['text'](_0x109d29[_0x527adf(0x1b3)]()===_0x527adf(0x19b)?_0x527adf(0x1b1):_0x527adf(0x19b)),_0x5912a0['toggleVe']();}),_0x2220ee=[...new Array(Consts[_0x3e2f0f(0x1ae)])]['map']((_0x1d3b9a,_0x38b1be)=>{const _0x4737fd=_0x3e2f0f,_0x2bd084=_0x38b1be+0x1,_0x4716f9=$(_0x4737fd(0x1aa)),{propSpellLevelMax:_0x2a803f}=this[_0x4737fd(0x1b6)][_0x4737fd(0x1a3)](_0x2bd084),{propCnt:_0x4b2ebc}=this[_0x4737fd(0x1b6)][_0x4737fd(0x1de)](_0x2bd084,'generic'),{propCnt:_0x41dcd0}=this[_0x4737fd(0x1b6)][_0x4737fd(0x1de)](_0x2bd084,'fixed'),_0x546348=[],_0x3cf9a3=[],_0x59e2ba=$$`<div class="flex-v-center stripe-odd">
-				<div class="col-2 text-center">${_0x38b1be+0x1}</div>
-				${_0x4716f9}
-			</div>`,_0x40eb3b=$(_0x4737fd(0x1c3))[_0x4737fd(0x1bb)](_0x4716f9),_0x43c503=()=>{const _0x1089c9=_0x4737fd;let _0x413bb4=0x0;_0x413bb4=_0x413bb4+this[_0x1089c9(0x1da)]({'namespace':_0x1089c9(0x1ba),'selMetas':_0x546348,'propCnt':_0x4b2ebc,'propIsAllowLower':_0x1089c9(0x199),'propIsAllowHigher':_0x1089c9(0x1a5),'lvl':_0x2bd084,'propSpellLevelMax':_0x2a803f,'$cellSpells':_0x4716f9}),_0x413bb4=_0x413bb4+this['_hkRow_doAdjustElements']({'namespace':'fixed','selMetas':_0x3cf9a3,'propCnt':_0x41dcd0,'propIsAllowLower':_0x1089c9(0x1ab),'propIsAllowHigher':'spellsKnownProgressionFixedAllowHigherLevel','lvl':_0x2bd084,'propSpellLevelMax':_0x2a803f,'$cellSpells':_0x4716f9}),_0x40eb3b['toggleVe'](_0x413bb4===0x0),_0x59e2ba['toggleVe'](_0x2bd084>(this[_0x1089c9(0x1d7)]['curLevel']??0x0)&&(this['_state'][_0x1089c9(0x1e1)]??0x0)>=_0x2bd084);};return this['_addHookBase'](_0x41dcd0,_0x43c503),this[_0x4737fd(0x194)](_0x4b2ebc,_0x43c503),this[_0x4737fd(0x194)](_0x2a803f,_0x43c503),this['_addHookBase'](_0x4737fd(0x1d3),_0x43c503),this[_0x4737fd(0x194)](_0x4737fd(0x1e1),_0x43c503),this[_0x4737fd(0x194)]('spellsKnownAllowLowerLevel',_0x43c503),this['_addHookBase']('spellsKnownAllowHigherLevel',_0x43c503),this[_0x4737fd(0x194)]('spellsKnownProgressionFixedAllowLowerLevel',_0x43c503),this[_0x4737fd(0x194)](_0x4737fd(0x1ce),_0x43c503),_0x43c503(),_0x59e2ba;}),_0x5912a0=$$`<div class="flex-col w-100">
+import {Consts} from "./Consts.js";
+import {UtilDataConverter} from "./UtilDataConverter.js";
+import {DataConverter} from "./DataConverter.js";
+import {LGT} from "./Util.js";
+import {Charactermancer_Util} from "./UtilCharactermancer.js";
+
+class Charactermancer_Spell_Util {
+	/**
+	 * @param opts
+	 * @param opts.casterProgression The class spellcasting progression
+	 * @param opts.curLevel The current actor level (zero is valid)
+	 * @param opts.targetLevel The target actor level
+	 * @param [opts.isBreakpointsOnly] If class levels between jumps in spell level should be ignored.
+	 */
+	static getCasterProgressionMeta ({casterProgression, curLevel, targetLevel, isBreakpointsOnly = false}) {
+		if (casterProgression == null || curLevel == null || targetLevel == null) return null;
+
+		const progression = UtilDataConverter.CASTER_TYPE_TO_PROGRESSION[casterProgression];
+		if (!progression) return null;
+
+		const levelToSpellLevel = [];
+		let lastSpellLevel = 0;
+		progression.forEach(slots => {
+			let isFound = false;
+			for (let i = 0; i < slots.length; ++i) {
+				const spellLevel = i + 1;
+				if (slots[i] && spellLevel > lastSpellLevel) {
+					levelToSpellLevel.push(spellLevel);
+					lastSpellLevel = spellLevel;
+					isFound = true;
+					break;
+				}
+			}
+			if (!isFound) {
+				if (isBreakpointsOnly) levelToSpellLevel.push(null);
+				// Copy the last spell level to form a contiguous spell level array
+				else levelToSpellLevel.push(levelToSpellLevel.length ? levelToSpellLevel.last() : null);
+			}
+		});
+
+		const spannedLevels = levelToSpellLevel.slice(curLevel, targetLevel).filter(Boolean);
+		if (!spannedLevels.length) return null;
+
+		const spellLevelLow = Math.min(...spannedLevels);
+		const spellLevelHigh = Math.max(...spannedLevels);
+
+		const deltaLevels = Math.max(0, targetLevel - curLevel);
+		const deltaSpellLevels = spellLevelHigh - spellLevelLow;
+
+		return {
+			spellLevelLow,
+			spellLevelHigh,
+			deltaLevels,
+			deltaSpellLevels,
+		};
+	}
+
+	static getCasterCantripProgressionMeta ({cls, sc, curLevel, targetLevel}) {
+		if (cls == null || curLevel == null || targetLevel == null) return null;
+
+		const atCurLevel = curLevel === 0 ? 0 : this.getMaxLearnedCantrips({cls, sc, targetLevel: curLevel});
+		const atTargetLevel = this.getMaxLearnedCantrips({cls, sc, targetLevel: targetLevel});
+		if (atCurLevel == null || atTargetLevel == null) return null;
+
+		const deltaLevels = Math.max(0, targetLevel - curLevel);
+		const deltaMaxCantrips = atTargetLevel - atCurLevel;
+
+		return {
+			maxCantripsLow: atCurLevel,
+			maxCantripsHigh: atTargetLevel,
+			deltaLevels,
+			deltaMaxCantrips,
+		};
+	}
+
+	static getMaxLearnedCantrips ({cls, sc, targetLevel}) {
+		if (!cls || targetLevel == null) return null;
+
+		let cantripProgression = DataConverter.getMaxCantripProgression(cls.cantripProgression, sc?.cantripProgression);
+
+		// Auto-detect for homebrew, if required
+		if (BrewUtil2.hasSourceJson(cls.source) || (sc && BrewUtil2.hasSourceJson(sc.source))) cantripProgression = cantripProgression || this._getApproximateCantripProgression({cls, sc});
+
+		if (!cantripProgression) return null;
+
+		return cantripProgression[targetLevel - 1];
+	}
+
+	static _getApproximateCantripProgression ({cls, sc}) {
+		return this._getApproximateNumberCol({cls, sc, colNameLower: "cantrips known"});
+	}
+
+	static _getApproximateSpellsKnownProgression (cls, sc) {
+		return this._getApproximateNumberCol({cls, sc, colNameLower: "spells known"});
+	}
+
+	static _getApproximateNumberCol ({cls, sc, colNameLower}) {
+		const tableGroups = (BrewUtil2.hasSourceJson(cls.source) ? cls.classTableGroups : null)
+			|| ((sc && BrewUtil2.hasSourceJson(sc.source)) ? sc?.subclassTableGroups : null);
+		if (!tableGroups) return;
+		for (const tblGroup of tableGroups) {
+			const ixCol = (tblGroup.colLabels || []).findIndex(it => `${it}`.toLowerCase().includes(colNameLower));
+			if (!~ixCol) continue;
+
+			const numbers = (tblGroup.rowsSpellProgression || tblGroup.rows || []).map(row => row.filter((_, ixCell) => ixCell === ixCol)).flat();
+
+			if (numbers.every(it => !isNaN(it))) return numbers.map(it => Number(it));
+		}
+	}
+
+	static getFixedLearnedProgression ({cls, sc, targetLevel, isExistingClass, isDefault = false, formDataSlotSelectFromComp} = {}) {
+		if (targetLevel == null) return null;
+
+		const casterProgression = DataConverter.getMaxCasterProgression(cls.casterProgression, sc?.casterProgression);
+
+		if (!casterProgression || !UtilDataConverter.CASTER_TYPE_TO_PROGRESSION[casterProgression]) return null;
+
+		const totalKnownPerLevel = [...new Array(9)].map(() => 0);
+
+		let isAnyData = false;
+
+		const formDataSlotSelect = (isExistingClass || isDefault)
+			? Charactermancer_Spell_SlotLevelSelect.getDefaultFormData({
+				targetLevel,
+				casterProgression,
+				// ISSUE(3) this should select the max
+				spellsKnownProgression: cls?.spellsKnownProgression || sc?.spellsKnownProgression,
+				// ISSUE(3) this should select the max
+				spellsKnownProgressionFixed: cls?.spellsKnownProgressionFixed || sc?.spellsKnownProgressionFixed,
+			})
+			: formDataSlotSelectFromComp;
+
+		if (formDataSlotSelect) {
+			isAnyData = isAnyData || formDataSlotSelect?.isAnyData;
+			if (formDataSlotSelect?.data) formDataSlotSelect.data.forEach((it, i) => totalKnownPerLevel[i] += it);
+		}
+
+		if (cls.spellsKnownProgressionFixedByLevel) {
+			isAnyData = true;
+
+			Object.entries(cls.spellsKnownProgressionFixedByLevel)
+				.forEach(([lvl, spellSummary]) => {
+					if (Number(lvl) > targetLevel) return;
+
+					Object.entries(spellSummary)
+						.forEach(([lvlSpell, count]) => {
+							lvlSpell = Number(lvlSpell);
+							totalKnownPerLevel[lvlSpell - 1] += count;
+						});
+				});
+		}
+
+		// If there is no slot data to apply, null out the field
+		if (!isAnyData) return null;
+
+		// For a 3rd-level Wizard, the output is e.g.:
+		//   `[8, 2, 0, 0, 0, 0, 0, 0, 0]`
+		return totalKnownPerLevel;
+	}
+
+	static getMaxPreparedSpells ({cls, sc, targetLevel, existingAbilityScores, abilityScoresFromComp} = {}) {
+		if (!cls || targetLevel == null) return null;
+
+		const casterProgression = DataConverter.getMaxCasterProgression(cls.casterProgression, sc?.casterProgression);
+
+		if (!casterProgression || !UtilDataConverter.CASTER_TYPE_TO_PROGRESSION[casterProgression]) return null;
+
+		const spellSlotsAtLevel = UtilDataConverter.CASTER_TYPE_TO_PROGRESSION[casterProgression][targetLevel - 1];
+		if (!spellSlotsAtLevel) return null;
+
+		// If there are no spell slots at this level, we can't prepare spells at this level
+		if (!spellSlotsAtLevel.some(Boolean)) return null;
+
+		let preparedSpellExpression = cls.preparedSpells;
+
+		if (BrewUtil2.hasSourceJson(cls.source)) {
+			// Attempt to generate a prepared spell expression for homebrew classes, if it doesn't exist
+			preparedSpellExpression = preparedSpellExpression || this._getApproximatePreparedFormula(cls, sc);
+		}
+
+		if (!preparedSpellExpression) return null;
+
+		const totalsAsi = abilityScoresFromComp;
+		const preparedSpellExpressionEvaluable = preparedSpellExpression.replace(/<\$([^$]+)\$>/g, (...m) => {
+			switch (m[1]) {
+				case "level": return targetLevel;
+				case "str_mod": return this._getMaxPreparedSpells_getAbilityScore({ability: "str", totalsAsi, existingAbilityScores});
+				case "dex_mod": return this._getMaxPreparedSpells_getAbilityScore({ability: "dex", totalsAsi, existingAbilityScores});
+				case "con_mod": return this._getMaxPreparedSpells_getAbilityScore({ability: "con", totalsAsi, existingAbilityScores});
+				case "int_mod": return this._getMaxPreparedSpells_getAbilityScore({ability: "int", totalsAsi, existingAbilityScores});
+				case "wis_mod": return this._getMaxPreparedSpells_getAbilityScore({ability: "wis", totalsAsi, existingAbilityScores});
+				case "cha_mod": return this._getMaxPreparedSpells_getAbilityScore({ability: "cha", totalsAsi, existingAbilityScores});
+				default: throw new Error(`Unknown variable "${m[1]}"`);
+			}
+		});
+
+		// eslint-disable-next-line no-eval
+		const outRaw = eval(preparedSpellExpressionEvaluable);
+		if (isNaN(outRaw)) {
+			console.warn(...LGT, `Could not evaluate expression "${preparedSpellExpressionEvaluable}" (originally "${preparedSpellExpression}") as a number!`);
+			return null;
+		}
+
+		// We prepare a minimum of 1 spell, and round down any fractions
+		return Math.max(1, Math.floor(outRaw));
+	}
+
+	static getMaxPreparedSpellsFormula ({cls, sc} = {}) {
+		if (!cls) return null;
+
+		const casterProgression = DataConverter.getMaxCasterProgression(cls.casterProgression, sc?.casterProgression);
+
+		if (!casterProgression || !UtilDataConverter.CASTER_TYPE_TO_PROGRESSION[casterProgression]) return null;
+
+		let preparedSpellExpression = cls.preparedSpells;
+
+		if (BrewUtil2.hasSourceJson(cls.source)) {
+			// Attempt to generate a prepared spell expression for homebrew classes, if it doesn't exist
+			preparedSpellExpression = preparedSpellExpression || this._getApproximatePreparedFormula(cls, sc);
+		}
+
+		if (!preparedSpellExpression) return null;
+
+		const preparedSpellExpressionEvaluable = preparedSpellExpression.replace(/<\$([^$]+)\$>/g, (...m) => {
+			switch (m[1]) {
+				case "level": return `@classes.${Parser.stringToSlug(cls.name)}.levels`;
+				case "str_mod":
+				case "dex_mod":
+				case "con_mod":
+				case "int_mod":
+				case "wis_mod":
+				case "cha_mod": return `@abilities.${m[1].toLowerCase().slice(0, 3)}.mod`;
+				default: throw new Error(`Unknown variable "${m[1]}"`);
+			}
+		});
+
+		// We prepare a minimum of 1 spell, and round down any fractions
+		return `max(1, floor(${preparedSpellExpressionEvaluable}))`;
+	}
+
+	static _getMaxPreparedSpells_getAbilityScore ({totalsAsi, existingAbilityScores, ability}) {
+		if (existingAbilityScores) return existingAbilityScores[ability] || 0;
+		return Parser.getAbilityModNumber(totalsAsi?.totals?.[totalsAsi.mode]?.[ability] || 0);
+	}
+
+	static _getApproximatePreparedFormula (cls, sc) {
+		if (!cls) return null;
+
+		const casterProgression = DataConverter.getMaxCasterProgression(cls.casterProgression, sc?.casterProgression);
+
+		if (!casterProgression || (!cls.classTableGroups && !sc?.subclassTableGroups) || casterProgression === "pact") return null;
+
+		const hasSpellsKnown = [cls.classTableGroups, sc?.subclassTableGroups]
+			.filter(Boolean)
+			.some(tableGroups => {
+				tableGroups.map(it => it.colLabels || [])
+					.flat()
+					.map(lbl => Renderer.stripTags(`${lbl}`.trim()))
+					.some(it => {
+						const parts = it.toLowerCase().split(/[^a-z0-9]/g).map(it => it.trim()).filter(Boolean);
+						return parts.some(pt => pt === "spell" || pt === "spells") && parts.some(pt => pt === "known");
+					});
+			});
+
+		if (hasSpellsKnown) return null;
+
+		// Default to "5" as the ability modifier if the ability score is unavailable--the user can trim down after
+		return `<$level$> ${casterProgression !== "full" ? `/ 2 ` : ""}+ ${cls.spellcastingAbility ? `<$${cls.spellcastingAbility}_mod$>` : "5"}`;
+	}
+
+	static getExistingCasterMeta ({cls, sc, actor, targetLevel, formDataSlotSelectFromComp = null, abilityScoresFromComp = null}) {
+		if (!targetLevel) return null;
+
+		const casterProgression = DataConverter.getMaxCasterProgression(cls?.casterProgression, sc?.casterProgression);
+		const casterProgressionMeta = Charactermancer_Spell_Util.getCasterProgressionMeta({casterProgression, curLevel: 0, targetLevel: targetLevel});
+
+		return {
+			maxLearnedCantrips: this.getMaxLearnedCantrips({cls, sc, targetLevel}),
+			fixedLearnedProgression: this.getFixedLearnedProgression({cls, sc, targetLevel, isExistingClass: true, formDataSlotSelectFromComp}),
+			maxPreparedSpells: this.getMaxPreparedSpells({cls, sc, targetLevel, existingAbilityScores: Charactermancer_Util.getCurrentAbilityScores(actor), abilityScoresFromComp}),
+			spellLevelLow: casterProgressionMeta?.spellLevelLow,
+			spellLevelLowHigh: casterProgressionMeta?.spellLevelHigh,
+		};
+	}
+}
+
+class Charactermancer_Spell_SlotLevelSelect extends BaseComponent {
+	constructor (className) {
+		super();
+		this._className = className;
+	}
+
+	set curLevel (val) { this._state.curLevel = val; }
+	set targetLevel (val) { this._state.targetLevel = val; }
+	set spellsKnownProgression (val) { this._state.spellsKnownProgression = val; }
+	set casterProgression (val) { this._state.casterProgression = val; }
+	set spellsKnownProgressionFixed (val) { this._state.spellsKnownProgressionFixed = val; }
+	set spellsKnownProgressionFixedAllowLowerLevel (val) { this._state.spellsKnownProgressionFixedAllowLowerLevel = val; }
+	set spellsKnownProgressionFixedAllowHigherLevel (val) { this._state.spellsKnownProgressionFixedAllowHigherLevel = val; }
+
+	addHookPulseFixedLearnedProgression (hk) { this._addHookBase("pulseFixedLearnedProgression", hk); }
+
+	_doPulseFixedLearnedProgression () { this._state.pulseFixedLearnedProgression = !this._state.pulseFixedLearnedProgression; }
+
+	render ($wrp) {
+		const $wrpInner = $(`<div class="ve-flex-col w-100"></div>`).appendTo($wrp.empty());
+
+		const hkIsVisible = () => $wrpInner.toggleVe(this._isAnyChoice());
+		this._addHookBase("curLevel", hkIsVisible);
+		this._addHookBase("targetLevel", hkIsVisible);
+		this._addHookBase("casterProgression", hkIsVisible);
+		this._addHookBase("spellsKnownProgressionFixed", hkIsVisible);
+		this._addHookBase("spellsKnownProgressionFixedAllowLowerLevel", hkIsVisible);
+		this._addHookBase("spellsKnownProgressionFixedAllowHigherLevel", hkIsVisible);
+		this._addHookBase("spellsKnownProgression", hkIsVisible);
+		hkIsVisible();
+
+		const hkPopulateGenericKnownState = () => this._doPopulateGenericKnownState();
+		this._addHookBase("curLevel", hkPopulateGenericKnownState);
+		this._addHookBase("targetLevel", hkPopulateGenericKnownState);
+		this._addHookBase("casterProgression", hkPopulateGenericKnownState);
+		this._addHookBase("spellsKnownProgression", hkPopulateGenericKnownState);
+		this._addHookBase("spellsKnownAllowLowerLevel", hkPopulateGenericKnownState);
+		this._addHookBase("spellsKnownAllowHigherLevel", hkPopulateGenericKnownState);
+		hkPopulateGenericKnownState();
+
+		const hkPopulateFixedKnownState = () => this._doPopulateFixedKnownState();
+		this._addHookBase("curLevel", hkPopulateFixedKnownState);
+		this._addHookBase("targetLevel", hkPopulateFixedKnownState);
+		this._addHookBase("casterProgression", hkPopulateFixedKnownState);
+		this._addHookBase("spellsKnownProgressionFixed", hkPopulateFixedKnownState);
+		this._addHookBase("spellsKnownProgressionFixedAllowLowerLevel", hkPopulateFixedKnownState);
+		this._addHookBase("spellsKnownProgressionFixedAllowHigherLevel", hkPopulateFixedKnownState);
+		hkPopulateFixedKnownState();
+
+		const $btnToggle = $(`<div class="py-1 clickable ve-muted">[+]</div>`)
+			.click(() => {
+				$btnToggle.text($btnToggle.text() === "[+]" ? "[\u2012]" : "[+]");
+				$stgBody.toggleVe();
+			});
+
+		const $rows = [...new Array(Consts.CHAR_MAX_LEVEL)].map((_, ixLvl) => {
+			const lvl = ixLvl + 1;
+			const $cellSpells = $(`<div class="col-10 ve-flex-v-center ve-flex-wrap"></div>`);
+
+			const {propSpellLevelMax} = this.constructor._getPropsGeneral(lvl);
+			const {propCnt: propCntGeneric} = this.constructor._getPropsLevel(lvl, "generic");
+			const {propCnt: propCntFixed} = this.constructor._getPropsLevel(lvl, "fixed");
+
+			const selMetasGeneric = [];
+			const selMetasFixed = [];
+
+			const $row = $$`<div class="ve-flex-v-center stripe-odd">
+				<div class="col-2 text-center">${ixLvl + 1}</div>
+				${$cellSpells}
+			</div>`;
+
+			const $dispNone = $(`<div>\u2014</div>`).appendTo($cellSpells);
+
+			const hk = () => {
+				let cntVisible = 0;
+
+				// region Known spell progression
+				cntVisible = cntVisible + this._hkRow_doAdjustElements({
+					namespace: "generic",
+					selMetas: selMetasGeneric,
+					propCnt: propCntGeneric,
+					propIsAllowLower: "spellsKnownAllowLowerLevel",
+					propIsAllowHigher: "spellsKnownAllowHigherLevel",
+					lvl,
+					propSpellLevelMax,
+					$cellSpells,
+				});
+				// endregion
+
+				// region Fixed spells
+				cntVisible = cntVisible + this._hkRow_doAdjustElements({
+					namespace: "fixed",
+					selMetas: selMetasFixed,
+					propCnt: propCntFixed,
+					propIsAllowLower: "spellsKnownProgressionFixedAllowLowerLevel",
+					propIsAllowHigher: "spellsKnownProgressionFixedAllowHigherLevel",
+					lvl,
+					propSpellLevelMax,
+					$cellSpells,
+				});
+				// endregion
+
+				$dispNone.toggleVe(cntVisible === 0);
+
+				$row.toggleVe(lvl > (this._state.curLevel ?? 0) && (this._state.targetLevel ?? 0) >= lvl);
+			};
+			this._addHookBase(propCntFixed, hk);
+			this._addHookBase(propCntGeneric, hk);
+			this._addHookBase(propSpellLevelMax, hk);
+			this._addHookBase("curLevel", hk);
+			this._addHookBase("targetLevel", hk);
+			this._addHookBase("spellsKnownAllowLowerLevel", hk);
+			this._addHookBase("spellsKnownAllowHigherLevel", hk);
+			this._addHookBase("spellsKnownProgressionFixedAllowLowerLevel", hk);
+			this._addHookBase("spellsKnownProgressionFixedAllowHigherLevel", hk);
+			hk();
+
+			return $row;
+		});
+
+		const $stgBody = $$`<div class="ve-flex-col w-100">
 			<div class="ve-muted italic ve-small mb-1">If you wish to swap out learned spell levels for lower/higher (for example, when you swap out a spell on gaining a level as a Bard), you may do so here. Note that your final choices are not validated, so swap with caution, and according to the rules!</div>
-			<div class="flex-v-center">
-				<div class="col-2 text-center">${this[_0x3e2f0f(0x1a1)]} Level</div>
+			<div class="ve-flex-v-center">
+				<div class="col-2 text-center">${this._className} Level</div>
 				<div class="col-10">Learned Spell Levels</div>
 			</div>
-			${_0x2220ee}
-		</div>`[_0x3e2f0f(0x1af)]();$$(_0x184601)`<div class="flex-col w-100">
+			${$rows}
+		</div>`.toggleVe();
+
+		$$($wrpInner)`<div class="ve-flex-col w-100">
 			<div class="split-v-center">
 				<div class="bold">Learned Slot Level</div>
-				${_0x109d29}
+				${$btnToggle}
 			</div>
 
-			${_0x5912a0}
-		</div>`;}[_0x44160b(0x1da)]({namespace:_0x58a3d6,propCnt:_0x549892,selMetas:_0x10dcd6,lvl:_0x27372d,propSpellLevelMax:_0x212860,$cellSpells:_0xf87dff,propIsAllowLower:_0x343515,propIsAllowHigher:_0x1ced52}){const _0xf35741=_0x44160b;let _0x242d86=0x0;const _0x4e3d59=this['_state'][_0x549892];for(let _0x4add6b=0x0,_0x5bf10a=Math[_0xf35741(0x1d9)](_0x4e3d59,_0x10dcd6[_0xf35741(0x1cf)]);_0x4add6b<_0x5bf10a;++_0x4add6b){let _0x5ed133=_0x10dcd6[_0x4add6b];if(_0x4add6b>_0x4e3d59){_0x5ed133['$sel'][_0xf35741(0x1ad)](),_0x5ed133['$dispStatic'][_0xf35741(0x1ad)]();continue;}const {propSpellLevel:_0x1c9810}=this['constructor'][_0xf35741(0x1b7)](_0x27372d,_0x58a3d6,_0x4add6b);if(!_0x10dcd6[_0x4add6b]){_0x5ed133=ComponentUiUtil[_0xf35741(0x1a6)](this,_0x1c9810,{'values':this['_geSpellLevelSelValues'](_0x343515,_0x1ced52,_0x212860),'asMeta':!![],'fnDisplay':_0x3c0e91=>this[_0xf35741(0x1b6)]['_getSpellLevelDisplay'](_0x3c0e91)}),_0x5ed133[_0xf35741(0x19f)][_0xf35741(0x1c9)](_0xf35741(0x1ca))['appendTo'](_0xf87dff),_0x10dcd6[_0x4add6b]=_0x5ed133;const _0x1c0dfb=()=>_0x5ed133[_0xf35741(0x19f)][_0xf35741(0x1cc)](_0xf35741(0x1c4)+this['_state'][_0x1c9810]+_0xf35741(0x1c2));this[_0xf35741(0x194)](_0x1c9810,_0x1c0dfb),_0x1c0dfb(),this['_addHookBase'](_0x1c9810,()=>this[_0xf35741(0x1e7)]());const _0xc72926=$(_0xf35741(0x1a9))['appendTo'](_0xf87dff),_0x3b1e39=()=>{const _0x2fbf90=_0xf35741;_0xc72926[_0x2fbf90(0x1af)](this[_0x2fbf90(0x1b5)](_0x343515,_0x1ced52,_0x212860)),_0xc72926['text'](this[_0x2fbf90(0x1b6)][_0x2fbf90(0x1a2)](this[_0x2fbf90(0x1d7)][_0x212860]))['title'](_0x2fbf90(0x19e)+this[_0x2fbf90(0x1d7)][_0x212860]+_0x2fbf90(0x1c2));};this[_0xf35741(0x194)](_0x1c9810,_0x3b1e39),this[_0xf35741(0x194)](_0x212860,_0x3b1e39),this[_0xf35741(0x194)](_0x343515,_0x3b1e39),this['_addHookBase'](_0x1ced52,_0x3b1e39),this[_0xf35741(0x194)](_0xf35741(0x1d3),_0x3b1e39),this['_addHookBase'](_0xf35741(0x1e1),_0x3b1e39),_0x3b1e39(),_0x5ed133['$dispStatic']=_0xc72926;const _0x59d36f=()=>{const _0x21cbb2=_0xf35741;_0x5ed133[_0x21cbb2(0x1c6)](this[_0x21cbb2(0x1df)](_0x343515,_0x1ced52,_0x212860));};this['_addHookBase'](_0x212860,_0x59d36f),this['_addHookBase'](_0x343515,_0x59d36f),this['_addHookBase'](_0x1ced52,_0x59d36f),this['_addHookBase'](_0xf35741(0x1d3),_0x59d36f),this['_addHookBase'](_0xf35741(0x1e1),_0x59d36f);}_0x242d86++;const _0x2e0025=this[_0xf35741(0x1b5)](_0x343515,_0x1ced52,_0x212860);_0x5ed133['$sel'][_0xf35741(0x1af)](!_0x2e0025),_0x5ed133[_0xf35741(0x1c7)][_0xf35741(0x1af)](_0x2e0025);}return _0x242d86;}static[_0x44160b(0x1a2)](_0x37f264){const _0x263b00=_0x44160b;return Parser['getOrdinalForm'](_0x37f264)+_0x263b00(0x1bd);}static['_getPropsSpell'](_0x4c3461,_0x239ab8,_0x442172){const _0x5cfb22=_0x44160b;return{'propSpellLevel':_0x4c3461+'_'+_0x239ab8+'_'+_0x442172+_0x5cfb22(0x1cd)};}static[_0x44160b(0x1de)](_0x1ba583,_0x1a5f37){return{'propCnt':_0x1ba583+'_'+_0x1a5f37+'_cntFixed'};}static[_0x44160b(0x1a3)](_0x57e11e){const _0x4d9e9e=_0x44160b;return{'propSpellLevelMax':_0x57e11e+_0x4d9e9e(0x1cb)};}['_isAnyChoice'](){const _0x2e2d88=_0x44160b;if(this[_0x2e2d88(0x1d7)][_0x2e2d88(0x1d3)]==null||this[_0x2e2d88(0x1d7)]['targetLevel']==null||this['_state']['casterProgression']==null)return![];return!!(this[_0x2e2d88(0x1d7)][_0x2e2d88(0x1d4)]&&(this[_0x2e2d88(0x1d7)][_0x2e2d88(0x1ab)]||this['_state'][_0x2e2d88(0x1ce)])||this[_0x2e2d88(0x1d7)][_0x2e2d88(0x1a4)]&&(this[_0x2e2d88(0x1d7)][_0x2e2d88(0x199)]||this['_state']['spellsKnownAllowHigherLevel']));}[_0x44160b(0x1df)](_0x14130b,_0x565272,_0x2e1362){const _0x5c7d4f=_0x44160b,_0x3cd08c=Charactermancer_Util[_0x5c7d4f(0x1d8)]({'casterProgression':this[_0x5c7d4f(0x1d7)][_0x5c7d4f(0x1d6)],'curLevel':this[_0x5c7d4f(0x1d7)][_0x5c7d4f(0x1d3)],'targetLevel':this[_0x5c7d4f(0x1d7)]['targetLevel']})?.[_0x5c7d4f(0x1d0)]||0x0,_0x448765=this['_state'][_0x14130b]?0x1:_0x3cd08c,_0x521fb7=this[_0x5c7d4f(0x1d7)][_0x565272]?_0x3cd08c:this[_0x5c7d4f(0x1d7)][_0x2e1362],_0xafdab5=[];for(let _0xe17e15=_0x448765;_0xe17e15<=_0x521fb7;++_0xe17e15)_0xafdab5[_0x5c7d4f(0x1d2)](_0xe17e15);return _0xafdab5;}[_0x44160b(0x197)](){const _0x5df904=_0x44160b;[...new Array(Consts[_0x5df904(0x1ae)])]['forEach']((_0x3c237f,_0x3c3656)=>this[_0x5df904(0x198)](_0x3c3656+0x1)),this[_0x5df904(0x1e7)]();}[_0x44160b(0x198)](_0x4c15b6){const _0x1079a5=_0x44160b;if(this[_0x1079a5(0x19c)]()||!this['_state'][_0x1079a5(0x1a4)]){this['_doPopulateState_forLevel_doReset']({'lvl':_0x4c15b6,'namespace':_0x1079a5(0x1ba)});return;}const _0x322f51=this[_0x1079a5(0x1d7)][_0x1079a5(0x1a4)][_0x4c15b6-0x2]||0x0,_0x81b77d=this[_0x1079a5(0x1d7)][_0x1079a5(0x1a4)][_0x4c15b6-0x1]||0x0,_0x50f236=_0x81b77d-_0x322f51;this[_0x1079a5(0x1e0)]({'lvl':_0x4c15b6,'namespace':'generic','numSpells':_0x50f236,'propIsAllowLower':_0x1079a5(0x199),'propIsAllowHigher':'spellsKnownAllowHigherLevel'});}[_0x44160b(0x19c)](){const _0x33fd55=_0x44160b;return this['_state'][_0x33fd55(0x1d3)]==null||this[_0x33fd55(0x1d7)][_0x33fd55(0x1e1)]==null||this[_0x33fd55(0x1d7)][_0x33fd55(0x1d6)]==null||UtilActors[_0x33fd55(0x1e2)][this['_state']['casterProgression']]==null;}['_doPopulateState_forLevel_doReset']({lvl:_0xfbb831,namespace:_0x1150b0}){const _0x56e37a=_0x44160b,{propCnt:_0x59ea75}=this['constructor'][_0x56e37a(0x1de)](_0xfbb831,_0x1150b0);this[_0x56e37a(0x1d7)][_0x59ea75]=null;}[_0x44160b(0x1e0)]({lvl:_0x2379c3,namespace:_0x29d3fd,numSpells:_0x1eca61,propIsAllowLower:_0x45a4be,propIsAllowHigher:_0x148b4a}){const _0x4105bd=_0x44160b,_0x55015d=Charactermancer_Util[_0x4105bd(0x1d8)]({'casterProgression':this[_0x4105bd(0x1d7)]['casterProgression'],'curLevel':0x0,'targetLevel':_0x2379c3})?.['spellLevelHigh']||0x0;[...new Array(_0x1eca61)][_0x4105bd(0x1b2)]((_0x15e288,_0x5bc6f5)=>{const _0x3b8cc9=_0x4105bd,{propSpellLevel:_0x4a3982}=this['constructor'][_0x3b8cc9(0x1b7)](_0x2379c3,_0x29d3fd,_0x5bc6f5);if(this[_0x3b8cc9(0x1d7)][_0x4a3982]==null)this[_0x3b8cc9(0x1d7)][_0x4a3982]=_0x55015d;else{let _0x1bff84=this['_state'][_0x4a3982];if(!this['_state'][_0x45a4be])_0x1bff84=Math[_0x3b8cc9(0x1d9)](_0x1bff84,_0x55015d);if(!this[_0x3b8cc9(0x1d7)][_0x148b4a])_0x1bff84=Math['min'](_0x1bff84,_0x55015d);this[_0x3b8cc9(0x1d7)][_0x4a3982]=_0x1bff84;}});const {propCnt:_0x500564}=this[_0x4105bd(0x1b6)]['_getPropsLevel'](_0x2379c3,_0x29d3fd);this[_0x4105bd(0x1d7)][_0x500564]=_0x1eca61;const {propSpellLevelMax:_0xd73380}=this[_0x4105bd(0x1b6)][_0x4105bd(0x1a3)](_0x2379c3);this[_0x4105bd(0x1d7)][_0xd73380]=_0x55015d;}[_0x44160b(0x1dc)](){const _0x477d02=_0x44160b;[...new Array(Consts[_0x477d02(0x1ae)])]['forEach']((_0x5b9db3,_0x69e49b)=>this[_0x477d02(0x195)](_0x69e49b+0x1)),this[_0x477d02(0x1e7)]();}[_0x44160b(0x195)](_0x4b822f){const _0x4d7bae=_0x44160b;if(this['_doPopulateState_forLevel_isDoReset']()||!this[_0x4d7bae(0x1d7)][_0x4d7bae(0x1d4)]){this[_0x4d7bae(0x1e8)]({'lvl':_0x4b822f,'namespace':_0x4d7bae(0x1d5)});return;}const _0x4e13d0=this['_state']['spellsKnownProgressionFixed'][_0x4b822f-0x1]||0x0;this[_0x4d7bae(0x1e0)]({'lvl':_0x4b822f,'namespace':_0x4d7bae(0x1d5),'numSpells':_0x4e13d0,'propIsAllowLower':_0x4d7bae(0x1ab),'propIsAllowHigher':_0x4d7bae(0x1ce)});}[_0x44160b(0x1b5)](_0x69a7ae,_0x41cfe7,_0x54bd6d){const _0x183fde=_0x44160b,_0x5f5085=Charactermancer_Util['getCasterProgressionMeta']({'casterProgression':this[_0x183fde(0x1d7)][_0x183fde(0x1d6)],'curLevel':this['_state'][_0x183fde(0x1d3)],'targetLevel':this['_state'][_0x183fde(0x1e1)]})?.['spellLevelHigh']||0x0;if(_0x5f5085<=0x1)return!![];const _0x3c4744=this[_0x183fde(0x1d7)][_0x69a7ae]&&this['_state'][_0x54bd6d]!==0x1,_0xc2aea6=this['_state'][_0x41cfe7]&&this[_0x183fde(0x1d7)][_0x54bd6d]!==0x9;return!_0x3c4744&&!_0xc2aea6;}static[_0x44160b(0x1e6)]({targetLevel:_0x529911,casterProgression:_0x58d0bc,spellsKnownProgression:_0x548499,spellsKnownProgressionFixed:_0x1d4b4e}){const _0x4d6db2=_0x44160b,_0x3954ea=[...new Array(0x9)][_0x4d6db2(0x1b2)](()=>0x0);let _0x495510=![];return _0x548499&&_0x529911!=null&&_0x58d0bc&&(_0x495510=!![],this[_0x4d6db2(0x1e3)](_0x3954ea,{'targetLevel':_0x529911,'casterProgression':_0x58d0bc,'spellsKnownProgression':_0x548499})),_0x1d4b4e&&_0x529911!=null&&_0x58d0bc&&(_0x495510=!![],this['_getFormData_handleKnownProgressionFixed_noChoice'](_0x3954ea,{'targetLevel':_0x529911,'casterProgression':_0x58d0bc,'spellsKnownProgressionFixed':_0x1d4b4e})),{'isFormComplete':!![],'isAnyData':_0x495510,'data':_0x3954ea};}[_0x44160b(0x1a7)](){const _0x27c607=_0x44160b,_0x21a07f=[...new Array(0x9)][_0x27c607(0x1b2)](()=>0x0);let _0x254f09=![];return this[_0x27c607(0x1d7)][_0x27c607(0x1a4)]&&this['_state']['targetLevel']!=null&&this['_state'][_0x27c607(0x1d6)]&&(_0x254f09=!![],this[_0x27c607(0x1c8)](_0x21a07f)),this[_0x27c607(0x1d7)][_0x27c607(0x1d4)]&&this[_0x27c607(0x1d7)][_0x27c607(0x1e1)]!=null&&this['_state']['casterProgression']&&(_0x254f09=!![],this[_0x27c607(0x1e9)](_0x21a07f)),{'isFormComplete':!![],'isAnyData':_0x254f09,'data':_0x21a07f};}['_getFormData_handleKnownProgressionGeneric'](_0x53f59a){const _0x200aa4=_0x44160b;if(!this['_state'][_0x200aa4(0x199)]&&!this['_state'][_0x200aa4(0x1a5)])this[_0x200aa4(0x1b6)][_0x200aa4(0x1e3)](_0x53f59a,{'targetLevel':this[_0x200aa4(0x1d7)][_0x200aa4(0x1e1)],'casterProgression':this['_state'][_0x200aa4(0x1d6)],'spellsKnownProgression':this[_0x200aa4(0x1d7)][_0x200aa4(0x1a4)]});else this['_getFormData_handleKnownProgressionGeneric_choice'](_0x53f59a);}['_getFormData_handleKnownProgressionFixed'](_0x57499d){const _0x19dcdc=_0x44160b;if(!this['_state'][_0x19dcdc(0x1ab)]&&this[_0x19dcdc(0x1d7)][_0x19dcdc(0x1ce)])this[_0x19dcdc(0x1b6)][_0x19dcdc(0x1d1)](_0x57499d,{'targetLevel':this[_0x19dcdc(0x1d7)][_0x19dcdc(0x1e1)],'casterProgression':this[_0x19dcdc(0x1d7)][_0x19dcdc(0x1d6)],'spellsKnownProgressionFixed':this[_0x19dcdc(0x1d7)][_0x19dcdc(0x1d4)]});else this['_getFormData_handleKnownProgressionFixed_choice'](_0x57499d);}static[_0x44160b(0x1e3)](_0x31034b,{targetLevel:_0x56a108,casterProgression:_0x2a76c9,spellsKnownProgression:_0x12fefb}){const _0x315b3b=_0x44160b;[...new Array(_0x56a108)][_0x315b3b(0x1e4)]((_0x25e57a,_0x48e032)=>{const _0x708828=_0x315b3b,_0x544291=Charactermancer_Util[_0x708828(0x1d8)]({'casterProgression':_0x2a76c9,'curLevel':0x0,'targetLevel':_0x48e032+0x1})?.[_0x708828(0x1d0)]||0x0,_0x587507=_0x544291-0x1;if(_0x587507<0x0)return;const _0x4abe69=_0x12fefb[_0x48e032-0x1]||0x0,_0x3eaead=_0x12fefb[_0x48e032]||0x0,_0x2035d0=_0x3eaead-_0x4abe69;_0x31034b[_0x587507]+=_0x2035d0;});}[_0x44160b(0x19a)](_0x4d7c8c){const _0x383593=_0x44160b;this[_0x383593(0x1bc)]({'namespace':_0x383593(0x1ba),'totalKnownPerLevel':_0x4d7c8c,'propIsAllowLower':_0x383593(0x199),'propIsAllowHigher':_0x383593(0x1a5)});}static[_0x44160b(0x1d1)](_0x16066b,{targetLevel:_0x2a229d,casterProgression:_0x3014bb,spellsKnownProgressionFixed:_0x24f87a}){const _0x255923=_0x44160b;_0x24f87a['slice'](0x0,_0x2a229d)[_0x255923(0x1e4)]((_0x21985a,_0x1624e2)=>{const _0x5c30c0=_0x255923,_0x55b525=Charactermancer_Util[_0x5c30c0(0x1d8)]({'casterProgression':_0x3014bb,'curLevel':0x0,'targetLevel':_0x1624e2+0x1})?.[_0x5c30c0(0x1d0)]||0x0,_0x2471f3=_0x55b525-0x1;if(_0x2471f3<0x0)return;_0x16066b[_0x2471f3]+=_0x21985a;});}[_0x44160b(0x1dd)](_0x931425){const _0x35b709=_0x44160b;this[_0x35b709(0x1bc)]({'namespace':'fixed','totalKnownPerLevel':_0x931425,'propIsAllowLower':'spellsKnownProgressionFixedAllowLowerLevel','propIsAllowHigher':_0x35b709(0x1ce)});}['_getFormData_handleKnownProgression_choice']({namespace:_0x1ee3ea,totalKnownPerLevel:_0x19dd49,propIsAllowLower:_0x200a7c,propIsAllowHigher:_0x2cb78a}){const _0x23ed4b=_0x44160b,_0x5c9b7a=Charactermancer_Util[_0x23ed4b(0x1d8)]({'casterProgression':this[_0x23ed4b(0x1d7)][_0x23ed4b(0x1d6)],'curLevel':this['_state'][_0x23ed4b(0x1d3)],'targetLevel':this[_0x23ed4b(0x1d7)][_0x23ed4b(0x1e1)]})?.[_0x23ed4b(0x1d0)]||0x0;[...new Array(this[_0x23ed4b(0x1d7)]['targetLevel'])]['map']((_0x28bcca,_0x6ac5c)=>{const _0x46ea36=_0x23ed4b,_0x3eb5de=_0x6ac5c+0x1,_0xd318d5=Charactermancer_Util[_0x46ea36(0x1d8)]({'casterProgression':this[_0x46ea36(0x1d7)][_0x46ea36(0x1d6)],'curLevel':0x0,'targetLevel':_0x3eb5de})?.['spellLevelHigh']||0x0,{propCnt:_0x5ac16f}=this[_0x46ea36(0x1b6)]['_getPropsLevel'](_0x3eb5de,_0x1ee3ea),_0x5d05d1=this[_0x46ea36(0x1d7)][_0x5ac16f];for(let _0x3969ba=0x0;_0x3969ba<_0x5d05d1;++_0x3969ba){const {propSpellLevel:_0x10cbb0}=this[_0x46ea36(0x1b6)][_0x46ea36(0x1b7)](_0x3eb5de,_0x1ee3ea,_0x3969ba);let _0x12ee18=this[_0x46ea36(0x1d7)][_0x10cbb0];if(!this[_0x46ea36(0x1d7)][_0x200a7c])_0x12ee18=Math[_0x46ea36(0x1d9)](_0x12ee18,_0xd318d5);if(!this[_0x46ea36(0x1d7)][_0x2cb78a])_0x12ee18=Math['min'](_0x12ee18,_0xd318d5);_0x12ee18=Math[_0x46ea36(0x19d)](_0x12ee18,_0x5c9b7a),_0x19dd49[_0x12ee18-0x1]++;}});}[_0x44160b(0x1b4)](){return{'curLevel':null,'targetLevel':null,'casterProgression':null,'spellsKnownProgression':null,'spellsKnownAllowLowerLevel':!![],'spellsKnownAllowHigherLevel':!![],'spellsKnownProgressionFixed':null,'spellsKnownProgressionFixedAllowLowerLevel':![],'spellsKnownProgressionFixedAllowHigherLevel':![],'pulseFixedLearnedProgression':![]};}}export{Charactermancer_Spell_SlotLevelSelect};
+			${$stgBody}
+		</div>`;
+	}
+
+	_hkRow_doAdjustElements ({namespace, propCnt, selMetas, lvl, propSpellLevelMax, $cellSpells, propIsAllowLower, propIsAllowHigher}) {
+		let cntVisible = 0;
+
+		const numSpellsAtLevel = this._state[propCnt];
+		for (let i = 0, len = Math.max(numSpellsAtLevel, selMetas.length); i < len; ++i) {
+			let selMeta = selMetas[i];
+
+			if (i > numSpellsAtLevel) {
+				selMeta.$sel.hideVe();
+				selMeta.$dispStatic.hideVe();
+				continue;
+			}
+
+			const {propSpellLevel} = this.constructor._getPropsSpell(lvl, namespace, i);
+
+			if (!selMetas[i]) {
+				selMeta = ComponentUiUtil.$getSelEnum(
+					this,
+					propSpellLevel,
+					{
+						values: this._geSpellLevelSelValues(propIsAllowLower, propIsAllowHigher, propSpellLevelMax),
+						asMeta: true,
+						fnDisplay: it => this.constructor._getSpellLevelDisplay(it),
+					},
+				);
+				selMeta.$sel
+					.addClass("manc-sp__sel-slot-level text-center p-0 clickable")
+					.appendTo($cellSpells);
+				selMetas[i] = selMeta;
+
+				const hkSelTitle = () => selMeta.$sel.title(`You have selected to learn a ${this._state[propSpellLevel]}-level spell at this level.`);
+				this._addHookBase(propSpellLevel, hkSelTitle);
+				hkSelTitle();
+
+				this._addHookBase(propSpellLevel, () => this._doPulseFixedLearnedProgression());
+
+				// region Static alternative
+				const $dispStatic = $(`<div class="ve-flex-vh-center manc-sp__sel-slot-level text-center ve-muted"></div>`).appendTo($cellSpells);
+				const hkStatic = () => {
+					$dispStatic.toggleVe(this._isShowStaticFixedValue(propIsAllowLower, propIsAllowHigher, propSpellLevelMax));
+					$dispStatic
+						.text(this.constructor._getSpellLevelDisplay(this._state[propSpellLevelMax]))
+						.title(`This box indicates you will learn a ${this._state[propSpellLevelMax]}-level spell at this level.`);
+				};
+				this._addHookBase(propSpellLevel, hkStatic);
+				this._addHookBase(propSpellLevelMax, hkStatic);
+				this._addHookBase(propIsAllowLower, hkStatic);
+				this._addHookBase(propIsAllowHigher, hkStatic);
+				this._addHookBase("curLevel", hkStatic);
+				this._addHookBase("targetLevel", hkStatic);
+				hkStatic();
+
+				selMeta.$dispStatic = $dispStatic;
+				// endregion
+
+				const hkMaxSpellLevel = () => {
+					selMeta.setValues(this._geSpellLevelSelValues(propIsAllowLower, propIsAllowHigher, propSpellLevelMax));
+				};
+				this._addHookBase(propSpellLevelMax, hkMaxSpellLevel);
+				this._addHookBase(propIsAllowLower, hkMaxSpellLevel);
+				this._addHookBase(propIsAllowHigher, hkMaxSpellLevel);
+				this._addHookBase("curLevel", hkMaxSpellLevel);
+				this._addHookBase("targetLevel", hkMaxSpellLevel);
+			}
+
+			cntVisible++;
+
+			const isShowStatic = this._isShowStaticFixedValue(propIsAllowLower, propIsAllowHigher, propSpellLevelMax);
+			selMeta.$sel.toggleVe(!isShowStatic);
+			selMeta.$dispStatic.toggleVe(isShowStatic);
+		}
+
+		return cntVisible;
+	}
+
+	static _getSpellLevelDisplay (lvl) { return `${Parser.getOrdinalForm(lvl)}-level sp.`; }
+
+	static _getPropsSpell (lvl, namespace, ix) {
+		return {
+			propSpellLevel: `${lvl}_${namespace}_${ix}_spellLevel`,
+		};
+	}
+
+	static _getPropsLevel (lvl, namespace) {
+		return {
+			propCnt: `${lvl}_${namespace}_cntFixed`,
+		};
+	}
+
+	static _getPropsGeneral (lvl) {
+		return {
+			propSpellLevelMax: `${lvl}_spellLevelMax`,
+		};
+	}
+
+	_isAnyChoice () {
+		if (this._state.curLevel == null || this._state.targetLevel == null || this._state.casterProgression == null) return false;
+
+		return !!(
+			(this._state.spellsKnownProgressionFixed && (this._state.spellsKnownProgressionFixedAllowLowerLevel || this._state.spellsKnownProgressionFixedAllowHigherLevel))
+			|| (this._state.spellsKnownProgression && (this._state.spellsKnownAllowLowerLevel || this._state.spellsKnownAllowHigherLevel))
+		);
+	}
+
+	_geSpellLevelSelValues (propIsAllowLower, propIsAllowHigher, propSpellLevelMax) {
+		const maxSpellLevel = Charactermancer_Spell_Util.getCasterProgressionMeta({
+			casterProgression: this._state.casterProgression,
+			curLevel: this._state.curLevel,
+			targetLevel: this._state.targetLevel,
+		})?.spellLevelHigh || 0;
+
+		const min = this._state[propIsAllowLower] ? 1 : maxSpellLevel;
+		const max = this._state[propIsAllowHigher] ? maxSpellLevel : this._state[propSpellLevelMax];
+
+		const out = [];
+		for (let i = min; i <= max; ++i) out.push(i);
+		return out;
+	}
+
+	_doPopulateGenericKnownState () {
+		[...new Array(Consts.CHAR_MAX_LEVEL)].forEach((_, ixLvl) => this._doPopulateGenericKnownState_forLevel(ixLvl + 1));
+
+		this._doPulseFixedLearnedProgression();
+	}
+
+	_doPopulateGenericKnownState_forLevel (lvl) {
+		if (this._doPopulateState_forLevel_isDoReset() || !this._state.spellsKnownProgression) {
+			this._doPopulateState_forLevel_doReset({lvl, namespace: "generic"});
+			return;
+		}
+
+		const prevCntSpells = this._state.spellsKnownProgression[lvl - 2] || 0;
+		const curCntSpells = this._state.spellsKnownProgression[lvl - 1] || 0;
+		const numSpells = curCntSpells - prevCntSpells;
+
+		this._doPopulateState_forLevel_doPopulateForNumSpells({
+			lvl,
+			namespace: "generic",
+			numSpells,
+			propIsAllowLower: "spellsKnownAllowLowerLevel",
+			propIsAllowHigher: "spellsKnownAllowHigherLevel",
+		});
+	}
+
+	_doPopulateState_forLevel_isDoReset () {
+		return this._state.curLevel == null || this._state.targetLevel == null || this._state.casterProgression == null || UtilDataConverter.CASTER_TYPE_TO_PROGRESSION[this._state.casterProgression] == null;
+	}
+
+	_doPopulateState_forLevel_doReset ({lvl, namespace}) {
+		const {propCnt} = this.constructor._getPropsLevel(lvl, namespace);
+		this._state[propCnt] = null;
+	}
+
+	_doPopulateState_forLevel_doPopulateForNumSpells ({lvl, namespace, numSpells, propIsAllowLower, propIsAllowHigher}) {
+		const maxSpellLevel = Charactermancer_Spell_Util.getCasterProgressionMeta({
+			casterProgression: this._state.casterProgression,
+			curLevel: 0,
+			targetLevel: lvl,
+		})?.spellLevelHigh || 0;
+
+		[...new Array(numSpells)].map((_, i) => {
+			const {propSpellLevel} = this.constructor._getPropsSpell(lvl, namespace, i);
+
+			if (this._state[propSpellLevel] == null) this._state[propSpellLevel] = maxSpellLevel;
+			else {
+				let nxtVal = this._state[propSpellLevel];
+
+				// Clamp the current value to the maximum spell level from above or below, depending
+				if (!this._state[propIsAllowLower]) nxtVal = Math.max(nxtVal, maxSpellLevel);
+				if (!this._state[propIsAllowHigher]) nxtVal = Math.min(nxtVal, maxSpellLevel);
+
+				this._state[propSpellLevel] = nxtVal;
+			}
+		});
+
+		const {propCnt} = this.constructor._getPropsLevel(lvl, namespace);
+		this._state[propCnt] = numSpells;
+
+		const {propSpellLevelMax} = this.constructor._getPropsGeneral(lvl);
+		this._state[propSpellLevelMax] = maxSpellLevel;
+	}
+
+	_doPopulateFixedKnownState () {
+		[...new Array(Consts.CHAR_MAX_LEVEL)].forEach((_, ixLvl) => this._doPopulateFixedKnownState_forLevel(ixLvl + 1));
+
+		this._doPulseFixedLearnedProgression();
+	}
+
+	_doPopulateFixedKnownState_forLevel (lvl) {
+		if (this._doPopulateState_forLevel_isDoReset() || !this._state.spellsKnownProgressionFixed) {
+			this._doPopulateState_forLevel_doReset({lvl, namespace: "fixed"});
+			return;
+		}
+
+		const numSpells = this._state.spellsKnownProgressionFixed[lvl - 1] || 0;
+		this._doPopulateState_forLevel_doPopulateForNumSpells({
+			lvl,
+			namespace: "fixed",
+			numSpells,
+			propIsAllowLower: "spellsKnownProgressionFixedAllowLowerLevel",
+			propIsAllowHigher: "spellsKnownProgressionFixedAllowHigherLevel",
+		});
+	}
+
+	_isShowStaticFixedValue (propIsAllowLower, propIsAllowHigher, propSpellLevelMax) {
+		const maxSpellLevel = Charactermancer_Spell_Util.getCasterProgressionMeta({
+			casterProgression: this._state.casterProgression,
+			curLevel: this._state.curLevel,
+			targetLevel: this._state.targetLevel,
+		})?.spellLevelHigh || 0;
+		if (maxSpellLevel <= 1) return true;
+
+		const isAllowLower = this._state[propIsAllowLower] && this._state[propSpellLevelMax] !== 1;
+		const isAllowHigher = this._state[propIsAllowHigher] && this._state[propSpellLevelMax] !== 9;
+		return !isAllowLower && !isAllowHigher;
+	}
+
+	/** As per `getFormData`, but we assume the user never customized their slot selection. */
+	static getDefaultFormData ({targetLevel, casterProgression, spellsKnownProgression, spellsKnownProgressionFixed}) {
+		const out = [...new Array(9)].map(() => 0);
+		let isAnyData = false;
+
+		if (spellsKnownProgression && targetLevel != null && casterProgression) {
+			isAnyData = true;
+			this._getFormData_handleKnownProgressionGeneric_noChoice(out, {targetLevel, casterProgression, spellsKnownProgression});
+		}
+
+		if (spellsKnownProgressionFixed && targetLevel != null && casterProgression) {
+			isAnyData = true;
+			this._getFormData_handleKnownProgressionFixed_noChoice(out, {targetLevel, casterProgression, spellsKnownProgressionFixed});
+		}
+
+		return {
+			isFormComplete: true,
+			isAnyData,
+			data: out,
+		};
+	}
+
+	getFormData () {
+		const out = [...new Array(9)].map(() => 0);
+		let isAnyData = false;
+
+		if (this._state.spellsKnownProgression && this._state.targetLevel != null && this._state.casterProgression) {
+			isAnyData = true;
+			this._getFormData_handleKnownProgressionGeneric(out);
+		}
+
+		if (this._state.spellsKnownProgressionFixed && this._state.targetLevel != null && this._state.casterProgression) {
+			isAnyData = true;
+			this._getFormData_handleKnownProgressionFixed(out);
+		}
+
+		return {
+			isFormComplete: true,
+			isAnyData,
+			data: out,
+		};
+	}
+
+	_getFormData_handleKnownProgressionGeneric (totalKnownPerLevel) {
+		if (!this._state.spellsKnownAllowLowerLevel && !this._state.spellsKnownAllowHigherLevel) {
+			this.constructor._getFormData_handleKnownProgressionGeneric_noChoice(
+				totalKnownPerLevel,
+				{
+					targetLevel: this._state.targetLevel,
+					casterProgression: this._state.casterProgression,
+					spellsKnownProgression: this._state.spellsKnownProgression,
+				},
+			);
+		} else this._getFormData_handleKnownProgressionGeneric_choice(totalKnownPerLevel);
+	}
+
+	_getFormData_handleKnownProgressionFixed (totalKnownPerLevel) {
+		if (!this._state.spellsKnownProgressionFixedAllowLowerLevel && this._state.spellsKnownProgressionFixedAllowHigherLevel) {
+			this.constructor._getFormData_handleKnownProgressionFixed_noChoice(
+				totalKnownPerLevel,
+				{
+					targetLevel: this._state.targetLevel,
+					casterProgression: this._state.casterProgression,
+					spellsKnownProgressionFixed: this._state.spellsKnownProgressionFixed,
+				},
+			);
+		} else this._getFormData_handleKnownProgressionFixed_choice(totalKnownPerLevel);
+	}
+
+	static _getFormData_handleKnownProgressionGeneric_noChoice (totalKnownPerLevel, {targetLevel, casterProgression, spellsKnownProgression}) {
+		[...new Array(targetLevel)]
+			.forEach((_, i) => {
+				const maxSpellLevel = Charactermancer_Spell_Util.getCasterProgressionMeta({
+					casterProgression: casterProgression,
+					curLevel: 0,
+					targetLevel: i + 1,
+				})?.spellLevelHigh || 0;
+
+				const ixLastSlot = maxSpellLevel - 1;
+				if (ixLastSlot < 0) return;
+
+				const prevCntSpells = spellsKnownProgression[i - 1] || 0;
+				const curCntSpells = spellsKnownProgression[i] || 0;
+				const numSpells = curCntSpells - prevCntSpells;
+
+				// Add the number of spells known to our total for this level
+				totalKnownPerLevel[ixLastSlot] += numSpells;
+			});
+	}
+
+	_getFormData_handleKnownProgressionGeneric_choice (totalKnownPerLevel) {
+		this._getFormData_handleKnownProgression_choice({
+			namespace: "generic",
+			totalKnownPerLevel,
+			propIsAllowLower: "spellsKnownAllowLowerLevel",
+			propIsAllowHigher: "spellsKnownAllowHigherLevel",
+		});
+	}
+
+	static _getFormData_handleKnownProgressionFixed_noChoice (totalKnownPerLevel, {targetLevel, casterProgression, spellsKnownProgressionFixed}) {
+		spellsKnownProgressionFixed.slice(0, targetLevel)
+			.forEach((lvlFixedValue, i) => {
+				const maxSpellLevel = Charactermancer_Spell_Util.getCasterProgressionMeta({
+					casterProgression: casterProgression,
+					curLevel: 0,
+					targetLevel: i + 1,
+				})?.spellLevelHigh || 0;
+
+				const ixLastSlot = maxSpellLevel - 1;
+				if (ixLastSlot < 0) return;
+
+				// Add the number of spells known to our total for this level
+				totalKnownPerLevel[ixLastSlot] += lvlFixedValue;
+			});
+	}
+
+	_getFormData_handleKnownProgressionFixed_choice (totalKnownPerLevel) {
+		this._getFormData_handleKnownProgression_choice({
+			namespace: "fixed",
+			totalKnownPerLevel,
+			propIsAllowLower: "spellsKnownProgressionFixedAllowLowerLevel",
+			propIsAllowHigher: "spellsKnownProgressionFixedAllowHigherLevel",
+		});
+	}
+
+	_getFormData_handleKnownProgression_choice ({namespace, totalKnownPerLevel, propIsAllowLower, propIsAllowHigher}) {
+		const maxOverallSpellLevel = Charactermancer_Spell_Util.getCasterProgressionMeta({
+			casterProgression: this._state.casterProgression,
+			curLevel: this._state.curLevel,
+			targetLevel: this._state.targetLevel,
+		})?.spellLevelHigh || 0;
+
+		[...new Array(this._state.targetLevel)]
+			.map((_, ixLvl) => {
+				const lvl = ixLvl + 1;
+
+				const maxSpellLevel = Charactermancer_Spell_Util.getCasterProgressionMeta({
+					casterProgression: this._state.casterProgression,
+					curLevel: 0,
+					targetLevel: lvl,
+				})?.spellLevelHigh || 0;
+
+				const {propCnt} = this.constructor._getPropsLevel(lvl, namespace);
+
+				const numSpells = this._state[propCnt];
+				for (let i = 0; i < numSpells; ++i) {
+					const {propSpellLevel} = this.constructor._getPropsSpell(lvl, namespace, i);
+
+					let spellLevel = this._state[propSpellLevel];
+
+					// Clamp the current value to the maximum spell level from above or below, depending
+					if (!this._state[propIsAllowLower]) spellLevel = Math.max(spellLevel, maxSpellLevel);
+					if (!this._state[propIsAllowHigher]) spellLevel = Math.min(spellLevel, maxSpellLevel);
+
+					// Clamp to the max spell level this class can access at this level
+					spellLevel = Math.min(spellLevel, maxOverallSpellLevel);
+
+					totalKnownPerLevel[spellLevel - 1]++;
+				}
+			});
+	}
+
+	_getDefaultState () {
+		return {
+			curLevel: null,
+			targetLevel: null,
+
+			casterProgression: null,
+
+			spellsKnownProgression: null,
+			spellsKnownAllowLowerLevel: true, // This is a dummy value, to match the "fixed" version
+			spellsKnownAllowHigherLevel: true, // (As above)
+
+			spellsKnownProgressionFixed: null,
+			spellsKnownProgressionFixedAllowLowerLevel: false,
+			spellsKnownProgressionFixedAllowHigherLevel: false,
+
+			pulseFixedLearnedProgression: false,
+		};
+	}
+}
+
+export {Charactermancer_Spell_Util, Charactermancer_Spell_SlotLevelSelect};

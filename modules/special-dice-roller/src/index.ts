@@ -8,6 +8,7 @@ import {TorRoller} from './tor/roller';
 import {V5Roller} from './v5/roller';
 import { warhammerRoller, WarhammerRoller } from './wfrp3/roller';
 import {Descent2Roller} from './desc2/roller';
+import {OVARoller, ovaRoller} from './ova/roller';
 
 // begin foundry types
 interface IHooks {
@@ -52,6 +53,7 @@ interface IExportedRollers {
     tor: TorRoller;
     warhammer3: WarhammerRoller;
     desc2: Descent2Roller;
+    ova: OVARoller;
 }
 
 const specialDiceRoller = {
@@ -64,26 +66,27 @@ const specialDiceRoller = {
     tor: new TorRoller(secureRandomNumber, 'tor'),
     warhammer3: warhammerRoller(secureRandomNumber, 'wfrp3'),
     desc2: new Descent2Roller(secureRandomNumber, 'desc2'),
+    ova: ovaRoller(secureRandomNumber, 'ova'),
 };
 
 Hooks.on('init', () => {
     game.specialDiceRoller = specialDiceRoller;
+
+    Hooks.on('chatMessage', (_: IChatLog, messageText: string, data: IChatData) => {
+        if (messageText !== undefined) {
+            for (const roller of rollers) {
+                if (roller.handlesCommand(messageText)) {
+                    data.content = roller.rollCommand(messageText);
+                    ChatMessage.create(data, {});
+                    return false;
+                }
+            }
+        }
+        return true;
+    });
 });
 
 const rollers: IRoller[] = Object.values(specialDiceRoller);
-
-Hooks.on('chatMessage', (_: IChatLog, messageText: string, data: IChatData) => {
-    if (messageText !== undefined) {
-        for (const roller of rollers) {
-            if (roller.handlesCommand(messageText)) {
-                data.content = roller.rollCommand(messageText);
-                ChatMessage.create(data, {});
-                return false;
-            }
-        }
-    }
-    return true;
-});
 
 function parseRoll(input: HTMLInputElement): IndexedRoll {
     const die = parseInt(input.dataset.die ?? '0', 10);

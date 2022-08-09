@@ -4,6 +4,8 @@
     "gmScreen": {
       "Title": "GM Screen",
       "ClearCell": "Clear Cell",
+      "ConfigureCell": "Configure Column and Row Spanning",
+      "EmptyCellHint": "Drag and Drop a Journal Entry, Rollable Table, Actor, or Item from either the World or a Compendium.",
       "Open": "GM Screen",
       "OpenPlayer": "Player Screen",
       "OpenFull": "Open the full Entity Sheet",
@@ -26,7 +28,7 @@
       },
       "right-margin": {
         "Name": "Drawer Only: Right Margin",
-        "Hint": "Sets the offest from the sidebar to the right side of the GM Screen. This number affects the maximum possible width of the screen in drawer display mode."
+        "Hint": "Sets the offset from the sidebar to the right side of the GM Screen. This number affects the maximum possible width of the screen in drawer display mode."
       },
       "drawer-height": {
         "Name": "Drawer Only: Height",
@@ -69,6 +71,7 @@
       "GridConfig": "Grid Configuration",
       "GridTabs": "Grid Tab Configuration",
       "table": {
+        "TabOrder": "Order",
         "TabLabel": "Tab Label",
         "Rows": "Rows Override",
         "Columns": "Columns Override",
@@ -77,6 +80,10 @@
       "errors": {
         "empty": "Cannot save the grid with no tabs."
       }
+    },
+    "entitySheet": {
+      "Label": "GM Screen Sheet",
+      "Hint": "Set the sheet used specifically on GM Screen for this item."
     }
   }
 }

@@ -4,24 +4,26 @@
 import {createUploadFolderIfMissing, getSetting, registerSettings, UPLOAD_FOLDER_PATH} from "./settings.js";
 import {convertMessageToImage, createPopoutOnClick, handleChatInteraction} from "./image-manager/manager.js";
 import {freezeGif} from "./image-manager/gif-freez.js";
-import {isFoundry8, log, MODULE_NAME} from "./utils.js";
+import {isAfterFoundry8, log, MODULE_NAME} from "./utils.js";
 
 Hooks.once('init', () => {
     // register all the module's settings
     registerSettings();
     // create the folder for uploading images if it doesn't exist
     createUploadFolderIfMissing()
-        .then(() => log(`Folder ${UPLOAD_FOLDER_PATH} is ready.`));
+        .then(() => log(`Folder ${UPLOAD_FOLDER_PATH} is ready.`))
+        .catch(() => log(`User doesn't have permission to create the upload folder ${UPLOAD_FOLDER_PATH}.`));
 });
 
 Hooks.on('preCreateChatMessage', (message, options) => {
-    const messageSource = isFoundry8() ? message.data._source : message;
+    const messageSource = isAfterFoundry8() ? message.data : message;
 
-    // if a message has only an url and it's an image url convert it to an img tag
+    // if a message has only an url, and it's an image url convert it to an img tag
     const content = convertMessageToImage(messageSource.content);
     if (!content) return;
 
     messageSource.content = content;
+    if (isAfterFoundry8()) messageSource._source.content = content;
     // this is used to prevent the message from showing as a bubble
     // because it will not be rendered correctly
     options.chatBubble = false;

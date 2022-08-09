@@ -1,1 +1,216 @@
-const _0x5413=['PG_OPT_FEATURES','TASK_EXIT_CANCELLED','3793RslUWs','items','pMutActorUpdateOptionalFeature','optionalfeature','keys','_page','isCharactermancer','DataSourceFile','Prerequisite','_pImportEntry_pImportToDirectoryGeneric_pGetImportableData','sourceJsonToFull','sourceJsonToColor','_vLevel','absorbFnBindListeners','\x22\x20(from\x20\x22','131002bLptFM','_pImportEntry_pImportToDirectoryGeneric','pGetOptionalFeatureItem','absorbFnBindListenersRadio','178345dDTYMR','getData','_activateListeners_absorbListItems','options\x20and\x20features','getListPrerequisiteLevelText','type','_isRadio','pHasOptionalFeatureSideLoadedEffects','_list','isCancelled','SOURCE_TYP_BREW','doHookSpellLinkRender','Upload\x20File','get','Source','DataSourceUrl','data','_vPrerequisite','constructor','prerequisite','_lFeatureType','isTemp','_pImportEntry_pImportToActor','5etools','Name','Importing\x20other\x20option/feature\x20\x22','ImportEntryOpts','push','sourceLong','getPrerequisiteText','_pageFilter','mutateForFilters','render','length','25221rewkui','pAddActorItems','_pImportEntry_pFillItems','text-center','name','Level','source','level','_actor','entity','SRD','SOURCE_TYP_CUSTOM','144913vyzNbR','map','pGetHomebrewSources','sourceClassName','getImportedEmbed','TASK_EXIT_COMPLETE','14HnseZY','184718mlrDxF','pAddActorEffects','165286MWFnvj','Other\x20Options\x20and\x20Features','sourceShort','SOURCE_TYP_OFFICIAL_ALL','update','link','_isPreviewable','Custom\x20URL','sourceJsonToAbv'];const _0x3df8=function(_0x5f12d3,_0xf5a2ec){_0x5f12d3=_0x5f12d3-0xcb;let _0x54138d=_0x5413[_0x5f12d3];return _0x54138d;};const _0x4cda8b=_0x3df8;(function(_0x5a7b77,_0x52bf1f){const _0x170a48=_0x3df8;while(!![]){try{const _0x14d5d3=parseInt(_0x170a48(0xdc))*-parseInt(_0x170a48(0xea))+-parseInt(_0x170a48(0xf9))+-parseInt(_0x170a48(0xfd))+parseInt(_0x170a48(0xdd))+parseInt(_0x170a48(0xd6))+parseInt(_0x170a48(0xdf))+-parseInt(_0x170a48(0x11f));if(_0x14d5d3===_0x52bf1f)break;else _0x5a7b77['push'](_0x5a7b77['shift']());}catch(_0xdba2e7){_0x5a7b77['push'](_0x5a7b77['shift']());}}}(_0x5413,0x1a2ef));import{Vetools}from'./Vetools.js';import{LGT}from'./Util.js';import{Config}from'./Config.js';import{UtilList2}from'./UtilList2.js';import{DataConverterOptionalfeature}from'./DataConverterOptionalfeature.js';import{UtilApplications}from'./UtilApplications.js';import{UtilDataSource}from'./UtilDataSource.js';import{ImportListCharacter}from'./ImportListCharacter.js';import{UtilActors}from'./UtilActors.js';import{DataConverter}from'./DataConverter.js';import{DataConverterSpell}from'./DataConverterSpell.js';class ImportListOptionalFeature extends ImportListCharacter{constructor(_0x57fb68){const _0x3bff57=_0x3df8;_0x57fb68=_0x57fb68||{},super({'title':'Import\x20Other\x20Options\x20and\x20Features'},_0x57fb68,{'props':[_0x3bff57(0xed)],'titleSearch':_0x3bff57(0x100),'sidebarTab':_0x3bff57(0xeb),'gameProp':'items','defaultFolderPath':[_0x3bff57(0xe0)],'folderType':'Item','pageFilter':new PageFilterOptionalFeatures(),'page':UrlUtil[_0x3bff57(0xe8)],'isPreviewable':!![],'isDedupable':!![]});}async['pGetSources'](){const _0x4c1640=_0x3df8;return[new UtilDataSource[(_0x4c1640(0x10c))](Config[_0x4c1640(0x10a)]('ui','isStreamerMode')?_0x4c1640(0xd4):_0x4c1640(0x114),Vetools['DATA_URL_OPTIONALFEATURES'],{'filterTypes':[UtilDataSource[_0x4c1640(0xe2)]],'isDefault':!![]}),new UtilDataSource[(_0x4c1640(0x10c))](_0x4c1640(0xe6),'',{'filterTypes':[UtilDataSource[_0x4c1640(0xd5)]]}),new UtilDataSource[(_0x4c1640(0xf1))](_0x4c1640(0x109),{'filterTypes':[UtilDataSource[_0x4c1640(0xd5)]]}),...(await Vetools[_0x4c1640(0xd8)]('optionalfeature'))[_0x4c1640(0xd7)](({name:_0x39aeae,url:_0x467322})=>new UtilDataSource[(_0x4c1640(0x10c))](_0x39aeae,_0x467322,{'filterTypes':[UtilDataSource[_0x4c1640(0x107)]]}))];}[_0x4cda8b(0xfe)](){const _0x5d1db3=_0x4cda8b;return{'isPreviewable':this[_0x5d1db3(0xe5)],'titleButtonRun':this['_titleButtonRun'],'titleSearch':this['_titleSearch'],'cols':[{'name':_0x5d1db3(0x115),'width':0x4,'field':_0x5d1db3(0xce)},{'name':'Type','width':0x2,'field':_0x5d1db3(0x102),'rowClassName':_0x5d1db3(0xcd)},{'name':_0x5d1db3(0xf2),'width':0x3,'field':_0x5d1db3(0x110),'rowClassName':_0x5d1db3(0xcd)},{'name':_0x5d1db3(0xcf),'width':0x1,'field':'level','rowClassName':_0x5d1db3(0xcd)},{'name':_0x5d1db3(0x10b),'width':0x1,'field':_0x5d1db3(0xd0),'titleProp':_0x5d1db3(0x119),'displayProp':_0x5d1db3(0xe1),'classNameProp':_0x5d1db3(0xd9),'rowClassName':_0x5d1db3(0xcd)}],'rows':this['_content'][_0x5d1db3(0xd7)]((_0x3f9a72,_0x170a02)=>{const _0x37a2ec=_0x5d1db3;return this[_0x37a2ec(0x11b)][_0x37a2ec(0x10f)][_0x37a2ec(0x11c)](_0x3f9a72),_0x3f9a72['_vPrerequisite']=Renderer['utils'][_0x37a2ec(0x11a)](_0x3f9a72['prerequisite'],!![],new Set([_0x37a2ec(0xd1)])),_0x3f9a72[_0x37a2ec(0xf6)]=Renderer[_0x37a2ec(0xed)][_0x37a2ec(0x101)](_0x3f9a72[_0x37a2ec(0x110)]),{'name':_0x3f9a72['name'],'type':_0x3f9a72[_0x37a2ec(0x111)],'prerequisite':_0x3f9a72[_0x37a2ec(0x10e)],'level':_0x3f9a72[_0x37a2ec(0xf6)],'source':_0x3f9a72[_0x37a2ec(0xd0)],'sourceShort':Parser['sourceJsonToAbv'](_0x3f9a72['source']),'sourceLong':Parser[_0x37a2ec(0xf4)](_0x3f9a72[_0x37a2ec(0xd0)]),'sourceClassName':Parser[_0x37a2ec(0xf5)](_0x3f9a72[_0x37a2ec(0xd0)]),'ix':_0x170a02};})};}[_0x4cda8b(0xff)](){const _0x463ca9=_0x4cda8b;this[_0x463ca9(0x105)]['doAbsorbItems'](this['_content'],{'fnGetName':_0x56490d=>_0x56490d[_0x463ca9(0xce)],'fnGetValues':_0x3917e9=>({'source':_0x3917e9['source'],'prerequisite':_0x3917e9[_0x463ca9(0x10e)],'level':_0x3917e9[_0x463ca9(0xf6)],'type':_0x3917e9[_0x463ca9(0x111)],'hash':UrlUtil['URL_TO_HASH_BUILDER'][this[_0x463ca9(0xef)]](_0x3917e9)}),'fnGetData':UtilList2['absorbFnGetData'],'fnBindListeners':_0x39578d=>this[_0x463ca9(0x103)]?UtilList2[_0x463ca9(0xfc)](this[_0x463ca9(0x105)],_0x39578d):UtilList2[_0x463ca9(0xf7)](this[_0x463ca9(0x105)],_0x39578d)});}async['pImportEntry'](_0x269ca0,_0x546eca){const _0x4bdb97=_0x4cda8b;_0x546eca=_0x546eca||{},console['log'](...LGT,_0x4bdb97(0x116)+_0x269ca0[_0x4bdb97(0xce)]+_0x4bdb97(0xf8)+Parser[_0x4bdb97(0xe7)](_0x269ca0[_0x4bdb97(0xd0)])+'\x22)');if(_0x546eca[_0x4bdb97(0x112)])return this[_0x4bdb97(0xfa)](_0x269ca0,_0x546eca);else{if(this[_0x4bdb97(0xd2)])return this[_0x4bdb97(0x113)](_0x269ca0,_0x546eca);else return this['_pImportEntry_pImportToDirectoryGeneric'](_0x269ca0,_0x546eca);}}async[_0x4cda8b(0x113)](_0x3e204b,_0x1e070b){const _0x399d81=_0x4cda8b,_0xedef3={'data':{}},_0xd6e4fa=new ImportListCharacter[(_0x399d81(0x117))]({'isCharactermancer':_0x1e070b[_0x399d81(0xf0)]});await DataConverterOptionalfeature[_0x399d81(0xec)](this[_0x399d81(0xd2)],_0xedef3,_0x3e204b,_0xd6e4fa);if(_0xd6e4fa[_0x399d81(0x106)])return{'status':UtilApplications[_0x399d81(0xe9)]};await this[_0x399d81(0xcc)](_0x3e204b,_0xedef3,_0xd6e4fa);if(_0xd6e4fa[_0x399d81(0x106)])return{'status':UtilApplications[_0x399d81(0xe9)]};if(Object[_0x399d81(0xee)](_0xedef3[_0x399d81(0x10d)])[_0x399d81(0x11e)])await this[_0x399d81(0xd2)][_0x399d81(0xe3)](_0xedef3);if(this['_actor']['isToken'])this['_actor']['sheet'][_0x399d81(0x11d)]();return{'imported':{'name':_0x3e204b['name'],'actor':this[_0x399d81(0xd2)]},'status':UtilApplications[_0x399d81(0xdb)]};}async[_0x4cda8b(0xcc)](_0x2c097b,_0x526060,_0x29bfda){const _0x415ff6=_0x4cda8b,_0x26dec1={};await this['_pApplyAllAdditionalSpellsToActor']({'entity':_0x2c097b,'dataBuilderOpts':_0x29bfda,'spellHashToItemPosMap':_0x26dec1});if(_0x29bfda[_0x415ff6(0x106)])return;let _0x2384d6;const _0x536b51=DataConverterSpell[_0x415ff6(0x108)]['bind'](null,this[_0x415ff6(0xd2)]['id'],_0x26dec1);await Renderer[_0x415ff6(0x10a)]()['pWithPlugin']({'entryType':_0x415ff6(0xe4),'pluginType':'*','fnPlugin':_0x536b51,'pFn':async()=>{const _0x2b16d4=_0x415ff6;_0x2384d6=await DataConverterOptionalfeature[_0x2b16d4(0xfb)](_0x2c097b,{'isActorItem':!![]}),_0x29bfda[_0x2b16d4(0xeb)][_0x2b16d4(0x118)](_0x2384d6);}});const _0x33d1ac=await UtilActors[_0x415ff6(0xcb)](this[_0x415ff6(0xd2)],_0x29bfda['items']),_0x25cba7=[];if(await DataConverterOptionalfeature[_0x415ff6(0x104)](this[_0x415ff6(0xd2)],_0x2c097b)){const _0x1699f4=DataConverter[_0x415ff6(0xda)](_0x33d1ac,_0x2384d6);if(_0x1699f4)_0x25cba7[_0x415ff6(0x118)](...await DataConverterOptionalfeature['pGetOptionalFeatureItemEffects'](this[_0x415ff6(0xd2)],_0x2c097b,_0x1699f4[_0x415ff6(0xd3)]));}await UtilActors[_0x415ff6(0xde)](this[_0x415ff6(0xd2)],_0x25cba7);}[_0x4cda8b(0xf3)](_0x4aabc1,_0x48d415){const _0x4fe076=_0x4cda8b;return DataConverterOptionalfeature[_0x4fe076(0xfb)](_0x4aabc1,_0x48d415);}}export{ImportListOptionalFeature};
+import {Vetools} from "./Vetools.js";
+import {Config} from "./Config.js";
+import {UtilList2} from "./UtilList2.js";
+import {DataConverterOptionalfeature} from "./DataConverterOptionalfeature.js";
+import {UtilDataSource} from "./UtilDataSource.js";
+import {ImportListFeature} from "./ImportListFeature.js";
+import {MixinUserChooseImporter} from "./ImportList.js";
+
+class ImportListOptionalFeature extends ImportListFeature {
+	static get ID () { return "other-options-and-features"; }
+	static get DISPLAY_NAME_TYPE_PLURAL () { return "Other Options & Features"; }
+
+	static _ = this.registerImpl(this);
+
+	// region External
+	static init () {
+		this._initCreateSheetItemHook({
+			prop: "optionalfeature",
+			importerName: "Other Option or Feature",
+		});
+	}
+	// endregion
+
+	constructor (externalData = {}, applicationOptsOverride = {}, subclassOptsOverride = {}) {
+		super(
+			{
+				title: "Import Other Options and Features",
+				...applicationOptsOverride,
+			},
+			externalData,
+			{
+				props: ["optionalfeature"],
+				dirsHomebrew: ["optionalfeature"],
+				titleSearch: "options and features",
+				sidebarTab: "items",
+				gameProp: "items",
+				defaultFolderPath: ["Other Options and Features"],
+				fnListSort: PageFilterOptionalFeatures.sortOptionalFeatures,
+				pageFilter: new PageFilterOptionalFeatures(),
+				page: UrlUtil.PG_OPT_FEATURES,
+				isPreviewable: true,
+				isDedupable: true,
+				configGroup: "importOptionalFeature",
+				...subclassOptsOverride,
+			},
+			{
+				titleLog: "other option/feature",
+			},
+		);
+	}
+
+	async _pGetSources () {
+		const argsShared = {pPostLoad: loadedData => this.constructor._pPostLoad_addFauxOptionalfeatures(loadedData)};
+		return [
+			new UtilDataSource.DataSourceUrl(
+				Config.get("ui", "isStreamerMode") ? "SRD" : "5etools",
+				Vetools.DATA_URL_OPTIONALFEATURES,
+				{
+					...argsShared,
+					filterTypes: [UtilDataSource.SOURCE_TYP_OFFICIAL_ALL],
+					isDefault: true,
+				},
+			),
+			new UtilDataSource.DataSourceUrl(
+				"Custom URL",
+				"",
+				{
+					...argsShared,
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			new UtilDataSource.DataSourceFile(
+				"Upload File",
+				{
+					...argsShared,
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			...(await this._pGetSourcesHomebrew({...argsShared})),
+		];
+	}
+
+	getData () {
+		return {
+			...super.getData(),
+			cols: [
+				{
+					name: "Name",
+					width: 4,
+					field: "name",
+				},
+				{
+					name: "Type",
+					width: 2,
+					field: "type",
+					rowClassName: "text-center",
+				},
+				{
+					name: "Prerequisite",
+					width: 3,
+					field: "prerequisite",
+					rowClassName: "text-center",
+				},
+				{
+					name: "Level",
+					width: 1,
+					field: "level",
+					rowClassName: "text-center",
+				},
+				{
+					name: "Source",
+					width: 1,
+					field: "source",
+					titleProp: "sourceLong",
+					displayProp: "sourceShort",
+					classNameProp: "sourceClassName",
+					styleProp: "sourceStyle",
+					rowClassName: "text-center",
+				},
+			],
+			rows: this._content.map((it, ix) => {
+				this._pageFilter.constructor.mutateForFilters(it);
+
+				// region Re-used in fnGetValues
+				it._vPrerequisite = Renderer.utils.getPrerequisiteHtml(it.prerequisite, {isListMode: true, blacklistKeys: new Set(["level"])});
+				it._vLevel = Renderer.optionalfeature.getListPrerequisiteLevelText(it.prerequisite);
+				// endregion
+
+				return {
+					name: it.name,
+					type: it._lFeatureType,
+					prerequisite: it._vPrerequisite,
+					level: it._vLevel,
+					source: it.source,
+					sourceShort: Parser.sourceJsonToAbv(it.source),
+					sourceLong: Parser.sourceJsonToFull(it.source),
+					sourceClassName: Parser.sourceJsonToColor(it.source),
+					sourceStyle: BrewUtil2.sourceJsonToStylePart(it.source),
+					ix,
+				};
+			}),
+		};
+	}
+
+	_renderInner_absorbListItems () {
+		this._list.doAbsorbItems(
+			this._content,
+			{
+				fnGetName: it => it.name,
+				// values used for sorting/search
+				fnGetValues: it => ({
+					source: it.source,
+					prerequisite: it._vPrerequisite,
+					level: it._vLevel,
+					type: it._lFeatureType,
+					hash: UrlUtil.URL_TO_HASH_BUILDER[this._page](it),
+				}),
+				fnGetData: UtilList2.absorbFnGetData,
+				fnBindListeners: it => this._isRadio
+					? UtilList2.absorbFnBindListenersRadio(this._list, it)
+					: UtilList2.absorbFnBindListeners(this._list, it),
+			},
+		);
+	}
+
+	static async _pGetEntityItem (actor, feature) { return DataConverterOptionalfeature.pGetOptionalFeatureItem(feature, {actor}); }
+
+	static async _pGetSideData (actor, feature) {
+		return DataConverterOptionalfeature.pGetSideLoadedMatch(feature);
+	}
+
+	static async _pHasSideLoadedEffects (actor, feature) { return DataConverterOptionalfeature.pHasOptionalFeatureSideLoadedEffects(actor, feature); }
+
+	static async _pGetItemEffects (actor, feature, importedEmbed, dataBuilderOpts) {
+		return DataConverterOptionalfeature.pGetOptionalFeatureItemEffects(
+			actor,
+			feature,
+			importedEmbed,
+		);
+	}
+
+	async _pMutActorUpdateFeature (feature, actUpdate, dataBuilderOpts) {
+		await DataConverterOptionalfeature.pMutActorUpdateOptionalFeature(this._actor, actUpdate, feature, dataBuilderOpts);
+	}
+
+	_pImportEntry_pImportToDirectoryGeneric_pGetImportableData (it, getItemOpts) {
+		return DataConverterOptionalfeature.pGetOptionalFeatureItem(it, getItemOpts);
+	}
+
+	static async _pGetDereferencedFeatureItem (feature) {
+		return DataConverterOptionalfeature.pGetDereferencedOptionalFeatureFeatureItem(feature);
+	}
+
+	static async _pGetInitFeatureLoadeds (feature, {actor} = {}) {
+		return DataConverterOptionalfeature.pGetInitOptionalFeatureFeatureLoadeds(feature, {actor});
+	}
+}
+
+/**
+ * @mixes MixinUserChooseImporter
+ */
+ImportListOptionalFeature.UserChoose = class extends MixinUserChooseImporter(ImportListOptionalFeature) {
+	constructor (externalData) {
+		super(
+			externalData,
+			{
+				title: "Select Other Option or Feature",
+			},
+			{
+				titleButtonRun: "Select",
+			},
+		);
+	}
+};
+
+export {ImportListOptionalFeature};

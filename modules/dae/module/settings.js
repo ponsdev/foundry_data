@@ -36,38 +36,17 @@ export const registerSettings = function () {
         config: true,
         onChange: fetchParams
     });
-    game.settings.register("dae", "displayTraits", {
+    game.settings.register("dae", "ArmorDisabled", {
         scope: "world",
+        default: 0,
+        config: false,
+        type: Number
+    });
+    game.settings.register("dae", "showInline", {
+        scope: "client",
+        name: game.i18n.localize("dae.ShowInline.Name"),
+        hint: game.i18n.localize("dae.ShowInline.Hint"),
         default: false,
-        config: true,
-        type: Boolean,
-        onChange: fetchParams,
-        name: game.i18n.localize("dae.displayTraits.Name"),
-        hint: game.i18n.localize("dae.displayTraits.Hint"),
-    });
-    game.settings.register("dae", "useAbilitySave", {
-        name: game.i18n.localize("dae.useAbilitySave.Name"),
-        hint: game.i18n.localize("dae.useAbilitySave.Hint"),
-        scope: "world",
-        default: true,
-        config: true,
-        type: Boolean,
-        onChange: fetchParams
-    });
-    game.settings.register("dae", "calculateArmor", {
-        name: game.i18n.localize("dae.calculateArmor.Name"),
-        hint: game.i18n.localize("dae.calculateArmor.Hint"),
-        scope: "world",
-        default: true,
-        config: true,
-        type: Boolean,
-        onChange: fetchParams
-    });
-    game.settings.register("dae", "applyBaseAC", {
-        name: game.i18n.localize("dae.applyBaseAC.Name"),
-        hint: game.i18n.localize("dae.applyBaseAC.Hint"),
-        scope: "world",
-        default: true,
         config: true,
         type: Boolean,
         onChange: fetchParams
@@ -75,6 +54,33 @@ export const registerSettings = function () {
     game.settings.register("dae", "confirmDelete", {
         name: game.i18n.localize("dae.confirmDelete.Name"),
         hint: game.i18n.localize("dae.confirmDelete.Hint"),
+        scope: "world",
+        default: false,
+        type: Boolean,
+        config: true,
+        onChange: fetchParams
+    });
+    game.settings.register("dae", "DAETitleBar", {
+        name: game.i18n.localize("dae.DAETitleBar.Name"),
+        hint: game.i18n.localize("dae.DAETitleBar.Hint"),
+        scope: "world",
+        default: true,
+        type: Boolean,
+        config: true,
+        onChange: fetchParams
+    });
+    game.settings.register("dae", "DAENoTitleText", {
+        name: game.i18n.localize("dae.DAENoTitleText.Name"),
+        hint: game.i18n.localize("dae.DAENoTitleText.Hint"),
+        scope: "world",
+        default: false,
+        type: Boolean,
+        config: true,
+        onChange: fetchParams
+    });
+    game.settings.register("dae", "DAEUntestedSystems", {
+        name: game.i18n.localize("dae.DAEUntestedSystems.Name"),
+        hint: game.i18n.localize("dae.DAEUntestedSystems.Hint"),
         scope: "world",
         default: false,
         type: Boolean,
@@ -90,5 +96,14 @@ export const registerSettings = function () {
         config: true,
         choices: { none: "None", warn: "warnings", debug: "debug", all: "all" },
         onChange: fetchParams
+    });
+    game.settings.register("dae", "disableEffects", {
+        name: "dae.DisableEffects.Name",
+        hint: "dae.DisableEffects.Hint",
+        scope: "world",
+        default: false,
+        type: Boolean,
+        config: true,
+        onChange: () => window.location.reload()
     });
 };

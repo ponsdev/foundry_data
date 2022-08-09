@@ -1,7 +1,6 @@
 import { MODULE_ABBREV, MODULE_ID, numberRegex } from "./constants.js";
 export function log(force, ...args) {
-    //@ts-ignore
-    const shouldLog = force || window.DEV?.getPackageDebugValue(MODULE_ID);
+    const shouldLog = force || getGame().modules.get('_dev-mode')?.api?.getPackageDebugValue(MODULE_ID);
     if (shouldLog) {
         console.log(MODULE_ID, '|', ...args);
     }
@@ -9,15 +8,15 @@ export function log(force, ...args) {
 export function getUserCellConfigurationInput(cellToConfigure, gridDetails) {
     return new Promise((resolve, reject) => {
         new Dialog({
-            title: game.i18n.localize(`${MODULE_ABBREV}.cellConfigDialog.CellConfig`),
+            title: getGame().i18n.localize(`${MODULE_ABBREV}.cellConfigDialog.CellConfig`),
             content: `
   <form class="flexcol">
     <div class="form-group">
-      <label for="spanRows">${game.i18n.localize(`${MODULE_ABBREV}.cellConfigDialog.RowSpan`)}</label>
+      <label for="spanRows">${getGame().i18n.localize(`${MODULE_ABBREV}.cellConfigDialog.RowSpan`)}</label>
       <input type="number" step="1" name="spanRows" min="1" max="${gridDetails.rows + 1 - cellToConfigure.y}" value="${cellToConfigure.spanRows || 1}">
     </div>
     <div class="form-group">
-      <label for="spanCols">${game.i18n.localize(`${MODULE_ABBREV}.cellConfigDialog.ColSpan`)}</label>
+      <label for="spanCols">${getGame().i18n.localize(`${MODULE_ABBREV}.cellConfigDialog.ColSpan`)}</label>
       <input type="number" step="1" name="spanCols" min="1" max="${gridDetails.columns + 1 - cellToConfigure.x}" value="${cellToConfigure.spanCols || 1}">
     </div>
   </form>
@@ -25,11 +24,11 @@ export function getUserCellConfigurationInput(cellToConfigure, gridDetails) {
             buttons: {
                 no: {
                     icon: '<i class="fas fa-times"></i>',
-                    label: game.i18n.localize('Cancel'),
+                    label: getGame().i18n.localize('Cancel'),
                 },
                 reset: {
                     icon: '<i class="fas fa-undo"></i>',
-                    label: game.i18n.localize('Default'),
+                    label: getGame().i18n.localize('Default'),
                     callback: (html) => {
                         const formValues = {
                             newSpanRows: 1,
@@ -41,7 +40,7 @@ export function getUserCellConfigurationInput(cellToConfigure, gridDetails) {
                 },
                 yes: {
                     icon: '<i class="fas fa-check"></i>',
-                    label: game.i18n.localize('Submit'),
+                    label: getGame().i18n.localize('Submit'),
                     callback: (html) => {
                         const formValues = {
                             newSpanRows: Number(html.find('[name="spanRows"]').val()),
@@ -104,7 +103,7 @@ export function getGridElementsPosition(element) {
     return { y: elementRow, x: elementColumn };
 }
 export function getUserViewableGrids(gmScreenConfig) {
-    if (game.user.isGM) {
+    if (getGame().user?.isGM) {
         return gmScreenConfig.grids;
     }
     const sharedGrids = Object.keys(gmScreenConfig.grids).reduce((acc, gridId) => {
@@ -130,4 +129,10 @@ export function updateCSSPropertyVariable(html, selector, property, name) {
         const value = window.getComputedStyle(gridCell)[property];
         gridCell.style.setProperty(name, String(value));
     });
+}
+export function getGame() {
+    if (!(game instanceof Game)) {
+        throw new Error('game is not initialized yet!');
+    }
+    return game;
 }

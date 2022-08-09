@@ -1,4 +1,4 @@
-import { CharacterSheetContext, getSetting, settings, QuickInsert, setSetting } from './quick-insert.js';
+import { CharacterSheetContext, getSetting, ModuleSetting, QuickInsert, setSetting } from './quick-insert.js';
 import './vendor.js';
 
 // Warhammer Fantasy Roleplay 4th edition integration
@@ -18,15 +18,15 @@ const defaultSheetFilters = {
     disease: "wfrp4e.diseases",
 };
 class Wfrp4eSheetContext extends CharacterSheetContext {
-    constructor(entitySheet, anchor, sheetType, insertType) {
-        super(entitySheet, anchor);
+    constructor(documentSheet, anchor, sheetType, insertType) {
+        super(documentSheet, anchor);
         this.spawnCSS = {
             ...this.spawnCSS,
-            left: this.spawnCSS.left - 10,
-            bottom: this.spawnCSS.bottom + 10,
+            left: this.spawnCSS?.left - 10,
+            bottom: this.spawnCSS?.bottom + 10,
         };
         if (sheetType && insertType) {
-            const sheetFilters = getSetting(settings.FILTERS_SHEETS).baseFilters;
+            const sheetFilters = getSetting(ModuleSetting.FILTERS_SHEETS).baseFilters;
             this.filter =
                 sheetFilters[`${sheetType}.${insertType}`] || sheetFilters[insertType];
         }
@@ -38,7 +38,7 @@ function sheetWfrp4eRenderHook(app, sheetType) {
     }
     const link = `<a class="quick-insert-link" title="Quick Insert"><i class="fas fa-search"></i></a>`;
     app.element.find("a.item-create").each((i, el) => {
-        const type = el.dataset.type;
+        const type = el.dataset.type || "";
         if (!Object.keys(defaultSheetFilters).includes(type))
             return;
         const linkEl = $(link);
@@ -50,16 +50,16 @@ function sheetWfrp4eRenderHook(app, sheetType) {
     });
 }
 function init() {
-    if (game.user.isGM) {
-        const customFilters = getSetting(settings.FILTERS_SHEETS).baseFilters;
-        setSetting(settings.FILTERS_SHEETS, {
+    if (game.user?.isGM) {
+        const customFilters = getSetting(ModuleSetting.FILTERS_SHEETS).baseFilters;
+        setSetting(ModuleSetting.FILTERS_SHEETS, {
             baseFilters: {
                 ...defaultSheetFilters,
                 ...customFilters,
             },
         });
     }
-    Hooks.on("renderActorSheetWfrp4eCharacter", app => getSetting(settings.FILTERS_SHEETS_ENABLED) &&
+    Hooks.on("renderActorSheetWfrp4eCharacter", (app) => getSetting(ModuleSetting.FILTERS_SHEETS_ENABLED) &&
         sheetWfrp4eRenderHook(app, "character"));
     console.log("Quick Insert | wfrp4e system extensions initiated");
 }

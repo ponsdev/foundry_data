@@ -26,7 +26,6 @@
          x.trim(); // (optional) optimizes memory usage
  */
 'use strict';
-import { DTMod } from "./calendar/DTMod.js";
 var defaultcomparator = function (a, b) {
     if (a._time !== b._time)
         return a._time < b._time;
@@ -74,7 +73,7 @@ export class Quentry {
             console.warn("about-time | Could not restore handler ", data.handler, "substituting console.log");
             handler = console.log;
         }
-        return new Quentry(data.time, data.recurring, data.recurring ? DTMod.create(data.increment) : null, handler, data.uid, ...data.args);
+        return new Quentry(data.time, data.recurring, data.recurring ? data.increment : null, handler, data.uid, ...data.args);
     }
 }
 export class FastPriorityQueue {

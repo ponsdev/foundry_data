@@ -2,23 +2,30 @@
   "name": "calendar-weather",
   "title": "Calendar/Weather",
   "description": "Adds a customizable calendar with events and weather.",
-  "version": "3.1.2",
+  "version": "3.1.10",
   "minimumCoreVersion": "0.7.0",
-  "compatibleCoreVersion": "0.7.9",
-  "author": "Michael Sebelski [DasSauerkraut#3215], about-time by tposney#1462",
-  "url": "https://github.com/DasSauerkraut/calendar-weather",
-  "manifest": "https://raw.githubusercontent.com/DasSauerkraut/calendar-weather/master/package/module.json",
-  "download": "https://github.com/DasSauerkraut/calendar-weather/raw/master/package/calendar-weather-v3.1.2.zip",
+  "compatibleCoreVersion": "0.8.9",
+  "author": "The Bird",
+  "authors": [
+    {
+      "name": "Julien Stébennne",
+      "discord": "The Bird#8334",
+      "ko-fi": "thebird956"
+    },
+    {
+      "name": "Geekswordman",
+      "discord": "Geekswordsman#3085"
+    },
+    {
+      "name": "Michael Sebelski",
+      "discord": "DasSauerkraut#3215"
+    }
+  ],
+  "url": "https://gitlab.com/jstebenne/foundryvtt-weather-control",
+  "manifest": "https://gitlab.com/jstebenne/foundryvtt-weather-control/-/raw/v3.1.10/module.json",
+  "download": "https://gitlab.com/jstebenne/foundryvtt-weather-control/-/jobs/artifacts/v3.1.10/raw/calendar-weather.zip?job=pack",
   "esmodules": [
-    "init.mjs",
-    "modules/registerSettings.mjs",
-    "modules/dateTime.mjs",
-    "modules/month.mjs",
-    "modules/weatherTracker.mjs",
-    "modules/calendarEvents.mjs",
-    "modules/calendar.mjs",
-    "modules/calendarForm.mjs",
-    "modules/warningSystem.mjs"
+    "init.mjs"
   ],
   "styles": [ "./css/calendar.css" ],
   "packs": [],
@@ -66,8 +73,8 @@
   ],
   "dependencies": [
     {
-      "name": "about-time",
-      "manifest": "https://gitlab.com/tposney/about-time/-/raw/master/package/module.json"
+      "name": "weather-control",
+      "manifest": "https://gitlab.com/jstebenne/foundryvtt-weather-control/-/raw/master/static/module.json"
     }
   ]
 }

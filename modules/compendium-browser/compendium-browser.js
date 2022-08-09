@@ -40,13 +40,29 @@
                     loadAndFilterItems(): Changed tests to switch + more explicit tests   
             0.4.5b  Show compendium source in results issue#11                                       
                     Try showing compendium in the image mouseover
+12-Jun-2021 0.5.0   Test for Foundry 0.8.x in which creature type is now data.details.type.value                    
+9-Spt-2021  CHANGES Removed functions that are disabled in Foundry 0.9.0
+                    Speed up on spells by using queries
+                    Stops already in progress searches if a new one is started
+                    Handles monster types from older revisions
+                    Uses some built-ins for minor performance improvement
+12-Sep-2021 0.7.1   Issue #25 Initialization fails because of corrupted settings 
+                    Fix: Check for settings.loadedSpellCompendium and settings.loadedNpcCompendium                   
+1-Jan-2022 0.7.2    Switch to isFoundryV8Plus class variable
+4-Jan-2022  0.7.2   Merge PR #33 (thanks kyleady) to improve NPC filtering performance
+            0.7.2c  Fix rarity encoding (uses camelcase names) (Issue #28)
+                    Check for data.details?.cr in case you have NPCs without details (type=character)
+                    Change message to "Loading..." until we're done, then "Loaded"
+5-Jan-2022  0.7.2d  decorateNpc(): NPCs without all details or weirdly formed ones should default damageDealt to [] not 0                    
 */
 
 const CMPBrowser = {
     MODULE_NAME : "compendium-browser",
-    MODULE_VERSION : "0.4.5",
+    MODULE_VERSION : "0.7.2",
     MAXLOAD : 500,      //Default for the maximum number to load before displaying a message that you need to filter to see more
 }
+
+const STOP_SEARCH = 'StopSearchException';
 
 class CompendiumBrowser extends Application {
 
@@ -148,7 +164,7 @@ class CompendiumBrowser extends Application {
             let itemId = $(ev.currentTarget).parents("li").attr("data-entry-id");
             let compendium = $(ev.currentTarget).parents("li").attr("data-entry-compendium");
             let pack = game.packs.find(p => p.collection === compendium);
-            pack.getEntity(itemId).then(entity => {
+            pack.getDocument(itemId).then(entity => {
                 entity.sheet.render(true);
             });
         });
@@ -165,7 +181,7 @@ class CompendiumBrowser extends Application {
                     return false;
                 }
                 event.dataTransfer.setData("text/plain", JSON.stringify({
-                    type: pack.entity,
+                    type: pack.documentName,
                     pack: pack.collection,
                     id: li.getAttribute("data-entry-id")
                 }));
@@ -468,79 +484,135 @@ class CompendiumBrowser extends Application {
         console.time("loadAndFilterItems");
         await this.checkListsLoaded();
 
+        const seachNumber = Date.now();
+
+        this.CurrentSeachNumber = seachNumber;
+
         const maxLoad = game.settings.get(CMPBrowser.MODULE_NAME, "maxload") ?? CMPBrowser.MAXLOAD;
-       
+
         //0.4.1: Load and filter just one of spells, feats, and items (specified by browserTab)
         let unfoundSpells = '';
         let numItemsLoaded = 0;
         let compactItems = {};
 
-        //Filter the full list, but only save the core compendium information + displayed info 
-        for (let pack of game.packs) {
-            if (pack['metadata']['entity'] === "Item" && this.settings.loadedSpellCompendium[pack.collection].load) {
-//FIXME: How much could we do with the loaded index rather than all content? 
-//OR filter the content up front for the decoratedItem.type??               
-                await pack.getContent().then(content => {
-                    for (let item5e of content) {
-                        let compactItem = null;
-                        const decoratedItem = this.decorateItem(item5e);
-                        if (decoratedItem) {
-                            switch (browserTab) {
-                                case "spell":
-                                    if ((decoratedItem.type === "spell") && this.passesFilter(decoratedItem, this.spellFilters.activeFilters)) {
-                                        compactItem = {
-                                            compendium : pack.collection,
-                                            name : decoratedItem.name,
-                                            img: decoratedItem.img,
-                                            data : {
-                                                level : decoratedItem.data?.level,
-                                                components : decoratedItem.data?.components
-                                            }
-                                        }
-                                    }
-                                    break;
+        try{
+            //Filter the full list, but only save the core compendium information + displayed info 
+            for (let pack of game.packs) {
+                if (pack.documentName === "Item" && this.settings.loadedSpellCompendium[pack.collection].load) {
+                    //can query just for spells since there is only 1 type
+                    let query = {};
+                    if (browserTab === "spell") {
+                        query = {type: "spell"};
+                    }
 
-                                case "feat":
-                                    if (["feat","class"].includes(decoratedItem.type) && this.passesFilter(decoratedItem, this.featFilters.activeFilters)) {
-                                        compactItem = {
-                                            compendium : pack.collection,
-                                            name : decoratedItem.name,
-                                            img: decoratedItem.img,
-                                            classRequirementString : decoratedItem.classRequirementString
-                                        }
-                                    }                                    
-                                    break;
+                    //FIXME: How much could we do with the loaded index rather than all content? 
+                    //OR filter the content up front for the decoratedItem.type??
+                    await pack.getDocuments(query).then(content => {
 
-                                case "item":
-                                    //0.4.5: Itm type for true items could be many things (weapon, consumable, etc) so we just look for everything except spells, feats, classes
-                                    if (!["spell","feat","class"].includes(decoratedItem.type) && this.passesFilter(decoratedItem, this.itemFilters.activeFilters)) {
-                                        compactItem = {
-                                            compendium : pack.collection,
-                                            name : decoratedItem.name,
-                                            img: decoratedItem.img,
-                                            type : decoratedItem.type
-                                        }
-                                    }
-                                    break;
+                        if (browserTab === "spell"){
 
-                                default:
-                                    break;
-                            }
+                            content.reduce(function(itemsList, item5e) {
+                                if (this.CurrentSeachNumber != seachNumber) throw STOP_SEARCH;
 
-                            if (compactItem) {  //Indicates it passed the filters
-                                compactItems[decoratedItem._id] = compactItem; 
-                                if (numItemsLoaded++ >= maxLoad) break;
-                                //0.4.2e: Update the UI (e.g. "Loading 142 spells")
-                                if (updateLoading) {updateLoading(numItemsLoaded);}
-                            }
+                                numItemsLoaded = Object.keys(itemsList).length;
+
+                                if (maxLoad <= numItemsLoaded) {
+                                    if (updateLoading) {updateLoading(numItemsLoaded, true);}
+                                    throw STOP_SEARCH;
+                                }
+
+                                const decoratedItem = this.decorateItem(item5e);
+
+                                if(decoratedItem && this.passesFilter(decoratedItem, this.spellFilters.activeFilters)){
+                                    itemsList[item5e.id] = {
+                                        compendium : pack.collection,
+                                        name : decoratedItem.name,
+                                        img: decoratedItem.img,
+                                        data : {
+                                            level : decoratedItem.data?.level,
+                                            components : decoratedItem.data?.components
+                                        },
+                                        id: item5e.id
+                                    };
+                                }
+
+                                return itemsList;
+                            }.bind(this), compactItems);
+
                         }
-                    }//for item5e of content
-                });
-            }//end if pack entity === Item
-            if (numItemsLoaded >= maxLoad) break;
-        }//for packs
+                        else if (browserTab === "feat"){
 
+                            content.reduce(function(itemsList, item5e){
+                                if (this.CurrentSeachNumber != seachNumber) throw STOP_SEARCH;
+
+                                numItemsLoaded = Object.keys(itemsList).length;
+
+                                if (maxLoad <= numItemsLoaded) {
+                                    if (updateLoading) {updateLoading(numItemsLoaded, true);}
+                                    throw STOP_SEARCH;
+                                }
+
+                                const decoratedItem = this.decorateItem(item5e);
+
+                                if(decoratedItem && ["feat","class"].includes(decoratedItem.type) && this.passesFilter(decoratedItem, this.featFilters.activeFilters)){
+                                    itemsList[item5e.id] = {
+                                        compendium : pack.collection,
+                                        name : decoratedItem.name,
+                                        img: decoratedItem.img,
+                                        classRequirementString : decoratedItem.classRequirementString
+                                    };
+                                }
+
+                                return itemsList;
+                            }.bind(this), compactItems);
+
+                        }
+                        else if (browserTab === "item"){
+
+                            content.reduce(function(itemsList, item5e){
+                                if (this.CurrentSeachNumber != seachNumber) throw STOP_SEARCH;
+
+                                numItemsLoaded = Object.keys(itemsList).length;
+
+                                if (maxLoad <= numItemsLoaded) {
+                                    if (updateLoading) {updateLoading(numItemsLoaded, true);}
+                                    throw STOP_SEARCH;
+                                }
+
+                                const decoratedItem = this.decorateItem(item5e);
+
+                                if(decoratedItem && !["spell","feat","class"].includes(decoratedItem.type) && this.passesFilter(decoratedItem, this.itemFilters.activeFilters)){
+                                    itemsList[item5e.id] = {
+                                        compendium : pack.collection,
+                                        name : decoratedItem.name,
+                                        img: decoratedItem.img,
+                                        type : decoratedItem.type
+                                    }
+                                }
+
+                                return itemsList;
+                            }.bind(this), compactItems);
+
+                        }
+
+                        numItemsLoaded = Object.keys(compactItems).length;
+                        if (updateLoading) {updateLoading(numItemsLoaded, false);}
+                    });
+                }//end if pack entity === Item
+            }//for packs
+        }
+        catch(e){
+            if (e === STOP_SEARCH){
+                //stopping search early
+            }
+            else{
+                throw e;
+            }
+        }
+
+        // this.removeDuplicates(compactItems);
 /*
+
         if (unfoundSpells !== '') {
             console.log(`Load and Fliter Items | List of Spells that don't have a class associated to them:`);
             console.log(unfoundSpells);
@@ -549,197 +621,96 @@ class CompendiumBrowser extends Application {
         this.itemsLoaded = true;  
         console.timeEnd("loadAndFilterItems");
         console.log(`Load and Filter Items | Finished loading ${Object.keys(compactItems).length} ${browserTab}s`);
+        updateLoading(numItemsLoaded, true)
         return compactItems;
     }
 
-    async loadItems(numToPreload=CMPBrowser.PRELOAD) {
-        console.log('Item Browser | Started loading items');
-        console.time("loadItems");
-        await this.checkListsLoaded();
-
-        this.itemsLoaded = false;
-       
-        
-        let unfoundSpells = '';
-        let numSpellsLoaded = 0;
-        let numFeatsLoaded = 0;
-        let numItemsLoaded = 0;
-        let items = {
-            spells: {},
-            feats: {},
-            items: {}
-        };
-
-
-        for (let pack of game.packs) {
-            if (pack['metadata']['entity'] === "Item" && this.settings.loadedSpellCompendium[pack.collection].load) {
-                await pack.getContent().then(content => {
-                    for (let item5e of content) {
-                        let item = item5e.data;
-                        if (item.type === 'spell') {
-                            //0.4.1 Only preload a limited number and fill more in as needed
-                            if (numSpellsLoaded++ > numToPreload) continue;
-
-                            item.compendium = pack.collection;
-
-                            // determining classes that can use the spell
-                            let cleanSpellName = item.name.toLowerCase().replace(/[^一-龠ぁ-ゔァ-ヴーa-zA-Z0-9ａ-ｚＡ-Ｚ０-９々〆〤]/g, '').replace("'", '').replace(/ /g, '');
-                            //let cleanSpellName = spell.name.toLowerCase().replace(/[^a-zA-Z0-9\s:]/g, '').replace("'", '').replace(/ /g, '');
-                            if (this.classList[cleanSpellName]) {
-                                let classes = this.classList[cleanSpellName];
-                                item.data.classes = classes.split(',');
-                            } else {
-                                unfoundSpells += cleanSpellName + ',';
-                            }
-
-                            // getting damage types
-                            item.damageTypes = [];
-                            if (item.data.damage && item.data.damage.parts.length > 0) {
-                                for (let part of item.data.damage.parts) {
-                                    let type = part[1];
-                                    if (item.damageTypes.indexOf(type) === -1) {
-                                        item.damageTypes.push(type);
-                                    }
-                                }
-                            }
-                            items.spells[(item._id)] = item;
-                        } else  if (item.type === 'feat' || item.type === 'class') {
-                            //0.4.1 Only preload a limited number and fill more in as needed
-                            if (numFeatsLoaded++ > numToPreload) continue;
-
-                            item.compendium = pack.collection;
-                            // getting damage types
-                            item.damageTypes = [];
-                            if (item.data.damage && item.data.damage.parts.length > 0) {
-                                for (let part of item.data.damage.parts) {
-                                    let type = part[1];
-                                    if (item.damageTypes.indexOf(type) === -1) {
-                                        item.damageTypes.push(type);
-                                    }
-                                }
-                            }
-
-                            // getting class
-                            let reqString = item.data.requirements?.replace(/[0-9]/g, '').trim();
-                            let matchedClass = [];
-                            for (let c in this.subClasses) {
-                                if (reqString && reqString.toLowerCase().indexOf(c) !== -1) {
-                                    matchedClass.push(c);
-                                } else {
-                                    for (let subClass of this.subClasses[c]) {
-                                        if (reqString && reqString.indexOf(subClass) !== -1) {
-                                            matchedClass.push(c);
-                                            break;
-                                        }
-                                    }
-                                }
-                            }
-                            item.classRequirement = matchedClass;
-                            item.classRequirementString = matchedClass.join(', ');
-
-                            // getting uses/ressources status
-                            item.usesRessources = item5e.hasLimitedUses;
-
-                            item.hasSave = item5e.hasSave;
-
-                            items.feats[(item._id)] = item;
-
-                        } else {
-                            //0.4.1 Only preload a limited number and fill more in as needed
-                            if (numItemsLoaded++ > numToPreload) continue;
-
-                            item.compendium = pack.collection;
-                            // getting damage types
-                            item.damageTypes = [];
-                            if (item.data.damage && item.data.damage.parts.size > 0) {
-                                for (let part of item.data.damage.parts) {
-                                    let type = part[1];
-                                    if (item.damageTypes.indexOf(type) === -1) {
-                                        item.damageTypes.push(type);
-                                    }
-                                }
-                            }
-
-                            // getting pack
-                            let matchedPacks = [];
-                            for (let pack of Object.keys(this.packList)) {
-                                for (let packItem of this.packList[pack]) {
-                                    if (item.name.toLowerCase() === packItem.toLowerCase()) {
-                                        matchedPacks.push(pack);
-                                        break;
-                                    }
-                                }
-                            }
-                            item.matchedPacks = matchedPacks;
-                            item.matchedPacksString = matchedPacks.join(', ');
-
-                            // getting uses/ressources status
-                            item.usesRessources = item5e.hasLimitedUses
-
-                            items.items[(item._id)] = item;
-                        }          
-
-                    }//for item5e of content
-                });
-            }
-            if ((numSpellsLoaded >= numToPreload) && (numFeatsLoaded >= numToPreload) && (numItemsLoaded >= numToPreload)) break;
-        }//for packs
-        if (unfoundSpells !== '') {
-            console.log(`Item Browser | List of Spells that don't have a class associated to them:`);
-            console.log(unfoundSpells);
-        }      
-        this.itemsLoaded = true;  
-        console.timeEnd("loadItems");
-        console.log(`Item Browser | Finished loading items: ${Object.keys(items.spells).length} spells, ${Object.keys(items.feats).length} features, ${Object.keys(items.items).length} items `);
-        return items;
-    }
-    
     async loadAndFilterNpcs(updateLoading=null) {
         console.log('NPC Browser | Started loading NPCs');
+
+        const seachNumber = Date.now();
+        this.CurrentSeachNumber = seachNumber;
+
         console.time("loadAndFilterNpcs");
         let npcs = {};
 
         const maxLoad = game.settings.get(CMPBrowser.MODULE_NAME, "maxload") ?? CMPBrowser.MAXLOAD;
-       
+
         let numNpcsLoaded = 0;
         this.npcsLoaded = false;
-        for (let pack of game.packs) {
-            if (pack['metadata']['entity'] == "Actor" && this.settings.loadedNpcCompendium[pack.collection].load) {
-                await pack.getContent().then(async content => {
-                    
-                    for (let npc of content) {
-                        let compactNpc = null;
-                        const decoratedNpc = this.decorateNpc(npc);
-                        if (decoratedNpc && this.passesFilter(decoratedNpc, this.npcFilters.activeFilters)) {
-                            //0.4.2: Don't store all the details - just the display elements
-                            compactNpc = {
-                                compendium : pack.collection,
-                                name : decoratedNpc.name,
-                                img: decoratedNpc.img,
-                                displayCR : decoratedNpc.displayCR,
-                                displaySize : decoratedNpc.displaySize,
-                                displayType: decoratedNpc.data?.details?.type,
-                                orderCR : decoratedNpc.data.details.cr,
-                                orderSize : decoratedNpc.filterSize
+
+        // fields required for displaying and decorating NPCs
+        const requiredIndexFields = [
+          'name',
+          'img',
+          'data.details.cr',
+          'data.traits.size',
+          'data.details.type',
+          'items.type',
+          'items.data.damage.parts',
+        ]
+
+        // add any fields required for currently active filters
+        const indexFields = requiredIndexFields.concat(
+                              Object.values(this.npcFilters.activeFilters).map(f => f.path)
+                            );
+
+        try{
+            for (let pack of game.packs) {
+                if (pack.documentName == "Actor" && this.settings.loadedNpcCompendium[pack.collection].load) {
+                    await pack.getIndex({fields: indexFields}).then(async content => {
+
+                        content.reduce(function(actorsList, npc5e){
+                            if (this.CurrentSeachNumber != seachNumber) {throw STOP_SEARCH;}
+
+                            numNpcsLoaded = Object.keys(npcs).length;
+
+                            if (maxLoad <= numNpcsLoaded) {
+                                if (updateLoading) {updateLoading(numNpcsLoaded, true);}
+                                throw STOP_SEARCH;
                             }
-                            if (compactNpc) {
-                                npcs[decoratedNpc._id] = compactNpc;
-                                //0.4.2 Don't load more than maxLoad; display a message to filter
-                                if (numNpcsLoaded++ > maxLoad) break;
-                                //0.4.2e: Update the UI (e.g. "Loading 142 NPCs")
-                                if (updateLoading) {updateLoading(numNpcsLoaded);}
+
+                            const decoratedNpc = this.decorateNpc(npc5e);
+
+                            if (decoratedNpc && this.passesFilter(decoratedNpc, this.npcFilters.activeFilters)){
+
+                                actorsList[npc5e._id] = {
+                                    compendium : pack.collection,
+                                    name : decoratedNpc.name,
+                                    img: decoratedNpc.img,
+                                    displayCR : decoratedNpc.displayCR,
+                                    displaySize : decoratedNpc.displaySize,
+                                    displayType: this.getNPCType(decoratedNpc.data?.details?.type),
+                                    orderCR : decoratedNpc.data?.details?.cr,
+                                    orderSize : decoratedNpc.filterSize
+                                };
                             }
-                        }
-                    }
-                });
+
+                            return actorsList;
+                        }.bind(this), npcs);
+
+                        numNpcsLoaded = Object.keys(npcs).length;
+                        if (updateLoading) {updateLoading(numNpcsLoaded, false);}
+
+                    });
+                }
+               //0.4.1 Only preload a limited number and fill more in as needed
             }
-           //0.4.1 Only preload a limited number and fill more in as needed
-            if (numNpcsLoaded >= maxLoad) break;
+        }
+        catch(e){
+            if (e == STOP_SEARCH){
+                //breaking out
+            }
+            else{
+                console.timeEnd("loadAndFilterNpcs");
+                throw e;
+            }
         }
 
         this.npcsLoaded = true;
         console.timeEnd("loadAndFilterNpcs");
         console.log(`NPC Browser | Finished loading NPCs: ${Object.keys(npcs).length} NPCs`);
+        updateLoading(numNpcsLoaded, true) 
         return npcs;
     }
     
@@ -827,11 +798,10 @@ class CompendiumBrowser extends Application {
             if (options?.reload || !elements[0].children.length) {
 
                 const maxLoad = game.settings.get(CMPBrowser.MODULE_NAME, "maxload") ?? CMPBrowser.MAXLOAD;
-                const updateLoading = async numLoaded => {
-                    if (loadingMessage.length) {this.renderLoading(loadingMessage[0], browserTab, numLoaded, numLoaded>=maxLoad);}
+                const updateLoading = async (numLoaded,doneLoading) => {
+                    if (loadingMessage.length) {this.renderLoading(loadingMessage[0], browserTab, numLoaded, numLoaded>=maxLoad, doneLoading);}
                 }
-                updateLoading(0);
-
+                updateLoading(0, false);
                 //Uses loadAndFilterItems to read compendia for items which pass the current filters and render on this tab
                 const newItemsHTML = await this.renderItemData(browserTab, updateLoading); 
                 elements[0].innerHTML = newItemsHTML;
@@ -850,10 +820,10 @@ class CompendiumBrowser extends Application {
 
     }
 
-    async renderLoading(messageElement, itemType, numLoaded, maxLoaded=false) {
+    async renderLoading(messageElement, itemType, numLoaded, maxLoaded=false, doneLoading=false) {
         if (!messageElement) return;
 
-        let loadingHTML = await renderTemplate("modules/compendium-browser/template/loading.html", {numLoaded: numLoaded, itemType: itemType, maxLoaded: maxLoaded});
+        let loadingHTML = await renderTemplate("modules/compendium-browser/template/loading.html", {numLoaded: numLoaded, itemType: itemType, maxLoaded: maxLoaded, doneLoading: doneLoading});
         messageElement.innerHTML = loadingHTML;
     }
 
@@ -1078,11 +1048,11 @@ class CompendiumBrowser extends Application {
 
     decorateNpc(npc) {
         //console.log('%c '+npc.name, 'background: white; color: red')
-        const decoratedNpc = npc.data;
+        const decoratedNpc = npc;
 
         // cr display
-        let cr = decoratedNpc.data.details.cr;
-        if (cr == undefined || cr == '') cr = 0;
+        let cr = decoratedNpc.data.details?.cr; //0.7.2c: Possibly because of getIndex() use we now have to check for existence of details (doesn't for Character-type NPCs)
+        if (cr === undefined || cr === '') cr = 0;
         else cr = Number(cr);
         if (cr > 0 && cr < 1) cr = "1/" + (1 / cr);
         decoratedNpc.displayCR = cr;
@@ -1102,23 +1072,23 @@ class CompendiumBrowser extends Application {
         }
 
         // getting value for HasSpells and damage types
-        decoratedNpc.hasSpells = false;
-        decoratedNpc.damageDealt = [];
-        for (let item of decoratedNpc.items) {
-            if (item.type == 'spell') {
-                decoratedNpc.hasSpells = true;
-            }
-            if (item.data.damage && item.data.damage.parts && item.data.damage.parts.length > 0) {
-                for (let part of item.data.damage.parts) {
-                    let type = part[1];
-                    if (decoratedNpc.damageDealt.indexOf(type) === -1) {
-                        decoratedNpc.damageDealt.push(type);
-                    }
-                }
-            }
+        decoratedNpc.hasSpells = decoratedNpc.items?.type?.reduce((hasSpells, itemType) => hasSpells || itemType === 'spell', false);
+        decoratedNpc.damageDealt = decoratedNpc.items?.data?.damage?.parts ? decoratedNpc.items?.data?.damage?.parts?.filter(p => p?.length >= 2).map(p => p[1]) : [];
+
+        //handle poorly constructed npc
+        if (decoratedNpc.data?.details?.type && !(decoratedNpc.data?.details?.type instanceof Object)){
+            decoratedNpc.data.details.type = {value: decoratedNpc.data?.details?.type};
         }
 
         return decoratedNpc;
+    }
+
+    getNPCType(type){
+        if (type instanceof Object){
+            return type.value;
+        }
+
+        return type;
     }
 
     filterElements(list, subjects, filters) {
@@ -1188,6 +1158,29 @@ class CompendiumBrowser extends Application {
         return true;
     }
 
+    //incomplete removal of duplicate items
+    removeDuplicates(spellList){
+        //sort at n log n
+        let sortedList = Object.values(spellList).sort((a, b) => a.name.localeCompare(b.name));
+
+        //search through sorted list for duplicates
+        for (let index = 0; index < sortedList.length - 1;){
+
+            //all duplicates will be next to eachother
+            if (sortedList[index].name == sortedList[index + 1].name){
+                //duplicate something is getting removed
+                //TODO choose what to remove rather then the second
+                let remove = index + 1;
+
+                delete spellList[sortedList[remove].id];
+                sortedList.splice(remove, 1);
+            }
+            else{
+                index++;
+            }
+        }
+    }
+
     clearObject(obj) {
         let newObj = {};
         for (let key in obj) {
@@ -1204,13 +1197,13 @@ class CompendiumBrowser extends Application {
             loadedNpcCompendium: {},
         };
         for (let compendium of game.packs) {
-            if (compendium['metadata']['entity'] === "Item") {
+            if (compendium.documentName === "Item") {
                 defaultSettings.loadedSpellCompendium[compendium.collection] = {
                     load: true,
                     name: `${compendium['metadata']['label']} (${compendium.collection})`
                 };
             }
-            if (compendium['metadata']['entity'] === "Actor") {
+            if (compendium.documentName === "Actor") {
                 defaultSettings.loadedNpcCompendium[compendium.collection] = {
                     load: true,
                     name: `${compendium['metadata']['label']} (${compendium.collection})`
@@ -1245,12 +1238,14 @@ class CompendiumBrowser extends Application {
         // load settings from container and apply to default settings (available compendie might have changed)
         let settings = game.settings.get(CMPBrowser.MODULE_NAME, 'settings');
         for (let compKey in defaultSettings.loadedSpellCompendium) {
-            if (settings.loadedSpellCompendium[compKey] !== undefined) {
+            //v0.7.1 Check for settings.loadedSpellCompendium
+            if (settings.loadedSpellCompendium && (settings.loadedSpellCompendium[compKey] !== undefined)) {
                 defaultSettings.loadedSpellCompendium[compKey].load = settings.loadedSpellCompendium[compKey].load;
             }
         }
         for (let compKey in defaultSettings.loadedNpcCompendium) {
-            if (settings.loadedNpcCompendium[compKey] !== undefined) {
+            //v0.7.1 Check for settings.loadedNpcCompendium
+            if (settings.loadedNpcCompendium && (settings.loadedNpcCompendium[compKey] !== undefined)) {
                 defaultSettings.loadedNpcCompendium[compKey].load = settings.loadedNpcCompendium[compKey].load;
             }
         }
@@ -1265,6 +1260,10 @@ class CompendiumBrowser extends Application {
             console.log(defaultSettings);
         }   
         this.settings = defaultSettings;
+
+        //0.9.5 Set the CompendiumBrowser.isFoundryV8Plus variable for different code-paths
+        //If v9, then game.data.version will throw a deprecation warning so test for v9 first
+        CompendiumBrowser.isFoundryV8Plus = (game.data.release?.generation >= 9) || (game.data.version?.startsWith("0.8"));
     }
 
     saveSettings() {
@@ -1365,13 +1364,14 @@ class CompendiumBrowser extends Application {
         this.addItemFilter("Item Subtype", "Equipment", 'data.armor.type', 'text', CONFIG.DND5E.equipmentTypes);
         this.addItemFilter("Item Subtype", "Consumable", 'data.consumableType', 'text', CONFIG.DND5E.consumableTypes);
         
+        //0.7.2c: Fix rarity encoding (uses camelcase names)
         this.addItemFilter("Magic Items", "Rarity", 'data.rarity', 'select', 
         {
-            Common: "Common",
-            Uncommon: "Uncommon",
-            Rare: "Rare",
-            "Very rare": "Very Rare",
-            Legendary: "Legendary"
+            common: "Common",
+            uncommon: "Uncommon",
+            rare: "Rare",
+            veryRare: "Very Rare",
+            legendary: "Legendary"
         });
     }
 
@@ -1413,7 +1413,16 @@ class CompendiumBrowser extends Application {
         this.addNpcFilter(game.i18n.localize("CMPBrowser.general"), game.i18n.localize("CMPBrowser.hasLegAct"), 'data.resources.legact.max', 'bool');
         this.addNpcFilter(game.i18n.localize("CMPBrowser.general"), game.i18n.localize("CMPBrowser.hasLegRes"), 'data.resources.legres.max', 'bool');
         this.addNpcFilter(game.i18n.localize("CMPBrowser.general"), game.i18n.localize("CMPBrowser.cr"), 'data.details.cr', 'numberCompare');
-        this.addNpcFilter(game.i18n.localize("CMPBrowser.general"), game.i18n.localize("CMPBrowser.creatureType"), 'data.details.type', 'text', {
+
+        //Foundry 0.8.x: Creature type (data.details.type) is now a structure, so we check data.details.types.value instead
+        let npcDetailsPath;
+        if (CompendiumBrowser.isFoundryV8Plus) {
+            npcDetailsPath = "data.details.type.value";
+        } else {//0.7.x
+            npcDetailsPath = "data.details.type";
+        }
+
+        this.addNpcFilter(game.i18n.localize("CMPBrowser.general"), game.i18n.localize("CMPBrowser.creatureType"), npcDetailsPath, 'text', {
             aberration: game.i18n.localize("CMPBrowser.aberration"),
             beast: game.i18n.localize("CMPBrowser.beast"),
             celestial: game.i18n.localize("CMPBrowser.celestial"),

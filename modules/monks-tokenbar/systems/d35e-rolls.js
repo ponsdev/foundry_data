@@ -11,11 +11,11 @@ export class D35eRolls extends BaseRolls {
             { id: "save", text: i18n("MonksTokenBar.SavingThrow"), groups: this.config.savingThrows },
             { id: "skill", text: i18n("MonksTokenBar.Skill"), groups: this.config.skills }
         ].concat(this._requestoptions);
-
+        /*
         this._defaultSetting = mergeObject(this._defaultSetting, {
             stat1: "attributes.ac.normal.total",
             stat2: "skills.spt.value"
-        });
+        });*/
     }
 
     get _supportedSystem() {
@@ -26,8 +26,16 @@ export class D35eRolls extends BaseRolls {
         return !game.settings.get('D35E', 'disableExperienceTracking');
     }
 
+    getXP(actor) {
+        return actor.data.data.details.xp;
+    }
+
+    get defaultStats() {
+        return [{ stat: "attributes.ac.normal.total", icon: "fa-shield-alt" }, {stat:"skills.spt.value", icon: "fa-eye"}];
+    }
+
     defaultRequest(app) {
-        let allPlayers = (app.tokens.filter(t => t.actor?.hasPlayerOwner).length == app.tokens.length);
+        let allPlayers = (app.entries.filter(t => t.token.actor?.hasPlayerOwner).length == app.entries.length);
         return (allPlayers ? 'skill:spt' : null);
     }
 
@@ -35,9 +43,9 @@ export class D35eRolls extends BaseRolls {
         return 'ability:str';
     }
 
-    roll({id, actor, request, requesttype, fastForward = false }, callback, e) {
+    roll({ id, actor, request, rollMode, requesttype, fastForward = false }, callback, e) {
         let rollfn = null;
-        let options = { fastForward: fastForward, chatMessage: false, fromMars5eChatCard: true, event: e };
+        let options = { rollMode: rollMode, fastForward: fastForward, chatMessage: false, fromMars5eChatCard: true, event: e };
         let context = actor;
         if (requesttype == 'ability') {
             rollfn = actor.rollAbilityTest;
@@ -70,12 +78,12 @@ export class D35eRolls extends BaseRolls {
     async assignXP(msgactor) {
         let actor = game.actors.get(msgactor.id);
         await actor.update({
-            "data.details.xp.value": actor.data.data.details.xp.value + msgactor.xp
+            "data.details.xp.value": parseInt(actor.data.data.details.xp.value) + parseInt(msgactor.xp)
         });
 
         if (setting("send-levelup-whisper") && actor.data.data.details.xp.value >= actor.data.data.details.xp.max) {
             ChatMessage.create({
-                user: game.user._id,
+                user: game.user.id,
                 content: i18n("MonksTokenBar.Levelup"),
                 whisper: ChatMessage.getWhisperRecipients(actor.data.name)
             }).then(() => { });

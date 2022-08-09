@@ -1,9 +1,9 @@
 <div class="form-group">
     <label>{{localize "PF2E.Rarity"}}</label>
-    <select name="data.traits.rarity.value" data-dtype="String">
-        {{#select data.traits.rarity.value}}
-            {{#each rarities}}
-                <option value="{{@key}}">{{localize this.label}}</option>
+    <select name="data.traits.rarity" data-dtype="String">
+        {{#select data.traits.rarity}}
+            {{#each rarities as |rarity slug|}}
+                <option value="{{slug}}">{{rarity.label}}</option>
             {{/each}}
         {{/select}}
     </select>
@@ -18,12 +18,12 @@
 <div class="form-group form-group-trait">
     <label class="pf-title">
         {{localize "PF2E.KeyAbilityLabel"}}
-        <a class="trait-selector" data-trait-selector="basic" data-config-types="abilities" data-property="data.keyAbility" data-no-custom="true"><i class="fas fa-edit"></i></a>
+        <a class="trait-selector" data-trait-selector="basic" data-title="PF2E.KeyAbilityLabel" data-config-types="abilities" data-property="data.keyAbility" data-no-custom="true"><i class="fas fa-edit"></i></a>
     </label>
 
     <ul class="abc-traits-list">
         {{#each selectedKeyAbility}}
-            <span class="tag {{@key}}">{{localize this}}</span>
+            <span class="tag-legacy {{@key}}">{{localize this}}</span>
         {{/each}}
     </ul>
 </div>
@@ -187,13 +187,13 @@
 <div class="form-group form-group-trait">
     <label class="pf-title">
         {{localize "PF2E.TrainedSkillsLabel"}}
-        <a class="trait-selector" data-trait-selector="basic" data-config-types="skills" data-property="data.trainedSkills"><i class="fas fa-edit"></i></a>
+        <a class="trait-selector" data-trait-selector="basic" data-title="PF2E.TrainedSkillsLabel" data-config-types="skills" data-property="data.trainedSkills"><i class="fas fa-edit"></i></a>
     </label>
 
     <ul class="abc-traits-list">
         {{#each trainedSkills}}
             {{#if this.selected}}
-                <span class="tag {{@key}}">{{localize this.label}}</span>
+                <span class="tag-legacy {{@key}}">{{this.label}}</span>
             {{/if}}
         {{/each}}
     </ul>
@@ -209,13 +209,13 @@
 <div class="form-group form-group-trait">
     <label class="pf-title">
         {{localize "PF2E.AncestryFeatLevels"}}
-        <a class="trait-selector" data-trait-selector="basic" data-config-types="levels" data-property="data.ancestryFeatLevels" data-no-custom="true"><i class="fas fa-edit"></i></a>
+        <a class="trait-selector" data-trait-selector="basic" data-title="PF2E.AncestryFeatLevels" data-config-types="levels" data-property="data.ancestryFeatLevels" data-no-custom="true"><i class="fas fa-edit"></i></a>
     </label>
 
     <ul class="abc-traits-list">
         {{#each ancestryFeatLevels}}
             {{#if this.selected}}
-                <span class="tag {{@key}}">{{localize this.label}}</span>
+                <span class="tag-legacy {{@key}}">{{this.label}}</span>
             {{/if}}
         {{/each}}
     </ul>
@@ -224,14 +224,12 @@
 <div class="form-group form-group-trait">
     <label class="pf-title">
         {{localize "PF2E.ClassFeatLevels"}}
-        <a class="trait-selector" data-trait-selector="basic" data-config-types="levels" data-property="data.classFeatLevels" data-no-custom="true"><i class="fas fa-edit"></i></a>
+        <a class="trait-selector" data-trait-selector="basic" data-title="PF2E.ClassFeatLevels" data-config-types="levels" data-property="data.classFeatLevels" data-no-custom="true"><i class="fas fa-edit"></i></a>
     </label>
 
     <ul class="abc-traits-list">
         {{#each classFeatLevels}}
-            {{#if this.selected}}
-                <span class="tag {{@key}}">{{localize this.label}}</span>
-            {{/if}}
+            <span class="tag-legacy {{@key}}">{{this.label}}</span>
         {{/each}}
     </ul>
 </div>
@@ -239,14 +237,12 @@
 <div class="form-group form-group-trait">
     <label class="pf-title">
         {{localize "PF2E.GeneralFeatLevels"}}
-        <a class="trait-selector" data-trait-selector="basic" data-config-types="levels" data-property="data.generalFeatLevels" data-no-custom="true"><i class="fas fa-edit"></i></a>
+        <a class="trait-selector" data-trait-selector="basic" data-title="PF2E.GeneralFeatLevels" data-config-types="levels" data-property="data.generalFeatLevels" data-no-custom="true"><i class="fas fa-edit"></i></a>
     </label>
 
     <ul class="abc-traits-list">
         {{#each generalFeatLevels}}
-            {{#if this.selected}}
-                <span class="tag {{@key}}">{{localize this.label}}</span>
-            {{/if}}
+            <span class="tag-legacy {{@key}}">{{this.label}}</span>
         {{/each}}
     </ul>
 </div>
@@ -254,14 +250,12 @@
 <div class="form-group form-group-trait">
     <label class="pf-title">
         {{localize "PF2E.SkillFeatLevels"}}
-        <a class="trait-selector" data-trait-selector="basic" data-config-types="levels" data-property="data.skillFeatLevels" data-no-custom="true"><i class="fas fa-edit"></i></a>
+        <a class="trait-selector" data-trait-selector="basic" data-title="PF2E.SkillFeatLevels" data-config-types="levels" data-property="data.skillFeatLevels" data-no-custom="true"><i class="fas fa-edit"></i></a>
     </label>
 
     <ul class="abc-traits-list">
         {{#each skillFeatLevels}}
-            {{#if this.selected}}
-                <span class="tag {{@key}}">{{localize this.label}}</span>
-            {{/if}}
+            <span class="tag-legacy {{@key}}">{{this.label}}</span>
         {{/each}}
     </ul>
 </div>
@@ -269,62 +263,43 @@
 <div class="form-group form-group-trait">
     <label class="pf-title">
         {{localize "PF2E.SkillIncreaseLevels"}}
-        <a class="trait-selector" data-trait-selector="basic" data-config-types="levels" data-property="data.skillIncreaseLevels" data-no-custom="true"><i class="fas fa-edit"></i></a>
+        <a class="trait-selector" data-trait-selector="basic" data-title="PF2E.SkillIncreaseLevels" data-config-types="levels" data-property="data.skillIncreaseLevels" data-no-custom="true"><i class="fas fa-edit"></i></a>
     </label>
 
     <ul class="abc-traits-list">
         {{#each skillIncreaseLevels}}
-            {{#if this.selected}}
-                <span class="tag {{@key}}">{{localize this.label}}</span>
-            {{/if}}
-        {{/each}}
-    </ul>
-</div>
-
-<div class="form-group form-group-trait">
-    <label class="pf-title">
-        {{localize "PF2E.AbilityBoostLevels"}}
-        <a class="trait-selector" data-trait-selector="basic" data-config-types="levels" data-property="data.abilityBoostLevels" data-no-custom="true"><i class="fas fa-edit"></i></a>
-    </label>
-
-    <ul class="abc-traits-list">
-        {{#each abilityBoostLevels}}
-            {{#if this.selected}}
-                <span class="tag {{@key}}">{{localize this.label}}</span>
-            {{/if}}
+            <span class="tag-legacy {{@key}}">{{this.label}}</span>
         {{/each}}
     </ul>
 </div>
 
 {{~#*inline "abcItem"~}}
-    <li class="abc-item" data-pack-id="{{item.pack}}" data-index="{{i}}" data-item-id="{{item.id}}">
-        <img class="-item-image" src="{{item.img}}">
-        <div class="abc-item-name">
+    <li data-pack-id="{{item.pack}}" data-index="{{i}}" data-item-id="{{item.id}}">
+        <img src="{{item.img}}">
+        <div class="name">
             {{item.name}}{{#unless item.pack}}<i class="fa fa-globe" title="{{localize "PF2E.AncestryFeatures"}}"></i>{{/unless}}
         </div>
-        <div class="abc-item-level">{{item.level}}</div>
-        <input value="{{item.name}}" name="{{@partial-block}}items.{{i}}.name" type="hidden" data-dtype="String">
-        <input value="{{item.pack}}" name="{{@partial-block}}items.{{i}}.pack" type="hidden" data-dtype="String">
-        <input value="{{item.id}}" name="{{@partial-block}}items.{{i}}.id" type="hidden" data-dtype="String">
-        <a class="abc-item-remove" data-action='remove'><i class="fa fa-times"></i></a>
+        <input type="number" class="level" value="{{item.level}}" name="data.items.{{i}}.level" />
+        <input value="{{item.name}}" name="data.items.{{i}}.name" type="hidden" data-dtype="String" />
+        <input value="{{item.pack}}" name="data.items.{{i}}.pack" type="hidden" data-dtype="String" />
+        <input value="{{item.id}}" name="data.items.{{i}}.id" type="hidden" data-dtype="String" />
+        <a class="remove" data-action="remove"><i class="fa fa-times"></i></a>
         {{#if item.items~}}
-        {{#> abcItems item}}{{@partial-block}}items.{{i}}.{{/abcItems}}
+            {{#> abcItems item}}{{@partial-block}}items.{{i}}.{{/abcItems}}
         {{~/if}}
     </li>
 {{~/inline~}}
 
 {{~#*inline "abcItems"~}}
-<ul class="abc-items">
+<ul class="item-refs">
     {{#each items}}
         {{#> abcItem item=this.item i=this.key}}{{@partial-block}}{{/abcItem}}
     {{/each}}
 </ul>
 {{~/inline~}}
 
-<div class="form-group-stacked abc-list" data-valid-drops="classfeature">
-    <label for="data.traits">
-        {{localize "PF2E.ClassFeatures"}}
-    </label>
+<div class="form-group-stacked item-ref-group" data-valid-drops="classfeature">
+    <label for="data.traits">{{localize "PF2E.ClassFeatures"}}</label>
     {{#> abcItems}}{{/abcItems}}
     {{#unless data.items}}{{localize PF2E.DragDropFeats}}{{/unless}}
 </div>

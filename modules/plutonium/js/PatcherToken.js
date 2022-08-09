@@ -1,1 +1,294 @@
-const _0x2b54=['removeChild','parent','data','value','Token.prototype._onUpdateBaseActor','MODULE_NAME','_handleConfigUpdate_displayDamageDealt_doRefreshTokens','146697PcMzaM','_plutonium_xDispDamageDealt','40dWMQhh','isRemoveDisplays','attributes','Failed\x20to\x20refresh\x20token\x20\x22','156632LkpDLf','Token.prototype._onUpdateTokenActor','set','get','canvasTextStyle','_handleConfigUpdate_displayDamageDealt_doAddDisplay','346479LOhmSG','_handleConfigUpdate_displayDamageDealt_doUpdateDisplay','visible','isDisplayDamageDealt','refresh','482353dCALup','actor','fill','LIBWRAPPER_MODE_WRAPPER','placeables','style','202YZGpVe','register','handleConfigUpdate','floor','469891mVMREf','anchor','fontSize','addChild','text','tokens','558395xMPzNF','Text','1cMeZYh','clone','init','Token.prototype._onUpdate','max','_id'];const _0x3a9e=function(_0x15014a,_0x242f86){_0x15014a=_0x15014a-0x13d;let _0x2b545d=_0x2b54[_0x15014a];return _0x2b545d;};const _0x1a1004=_0x3a9e;(function(_0x434556,_0x5810a8){const _0x36d7ec=_0x3a9e;while(!![]){try{const _0x5b36ee=parseInt(_0x36d7ec(0x162))+parseInt(_0x36d7ec(0x15c))+parseInt(_0x36d7ec(0x143))*-parseInt(_0x36d7ec(0x15e))+parseInt(_0x36d7ec(0x168))+-parseInt(_0x36d7ec(0x147))+-parseInt(_0x36d7ec(0x13d))+parseInt(_0x36d7ec(0x14d))*parseInt(_0x36d7ec(0x14f));if(_0x5b36ee===_0x5810a8)break;else _0x434556['push'](_0x434556['shift']());}catch(_0x3f6636){_0x434556['push'](_0x434556['shift']());}}}(_0x2b54,0x3c847));import{libWrapper,UtilLibWrapper}from'./PatcherLibWrapper.js';import{SharedConsts}from'../shared/SharedConsts.js';import{Config}from'./Config.js';import{LGT}from'./Util.js';class Patcher_Token{static[_0x1a1004(0x151)](){const _0x4ec600=_0x1a1004;libWrapper[_0x4ec600(0x144)](SharedConsts[_0x4ec600(0x15a)],'Token.prototype.refresh',function(_0x4c4709,..._0xac2d76){const _0x95311d=_0x4ec600;if(Config['get'](_0x95311d(0x14c),_0x95311d(0x16b)))Patcher_Token[_0x95311d(0x169)](this);return _0x4c4709(..._0xac2d76);},UtilLibWrapper[_0x4ec600(0x140)]),libWrapper[_0x4ec600(0x144)](SharedConsts[_0x4ec600(0x15a)],_0x4ec600(0x152),function(_0x3649af,..._0x114510){const _0x1a05f4=_0x4ec600;if(Config[_0x1a05f4(0x165)](_0x1a05f4(0x14c),_0x1a05f4(0x16b)))Patcher_Token[_0x1a05f4(0x169)](this);return _0x3649af(..._0x114510);},UtilLibWrapper[_0x4ec600(0x140)]),libWrapper['register'](SharedConsts[_0x4ec600(0x15a)],_0x4ec600(0x163),function(_0x1153e8,..._0x48e472){const _0x1485ab=_0x4ec600;if(Config[_0x1485ab(0x165)]('tokens',_0x1485ab(0x16b)))Patcher_Token['_handleConfigUpdate_displayDamageDealt_doUpdateDisplay'](this);return _0x1153e8(..._0x48e472);},UtilLibWrapper[_0x4ec600(0x140)]),libWrapper[_0x4ec600(0x144)](SharedConsts[_0x4ec600(0x15a)],_0x4ec600(0x159),function(_0x4296b5,..._0x304460){const _0x22a21c=_0x4ec600;if(Config['get'](_0x22a21c(0x14c),'isDisplayDamageDealt'))Patcher_Token[_0x22a21c(0x169)](this);return _0x4296b5(..._0x304460);},UtilLibWrapper[_0x4ec600(0x140)]);}static[_0x1a1004(0x145)](){this['_handleConfigUpdate_displayDamageDealt_doRefreshTokens']();}static[_0x1a1004(0x15b)](_0x2d6087){const _0x39f155=_0x1a1004;_0x2d6087=_0x2d6087||{};const _0x182c0a=MiscUtil['get'](canvas,_0x39f155(0x14c),_0x39f155(0x141))||[];for(const _0x245de4 of _0x182c0a){try{_0x2d6087[_0x39f155(0x15f)]&&_0x245de4[_0x39f155(0x15d)]&&(_0x245de4[_0x39f155(0x155)](_0x245de4[_0x39f155(0x15d)]),_0x245de4[_0x39f155(0x15d)]=null),_0x245de4[_0x39f155(0x16c)]();}catch(_0x73c710){console['warn'](...LGT,_0x39f155(0x161)+_0x245de4[_0x39f155(0x154)]+'\x22!',_0x73c710);}}}static[_0x1a1004(0x169)](_0x1ee5a0){const _0x43bbe1=_0x1a1004;this['_handleConfigUpdate_displayDamageDealt_doAddDisplay'](_0x1ee5a0);const _0x2f1c86=MiscUtil['get'](_0x1ee5a0['actor'],_0x43bbe1(0x157),_0x43bbe1(0x157),_0x43bbe1(0x160),'hp',_0x43bbe1(0x153))||0x0,_0x208ac6=MiscUtil['get'](_0x1ee5a0[_0x43bbe1(0x13e)],_0x43bbe1(0x157),'data',_0x43bbe1(0x160),'hp',_0x43bbe1(0x158))||0x0,_0xdb4e37=Math['min'](_0x2f1c86,Math[_0x43bbe1(0x153)](0x0,_0x2f1c86-_0x208ac6));_0x1ee5a0[_0x43bbe1(0x15d)][_0x43bbe1(0x14b)]=''+_0xdb4e37,_0x1ee5a0[_0x43bbe1(0x15d)][_0x43bbe1(0x16a)]=!!_0xdb4e37;if(_0x208ac6<=Math[_0x43bbe1(0x146)](_0x2f1c86/0x2))_0x1ee5a0['_plutonium_xDispDamageDealt']['style'][_0x43bbe1(0x13f)]=0xff0000;else _0x1ee5a0[_0x43bbe1(0x15d)][_0x43bbe1(0x142)][_0x43bbe1(0x13f)]=0xffffff;}static[_0x1a1004(0x167)](_0x343225){const _0xe2f74c=_0x1a1004;if(_0x343225[_0xe2f74c(0x15d)]&&_0x343225['_plutonium_xDispDamageDealt'][_0xe2f74c(0x156)])return;_0x343225[_0xe2f74c(0x15d)]&&!_0x343225[_0xe2f74c(0x15d)][_0xe2f74c(0x156)]&&(_0x343225[_0xe2f74c(0x155)](_0x343225[_0xe2f74c(0x15d)]),_0x343225[_0xe2f74c(0x15d)]=null),_0x343225[_0xe2f74c(0x15d)]=new PIXI[(_0xe2f74c(0x14e))]('',CONFIG[_0xe2f74c(0x166)][_0xe2f74c(0x150)]()),_0x343225[_0xe2f74c(0x15d)]['style'][_0xe2f74c(0x149)]=0x18,_0x343225[_0xe2f74c(0x15d)][_0xe2f74c(0x148)][_0xe2f74c(0x164)](0x1,0x1),_0x343225['_plutonium_xDispDamageDealt']['position'][_0xe2f74c(0x164)](_0x343225['w']-0x3,_0x343225['h']-0x1),_0x343225[_0xe2f74c(0x14a)](_0x343225[_0xe2f74c(0x15d)]);}}export{Patcher_Token};
+import {UtilLibWrapper} from "./PatcherLibWrapper.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {Config} from "./Config.js";
+import {LGT} from "./Util.js";
+import {ConfigConsts} from "./ConfigConsts.js";
+import {UtilCompat} from "./UtilCompat.js";
+import {UtilGameSettings} from "./UtilGameSettings.js";
+
+class Patcher_Token {
+	static _lw_Token_prototype_refresh (fn, ...args) {
+		const out = fn(...args);
+		Patcher_Token._handleConfigUpdate_displayDamageDealt_doUpdateDisplay(this);
+		return out;
+	}
+
+	static _lw_Token_prototype__onUpdate (fn, ...args) {
+		const out = fn(...args);
+		Patcher_Token._handleConfigUpdate_displayDamageDealt_doUpdateDisplay(this);
+		return out;
+	}
+
+	static _lw_TokenDocument_prototype__onUpdateTokenActor (fn, ...args) {
+		const out = fn(...args);
+		Patcher_Token._handleConfigUpdate_displayDamageDealt_doUpdateDisplay(this.object);
+		return out;
+	}
+
+	static _lw_TokenDocument_prototype__onUpdateBaseActor (fn, ...args) {
+		const out = fn(...args);
+		Patcher_Token._handleConfigUpdate_displayDamageDealt_doUpdateDisplay(this.object);
+		return out;
+	}
+
+	static _lw_Token_prototype__getTextStyle (fn, ...args) {
+		const out = fn(...args);
+
+		const fontSizeMult = Config.get("tokens", "nameplateFontSizeMultiplier");
+		if (fontSizeMult != null) {
+			if (out.fontSize != null) out.fontSize *= fontSizeMult;
+		}
+
+		const isAllowWrap = Config.get("tokens", "isAllowNameplateFontWrap");
+		if (isAllowWrap !== ConfigConsts.C_USE_GAME_DEFAULT) {
+			out.wordWrap = !!isAllowWrap;
+		}
+
+		const fontWrapWidthMult = Config.get("tokens", "nameplateFontWrapWidthMultiplier");
+		if (fontWrapWidthMult != null) {
+			if (out.wordWrapWidth != null) out.wordWrapWidth *= fontWrapWidthMult;
+		}
+
+		return out;
+	}
+
+	static handleConfigUpdate ({isInit = false, current, previous} = {}) {
+		const tokens = MiscUtil.get(canvas, "tokens", "placeables") || [];
+
+		this._handleConfigUpdate_displayDamageDealt({isInit, tokens});
+		this._handleConfigUpdate_togglePatches();
+
+		// Avoid doing a draw unless we've had a relevant config update
+		if (!this._handleConfigUpdate_isDoDraw({isInit, current, previous})) return;
+
+		this._handleConfigUpdate_doDraw({tokens});
+	}
+
+	static _handleConfigUpdate_togglePatches () {
+		// region "Damage dealt" display
+		UtilLibWrapper.togglePatch(
+			"Token.prototype.refresh",
+			this._lw_Token_prototype_refresh,
+			UtilLibWrapper.LIBWRAPPER_MODE_WRAPPER,
+			Config.get("tokens", "isDisplayDamageDealt"),
+		);
+
+		UtilLibWrapper.togglePatch(
+			"Token.prototype._onUpdate",
+			this._lw_Token_prototype__onUpdate,
+			UtilLibWrapper.LIBWRAPPER_MODE_WRAPPER,
+			Config.get("tokens", "isDisplayDamageDealt"),
+		);
+
+		UtilLibWrapper.togglePatch(
+			"TokenDocument.prototype._onUpdateTokenActor",
+			this._lw_TokenDocument_prototype__onUpdateTokenActor,
+			UtilLibWrapper.LIBWRAPPER_MODE_WRAPPER,
+			Config.get("tokens", "isDisplayDamageDealt"),
+		);
+
+		UtilLibWrapper.togglePatch(
+			"TokenDocument.prototype._onUpdateBaseActor",
+			this._lw_TokenDocument_prototype__onUpdateBaseActor,
+			UtilLibWrapper.LIBWRAPPER_MODE_WRAPPER,
+			Config.get("tokens", "isDisplayDamageDealt"),
+		);
+		// endregion
+
+		// region Nameplate text size
+		UtilLibWrapper.togglePatch(
+			"Token.prototype._getTextStyle",
+			this._lw_Token_prototype__getTextStyle,
+			UtilLibWrapper.LIBWRAPPER_MODE_WRAPPER,
+			[
+				Config.get("tokens", "nameplateFontSizeMultiplier"),
+				Config.get("tokens", "isAllowNameplateFontWrap"),
+				Config.get("tokens", "nameplateFontWrapWidthMultiplier"),
+			].some(it => it != null),
+		);
+		// endregion
+	}
+
+	static _isForceDisabled (token) {
+		if (
+			UtilCompat.isMonksLittleDetailsActive()
+			&& UtilGameSettings.getSafe(UtilCompat.MODULE_MONKS_LITTLE_DETAILS, "show-bloodsplat")
+			&& UtilCompat.MonksLittleDetails.isDefeated(token)
+		) return true;
+		return false;
+	}
+
+	static _handleConfigUpdate_isDoDraw ({isInit, current, previous}) {
+		if (isInit) return true;
+		if (!current || !previous) return false;
+
+		const diffProps = [
+			"isDisplayDamageDealt",
+			"damageDealtBloodiedThreshold",
+			"isDamageDealtBelowToken",
+
+			"nameplateFontSizeMultiplier",
+			"isAllowNameplateFontWrap",
+			"nameplateFontWrapWidthMultiplier",
+		];
+		return diffProps.some(prop => MiscUtil.get(current, "tokens", prop) !== MiscUtil.get(previous, "tokens", prop));
+	}
+
+	static _handleConfigUpdate_doDraw ({tokens}) {
+		for (const token of tokens) {
+			try {
+				const visible = token.visible;
+				this._pDoTokenFakeDraw({token});
+				token.visible = visible;
+			} catch (e) {
+				// Sanity check/should never occur
+				console.warn(...LGT, `Failed to refresh token "${token.id}"!`, e);
+			}
+		}
+	}
+
+	/**
+	 * A stripped-down version of `Token.draw`, which allows us to change font parameters.
+	 * We do this to avoid messing with modules like Token Magic FX, who's filters get stripped as part of `.draw()`.
+	 */
+	static async _pDoTokenFakeDraw ({token}) {
+		// region Redraw HUD elements
+		// This is effectively `_drawHUD` but without the "remove all" line, as removing the HUD kills our display
+		//   (and a variety of HUD elements from other modules, such as the height display from Token Height!).
+		if (!token.hud.parent) canvas.controls.hud.addChild(token.hud);
+
+		token.hud.removeChild(token.hud.bars).destroy();
+		token.hud.removeChild(token.hud.tooltip).destroy();
+		token.hud.removeChild(token.hud.effects).destroy();
+		token.hud.removeChild(token.hud.target).destroy();
+		token.hud.removeChild(token.hud.nameplate).destroy();
+
+		token.hud.bars = token.hud.addChild(token._drawAttributeBars());
+		token.hud.tooltip = token.hud.addChild(token._drawTooltip());
+		token.hud.effects = token.hud.addChild(new PIXI.Container());
+		token.hud.target = token.hud.addChild(new PIXI.Graphics());
+		token.hud.nameplate = token.hud.addChild(token._drawNameplate());
+		// endregion
+
+		token.refresh();
+
+		// Ensure bars/effects are rendered appropriately
+		await token.drawEffects();
+		token.drawBars();
+	}
+
+	static _handleConfigUpdate_displayDamageDealt ({isInit = false, tokens} = {}) {
+		try {
+			return this._handleConfigUpdate_displayDamageDealt_({tokens});
+		} catch (e) {
+			if (!isInit) throw e;
+			Config.handleFailedInitConfigApplication("tokens", "isDisplayDamageDealt", e);
+		}
+	}
+
+	static _handleConfigUpdate_displayDamageDealt_ ({tokens}) {
+		this._handleConfigUpdate_displayDamageDealt_doRefreshTokens({
+			tokens,
+			isRemoveDisplays: !Config.get("tokens", "isDisplayDamageDealt"),
+		});
+	}
+
+	/**
+	 * @param [opts]
+	 * @param [opts.tokens]
+	 * @param [opts.isRemoveDisplays] If the custom displays should be removed.
+	 */
+	static _handleConfigUpdate_displayDamageDealt_doRefreshTokens ({tokens, isRemoveDisplays}) {
+		for (const token of tokens) {
+			try {
+				if (isRemoveDisplays) Patcher_Token._doRemove(token);
+			} catch (e) {
+				// Should never occur
+			}
+		}
+	}
+
+	static _doRemove (token) {
+		if (!token.hud?.plut_dispDamageDealt) return;
+		this._doDestroyText(token.removeChild(token.hud?.plut_dispDamageDealt));
+		delete token.hud.plut_dispDamageDealt;
+	}
+
+	static _handleConfigUpdate_displayDamageDealt_doUpdateDisplay (token) {
+		if (!token?.hud) return; // Should never occur
+
+		try {
+			if (this._isForceDisabled(token)) {
+				Patcher_Token._doRemove(token);
+				return;
+			}
+
+			this._handleConfigUpdate_displayDamageDealt_doAddDisplay(token);
+
+			const maxHp = MiscUtil.get(token.actor, "data", "data", "attributes", "hp", "max") || 0;
+			const curHp = MiscUtil.get(token.actor, "data", "data", "attributes", "hp", "value") || 0;
+
+			const damageDealt = Math.min(maxHp, Math.max(0, maxHp - curHp));
+			token.hud.plut_dispDamageDealt.text = `-${damageDealt}`;
+
+			token.hud.plut_dispDamageDealt.visible = !!damageDealt;
+
+			const fontSizeMult = Config.get("tokens", "nameplateFontSizeMultiplier");
+
+			// If we are using levels, render the text below the token. This is to allow levels to work its token-clobbering
+			//   magic without leaving our text underneath the token. We do this instead of patching levels, as patching levels
+			//   would require constant maintenance.
+			if (Config.get("tokens", "isDamageDealtBelowToken")) {
+				token.hud.plut_dispDamageDealt.style.fontSize = 18 * (fontSizeMult ?? 1);
+
+				token.hud.plut_dispDamageDealt.anchor.set(0.5, 0);
+
+				token.hud.plut_dispDamageDealt.position.set(Math.round(token.w / 2), token.h + 1);
+			} else {
+				token.hud.plut_dispDamageDealt.style.fontSize = 24 * (fontSizeMult ?? 1);
+
+				// Anchor text to the bottom-right of the nameplate
+				token.hud.plut_dispDamageDealt.anchor.set(1, 1);
+
+				// Taken from `Token._drawBar`
+				const barHeight = Math.max((canvas.dimensions.size / 12), 8) * (token.data.height >= 2 ? 1.6 : 1);
+
+				// Set position at bottom-right of token (with small offsets)
+				token.hud.plut_dispDamageDealt.position.set(token.w - 3, token.h - barHeight);
+			}
+
+			if (curHp <= Math.floor(maxHp * Config.get("tokens", "damageDealtBloodiedThreshold"))) token.hud.plut_dispDamageDealt.style.fill = 0xFF0000;
+			else token.hud.plut_dispDamageDealt.style.fill = 0xFFFFFF;
+		} catch (e) {
+			// Sanity check/should never occur
+			console.warn(...LGT, `Failed to update "damage dealt" display for token "${token.id}"!`, e);
+		}
+	}
+
+	static _handleConfigUpdate_displayDamageDealt_doAddDisplay (token) {
+		if (
+			token.hud?.plut_dispDamageDealt
+			&& token.hud?.plut_dispDamageDealt.parent // Our display can become orphaned--in this case, we need to regenerate it
+		) return;
+
+		// If orphaned, cleanup to prevent any leaks
+		if (token.hud?.plut_dispDamageDealt && !token.hud?.plut_dispDamageDealt?.parent) {
+			token.removeChild(token.hud?.plut_dispDamageDealt);
+			this._doDestroyText(token.hud?.plut_dispDamageDealt);
+			token.hud.plut_dispDamageDealt = null;
+		}
+
+		// region Based on "Token._drawNameplate()"
+		// Create the nameplate text
+		token.hud.plut_dispDamageDealt = new PreciseText("", CONFIG.canvasTextStyle.clone());
+
+		token.addChild(token.hud?.plut_dispDamageDealt);
+	}
+
+	static _doDestroyText (text) {
+		if (!text?.texture) return;
+		text.destroy();
+	}
+}
+
+export {Patcher_Token};

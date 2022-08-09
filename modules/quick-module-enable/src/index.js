@@ -1,19 +1,8 @@
-Hooks.once("ready", quick_enable_init)
 
-var manifest_mismatch_mods = {}
+Hooks.once("ready", quick_enable_init)
 
 
 //CONFIG.debug.quick_module_enable =true
-
-
-function ver_check(query, mod) {
-    query.json().then(modules => {
-        if (modules.manifest === null)
-            return
-        manifest_mismatch_mods[modules.manifest.name] = modules.manifest
-        game.settings.set('quick-module-enable', 'manifestChecker', manifest_mismatch_mods)
-    })
-}
 
 async function quick_enable_init() {
     if (!game.user.isGM) return
@@ -24,29 +13,13 @@ async function quick_enable_init() {
         type: Object,
         default: [],
         config: false,
-        onChange: s => { }
+        onChange: () => { }
     });
-    game.settings.register('quick-module-enable', "manifestChecker", {
-        scope: "world",
-        type: Object,
-        default: [],
-        config: false,
-        onChange: s => { }
-    });
-    game.settings.register('quick-module-enable', "manifestCheckerDate", {
-        scope: "world",
-        type: Number,
-        default: 0,
-        config: false,
-        onChange: s => { }
-    });
-
-    //game.settings.set('quick-module-enable', 'manifestCheckerDate', 0)
 
     //Get current mod list
     var modVer = {}
     for (const mod of game.data.modules) {
-        modVer[mod.id] = { version: mod.data.version }
+        modVer[mod.id] = { version: mod.version??mod.data.version }
     }
 
     //Get mod history
@@ -65,6 +38,8 @@ async function quick_enable_init() {
     // Monkeypatch to reuse the existing Modmanagment API
     ModuleManagement.prototype.realGetData = ModuleManagement.prototype.getData
     ModuleManagement.prototype.getData = getQuickEnableData
+    ModuleManagement.prototype._realOnSearchFilter = ModuleManagement.prototype._onSearchFilter
+    ModuleManagement.prototype._onSearchFilter = onSearchFilter
 
     // Check if there are any new mods, and display the manager if so
     var oldVer = modHistory.slice(-2)[0] // Second to last elemet is state at previous load
@@ -87,7 +62,40 @@ async function quick_enable_init() {
 }
 
 
+function getCompatVer(m_data) {
+    return m_data?.compatibleCoreVersion ?? m_data?.compatibility?.verified ?? "X";
+}
+
+// New v9+ filters
+function onSearchFilter(event, query, rgx, html) {
+    this._realOnSearchFilter(event, query, rgx, html)
+    
+    const version_string = game.version??game.data.version
+    for ( let li of html.children ) {
+        const name = li.dataset.moduleName??li.dataset.moduleId;
+        const modVer = game.settings.get('quick-module-enable', 'previousModules')[0] // Element 0 is oldest, so check it for version
+        const newMod = game.settings.get('quick-module-enable', 'previousModules').slice(-2)[0] // Second to last elemet is state at previous load
+
+        var m_data = v10Compat()?game.modules.get(name):game.modules.get(name).data
+        var vc = verCompare(version_string,getCompatVer(m_data))
+        var isNew = !(name in newMod)
+        var isUpdated = !(name in modVer && modVer[name]["version"] === m_data.version)
+
+        if(((this._filter === "minor") && !vc.minor) ||
+           ((this._filter === "major") && !vc.major ) ||
+           ((this._filter === "recent") && !(isUpdated || isNew))){
+            li.classList.toggle("hidden", true);
+           }
+        
+            // Filter the list when "recent" is chosen to just have new or updated
+            // Pre-check the new mods if this is the startup display
+           if (isNew && this._quick_install_mode) li.querySelectorAll('input[type=checkbox]')[0].checked = true
+    }
+  }
+
+
 function getQuickEnableData(options) {
+    const version_string = game.version??game.data.version
     var data = this.realGetData(options) // Don't want to copy the bulk of this function for compatability.
     var counts_recent = 0
     var counts_major = 0
@@ -95,102 +103,52 @@ function getQuickEnableData(options) {
     const modVer = game.settings.get('quick-module-enable', 'previousModules')[0] // Element 0 is oldest, so check it for version
     const newMod = game.settings.get('quick-module-enable', 'previousModules').slice(-2)[0] // Second to last elemet is state at previous load
 
-    if (typeof ForgeVTT !== "undefined") {
-        if (Date.now() - game.settings.get('quick-module-enable', 'manifestCheckerDate') > 1000 * 60 * 60 * 24) {  // 1 day
-            manifest_mismatch_mods = {}
-            // Only run this when if the module tool is opened.
-            for (const mod of game.data.modules) {
-                fetch("https://forge-vtt.com/api/bazaar/manifest/" + mod.data.name + "?coreVersion=" + game.data.version).catch((e) => { console.error(e) }).then(query => ver_check(query, mod))
-            }
-            game.settings.set('quick-module-enable', 'manifestCheckerDate', Date.now())
-        }
-
-
-        var cached_data = game.settings.get('quick-module-enable', 'manifestChecker')
-        var error_list = []
-        var local_only = data.modules.reduce((arr, m) => {
-            if (cached_data[m.name] === undefined) {
-                console.log("QuickModuleEnable - Local only mod", m.name)
-                return arr.concat([m]);
-            }
-            return arr
-        }, []);
-
-        var reinstall = data.modules.reduce((arr, m) => {
-            if ((cached_data[m.name] !== undefined && m.manifest != cached_data[m.name].manifest)
-            && m.version > cached_data[m.name].version) {
-                console.group("QuickModuleEnable - Manifest Mismatch", m.title)
-                console.log("Local manifest :", m.manifest, m.version)
-                console.log("Latest manifest:", cached_data[m.name].manifest, cached_data[m.name].version )
-                console.groupEnd()
-                return arr.concat([m]);
-
-            }
-
-            return arr
-        }, []);
-
-
-        if (local_only){
-            error_list.push({ title: "----------------------- Non-Public Modules -----------------------" })
-            error_list = error_list.concat(local_only)
-        }
-        if (reinstall) {
-            error_list.push({ title: "---------- Manifest not matching latest public version ----------" })
-            error_list = error_list.concat(reinstall)
-        }
-    }
-
 
     // Count loop is seperate from filter loop so that count is always correct
     // Othewise, since I'm using the output of the real GetData function (above), the count would change depending on those filters too
     for (var m of game.data.modules) {
-
-        var isNew = !(m.data.name in newMod)
-        var isUpdated = !(m.data.name in modVer && modVer[m.data.name]["version"] === m.data.version)
+        var m_data = v10Compat()?m:m.data
+        var name = m_data?.name ?? m_data.id
+        var isNew = !(name in newMod)
+        var isUpdated = !(name in modVer && modVer[name]["version"] === m_data.version)
         if (isUpdated || isNew) {
             counts_recent++;
         }
-        var isMinor = m.data.compatibleCoreVersion >= game.data.version
-        var isMajor = m.compatibleCoreVersion === undefined ||  m.data.compatibleCoreVersion.slice(0, -1) >= game.data.version.slice(0, -1)
-        if (!isMajor) counts_major++
-        if (!isMinor && isMajor) counts_minor++
+        var vc= verCompare(version_string,getCompatVer(m_data))
+        if (vc.major) counts_major++
+        if (vc.minor) counts_minor++
     }
 
-    if (this._filter === "minor") {
-        data.modules = data.modules.reduce((arr, m) => {
-            var isMinor = m.compatibleCoreVersion >= game.data.version
-            var isMajor = m.compatibleCoreVersion === undefined || m.compatibleCoreVersion.slice(0, -1) >= game.data.version.slice(0, -1)
-            if (isMinor || !isMajor) return arr
-            return arr.concat([m]);
-        }, []);
-    }
-
-    if (this._filter === "major") {
-        data.modules = data.modules.reduce((arr, m) => {
-            var isMajor = m.compatibleCoreVersion === undefined || m.compatibleCoreVersion.slice(0, -1) >= game.data.version.slice(0, -1)
-            if (isMajor) return arr
-            return arr.concat([m]);
-        }, []);
-    }
-    if (this._filter === "error") {
-        data.modules = error_list
-        data.editable = false
-    }
-
-    // Filter the list when "recent" is chosen to just have new or updated
-    // Pre-check the new mods if this is the startup display
-    if (this._filter === "recent") {
-        data.modules = data.modules.reduce((arr, m) => {
-
-            var isNew = !(m.name in newMod)
-            var isUpdated = !(m.name in modVer && modVer[m.name]["version"] === m.version)
-
-            if (!(isUpdated || isNew)) return arr;
-            if (isNew && this._quick_install_mode) m.active = true
-
-            return arr.concat([m]);
-        }, []);
+    // Legacy 0.8.x filters
+    if(!isNewerVersion(version_string,9)) {
+        if (this._filter === "minor") {
+            data.modules = data.modules.reduce((arr, m) => {
+                if (!verCompare(version_string,getCompatVer(m_data)).minor) return arr
+                return arr.concat([m]);
+            }, []);
+        }
+    
+        if (this._filter === "major") {
+            data.modules = data.modules.reduce((arr, m) => {
+                if (!verCompare(version_string,getCompatVer(m_data)).major) return arr
+                return arr.concat([m]);
+            }, []);
+        }
+    
+        // Filter the list when "recent" is chosen to just have new or updated
+        // Pre-check the new mods if this is the startup display
+        if (this._filter === "recent") {
+            data.modules = data.modules.reduce((arr, m) => {
+                name = m?.name ?? m.id
+                var isNew = !(name in newMod)
+                var isUpdated = !(name in modVer && modVer[name]["version"] === m.version)
+    
+                if (!(isUpdated || isNew)) return arr;
+                if (isNew && this._quick_install_mode) m.active = true
+    
+                return arr.concat([m]);
+            }, []);
+        }
     }
 
 
@@ -204,28 +162,40 @@ function getQuickEnableData(options) {
         },
         {
             id: "major",
-            label: game.i18n.localize('QUICKMODMANAGE.FilterMajor') + "(< " + game.data.version.slice(0, -1) + "x)",
+            label: game.i18n.localize('QUICKMODMANAGE.FilterMajor') + "(< " + majorVersion(version_string) + ".x)",
             css: this._filter === "major" ? " active" : "",
             count: counts_major
         },
         {
             id: "minor",
-            label: game.i18n.localize('QUICKMODMANAGE.FilterMinor') + " (< " + game.data.version + ")",
+            label: game.i18n.localize('QUICKMODMANAGE.FilterMinor') + " (< " + version_string + ")",
             css: this._filter === "minor" ? " active" : "",
             count: counts_minor
         },
     )
-    if (typeof ForgeVTT !== "undefined") {
-        data.filters.push(
-            {
-                id: "error",
-                label: game.i18n.localize('QUICKMODMANAGE.ManifestMismatch'),
-                css: this._filter === "error" ? " active" : "",
-                count: local_only.length + reinstall.length
-            },
-        )
-    }
 
     return data
+}
+
+function v10Compat(){
+    const version_string = game.version??game.data.version
+    return (isNewerVersion(version_string,'10')) 
+}
+
+function verCompare(ver0,ver1) {
+    var major = isNewerVersion( majorVersion(ver0),majorVersion(ver1))
+    var minor = isNewerVersion(ver0,ver1 ) && !major
+    return {major, minor }
+}
+
+function majorVersion(version){
+    if(!version){
+        return 0
+    } 
+    if (isNewerVersion('9',version)) {
+        return version.split('.')[0] + "." + version.split('.')[1]
+    } 
+    return version.split('.')[0]
+
 }
 

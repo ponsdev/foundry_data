@@ -1,13 +1,16 @@
 import { MonksTokenBar, log, i18n, setting, MTB_MOVEMENT_TYPE } from "./monks-tokenbar.js";
 import { AssignXPApp } from "./apps/assignxp.js";
-import { SavingThrowApp } from "./apps/savingthrow.js";
-import { ContestedRollApp } from "./apps/contestedroll.js";
+import { SavingThrowApp, SavingThrow } from "./apps/savingthrow.js";
+import { ContestedRollApp, ContestedRoll } from "./apps/contestedroll.js";
 import { LootablesApp } from "./apps/lootables.js";
 
 export class MonksTokenBarAPI {
     static init() {
         game.MonksTokenBar = MonksTokenBarAPI;
     }
+
+    static get debugEnabled() { return MonksTokenBar.debugEnabled; }
+    static set debugEnabled(value) { MonksTokenBar.debugEnabled = value; }
 
     static TokenBar() {
         return MonksTokenBar.tokenbar;
@@ -19,37 +22,55 @@ export class MonksTokenBarAPI {
         if (!MonksTokenBar.isMovement(movement))
             return;
 
-        if (tokens != undefined) {
-            MonksTokenBar.changeTokenMovement(movement, tokens);
+        let useTokens = MonksTokenBar.getTokenEntries(tokens).map(t => t.token);
+
+        if (useTokens != undefined) {
+            MonksTokenBar.changeTokenMovement(movement, useTokens);
         }else
             MonksTokenBar.changeGlobalMovement(movement);
     }
 
-    static requestRoll(tokens, options = {}) {
+    static async requestRoll(tokens, options = {}) {
         if (!game.user.isGM)
             return;
 
-        options.rollmode = options.rollmode || 'roll';
+        options.rollmode = options.rollmode || options.rollMode || 'roll';
 
-        let savingthrow = new SavingThrowApp(tokens, options);
+        if (typeof tokens == 'string')
+            tokens = tokens.split(',').map(function (item) { return item.trim(); });
+
+        let entries = MonksTokenBar.getTokenEntries(tokens);
+
+        let savingthrow = new SavingThrowApp(entries, options);
         if (options?.silent === true) {
-            let msg = savingthrow.requestRoll();
+            let msg = await savingthrow.requestRoll();
             if (options.fastForward === true)
-                SavingThrow.onRollAll('', msg);
+                return SavingThrow.onRollAll('all', msg, options);
+            else
+                return msg;
         }
-        else
+        else {
             savingthrow.render(true);
+            return savingthrow;
+        }
     }
 
-    static requestContestedRoll(request0, request1, options = {}) {
+    static async requestContestedRoll(request0, request1, options = {}) {
         if (!game.user.isGM)
             return;
 
-        options.rollmode = options.rollmode || 'roll';
+        options.rollmode = options.rollmode || options.rollMode || 'roll';
 
-        let contestedroll = new ContestedRollApp(request0, request1, options);
-        if (options?.silent === true)
-            contestedroll.request();
+        let entries = MonksTokenBar.getTokenEntries([request0, request1]);
+
+        let contestedroll = new ContestedRollApp(entries, options);
+        if (options?.silent === true) {
+            let msg = await contestedroll.requestRoll();
+            if (msg && options.fastForward === true)
+                return ContestedRoll.onRollAll('all', msg, options);
+            else
+                return msg;
+        }
         else
             contestedroll.render(true);
     }

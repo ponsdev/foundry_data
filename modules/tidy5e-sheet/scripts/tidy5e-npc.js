@@ -7,6 +7,7 @@ import { tidy5eContextMenu } from "./app/context-menu.js";
 import { tidy5eClassicControls } from "./app/classic-controls.js";
 import { tidy5eShowActorArt } from "./app/show-actor-art.js";
 import { tidy5eItemCard } from "./app/itemcard.js";
+import { tidy5eAmmoSwitch } from "./app/ammo-switch.js";
 
 
 /**
@@ -29,10 +30,14 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
    * @return {Object}
    */
 	static get defaultOptions() {
+    let defaultTab = game.settings.get("tidy5e-sheet", "defaultActionsTab") != 'default' ? 'attributes' : 'actions';
+		if (!game.modules.get('character-actions-list-5e')?.active) defaultTab = 'description';
+
 	  return mergeObject(super.defaultOptions, {
       classes: ["tidy5e", "sheet", "actor", "npc"],
-      width: 740,
-      height: 720
+      width: game.settings.get("tidy5e-sheet", "npsSheetWidth") ?? 740,
+      height: 720,
+			tabs: [{navSelector: ".tabs", contentSelector: ".sheet-body", initial: defaultTab}]
     });
   }
 
@@ -63,12 +68,12 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
       passive: { label: game.i18n.localize("DND5E.Features"), items: [], dataset: {type: "feat"} },
       weapons: { label: game.i18n.localize("DND5E.AttackPl"), items: [] , hasActions: true, dataset: {type: "weapon", "weapon-type": "natural"} },
       actions: { label: game.i18n.localize("DND5E.ActionPl"), items: [] , hasActions: true, dataset: {type: "feat", "activation.type": "action"} },
-      equipment: { label: game.i18n.localize("DND5E.Inventory"), items: [], dataset: {type: "loot"}}
+      equipment: { label: game.i18n.localize("DND5E.Inventory"), items: [], hasActions: true, dataset: {type: "loot"}}
     };
 
     // Start by classifying items into groups for rendering
     let [spells, other] = data.items.reduce((arr, item) => {
-      item.img = item.img || DEFAULT_TOKEN;
+      item.img = item.img || CONST.DEFAULT_TOKEN;
       item.isStack = item.data.quantity ? item.data.quantity > 1 : false;
       item.hasUses = item.data.uses && (item.data.uses.max > 0);
       item.isOnCooldown = item.data.recharge && !!item.data.recharge.value && (item.data.recharge.charged === false);
@@ -100,6 +105,24 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
       else features.equipment.items.push(item);
     }
 
+    // Sort others equipements type
+    const sortingOrder = {
+      'equipment': 1,
+      'consumable': 2
+    };
+
+    features.equipment.items.sort((a, b) => {
+      if (!a.hasOwnProperty('type') || !b.hasOwnProperty('type')) return 0;
+
+      const first = (a['type'].toLowerCase() in sortingOrder) ? sortingOrder[a['type']] : Number.MAX_SAFE_INTEGER;
+      const second = (b['type'].toLowerCase() in sortingOrder) ? sortingOrder[b['type']] : Number.MAX_SAFE_INTEGER;
+
+      let result = 0;
+      if (first < second) result = -1;
+      else if (first > second) result = 1;
+
+      return result
+    });
 
     // Assign and return
     data.features = Object.values(features);
@@ -135,45 +158,19 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
   /**
    * Add some extra data when rendering the sheet to reduce the amount of logic required within the template.
    */
-  getData() {
-    const data = super.getData();
-
-    // const environment = data.data.environment;
-
-    // Challenge Rating
-    const cr = parseFloat(data.data.details.cr || 0);
-    const crLabels = {0: "0", 0.125: "1/8", 0.25: "1/4", 0.5: "1/2"};
-    data.labels["cr"] = cr >= 1 ? String(cr) : crLabels[cr] || 1;
+  getData(options) {
+    const data = super.getData(options);
     
     Object.keys(data.data.abilities).forEach(id => {
+      // let Id = id.charAt(0).toLowerCase() + id.slice(1);
+      // data.data.abilities[id].abbr = CONFIG.DND5E.abilityAbbreviations[Id];
       let Id = id.charAt(0).toUpperCase() + id.slice(1);
-      data.data.abilities[id].abbr = game.i18n.localize(`DND5E.Ability${Id}Abbr`);
+			data.data.abilities[id].abbr = game.i18n.localize(`DND5E.Ability${Id}Abbr`);
     });
+    
+		data.appId = this.appId;
 
     return data;
-  }
-
-  /* -------------------------------------------- */
-  /*  Object Updates                              */
-  /* -------------------------------------------- */
-
-  /**
-   * This method is called upon form submission after form data is validated
-   * @param event {Event}       The initial triggering submission event
-   * @param formData {Object}   The object of validated form data with which to update the object
-   * @private
-   */
-  _updateObject(event, formData) {
-
-    // Format NPC Challenge Rating
-    const crs = {"1/8": 0.125, "1/4": 0.25, "1/2": 0.5};
-    let crv = "data.details.cr";
-    let cr = formData[crv];
-    cr = crs[cr] || parseFloat(cr);
-    if ( cr ) formData[crv] = cr < 1 ? cr : parseInt(cr);
-
-    // Parent ActorSheet update steps
-    super._updateObject(event, formData);
   }
 
   /* -------------------------------------------- */
@@ -195,6 +192,49 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
     if(game.settings.get("tidy5e-sheet", "itemCardsForNpcs")) {
       tidy5eItemCard(html, actor);
     }
+    tidy5eAmmoSwitch(html, actor);
+
+    // calculate average hp on right clicking roll hit dice icon
+    html.find(".portrait-hp-formula span.rollable").mousedown( async (event) => {
+      switch (event.which) {
+      case 3:
+        let formula = actor.data.data.attributes.hp.formula;
+        // console.log(formula);
+        let r = new Roll(formula);
+        let term = r.terms;
+        // console.log(term);
+        let averageString = "";
+        for (let i = 0; i < term.length; i++){
+          let type = term[i].constructor.name;
+          switch (type){
+            case "Die":
+              averageString += Math.floor(((term[i].faces * term[i].number)+term[i].number)/2);
+              break;
+            case "OperatorTerm":
+              averageString += term[i].operator;
+              break;
+            case "NumericTerm":
+              averageString += term[i].number;
+              break;
+            default:
+              break;
+          }
+        }
+        // console.log(averageString);
+
+        let average = 0;
+        averageString = averageString.replace(/\s/g, '').match(/[+\-]?([0-9\.\s]+)/g) || [];
+        while(averageString.length) average += parseFloat(averageString.shift());
+
+        // console.log(average);
+        let data = {};
+        data['data.attributes.hp.value'] = average;
+        data['data.attributes.hp.max'] = average;
+        actor.update(data);
+
+      break;
+      }
+    });
 
     
     html.find(".toggle-personality-info").click( async (event) => {
@@ -248,20 +288,20 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
       let path = event.target.dataset.path;
       let data = {};
       data[path] = Number(event.target.value);
-      actor.getOwnedItem(itemId).update(data);
+     actor.items.get(itemId).update(data);
     });
 
     // creating charges for the item
     html.find('.inventory-list .item .addCharges').click(event => {
       let itemId = $(event.target).parents('.item')[0].dataset.itemId;
-      let item = actor.getOwnedItem(itemId);
+      let item =actor.items.get(itemId);
 
       item.data.uses = { value: 1, max: 1 };
       let data = {};
       data['data.uses.value'] = 1;
       data['data.uses.max'] = 1;
 
-      actor.getOwnedItem(itemId).update(data);
+     actor.items.get(itemId).update(data);
     });
 
     // Short and Long Rest
@@ -278,11 +318,13 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
    * @param {Event} event     The original click event
    * @private
    */
-  _onRollHealthFormula(event) {
+  async _onRollHealthFormula(event) {
     event.preventDefault();
     const formula = this.actor.data.data.attributes.hp.formula;
     if ( !formula ) return;
-    const hp = new Roll(formula).roll().total;
+    // const hp = new Roll(formula).roll().total;  
+		const roll_hp = await new Roll(formula).roll();
+    const hp = roll_hp.total;
     AudioHelper.play({src: CONFIG.sounds.dice});
     this.actor.update({"data.attributes.hp.value": hp, "data.attributes.hp.max": hp});
   }
@@ -333,9 +375,12 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
 	// add actions module
   async _renderInner(...args) {
     const html = await super._renderInner(...args);
+		const actionsListApi = game.modules.get('character-actions-list-5e')?.api;
+		let injectNPCSheet;
+    if(game.modules.get('character-actions-list-5e')?.active) injectNPCSheet = game.settings.get('character-actions-list-5e', 'inject-npcs');
     
     try {
-			if(game.modules.get('character-actions-list-5e')?.active){
+			if(game.modules.get('character-actions-list-5e')?.active && injectNPCSheet){
         // Update the nav menu
         const actionsTabButton = $('<a class="item" data-tab="actions">' + game.i18n.localize(`DND5E.ActionPl`) + '</a>');
         const tabs = html.find('.tabs[data-group="primary"]');
@@ -350,7 +395,7 @@ export default class Tidy5eNPC extends ActorSheet5eNPC {
 
         // const actionsTab = html.find('.actions-target');
         
-        const actionsTabHtml = $(await CAL5E.renderActionsList(this.actor));
+        const actionsTabHtml = $(await actionsListApi.renderActionsList(this.actor));
         actionsLayout.html(actionsTabHtml);
       }
     } catch (e) {
@@ -370,24 +415,12 @@ async  function restoreScrollPosition(app, html, data){
 
 // handle skills list display
 async function toggleSkillList(app, html, data){
-  html.find('.skills-list:not(.always-visible):not(.expanded) .skill:not(.proficient)').addClass('skill-hidden').hide();
-  let visibleSkills = html.find('.skills-list .skill:not(.skill-hidden)');
-  for (let i = 0; i < visibleSkills.length; i++) {
-    if(i % 2 != 0){
-      visibleSkills[i].classList.add('even');
-    }
-  }
+  html.find('.skills-list:not(.always-visible):not(.expanded) .skill:not(.proficient)').remove();
 }
 
 // handle traits list display
 async function toggleTraitsList(app, html, data){
-  html.find('.traits:not(.always-visible):not(.expanded) .form-group.inactive').addClass('trait-hidden').hide();
-  let visibleTraits = html.find('.traits .form-group:not(.trait-hidden)');
-  for (let i = 0; i < visibleTraits.length; i++) {
-    if(i % 2 != 0){
-      visibleTraits[i].classList.add('even');
-    }
-  }
+  html.find('.traits:not(.always-visible):not(.expanded) .form-group.inactive').remove();
 }
 
 // toggle item icon
@@ -395,7 +428,7 @@ async function toggleItemMode(app, html, data){
   html.find('.item-toggle').click(ev => {
     ev.preventDefault();
     let itemId = ev.currentTarget.closest(".item").dataset.itemId;
-    let item = app.actor.getOwnedItem(itemId);
+    let item = app.actor.items.get(itemId);
     let attr = item.data.type === "spell" ? "data.preparation.prepared" : "data.equipped";
     return item.update({ [attr]: !getProperty(item.data, attr) });
   });
@@ -459,6 +492,9 @@ async function setSheetClasses(app, html, data) {
   if (game.settings.get("tidy5e-sheet", "traitsAlwaysShownNpc")) {
     html.find('.tidy5e-sheet.tidy5e-npc .traits').addClass('always-visible');
   }
+  if (game.settings.get("tidy5e-sheet", "traitLabelsEnabled")) {
+		html.find('.tidy5e-sheet.tidy5e-npc .traits').addClass('show-labels');
+	}
   if (game.settings.get("tidy5e-sheet", "skillsAlwaysShownNpc")) {
     html.find('.tidy5e-sheet.tidy5e-npc .skills-list').addClass('always-visible');
   }
@@ -472,6 +508,22 @@ async function setSheetClasses(app, html, data) {
     html.find('.tidy5e-sheet.tidy5e-npc').addClass('original');
   }
 	$('.info-card-hint .key').html(game.settings.get('tidy5e-sheet', 'itemCardsFixKey'));
+}
+
+// Abbreviate Currency
+async function abbreviateCurrency(app,html,data) {
+	html.find('.currency .currency-item label').each(function(){
+		let currency = $(this).data('denom').toUpperCase();
+		// let abbr = CONFIG.DND5E.currencies[currency].abbreviation;
+		// if(abbr == CONFIG.DND5E.currencies[currency].abbreviation){
+		// 	abbr = currency;
+		// }
+		let abbr = game.i18n.localize(`DND5E.CurrencyAbbr${currency}`);
+		if(abbr == `DND5E.CurrencyAbbr${currency}`){
+			abbr = currency;
+		}
+		$(this).html(abbr);
+	});
 }
 
 // Hide empty Spellbook
@@ -502,6 +554,7 @@ async function editProtection(app, html, data) {
     
 		if(game.settings.get("tidy5e-sheet", "editTotalLockEnabled")){
 			html.find(".skill input").prop('disabled', true);
+			html.find(".skill .config-button").remove();
 			html.find(".skill .proficiency-toggle").remove();
 			html.find(".ability-score").prop('disabled', true);
 			html.find(".ac-display input").prop('disabled', true);
@@ -511,6 +564,8 @@ async function editProtection(app, html, data) {
 			html.find(".res-max").prop('disabled', true);
 			html.find(".res-options").remove();
 			html.find(".ability-modifiers .proficiency-toggle").remove();
+			html.find(".ability .config-button").remove();
+			html.find(".traits .config-button,.traits .trait-selector,.traits .proficiency-selector").remove();
 			html.find('[contenteditable]').prop('contenteditable', false);
 			html.find(".caster-level input").prop('disabled', true);
 			html.find(".spellcasting-attribute select").prop('disabled', true);
@@ -562,7 +617,7 @@ async function npcFavorites (app, html, data){
     if (app.options.editable) {
       let favBtn = $(`<a class="item-control item-fav ${isFav ? 'active' : ''}" title="${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}" data-fav="${isFav}"><i class="${isFav ? "fas fa-bookmark" : "fas fa-bookmark inactive"}"></i> <span class="control-label">${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}</span></a>`);
       favBtn.click(ev => {
-        app.actor.getOwnedItem(item._id).update({ "flags.favtab.isFavorite": !item.flags.favtab.isFavorite });
+        app.actor.items.get(item._id).update({ "flags.favtab.isFavorite": !item.flags.favtab.isFavorite });
       });
       html.find(`.item[data-item-id="${item._id}"]`).find('.item-controls .item-edit').before(favBtn);
       if(item.flags.favtab.isFavorite){
@@ -597,8 +652,10 @@ Hooks.on("renderTidy5eNPC", (app, html, data) => {
   toggleTraitsList(app, html, data);
   toggleItemMode(app, html, data);
   restoreScrollPosition(app, html, data);
+	abbreviateCurrency(app,html,data);
   hideSpellbook(app, html, data);
   resetTempHp(app, html, data);
   editProtection(app, html, data);
   npcFavorites (app, html, data);
+	// console.log(data.actor);
 });

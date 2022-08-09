@@ -1,8 +1,250 @@
+# 1.12.7.1 (2022-08-08)
+
+- Add `compatibility` and `id` keys to the module manifest to avoid compatibility warnings in FVTT v10.
+
+# 1.12.7.0 (2022-06-21)
+
+- Enforce `options.chain == true` when registering non-OVERRIDE wrappers.
+
+# 1.12.6.0 (2022-06-15)
+
+- Add support for reading core compatibility versions for packages using the new Foundry VTT v10 manifest format.
+- Update README with information about the new Foundry VTT v10 manifest format.
+
+# 1.12.5.0 (2022-05-31)
+
+- Fix `options.bind` parameter to `libWrapper.register` for `OVERRIDE` wrappers.
+- Declare compatibility with Foundry v10. It is unlikely a future v10 update will break compatibility.
+
+# 1.12.4.0 (2022-02-14)
+
+- Improve package detection. Will no longer fail if an error's stack trace is empty, which could happen sometimes when browser native code causes a JS exception.
+- Improve error package info injection to be less noisy when it fails.
+- Tweak rollup configuration so that relative sourcemap file paths are now correct.
+
+# 1.12.3.0 (2022-02-01)
+
+- All API functions now accept disambiguation prefixes as part of their `package_id` parameter, i.e. `module:foobar`, `system:foobar`, or `world:foobar`.
+
+# 1.12.2.0 (2022-01-30)
+
+- Allow integer enum values to be passed to `get` as a string, so that the caller does not need to cast explicitly.
+  - No known issues were caused by this, and this code isn't exposed in the libWrapper API, but the previous behaviour was unintended.
+
+# 1.12.1.0 (2022-01-30)
+
+- Hotfix: Correctly handle malformed log verbosity setting.
+- Disable minification of class names, for more readable error messages.
+
+# 1.12.0.0 (2022-01-29)
+
+- Fix `libWrapper.AlreadyOverriddenError` usage.
+  - Override conflicts were accidentally throwing `libWrapper.PackageError` exceptions instead, which breaks the API.
+- Fix module updated check when `compatibleCoreVersion` contains only the compatible FVTT major version.
+- Allow arguments to be bound when calling `libWrapper.register` ([Issue #58](https://github.com/ruipin/fvtt-lib-wrapper/issues/58))
+  - This allows avoiding an extra function call, for example
+    `libWrapper.register(PACKAGE_ID, "foo", function(wrapped, ...args) { return someFunction.call(this, wrapped, "foo", "bar", ...args) });`
+    becomes
+    `libWrapper.register(PACKAGE_ID, "foo", someFunction, "WRAPPER", {bind: ["foo", "bar"]});`.
+- Implement a logging verbosity setting ([Issue #62](https://github.com/ruipin/fvtt-lib-wrapper/issues/62))
+  - By default, libWrapper will only show warnings or errors in the console.
+
+
+# 1.11.4.0 (2022-01-14)
+
+- Hotfix: Previous update caused significant breakage due to an uninitialised variable not caught by unit tests. Sorry for the inconvenience!
+
+# 1.11.3.0 (2022-01-14)
+
+- Allow JavaScript engine to garbage collect objects that have been wrapped by libWrapper.
+
+# 1.11.2.0 (2022-01-05)
+
+- Improve static dispatch chain caching, speeding up wrappers when calling them on different objects with "High Performance Mode" enabled.
+
+# 1.11.1.0 (2022-01-04)
+
+- Add Japanese localisation, contributed by BrotherSharper. Thank you!
+
+# 1.11.0.1 (2021-12-13)
+
+- Declare compatibility with all Foundry v9 versions, instead of individual ones. It is unlikely a future update will break compatibility.
+
+# 1.11.0.0 (2021-11-25)
+
+- API Improvements to `libWrapper.register` and `libWrapper.unregister` (non-breaking):
+  - `libWrapper.register` now returns a unique numeric target identifier.
+  - This unique identifier can be used in further calls to `libWrapper.register` and `libWrapper.unregister`, rather than specifying the target path again.
+    As a result, even if the object is no longer reachable from global scope or has otherwise been replaced by another module, it is still possible to register/unregister wrappers to it.
+  - The `libWrapper.Register` and `libWrapper.Unregister` hooks have been updated, and now also supply the unique target identifier as an extra parameter.
+  - Note: The Shim does not support nor provide these unique identifiers.
+- Improvements to 'Active Wrappers' pane in the settings window:
+  - Add the target identifier to the displayed information.
+  - Do not merge wrappers with the same path but with different target objects (i.e. different target IDs).
+  - When a target is known by multiple names, display the additional names when expanded.
+- Fixed a few cases where having multiple wrappers sharing the same target path but with different target objects (i.e. different target IDs) could cause issues.
+- Fix setter inheritance chain handling for properties when there are no setter-specific wrappers.
+- Update test cases to exercise the new target identifier code paths properly.
+- Miscellaneous cleanup/refactoring and optimisations.
+- Update `compatibleCoreVersion`, now set to v9d2 (`9.231`). Note: This was previously set to a non-existent version (`9.244`) by accident.
+
+# 1.10.8.0 (2021-10-10)
+
+- Fix [Issue #56](https://github.com/ruipin/fvtt-lib-wrapper/issues/56).
+  - Fix handling of unknown packages.
+  - Correctly use package ID passed to `libWrapper.register` in specific error messages, when auto-detection does not succeed.
+  - Ensure all exceptions thrown are an object, in order to fix compatibility issue with Foundry 0.8.x when thrown inside `Application._render`.
+- Code cleanup: Refactor error classes usage to avoid a cyclic dependency.
+
+# 1.10.7.0 (2021-10-07)
+
+- Fix incorrect error message when a package that conflicts does not correctly define a `minimumCoreVersion` or `compatibleCoreVersion`.
+- Optimise the indexing regex, to remove potential exponential backtracking.
+- Tweak README to make it clearer that `libWrapper.Ready` is not implemented by the compatibility shim.
+
+# 1.10.6.0 (2021-09-18)
+
+- Add official support for v9p2 (9.244). Previous versions are still supported.
+
+# 1.10.5.0 (2021-09-06)
+
+- Relax `Hooks._call` patch regex to work even when `foundry.js` has been modified.
+
+# 1.10.4.0 (2021-09-05)
+
+- Fix issue where sometimes the relative file paths to a localisation JSON file would be incorrect.
+- Use JSCC pre-processor to improve initialisation
+  - Strip all unnecessary unit-test code from artifact.
+  - Bundle version information into artifact, to avoid having to look at the module.json during runtime
+  - Bundle list of available translations into artifact, to skip requesting a localisation JSON file if it does not exist.
+
+# 1.10.3.0 (2021-09-02)
+
+- Add Spanish localisation, contributed by GoR (GoR#9388). Thank you!
+- Tweak how support channels are specified in the localisation JSON files, to avoid having to specify them twice.
+
+# 1.10.2.0 (2021-08-27)
+
+- Tweak localisation polyfill. Messages should now be localised correctly before `game.i18n` initialises.
+- Fix Settings UI: `Show ignored conflicts` checkbox clicks sometimes would not register.
+- Add pt-BR localisation, contributed by Matheus Clemente (mclemente#5524). Thank you!
+- Add pt-PT localisation.
+
+# 1.10.1.1 (2021-08-27)
+
+- Fix build workflow to properly include translation JSON files in the artifact.
+- No code changes.
+
+# 1.10.1.0 (2021-08-27)
+
+- Hotfix: Foundry did not load with libWrapper enabled if set to a language for which no libWrapper translation was available.
+
+# 1.10.0.0 (2021-08-26)
+
+- **[BREAKING]** Remove LibWrapperError methods deprecated since v1.6.0.0:
+  - `LibWrapperInternalError.module`, replaced by `LibWrapperInternalError.package_id`
+  - `LibWrapperPackageError.module`, replaced by `LibWrapperPackageError.package_id`
+- Improve error messages (Implements [#42](https://github.com/ruipin/fvtt-lib-wrapper/issues/42))
+- Add support for localization (Implements [#44](https://github.com/ruipin/fvtt-lib-wrapper/issues/44))
+  - As of now, only includes the english language, but community contributions are welcome.
+
+# 1.9.2.0 (2021-08-25)
+
+- Resolve `ignore_conflicts` API not ignoring all types of conflicts. (Fixes [Issue #49](https://github.com/ruipin/fvtt-lib-wrapper/issues/49))
+
+# 1.9.1.0 (2021-08-25)
+
+- When an unhandled exception is seen by libWrapper, it will detect involved packages (if any) and append this list to the exception message.
+
+# 1.9.0.0 (2021-08-23)
+
+- Support wrapping global methods when they are available in `globalThis` and the associated descriptor has `configurable: true`.
+- Include shared library [fvtt-shared-library](https://github.com/ruipin/fvtt-shared-library) statically for `PackageInfo`, polyfills, and Enums.
+  - Now correctly able to detect package IDs (e.g. in case of compatibility issues) before the `init` hook.
+  - Can now use enum objects for the `type` and `options.perf_mode` parameters to `libWrapper.register`, e.g. `libWrapper.WRAPPER` or `libWrapper.PERF_FAST`.
+- Fix `libWrapper.register` API: The value `NORMAL` for `options.perf_mode` was incorrectly not permitted.
+- Miscellaneous code cleanup.
+
+# 1.8.1.0 (2021-08-22)
+
+- Attempt to prevent other modules from breaking the libWrapper initialisation process.
+  - **[BREAKING]** Prevent use of `Game.toString()` before libWrapper initialises.
+  - Detect when the libWrapper initialisation process did not run because of another module.
+- Prepend `/* WARNING: libWrapper wrappers present! */` to `toString()` calls on methods wrapped by libWrapper.
+- Explicitly announce compatibility with Foundry 0.8.9.
+
+# 1.8.0.0 (2021-07-29)
+
+- Allow `libWrapper.register` targets to contain string Array indexes. (Fixes [Issue #46](https://github.com/ruipin/fvtt-lib-wrapper/issues/46))
+  For example, `CONFIG.Actor.sheetClasses.character["dnd5e.ActorSheet5eCharacter"].cls.prototype._onLongRest` is now a valid wrapper target.
+
+# 1.7.5.0 (2021-07-05)
+
+- Don't fail registering wrappers if `game` is malformed.
+
+# 1.7.4.0 (2021-07-05)
+
+- Handle malformed `game.modules` gracefully. This can happen when Foundry does not initialise properly which by itself can cause issues, but libWrapper was making the situation even worse by aborting the initialisation process.
+- Explicitly announce compatibility with Foundry 0.8.8.
+
+# 1.7.3.0 (2021-06-22)
+
+- Update 'About' pane in the settings with more information about reporting issues.
+- Update documentation
+  - Explain differences between the full library and the shim.
+  - Add information about how to obtain support.
+
+# 1.7.2.0 (2021-06-19)
+
+- Rename `error-listeners.js` to `listeners.js` (see [Issue #42](https://github.com/ruipin/fvtt-lib-wrapper/issues/42)).
+- Do not prefix `libWrapper-` to `listeners.js` file in the sourcemap.
+- Explicitly announce compatibility with Foundry 0.8.7.
+- Add `bugs` attribute to manifest, and enable [Bug Reporter](https://github.com/League-of-Foundry-Developers/bug-reporter) support.
+- Miscellaneous code cleanup.
+- Update documentation:
+  - Add section about Systems.
+  - Add section about Mixins.
+  - Add section about `super`.
+- Update release script to properly handle commas in the manifest file, as well as be easier to maintain.
+
+# 1.7.1.0 (2021-06-14)
+
+- Include Git commit hash in manifest.
+  - Update release scripts.
+  - Update version parsing code.
+
+# 1.7.0.0 (2021-06-09)
+
+- **[BREAKING]** Removed `libWrapper.clear_modules` API, `libWrapper.ClearModule` hook, and `LibWrapperModuleError` exception class (all deprecated since v1.6.0.0).
+- Implement backend system for ignoring known potential conflicts (part of [Issue #33](https://github.com/ruipin/fvtt-lib-wrapper/issues/33))
+  - Added `libWrapper.ignore_conflicts` API method to allow package developers to have libWrapper not warn the user about certain conflicts.
+  - Add a toggle to the 'Conflicts' tab in the settings dialog to display detected conflicts that were ignored. These are hidden by default.
+  - Hooks `libWrapper.ConflictDetected` and `libWrapper.OverrideLost` now also get passed a list of all unique `target` parameters that have been used to register wrappers for a given method, instead of just the first one ever used. This is important for methods that are reachable through more than one target path.
+
+# 1.6.2.0 (2021-06-04)
+
+- Fix errors seen when wrapping inherited properties.
+  - These were caused by a terser bug ([terser/terser #1003](https://github.com/terser/terser/issues/1003)).
+- Clean up `Wrapper` singleton detection code.
+- Explicitly announce compatibility with Foundry 0.8.6.
+
+
+# 1.6.1.0 (2021-05-26)
+
+- Fix infinite loop leading to a `RangeError: Maximum call stack size exceeded` error when both libWrapper wrappers and manual wrappers are present on a method inherited from a parent class.
+  - Fixes the incompatibility between "TouchVTT" and "Drag Ruler" when libWrapper was active.
+- Fix module ID not displaying correctly in settings dialog for `MANUAL` wrappers.
+
+# 1.6.0.1 (2021-05-24)
+
+- No code changes.
+- Explicitly announce compatibility with Foundry 0.8.5.
+
 # 1.6.0.0 (2021-05-10)
 
 - **[BREAKING]** Remove `libWrapperReady` hook (deprecated since v1.5.0.0, `libWrapper.Ready` should be used instead).
 - Rename all instances of `module` to `package`, given the library now officially supports systems and worlds.
-  - Deprecate `libWrapper.clear_module` method (now `libWrapper.clear_all`) and the `libWrapper.ClearModule` hook (now `libWrapper.ClearAll`).
+  - Deprecate `libWrapper.clear_module` method (now `libWrapper.unregister_all`) and the `libWrapper.ClearModule` hook (now `libWrapper.UnregisterAll`).
   - Deprecate `libWrapper.ModuleError` (now `libWrapper.PackageError`).
   - Deprecate all `libWrapper.Error.module` getters (now `libWrapper.Error.package_id`).
 - Rewrite module auto-detection functionality to be able to handle systems and worlds correctly.

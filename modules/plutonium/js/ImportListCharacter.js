@@ -1,1 +1,142 @@
-const _0x1ed5=['63sEGubz','266290bBMrYB','8688VvicgY','ImportEntryOpts','1RoiuwZ','2437EsEMAu','isCharactermancer','isCancelled','additionalSpells','3jJjFqF','_pApplyAllAdditionalSpellsToActor','44lSwplr','effects','items','_actor','266988tAgkMm','CHAR_MAX_LEVEL','279287kHSxLo','3954qwnfku','pApplyFormDataToActor','362799IHdBTm','equipmentItemEntries','pGetUserInput','62VMogXP','getTotalClassLevels'];const _0x89f7=function(_0x1ae1c9,_0x3b794a){_0x1ae1c9=_0x1ae1c9-0x16f;let _0x1ed536=_0x1ed5[_0x1ae1c9];return _0x1ed536;};const _0x46b388=_0x89f7;(function(_0x4b5bea,_0x166c2e){const _0x32bac5=_0x89f7;while(!![]){try{const _0x1de695=parseInt(_0x32bac5(0x180))*-parseInt(_0x32bac5(0x170))+parseInt(_0x32bac5(0x17e))*-parseInt(_0x32bac5(0x185))+-parseInt(_0x32bac5(0x171))*-parseInt(_0x32bac5(0x183))+-parseInt(_0x32bac5(0x177))*-parseInt(_0x32bac5(0x187))+-parseInt(_0x32bac5(0x17b))+-parseInt(_0x32bac5(0x186))+parseInt(_0x32bac5(0x175))*parseInt(_0x32bac5(0x17d));if(_0x1de695===_0x166c2e)break;else _0x4b5bea['push'](_0x4b5bea['shift']());}catch(_0x4d88ac){_0x4b5bea['push'](_0x4b5bea['shift']());}}}(_0x1ed5,0x37300));import{ImportList}from'./ImportList.js';import{Charactermancer_AdditionalSpellsSelect}from'./UtilCharactermancerAdditionalSpells.js';import{UtilActors}from'./UtilActors.js';import{Consts}from'./Consts.js';class ImportListCharacter extends ImportList{async[_0x46b388(0x176)]({entity:_0x4b8356,dataBuilderOpts:_0x51c197,spellHashToItemPosMap:_0x324491}){const _0x558921=_0x46b388,_0x5d60a3=await Charactermancer_AdditionalSpellsSelect[_0x558921(0x182)]({'additionalSpells':_0x4b8356[_0x558921(0x174)],'sourceHintText':_0x4b8356['name'],'curLevel':0x0,'targetLevel':Consts[_0x558921(0x17c)],'spellLevelLow':0x0,'spellLevelHigh':0x9});if(_0x5d60a3==null)return _0x51c197[_0x558921(0x173)]=!![];if(_0x5d60a3===VeCt['SYM_UI_SKIP'])return;const _0x1ab767=UtilActors[_0x558921(0x184)](this[_0x558921(0x17a)]);await Charactermancer_AdditionalSpellsSelect[_0x558921(0x17f)](this[_0x558921(0x17a)],_0x5d60a3,{'casterLevel':_0x1ab767,'hashToIdMap':_0x324491});}}ImportListCharacter[_0x46b388(0x16f)]=class{constructor(_0x5c7561){const _0x18a396=_0x46b388;_0x5c7561=_0x5c7561||{},this[_0x18a396(0x172)]=!!_0x5c7561[_0x18a396(0x172)],this[_0x18a396(0x173)]=![],this[_0x18a396(0x179)]=[],this[_0x18a396(0x178)]=[],this[_0x18a396(0x181)]=[];}};export{ImportListCharacter};
+import {ImportList} from "./ImportList.js";
+import {Charactermancer_AdditionalSpellsSelect} from "./UtilCharactermancerAdditionalSpells.js";
+import {Consts} from "./Consts.js";
+import {UtilDocuments} from "./UtilDocuments.js";
+import {Charactermancer_AdditionalFeatsSelect} from "./UtilCharactermancerAdditionalFeats.js";
+import {Vetools} from "./Vetools.js";
+
+class ImportListCharacter extends ImportList {
+	// FIXME(Future) this does't actually track spell IDs
+	async _pApplyAllAdditionalSpellsToActor ({entity, dataBuilderOpts}) {
+		const formData = await Charactermancer_AdditionalSpellsSelect.pGetUserInput({
+			additionalSpells: entity.additionalSpells,
+			sourceHintText: entity.name,
+
+			// Force all levels to be added
+			curLevel: 0,
+			targetLevel: Consts.CHAR_MAX_LEVEL,
+			spellLevelLow: 0,
+			spellLevelHigh: 9,
+		});
+
+		if (formData == null) return dataBuilderOpts.isCancelled = true;
+		if (formData === VeCt.SYM_UI_SKIP) return;
+
+		await Charactermancer_AdditionalSpellsSelect.pApplyFormDataToActor(this._actor, formData);
+	}
+
+	// region Update merging
+	/** Ensure any proficiencies that have been added during an import are maintained. */
+	async _pDoMergeAndApplyActorUpdate (actorUpdate) {
+		if (!Object.keys(actorUpdate).length) return;
+
+		this._doMergeExistingSkillData({actorUpdate});
+		this._doMergeExistingOtherProficiencyData({actorUpdate});
+		this._doMergeExistingDiDrDvCiData({actorUpdate});
+		await UtilDocuments.pUpdateDocument(this._actor, actorUpdate);
+	}
+
+	_doMergeExistingSkillData ({actorUpdate}) {
+		if (actorUpdate?.data?.skills) {
+			Object.entries(actorUpdate.data.skills)
+				.forEach(([skl, meta]) => {
+					meta.value = Math.max(this._actor.data?.data?.skills?.[skl]?.value, meta.value, 0);
+				});
+		}
+	}
+
+	_doMergeExistingOtherProficiencyData ({actorUpdate}) {
+		const actorDataPaths = [
+			["data", "data", "traits", "languages"],
+			["data", "data", "traits", "toolProf"],
+			["data", "data", "traits", "weaponProf"],
+			["data", "data", "traits", "armorProf"],
+		];
+		return this._doMergeExistingGenericTraitsData({actorUpdate, actorDataPaths});
+	}
+
+	_doMergeExistingDiDrDvCiData ({actorUpdate}) {
+		const actorDataPaths = [
+			["data", "data", "traits", "di"],
+			["data", "data", "traits", "dr"],
+			["data", "data", "traits", "dv"],
+			["data", "data", "traits", "ci"],
+		];
+		return this._doMergeExistingGenericTraitsData({actorUpdate, actorDataPaths});
+	}
+
+	_doMergeExistingGenericTraitsData ({actorUpdate, actorDataPaths}) {
+		actorDataPaths.forEach(actorDataPath => {
+			const actorUpdatePath = actorDataPath.slice(1);
+			const fromActor = MiscUtil.get(this._actor, ...actorDataPath);
+			const fromUpdate = MiscUtil.get(actorUpdate, ...actorUpdatePath);
+			if (!fromActor && !fromUpdate) return;
+			if (!fromActor && fromUpdate) return;
+			if (fromActor && !fromUpdate) return MiscUtil.set(actorUpdate, ...actorUpdatePath, MiscUtil.copy(fromActor));
+
+			if (fromActor.value && fromUpdate.value) {
+				MiscUtil.set(actorUpdate, ...actorUpdatePath, "value", [...new Set([...fromActor.value, ...fromUpdate.value])]);
+			} else {
+				MiscUtil.set(actorUpdate, ...actorUpdatePath, "value", MiscUtil.copy(fromActor.value || fromUpdate.value));
+			}
+
+			if (fromActor.custom && fromActor.custom.trim().length && fromUpdate.custom && fromUpdate.custom.trim().length) {
+				const allCustom = fromActor.custom.trim().split(";").map(it => it.trim()).filter(Boolean);
+				fromUpdate.custom.trim().split(";")
+					.map(it => it.trim())
+					.filter(Boolean)
+					.filter(it => !allCustom.some(ac => ac.toLowerCase() === it.toLowerCase()))
+					.forEach(it => allCustom.push(it));
+
+				MiscUtil.set(actorUpdate, ...actorUpdatePath, "custom", allCustom.join(";"));
+			} else {
+				MiscUtil.set(actorUpdate, ...actorUpdatePath, "custom", fromActor.custom || fromUpdate.custom);
+			}
+		});
+	}
+	// endregion
+
+	async _pImportActorAdditionalFeats (ent, importOpts, dataBuilderOpts) {
+		if (!ent.feats) return;
+
+		const formData = await Charactermancer_AdditionalFeatsSelect.pGetUserInput({available: ent.feats, actor: this._actor});
+		if (!formData) return dataBuilderOpts.isCancelled = true;
+		if (formData === VeCt.SYM_UI_SKIP) return;
+
+		if (!(formData.data || []).length) return;
+
+		const {ImportListFeat} = await import("./ImportListFeat.js");
+		const importListFeat = new ImportListFeat({actor: this._actor});
+		await importListFeat.pInit();
+
+		for (const {page, source, hash} of (formData.data || [])) {
+			const feat = await Renderer.hover.pCacheAndGet(page, source, hash);
+			await importListFeat.pImportEntry(feat, importOpts);
+		}
+	}
+
+	static async _pPostLoad_pGetAllOptionalFeatures () {
+		const optionalfeatureData = await Vetools.pGetWithCache(Vetools.DATA_URL_OPTIONALFEATURES);
+		const brew = await BrewUtil2.pGetBrewProcessed();
+		return [...optionalfeatureData.optionalfeature, ...(brew?.optionalfeature || [])];
+	}
+}
+
+/**
+ * Generic import options for use in any application which imports data to a character sheet.
+ */
+ImportListCharacter.ImportEntryOpts = class {
+	constructor (opts) {
+		opts = opts || {};
+
+		this.isCharactermancer = !!opts.isCharactermancer;
+
+		this.isCancelled = false;
+
+		this.items = [];
+		this.effects = [];
+		this.equipmentItemEntries = []; // 5etools item data to be imported as equipment
+	}
+};
+
+export {ImportListCharacter};

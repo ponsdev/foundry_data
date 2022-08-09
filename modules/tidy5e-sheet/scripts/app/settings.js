@@ -48,57 +48,59 @@ export class Tidy5eUserSettings extends FormApplication {
 		
 		// console.log(game.settings.get('tidy5e-sheet'))
 		const settings = [
-			'itemCardsForAllItems',
-			'itemCardsAreFloating',
-			'itemCardsDelay',
-			'itemCardsFixKey',
-
-			'rightClickDisabled',
-			'contextRollButtons',
-
-			'traitLabelsEnabled',
-			'traitsMovedBelowResource',
-			'traitsMovedBelowResourceNpc',
-			'traitsTogglePc',
-			'traitsAlwaysShownNpc',
-			
-			'skillsAlwaysShownNpc',
-
+			'ammoEquippedOnly',
 			'activeEffectsMarker',
-			'quantityAlwaysShownEnabled',
-			'exhaustionDisabled',
-			'hpBarDisabled',
-			'hpBarDisabledNpc',
-			'hpBarDisabledVehicle',
-			'hpOverlayDisabledNpc',
-			'hpOverlayDisabled',
-			'hpOverlayDisabledVehicle',
-			'hpOverlayBorderNpc',
-			'hpOverlayBorder',
-			'hpOverlayBorderVehicle',
-			
-			'inspirationOnHover',
-			'inspirationAnimationDisabled',
-			'inspirationDisabled',
-			
+			'classListDisabled',
+			'contextRollButtons',
+			'defaultActionsTab',
+			'editGmAlwaysEnabled',
+			'editEffectsGmOnlyEnabled',
+			'editTotalLockEnabled',
 			'exhaustionEffectsEnabled',
 			'exhaustionEffectIcon',
 			'exhaustionEffectCustom',
 			'exhaustionEffectCustomTiers',
 			'exhaustionOnHover',
-			
-			'editEffectsGmOnlyEnabled',
-			'editGmAlwaysEnabled',
+			'exhaustionDisabled',
+			'expandedSheetEnabled',
+			'hideIfZero',
+			'hiddenDeathSavesEnabled',
+			'hpBarDisabled',
+			'hpBarDisabledNpc',
+			'hpBarDisabledVehicle',
+			'hpOverlayDisabled',
+			'hpOverlayDisabledNpc',
+			'hpOverlayDisabledVehicle',
+			'hpOverlayBorder',
+			'hpOverlayBorderNpc',
+			'hpOverlayBorderVehicle',
+			'inspirationAnimationDisabled',
+			'inspirationDisabled',
+			'inspirationOnHover',
+			'itemCardsAreFloating',
+			'itemCardsDelay',
+			'itemCardsFixKey',
+			'itemCardsForAllItems',
+			'journalTabDisabled',
+			'linkMarkerNpc',
 			
 			'playerNameEnabled',
-			'classListDisabled',
-			'hideIfZero',
-			'linkMarkerNpc',
+			'portraitStyle',
+			'quantityAlwaysShownEnabled',
 			'restingForNpcsEnabled',
 			'restingForNpcsChatDisabled',
-			'editTotalLockEnabled',
-			'portraitStyle',
-			'expandedSheetEnabled'
+			'rightClickDisabled',
+			'skillsAlwaysShownNpc',
+
+			'playerSheetWidth',
+			'npsSheetWidth',
+			'vehicleSheetWidth',
+
+			'traitLabelsEnabled',
+			'traitsAlwaysShownNpc',
+			'traitsMovedBelowResource',
+			'traitsMovedBelowResourceNpc',
+			'traitsTogglePc'
 		]
 
 		// return game.settings.get('tidy5e-sheet', 'user-settings');
@@ -159,7 +161,7 @@ export class Tidy5eUserSettings extends FormApplication {
 	}
 
 	redrawOpenSheets() {
-		game.actors.entities.filter(a => a.sheet.rendered).forEach(a => a.sheet.render(true));
+		game.actors.filter(a => a.sheet.rendered).forEach(a => a.sheet.render(true));
 	}
 
 	_updateObject(ev, formData) {

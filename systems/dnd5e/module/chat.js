@@ -1,6 +1,9 @@
 
 /**
- * Highlight critical success or failure on d20 rolls
+ * Highlight critical success or failure on d20 rolls.
+ * @param {ChatMessage} message  Message being prepared.
+ * @param {HTMLElement} html     Rendered contents of the message.
+ * @param {object} data          Configuration data passed to the message.
  */
 export const highlightCriticalSuccessFailure = function(message, html, data) {
   if ( !message.isRoll || !message.isContentVisible ) return;
@@ -31,6 +34,9 @@ export const highlightCriticalSuccessFailure = function(message, html, data) {
 
 /**
  * Optionally hide the display of chat card action buttons which cannot be performed by the user
+ * @param {ChatMessage} message  Message being prepared.
+ * @param {HTMLElement} html     Rendered contents of the message.
+ * @param {object} data          Configuration data passed to the message.
  */
 export const displayChatActionButtons = function(message, html, data) {
   const chatCard = html.find(".dnd5e.chat-card");
@@ -40,14 +46,14 @@ export const displayChatActionButtons = function(message, html, data) {
 
     // If the user is the message author or the actor owner, proceed
     let actor = game.actors.get(data.message.speaker.actor);
-    if ( actor && actor.owner ) return;
+    if ( actor && actor.isOwner ) return;
     else if ( game.user.isGM || (data.author.id === game.user.id)) return;
 
     // Otherwise conceal action buttons except for saving throw
     const buttons = chatCard.find("button[data-action]");
     buttons.each((i, btn) => {
       if ( btn.dataset.action === "save" ) return;
-      btn.style.display = "none"
+      btn.style.display = "none";
     });
   }
 };
@@ -59,14 +65,14 @@ export const displayChatActionButtons = function(message, html, data) {
  * These options make it easy to conveniently apply damage to controlled tokens based on the value of a Roll
  *
  * @param {HTMLElement} html    The Chat Message being rendered
- * @param {Array} options       The Array of Context Menu options
+ * @param {object[]} options    The Array of Context Menu options
  *
- * @return {Array}              The extended options Array including new context choices
+ * @returns {object[]}          The extended options Array including new context choices
  */
 export const addChatMessageContextOptions = function(html, options) {
   let canApply = li => {
     const message = game.messages.get(li.data("messageId"));
-    return message?.isRoll && message?.isContentVisible && canvas?.tokens.controlled.length;
+    return message?.isRoll && message?.isContentVisible && canvas.tokens?.controlled.length;
   };
   options.push(
     {
@@ -104,8 +110,8 @@ export const addChatMessageContextOptions = function(html, options) {
  * This allows for damage to be scaled by a multiplier to account for healing, critical hits, or resistance
  *
  * @param {HTMLElement} li      The chat entry which contains the roll data
- * @param {Number} multiplier   A damage multiplier to apply to the rolled damage.
- * @return {Promise}
+ * @param {number} multiplier   A damage multiplier to apply to the rolled damage.
+ * @returns {Promise}
  */
 function applyChatCardDamage(li, multiplier) {
   const message = game.messages.get(li.data("messageId"));

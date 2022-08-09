@@ -16,7 +16,9 @@
 
             <ul class="summary flexrow">
                 <li>
-                    <input type="text" name="data.rarity" value="{{data.rarity}}" placeholder="{{ localize 'DND5E.Rarity' }}"/>
+                    <select name="data.rarity">
+                        {{selectOptions config.itemRarity selected=data.rarity blank="&nbsp;"}}
+                    </select>
                 </li>
                 <li>
                     <input type="text" name="data.source" value="{{data.source}}" placeholder="{{ localize 'DND5E.Source' }}"/>
@@ -29,6 +31,7 @@
     <nav class="sheet-navigation tabs" data-group="primary">
         <a class="item active" data-tab="description">{{ localize "DND5E.Description" }}</a>
         <a class="item" data-tab="details">{{ localize "DND5E.Details" }}</a>
+        <a class="item" data-tab="effects">{{ localize "DND5E.Effects" }}</a>
     </nav>
 
     {{!-- Item Sheet Body --}}
@@ -40,15 +43,33 @@
         {{!-- Details Tab --}}
         <div class="tab details" data-group="primary" data-tab="details">
 
+            {{!-- Tool Type --}}
+            <div class="form-group">
+                <label>{{ localize "DND5E.ItemToolType" }}</label>
+                <select name="data.toolType">
+                    {{selectOptions config.toolTypes selected=data.toolType blank=""}}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>{{ localize "DND5E.ItemToolBase" }}</label>
+                <select name="data.baseItem">
+                    {{selectOptions baseItems selected=data.baseItem blank=""}}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>{{localize "DND5E.Attunement"}}</label>
+                <select name="data.attunement" data-dtype="Number">
+                    {{selectOptions config.attunements selected=data.attunement}}
+                </select>
+            </div>
+
             {{!-- Tool Proficiency --}}
             <div class="form-group">
                 <label>{{ localize "DND5E.ItemToolProficiency" }}</label>
                  <select name="data.proficient" data-dtype="Number">
-                     {{#select data.proficient}}
-                     {{#each config.proficiencyLevels as |label p|}}
-                     <option value="{{p}}">{{label}}</option>
-                     {{/each}}
-                     {{/select}}
+                     {{selectOptions config.proficiencyLevels selected=data.proficient}}
                  </select>
             </div>
 
@@ -56,12 +77,14 @@
             <div class="form-group">
                 <label>{{ localize "DND5E.DefaultAbilityCheck" }}</label>
                 <select name="data.ability">
-                    {{#select data.ability}}
-                    {{#each config.abilities as |name a|}}
-                    <option value="{{a}}">{{name}}</option>
-                    {{/each}}
-                    {{/select}}
+                    {{selectOptions config.abilities selected=data.ability}}
                 </select>
+            </div>
+
+            {{!-- Tool Bonus --}}
+            <div class="form-group">
+                <label>{{ localize "DND5E.ItemToolBonus" }}</label>
+                <input type="text" name="data.bonus" value="{{data.bonus}}"/>
             </div>
 
             {{!-- Chat Message Flavor --}}
@@ -69,6 +92,11 @@
                 <label>{{ localize "DND5E.ChatFlavor" }}</label>
                 <input type="text" name="data.chatFlavor" value="{{data.chatFlavor}}"/>
             </div>
+        </div>
+
+        {{!-- Effects Tab --}}
+        <div class="tab effects flexcol" data-group="primary" data-tab="effects">
+            {{> "systems/dnd5e/templates/actors/parts/active-effects.html"}}
         </div>
     </section>
 </form>

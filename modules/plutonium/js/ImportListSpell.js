@@ -1,1 +1,498 @@
-const _0x43fd=['5etools','technomagic','log','entityClass','Custom\x20URL','text-center','_pImportEntry_pImportToActor','.search','Level','319809BulvWe','entries','activateListeners','isStreamerMode','Spell\x20Points','pGetSources','Importing\x20spell\x20\x22','[name=\x22btn-reset\x22]','sheet','spells','find','1691234uJcVCl','range','_dataList','click','_foundryIsSpellScroll','schoolLong','sourceLong','4595497LQyiNn','_titleSearch','_l_school','doAbsorbItems','getTblTimeStr','_l_time','DataSourceUrl','pGetSpellItem','1688470oPnXZU','constructor','_activateListeners_absorbListItems','_content','Import\x20Spells','[name=\x22sel-is-prepared\x22]','SOURCE_TYP_ARCANA','1515585yWhARU','URL_TO_HASH_BUILDER','sp__school-','pImportEntry','school','prop','schoolShort','DetailPreparation','\x20level','SOURCE_TYP_OFFICIAL_ALL','isToken','SRD','titleSearch','sourceJsonToColor','_actor','DataSourceFile','\x20Spell\x20Points','SOURCE_TYP_CUSTOM','name','getSpellItemItemOpts','Import\x20as\x20Spell\x20Scroll(s)/With\x20Custom\x20Preparation','pGetAllSpells','spRangeToFull','_normalisedRange','_isPreviewable','[data-name=\x22wrp-btns-sort\x22]','source','Import\x20With\x20Custom\x20Preparation','_pImportEntry_pImportToDirectoryGeneric','_pFnPostProcessEntries','1588377LvRfjE','ritual','[name=\x22cb-is-scroll-all\x22]','2-5','Source','sourceShort','spell','$cbScroll','map','SOURCE_TYP_BREW','getListDisplayLevel','MODULE_LOCATION','_pImportEntry_pImportToDirectoryGeneric_pGetImportableData','_$btnReset','_list','Upload\x20File','.veapp__list','\x20(rit.)','getActorSpellItemOpts','$selIsPrepared','spLevelToFull','1773006LPTvdy','change','concentration','_isConc','meta','\x20(tec.)','val','text-right','getData','preparation.mode','sourceJsonToFull','btn-run-mods','absorbFnGetData','[name=\x22btn-run\x22]','SOURCE_TYP_OFFICIAL_SINGLE','absorbFnBindListenersRadio','sourceClassName','5etools-spells','1VYjJFg','Range','/template/ImportListSpellScrollOrPreparation.handlebars','[name=\x22cb-is-scroll\x22]','close','_isRadio','[name=\x22sel-preparation-mode\x22]','_resolve','_isActor','sourceJsonToAbv','foundryData','PG_SPELLS','data','createScrollFromSpell','pGetHomebrewSources','checked','ele','items','isActor','time','spSchoolAbvToFull','level','Time','getFolderPathMeta','subschools','_isUseMods','schoolClassName','OwnedItem','sortSpells','spSchoolAndSubschoolsAbvsShort','mutateForFilters','Item'];const _0x5eb2=function(_0x2777e2,_0x3f33de){_0x2777e2=_0x2777e2-0x13e;let _0x43fd70=_0x43fd[_0x2777e2];return _0x43fd70;};const _0xf2f65f=_0x5eb2;(function(_0x3e967b,_0x27c835){const _0x596d64=_0x5eb2;while(!![]){try{const _0x398227=parseInt(_0x596d64(0x140))+parseInt(_0x596d64(0x174))+parseInt(_0x596d64(0x189))+parseInt(_0x596d64(0x1c4))+parseInt(_0x596d64(0x14f))+-parseInt(_0x596d64(0x156))+parseInt(_0x596d64(0x19b))*-parseInt(_0x596d64(0x147));if(_0x398227===_0x27c835)break;else _0x3e967b['push'](_0x3e967b['shift']());}catch(_0x2675c4){_0x3e967b['push'](_0x3e967b['shift']());}}}(_0x43fd,0xe7e36));import{ImportList}from'./ImportList.js';import{Vetools}from'./Vetools.js';import{LGT,Util}from'./Util.js';import{UtilActors}from'./UtilActors.js';import{Config}from'./Config.js';import{UtilList2}from'./UtilList2.js';import{DataConverterSpell}from'./DataConverterSpell.js';import{SharedConsts}from'../shared/SharedConsts.js';import{UtilApplications}from'./UtilApplications.js';import{UtilDataSource}from'./UtilDataSource.js';class ImportListSpell extends ImportList{constructor(_0x4f9ef9){const _0x19dfef=_0x5eb2;_0x4f9ef9=_0x4f9ef9||{},super({'title':_0x19dfef(0x153)},_0x4f9ef9,{'props':[_0x19dfef(0x17a)],'titleSearch':_0x19dfef(0x13e),'sidebarTab':_0x19dfef(0x1ac),'gameProp':_0x19dfef(0x1ac),'defaultFolderPath':['Spells'],'folderType':_0x19dfef(0x1ba),'fnListSort':PageFilterSpells[_0x19dfef(0x1b7)],'pageFilter':new PageFilterSpells(),'page':UrlUtil[_0x19dfef(0x1a6)],'isPreviewable':!![],'isModdable':!![],'isDedupable':!![]});}async[_0xf2f65f(0x1c9)](){const _0x717b51=_0xf2f65f,_0x4f062a=await Vetools['pGetSpellIndex']();return[new UtilDataSource['DataSourceSpecial'](Config['get']('ui',_0x717b51(0x1c7))?_0x717b51(0x161):_0x717b51(0x1bb),async()=>(await Vetools[_0x717b51(0x16b)]())[_0x717b51(0x17a)],{'cacheKey':_0x717b51(0x19a),'filterTypes':[UtilDataSource[_0x717b51(0x15f)]],'isDefault':!![]}),new UtilDataSource[(_0x717b51(0x14d))](_0x717b51(0x1bf),'',{'filterTypes':[UtilDataSource[_0x717b51(0x167)]]}),new UtilDataSource[(_0x717b51(0x165))](_0x717b51(0x183),{'filterTypes':[UtilDataSource[_0x717b51(0x167)]]}),...Object[_0x717b51(0x1c5)](_0x4f062a)[_0x717b51(0x17c)](([_0x4b38b9,_0x2c3756])=>new UtilDataSource[(_0x717b51(0x14d))](Parser[_0x717b51(0x193)](_0x4b38b9),Vetools['getSpellUrl'](_0x2c3756),{'source':_0x4b38b9,'filterTypes':SourceUtil['isNonstandardSource'](_0x4b38b9)?[UtilDataSource[_0x717b51(0x155)]]:[UtilDataSource[_0x717b51(0x197)]]})),...(await Vetools[_0x717b51(0x1a9)](_0x717b51(0x17a)))[_0x717b51(0x17c)](({name:_0x3fba6e,url:_0x143130})=>new UtilDataSource[(_0x717b51(0x14d))](_0x3fba6e,_0x143130,{'filterTypes':[UtilDataSource[_0x717b51(0x17d)]]}))];}['getFolderPathMeta'](){const _0x30c2d9=_0xf2f65f;return{...super[_0x30c2d9(0x1b2)](),'level':{'label':_0x30c2d9(0x1c3),'getter':_0x4c6932=>''+Parser[_0x30c2d9(0x188)](_0x4c6932[_0x30c2d9(0x1b0)])+(_0x4c6932[_0x30c2d9(0x1b0)]?_0x30c2d9(0x15e):'')},'spellPoints':{'label':_0x30c2d9(0x1c8),'getter':_0x38f5e9=>{const _0x52be8d=_0x30c2d9,_0x31df77=(()=>{const _0x485c80=_0x5eb2;switch(_0x38f5e9[_0x485c80(0x1b0)]){case 0x1:return 0x2;case 0x2:return 0x3;case 0x3:return 0x5;case 0x4:return 0x6;case 0x5:return 0x7;case 0x6:return 0x8;case 0x7:return 0xa;case 0x8:return 0xb;case 0x9:return 0xd;case 0x0:default:return 0x0;}})();return _0x31df77+_0x52be8d(0x166);}}};}[_0xf2f65f(0x191)](){const _0x3aaa6a=_0xf2f65f;return{'isPreviewable':this[_0x3aaa6a(0x16e)],'titleButtonRun':this['_titleButtonRun'],'titleSearch':this[_0x3aaa6a(0x148)],'buttonsAdditional':[{'name':_0x3aaa6a(0x194),'text':this[_0x3aaa6a(0x164)]?_0x3aaa6a(0x16a):_0x3aaa6a(0x171)}],'cols':[{'name':'Name','width':'3-2','field':_0x3aaa6a(0x168)},{'name':'Level','width':0x1,'field':_0x3aaa6a(0x1b0),'rowClassName':_0x3aaa6a(0x1c0)},{'name':_0x3aaa6a(0x1b1),'width':0x2,'field':_0x3aaa6a(0x1ae),'rowClassName':'text-center'},{'name':'School','width':0x1,'field':_0x3aaa6a(0x15a),'titleProp':_0x3aaa6a(0x145),'displayProp':_0x3aaa6a(0x15c),'classNameProp':_0x3aaa6a(0x1b5),'rowClassName':_0x3aaa6a(0x1c0)},{'name':'C.','width':'0-3','field':_0x3aaa6a(0x18b),'rowClassName':'text-center','title':'Concentration'},{'name':_0x3aaa6a(0x19c),'width':_0x3aaa6a(0x177),'field':_0x3aaa6a(0x141),'rowClassName':_0x3aaa6a(0x190)},{'name':_0x3aaa6a(0x178),'width':0x1,'field':_0x3aaa6a(0x170),'titleProp':_0x3aaa6a(0x146),'displayProp':_0x3aaa6a(0x179),'classNameProp':_0x3aaa6a(0x199),'rowClassName':_0x3aaa6a(0x1c0)}],'rows':this[_0x3aaa6a(0x152)][_0x3aaa6a(0x17c)]((_0x375a4b,_0x491726)=>{const _0x2beb0b=_0x3aaa6a;return this['_pageFilter'][_0x2beb0b(0x150)][_0x2beb0b(0x1b9)](_0x375a4b),_0x375a4b[_0x2beb0b(0x14c)]=PageFilterSpells[_0x2beb0b(0x14b)](_0x375a4b['time'][0x0]),_0x375a4b['_l_school']=Parser[_0x2beb0b(0x1af)](_0x375a4b[_0x2beb0b(0x15a)],_0x375a4b[_0x2beb0b(0x1b3)]),{'name':_0x375a4b['name'],'level':this[_0x2beb0b(0x150)][_0x2beb0b(0x17e)](_0x375a4b),'time':_0x375a4b['_l_time'],'range':Parser[_0x2beb0b(0x16c)](_0x375a4b['range']),'source':_0x375a4b[_0x2beb0b(0x170)],'sourceShort':Parser['sourceJsonToAbv'](_0x375a4b[_0x2beb0b(0x170)]),'sourceLong':Parser['sourceJsonToFull'](_0x375a4b['source']),'sourceClassName':Parser[_0x2beb0b(0x163)](_0x375a4b[_0x2beb0b(0x170)]),'school':_0x375a4b['school'],'schoolShort':Parser[_0x2beb0b(0x1b8)](_0x375a4b['school'],_0x375a4b[_0x2beb0b(0x1b3)]),'schoolLong':_0x375a4b['_l_school'],'schoolClassName':_0x2beb0b(0x158)+_0x375a4b['school'],'concentration':_0x375a4b[_0x2beb0b(0x18c)]?'×':'','ix':_0x491726};})};}[_0xf2f65f(0x151)](){const _0x31b226=_0xf2f65f;this['_list'][_0x31b226(0x14a)](this['_content'],{'fnGetName':_0x556d83=>_0x556d83[_0x31b226(0x168)],'fnGetValues':_0x1af233=>({'source':_0x1af233['source'],'level':_0x1af233[_0x31b226(0x1b0)],'time':_0x1af233[_0x31b226(0x14c)],'normalisedTime':_0x1af233['_normalisedTime'],'normalisedRange':_0x1af233[_0x31b226(0x16d)],'school':_0x1af233[_0x31b226(0x149)],'concentration':_0x1af233[_0x31b226(0x18c)],'hash':UrlUtil[_0x31b226(0x157)][this['_page']](_0x1af233)}),'fnGetData':UtilList2[_0x31b226(0x195)],'fnBindListeners':_0xc447de=>this[_0x31b226(0x1a0)]?UtilList2[_0x31b226(0x198)](this[_0x31b226(0x182)],_0xc447de):UtilList2['absorbFnBindListeners'](this[_0x31b226(0x182)],_0xc447de)});}[_0xf2f65f(0x173)](_0x288915){const _0x3b5f09=_0xf2f65f;if(!this[_0x3b5f09(0x1b4)])return _0x288915;return new Promise(_0x1dcdb1=>{const _0x12933e=_0x3b5f09,_0x2dd49d=new ImportListSpell[(_0x12933e(0x15d))](_0x288915,_0x1dcdb1,{'titleSearch':this[_0x12933e(0x148)],'isActor':!!this['_actor']});_0x2dd49d['render'](!![]);});}async[_0xf2f65f(0x159)](_0x5513e9,_0x833dfd){const _0x33c09d=_0xf2f65f;_0x833dfd=_0x833dfd||{},console[_0x33c09d(0x1bd)](...LGT,_0x33c09d(0x1ca)+_0x5513e9['name']+'\x22\x20(from\x20\x22'+Parser[_0x33c09d(0x1a4)](_0x5513e9[_0x33c09d(0x170)])+'\x22)');if(_0x833dfd['isTemp'])return this[_0x33c09d(0x172)](_0x5513e9,_0x833dfd);else{if(this[_0x33c09d(0x164)])return this[_0x33c09d(0x1c1)](_0x5513e9,_0x833dfd);else return this['_pImportEntry_pImportToDirectoryGeneric'](_0x5513e9,_0x833dfd);}}async[_0xf2f65f(0x1c1)](_0x1a8a74,_0x596422){const _0x5563bf=_0xf2f65f,_0x22dfb2=await DataConverterSpell[_0x5563bf(0x14e)](_0x1a8a74,UtilActors[_0x5563bf(0x186)](this[_0x5563bf(0x164)]));let _0x2f0409;if(_0x1a8a74[_0x5563bf(0x144)]){const _0x44d6cd=await CONFIG[_0x5563bf(0x1ba)][_0x5563bf(0x1be)][_0x5563bf(0x1a8)](_0x22dfb2);_0x2f0409=await this['_actor']['createEmbeddedEntity'](_0x5563bf(0x1b6),_0x44d6cd,{});}else _0x2f0409=await this[_0x5563bf(0x164)]['createEmbeddedEntity'](_0x5563bf(0x1b6),_0x22dfb2,{});if(this[_0x5563bf(0x164)][_0x5563bf(0x160)])this[_0x5563bf(0x164)][_0x5563bf(0x1cc)]['render']();return{'imported':{'name':_0x1a8a74[_0x5563bf(0x168)],'actor':this['_actor'],'embeddedEntity':_0x2f0409},'status':UtilApplications['TASK_EXIT_COMPLETE']};}[_0xf2f65f(0x180)](_0x44ba51,_0x1dee00){const _0x183863=_0xf2f65f;return DataConverterSpell[_0x183863(0x14e)](_0x44ba51,{...UtilActors[_0x183863(0x169)](),..._0x1dee00});}static[_0xf2f65f(0x17e)](_0x328bae){const _0x1dda71=_0xf2f65f;return''+Parser[_0x1dda71(0x188)](_0x328bae[_0x1dda71(0x1b0)])+(_0x328bae[_0x1dda71(0x18d)]&&_0x328bae[_0x1dda71(0x18d)][_0x1dda71(0x175)]?_0x1dda71(0x185):'')+(_0x328bae[_0x1dda71(0x18d)]&&_0x328bae[_0x1dda71(0x18d)][_0x1dda71(0x1bc)]?_0x1dda71(0x18e):'');}}ImportListSpell[_0xf2f65f(0x15d)]=class extends Application{constructor(_0x8cdd22,_0x51b867,_0x57c5f7){const _0x3ca72e=_0xf2f65f;super({'title':'Set\x20Preparation\x20Details','template':SharedConsts[_0x3ca72e(0x17f)]+_0x3ca72e(0x19d),'width':0x3c0,'height':Util['getMaxWindowHeight'](),'resizable':!![]}),this[_0x3ca72e(0x142)]=_0x8cdd22,this[_0x3ca72e(0x1a2)]=_0x51b867,this['_titleSearch']=_0x57c5f7[_0x3ca72e(0x162)],this[_0x3ca72e(0x1a3)]=_0x57c5f7[_0x3ca72e(0x1ad)],this[_0x3ca72e(0x182)]=null,this['_$btnReset']=null;}['getData'](){const _0x33cb94=_0xf2f65f;return{'titleSearch':this[_0x33cb94(0x148)],'isActor':this['_isActor'],'rows':this[_0x33cb94(0x142)][_0x33cb94(0x17c)]((_0x5d1511,_0x28ee88)=>({'name':_0x5d1511[_0x33cb94(0x168)],'level':ImportListSpell[_0x33cb94(0x17e)](_0x5d1511),'source':_0x5d1511[_0x33cb94(0x170)],'sourceShort':Parser['sourceJsonToAbv'](_0x5d1511[_0x33cb94(0x170)]),'sourceLong':Parser[_0x33cb94(0x193)](_0x5d1511[_0x33cb94(0x170)]),'sourceClassName':Parser['sourceJsonToColor'](_0x5d1511[_0x33cb94(0x170)]),'ix':_0x28ee88}))};}[_0xf2f65f(0x1c6)](_0x432535){const _0x201cb3=_0xf2f65f;super[_0x201cb3(0x1c6)](_0x432535),this[_0x201cb3(0x182)]=new List({'$iptSearch':_0x432535[_0x201cb3(0x13f)]('.search'),'$wrpList':_0x432535[_0x201cb3(0x13f)](_0x201cb3(0x184)),'valueNames':[_0x201cb3(0x168),_0x201cb3(0x170),_0x201cb3(0x1b0),'ix']});const _0x3866a4=_0x432535['find'](_0x201cb3(0x16f));SortUtil['initBtnSortHandlers'](_0x3866a4,this[_0x201cb3(0x182)]),this[_0x201cb3(0x182)]['doAbsorbItems'](this[_0x201cb3(0x142)],{'fnGetName':_0x5bfdb1=>_0x5bfdb1['name'],'fnGetValues':_0x4d82bc=>({'source':_0x4d82bc[_0x201cb3(0x170)],'level':_0x4d82bc['level']}),'fnGetData':_0x3f89c2=>{const _0x491212=_0x201cb3,_0x5cc099=$(_0x3f89c2[_0x491212(0x1ab)]);return{'$cbScroll':_0x5cc099[_0x491212(0x13f)](_0x491212(0x19e)),'$selIsPrepared':_0x5cc099[_0x491212(0x13f)](_0x491212(0x154)),'$selPreparationMode':_0x5cc099[_0x491212(0x13f)](_0x491212(0x1a1))};}}),this[_0x201cb3(0x182)]['init']();const _0x5a3388=_0x3866a4[_0x201cb3(0x13f)](_0x201cb3(0x176))[_0x201cb3(0x18a)](()=>{const _0x3233e7=_0x201cb3,_0x228a65=_0x5a3388[_0x3233e7(0x15b)](_0x3233e7(0x1aa));this[_0x3233e7(0x182)][_0x3233e7(0x1ac)]['forEach'](_0xe600f3=>_0xe600f3[_0x3233e7(0x1a7)][_0x3233e7(0x17b)][_0x3233e7(0x15b)](_0x3233e7(0x1aa),_0x228a65));});this['_$btnReset']=_0x432535[_0x201cb3(0x13f)](_0x201cb3(0x1cb))[_0x201cb3(0x143)](()=>{const _0x9422f3=_0x201cb3;_0x432535[_0x9422f3(0x13f)](_0x9422f3(0x1c2))['val']('');if(this[_0x9422f3(0x182)])this[_0x9422f3(0x182)]['reset']();}),_0x432535['find'](_0x201cb3(0x196))[_0x201cb3(0x143)](async()=>{const _0x399470=_0x201cb3,_0x52fed6=this['_list'][_0x399470(0x1ac)][_0x399470(0x17c)](_0x36a96b=>{const _0x3d4ac4=_0x399470,_0x48b955=_0x36a96b['data'][_0x3d4ac4(0x17b)][_0x3d4ac4(0x15b)](_0x3d4ac4(0x1aa)),_0x1e4d24=_0x36a96b[_0x3d4ac4(0x1a7)][_0x3d4ac4(0x187)][_0x3d4ac4(0x18f)](),_0x411a3e=_0x36a96b[_0x3d4ac4(0x1a7)]['$selPreparationMode'][_0x3d4ac4(0x18f)](),_0x4875a8=_0x1e4d24&&_0x1e4d24!=='-1',_0x4db44f=_0x411a3e&&_0x411a3e!=='-1';if(!_0x48b955&&!_0x4875a8&&!_0x4db44f)return this['_dataList'][_0x36a96b['ix']];const _0x3b072e=MiscUtil['copy'](this['_dataList'][_0x36a96b['ix']]);if(_0x48b955)_0x3b072e['_foundryIsSpellScroll']=!![];if(_0x4875a8||_0x4db44f){_0x3b072e[_0x3d4ac4(0x1a5)]={};if(_0x4875a8)_0x3b072e[_0x3d4ac4(0x1a5)]['preparation.prepared']=!!Number(_0x1e4d24);if(_0x4db44f)_0x3b072e[_0x3d4ac4(0x1a5)][_0x3d4ac4(0x192)]=_0x411a3e;}return _0x3b072e;});this[_0x399470(0x1a2)](_0x52fed6),this[_0x399470(0x19f)]();});if(this[_0x201cb3(0x181)])this['_$btnReset'][_0x201cb3(0x143)]();}async[_0xf2f65f(0x19f)](){const _0x4de80c=_0xf2f65f;return this[_0x4de80c(0x1a2)](null),super['close']();}};export{ImportListSpell};
+import {ImportCustomizer, ImportedDocument, ImportList, ImportSummary} from "./ImportList.js";
+import {Vetools} from "./Vetools.js";
+import {LGT} from "./Util.js";
+import {UtilActors} from "./UtilActors.js";
+import {Config} from "./Config.js";
+import {UtilList2} from "./UtilList2.js";
+import {DataConverterSpell} from "./DataConverterSpell.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {UtilApplications} from "./UtilApplications.js";
+import {UtilDataSource} from "./UtilDataSource.js";
+import {UtilDataConverter} from "./UtilDataConverter.js";
+import {ConfigConsts} from "./ConfigConsts.js";
+
+class ImportListSpell extends ImportList {
+	static get ID () { return "spells"; }
+	static get DISPLAY_NAME_TYPE_PLURAL () { return "Spells"; }
+
+	static _ = this.registerImpl(this);
+
+	constructor (externalData) {
+		externalData = externalData || {};
+		super(
+			{title: "Import Spells"},
+			externalData,
+			{
+				props: ["spell"],
+				dirsHomebrew: ["spell"],
+				titleSearch: "spells",
+				sidebarTab: "items",
+				gameProp: "items",
+				defaultFolderPath: ["Spells"],
+				fnListSort: PageFilterSpells.sortSpells,
+				pageFilter: new PageFilterSpells(),
+				page: UrlUtil.PG_SPELLS,
+				isPreviewable: true,
+				isDedupable: true,
+				configGroup: "importSpell",
+			},
+		);
+	}
+
+	async pPreRender (...args) {
+		await super.pPreRender(...args);
+
+		// FIXME(Future) this doesn't apply to directly-imported entries, i.e. the details will be missing from spell
+		//   items created outside of the main importer flow.
+		const brew = await BrewUtil2.pGetBrewProcessed();
+		Renderer.spell.populateHomebrewLookup(brew, {isForce: true});
+		this._content.forEach(sp => {
+			Renderer.spell.uninitClasses(sp);
+			Renderer.spell.initClasses(sp);
+		});
+	}
+
+	async _pGetSources () {
+		const spellIndex = await Vetools.pGetSpellIndex();
+
+		return [
+			new UtilDataSource.DataSourceSpecial(
+				Config.get("ui", "isStreamerMode") ? "SRD" : "5etools",
+				async () => (await Vetools.pGetAllSpells()).spell,
+				{
+					cacheKey: "5etools-spells",
+					filterTypes: [UtilDataSource.SOURCE_TYP_OFFICIAL_ALL],
+					isDefault: true,
+				},
+			),
+			new UtilDataSource.DataSourceUrl(
+				"Custom URL",
+				"",
+				{
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			new UtilDataSource.DataSourceFile(
+				"Upload File",
+				{
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			...Object.entries(spellIndex).map(([src, filename]) => new UtilDataSource.DataSourceUrl(
+				Parser.sourceJsonToFull(src),
+				Vetools.getSpellUrl(filename),
+				{
+					source: src,
+					filterTypes: SourceUtil.isNonstandardSource(src) ? [UtilDataSource.SOURCE_TYP_ARCANA] : [UtilDataSource.SOURCE_TYP_OFFICIAL_SINGLE],
+					abbreviations: [Parser.sourceJsonToAbv(src)],
+				},
+			)),
+			...(await this._pGetSourcesHomebrew()),
+		];
+	}
+
+	getFolderPathMeta () {
+		return {
+			...super.getFolderPathMeta(),
+			level: {
+				label: "Level",
+				getter: it => `${Parser.spLevelToFull(it.level)}${it.level ? " level" : ""}`,
+			},
+			school: {
+				label: "School",
+				getter: it => Parser.spSchoolAndSubschoolsAbvsToFull(it.school, it.subschools),
+			},
+			spellPoints: {
+				label: "Spell Points",
+				getter: it => {
+					const sp = (() => {
+						switch (it.level) {
+							case 1: return 2;
+							case 2: return 3;
+							case 3: return 5;
+							case 4: return 6;
+							case 5: return 7;
+							case 6: return 8;
+							case 7: return 10;
+							case 8: return 11;
+							case 9: return 13;
+							case 0:
+							default: return 0;
+						}
+					})();
+					return `${sp} Spell Points`;
+				},
+			},
+		};
+	}
+
+	async _pPostRenderOrShow () {
+		await super._pPostRenderOrShow();
+
+		if (!this._actor) return;
+
+		if (!Config.get("importSpell", "isFilterOnOpen")) return;
+
+		const currentValues = this._pageFilter.filterBox.getValues();
+		const classNameLookup = Object.keys(currentValues.Class).filter(k => !k.startsWith("_")).mergeMap(it => ({[it.toLowerCase()]: it}));
+
+		// TODO(Future) this *requires* the class to be present as a spellcasting class, which means it doesn't work for
+		//   e.g. Arcane Trickster Rogue.
+		const cacheClassSubclassData = {};
+		const subclassSheetItems = this._actor.items.filter(it => it.type === "subclass");
+		const classMetas = (await this._actor.items
+			.filter(it => it.type === "class")
+			.filter(it => classNameLookup[it.name.toLowerCase().trim()])
+			.pSerialAwaitMap(sheetItem => UtilDataConverter.pGetClassItemClassAndSubclass({sheetItem, subclassSheetItems, cache: cacheClassSubclassData})))
+			.filter(it => it.matchingClasses?.length);
+
+		if (!classMetas.length) {
+			this._pageFilter.filterBox.setFromValues({
+				"Class": {},
+				"Subclass": {},
+			});
+			this._handleFilterChange();
+			return;
+		}
+
+		if (classMetas.some(it => it.matchingSubclasses?.length)) {
+			this._pageFilter.filterBox.setFromValues({
+				"Class": classMetas.map(it => it.matchingClasses.map(it => it.name)).flat().mergeMap(it => ({[it]: 1})),
+				"Subclass": classMetas.map(it => it.matchingSubclasses.map(it => `${it.className}: ${it.shortName}`)).flat().mergeMap(it => ({[it]: 1})),
+			});
+			this._handleFilterChange();
+			return;
+		}
+
+		this._pageFilter.filterBox.setFromValues({
+			"Class": classMetas.map(it => it.matchingClasses.map(it => it.name)).flat().mergeMap(it => ({[it]: 1})),
+			"Subclass": {},
+		});
+		this._handleFilterChange();
+	}
+
+	getData () {
+		return {
+			...super.getData(),
+			buttonsAdditional: [
+				{
+					name: "btn-run-mods",
+					text: "Customize and Import...",
+				},
+			],
+			cols: [
+				{
+					name: "Name",
+					width: "3-2",
+					field: "name",
+				},
+				{
+					name: "Level",
+					width: 1,
+					field: "level",
+					rowClassName: "text-center",
+				},
+				{
+					name: "Time",
+					width: 2,
+					field: "time",
+					rowClassName: "text-center",
+				},
+				{
+					name: "School",
+					width: 1,
+					field: "school",
+					titleProp: "schoolLong",
+					displayProp: "schoolShort",
+					classNameProp: "schoolClassName",
+					rowClassName: "text-center",
+				},
+				{
+					name: "C.",
+					width: "0-3",
+					field: "concentration",
+					rowClassName: "text-center",
+					title: "Concentration",
+				},
+				{
+					name: "Range",
+					width: "2-5",
+					field: "range",
+					rowClassName: "text-right",
+				},
+				{
+					name: "Source",
+					width: 1,
+					field: "source",
+					titleProp: "sourceLong",
+					displayProp: "sourceShort",
+					classNameProp: "sourceClassName",
+					styleProp: "sourceStyle",
+					rowClassName: "text-center",
+				},
+			],
+			rows: this._content.map((it, ix) => {
+				this._pageFilter.constructor.mutateForFilters(it);
+				it._l_time = PageFilterSpells.getTblTimeStr(it.time[0]);
+				it._l_school = Parser.spSchoolAbvToFull(it.school, it.subschools);
+
+				return {
+					name: it.name,
+					level: this.constructor.getListDisplayLevel(it),
+					time: it._l_time,
+					range: Parser.spRangeToFull(it.range),
+
+					source: it.source,
+					sourceShort: Parser.sourceJsonToAbv(it.source),
+					sourceLong: Parser.sourceJsonToFull(it.source),
+					sourceClassName: Parser.sourceJsonToColor(it.source),
+					sourceStyle: BrewUtil2.sourceJsonToStylePart(it.source),
+
+					school: it.school,
+					schoolShort: Parser.spSchoolAndSubschoolsAbvsShort(it.school, it.subschools),
+					schoolLong: it._l_school,
+					schoolClassName: `sp__school-${it.school}`,
+
+					concentration: it._isConc ? "×" : "",
+					ix,
+				};
+			}),
+		};
+	}
+
+	_renderInner_absorbListItems () {
+		this._list.doAbsorbItems(
+			this._content,
+			{
+				fnGetName: it => it.name,
+				// values used for sorting/search
+				fnGetValues: it => ({
+					source: it.source,
+					level: it.level,
+					time: it._l_time,
+					normalisedTime: it._normalisedTime,
+					normalisedRange: it._normalisedRange,
+					school: it._l_school,
+					concentration: it._isConc,
+
+					hash: UrlUtil.URL_TO_HASH_BUILDER[this._page](it),
+				}),
+				fnGetData: UtilList2.absorbFnGetData,
+				fnBindListeners: it => this._isRadio
+					? UtilList2.absorbFnBindListenersRadio(this._list, it)
+					: UtilList2.absorbFnBindListeners(this._list, it),
+			},
+		);
+	}
+
+	_renderInner_initRunButtonsAdditional () { this._renderInner_initRunButtonsAdditional_genericMods(); }
+
+	_pFnPostProcessEntries (entries, {isUseMods = false} = {}) {
+		if (!isUseMods) return entries;
+
+		return new Promise(resolve => {
+			const detailer = new ImportListSpell.ImportCustomizer(entries, resolve, {titleSearch: this._titleSearch, isActor: !!this._actor});
+			detailer.render(true);
+		});
+	}
+
+	/**
+	 * @param spell
+	 * @param importOpts Options object.
+	 * @param [importOpts.isTemp] if the item should be temporary, and displayed.
+	 * @param [importOpts.opts_pGetSpellItem] if the item should be temporary, and displayed.
+	 * @param [importOpts.isSpellScroll] if the spell should be imported as a spell scroll
+	 * @param [importOpts.folderId] The folder ID to import to.
+	 */
+	async _pImportEntry (spell, importOpts) {
+		importOpts = importOpts || {};
+
+		console.log(...LGT, `Importing spell "${spell.name}" (from "${Parser.sourceJsonToAbv(spell.source)}")`);
+
+		if (importOpts.isTemp) return this._pImportEntry_pImportToDirectoryGeneric(spell, importOpts);
+		if (this._actor) return this._pImportEntry_pImportToActor(spell, importOpts);
+		return this._pImportEntry_pImportToDirectoryGeneric(spell, importOpts);
+	}
+
+	async _pImportEntry_pImportToActor (spell, importOpts) {
+		const isScrollImport = this.constructor._isSpellScrollImport(spell, importOpts);
+		const isAllowSpellPoints = this._isAllowSpellPoints({spell, importOpts, isScrollImport});
+		if (isAllowSpellPoints) await this._pAddActorSpellPointsSlotsEffect({importOpts});
+		const spellPointsItemId = isAllowSpellPoints ? await this._pGetActorSpellPointsItemId() : null;
+
+		const spellData = await DataConverterSpell.pGetSpellItem(
+			spell,
+			{
+				actor: this._actor,
+				...(importOpts.opts_pGetSpellItem
+					|| (await UtilActors.pGetActorSpellItemOpts({actor: this._actor, isAllowAutoDetectPreparationMode: true}))),
+				spellPointsItemId,
+			},
+		);
+
+		let embeddedDocument;
+		if (isScrollImport) {
+			const scrollData = await CONFIG.Item.documentClass.createScrollFromSpell(spellData);
+			const importedMetas = await UtilActors.pAddActorItems(
+				this._actor,
+				[scrollData.toObject()],
+			);
+			embeddedDocument = importedMetas[0]?.document;
+		} else {
+			const importedMetas = await UtilActors.pAddActorItems(
+				this._actor,
+				[spellData],
+			);
+			embeddedDocument = importedMetas[0]?.document;
+		}
+
+		if (this._actor.isToken) this._actor.sheet.render();
+
+		return new ImportSummary({
+			status: UtilApplications.TASK_EXIT_COMPLETE,
+			imported: [
+				new ImportedDocument({
+					name: spell.name,
+					actor: this._actor,
+					embeddedDocument,
+				}),
+			],
+		});
+	}
+
+	_isAllowSpellPoints ({spell, importOpts, isScrollImport}) {
+		if (isScrollImport) return false;
+		return DataConverterSpell.isAllowSpellPoints(spell.level, {actor: this._actor, ...importOpts?.opts_pGetSpellItem || {}});
+	}
+
+	async _pAddActorSpellPointsSlotsEffect ({importOpts}) {
+		if (!this._actor) throw new Error(`Only applicable when importing to an actor!`);
+		if (Config.get("importSpell", Config.getSpellPointsKey({actorType: this._actor?.type})) !== ConfigConsts.C_SPELL_POINTS_MODE__ENABLED_AND_UNLIMITED_SLOTS) return;
+		await UtilActors.pGetCreateActorSpellPointsSlotsEffect({actor: this._actor, isTemporary: importOpts.isTemp});
+	}
+
+	async _pGetActorSpellPointsItemId () {
+		if (!this._actor) throw new Error(`Only applicable when importing to an actor!`);
+		const spellPointsItem = await UtilActors.pGetCreateActorSpellPointsItem({actor: this._actor});
+		return spellPointsItem?.id;
+	}
+
+	async _pImportEntry_pImportToDirectoryGeneric_pGetImportableData (it, getItemOpts, importOpts) {
+		const spellData = await DataConverterSpell.pGetSpellItem(it, {...UtilActors.getSpellItemItemOpts(), ...getItemOpts});
+
+		if (this.constructor._isSpellScrollImport(it, importOpts)) {
+			const scrollData = await CONFIG.Item.documentClass.createScrollFromSpell(spellData);
+			return scrollData.toObject();
+		}
+		return spellData;
+	}
+
+	static getListDisplayLevel (it) { return `${Parser.spLevelToFull(it.level)}${it.meta && it.meta.ritual ? " (rit.)" : ""}${it.meta && it.meta.technomagic ? " (tec.)" : ""}`; }
+
+	static _isSpellScrollImport (spell, importOpts) { return spell._foundryIsSpellScroll || importOpts.isSpellScroll; }
+}
+
+ImportListSpell.ImportCustomizer = class extends ImportCustomizer {
+	/**
+	 * @param dataList
+	 * @param resolve
+	 * @param opts Options object.
+	 * @param opts.titleSearch Used in prompt text in the search bar.
+	 * @param opts.isActor
+	 */
+	constructor (dataList, resolve, opts) {
+		super(
+			dataList,
+			resolve,
+			{
+				...opts,
+				title: "Customize Import",
+				template: `${SharedConsts.MODULE_LOCATION}/template/ImportListSpellCustomizer.hbs`,
+			},
+		);
+	}
+
+	getData () {
+		return {
+			...super.getData(),
+			rows: this._dataList.map((it, ix) => ({
+				name: it.name,
+				level: ImportListSpell.getListDisplayLevel(it),
+				source: it.source,
+				sourceShort: Parser.sourceJsonToAbv(it.source),
+				sourceLong: Parser.sourceJsonToFull(it.source),
+				sourceClassName: Parser.sourceJsonToColor(it.source),
+				sourceStyle: BrewUtil2.sourceJsonToStylePart(it.source),
+				ix,
+			})),
+		};
+	}
+
+	_activateListeners_initList ({$html}) {
+		// Init list library
+		this._list = new List({
+			$iptSearch: $html.find(`.search`),
+			$wrpList: $html.find(`.veapp__list`),
+			valueNames: ["name", "source", "level", "ix"],
+		});
+		this._list.doAbsorbItems(
+			this._dataList,
+			{
+				fnGetName: it => it.name,
+				fnGetValues: it => ({source: it.source, level: it.level}),
+				fnGetData: it => {
+					const $e = $(it.ele);
+					return {
+						$cbScroll: $e.find(`[name="cb-is-scroll"]`),
+						$selIsPrepared: $e.find(`[name="sel-is-prepared"]`),
+						$selPreparationMode: $e.find(`[name="sel-preparation-mode"]`),
+					};
+				},
+			},
+		);
+		this._list.init();
+	}
+
+	_activateListeners_bindControls ({$html, $wrpBtnsSort}) {
+		const $cbScrollAll = $wrpBtnsSort.find(`[name="cb-is-scroll-all"]`)
+			.change(() => {
+				const val = $cbScrollAll.prop("checked");
+				this._list.items.forEach(li => li.data.$cbScroll.prop("checked", val));
+			});
+
+		this._$btnReset = $html.find(`[name="btn-reset"]`).click(() => {
+			$html.find(`.search`).val("");
+			if (this._list) this._list.reset();
+		});
+
+		$html.find(`[name="btn-run"]`).click(async () => {
+			const enhancedSpells = this._list.items.map(it => {
+				const isSpellScroll = it.data.$cbScroll.prop("checked");
+				const isPrepVal = it.data.$selIsPrepared.val();
+				const prepModeVal = it.data.$selPreparationMode.val();
+
+				const hasIsPrep = isPrepVal && isPrepVal !== "-1";
+				const hasPrepMode = prepModeVal && prepModeVal !== "-1";
+
+				if (!isSpellScroll && !hasIsPrep && !hasPrepMode) return this._dataList[it.ix];
+
+				const out = MiscUtil.copy(this._dataList[it.ix]);
+
+				if (isSpellScroll) out._foundryIsSpellScroll = true;
+
+				if (hasIsPrep || hasPrepMode) {
+					out.foundryData = {};
+					if (hasIsPrep) out.foundryData["preparation.prepared"] = !!Number(isPrepVal);
+					if (hasPrepMode) out.foundryData["preparation.mode"] = prepModeVal;
+				}
+
+				return out;
+			});
+
+			this._resolve(enhancedSpells);
+			this.close();
+		});
+	}
+};
+
+export {ImportListSpell};

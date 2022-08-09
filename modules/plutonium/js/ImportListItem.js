@@ -1,1 +1,628 @@
-const _0x2cc5=['_pImportEntry_pImportToActor_pImportPackItem','pImportEntry','weightValueToNumber','5etools','data','sourceJsonToColor','775378cDofVU','toLowerCase','pGetItemItem','filter','get','filterValues','Item','enhanceItem','join','isSiteSource','_titleSearch','1-4','source','DataSourceUrl','atomicPackContents','Importing\x20item\x20\x22','HOMEBREW_INDEX__SOURCE','importItem','Unknown','toTitleCase','push','constructor','quantity','_isPreviewable','PG_ITEMS','cost','sortItems','Unknown\x20Rarity','loadJSON','sourceShort','isSplitAtomicPacksActor','items','ammoType','144049TaMEWF','pGetItemsFromHomebrew','hover','OwnedItem','0-5','SOURCE_TYP_OFFICIAL_ALL','value','weight','type','isSplitPacksActor','Source','item','render','mutateForFilters','Poison','6619euAhMe','Name','_activateListeners_absorbListItems','pGetItemFluff','398242bENDBf','_pImportEntry_pImportToDirectoryGeneric_pGetImportableData','rarity','_pImportEntry_pImportToDirectoryGeneric','stringify','pGetItems','all','_fluffLookup','\x22\x20(from\x20\x22','getFolderPathMeta','sourceLong','map','trim','97007hqjjaI','getItemTypeName','Wondrous\x20Item','has','3-2','init','createEmbeddedEntity','notifications','1243dfaaFZ','pGetSources','sourceJsonToAbv','_pImportEntry_pImportToActor','TASK_EXIT_COMPLETE','pDoHandleBrewJson','URL_TO_HASH_BUILDER','fluff','ammo','Upload\x20File','_pGetPackItems','itemFluff','_isPackSplitImport','split','TASK_EXIT_COMPLETE_DATA_ONLY','905574UafCne','srd','sortEntries','attunement','ascSortLower','typeText','_pImportEntry_getSheetItemsAmmo','49qiqSQc','string','getFileUrl','5etools-items','itemValueToFull','special','_actor','name','Unknown\x20Type','updateEmbeddedEntity','STR_SEE_CONSOLE','_isRadio','populatePropertyAndTypeReference','Weight','equipped','Rarity','isToken','pInit','Import\x20Items','_pImportEntry_pDoLoadBrewMeta','hasSourceJson','1-5','valueMult','_typeListText','Item\x20\x22','Custom\x20URL','doAbsorbItems','absorbFnGetData','_pImportEntry_pImportToActor_pAddItem','log','DataSourceSpecial','text-center',')\x20into\x20constituent\x20items:\x20','DataSourceFile','_vType','pGetHomebrewSources','_list','2fWGTwb','_initCreateSheetItemHook','replace','Error(s)\x20when\x20breaking\x20','SRD','sourceJsonToFull','getData','import','forEach','error','throwables','_titleButtonRun','686amghjP','_attunementCategory','SOURCE_TYP_BREW','_pImportEntry_pImportToDataOnly','brew'];const _0x54ea=function(_0x55da56,_0x2226f3){_0x55da56=_0x55da56-0x148;let _0x2cc551=_0x2cc5[_0x55da56];return _0x2cc551;};const _0x211913=_0x54ea;(function(_0x4e514c,_0xbbc246){const _0x222797=_0x54ea;while(!![]){try{const _0x9196e0=parseInt(_0x222797(0x176))+-parseInt(_0x222797(0x163))+parseInt(_0x222797(0x1dd))+parseInt(_0x222797(0x18b))*-parseInt(_0x222797(0x1d2))+-parseInt(_0x222797(0x1c6))*parseInt(_0x222797(0x183))+parseInt(_0x222797(0x19a))+-parseInt(_0x222797(0x172))*parseInt(_0x222797(0x1a1));if(_0x9196e0===_0xbbc246)break;else _0x4e514c['push'](_0x4e514c['shift']());}catch(_0x428459){_0x4e514c['push'](_0x4e514c['shift']());}}}(_0x2cc5,0x89b86));import{ImportList}from'./ImportList.js';import{Vetools}from'./Vetools.js';import{LGT}from'./Util.js';import{DataConverterItem}from'./DataConverterItem.js';import{Config}from'./Config.js';import{UtilList2}from'./UtilList2.js';import{UtilApplications}from'./UtilApplications.js';import{UtilDataSource}from'./UtilDataSource.js';class ImportListItem extends ImportList{static[_0x211913(0x188)](){const _0x10789c=_0x211913;this[_0x10789c(0x1c7)]({'prop':_0x10789c(0x16e),'importerName':_0x10789c(0x148)});}constructor(_0x11f407){const _0x2e35f1=_0x211913;_0x11f407=_0x11f407||{},super({'title':_0x2e35f1(0x1b3)},_0x11f407,{'namespace':_0x2e35f1(0x16e),'titleSearch':_0x2e35f1(0x161),'sidebarTab':_0x2e35f1(0x161),'gameProp':'items','defaultFolderPath':['Items'],'folderType':_0x2e35f1(0x148),'fnListSort':PageFilterItems[_0x2e35f1(0x15c)],'pageFilter':new PageFilterItems(),'page':UrlUtil[_0x2e35f1(0x15a)],'isPreviewable':!![],'isDedupable':!![]}),this[_0x2e35f1(0x17d)]=null;}async[_0x211913(0x18c)](){const _0x42e6b5=_0x211913;return this['constructor'][_0x42e6b5(0x18c)]();}static async[_0x211913(0x18c)](){const _0x7e53f2=_0x211913,_0x3c6821={'pPostLoad':async _0x5181d5=>{const _0x496a43=_0x54ea;return Renderer['item'][_0x496a43(0x164)](_0x5181d5);}};return[new UtilDataSource[(_0x7e53f2(0x1bf))](Config['get']('ui','isStreamerMode')?_0x7e53f2(0x1ca):_0x7e53f2(0x1da),async()=>(await Vetools[_0x7e53f2(0x17b)]())[_0x7e53f2(0x16e)],{'cacheKey':_0x7e53f2(0x1a4),'filterTypes':[UtilDataSource[_0x7e53f2(0x168)]],'isDefault':!![]}),new UtilDataSource[(_0x7e53f2(0x14f))](_0x7e53f2(0x1ba),'',{..._0x3c6821,'filterTypes':[UtilDataSource['SOURCE_TYP_CUSTOM']]}),new UtilDataSource[(_0x7e53f2(0x1c2))](_0x7e53f2(0x194),{..._0x3c6821,'filterTypes':[UtilDataSource['SOURCE_TYP_CUSTOM']]}),...(await Vetools[_0x7e53f2(0x1c4)](_0x7e53f2(0x16e)))[_0x7e53f2(0x181)](({name:_0x142903,url:_0x34a224})=>new UtilDataSource['DataSourceUrl'](_0x142903,_0x34a224,{..._0x3c6821,'filterTypes':[UtilDataSource[_0x7e53f2(0x1d4)]]}))];}[_0x211913(0x1cc)](){const _0x46bd9f=_0x211913;return{'isPreviewable':this[_0x46bd9f(0x159)],'titleButtonRun':this[_0x46bd9f(0x1d1)],'titleSearch':this[_0x46bd9f(0x14c)],'cols':[{'name':_0x46bd9f(0x173),'width':0x3,'field':_0x46bd9f(0x1a8)},{'name':'Type','width':_0x46bd9f(0x187),'field':_0x46bd9f(0x16b)},{'name':'Cost','width':'1-4','field':_0x46bd9f(0x15b),'rowClassName':_0x46bd9f(0x1c0)},{'name':_0x46bd9f(0x1ae),'width':_0x46bd9f(0x14d),'field':_0x46bd9f(0x16a),'rowClassName':_0x46bd9f(0x1c0)},{'name':'A.','width':_0x46bd9f(0x167),'field':_0x46bd9f(0x19d),'rowClassName':_0x46bd9f(0x1c0)},{'name':_0x46bd9f(0x1b0),'width':_0x46bd9f(0x1b6),'field':_0x46bd9f(0x178),'rowClassName':'text-center'},{'name':_0x46bd9f(0x16d),'width':0x1,'field':_0x46bd9f(0x14e),'titleProp':_0x46bd9f(0x180),'displayProp':_0x46bd9f(0x15f),'classNameProp':'sourceClassName','rowClassName':_0x46bd9f(0x1c0)}],'rows':this['_content'][_0x46bd9f(0x181)]((_0x4fdec7,_0x6e755d)=>{const _0x19284e=_0x46bd9f;return this['_pageFilter'][_0x19284e(0x157)][_0x19284e(0x170)](_0x4fdec7),_0x4fdec7[_0x19284e(0x1c3)]=_0x4fdec7[_0x19284e(0x1b8)][_0x19284e(0x14a)](',\x20')['uppercaseFirst'](),{'name':_0x4fdec7[_0x19284e(0x1a8)],'type':_0x4fdec7[_0x19284e(0x1c3)],'cost':_0x4fdec7[_0x19284e(0x169)]||_0x4fdec7[_0x19284e(0x1b7)]?Parser[_0x19284e(0x1a5)](_0x4fdec7,{'isShortForm':!![]})[_0x19284e(0x1c8)](/ +/g,'\u00a0'):'—','weight':Parser['itemWeightToFull'](_0x4fdec7,!![])||'—','rarity':(_0x4fdec7['rarity']||_0x19284e(0x154))[_0x19284e(0x155)](),'attunement':_0x4fdec7['_attunementCategory']==='No'?'':'×','source':_0x4fdec7[_0x19284e(0x14e)],'sourceShort':Parser[_0x19284e(0x18d)](_0x4fdec7[_0x19284e(0x14e)]),'sourceLong':Parser[_0x19284e(0x1cb)](_0x4fdec7[_0x19284e(0x14e)]),'sourceClassName':Parser[_0x19284e(0x1dc)](_0x4fdec7['source']),'ix':_0x6e755d};})};}[_0x211913(0x174)](){const _0x3c45ef=_0x211913;this[_0x3c45ef(0x1c5)][_0x3c45ef(0x1bb)](this['_content'],{'fnGetName':_0x2c77f4=>_0x2c77f4['name'],'fnGetValues':_0x4c2bf9=>({'source':_0x4c2bf9[_0x3c45ef(0x14e)],'type':_0x4c2bf9['_vType'],'cost':_0x4c2bf9[_0x3c45ef(0x169)]||0x0,'rarity':_0x4c2bf9[_0x3c45ef(0x178)],'attunement':_0x4c2bf9[_0x3c45ef(0x1d3)]!=='No','weight':Parser[_0x3c45ef(0x1d9)](_0x4c2bf9[_0x3c45ef(0x16a)]),'hash':UrlUtil[_0x3c45ef(0x191)][this['_page']](_0x4c2bf9)}),'fnGetData':UtilList2[_0x3c45ef(0x1bc)],'fnBindListeners':_0xbc2773=>this[_0x3c45ef(0x1ac)]?UtilList2['absorbFnBindListenersRadio'](this['_list'],_0xbc2773):UtilList2['absorbFnBindListeners'](this[_0x3c45ef(0x1c5)],_0xbc2773)});}async[_0x211913(0x1b2)](){const _0x1d8b5a=_0x211913;await super[_0x1d8b5a(0x1b2)](),this[_0x1d8b5a(0x17d)]={};const _0x1e972e=await Vetools[_0x1d8b5a(0x175)]();_0x1e972e[_0x1d8b5a(0x196)][_0x1d8b5a(0x1ce)](_0x4ff773=>(this[_0x1d8b5a(0x17d)][_0x4ff773['source']]=this[_0x1d8b5a(0x17d)][_0x4ff773[_0x1d8b5a(0x14e)]]||{})[_0x4ff773['name']]=_0x4ff773),await Renderer[_0x1d8b5a(0x16e)][_0x1d8b5a(0x1ad)]();}[_0x211913(0x17f)](){const _0x5ece92=_0x211913;return{...super[_0x5ece92(0x17f)](),'rarity':{'label':_0x5ece92(0x1b0),'getter':_0x3f5e05=>(!_0x3f5e05['rarity']||_0x3f5e05[_0x5ece92(0x178)]==='Unknown'?_0x5ece92(0x15d):_0x3f5e05[_0x5ece92(0x178)])[_0x5ece92(0x155)]()},'type':{'label':'Type','getter':_0x166fbe=>{const _0x2c67f2=_0x5ece92;if(_0x166fbe[_0x2c67f2(0x16b)])return Renderer['item'][_0x2c67f2(0x184)](_0x166fbe[_0x2c67f2(0x16b)])[_0x2c67f2(0x155)]();else{if(_0x166fbe[_0x2c67f2(0x19f)])return _0x166fbe[_0x2c67f2(0x19f)];else{if(_0x166fbe['wondrous'])return _0x2c67f2(0x185);else{if(_0x166fbe['poison'])return _0x2c67f2(0x171);else return _0x2c67f2(0x1a9);}}}}}};}async[_0x211913(0x1d8)](_0x1b3dd2,_0x590fc0){const _0x35c5d5=_0x211913;_0x590fc0=_0x590fc0||{},console[_0x35c5d5(0x1be)](...LGT,_0x35c5d5(0x151)+_0x1b3dd2[_0x35c5d5(0x1a8)]+_0x35c5d5(0x17e)+Parser[_0x35c5d5(0x18d)](_0x1b3dd2[_0x35c5d5(0x14e)])+'\x22)');const _0x154133=_0x1b3dd2[_0x35c5d5(0x192)]||MiscUtil[_0x35c5d5(0x1e1)](this[_0x35c5d5(0x17d)],_0x1b3dd2[_0x35c5d5(0x14e)],_0x1b3dd2[_0x35c5d5(0x1a8)]),_0x334326={'fluff':_0x154133};if(_0x590fc0['quantity']!=null)_0x334326[_0x35c5d5(0x158)]=_0x590fc0['quantity'];await this[_0x35c5d5(0x1b4)](_0x1b3dd2);if(_0x590fc0['isDataOnly'])return{'imported':await this[_0x35c5d5(0x1d5)](_0x1b3dd2,_0x590fc0,_0x334326),'status':UtilApplications[_0x35c5d5(0x199)]};if(_0x590fc0['isTemp'])return this[_0x35c5d5(0x179)](_0x1b3dd2,_0x590fc0,_0x334326);else{if(this[_0x35c5d5(0x1a7)])return this[_0x35c5d5(0x18e)](_0x1b3dd2,_0x590fc0,_0x334326);else return this[_0x35c5d5(0x179)](_0x1b3dd2,_0x590fc0,_0x334326);}}async['_pImportEntry_pDoLoadBrewMeta'](_0x5ee3b7){const _0x31ff53=_0x211913;if(BrewUtil[_0x31ff53(0x1b5)](_0x5ee3b7[_0x31ff53(0x14e)]))return;if(SourceUtil[_0x31ff53(0x14b)](_0x5ee3b7[_0x31ff53(0x14e)]))return;if(!Vetools[_0x31ff53(0x152)][_0x5ee3b7[_0x31ff53(0x14e)]])return;const _0x34121f=DataUtil[_0x31ff53(0x1d6)][_0x31ff53(0x1a3)](Vetools[_0x31ff53(0x152)][_0x5ee3b7[_0x31ff53(0x14e)]],Config[_0x31ff53(0x1e1)](_0x31ff53(0x1cd),'baseBrewUrl'));await BrewUtil[_0x31ff53(0x190)](await DataUtil['loadJSON'](_0x34121f),UrlUtil['getCurrentPage']()),await Renderer['item']['pGetItemsFromHomebrew'](await DataUtil[_0x31ff53(0x15e)](_0x34121f));}async[_0x211913(0x1d5)](_0x166518,_0x393e77,_0x34158d){const _0x123da4=_0x211913;if(!this[_0x123da4(0x1a7)]||!this['_isPackSplitImport'](_0x166518))return[await DataConverterItem[_0x123da4(0x1df)](_0x166518)];return this['_pGetPackItems'](_0x166518,_0x393e77,_0x34158d);}[_0x211913(0x197)](_0x192923){const _0xf9f01b=_0x211913;return _0x192923['packContents']&&Config[_0xf9f01b(0x1e1)](_0xf9f01b(0x153),_0xf9f01b(0x16c))&&(!_0x192923[_0xf9f01b(0x150)]||Config[_0xf9f01b(0x1e1)]('importItem',_0xf9f01b(0x160)));}async[_0x211913(0x18e)](_0x3ce400,_0x5bcd8b,_0x5e8a8c){const _0x42dd3b=_0x211913;_0x5e8a8c={..._0x5e8a8c,'isActorItem':!![]},_0x5e8a8c[_0x42dd3b(0x1e2)]=_0x5bcd8b[_0x42dd3b(0x1e2)],_0x5e8a8c['sheetItemsAmmo']=this[_0x42dd3b(0x1a0)](_0x3ce400);if(this['_isPackSplitImport'](_0x3ce400))await this[_0x42dd3b(0x1d7)](_0x3ce400,_0x5bcd8b,_0x5e8a8c);else{const _0x84404f=await DataConverterItem['pGetItemItem'](_0x3ce400,_0x5e8a8c);await this['_pImportEntry_pImportToActor_pAddItem'](_0x84404f);}if(this[_0x42dd3b(0x1a7)][_0x42dd3b(0x1b1)])this['_actor']['sheet'][_0x42dd3b(0x16f)]();return{'imported':{'name':_0x3ce400[_0x42dd3b(0x1a8)],'actor':this[_0x42dd3b(0x1a7)]},'status':UtilApplications[_0x42dd3b(0x18f)]};}async[_0x211913(0x195)](_0xd90521,_0x31d268,_0xe84c4e){const _0xe412be=_0x211913,_0x26bfb3=[],_0x18cd68=await Promise[_0xe412be(0x17c)](_0xd90521['packContents'][_0xe412be(0x181)](async _0x1721a7=>{const _0x367774=_0xe412be,_0x313c77=_0x1721a7[_0x367774(0x158)]||0x1;if(_0x1721a7[_0x367774(0x16e)]||typeof _0x1721a7===_0x367774(0x1a2)){let [_0x75ae21,_0x1ca97c]=(_0x1721a7[_0x367774(0x16e)]||_0x1721a7)[_0x367774(0x198)]('|');if(!_0x1ca97c)_0x1ca97c=SRC_DMG;const _0x18028d=UrlUtil[_0x367774(0x191)][UrlUtil[_0x367774(0x15a)]]({'name':_0x75ae21,'source':_0x1ca97c}),_0x10e84c=await Renderer[_0x367774(0x165)]['pCacheAndGet'](UrlUtil['PG_ITEMS'],_0x1ca97c,_0x18028d);return DataConverterItem[_0x367774(0x1df)](_0x10e84c,{'filterValues':_0x31d268[_0x367774(0x1e2)],..._0xe84c4e,'quantity':_0x313c77});}else{if(_0x1721a7['special']){const _0x2189fb={'name':_0x1721a7[_0x367774(0x1a6)][_0x367774(0x155)](),'type':'G','source':_0xd90521['source'],'page':_0xd90521['page'],'srd':_0xd90521[_0x367774(0x19b)]};return Renderer[_0x367774(0x16e)][_0x367774(0x149)](_0x2189fb),DataConverterItem[_0x367774(0x1df)](_0x2189fb,{'filterValues':_0x31d268[_0x367774(0x1e2)],..._0xe84c4e,'quantity':_0x313c77});}else _0x26bfb3[_0x367774(0x156)]('Unhandled\x20pack\x20contents\x20type\x20\x22'+JSON[_0x367774(0x17a)](_0x1721a7)+'\x22');}}));return _0x26bfb3['length']&&(ui[_0xe412be(0x18a)][_0xe412be(0x1cf)](_0xe412be(0x1b9)+_0xd90521[_0xe412be(0x1a8)]+_0xe412be(0x17e)+Parser[_0xe412be(0x18d)](_0xd90521[_0xe412be(0x14e)])+'\x22)\x20could\x20not\x20be\x20broken\x20down\x20into\x20constituent\x20items!\x20'+VeCt[_0xe412be(0x1ab)]),console['error'](...LGT,_0xe412be(0x1c9)+_0xd90521[_0xe412be(0x1a8)]+'\x20('+_0xd90521[_0xe412be(0x14e)]+_0xe412be(0x1c1)+_0x26bfb3[_0xe412be(0x14a)](';\x20'))),_0x18cd68[_0xe412be(0x1e0)](Boolean);}async[_0x211913(0x1d7)](_0x128e5a,_0x57c136,_0xbde4c0){const _0x537d20=_0x211913,_0x5a0fa0=await this['_pGetPackItems'](_0x128e5a,_0x57c136,_0xbde4c0);for(const _0x20902a of _0x5a0fa0){await this[_0x537d20(0x1bd)](_0x20902a);}}async['_pImportEntry_pImportToActor_pAddItem'](_0x136f77){const _0x1dd919=_0x211913,_0x143136=_0x136f77?.['data']?.[_0x1dd919(0x1af)],_0x18910f=await this[_0x1dd919(0x1a7)][_0x1dd919(0x189)](_0x1dd919(0x166),_0x136f77,{});if(!_0x18910f?.[_0x1dd919(0x1db)]?.[_0x1dd919(0x1af)]&&_0x143136)await this[_0x1dd919(0x1a7)][_0x1dd919(0x1aa)](_0x1dd919(0x166),{'_id':_0x18910f['_id'],'data':{'equipped':!![]}});const _0x352d18=new Set((Config[_0x1dd919(0x1e1)]('importItem',_0x1dd919(0x1d0))||[])[_0x1dd919(0x181)](_0x13c484=>_0x13c484[_0x1dd919(0x182)]()[_0x1dd919(0x1de)]()));_0x352d18[_0x1dd919(0x186)]((_0x136f77[_0x1dd919(0x1a8)]||'')[_0x1dd919(0x1de)]()[_0x1dd919(0x182)]())&&await this[_0x1dd919(0x1a7)][_0x1dd919(0x1aa)](_0x1dd919(0x166),{'_id':_0x18910f['_id'],'data':{'consume':{'type':_0x1dd919(0x193),'target':_0x18910f['_id'],'amount':0x1}}});}[_0x211913(0x177)](_0x1fdefa,_0x2c9d9c){const _0x1c391d=_0x211913;return DataConverterItem[_0x1c391d(0x1df)](_0x1fdefa,_0x2c9d9c);}[_0x211913(0x1a0)](_0x204af0){const _0x38c30e=_0x211913;if(!_0x204af0[_0x38c30e(0x162)])return null;if(!this[_0x38c30e(0x1a7)])return null;return(this[_0x38c30e(0x1a7)][_0x38c30e(0x1db)][_0x38c30e(0x161)]||[])['filter'](_0x3ec619=>_0x3ec619['type']==='consumable'&&_0x3ec619[_0x38c30e(0x1db)]['consumableType']==='ammo');}static[_0x211913(0x19c)](_0x235073,_0x59d992){const _0x38c981=_0x211913;if(_0x235073[_0x38c981(0x162)]&&!_0x59d992[_0x38c981(0x162)])return 0x1;if(!_0x235073[_0x38c981(0x162)]&&_0x59d992[_0x38c981(0x162)])return-0x1;return SortUtil[_0x38c981(0x19e)](_0x235073[_0x38c981(0x1a8)],_0x59d992[_0x38c981(0x1a8)])||SortUtil[_0x38c981(0x19e)](Parser[_0x38c981(0x1cb)](_0x235073['source']),Parser['sourceJsonToFull'](_0x59d992[_0x38c981(0x14e)]));}}export{ImportListItem};
+import {ImportCustomizer, ImportedDocument, ImportList, ImportSummary} from "./ImportList.js";
+import {Vetools} from "./Vetools.js";
+import {LGT} from "./Util.js";
+import {DataConverterItem} from "./DataConverterItem.js";
+import {Config} from "./Config.js";
+import {UtilList2} from "./UtilList2.js";
+import {UtilApplications} from "./UtilApplications.js";
+import {UtilDataSource} from "./UtilDataSource.js";
+import {UtilActors} from "./UtilActors.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {UtilDocuments} from "./UtilDocuments.js";
+import {ConfigConsts} from "./ConfigConsts.js";
+import {UtilDataConverter} from "./UtilDataConverter.js";
+
+class ImportListItem extends ImportList {
+	static get ID () { return "items"; }
+	static get DISPLAY_NAME_TYPE_PLURAL () { return "Items"; }
+
+	static _ = this.registerImpl(this);
+
+	// region External
+	static init () {
+		this._initCreateSheetItemHook({
+			prop: "item",
+			importerName: "Item",
+		});
+
+		this._initCreateSheetItemHook_currency();
+	}
+	// endregion
+
+	constructor (externalData) {
+		externalData = externalData || {};
+		super(
+			{title: "Import Items"},
+			externalData,
+			{
+				dirsHomebrew: ["item", "baseitem", "magicvariant"],
+				namespace: "item",
+				titleSearch: "items",
+				sidebarTab: "items",
+				gameProp: "items",
+				defaultFolderPath: ["Items"],
+				fnListSort: PageFilterItems.sortItems,
+				pageFilter: new PageFilterItems({
+					filterOpts: {
+						"Category": {
+							deselFn: (it) => it === "Generic Variant",
+						},
+					},
+				}),
+				page: UrlUtil.PG_ITEMS,
+				isPreviewable: true,
+				isDedupable: true,
+				configGroup: "importItem",
+			},
+		);
+
+		this._fluffLookup = null;
+	}
+
+	async _pGetSources () {
+		const nonVetoolsOpts = {
+			pPostLoad: async json => {
+				return Renderer.item.pGetItemsFromHomebrew(json);
+			},
+		};
+
+		return [
+			new UtilDataSource.DataSourceSpecial(
+				Config.get("ui", "isStreamerMode") ? "SRD" : "5etools",
+				async () => (await Vetools.pGetItems()).item,
+				{
+					cacheKey: "5etools-items",
+					filterTypes: [UtilDataSource.SOURCE_TYP_OFFICIAL_ALL],
+					isDefault: true,
+				},
+			),
+			new UtilDataSource.DataSourceUrl(
+				"Custom URL",
+				"",
+				{
+					...nonVetoolsOpts,
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			new UtilDataSource.DataSourceFile(
+				"Upload File",
+				{
+					...nonVetoolsOpts,
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			...(await this._pGetSourcesHomebrew(nonVetoolsOpts)),
+		];
+	}
+
+	getData () {
+		return {
+			...super.getData(),
+			buttonsAdditional: [
+				{
+					name: "btn-run-mods",
+					text: "Customize and Import...",
+				},
+			],
+			cols: [
+				{
+					name: "Name",
+					width: 3,
+					field: "name",
+				},
+				{
+					name: "Type",
+					width: "3-2",
+					field: "type",
+				},
+				{
+					name: "Cost",
+					width: "1-4",
+					field: "cost",
+					rowClassName: "text-center",
+				},
+				{
+					name: "Weight",
+					width: "1-4",
+					field: "weight",
+					rowClassName: "text-center",
+				},
+				{
+					name: "A.",
+					width: "0-5",
+					field: "attunement",
+					rowClassName: "text-center",
+				},
+				{
+					name: "Rarity",
+					width: "1-5",
+					field: "rarity",
+					rowClassName: "text-center",
+				},
+				{
+					name: "Source",
+					width: 1,
+					field: "source",
+					titleProp: "sourceLong",
+					displayProp: "sourceShort",
+					classNameProp: "sourceClassName",
+					styleProp: "sourceStyle",
+					rowClassName: "text-center",
+				},
+			],
+			rows: this._content.map((it, ix) => {
+				this._pageFilter.constructor.mutateForFilters(it);
+
+				// region Re-used in fnGetValues
+				it._vType = it._typeListText.join(", ").uppercaseFirst();
+				// endregion
+
+				return {
+					name: it.name,
+					type: it._vType,
+					cost: it.value || it.valueMult ? Parser.itemValueToFull(it, {isShortForm: true}).replace(/ +/g, "\u00A0") : "\u2014",
+					weight: Parser.itemWeightToFull(it, true) || "\u2014",
+					rarity: (it.rarity || "Unknown").toTitleCase(),
+					attunement: it._attunementCategory === "No" ? "" : "×",
+					source: it.source,
+					sourceShort: Parser.sourceJsonToAbv(it.source),
+					sourceLong: Parser.sourceJsonToFull(it.source),
+					sourceClassName: Parser.sourceJsonToColor(it.source),
+					sourceStyle: BrewUtil2.sourceJsonToStylePart(it.source),
+					ix,
+				};
+			}),
+		};
+	}
+
+	_renderInner_absorbListItems () {
+		this._list.doAbsorbItems(
+			this._content,
+			{
+				fnGetName: it => it.name,
+				// values used for sorting/search
+				fnGetValues: it => ({
+					source: it.source,
+					type: it._vType,
+					cost: it.value || 0,
+					rarity: it.rarity,
+					attunement: it._attunementCategory !== "No",
+					weight: Parser.weightValueToNumber(it.weight),
+					hash: UrlUtil.URL_TO_HASH_BUILDER[this._page](it),
+				}),
+				fnGetData: UtilList2.absorbFnGetData,
+				fnBindListeners: it => this._isRadio
+					? UtilList2.absorbFnBindListenersRadio(this._list, it)
+					: UtilList2.absorbFnBindListeners(this._list, it),
+			},
+		);
+	}
+
+	_renderInner_initRunButtonsAdditional () { this._renderInner_initRunButtonsAdditional_genericMods(); }
+
+	_pFnPostProcessEntries (entries, {isUseMods = false} = {}) {
+		if (!isUseMods) return entries;
+
+		return new Promise(resolve => {
+			const detailer = new ImportListItem.ImportCustomizer(entries, resolve, {titleSearch: this._titleSearch, isActor: !!this._actor});
+			detailer.render(true);
+		});
+	}
+
+	async pInit () {
+		await super.pInit();
+
+		this._fluffLookup = {};
+
+		const fluff = await Vetools.pGetItemFluff();
+		fluff.itemFluff.forEach(it => (this._fluffLookup[it.source] = this._fluffLookup[it.source] || {})[it.name] = it);
+
+		await Renderer.item.populatePropertyAndTypeReference();
+	}
+
+	getFolderPathMeta () {
+		return {
+			...super.getFolderPathMeta(),
+			rarity: {
+				label: "Rarity",
+				getter: it => ((!it.rarity || it.rarity === "Unknown") ? "Unknown Rarity" : it.rarity).toTitleCase(),
+			},
+			type: {
+				label: "Type",
+				getter: it => {
+					if (it.type) return Renderer.item.getItemTypeName(it.type).toTitleCase();
+					else if (it.typeText) return it.typeText;
+					else if (it.wondrous) return "Wondrous Item";
+					else if (it.poison) return "Poison";
+					else return "Unknown Type";
+				},
+			},
+		};
+	}
+
+	/**
+	 * @param item
+	 * @param importOpts Options object.
+	 * @param [importOpts.isTemp] if the item should be temporary, and displayed.
+	 * @param [importOpts.quantity]
+	 * @param [importOpts.filterValues] Saved filter values to be used instead of our own.
+	 * @param [importOpts.isDataOnly] If this import should simply return the data, rather than import anything.
+	 * @param [importOpts.folderId] The folder ID to import to.
+	 * @return *
+	 */
+	async _pImportEntry (item, importOpts) {
+		importOpts = importOpts || {};
+
+		console.log(...LGT, `Importing item "${item.name}" (from "${Parser.sourceJsonToAbv(item.source)}")`);
+
+		const fluff = item.fluff || MiscUtil.get(this._fluffLookup, item.source, item.name);
+		const opts = {fluff};
+		if (importOpts.quantity != null) opts.quantity = importOpts.quantity;
+
+		await this._pImportEntry_pDoLoadBrewMeta(item);
+
+		if (importOpts.isDataOnly) {
+			return new ImportSummary({
+				status: UtilApplications.TASK_EXIT_COMPLETE_DATA_ONLY,
+				imported: (await this._pImportEntry_pImportToDataOnly(item, importOpts, opts))
+					.map(doc => new ImportedDocument({
+						document: doc,
+						actor: this._actor,
+					})),
+			});
+		}
+
+		if (importOpts.isTemp) return this._pImportEntry_pImportToDirectoryGeneric(item, importOpts, opts);
+		if (this._actor) return this._pImportEntry_pImportToActor(item, importOpts, opts);
+		return this._pImportEntry_pImportToDirectoryGeneric(item, importOpts, opts);
+	}
+
+	/**
+	 * When importing an item, if it is homebrew drag-dropped from the items directory, we may not have initialised
+	 * metadata (item properties, etc.) for it. Ensure we do so before attempting to process it further.
+	 */
+	async _pImportEntry_pDoLoadBrewMeta (item) {
+		if (BrewUtil2.hasSourceJson(item.source)) return;
+		if (SourceUtil.isSiteSource(item.source)) return;
+
+		if (!Vetools.HOMEBREW_INDEX__SOURCE[item.source]) return;
+		const brewUrl = DataUtil.brew.getFileUrl(Vetools.HOMEBREW_INDEX__SOURCE[item.source], Config.get("import", "baseBrewUrl"));
+		await BrewUtil2.pAddBrewFromMemory(await DataUtil.loadRawJSON(brewUrl));
+
+		// This adds the properties/etc to the items cache
+		await Renderer.item.pGetItemsFromHomebrew(await DataUtil.loadJSON(brewUrl));
+	}
+
+	async _pImportEntry_pImportToDataOnly (item, importOpts, opts) {
+		if (!this._actor || !this._isPackSplitImport(item)) return [await DataConverterItem.pGetItemItem(item)];
+		const packItemsMetas = await this._pGetPackItemMetas(item, importOpts, opts);
+		return packItemsMetas.map(({itemData}) => itemData);
+	}
+
+	_isPackSplitImport (item) {
+		return item.packContents
+			&& Config.get(this._configGroup, "isSplitPacksActor")
+			&& (!item.atomicPackContents || Config.get(this._configGroup, "isSplitAtomicPacksActor"));
+	}
+
+	async _pImportEntry_pImportToActor (item, importOpts, opts) {
+		opts = {...opts, isActorItem: true};
+
+		opts.filterValues = importOpts.filterValues;
+
+		// Pass actor ammo items in, so bows/etc. can link to ammo consumables
+		opts.sheetItemsAmmo = this._pImportEntry_getSheetItemsAmmo(item);
+
+		let embeddedDocuments;
+		if (this._isPackSplitImport(item)) {
+			embeddedDocuments = await this._pImportEntry_pImportToActor_pImportPackItem(item, importOpts, opts);
+		} else {
+			const itemData = await DataConverterItem.pGetItemItem(item, opts);
+			const embeddedDocument = await this._pImportEntry_pImportToActor_pAddItem({item, itemData});
+			embeddedDocuments = [embeddedDocument];
+		}
+
+		if (this._actor.isToken) this._actor.sheet.render();
+
+		return new ImportSummary({
+			status: UtilApplications.TASK_EXIT_COMPLETE,
+			imported: embeddedDocuments.map(it => new ImportedDocument({
+				name: item.name,
+				actor: this._actor,
+				embeddedDocument: it,
+			})),
+		});
+	}
+
+	async _pGetPackItemMetas (item, importOpts, opts) {
+		const packErrors = [];
+
+		const packContentsItems = await Promise.all(item.packContents.map(async it => {
+			const quantity = it.quantity || 1;
+			if (it.item || typeof it === "string") {
+				let [name, source] = (it.item || it).split("|");
+				if (!source) source = SRC_DMG;
+				const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS]({name, source});
+
+				const packItem = await Renderer.hover.pCacheAndGet(UrlUtil.PG_ITEMS, source, hash);
+
+				return {
+					item: packItem,
+					itemData: await DataConverterItem.pGetItemItem(packItem, {filterValues: importOpts.filterValues, ...opts, quantity}),
+				};
+			} else if (it.special) {
+				const fauxItem = {
+					name: it.special.toTitleCase(),
+					type: "G",
+					source: item.source,
+					page: item.page,
+					srd: item.srd,
+				};
+				Renderer.item.enhanceItem(fauxItem);
+
+				return {
+					item: fauxItem,
+					itemData: await DataConverterItem.pGetItemItem(fauxItem, {filterValues: importOpts.filterValues, ...opts, quantity}),
+				};
+			} else {
+				packErrors.push(`Unhandled pack contents type "${JSON.stringify(it)}"`);
+			}
+		}));
+
+		if (packErrors.length) {
+			ui.notifications.error(`Item "${item.name}" (from "${Parser.sourceJsonToAbv(item.source)}") could not be broken down into constituent items! ${VeCt.STR_SEE_CONSOLE}`);
+			console.error(...LGT, `Error(s) when breaking ${item.name} (${item.source}) into constituent items: ${packErrors.join("; ")}`);
+		}
+
+		return packContentsItems.filter(Boolean);
+	}
+
+	async _pImportEntry_pImportToActor_pImportPackItem (item, importOpts, opts) {
+		const packItemMetas = await this._pGetPackItemMetas(item, importOpts, opts);
+
+		// Do these sequentially, so we can set throwable usage if required
+		return packItemMetas.pSerialAwaitMap(({item, itemData}) => this._pImportEntry_pImportToActor_pAddItem({item, itemData}));
+	}
+
+	async _pImportEntry_pImportToActor_pAddItem ({item, itemData}) {
+		const embeddedDocument = await this._pImportEntry_pImportToActor_pAddOrUpdateItem({item, itemData});
+		return this._pImportEntry_pImportToActor_pUpdateItemPostAdd({itemData, embeddedDocument});
+	}
+
+	async _pImportEntry_pImportToActor_pAddOrUpdateItem ({item, itemData}) {
+		const existingItem = this._pImportEntry_pImportToActor_getExistingStackableItem({item, itemData});
+		if (!existingItem) {
+			return (await UtilActors.pAddActorItems(this._actor, [itemData]))[0].document;
+		}
+
+		const update = {
+			_id: existingItem.id,
+			data: {
+				quantity: (existingItem.data.data.quantity || 0)
+					+ (itemData.data.quantity || 0),
+			},
+		};
+
+		return (await UtilDocuments.pUpdateEmbeddedDocuments(this._actor, [update], {ClsEmbed: Item}))[0].document;
+	}
+
+	_pImportEntry_pImportToActor_getExistingStackableItem ({item, itemData}) {
+		if (Config.get("importItem", "inventoryStackingMode") === ConfigConsts.C_ITEM_ATTUNEMENT_NEVER) return null;
+
+		// Use the first item found (i.e. `.find` rather than `.filter`)
+		const matchingItem = this._actor.items.contents.find(sheetItem => {
+			if (sheetItem.type !== itemData.type) return;
+
+			const isMatchingSource = !Config.get("import", "isStrictMatching")
+				|| (UtilDataConverter.getItemSource(sheetItem).source || "").toLowerCase() === (UtilDataConverter.getItemSource(itemData).source || "").toLowerCase();
+			if (!isMatchingSource) return false;
+
+			if (sheetItem.name.toLowerCase().trim() === itemData.name.toLowerCase().trim()) return true;
+
+			return DataConverterItem.getItemCompendiumAliases(item, {isStrict: true})
+				.some(alias => alias.toLowerCase().trim() === sheetItem.name.toLowerCase().trim());
+		});
+		if (!matchingItem) return null;
+
+		if (Config.get("importItem", "inventoryStackingMode") === ConfigConsts.C_ITEM_ATTUNEMENT_ALWAYS) return matchingItem;
+
+		if (
+			Config.get("importItem", "inventoryStackingMode") === ConfigConsts.C_ITEM_ATTUNEMENT_SMART
+			&& (
+				this._pImportEntry_pImportToActor_isThrowableItem({itemData})
+				|| this._pImportEntry_pImportToActor_isSmartStackableItem({itemData})
+			)
+		) return matchingItem;
+
+		return null;
+	}
+
+	_pImportEntry_pImportToActor_isThrowableItem ({itemData}) {
+		const throwableSet = new Set((Config.get(this._configGroup, "throwables") || []).map(it => it.trim().toLowerCase()));
+		return throwableSet.has((itemData.name || "").toLowerCase().trim());
+	}
+
+	_pImportEntry_pImportToActor_isSmartStackableItem ({itemData}) {
+		return new Set(DataConverterItem.STACKABLE_FOUNDRY_ITEM_TYPES_IMPORT).has(itemData.type);
+	}
+
+	async _pImportEntry_pImportToActor_pUpdateItemPostAdd ({itemData, embeddedDocument}) {
+		if (!embeddedDocument) return;
+
+		// If the item is throwable, set it to use itself as ammo. This has to be done post-creation, as an update.
+		if (this._pImportEntry_pImportToActor_isThrowableItem({itemData})) {
+			await UtilDocuments.pUpdateEmbeddedDocuments(
+				this._actor,
+				[
+					{
+						_id: embeddedDocument.id,
+						data: {
+							consume: {
+								type: "ammo",
+								target: embeddedDocument.id,
+								amount: 1,
+							},
+						},
+					},
+				],
+				{
+					propData: "items",
+					ClsEmbed: Item,
+				},
+			);
+		}
+
+		return embeddedDocument;
+	}
+
+	_pImportEntry_pImportToDirectoryGeneric_pGetImportableData (it, getItemOpts) {
+		return DataConverterItem.pGetItemItem(it, getItemOpts);
+	}
+
+	_pImportEntry_getSheetItemsAmmo (item) {
+		if (!item.ammoType) return null;
+		if (!this._actor) return null;
+		return this._actor.items.filter(it => it.type === "consumable" && it.data.data.consumableType === "ammo");
+	}
+
+	static sortEntries (a, b) {
+		// Ensure weapons with ammo types are always imported last.
+		//   This allows us to attempt to link up weapons with an appropriate ammo type on an actor.
+		if (a.ammoType && !b.ammoType) return 1;
+		if (!a.ammoType && b.ammoType) return -1;
+		return SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(Parser.sourceJsonToFull(a.source), Parser.sourceJsonToFull(b.source));
+	}
+
+	// region Currency import
+	/**
+	 * @param currency
+	 * @param importOpts Options object.
+	 * @param [importOpts.isTemp] if the item should be temporary, and displayed.
+	 * @param [importOpts.folderId] The folder ID to import to.
+	 * @return *
+	 */
+	async pImportCurrency (currency, importOpts) {
+		importOpts = importOpts || {};
+
+		console.log(...LGT, `Importing currency "${Parser.getDisplayCurrency(currency)}"`);
+
+		const itemData = await DataConverterItem.pGetCurrencyItem(currency, {isAddPermission: !this._actor});
+
+		const fauxItem = {name: "Currency", source: VeCt.STR_GENERIC};
+
+		if (importOpts.isTemp) return this._pImportEntry_pImportToDirectoryGeneric(fauxItem, importOpts, null, {docData: itemData, isSkipDuplicateHandling: true});
+		if (this._actor) return this._pImportEntry_pImportToActor(fauxItem, importOpts, null, {docData: itemData});
+		return this._pImportEntry_pImportToDirectoryGeneric(fauxItem, importOpts, null, {docData: itemData, isSkipDuplicateHandling: true});
+	}
+
+	static _initCreateSheetItemHook_currency () {
+		Hooks.on("preCreateItem", (item, itemData, options, itemId) => {
+			if (item.parent?.documentName !== "Actor") return;
+
+			const flags = itemData.flags?.[SharedConsts.MODULE_NAME_FAKE] || itemData.flags?.[SharedConsts.MODULE_NAME];
+			if (flags?.type !== DataConverterItem.FLAG_TYPE_CURRENCY || !flags?.currency) return;
+
+			const actor = item.parent;
+
+			UtilActors.pAddCurrencyToActor({currency: flags.currency, actor})
+				.then(null)
+				.catch(e => {
+					ui.notifications.error(`Failed to apply currency to actor! ${VeCt.STORAGE_DMSCREEN_TEMP_SUBLIST}`);
+					throw e;
+				});
+
+			return false;
+		});
+	}
+	// endregion
+}
+
+ImportListItem.ImportCustomizer = class extends ImportCustomizer {
+	/**
+	 * @param dataList
+	 * @param resolve
+	 * @param opts Options object.
+	 * @param opts.titleSearch Used in prompt text in the search bar.
+	 * @param opts.isActor
+	 */
+	constructor (dataList, resolve, opts) {
+		super(
+			dataList,
+			resolve,
+			{
+				...opts,
+				title: "Customize Import",
+				template: `${SharedConsts.MODULE_LOCATION}/template/ImportListItemCustomizer.hbs`,
+			},
+		);
+	}
+
+	getData () {
+		return {
+			...super.getData(),
+			rows: this._dataList.map((it, ix) => ({
+				name: it.name,
+				source: it.source,
+				sourceShort: Parser.sourceJsonToAbv(it.source),
+				sourceLong: Parser.sourceJsonToFull(it.source),
+				sourceClassName: Parser.sourceJsonToColor(it.source),
+				sourceStyle: BrewUtil2.sourceJsonToStylePart(it.source),
+
+				// Based on `Localization.initialize`
+				foundryTypes: DataConverterItem.VALID_FOUNDRY_ITEM_TYPES_IMPORT.map((it, ix) => ({
+					ix,
+					type: it,
+					displayName: game.i18n.localize(`ITEM.Type${it.titleCase()}`),
+				})),
+
+				ix,
+			})),
+		};
+	}
+
+	_activateListeners_initList ({$html}) {
+		// Init list library
+		this._list = new List({
+			$iptSearch: $html.find(`.search`),
+			$wrpList: $html.find(`.veapp__list`),
+			valueNames: ["name", "source", "ix"],
+		});
+		this._list.doAbsorbItems(
+			this._dataList,
+			{
+				fnGetName: it => it.name,
+				fnGetValues: it => ({source: it.source}),
+				fnGetData: it => {
+					const $e = $(it.ele);
+					return {
+						$selFoundryType: $e.find(`[name="sel-foundry-type"]`),
+					};
+				},
+			},
+		);
+		this._list.init();
+	}
+
+	_activateListeners_bindControls ({$html, $wrpBtnsSort}) {
+		this._$btnReset = $html.find(`[name="btn-reset"]`).click(() => {
+			$html.find(`.search`).val("");
+			if (this._list) this._list.reset();
+		});
+
+		$html.find(`[name="btn-run"]`).click(async () => {
+			const toImport = this._list.items.map(it => {
+				const ixType = Number(it.data.$selFoundryType.val());
+				if (!~ixType) return this._dataList[it.ix];
+
+				const out = MiscUtil.copy(this._dataList[it.ix]);
+				out.foundryType = DataConverterItem.VALID_FOUNDRY_ITEM_TYPES_IMPORT[ixType];
+				return out;
+			});
+
+			this._resolve(toImport);
+			this.close();
+		});
+	}
+};
+
+export {ImportListItem};

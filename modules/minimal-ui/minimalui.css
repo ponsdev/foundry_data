@@ -1,73 +1,31 @@
 :root {
-    --bordercolor: #ff4900bd;
-    --shadowcolor: #ff4900bd;
-    --shadowstrength: 10px;
-}
-
-.minui-lock {
-    color: var(--shadowcolor);
-}
-:root {
-    --controlsvis: hidden;
-    --controlsxpos: 0px;
-    --controlsypos: 20vmin;
-    --controlspad: 7px;
     --controlsw: 36px;
     --controlsh: 30px;
     --controlslh: 30px;
     --controlsfs: 24px;
-    --controlssubleft: 60px;
-    --controlssubstyle: contents;
+    --controlstop: 75px;
+    --opacitycontrols: 75%;
+    --controlssubop: 100%;
+    --controlssubopna: 100%;
+    --controlssubdisna: block;
 }
 
 #controls {
-    left: var(--controlsxpos);
-    top: 10px;
-    margin-top: var(--controlsypos);
-    border-right: 1px solid var(--bordercolor);
-    box-shadow: 3px 0 var(--shadowstrength) 0 var(--shadowcolor);
-    transition: 0.5s;
-    background: #0000003b;
+    opacity: var(--opacitycontrols);
+    transition: 2s;
+    margin-top: var(--controlstop);
 }
 
 #controls:hover {
+    opacity: 100%;
     transition: 0.5s;
 }
 
-#controls .control-tool.toggle {
-    background: var(--shadowcolor);
+#controls ol.main-controls {
+    overflow: visible;
 }
 
-#controls .control-tool.toggle:hover {
-    background: var(--bordercolor);
-    box-shadow: 0 0 var(--shadowstrength) var(--shadowcolor);
-    border: 1px solid transparent;
-}
-
-#controls .control-tool.toggle.active {
-    background: var(--bordercolor);
-    box-shadow: 0 0 var(--shadowstrength) var(--bordercolor);
-    border: 1px solid transparent;
-}
-
-#controls .scene-control.active, #controls .scene-control:hover {
-    border: 1px solid transparent;
-    color: orange;
-    box-shadow: 1px 0 var(--shadowstrength) 0 var(--shadowcolor);
-    padding-right: 1px;
-}
-
-#controls .control-tool.active, #controls .control-tool {
-    border: 0 solid transparent;
-}
-
-#controls .control-tool.active, #controls .control-tool:hover {
-    border: 0 solid transparent;
-    color: yellow;
-    box-shadow: 1px 0 var(--shadowstrength) 0 var(--shadowcolor);
-}
-
-#controls > li:nth-child(n), #controls > li.scene-control > ol > li.control-tool {
+#controls > ol.main-controls > li.scene-control, #controls > ol.sub-controls > li {
     width: var(--controlsw);
     height: var(--controlsh);
     line-height: var(--controlslh);
@@ -75,24 +33,35 @@
     border: 1px solid transparent;
 }
 
+#controls ol .scene-control:not(.active), #controls ol .control-tool:not(.active) {
+    transition: 2s;
+    opacity: var(--controlssubopna);
+    display: var(--controlssubdisna);
+}
 
-#controls .active .control-tools {
-    display: var(--controlssubstyle);
-    left: var(--controlssubleft);
+#controls:hover ol .scene-control:not(.active), #controls:hover ol .control-tool:not(.active) {
     transition: 0.5s;
-    background: #00000059;
-    box-shadow: 1px 0 var(--shadowstrength) 0 var(--shadowcolor);
-    border-radius: 3px;
-    padding: 5px;
+    opacity: 100%;
 }
 
-#controls:hover .active .control-tools {
-    display: var(--controlssubstyle);
+#controls ol.control-tools > li.active, #controls ol.control-tools > li:hover {
+    border: 1px solid var(--bordercolor);
+    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--shadowcolor);
 }
 
+#controls ol.sub-controls.active {
+    opacity: var(--controlssubop);
+    transition: 2s;
+}
+
+#controls:hover ol.sub-controls.active {
+    transition: 0.5s;
+    opacity: 100%;
+}
 :root {
     --navivis: hidden;
-    --navixpos: 125px;
+    --navixpos: 100px;
+    --navixmg: 75px;
     --navilh: 20px;
     --navifs: 14px;
     --navilisttop: 16px;
@@ -102,6 +71,15 @@
 #navigation {
     left: var(--navixpos);
     visibility: var(--navivis);
+    opacity: var(--opacity);
+    transition: 0.5s ease-out 0.5s;
+    position: relative;
+    margin: 5px 0 0 0;
+}
+
+#navigation:hover {
+    opacity: 100%;
+    transition: 0.5s;
 }
 
 #navigation .nav-item {
@@ -112,6 +90,13 @@
 #navigation #nav-toggle {
     height: var(--navibuttonsize);
     background: #292929bd;
+    border: 1px solid var(--bordercolor);
+    border-bottom: 1px solid var(--bordercolor);
+    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--shadowcolor);
+}
+
+#navigation #scene-list {
+    margin-right: var(--navixmg);
 }
 
 #navigation #scene-list .scene ul.scene-players {
@@ -126,105 +111,69 @@
 
 /** COMPATIBILITY: Monks Scene Navigation */
 
-#navigation .monks-scene-navigation{
+#navigation .monks-scene-navigation {
     flex: 0 0 var(--navilh);
     height: var(--navilh);
 }
 
-#navigation .monks-scene-navigation .scene-list > li.nav-item{
+#navigation .monks-scene-navigation .scene-list > li.nav-item {
     height: var(--navilh);
 }
 
-#navigation .monks-scene-navigation .scene-list > li.nav-item a{
+#navigation .monks-scene-navigation .scene-list > li.nav-item a {
     line-height: var(--navilh);
     height: var(--navilh);
     font-size: var(--navifs);
-    padding:0 4px;
+    padding: 0 4px;
 }
 
-#navigation .monks-scene-navigation .scene-list > li.nav-item ul.scene-players{
+#navigation .monks-scene-navigation .scene-list > li.nav-item ul.scene-players {
     top: var(--navilisttop);
 }
 
-#navigation .monks-scene-navigation .scene-list > li.nav-item.folder a{
-    padding-top:0;
-    border-top:1px;
+#navigation .monks-scene-navigation .scene-list > li.nav-item.folder a {
+    padding-top: 0;
+    border-top: 1px;
 }
 
-#navigation .monks-scene-navigation .scene-list > li.nav-item.folder.expanded a{
-    height:calc(var(--navilh) + 6px);
+#navigation .monks-scene-navigation .scene-list > li.nav-item.folder.expanded a {
+    height: calc(var(--navilh) + 2px);
+    margin-top: 4px;
 }
 
-#navigation .monks-scene-navigation .scene-list > li.nav-item.folder-header{
+#navigation .monks-scene-navigation .scene-list > li.nav-item.folder-header {
     line-height: var(--navilh);
 }
 
 /** --------------- */
 :root {
-    --hotbarvis: hidden;
-    --hotbarypos: 10px;
-    --hotbarxpos: 400px;
-    --hotbarlh1: 24px;
-    --hotbarlh2: 8px;
-    --hotbarhv: 10px;
-    --hotbarmg: 0px;
-    --hotbarhh: 100%;
-    --hotbarwf: 502px;
-    --hotbarshp: 0px;
+    --logovis: hidden;
+    --logoh: 50px;
+    --logow: 100px;
 }
 
-#hotbar:hover {
-    bottom: var(--hotbarhv);
-    transition: 0.5s;
+#logo {
+    visibility: var(--logovis);
+    height: var(--logoh);
+    width: var(--logow);
+}
+:root {
+    --controlsvis: hidden;
+    --fpsvis: hidden;
 }
 
-#hotbar {
-    left: var(--hotbarxpos);
-    bottom: var(--hotbarypos);
-    visibility: var(--hotbarvis);
-    transition: 0.05s ease-out 0.5s;
-}
-
-#hotbar .bar-controls {
-    background: #191919;
-    height: var(--hotbarhh);
-    margin: var(--hotbarmg) 2px;
-}
-
-#hotbar .bar-controls a.page-control {
-    font-size: 20px;
-}
-
-#hotbar #hotbar-directory-controls {
-    font-size: 14px;
-}
-
-#hotbar .bar-controls span.page-number {
-    line-height: var(--hotbarlh2);
-}
-
-#hotbar #macro-list:hover {
-    border-top: 1px solid var(--bordercolor);
-    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--shadowcolor);
-    transition: 0.5s;
-}
-
-#hotbar #macro-list {
-    border-top: 1px solid var(--bordercolor);
-    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--shadowcolor);
-    flex: 0 0 var(--hotbarwf);
-    transition: 0.05s ease-out 0.5s;
-}
-
-#hotbar .macro:hover {
-    box-shadow: 0 0 10px var(--shadowcolor) inset;
-}
-
-#hotbar #hotbar-directory-controls a {
-    line-height: var(--hotbarlh1);
-}
 #sidebar {
     visibility: var(--controlsvis);
+}
+
+#sidebar.collapsed {
+    transition: 0.5s;
+    opacity: var(--opacity);
+}
+
+#sidebar.collapsed:hover {
+    transition: 0.5s;
+    opacity: 100%;
 }
 
 #sidebar-tabs {
@@ -249,66 +198,178 @@
     text-shadow: 0 0 var(--shadowstrength) var(--bordercolor);
 }
 
+#fps {
+    position: absolute;
+    right: var(--fpsposx);
+    visibility: var(--fpsvis);
+}
 :root {
-    --logovis: hidden;
-    --logoh: 50px;
-    --logow: 100px;
+    --hotbarvis: visible;
+    --hotbarypos: -5px;
+    --hotbarxpos: 400px;
+    --hotbarlh1: 24px;
+    --hotbarlh2: 8px;
+    --hotbarhv: -5px;
+    --hotbarmg: 0px;
+    --hotbarhh: 100%;
+    --hotbarshp: 0px;
 }
 
-#logo {
-    visibility: var(--logovis);
-    height: var(--logoh);
-    width: var(--logow);
+#hotbar:hover {
+    bottom: var(--hotbarhv);
+    transition: 0.5s;
+    opacity: 100%;
+}
+
+#hotbar {
+    left: var(--hotbarxpos);
+    bottom: var(--hotbarypos);
+    visibility: var(--hotbarvis);
+    transition: 0.5s ease-out 0.5s;
+    opacity: var(--opacity);
+    position: absolute;
+}
+
+#hotbar .bar-controls {
+    background: url(../../ui/denim075.png) repeat;
+    height: var(--hotbarhh);
+    margin: var(--hotbarmg) 2px;
+    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--shadowcolor);
+    border: 1px solid var(--bordercolor);
+    border-radius: 5px;
+}
+
+#hotbar .bar-controls a.page-control {
+    font-size: 20px;
+}
+
+#hotbar #hotbar-directory-controls {
+    font-size: 14px;
+}
+
+#hotbar .bar-controls span.page-number {
+    line-height: var(--hotbarlh2);
+}
+
+#hotbar #macro-list:hover {
+    border-top: 1px solid var(--bordercolor);
+    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--shadowcolor);
+    transition: 0.5s;
+}
+
+#hotbar #macro-list {
+    border-top: 1px solid var(--bordercolor);
+    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--shadowcolor);
+    transition: 0.05s ease-out 0.5s;
+}
+
+#hotbar .macro:hover {
+    box-shadow: 0 0 10px var(--shadowcolor) inset;
+}
+
+#hotbar #hotbar-directory-controls a {
+    line-height: var(--hotbarlh1);
+}
+
+#hotbar-page-controls, #hotbar-directory-controls {
+    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--shadowcolor);
+    border: 1px solid var(--bordercolor);
+    border-radius: 5px;
 }
 :root {
     --playervis: hidden;
     --playerfsize: 0px;
     --playerfsizehv: 12px;
-    --playerwidth: 25px;
     --playerwidthhv: 150px;
     --playerslh: 20px;
     --playerbennies: none;
     --playerh3w: unset;
-    --playerbot: 10px;
-}
-
-#players:hover {
-    width: var(--playerwidthhv);
-    font-size: var(--playerfsizehv);
+    --playerbot: -8px;
+    --playerleft: -8px;
+    --playerpingdisplay: initial;
 }
 
 #players {
-    width: var(--playerwidth);
-    left: 5px;
     bottom: var(--playerbot);
+    left: var(--playerleft);
     font-size: var(--playerfsize);
     visibility: var(--playervis);
-    background: #0000003b;
+    opacity: var(--opacity);
+    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--shadowcolor);
+    position: absolute;
+    border: 1px solid var(--bordercolor);
+}
+
+#players:hover {
+    opacity: 100%;
 }
 
 #players ol li.player {
-    padding: 1px 6px;
+    padding: 1px 10px;
     line-height: var(--playerslh);
 }
 
-#players:hover ol li.player {
-    line-height: 20px;
-}
-
-#players:hover h3 {
-    width: unset;
-}
-
 #players h3 {
-    margin: 0 -2px;
-    border-bottom: 0;
-    width: var(--playerh3w);
+    margin: 1px;
+}
+
+#players #context-menu {
+    font-size: 14px;
 }
 
 .raised-hand {
-    font-size: 12px;
+    font-size: 20px;
+    position: fixed;
+}
+
+.pingLogger_pingSpan {
+    display: var(--playerpingdisplay);
 }
 
 .bennies-count {
     display: var(--playerbennies);
+}
+
+#destiny-tracker {
+    opacity: var(--opacity);
+}
+
+#destiny-tracker:hover {
+    opacity: 100%;
+}
+:root {
+    --bordercolor: #00000080;
+    --shadowcolor: #7c7c7c40;
+    --shadowstrength: 10px;
+    --opacity: 75%;
+    --fpsposx: 300px;
+}
+:root {
+    --novid: inherit;
+    --noviddis: block;
+    --novidleftflex: unset;
+    --novidlefttop: 0;
+    --novidleftleft: 0;
+}
+
+:not(.camera-view-popout) > .no-video {
+    display: var(--novid);
+}
+
+:not(.camera-view-popout) > .no-video > .video-container {
+    display: var(--noviddis);
+}
+
+:not(.camera-view-popout) > .no-video > .notification-bar {
+    display: var(--noviddis);
+}
+
+:not(.camera-view-popout) > .no-video > .control-bar.left {
+    flex-direction: var(--novidleftflex);
+    top: var(--novidlefttop);
+    left: var(--novidleftleft);
+}
+
+#camera-views {
+    margin: 0 0 65px 110px;
 }

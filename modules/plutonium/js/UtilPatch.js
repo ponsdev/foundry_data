@@ -1,1 +1,153 @@
-const _0x9543=['Could\x20not\x20find\x20getter\x20\x22','_CACHE_METHODS','cacheMethod','1qgKuTg','has','3rxgRXt','_getGetterMeta','850405voUasl','obj','332107OhWmxp','getCachedGetterMeta','443109DCrjKC','restoreCachedMethod','124518gOiTMI','cacheGetter','256204AwwYvn','_CACHE_GETTERS','\x22\x20on\x20object','getPrototypeOf','get','defineProperty','5CeqVsc','restoreCachedGetter','fnGet','getCachedMethod','isBind','bind','10GprNWR','getOwnPropertyDescriptor','669999BwmtuN','19579CzcCal','_plutoniumCache','set'];const _0xe165=function(_0x3557aa,_0x28f3c6){_0x3557aa=_0x3557aa-0x1d8;let _0x9543fb=_0x9543[_0x3557aa];return _0x9543fb;};const _0xafc1a6=_0xe165;(function(_0x334213,_0x970c73){const _0x4a0058=_0xe165;while(!![]){try{const _0x526b0a=-parseInt(_0x4a0058(0x1e3))+-parseInt(_0x4a0058(0x1dd))*parseInt(_0x4a0058(0x1f7))+-parseInt(_0x4a0058(0x1e1))+parseInt(_0x4a0058(0x1e9))+-parseInt(_0x4a0058(0x1df))*parseInt(_0x4a0058(0x1e7))+-parseInt(_0x4a0058(0x1f8))*-parseInt(_0x4a0058(0x1f5))+parseInt(_0x4a0058(0x1ef))*parseInt(_0x4a0058(0x1e5));if(_0x526b0a===_0x970c73)break;else _0x334213['push'](_0x334213['shift']());}catch(_0x684453){_0x334213['push'](_0x334213['shift']());}}}(_0x9543,0x6bc82));class UtilPatch{static[_0xafc1a6(0x1dc)](_0x822b25,_0x364773,_0x34dff6){const _0x48c11d=_0xafc1a6;_0x34dff6=_0x34dff6||{};const _0x2f39ea=UtilPatch[_0x48c11d(0x1f2)](_0x822b25,_0x364773);if(_0x2f39ea!=null)return _0x2f39ea;const _0x511a40=_0x34dff6[_0x48c11d(0x1f3)]?_0x822b25[_0x364773][_0x48c11d(0x1f4)](_0x822b25):_0x822b25[_0x364773];_0x822b25[_0x48c11d(0x1d8)+_0x364773]=_0x511a40;if(!UtilPatch['_CACHE_METHODS'][_0x48c11d(0x1de)](_0x822b25))UtilPatch[_0x48c11d(0x1db)][_0x48c11d(0x1d9)](_0x822b25,{});const _0x4eb722=UtilPatch['_CACHE_METHODS'][_0x48c11d(0x1ed)](_0x822b25);return _0x4eb722[_0x364773]=_0x511a40,_0x511a40;}static[_0xafc1a6(0x1f2)](_0x734b0a,_0x4cbb3b){const _0x41b9bb=_0xafc1a6;if(!UtilPatch[_0x41b9bb(0x1db)][_0x41b9bb(0x1de)](_0x734b0a))return null;const _0x5bb7e1=UtilPatch[_0x41b9bb(0x1db)][_0x41b9bb(0x1ed)](_0x734b0a);return _0x5bb7e1[_0x4cbb3b]||null;}static[_0xafc1a6(0x1e6)](_0x1d9274,_0x4149a1){const _0x1b1e66=_0xafc1a6,_0x4643c1=UtilPatch[_0x1b1e66(0x1f2)](_0x1d9274,_0x4149a1);if(!_0x4643c1)return;_0x1d9274[_0x4149a1]=_0x4643c1;}static[_0xafc1a6(0x1e8)](_0xccd684,_0x2d0418,_0x443b86){const _0xa20ec5=_0xafc1a6;_0x443b86=_0x443b86||{};const _0x2474e3=UtilPatch[_0xa20ec5(0x1f2)](_0xccd684,_0x2d0418);if(_0x2474e3!=null)return;const _0xeec4d7=this[_0xa20ec5(0x1e0)](_0xccd684,_0x2d0418);_0xeec4d7[_0xa20ec5(0x1f1)]=_0x443b86[_0xa20ec5(0x1f3)]?_0xeec4d7[_0xa20ec5(0x1f1)]['bind'](_0xeec4d7[_0xa20ec5(0x1e2)]):_0xeec4d7[_0xa20ec5(0x1f1)],Object[_0xa20ec5(0x1ee)](_0xeec4d7[_0xa20ec5(0x1e2)],_0xa20ec5(0x1d8)+_0x2d0418,{'configurable':!![],'get':_0xeec4d7['fnGet']});if(!UtilPatch[_0xa20ec5(0x1db)][_0xa20ec5(0x1de)](_0xccd684))UtilPatch[_0xa20ec5(0x1db)]['set'](_0xccd684,{});const _0x278924=UtilPatch['_CACHE_METHODS'][_0xa20ec5(0x1ed)](_0xccd684);_0x278924[_0x2d0418]=_0xeec4d7;}static[_0xafc1a6(0x1e0)](_0x130103,_0x583df4){const _0x190b36=_0xafc1a6,_0x5caaf5=Object[_0x190b36(0x1f6)](_0x130103,_0x583df4);if(_0x5caaf5&&_0x5caaf5[_0x190b36(0x1ed)])return{'fnGet':_0x5caaf5['get'],'obj':_0x130103};while(Object[_0x190b36(0x1ec)](_0x130103)!==null){_0x130103=Object['getPrototypeOf'](_0x130103);const _0x185d3d=Object[_0x190b36(0x1f6)](_0x130103,_0x583df4);if(_0x185d3d&&_0x185d3d[_0x190b36(0x1ed)])return{'fnGet':_0x185d3d[_0x190b36(0x1ed)],'obj':_0x130103};}throw new Error(_0x190b36(0x1da)+_0x583df4+_0x190b36(0x1eb));}static[_0xafc1a6(0x1e4)](_0x23c579,_0x3054f8){const _0x279ccf=_0xafc1a6,_0x2b106b=UtilPatch[_0x279ccf(0x1f2)](_0x23c579,_0x3054f8);if(_0x2b106b)return _0x2b106b;while(Object[_0x279ccf(0x1ec)](_0x23c579)!==null){_0x23c579=Object[_0x279ccf(0x1ec)](_0x23c579);const _0x1e872a=UtilPatch[_0x279ccf(0x1f2)](_0x23c579,_0x3054f8);if(_0x1e872a)return _0x1e872a;}}static[_0xafc1a6(0x1f0)](_0x3e9840,_0x40e0c3){const _0x25c533=_0xafc1a6,_0x40a682=UtilPatch[_0x25c533(0x1e4)](_0x3e9840,_0x40e0c3);if(!_0x40a682)return;Object[_0x25c533(0x1ee)](_0x40a682['obj'],_0x40e0c3,{'configurable':!![],'get':_0x40a682[_0x25c533(0x1f1)]});}}UtilPatch[_0xafc1a6(0x1db)]=new Map(),UtilPatch[_0xafc1a6(0x1ea)]=new Map();export{UtilPatch};
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {LGT} from "./Util.js";
+
+/**
+ * @deprecated In favor of using `libWrapper`
+ */
+class UtilPatch {
+	// region methods
+	/**
+	 * @param obj
+	 * @param methodName
+	 * @param [opts]
+	 * @param [opts.isBind]
+	 */
+	static cacheMethod (obj, methodName, opts) {
+		opts = opts || {};
+
+		const existing = UtilPatch.getCachedMethod(obj, methodName);
+		if (existing != null) return existing;
+
+		const toCache = opts.isBind ? obj[methodName].bind(obj) : obj[methodName];
+
+		// Expose the original method
+		obj[`_plutoniumCache${methodName}`] = toCache;
+
+		if (!UtilPatch._CACHE_METHODS.has(obj)) UtilPatch._CACHE_METHODS.set(obj, {});
+
+		const store = UtilPatch._CACHE_METHODS.get(obj);
+		store[methodName] = toCache;
+
+		return toCache;
+	}
+
+	static getCachedMethod (obj, methodName) {
+		if (!UtilPatch._CACHE_METHODS.has(obj)) return null;
+		const store = UtilPatch._CACHE_METHODS.get(obj);
+		return store[methodName] || null;
+	}
+
+	static restoreCachedMethod (obj, methodName) {
+		const method = UtilPatch.getCachedMethod(obj, methodName);
+		if (!method) return;
+		obj[methodName] = method;
+	}
+	// endregion
+
+	// region getters
+	/**
+	 * @param obj
+	 * @param getterName
+	 * @param [opts]
+	 * @param [opts.isBind]
+	 */
+	static cacheGetter (obj, getterName, opts) {
+		opts = opts || {};
+
+		const existing = UtilPatch.getCachedMethod(obj, getterName);
+		if (existing != null) return;
+
+		const getterMeta = this._getGetterMeta(obj, getterName);
+		getterMeta.fnGet = opts.isBind ? getterMeta.fnGet.bind(getterMeta.obj) : getterMeta.fnGet;
+
+		// Expose the original method for other mods/etc to use
+		Object.defineProperty(
+			getterMeta.obj,
+			`_plutoniumCache${getterName}`,
+			{
+				configurable: true,
+				get: getterMeta.fnGet,
+			},
+		);
+
+		if (!UtilPatch._CACHE_METHODS.has(obj)) UtilPatch._CACHE_METHODS.set(obj, {});
+
+		const store = UtilPatch._CACHE_METHODS.get(obj);
+		store[getterName] = getterMeta;
+	}
+
+	static _getGetterMeta (obj, getterName) {
+		const ownProp = Object.getOwnPropertyDescriptor(obj, getterName);
+		if (ownProp && ownProp.get) {
+			return {
+				fnGet: ownProp.get,
+				obj,
+			};
+		}
+
+		while (Object.getPrototypeOf(obj) !== null) {
+			obj = Object.getPrototypeOf(obj);
+			const parentProp = Object.getOwnPropertyDescriptor(obj, getterName);
+			if (parentProp && parentProp.get) {
+				return {
+					fnGet: parentProp.get,
+					obj,
+				};
+			}
+		}
+
+		throw new Error(`Could not find getter "${getterName}" on object`);
+	}
+
+	static getCachedGetterMeta (obj, getterName) {
+		const getterMeta = UtilPatch.getCachedMethod(obj, getterName);
+		if (getterMeta) return getterMeta;
+
+		while (Object.getPrototypeOf(obj) !== null) {
+			obj = Object.getPrototypeOf(obj);
+			const getterMeta = UtilPatch.getCachedMethod(obj, getterName);
+			if (getterMeta) return getterMeta;
+		}
+	}
+
+	static restoreCachedGetter (obj, getterName) {
+		const getterMeta = UtilPatch.getCachedGetterMeta(obj, getterName);
+		if (!getterMeta) return;
+		Object.defineProperty(
+			getterMeta.obj,
+			getterName,
+			{
+				configurable: true,
+				get: getterMeta.fnGet,
+			},
+		);
+	}
+	// endregion
+}
+UtilPatch._CACHE_METHODS = new Map();
+UtilPatch._CACHE_GETTERS = new Map();
+
+class UtilPatcher {
+	/** Search for the exact text node, to avoid breaking compatibility with e.g. Tidy UI */
+	static findPlutoniumTextNodes (ele) {
+		const stack = [];
+		this._findPlutoniumTextNodes(ele, {stack});
+		return stack;
+	}
+
+	static _findPlutoniumTextNodes (ele, {stack}) {
+		if (!ele) return;
+
+		if (ele.nodeName === "#text") {
+			const txt = (ele.data || "").trim();
+			if (txt.startsWith(SharedConsts.MODULE_TITLE)) stack.push(ele);
+		}
+
+		for (let i = 0; i < ele.childNodes.length; ++i) {
+			const node = ele.childNodes[i];
+			this._findPlutoniumTextNodes(node, {stack});
+		}
+	}
+}
+
+export {UtilPatch, UtilPatcher};

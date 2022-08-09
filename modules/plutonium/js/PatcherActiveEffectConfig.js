@@ -1,21 +1,179 @@
-const _0x20ba=['default','dataset','1gcdNsA','MODULE_NAME','click','addClass','LIBWRAPPER_MODE_WRAPPER','renderActiveEffectConfig','</div>\x0a\x09\x09\x09\x09\x09\x09\x09</div>','isExpandActiveEffectConfig','init','</div>\x0a\x09\x09\x09\x09\x09\x09\x09\x09<div\x20class=\x22col-4-5\x20text-center\x22>','325626KQifjD','841569DzSxPz','.mode\x20select','_onHookActiveEffectConfig','resizable','</button>','</i>','css','isDaeActive','\x0a\x09\x09\x09\x09\x09\x09\x09\x09</div>\x0a\x09\x09\x09\x09\x09\x09\x09\x09<p>Setting\x20a\x20&quot;priority&quot;\x20value\x20allows\x20you\x20to\x20change\x20this,\x20and\x20apply\x20the\x20effects\x20in\x20any\x20order\x20you\x20choose.</p>\x0a\x09\x09\x09\x09\x09\x09\x09\x09<p>For\x20example,\x20if\x20you\x20wished\x20to\x20create\x20an\x20Active\x20Effect\x20for\x20your\x20plate\x20armor\x20and\x20an\x20Active\x20Effect\x20for\x20your\x20shield,\x20you\x20could\x20create\x20an\x20&quot;Override&quot;\x20effect\x20for\x20the\x20plate,\x20with\x2018\x20AC,\x20and\x20an\x20&quot;Add&quot;\x20effect\x20for\x20the\x20shield,\x20with\x202\x20AC.\x20You\x20would\x20then\x20set\x20the\x20plate\x27s\x20priority\x20to\x20a\x20number\x20in\x20the\x20range\x200–19,\x20so\x20it\x20is\x20applied\x20before\x20the\x20shield.\x20If\x20you\x20did\x20not,\x20it\x20would\x20default\x20to\x20&quot;50&quot;,\x20and\x20thus\x20be\x20applied\x20after\x20(and\x20override/ignore)\x20your\x20shield.</p>\x0a\x09\x09\x09\x09\x09\x09\x09</div>','Find\x20Active\x20Effect\x20Attribute\x20Key','stringify','Close','forEach','copy','OVERRIDE','<i\x20class=\x22fas\x20fa-times\x22></i>','data','first','prependTo','find','stopPropagation','</div>\x0a\x09\x09\x09\x09\x09\x09\x09\x09<div\x20class=\x22col-3\x20text-center\x22>','PLUT.Reset','.effect-controls','i18n','keys','<i\x20class=\x22ve-muted\x20ml-2\x22>Applied\x20','localize','EFFECT.MODE_','before','initBtnSortHandlers','<button\x20class=\x22no-grow\x20no-shrink\x20text-center\x20p-0\x20m-0\x20aeff__btn-inline\x20btl-0\x20bbl-0\x20bl-0\x22\x20title=\x22Priority\x20Help\x22><i\x20class=\x22fas\x20fa-question-circle\x22></i></button>','<div\x20class=\x22priority\x22>Priority</div>','split','<button\x20class=\x22btn-5et\x20veapp__btn-list-reset\x22\x20name=\x22btn-reset\x22>','794139PzsfGR','<div\x20class=\x22flex-v-center\x20py-1\x20stripe-even\x22>\x0a\x09\x09\x09\x09\x09\x09\x09\x09<div\x20class=\x22col-4-5\x20flex-vh-center\x22>','insertBefore','addItem','width','reset','actor','.priority\x22\x20value=\x22','ActiveEffectConfig.defaultOptions','object','entries','877019nkoqkq','priority','update','.changes-list\x20.effect-change','changes','4513510aoetXQ','path','preventDefault','49020ifNXTQ','length','1066664XvLIjN','.value\x20input','.effect-change.effects-header','.key','val','render','index','parent','trim','<div\x20class=\x22veapp__list\x20h-100\x20mb-1\x22></div>','ACTIVE_EFFECT_MODES','get'];const _0x20e6=function(_0xbfdbea,_0x26096c){_0xbfdbea=_0xbfdbea-0x1d4;let _0x20ba37=_0x20ba[_0xbfdbea];return _0x20ba37;};const _0x2d080c=_0x20e6;(function(_0x30680f,_0x1a3810){const _0xb3eabe=_0x20e6;while(!![]){try{const _0x5993f4=-parseInt(_0xb3eabe(0x1db))+-parseInt(_0xb3eabe(0x1d9))*parseInt(_0xb3eabe(0x1e9))+-parseInt(_0xb3eabe(0x1f3))+-parseInt(_0xb3eabe(0x217))+-parseInt(_0xb3eabe(0x1f4))+-parseInt(_0xb3eabe(0x222))+parseInt(_0xb3eabe(0x1d6));if(_0x5993f4===_0x1a3810)break;else _0x30680f['push'](_0x30680f['shift']());}catch(_0x24c441){_0x30680f['push'](_0x30680f['shift']());}}}(_0x20ba,0x88971));import{libWrapper,UtilLibWrapper}from'./PatcherLibWrapper.js';import{SharedConsts}from'../shared/SharedConsts.js';import{Config}from'./Config.js';import{UtilActiveEffects}from'./UtilActiveEffects.js';import{UtilCompat}from'./UtilCompat.js';class Patcher_ActiveEffectConfig{static['init'](){const _0x2d62b7=_0x20e6;libWrapper['register'](SharedConsts[_0x2d62b7(0x1ea)],_0x2d62b7(0x21f),function(_0x45e6fa,..._0x10e0b0){const _0x18d791=_0x2d62b7,_0x9f4569=_0x45e6fa(..._0x10e0b0);if(!Config['get'](_0x18d791(0x21d),'isUseExtendedActiveEffectsParser'))return _0x9f4569;return _0x9f4569[_0x18d791(0x21b)]=0x280,_0x9f4569[_0x18d791(0x1f7)]=!![],_0x9f4569;},UtilLibWrapper[_0x2d62b7(0x1ed)]),Hooks['on'](_0x2d62b7(0x1ee),(_0x4b5984,_0x568ae5,_0x1ed807)=>{const _0x16a591=_0x2d62b7;this[_0x16a591(0x1f6)](_0x4b5984,_0x568ae5,_0x1ed807);});}static[_0x2d080c(0x1f6)](_0x35c167,_0x1c93bf,_0x351370){const _0x12d9ff=_0x2d080c;if(!Config[_0x12d9ff(0x1e6)]('ui',_0x12d9ff(0x1f0))||UtilCompat[_0x12d9ff(0x1fb)]())return;const _0x2e28fb=_0x1c93bf['find'](_0x12d9ff(0x1dd));_0x2e28fb[_0x12d9ff(0x207)](_0x12d9ff(0x1de))[_0x12d9ff(0x1fa)]({'marginLeft':0x18}),_0x2e28fb[_0x12d9ff(0x207)](_0x12d9ff(0x20b))[_0x12d9ff(0x211)](_0x12d9ff(0x214)),_0x1c93bf[_0x12d9ff(0x207)](_0x12d9ff(0x1d4))['each']((_0x35f92c,_0x41d6e4)=>{const _0x252afd=_0x12d9ff,_0x47da7c=$(_0x41d6e4),_0x10a503=Number(_0x41d6e4[_0x252afd(0x1e8)][_0x252afd(0x1e1)]),_0x3a53cc=_0x47da7c[_0x252afd(0x207)]('.key\x20input')[_0x252afd(0x1ec)]('bbl-0\x20btl-0'),_0x12030c=_0x47da7c['find'](_0x252afd(0x1f5)),_0x20850a=_0x47da7c['find'](_0x252afd(0x1dc));$('<button\x20class=\x22no-grow\x20no-shrink\x20text-center\x20p-0\x20m-0\x20btr-0\x20bbr-0\x20br-0\x20aeff__btn-inline\x22\x20title=\x22Find\x20Active\x20Effect\x20Attribute\x20Key\x22><i\x20class=\x22fas\x20fa-search\x22></i></button>')[_0x252afd(0x1eb)](_0x2fbf5b=>{const _0x18c54f=_0x252afd;_0x2fbf5b[_0x18c54f(0x1d8)](),_0x2fbf5b['stopPropagation']();const _0x253a2f=UtilActiveEffects['getAvailableEffects'](_0x35c167[_0x18c54f(0x220)][_0x18c54f(0x1e2)],_0x351370),{$modalInner:_0x1c3428,doClose:_0x551061}=UiUtil['getShowModal']({'title':_0x18c54f(0x1fd),'isWidth100':!![],'isHeight100':!![],'isUncappedHeight':!![]}),_0x46ef0b=$('<input\x20type=\x22search\x22\x20class=\x22search\x20w-100\x20form-control\x22\x20placeholder=\x22Find\x20keys...\x22>'),_0x246edc=$(_0x18c54f(0x216)+game[_0x18c54f(0x20c)][_0x18c54f(0x20f)](_0x18c54f(0x20a))+_0x18c54f(0x1f8))[_0x18c54f(0x1eb)](()=>_0x147079[_0x18c54f(0x21c)]()),_0x5a7e88=$$`<div class="flex-v-stretch input-group input-group--bottom mb-1">
+import {UtilLibWrapper} from "./PatcherLibWrapper.js";
+import {Config} from "./Config.js";
+import {UtilActiveEffects} from "./UtilActiveEffects.js";
+import {UtilCompat} from "./UtilCompat.js";
+import {UtilApplications} from "./UtilApplications.js";
+
+class Patcher_ActiveEffectConfig {
+	static init () {
+		UtilLibWrapper.addPatch(
+			"ActiveEffectConfig.defaultOptions",
+			this._lw_ActiveEffectConfig_defaultOptions,
+			UtilLibWrapper.LIBWRAPPER_MODE_WRAPPER,
+		);
+
+		Hooks.on("renderActiveEffectConfig", (app, $html, opts) => {
+			this._onHookActiveEffectConfig(app, $html, opts);
+		});
+	}
+
+	static _lw_ActiveEffectConfig_defaultOptions (fn, ...args) {
+		const base = fn(...args);
+		if (!Config.get("actor", "isUseExtendedActiveEffectsParser")) return base;
+		base.width = 640;
+		base.resizable = true;
+		return base;
+	}
+
+	static _onHookActiveEffectConfig (app, $html, opts) {
+		if (!Config.get("ui", "isExpandActiveEffectConfig") || UtilCompat.isDaeActive()) return;
+
+		// Add a spacer to the header row, above our new buttons
+		const $rowHeader = $html.find(`.effect-change.effects-header`);
+		$rowHeader.find(`.key`).css({marginLeft: 24});
+		$rowHeader.find(`.effect-controls`).before(`<div class="priority">Priority</div>`);
+
+		$html.find(`.changes-list .effect-change`)
+			.each((i, row) => {
+				const $row = $(row);
+				const ixChange = Number(row.dataset.index);
+
+				const $iptKey = $row.find(`.key input`)
+					.addClass("bbl-0 btl-0 h-27p");
+				const $selMode = $row.find(`.mode select`);
+				const $iptValue = $row.find(`.value input`)
+					.addClass("h-27p");
+
+				$(`<button class="no-grow no-shrink text-center p-0 m-0 btr-0 bbr-0 br-0 aeff__btn-inline" title="Find Active Effect Attribute Key"><i class="fas fa-fw fa-search"></i></button>`)
+					.click(async evt => {
+						evt.preventDefault();
+						evt.stopPropagation();
+
+						const availableEffects = UtilActiveEffects.getAvailableEffects(app.object.parent, opts);
+
+						const {$modalInner, doClose, doAutoResize} = await UtilApplications.pGetShowApplicationModal({
+							title: `Find Active Effect Attribute Key`,
+							isWidth100: true,
+							isHeight100: true,
+						});
+
+						const $iptSearch = $(`<input type="search" class="search w-100 form-control" placeholder="Find keys...">`);
+						const $btnReset = $(`<button class="btn-5et veapp__btn-list-reset" name="btn-reset">${game.i18n.localize("PLUT.Reset")}</button>`)
+							.click(() => list.reset());
+						const $wrpBtnsSort = $$`<div class="ve-flex-v-stretch input-group input-group--bottom mb-1">
 							<button class="btn-5et col-4-5 sort" data-sort="name">Name</button>
 							<button class="btn-5et col-2-5 sort" data-sort="value">Current Value</button>
 							<button class="btn-5et col-2-5 sort" data-sort="baseValue" title="The underlying value, without any current effects/etc. applied.">Current Base Value</button>
 							<button class="btn-5et col-2-5 sort" data-sort="default">Default Value</button>
-						</div>`,_0x414a59=$(_0x18c54f(0x1e4)),_0x147079=new List({'isUseJquery':!![],'$iptSearch':_0x46ef0b,'$wrpList':_0x414a59});SortUtil[_0x18c54f(0x212)](_0x5a7e88,_0x147079),_0x253a2f[_0x18c54f(0x200)]((_0x24e918,_0xdfb026)=>{const _0x3e2ba1=_0x18c54f,_0x1c0ed5=MiscUtil[_0x3e2ba1(0x1e6)](_0x35c167['object'][_0x3e2ba1(0x1e2)][_0x3e2ba1(0x204)][_0x3e2ba1(0x204)],..._0x24e918[_0x3e2ba1(0x1d7)][_0x3e2ba1(0x215)]('.')),_0xeebd2=MiscUtil['get'](_0x35c167[_0x3e2ba1(0x220)][_0x3e2ba1(0x1e2)]['_data'][_0x3e2ba1(0x204)],..._0x24e918['path'][_0x3e2ba1(0x215)]('.')),_0x36da59=$$`<label class="flex w-100 veapp__list-row clickable veapp__list-row-hoverable">
-								<span class="col-4-5 px-2">${_0x24e918[_0x3e2ba1(0x1d7)]}</span>
-								<span class="col-2-5 text-center code">${JSON[_0x3e2ba1(0x1fe)](_0x1c0ed5)}</span>
-								<span class="col-2-5 text-center code">${JSON['stringify'](_0xeebd2)}</span>
-								<span class="col-2-5 text-center code">${JSON[_0x3e2ba1(0x1fe)](_0x24e918['default'])}</span>
-							</label>`[_0x3e2ba1(0x1eb)](()=>{const _0x305a9e=_0x3e2ba1,_0x1c45f9=_0x24e918[_0x305a9e(0x1e7)]==null?_0x24e918['default']:typeof _0x24e918['default']==='object'?JSON[_0x305a9e(0x1fe)](_0x24e918[_0x305a9e(0x1e7)]):_0x24e918['default'];_0x3a53cc[_0x305a9e(0x1df)](_0x24e918[_0x305a9e(0x1d7)]),_0x12030c['val'](''+CONST[_0x305a9e(0x1e5)][_0x305a9e(0x202)]);if(!(_0x20850a[_0x305a9e(0x1df)]()||'')[_0x305a9e(0x1e3)]())_0x20850a['val'](_0x1c45f9);_0x551061();}),_0x17a791=new ListItem(_0xdfb026,_0x36da59,_0x24e918['path'],{'value':_0x1c0ed5?MiscUtil[_0x3e2ba1(0x201)](_0x1c0ed5):_0x1c0ed5,'default':_0x24e918['default'],'baseValue':_0xeebd2?MiscUtil[_0x3e2ba1(0x201)](_0xeebd2):_0xeebd2});_0x147079[_0x3e2ba1(0x21a)](_0x17a791);}),_0x147079[_0x18c54f(0x1f1)](),_0x147079[_0x18c54f(0x224)](),$$(_0x1c3428)`<div class="flex-col h-100 min-h-0">
-							<div class="flex-v-stretch input-group input-group--top">
-								${_0x46ef0b}
-								${_0x246edc}
+						</div>`;
+						const $wrpList = $(`<div class="veapp__list h-100 mb-1"></div>`);
+
+						const list = new List({
+							isUseJquery: true,
+							$iptSearch,
+							$wrpList,
+						});
+
+						SortUtil.initBtnSortHandlers($wrpBtnsSort, list);
+
+						availableEffects.forEach((ae, ix) => {
+							const val = MiscUtil.get(app.object.parent.data, ...ae.path.split("."));
+							const _val = MiscUtil.get(app.object.parent.data._source, ...ae.path.split("."));
+
+							const $ele = $$`<label class="ve-flex w-100 veapp__list-row clickable veapp__list-row-hoverable">
+								<span class="col-4-5 px-2">${ae.path}</span>
+								<span class="col-2-5 text-center code">${JSON.stringify(val)}</span>
+								<span class="col-2-5 text-center code">${JSON.stringify(_val)}</span>
+								<span class="col-2-5 text-center code">${JSON.stringify(ae.default)}</span>
+							</label>`
+								.click(() => {
+									const cleanDefault = ae.default == null
+										? ae.default
+										: typeof ae.default === "object" ? JSON.stringify(ae.default) : ae.default;
+
+									$iptKey.val(ae.path);
+									$selMode.val(`${CONST.ACTIVE_EFFECT_MODES.OVERRIDE}`);
+									if (!($iptValue.val() || "").trim()) $iptValue.val(cleanDefault);
+
+									doClose();
+								});
+
+							const listItem = new ListItem(
+								ix,
+								$ele,
+								ae.path,
+								{
+									value: val ? MiscUtil.copy(val) : val,
+									default: ae.default,
+									baseValue: _val ? MiscUtil.copy(_val) : _val,
+								},
+							);
+							list.addItem(listItem);
+						});
+						list.init();
+						list.update();
+
+						$$($modalInner)`<div class="ve-flex-col h-100 min-h-0">
+							<div class="ve-flex-v-stretch input-group input-group--top">
+								${$iptSearch}
+								${$btnReset}
 							</div>
-							${_0x5a7e88}
-							${_0x414a59}
-						</div>`;})[_0x252afd(0x206)](_0x47da7c);const _0x19aa25=_0x47da7c[_0x252afd(0x207)]('.effect-controls'),_0x570a8e=$('<input\x20class=\x22btr-0\x20bbr-0\x22\x20type=\x22number\x22\x20name=\x22changes.'+_0x10a503+_0x252afd(0x21e)+(_0x35c167?.['object']?.[_0x252afd(0x204)][_0x252afd(0x1d5)]?.[_0x10a503]?.[_0x252afd(0x223)]||'')+'\x22>'),_0x4827f9=$(_0x252afd(0x213))[_0x252afd(0x1eb)](_0x3a6548=>{const _0x1bcb8c=_0x252afd;_0x3a6548[_0x1bcb8c(0x208)](),_0x3a6548[_0x1bcb8c(0x1d8)]();const _0x4b38b5=Object[_0x1bcb8c(0x20d)](CONST['ACTIVE_EFFECT_MODES'])[_0x1bcb8c(0x1da)],_0xc0e977=Object[_0x1bcb8c(0x221)](CONST[_0x1bcb8c(0x1e5)])['map'](([_0xa77091,_0xe2e9d],_0x120a73)=>{const _0x5a88ad=_0x1bcb8c;return _0x5a88ad(0x218)+game[_0x5a88ad(0x20c)]['localize'](_0x5a88ad(0x210)+_0xa77091)+_0x5a88ad(0x1f2)+_0xe2e9d*0xa+_0x5a88ad(0x209)+(_0x120a73===0x0||_0x120a73===_0x4b38b5-0x1?_0x5a88ad(0x20e)+(_0x120a73===0x0?_0x5a88ad(0x205):'last')+_0x5a88ad(0x1f9):'')+_0x5a88ad(0x1ef);});new Dialog({'title':'Active\x20Effects\x20Priority\x20Help','content':'<div>\x0a\x09\x09\x09\x09\x09\x09\x09\x09<p>Active\x20Effects\x20are\x20applied\x20with\x20the\x20following\x20priorities\x20by\x20default:</p>\x0a\x09\x09\x09\x09\x09\x09\x09\x09<div\x20class=\x22flex-v-center\x22>\x0a\x09\x09\x09\x09\x09\x09\x09\x09\x09<div\x20class=\x22bold\x20col-4-5\x20text-center\x22>Change\x20Mode</div>\x0a\x09\x09\x09\x09\x09\x09\x09\x09\x09<div\x20class=\x22bold\x20col-4-5\x20text-center\x22>Priority</div>\x0a\x09\x09\x09\x09\x09\x09\x09\x09\x09<div\x20class=\x22bold\x20col-3\x20text-center\x22></div>\x0a\x09\x09\x09\x09\x09\x09\x09\x09</div>\x0a\x09\x09\x09\x09\x09\x09\x09\x09<div>\x0a\x09\x09\x09\x09\x09\x09\x09\x09\x09'+_0xc0e977['join']('')+_0x1bcb8c(0x1fc),'buttons':{'one':{'icon':_0x1bcb8c(0x203),'label':_0x1bcb8c(0x1ff)}}})[_0x1bcb8c(0x1e0)](!![]);});$$`<div class="flex-v-center">
-					${_0x570a8e}
-					${_0x4827f9}
-				</div>`[_0x252afd(0x219)](_0x19aa25);});}}export{Patcher_ActiveEffectConfig};
+							${$wrpBtnsSort}
+							${$wrpList}
+						</div>`;
+
+						doAutoResize();
+					})
+					.prependTo($row);
+
+				const $wrpControls = $row.find(`.effect-controls`);
+
+				const $iptPriority = $(`<input class="btr-0 bbr-0 h-27p" type="number" name="changes.${ixChange}.priority" value="${app?.object?.data.changes?.[ixChange]?.priority || ""}">`);
+
+				const $btnPriorityHelp = $(`<button class="no-grow no-shrink text-center p-0 m-0 aeff__btn-inline btl-0 bbl-0 bl-0" title="Priority Help"><i class="fas fa-fw fa-question-circle"></i></button>`)
+					.click(evt => {
+						evt.stopPropagation();
+						evt.preventDefault();
+
+						const numModes = Object.keys(CONST.ACTIVE_EFFECT_MODES).length;
+						const rows = Object.entries(CONST.ACTIVE_EFFECT_MODES).map(([k, v], i) => {
+							return `<div class="ve-flex-v-center py-1 stripe-even">
+								<div class="col-4-5 ve-flex-vh-center">${game.i18n.localize(`EFFECT.MODE_${k}`)}</div>
+								<div class="col-4-5 text-center">${v * 10}</div>
+								<div class="col-3 text-center">${i === 0 || i === (numModes - 1) ? `<i class="ve-muted ml-2">Applied ${i === 0 ? "first" : "last"}</i>` : ""}</div>
+							</div>`;
+						});
+
+						new Dialog({
+							title: "Active Effects Priority Help",
+							content: `<div>
+								<p>Active Effects are applied with the following priorities by default:</p>
+								<div class="ve-flex-v-center">
+									<div class="bold col-4-5 text-center">Change Mode</div>
+									<div class="bold col-4-5 text-center">Priority</div>
+									<div class="bold col-3 text-center"></div>
+								</div>
+								<div>
+									${rows.join("")}
+								</div>
+								<p>Setting a &quot;priority&quot; value allows you to change this, and apply the effects in any order you choose.</p>
+								<p>For example, if you wished to create an Active Effect for your plate armor and an Active Effect for your shield, you could create an &quot;Override&quot; effect for the plate, with 18 AC, and an &quot;Add&quot; effect for the shield, with 2 AC. You would then set the plate's priority to a number in the range 0\u201319, so it is applied before the shield. If you did not, it would default to &quot;50&quot;, and thus be applied after (and override/ignore) your shield.</p>
+							</div>`,
+							buttons: {
+								one: {
+									icon: `<i class="fas fa-fw fa-times"></i>`,
+									label: "Close",
+								},
+							},
+						}).render(true);
+					});
+
+				$$`<div class="ve-flex-v-center">
+					${$iptPriority}
+					${$btnPriorityHelp}
+				</div>`.insertBefore($wrpControls);
+			});
+	}
+}
+
+export {Patcher_ActiveEffectConfig};

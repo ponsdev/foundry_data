@@ -1,1 +1,627 @@
-const _0x5665=['1/3','subclass','getCleanEntityName','foundrySubclassFeature','getItemActorPassive','getMappedCasterType','getDataHitDice','1/2','feat','_pIsInSrd','_getCntSkills','count','pGetOptionalFeatureSideData','_FEATURE_SRD_ASLIAS_WITH_CLASSNAME','_pGetClassSubclassFeatureItem_other','level','length','add','\x22></th>\x0a\x09\x09\x09\x09','pGetClassItem','<tr\x20class=\x22cls-tbl__stripe-odd\x22>\x0a\x09\x09\x09\x09<td\x20class=\x22cls-tbl__col-level\x22>','min','class','\x0a\x09\x09\x09\x09','land\x27s\x20stride','MODULE_NAME_FAKE','source','STUB_SUBCLASS','entity','ceil','pGetClassSubclassFeatureAdditionalEntities','pGetAdditionalStarFromFound_','PG_CLASSES','<th\x20class=\x22cls-tbl__col-group\x22\x20colspan=\x22','getUnarmoredDefenseFormula','effects','getEntryDescription','</div></th>','472609hrzrkF','Unhandled\x20type\x20\x22','reduce','casterProgression','pact','\x0a\x09\x09\x09<tr>\x0a\x09\x09\x09\x09<th\x20colspan=\x22','subEntities','data','getSubclassStub','pGetDereferencedSubclassData','foundryEffects','full','\x20+\x20','optionalfeature','352419ugjAmx','permissions','\x0a\x09\x09\x09</tr>\x0a\x09\x09\x09','subclassSource','pGetRenderedClassTable','pMutActorUpdateClassSubclassFeatureItem','_pGetClassSubclassFeatureItem_fromSrd','unarmored\x20defense','toLowerCase','get','@abilities.','entries','className','_pGetClassSubclassItemEffectsRaw','choose','homebrew','pGetSideData','filterValues','pGetDereferencedClassData','724801ZLiPJq','</div>','trim','<td\x20class=\x22cls-tbl__col-generic-center\x22>','classSource','</p>','isAddPermission','startsWith','faces','</td>\x0a\x09\x09\x09\x09','push','isStubSubclass','subclassShortName','499HRelMn','filter','/media/icon/laurels.svg','stringify','getExpandedEffects','_getDoNotUseNote','Unknown\x20Subclass','_pGetClassSubclassFeatureItem_pGetImagePath','_SIDE_DATA__OPTIONALFEATURES','replace','artificer','</th></tr>','size','getRenderedClassTableFromDereferenced','<table\x20class=\x22cls-tbl\x20shadow-big\x20w-100\x20mb-3\x22>\x0a\x09\x09\x09<tbody>\x0a\x09\x09\x09<tr><th\x20class=\x22border\x22\x20colspan=\x2215\x22></th></tr>\x0a\x09\x09\x09','Unknown\x20Class','subclassFeature','<span\x20class=\x22mr-1\x22>,</span>','\x0a\x09\x09\x09<tr><th\x20class=\x22border\x22\x20colspan=\x2215\x22></th></tr>\x0a\x09\x09\x09</tbody>\x0a\x09\x09</table>','rows','foundryOptionalfeature','getSourceWithPagePart','name','\x22></th>','mutActorUpdate','<div\x20class=\x22mb-2\x22>','forEach','_getRenderedClassTableFromDereferenced_getSpellsOnlyTableGroup','_SIDE_DATA','render','getSrdCompendiumEntity','pGetClassSubclassFeatureItem','isImportClassTable','subclassTableGroups','pGetCompendiumImage','343016OIRRYo','hasOwnProperty','pInit','timeless\x20body','copy','MODULE_NAME','slice','foundryAdditionalData','title','colLabels','join','pGetClassSubclassSideData','isImportDescription','modules/','<th>Features</th>','getMaxCasterProgression','getImporter','pGetClassSubclassItemEffects','</th>','find','63510DZWuiE','getOrdinalForm','.mod','subclasses','th-Level\x20Spell)','classTableGroups','importClass','pPreloadSideData','STUB_CLASS','<th\x20class=\x22cls-tbl__col-generic-center\x22><div\x20class=\x22cls__squash_header\x22>','_getClassSubclassItemEffects','1311595wkXSsp','permission','_getFeatureSrdAliases','</td>','channel\x20divinity','setFirstSection','section','getCleanOriginalData','mystic\x20arcanum','classFeature','subclassFeatures','isStubClass','CHAR_MAX_LEVEL','test','foundryClassFeature','map','136HBbKEU','getClassStub','<th\x20colspan=\x22','Cleric','URL_TO_HASH_BUILDER','stripTags','./ChooseImporter.js','_CASTER_PROGRESSIONS','type','<th\x20class=\x22cls-tbl__col-prof-bonus\x22>Proficiency\x20Bonus</th>','pHasClassSubclassSideLoadedEffects','player','getNameWithSourcePart','<p>','pGetSubclassItem','indexOf'];const _0x2b01=function(_0x246124,_0x7d0895){_0x246124=_0x246124-0x118;let _0x56658d=_0x5665[_0x246124];return _0x56658d;};const _0x43c63e=_0x2b01;(function(_0x5db5f8,_0x3cfd4d){const _0x492813=_0x2b01;while(!![]){try{const _0x7078ae=-parseInt(_0x492813(0x127))+-parseInt(_0x492813(0x1a6))*-parseInt(_0x492813(0x142))+-parseInt(_0x492813(0x199))+-parseInt(_0x492813(0x186))+parseInt(_0x492813(0x178))+-parseInt(_0x492813(0x1c9))+parseInt(_0x492813(0x132));if(_0x7078ae===_0x3cfd4d)break;else _0x5db5f8['push'](_0x5db5f8['shift']());}catch(_0x92a995){_0x5db5f8['push'](_0x5db5f8['shift']());}}}(_0x5665,0x59ec2));import{SharedConsts}from'../shared/SharedConsts.js';import{UtilApplications}from'./UtilApplications.js';import{Config}from'./Config.js';import{DataConverter}from'./DataConverter.js';import{Vetools}from'./Vetools.js';import{UtilActors}from'./UtilActors.js';import{Consts}from'./Consts.js';import{UtilActiveEffects}from'./UtilActiveEffects.js';import{UtilCompendium}from'./UtilCompendium.js';class DataConverterClass{static[_0x43c63e(0x1ab)](){const _0x455403=_0x43c63e;return _0x455403(0x14f)+Renderer[_0x455403(0x18f)]()[_0x455403(0x1c3)]('{@note\x20Note:\x20importing\x20a\x20class\x20as\x20an\x20item\x20is\x20provided\x20for\x20display\x20purposes\x20only.\x20If\x20you\x20wish\x20to\x20import\x20a\x20class\x20to\x20a\x20character\x20sheet,\x20please\x20use\x20the\x20importer\x20on\x20the\x20sheet\x20instead.}')+_0x455403(0x19e);}static['_getCntSkills'](_0x2ca983){const _0x336808=_0x43c63e;return(MiscUtil['get'](_0x2ca983,'startingProficiencies','skills')||[])[_0x336808(0x141)](_0x573784=>MiscUtil[_0x336808(0x18f)](_0x573784[_0x336808(0x194)],_0x336808(0x15d))||0x0)[_0x336808(0x17a)]((_0x112204,_0x2a9897)=>_0x112204+_0x2a9897,0x0);}static[_0x43c63e(0x158)](_0x53f390){const _0x30ad74=_0x43c63e;return'd'+((_0x53f390['hd']||{})[_0x30ad74(0x1a1)]||0x6);}static async[_0x43c63e(0x165)](_0x224914,_0x38db65){const _0x450f42=_0x43c63e;_0x38db65=_0x38db65||{};const _0x32b0b3=DataConverter['getCleanOriginalData'](_0x224914),_0x3f0e8d=await this[_0x450f42(0x18a)](_0x224914);_0x224914=MiscUtil[_0x450f42(0x1cd)](_0x224914),_0x224914=await DataUtil[_0x450f42(0x168)][_0x450f42(0x198)](_0x224914);const _0x2a2545=Renderer[_0x450f42(0x18f)]()[_0x450f42(0x137)](!![])[_0x450f42(0x1c3)]({'type':_0x450f42(0x138),'entries':_0x224914['classFeatures']['flat']()}),_0x39715d=await UtilCompendium['pGetCompendiumImage']('class',_0x224914)||'modules/'+SharedConsts[_0x450f42(0x118)]+_0x450f42(0x1a8),_0x18f58a={'name':UtilApplications['getCleanEntityName'](DataConverter['getNameWithSourcePart'](_0x224914)),'type':_0x450f42(0x168),'data':{'description':{'value':Config['get'](_0x450f42(0x12d),'isImportDescription')?_0x450f42(0x1bf)+this[_0x450f42(0x1ab)]()+_0x3f0e8d+_0x2a2545+_0x450f42(0x19a):'','chat':'','unidentified':''},'source':DataConverter[_0x450f42(0x1bb)](_0x224914),'levels':Consts[_0x450f42(0x13e)],'subclass':'','damage':{'parts':[]},'hitDice':DataConverterClass[_0x450f42(0x158)](_0x224914),'hitDiceUsed':0x0,'skills':{'number':this[_0x450f42(0x15c)](_0x224914)},'spellcasting':UtilActors[_0x450f42(0x157)](_0x224914[_0x450f42(0x17b)])},'flags':{[SharedConsts['MODULE_NAME_FAKE']]:{'page':UrlUtil[_0x450f42(0x172)],'source':_0x224914[_0x450f42(0x16c)],'hash':UrlUtil[_0x450f42(0x146)][UrlUtil[_0x450f42(0x172)]](_0x224914),'data':{'class':_0x32b0b3},'filterValues':_0x38db65[_0x450f42(0x197)]}},'effects':[],'img':_0x39715d};if(_0x38db65['isAddPermission'])_0x18f58a['permission']={'default':Config[_0x450f42(0x18f)]('importClass','permissions')};return _0x18f58a;}static async[_0x43c63e(0x150)](_0x394a72,_0x52053a,_0x4fb0f8){const _0xb259bc=_0x43c63e;_0x4fb0f8=_0x4fb0f8||{};const _0x37ebbf=DataConverter[_0xb259bc(0x139)](_0x394a72),_0x4e6136=DataConverter['getCleanOriginalData'](_0x52053a);_0x52053a=MiscUtil['copy'](_0x52053a),_0x52053a=await DataUtil['class'][_0xb259bc(0x181)](_0x52053a);const _0x37af3c=Renderer['get']()[_0xb259bc(0x137)](!![])[_0xb259bc(0x1c3)]({'type':'section','entries':_0x52053a[_0xb259bc(0x13c)]['flat']()}),_0xfd943e=await UtilCompendium[_0xb259bc(0x1c8)]('class',_0x394a72)||_0xb259bc(0x120)+SharedConsts[_0xb259bc(0x118)]+_0xb259bc(0x1a8);_0x52053a[_0xb259bc(0x16c)]=_0x52053a[_0xb259bc(0x16c)]||_0x394a72[_0xb259bc(0x16c)];const _0x2aabef={'name':UtilApplications[_0xb259bc(0x154)](DataConverter[_0xb259bc(0x14e)](_0x394a72,{'displayName':_0x52053a[_0xb259bc(0x1bc)]+'\x20'+_0x394a72['name']})),'type':_0xb259bc(0x168),'data':{'description':{'value':Config[_0xb259bc(0x18f)]('importClass',_0xb259bc(0x11f))?'<div>'+this['_getDoNotUseNote']()+_0x37af3c+_0xb259bc(0x19a):'','chat':'','unidentified':''},'source':DataConverter[_0xb259bc(0x1bb)](_0x52053a),'levels':Consts['CHAR_MAX_LEVEL'],'subclass':_0x52053a[_0xb259bc(0x1bc)],'damage':{'parts':[]},'hitDice':DataConverterClass[_0xb259bc(0x158)](_0x394a72),'hitDiceUsed':0x0,'skills':{'number':this[_0xb259bc(0x15c)](_0x394a72)},'spellcasting':UtilActors[_0xb259bc(0x157)](DataConverterClass[_0xb259bc(0x122)](_0x394a72[_0xb259bc(0x17b)],_0x52053a[_0xb259bc(0x17b)]))},'flags':{[SharedConsts[_0xb259bc(0x16b)]]:{'page':_0xb259bc(0x153),'source':_0x52053a[_0xb259bc(0x16c)],'hash':UrlUtil[_0xb259bc(0x146)][_0xb259bc(0x153)](_0x52053a),'data':{'class':_0x37ebbf,'subclass':_0x4e6136},'filterValues':_0x4fb0f8[_0xb259bc(0x197)]}},'effects':[],'img':_0xfd943e};if(_0x4fb0f8[_0xb259bc(0x19f)])_0x2aabef[_0xb259bc(0x133)]={'default':Config['get'](_0xb259bc(0x12d),_0xb259bc(0x187))};return _0x2aabef;}static async[_0x43c63e(0x1c5)](_0x2db04c,_0x51b72c){const _0x5a2cce=_0x43c63e,{entity:_0x1a4661,type:_0x1809f9}=_0x2db04c;let _0x6b3966;return await this[_0x5a2cce(0x15b)](_0x1a4661,_0x1809f9)?_0x6b3966=this['_pGetClassSubclassFeatureItem_fromSrd'](_0x1a4661,_0x1809f9,_0x51b72c):_0x6b3966=this['_pGetClassSubclassFeatureItem_other'](_0x1a4661,_0x1809f9,_0x51b72c),_0x6b3966;}static async[_0x43c63e(0x15b)](_0x259265,_0x638d68){const _0xb8e3b=_0x43c63e,_0x3d77f9=await UtilCompendium[_0xb8e3b(0x1c4)](_0x638d68,_0x259265,{'fnGetAliases':this[_0xb8e3b(0x134)]});return!!_0x3d77f9;}static async[_0x43c63e(0x18c)](_0x38a407,_0x453d50,_0x25171c){const _0x560913=_0x43c63e,_0x661fe=await UtilCompendium[_0x560913(0x1c4)](_0x453d50,_0x38a407,{'fnGetAliases':this[_0x560913(0x134)]});return{'name':UtilApplications[_0x560913(0x154)](DataConverter[_0x560913(0x14e)](_0x38a407,{'isActorItem':_0x25171c!=null})),'type':_0x661fe[_0x560913(0x14a)],'data':{..._0x661fe[_0x560913(0x17f)],'source':DataConverter[_0x560913(0x1bb)](_0x38a407),'description':{'value':DataConverter[_0x560913(0x176)](_0x38a407),'chat':'','unidentified':''},..._0x38a407[_0x560913(0x11a)]||{}},'effects':MiscUtil[_0x560913(0x1cd)](_0x661fe[_0x560913(0x175)]||[]),'img':await this['_pGetClassSubclassFeatureItem_pGetImagePath'](_0x38a407,_0x453d50)};}static async[_0x43c63e(0x160)](_0x37d91e,_0x41ad31,_0x511001){const _0x392ec8=_0x43c63e;return DataConverter[_0x392ec8(0x156)](_0x37d91e,{'mode':_0x392ec8(0x14d),'modeOptions':{'isChannelDivinity':_0x37d91e[_0x392ec8(0x192)]===_0x392ec8(0x145)&&_0x37d91e['name'][_0x392ec8(0x18e)]()['startsWith']('channel\x20divinity:')},'renderDepth':0x0,'fvttType':_0x392ec8(0x15a),'img':await this[_0x392ec8(0x1ad)](_0x37d91e,_0x41ad31),'source':DataConverter['getSourceWithPagePart'](_0x37d91e),'requirements':_0x37d91e[_0x392ec8(0x192)]+'\x20'+_0x37d91e[_0x392ec8(0x161)]+(_0x37d91e['subclassShortName']?'\x20('+_0x37d91e[_0x392ec8(0x1a5)]+')':''),'additionalData':_0x37d91e['foundryAdditionalData'],'actor':_0x511001});}static async[_0x43c63e(0x170)](_0x2c10ce,_0x41d8a9){const _0x2441f6=_0x43c63e,{entity:_0x1ad034,type:_0x33a21c}=_0x41d8a9,_0x313762=await this[_0x2441f6(0x196)](_0x1ad034,_0x33a21c);if(!_0x313762)return[];if(!_0x313762[_0x2441f6(0x17e)])return[];const {ChooseImporter:_0x20e711}=await import(_0x2441f6(0x148)),_0x330889=[];for(const _0x5494ab in _0x313762[_0x2441f6(0x17e)]){if(!_0x313762['subEntities'][_0x2441f6(0x1ca)](_0x5494ab))continue;const _0x442771=_0x313762[_0x2441f6(0x17e)][_0x5494ab];if(!(_0x442771 instanceof Array))continue;const _0x2b3f06=_0x20e711[_0x2441f6(0x123)](_0x5494ab,_0x2c10ce);await _0x2b3f06[_0x2441f6(0x1cb)]();for(const _0x175ed7 of _0x442771){const {imported:_0x559f41}=await _0x2b3f06['pImportEntry'](_0x175ed7,{'isDataOnly':!![]});if(_0x559f41 instanceof Array)_0x330889[_0x2441f6(0x1a3)](..._0x559f41);else _0x330889[_0x2441f6(0x1a3)](_0x559f41);}}return _0x330889;}static['getItemEffects'](_0x40492e,_0x420713,_0x29569e){const _0x383c1c=_0x43c63e;return this[_0x383c1c(0x131)](_0x40492e,_0x29569e,[_0x420713]);}static async[_0x43c63e(0x14c)](_0x4c49b7,_0x450aaf,_0x28cc0e){const _0x1c0ee7=_0x43c63e,_0x5bf0ee=await this['_pGetClassSubclassItemEffectsRaw']({'cls':_0x450aaf,'sc':_0x28cc0e});return!!_0x5bf0ee[_0x1c0ee7(0x162)];}static async[_0x43c63e(0x124)](_0x4f93b9,_0x25018e,_0x43f9d4,_0x110700){const _0x25610c=_0x43c63e,_0xf39078=await this[_0x25610c(0x193)]({'cls':_0x25018e,'sc':_0x43f9d4});return this[_0x25610c(0x131)](_0x4f93b9,_0x110700,_0xf39078,{'parentName':_0x25018e['name']});}static async[_0x43c63e(0x193)]({cls:_0x294346,sc:_0x47cbe1}){const _0x282561=_0x43c63e,_0x5d118f=await this[_0x282561(0x196)](_0x294346,_0x282561(0x168)),_0x3df6ef=_0x47cbe1?await this['pGetSideData'](_0x47cbe1,_0x282561(0x153)):{},_0x23c971=await DataConverter[_0x282561(0x171)](_0x294346,{'propFromEntity':_0x282561(0x182),'propFromSideLoaded':_0x282561(0x175),'found':_0x5d118f}),_0x473707=_0x47cbe1?await DataConverter[_0x282561(0x171)](_0x47cbe1,{'propFromEntity':_0x282561(0x182),'propFromSideLoaded':'effects','found':_0x3df6ef}):null;return[..._0x23c971||[],..._0x473707||[]];}static async['pHasClassSubclassFeatureSideLoadedEffects'](_0x4817a3,_0x4232ac){const _0xab95b1=_0x43c63e,{entity:_0x274a43,type:_0x17a32c}=_0x4232ac,_0x3d28d9=await this[_0xab95b1(0x196)](_0x274a43,_0x17a32c),_0x29d91c=await DataConverter[_0xab95b1(0x171)](_0x274a43,{'propFromEntity':_0xab95b1(0x182),'propFromSideLoaded':_0xab95b1(0x175),'found':_0x3d28d9});return!!_0x29d91c?.[_0xab95b1(0x162)];}static async['pGetClassSubclassFeatureItemEffects'](_0x4941b4,_0x38a102,_0x2d85d8){const _0x42ced6=_0x43c63e,{entity:_0x4957f2,type:_0x32bb05}=_0x38a102,_0x46468e=await this[_0x42ced6(0x196)](_0x4957f2,_0x32bb05),_0x24990a=await DataConverter[_0x42ced6(0x171)](_0x4957f2,{'propFromEntity':_0x42ced6(0x182),'propFromSideLoaded':_0x42ced6(0x175),'found':_0x46468e});return this['_getClassSubclassItemEffects'](_0x4941b4,_0x2d85d8,_0x24990a,{'parentName':_0x4957f2[_0x42ced6(0x1bc)]});}static['_getClassSubclassItemEffects'](_0x37d53d,_0x575369,_0x4b6cc4,{parentName:parentName=''}={}){const _0x343543=_0x43c63e;return UtilActiveEffects[_0x343543(0x1aa)](_0x37d53d,_0x575369,_0x4b6cc4,{'parentName':parentName});}static async[_0x43c63e(0x18b)](_0xa18eb7,_0x2bff21,_0x2008d3,_0x30111a){const _0x58e621=_0x43c63e,{entity:_0x553cd6,type:_0x1e43cf}=_0x2008d3,_0x17c584=await this[_0x58e621(0x196)](_0x553cd6,_0x1e43cf);DataConverter[_0x58e621(0x1be)](_0xa18eb7,_0x2bff21,_0x2008d3[_0x58e621(0x16e)],{'sideData':_0x17c584});}static async[_0x43c63e(0x12e)](){const _0x6c26fd=_0x43c63e;DataConverterClass[_0x6c26fd(0x1c2)]=await Vetools[_0x6c26fd(0x11e)](),DataConverterClass[_0x6c26fd(0x1ae)]=await Vetools[_0x6c26fd(0x15e)]();}static async[_0x43c63e(0x196)](_0x2f0e17,_0x578599){const _0x341784=_0x43c63e;if(!_0x2f0e17)return null;switch(_0x578599){case _0x341784(0x168):{let _0xf9b830=(MiscUtil[_0x341784(0x18f)](BrewUtil,_0x341784(0x195),'foundryClass')||[])['find'](_0x3c42a0=>_0x3c42a0[_0x341784(0x1bc)]===_0x2f0e17[_0x341784(0x1bc)]&&_0x3c42a0[_0x341784(0x16c)]===_0x2f0e17['source']);if(!_0xf9b830){const _0x43a282=DataConverterClass[_0x341784(0x1c2)]||await Vetools[_0x341784(0x11e)]();_0xf9b830=(_0x43a282['class']||[])[_0x341784(0x126)](_0x538efc=>_0x538efc['name']===_0x2f0e17[_0x341784(0x1bc)]&&_0x538efc['source']===_0x2f0e17[_0x341784(0x16c)]);}if(!_0xf9b830)return null;return _0xf9b830;}case _0x341784(0x153):{let _0x1d5767=(MiscUtil[_0x341784(0x18f)](BrewUtil,'homebrew','foundrySubclass')||[])[_0x341784(0x126)](_0x59cc38=>_0x59cc38['name']===_0x2f0e17[_0x341784(0x1bc)]&&_0x59cc38[_0x341784(0x16c)]===_0x2f0e17[_0x341784(0x16c)]&&_0x59cc38[_0x341784(0x192)]===_0x2f0e17[_0x341784(0x192)]&&_0x59cc38[_0x341784(0x19d)]===_0x2f0e17[_0x341784(0x19d)]);if(!_0x1d5767){const _0x237068=DataConverterClass[_0x341784(0x1c2)]||await Vetools[_0x341784(0x11e)]();_0x1d5767=(_0x237068[_0x341784(0x153)]||[])[_0x341784(0x126)](_0x3745bc=>_0x3745bc[_0x341784(0x1bc)]===_0x2f0e17['name']&&_0x3745bc[_0x341784(0x16c)]===_0x2f0e17[_0x341784(0x16c)]&&_0x3745bc[_0x341784(0x192)]===_0x2f0e17['className']&&_0x3745bc[_0x341784(0x19d)]===_0x2f0e17[_0x341784(0x19d)]);}if(!_0x1d5767)return null;return _0x1d5767;}case'classFeature':{let _0x21927d=(MiscUtil[_0x341784(0x18f)](BrewUtil,'homebrew',_0x341784(0x140))||[])[_0x341784(0x126)](_0x56327f=>_0x56327f[_0x341784(0x1bc)]===_0x2f0e17[_0x341784(0x1bc)]&&_0x56327f['source']===_0x2f0e17['source']&&_0x56327f[_0x341784(0x192)]===_0x2f0e17[_0x341784(0x192)]&&_0x56327f[_0x341784(0x19d)]===_0x2f0e17['classSource']&&_0x56327f['level']===_0x2f0e17['level']);if(!_0x21927d){const _0x1ebdb5=DataConverterClass[_0x341784(0x1c2)]||await Vetools['pGetClassSubclassSideData']();_0x21927d=(_0x1ebdb5[_0x341784(0x13b)]||[])[_0x341784(0x126)](_0x4f9333=>_0x4f9333[_0x341784(0x1bc)]===_0x2f0e17[_0x341784(0x1bc)]&&_0x4f9333[_0x341784(0x16c)]===_0x2f0e17['source']&&_0x4f9333[_0x341784(0x192)]===_0x2f0e17['className']&&_0x4f9333[_0x341784(0x19d)]===_0x2f0e17[_0x341784(0x19d)]&&_0x4f9333[_0x341784(0x161)]===_0x2f0e17[_0x341784(0x161)]);}if(!_0x21927d)return null;return _0x21927d;}case'subclassFeature':{let _0x397853=(MiscUtil[_0x341784(0x18f)](BrewUtil,_0x341784(0x195),_0x341784(0x155))||[])[_0x341784(0x126)](_0x4dd92b=>_0x4dd92b[_0x341784(0x1bc)]===_0x2f0e17[_0x341784(0x1bc)]&&_0x4dd92b[_0x341784(0x16c)]===_0x2f0e17['source']&&_0x4dd92b['className']===_0x2f0e17[_0x341784(0x192)]&&_0x4dd92b[_0x341784(0x19d)]===_0x2f0e17[_0x341784(0x19d)]&&_0x4dd92b[_0x341784(0x1a5)]===_0x2f0e17[_0x341784(0x1a5)]&&_0x4dd92b['subclassSource']===_0x2f0e17['subclassSource']&&_0x4dd92b[_0x341784(0x161)]===_0x2f0e17[_0x341784(0x161)]);if(!_0x397853){const _0x5a1aef=DataConverterClass[_0x341784(0x1c2)]||await Vetools['pGetClassSubclassSideData']();_0x397853=(_0x5a1aef[_0x341784(0x1b6)]||[])[_0x341784(0x126)](_0x3eea22=>_0x3eea22[_0x341784(0x1bc)]===_0x2f0e17['name']&&_0x3eea22['source']===_0x2f0e17[_0x341784(0x16c)]&&_0x3eea22[_0x341784(0x192)]===_0x2f0e17['className']&&_0x3eea22[_0x341784(0x19d)]===_0x2f0e17[_0x341784(0x19d)]&&_0x3eea22[_0x341784(0x1a5)]===_0x2f0e17[_0x341784(0x1a5)]&&_0x3eea22[_0x341784(0x189)]===_0x2f0e17[_0x341784(0x189)]&&_0x3eea22[_0x341784(0x161)]===_0x2f0e17[_0x341784(0x161)]);}if(!_0x397853)return null;return _0x397853;}case _0x341784(0x185):{let _0x10ebb3=(MiscUtil[_0x341784(0x18f)](BrewUtil,'homebrew',_0x341784(0x1ba))||[])['find'](_0x1bfd45=>_0x1bfd45[_0x341784(0x1bc)]===_0x2f0e17[_0x341784(0x1bc)]&&_0x1bfd45[_0x341784(0x16c)]===_0x2f0e17[_0x341784(0x16c)]);if(!_0x10ebb3){const _0x1d8f13=DataConverterClass[_0x341784(0x1ae)]||await Vetools[_0x341784(0x15e)]();_0x10ebb3=(_0x1d8f13[_0x341784(0x185)]||[])[_0x341784(0x126)](_0x1f6356=>_0x1f6356[_0x341784(0x1bc)]===_0x2f0e17['name']&&_0x1f6356[_0x341784(0x16c)]===_0x2f0e17[_0x341784(0x16c)]);}if(!_0x10ebb3)return null;return _0x10ebb3;}default:throw new Error(_0x341784(0x179)+_0x578599+'\x22');}}static[_0x43c63e(0x134)](_0x1e43ec){const _0x4aa5a8=_0x43c63e;if(!_0x1e43ec[_0x4aa5a8(0x1bc)])return[];const _0x492c9b=[],_0x316a95=_0x1e43ec['name'][_0x4aa5a8(0x1af)](/\([^)]+\)/g,'')[_0x4aa5a8(0x1af)](/\s+/g,'\x20')[_0x4aa5a8(0x19b)]();if(_0x316a95!==_0x1e43ec[_0x4aa5a8(0x1bc)])_0x492c9b[_0x4aa5a8(0x1a3)](_0x316a95);const _0x56ff34=_0x1e43ec[_0x4aa5a8(0x1bc)][_0x4aa5a8(0x18e)]()[_0x4aa5a8(0x19b)]();return DataConverterClass[_0x4aa5a8(0x15f)]['has'](_0x56ff34)&&_0x492c9b[_0x4aa5a8(0x1a3)](_0x1e43ec[_0x4aa5a8(0x1bc)]+'\x20('+_0x1e43ec[_0x4aa5a8(0x192)]+')'),_0x56ff34[_0x4aa5a8(0x1a0)](_0x4aa5a8(0x13a))&&_0x492c9b[_0x4aa5a8(0x1a3)](_0x316a95+'\x20('+((_0x1e43ec[_0x4aa5a8(0x161)]-0x9)/0x2+0x5)+_0x4aa5a8(0x12b)),_0x492c9b;}static async['_pGetClassSubclassFeatureItem_pGetImagePath'](_0x1b75a8,_0x214136){const _0x1650c4=_0x43c63e,_0x5bb14b=await UtilCompendium[_0x1650c4(0x1c8)](_0x214136,_0x1b75a8,{'fnGetAliases':this[_0x1650c4(0x134)]});if(_0x5bb14b)return _0x5bb14b;return _0x1650c4(0x120)+SharedConsts[_0x1650c4(0x118)]+'/media/icon/mighty-force.svg';}static[_0x43c63e(0x174)](_0x4f4183){const _0x170e1f=_0x43c63e;if(!_0x4f4183[_0x170e1f(0x191)])return null;const _0x570c6f=new Set();return JSON[_0x170e1f(0x1a9)](_0x4f4183[_0x170e1f(0x191)])['replace'](/(strength|dexterity|constitution|intelligence|wisdom|charisma|str|dex|con|int|wis|cha) modifier/gi,(_0x15a6c3,_0x32e751)=>{const _0x3ef04b=_0x170e1f;_0x32e751=_0x32e751[_0x3ef04b(0x119)](0x0,0x3)[_0x3ef04b(0x18e)](),_0x570c6f[_0x3ef04b(0x163)](_0x32e751);}),['10',...[..._0x570c6f]['map'](_0x202337=>_0x170e1f(0x190)+_0x202337+_0x170e1f(0x129))][_0x170e1f(0x11d)](_0x170e1f(0x184));}static[_0x43c63e(0x122)](..._0x588348){const _0x422bac=_0x43c63e;_0x588348=_0x588348[_0x422bac(0x1a7)](Boolean);const _0x15c146=_0x588348[_0x422bac(0x141)](_0x1015ce=>DataConverterClass['_CASTER_PROGRESSIONS'][_0x422bac(0x151)](_0x1015ce))[_0x422bac(0x1a7)](_0x76a50b=>~_0x76a50b);if(!_0x15c146[_0x422bac(0x162)])return null;return DataConverterClass[_0x422bac(0x149)][Math[_0x422bac(0x167)](..._0x15c146)];}static async[_0x43c63e(0x18a)](_0x27f28e,_0xe85fc3,_0x50f8dd={}){const _0x3bee15=_0x43c63e;if(!Config[_0x3bee15(0x18f)](_0x3bee15(0x12d),_0x3bee15(0x1c6)))return'';return _0x27f28e=MiscUtil[_0x3bee15(0x1cd)](_0x27f28e),_0x27f28e=await DataUtil[_0x3bee15(0x168)]['pGetDereferencedClassData'](_0x27f28e),_0xe85fc3&&(_0xe85fc3=MiscUtil[_0x3bee15(0x1cd)](_0xe85fc3),_0xe85fc3=await DataUtil[_0x3bee15(0x168)]['pGetDereferencedSubclassData'](_0xe85fc3)),this[_0x3bee15(0x1b3)](_0x27f28e,_0xe85fc3,_0x50f8dd);}static[_0x43c63e(0x1b3)](_0x21ca87,_0x1bbd38,{isAddHeader:isAddHeader=![],isSpellsOnly:isSpellsOnly=![]}={}){const _0x162025=_0x43c63e;if(!_0x21ca87)return'';Renderer[_0x162025(0x18f)]()['setFirstSection'](!![]);const _0x596bc6=[],_0x281cfb=[],_0x171e77=_0x124eb7=>{const _0xa6e271=_0x162025;let _0x4c2f82;_0x124eb7[_0xa6e271(0x11b)]?_0x4c2f82=_0xa6e271(0x173)+_0x124eb7[_0xa6e271(0x11c)]['length']+'\x22>'+_0x124eb7[_0xa6e271(0x11b)]+_0xa6e271(0x125):_0x4c2f82=_0xa6e271(0x144)+_0x124eb7[_0xa6e271(0x11c)][_0xa6e271(0x162)]+_0xa6e271(0x1bd),_0x596bc6[_0xa6e271(0x1a3)](_0x4c2f82),_0x124eb7[_0xa6e271(0x11c)]['forEach'](_0x256bd3=>{const _0x4fb5eb=_0xa6e271;_0x281cfb['push'](_0x4fb5eb(0x130)+Renderer['get']()[_0x4fb5eb(0x1c3)](_0x256bd3)+_0x4fb5eb(0x177));});};_0x21ca87[_0x162025(0x12c)]&&_0x21ca87[_0x162025(0x12c)]['forEach'](_0x29f3f9=>{const _0x5a4a5c=_0x162025;if(isSpellsOnly)_0x29f3f9=this[_0x5a4a5c(0x1c1)](_0x29f3f9);if(!_0x29f3f9)return;_0x171e77(_0x29f3f9);});_0x1bbd38?.[_0x162025(0x1c7)]&&_0x1bbd38[_0x162025(0x1c7)]['forEach'](_0x304b03=>{if(isSpellsOnly)_0x304b03=this['_getRenderedClassTableFromDereferenced_getSpellsOnlyTableGroup'](_0x304b03);if(!_0x304b03)return;_0x171e77(_0x304b03);});const _0x498c0c=_0x21ca87['classFeatures'][_0x162025(0x141)]((_0x3afa6c,_0x2190a0)=>{const _0x1bf599=_0x162025,_0x348a5e=Math[_0x1bf599(0x16f)]((_0x2190a0+0x1)/0x4)+0x1,_0x520bb5=_0x3afa6c[_0x1bf599(0x1a7)](_0x4fc652=>_0x4fc652[_0x1bf599(0x1bc)]&&_0x4fc652[_0x1bf599(0x14a)]!=='inset'),_0x5eeccc=_0x520bb5['map']((_0x3e75b2,_0x2527c2)=>'<div\x20class=\x22inline-block\x22>'+_0x3e75b2['name']+(_0x2527c2===_0x520bb5[_0x1bf599(0x162)]-0x1?'':_0x1bf599(0x1b7))+_0x1bf599(0x19a)),_0x5db8a7=[],_0x34462c=_0x2c9fa7=>{const _0x5433a1=_0x1bf599,_0x5807b7=_0x2c9fa7[_0x5433a1(0x1b9)][_0x2190a0]||[],_0x3d2604=_0x5807b7[_0x5433a1(0x141)](_0x474a9d=>_0x5433a1(0x19c)+(_0x474a9d===0x0?'—':Renderer[_0x5433a1(0x18f)]()['render'](_0x474a9d))+_0x5433a1(0x135));_0x5db8a7['push'](..._0x3d2604);};return _0x21ca87[_0x1bf599(0x12c)]&&_0x21ca87['classTableGroups'][_0x1bf599(0x1c0)](_0x11bcdc=>{const _0x1b8d02=_0x1bf599;if(isSpellsOnly)_0x11bcdc=this[_0x1b8d02(0x1c1)](_0x11bcdc);if(!_0x11bcdc)return;_0x34462c(_0x11bcdc);}),_0x1bbd38?.['subclassTableGroups']&&_0x1bbd38[_0x1bf599(0x1c7)][_0x1bf599(0x1c0)](_0x24c0ad=>{const _0x1c721c=_0x1bf599;if(isSpellsOnly)_0x24c0ad=this[_0x1c721c(0x1c1)](_0x24c0ad);if(!_0x24c0ad)return;_0x34462c(_0x24c0ad);}),_0x1bf599(0x166)+Parser[_0x1bf599(0x128)](_0x2190a0+0x1)+_0x1bf599(0x1a2)+(isSpellsOnly?'':'<td\x20class=\x22cls-tbl__col-prof-bonus\x22>+'+_0x348a5e+_0x1bf599(0x135))+_0x1bf599(0x169)+(isSpellsOnly?'':'<td>'+(_0x5eeccc[_0x1bf599(0x11d)]('')||'—')+_0x1bf599(0x135))+'\x0a\x09\x09\x09\x09'+_0x5db8a7[_0x1bf599(0x11d)]('')+'\x0a\x09\x09\x09</tr>';});return _0x162025(0x1b4)+(isAddHeader?'<tr><th\x20class=\x22cls-tbl__disp-name\x22\x20colspan=\x2215\x22>'+_0x21ca87[_0x162025(0x1bc)]+_0x162025(0x1b1):'')+_0x162025(0x17d)+(isSpellsOnly?'1':'3')+_0x162025(0x164)+_0x596bc6[_0x162025(0x11d)]('')+'\x0a\x09\x09\x09</tr>\x0a\x09\x09\x09<tr>\x0a\x09\x09\x09\x09<th\x20class=\x22cls-tbl__col-level\x22>Level</th>\x0a\x09\x09\x09\x09'+(isSpellsOnly?'':_0x162025(0x14b))+'\x0a\x09\x09\x09\x09'+(isSpellsOnly?'':_0x162025(0x121))+'\x0a\x09\x09\x09\x09'+_0x281cfb[_0x162025(0x11d)]('')+_0x162025(0x188)+_0x498c0c[_0x162025(0x11d)]('')+_0x162025(0x1b8);}static[_0x43c63e(0x1c1)](_0x25daab){const _0x5d4675=_0x43c63e;_0x25daab=MiscUtil[_0x5d4675(0x1cd)](_0x25daab);if(/spell/i[_0x5d4675(0x13f)](''+(_0x25daab['title']||'')))return _0x25daab;if(!_0x25daab['colLabels'])return null;const _0x4c3a06=new Set(_0x25daab[_0x5d4675(0x11c)][_0x5d4675(0x141)]((_0x54c668,_0x6888ef)=>{const _0x50a432=_0x5d4675,_0xa80e60=Renderer[_0x50a432(0x147)](''+(_0x54c668||''));return/cantrip|spell|slot level/i[_0x50a432(0x13f)](_0xa80e60)?_0x6888ef:null;})[_0x5d4675(0x1a7)](_0x501047=>_0x501047!=null));if(!_0x4c3a06[_0x5d4675(0x1b2)])return null;return _0x25daab['colLabels']=_0x25daab['colLabels']['filter']((_0x1b2262,_0x1f5d9b)=>_0x4c3a06['has'](_0x1f5d9b)),_0x25daab[_0x5d4675(0x1b9)]=_0x25daab[_0x5d4675(0x1b9)][_0x5d4675(0x141)](_0x17c95c=>_0x17c95c[_0x5d4675(0x1a7)]((_0x4d608d,_0x2b4f0c)=>_0x4c3a06['has'](_0x2b4f0c))),_0x25daab;}static[_0x43c63e(0x13d)](_0x34381d){const _0x3c5dd8=_0x43c63e;if(!_0x34381d)return![];return _0x34381d[_0x3c5dd8(0x1bc)]===DataConverterClass['STUB_CLASS'][_0x3c5dd8(0x1bc)]&&_0x34381d[_0x3c5dd8(0x16c)]===DataConverterClass[_0x3c5dd8(0x12f)][_0x3c5dd8(0x16c)];}static[_0x43c63e(0x1a4)](_0x5cab3a){const _0x166bee=_0x43c63e;if(!_0x5cab3a)return![];return _0x5cab3a[_0x166bee(0x1bc)]===DataConverterClass[_0x166bee(0x16d)][_0x166bee(0x1bc)]&&_0x5cab3a[_0x166bee(0x16c)]===DataConverterClass[_0x166bee(0x16d)]['source'];}static[_0x43c63e(0x143)](){const _0x1d99e7=_0x43c63e,_0xb9b769=MiscUtil[_0x1d99e7(0x1cd)](DataConverterClass[_0x1d99e7(0x12f)]);return _0xb9b769[_0x1d99e7(0x12a)]=[{...MiscUtil[_0x1d99e7(0x1cd)](DataConverterClass[_0x1d99e7(0x16d)]),'className':_0xb9b769['name'],'classSource':_0xb9b769[_0x1d99e7(0x16c)]}],_0xb9b769;}static[_0x43c63e(0x180)]({cls:_0x14be12}){const _0x335573=_0x43c63e,_0x47e005=MiscUtil['copy'](DataConverterClass[_0x335573(0x16d)]);return _0x47e005[_0x335573(0x192)]=_0x14be12['name'],_0x47e005[_0x335573(0x19d)]=_0x14be12[_0x335573(0x16c)],_0x47e005;}}DataConverterClass['_SIDE_DATA']=null,DataConverterClass[_0x43c63e(0x1ae)]=null,DataConverterClass[_0x43c63e(0x15f)]=new Set([_0x43c63e(0x18d),_0x43c63e(0x136),'expertise',_0x43c63e(0x16a),_0x43c63e(0x1cc)]),DataConverterClass[_0x43c63e(0x149)]=[_0x43c63e(0x183),_0x43c63e(0x1b0),_0x43c63e(0x159),_0x43c63e(0x152),_0x43c63e(0x17c)],DataConverterClass['STUB_CLASS']={'name':_0x43c63e(0x1b5),'source':SRC_PHB,'classFeatures':[...new Array(Consts[_0x43c63e(0x13e)])][_0x43c63e(0x141)](()=>[])},DataConverterClass[_0x43c63e(0x16d)]={'name':_0x43c63e(0x1ac),'source':SRC_PHB,'subclassFeatures':[]};export{DataConverterClass};
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {UtilApplications} from "./UtilApplications.js";
+import {Config} from "./Config.js";
+import {DataConverter} from "./DataConverter.js";
+import {Vetools} from "./Vetools.js";
+import {UtilActors} from "./UtilActors.js";
+import {Consts} from "./Consts.js";
+import {UtilActiveEffects} from "./UtilActiveEffects.js";
+import {UtilCompendium} from "./UtilCompendium.js";
+import {DataConverterClassSubclassFeature} from "./DataConverterClassSubclassFeature.js";
+import {UtilDataConverter} from "./UtilDataConverter.js";
+import {
+	Charactermancer_Class_ProficiencyImportModeSelect,
+	PageFilterClassesFoundry,
+} from "./UtilCharactermancerClass.js";
+
+class DataConverterClass extends DataConverter {
+	static _SIDE_LOAD_OPTS = {
+		propBrew: "foundryClass",
+		fnLoadJson: async () => this.pPreloadSideData(),
+		propJson: "class",
+	};
+
+	static _SIDE_LOAD_OPTS_SUBCLASS = {
+		propBrew: "foundrySubclass",
+		fnLoadJson: async () => this.pPreloadSideData(),
+		propJson: "subclass",
+		propsMatch: ["classSource", "className", "source", "name"],
+	};
+
+	static _IMG_FALLBACK = `modules/${SharedConsts.MODULE_NAME}/media/icon/laurels.svg`;
+
+	static init () {
+		PageFilterClassesFoundry.setImplSideData("class", this);
+		PageFilterClassesFoundry.setImplSideData("subclass", this);
+	}
+
+	static _getDoNotUseNote () {
+		return UtilDataConverter.pGetWithDescriptionPlugins(() => `<p>${Renderer.get().render(`{@note Note: importing a class as an item is provided for display purposes only. If you wish to import a class to a character sheet, please use the importer on the sheet instead.}`)}</p>`);
+	}
+
+	static _getDataHitDice (cls) { return `d${(cls.hd || {}).faces || 6}`; }
+
+	static _getDataSaves (cls) {
+		return (cls.proficiency || [])
+			.filter(it => Parser.ATB_ABV_TO_FULL[it]);
+	}
+
+	static async pGetClassImagePath (cls, {isReturnDefault = true} = {}) {
+		if (cls.foundryImg) return cls.foundryImg;
+		const fromCompendium = await UtilCompendium.pGetCompendiumImage("class", cls);
+		if (fromCompendium) return fromCompendium;
+		return isReturnDefault ? `modules/${SharedConsts.MODULE_NAME}/media/icon/laurels.svg` : null;
+	}
+
+	static async _pGetSubclassImagePath (cls, sc) {
+		if (sc.foundryImg) return sc.foundryImg;
+		const fromCompendium = await UtilCompendium.pGetCompendiumImage("subclass", sc);
+		if (fromCompendium) return fromCompendium;
+		if (Config.get("importClass", "isUseDefaultSubclassImage")) {
+			const fromClass = await this.pGetClassImagePath(cls, {isReturnDefault: false});
+			if (fromClass) return fromClass;
+		}
+		return `modules/${SharedConsts.MODULE_NAME}/media/icon/laurels.svg`;
+	}
+
+	static _getIdentifier (clsOrSc) { return clsOrSc.name.slugify({strict: true}); }
+
+	/**
+	 * @param cls The class entry.
+	 * @param [opts] Options object.
+	 * @param [opts.sc]
+	 * @param [opts.isAddPermission]
+	 * @param [opts.defaultPermission]
+	 * @param [opts.filterValues] Pre-baked filter values to be re-used when importing this class from the item.
+	 * @param [opts.startingSkills] Chosen starting skills
+	 * @param [opts.proficiencyImportMode]
+	 * @param [opts.level]
+	 *
+	 * @param [opts.isClsDereferenced]
+	 *
+	 * @param [opts.isActorItem]
+	 * @param [opts.actor]
+	 *
+	 * @return {object}
+	 */
+	static async pGetClassItem (cls, opts) {
+		opts = opts || {};
+		if (opts.actor) opts.isActorItem = true;
+
+		if (!opts.isClsDereferenced) {
+			// Dereference features and render as a simple entity array
+			cls = MiscUtil.copy(cls);
+			cls = await DataUtil.class.pGetDereferencedClassData(cls);
+		}
+
+		const srdData = await UtilCompendium.getSrdCompendiumEntity("class", cls);
+
+		const identifierCls = this._getIdentifier(cls);
+
+		const img = await Vetools.pOptionallySaveImageToServerAndGetUrl(await this.pGetClassImagePath(cls));
+
+		const additionalData = await this._pGetDataSideLoaded(cls);
+		const additionalFlags = await this._pGetFlagsSideLoaded(cls);
+		const additionalAdvancement = await this._pGetAdvancementSideLoaded(cls);
+
+		// For actor items, effects are handled elsewhere during the import process
+		const effects = opts.isActorItem ? [] : await this._pGetEffectsSideLoaded({ent: cls, img});
+		DataConverter.mutEffectsDisabledTransfer(effects, "importClass");
+
+		const out = {
+			name: UtilApplications.getCleanEntityName(UtilDataConverter.getNameWithSourcePart(cls, {isActorItem: opts.isActorItem})),
+			type: "class",
+			data: {
+				identifier: identifierCls,
+				description: {
+					value: await this._pGetClassDescription(cls, opts),
+					chat: "",
+					unidentified: "",
+				},
+				source: UtilDataConverter.getSourceWithPagePart(cls),
+				levels: opts.level ?? Consts.CHAR_MAX_LEVEL,
+				hitDice: this._getDataHitDice(cls),
+				hitDiceUsed: 0,
+				spellcasting: {
+					progression: UtilActors.getMappedCasterType(cls.casterProgression) || cls.casterProgression,
+					ability: cls.spellcastingAbility,
+				},
+				saves: opts.proficiencyImportMode === Charactermancer_Class_ProficiencyImportModeSelect.MODE_PRIMARY
+					? this._getDataSaves(cls)
+					: [],
+				skills: {
+					number: opts.proficiencyImportMode === Charactermancer_Class_ProficiencyImportModeSelect.MODE_MULTICLASS
+						? (cls._cntStartingSkillChoicesMutliclass || 0)
+						: (cls._cntStartingSkillChoices || 0),
+					choices: opts.proficiencyImportMode === Charactermancer_Class_ProficiencyImportModeSelect.MODE_MULTICLASS
+						? this._getAllSkillChoices((MiscUtil.get(cls, "multiclassing", "proficienciesGained", "skills") || []))
+						: this._getAllSkillChoices((MiscUtil.get(cls, "startingProficiencies", "skills") || [])),
+					value: opts.startingSkills,
+				},
+				advancement: [
+					...(srdData?.data?.advancement || [])
+						.filter(it => it.type === "ScaleValue"),
+					...(additionalAdvancement || []),
+				],
+
+				...additionalData,
+			},
+			flags: {
+				...this._getClassSubclassFlags({
+					cls,
+					sc: opts.sc,
+					filterValues: opts.filterValues,
+					proficiencyImportMode: opts.proficiencyImportMode,
+					isActorItem: opts.isActorItem,
+				}),
+				...additionalFlags,
+			},
+			effects,
+			img,
+		};
+
+		if (opts.defaultPermission != null) out.permission = {default: opts.defaultPermission};
+		else if (opts.isAddPermission) out.permission = {default: Config.get("importClass", "permissions")};
+
+		return out;
+	}
+
+	static async _pGetClassDescription (cls, opts) {
+		const ptDoNotUse = !opts.isActorItem ? await this._getDoNotUseNote() : "";
+
+		const ptTable = await UtilDataConverter.pGetWithDescriptionPlugins(() => this.pGetRenderedClassTable(cls));
+
+		const ptFluff = cls?.fluff?.length
+			? Renderer.get().setFirstSection(true).render({type: cls.fluff[0].type || "section", entries: cls.fluff[0].entries || []})
+			: "";
+
+		const ptFeatures = !opts.isActorItem
+			? await UtilDataConverter.pGetWithDescriptionPlugins(() => Renderer.get().setFirstSection(true).render({type: "section", entries: cls.classFeatures.flat()}))
+			: "";
+
+		// Always import the note and the table
+		if (!Config.get("importClass", "isImportDescription")) return `<div class="mb-2 ve-flex-col">${ptDoNotUse}${ptTable}</div>`;
+
+		return `<div class="mb-2 ve-flex-col">${ptDoNotUse}${ptTable}${ptFluff}${ptFeatures}</div>`;
+	}
+
+	static _getClassSubclassFlags ({cls, sc, filterValues, proficiencyImportMode, isActorItem}) {
+		const out = {
+			[SharedConsts.MODULE_NAME_FAKE]: {
+				page: UrlUtil.PG_CLASSES,
+				source: cls.source,
+				hash: UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES](cls),
+
+				sourceSubclass: sc ? sc.source : null,
+				hashSubclass: sc ? UrlUtil.URL_TO_HASH_BUILDER["subclass"](sc) : null,
+
+				propDroppable: sc ? "subclass" : "class",
+				filterValues,
+
+				isPrimaryClass: proficiencyImportMode === Charactermancer_Class_ProficiencyImportModeSelect.MODE_PRIMARY,
+			},
+		};
+
+		if (isActorItem) out[SharedConsts.MODULE_NAME_FAKE].isDirectImport = true;
+
+		return out;
+	}
+
+	static _getAllSkillChoices (skillProfs) {
+		const allSkills = new Set();
+
+		skillProfs.forEach(skillProfGroup => {
+			Object.keys(Parser.SKILL_TO_ATB_ABV)
+				.filter(skill => skillProfGroup[skill])
+				.forEach(skill => allSkills.add(skill));
+
+			if (skillProfGroup.choose?.from?.length) {
+				skillProfGroup.choose.from
+					.filter(skill => Parser.SKILL_TO_ATB_ABV[skill])
+					.forEach(skill => allSkills.add(skill));
+			}
+		});
+
+		return Object.entries(UtilActors.SKILL_ABV_TO_FULL)
+			.filter(([, vetKey]) => allSkills.has(vetKey))
+			.map(([fvttKey]) => fvttKey);
+	}
+
+	/**
+	 * @param cls The class entry.
+	 * @param sc The subclass entry.
+	 * @param [opts] Options object.
+	 * @param [opts.isAddPermission]
+	 * @param [opts.defaultPermission]
+	 * @param [opts.filterValues] Pre-baked filter values to be re-used when importing this subclass from the item.
+	 * @param [opts.proficiencyImportMode]
+	 *
+	 * @param [opts.isScDereferenced]
+	 *
+	 * @param [opts.isActorItem]
+	 * @param [opts.actor]
+	 *
+	 * @return {object}
+	 */
+	static async pGetSubclassItem (cls, sc, opts) {
+		opts = opts || {};
+		if (opts.actor) opts.isActorItem = true;
+
+		if (!opts.isScDereferenced) {
+			// Dereference features and render as a simple entity array
+			sc = MiscUtil.copy(sc);
+			sc = await DataUtil.class.pGetDereferencedSubclassData(sc);
+		}
+
+		const srdData = await UtilCompendium.getSrdCompendiumEntity("subclass", sc);
+
+		const identifierCls = this._getIdentifier(cls);
+		const identifierSc = this._getIdentifier(sc);
+
+		// Use the image of the parent class
+		const img = await Vetools.pOptionallySaveImageToServerAndGetUrl(await this._pGetSubclassImagePath(cls, sc));
+
+		// For actor items, effects are handled elsewhere during the import process
+		const additionalData = await this._pGetDataSideLoaded(sc, {propOpts: "_SIDE_LOAD_OPTS_SUBCLASS"});
+		const additionalFlags = await this._pGetFlagsSideLoaded(sc, {propOpts: "_SIDE_LOAD_OPTS_SUBCLASS"});
+		const additionalAdvancement = await this._pGetAdvancementSideLoaded(sc, {propOpts: "_SIDE_LOAD_OPTS_SUBCLASS"});
+
+		const effects = opts.isActorItem ? [] : await this._pGetEffectsSideLoaded({ent: sc, img}, {propOpts: "_SIDE_LOAD_OPTS_SUBCLASS"});
+		DataConverter.mutEffectsDisabledTransfer(effects, "importClass");
+
+		const out = {
+			name: UtilApplications.getCleanEntityName(UtilDataConverter.getNameWithSourcePart(sc, {isActorItem: opts.isActorItem})),
+			type: "subclass",
+			data: {
+				identifier: identifierSc,
+				classIdentifier: identifierCls,
+				description: {
+					value: await this._pGetSubclassDescription(cls, sc, opts),
+					chat: "",
+					unidentified: "",
+				},
+				source: UtilDataConverter.getSourceWithPagePart(sc),
+				spellcasting: {
+					progression: UtilActors.getMappedCasterType(sc.casterProgression) || sc.casterProgression,
+					ability: sc.spellcastingAbility,
+				},
+				advancement: [
+					...(srdData?.data?.advancement || [])
+						.filter(it => it.type === "ScaleValue"),
+					...(additionalAdvancement || []),
+				],
+
+				...additionalData,
+			},
+			flags: {
+				...this._getClassSubclassFlags({
+					cls,
+					sc,
+					filterValues: opts.filterValues,
+					proficiencyImportMode: opts.proficiencyImportMode,
+					isActorItem: opts.isActorItem,
+				}),
+				...additionalFlags,
+			},
+			effects,
+			img,
+		};
+
+		if (opts.defaultPermission != null) out.permission = {default: opts.defaultPermission};
+		else if (opts.isAddPermission) out.permission = {default: Config.get("importClass", "permissions")};
+
+		return out;
+	}
+
+	static async _pGetSubclassDescription (cls, sc, opts) {
+		const ptDoNotUse = !opts.isActorItem ? await this._getDoNotUseNote() : "";
+
+		// region """Fluff"""
+		const cleanEntries = MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST})
+			.walk(
+				MiscUtil.copy(sc._fluff.entries),
+				{
+					array: (arr) => {
+						return arr.filter(it => !it?.data?.isFvttSyntheticFeatureLink);
+					},
+				},
+			);
+
+		// Avoid rendering the "fluff" for non-actor items, as it is included in the features render
+		const ptFluff = opts.isActorItem
+			? Renderer.get().setFirstSection(true).render({type: "entries", entries: cleanEntries})
+			: "";
+		// endregion
+
+		const ptFeatures = !opts.isActorItem
+			? await UtilDataConverter.pGetWithDescriptionPlugins(() => Renderer.get().setFirstSection(true).render({type: "section", entries: sc.subclassFeatures.flat()}))
+			: "";
+
+		// Always import the note
+		if (!Config.get("importClass", "isImportDescription")) return `<div class="mb-2 ve-flex-col">${ptDoNotUse}</div>`;
+
+		return `<div class="mb-2 ve-flex-col">${ptDoNotUse}${ptFluff}${ptFeatures}</div>`;
+	}
+
+	static async pGetClassSubclassFeatureItem (loaded, actor) {
+		// "type" is either "classFeature" or "subclassFeature"
+		const {entity, type} = loaded;
+		return DataConverterClassSubclassFeature.pGetClassSubclassFeatureItem(entity, {type, actor});
+	}
+
+	// region Effects, generally defined in side-loaded data
+	static getItemEffects (actor, effectRaw, sheetItem) {
+		return this._getClassSubclassItemEffects(actor, sheetItem, [effectRaw]);
+	}
+
+	static async pHasClassSideLoadedEffects ({cls}) {
+		const allEffects = await this._pGetClassSubclassItemEffectsRaw({cls});
+		return !!allEffects.length;
+	}
+
+	static async pHasSubclassSideLoadedEffects ({sc}) {
+		const allEffects = await this._pGetClassSubclassItemEffectsRaw({sc});
+		return !!allEffects.length;
+	}
+
+	static async pGetClassItemEffects ({actor, cls, sheetItem}) {
+		const allEffects = await this._pGetClassSubclassItemEffectsRaw({cls});
+		return this._getClassSubclassItemEffects(actor, sheetItem, allEffects, {parentName: cls.name});
+	}
+
+	static async pGetSubclassItemEffects ({actor, sc, sheetItem}) {
+		const allEffects = await this._pGetClassSubclassItemEffectsRaw({sc});
+		return this._getClassSubclassItemEffects(actor, sheetItem, allEffects, {parentName: sc.name});
+	}
+
+	static async _pGetClassSubclassItemEffectsRaw ({cls, sc}) {
+		const sideDataCls = cls ? await this.pGetSideLoadedMatch(cls, "class") : {};
+		const sideDataSc = sc ? await this.pGetSideLoadedMatch(sc, "subclass") : {};
+
+		const additionalEffectsRawCls = cls
+			? await DataConverter._pGetStarSideLoadedFound(cls, {propFromEntity: "foundryEffects", propFromSideLoaded: "effects", found: sideDataCls})
+			: null;
+		const additionalEffectsRawSc = sc
+			? await DataConverter._pGetStarSideLoadedFound(sc, {propFromEntity: "foundryEffects", propFromSideLoaded: "effects", found: sideDataSc})
+			: null;
+
+		return [...(additionalEffectsRawCls || []), ...(additionalEffectsRawSc || [])];
+	}
+
+	static _getClassSubclassItemEffects (actor, sheetItem, effects, {parentName = ""} = {}) {
+		return UtilActiveEffects.getExpandedEffects(effects, {actor, sheetItem, parentName});
+	}
+	// endregion
+
+	static async pPreloadSideData () {
+		if (!DataConverterClass._SIDE_DATA) DataConverterClass._SIDE_DATA = await Vetools.pGetClassSubclassSideData();
+		return DataConverterClass._SIDE_DATA;
+	}
+
+	static async pGetSideLoadedMatch (entity, type) {
+		if (!entity) return null;
+
+		const brew = await BrewUtil2.pGetBrewProcessed();
+
+		switch (type) {
+			case "class": {
+				let found = (MiscUtil.get(brew, "foundryClass") || []).find(it => it.name === entity.name && it.source === entity.source);
+
+				if (!found) {
+					const additionalData = await this.pPreloadSideData();
+					found = (additionalData.class || []).find(it => it.name === entity.name && it.source === entity.source);
+				}
+
+				if (!found) return null;
+				return found;
+			}
+
+			case "subclass": {
+				let found = (MiscUtil.get(brew, "foundrySubclass") || []).find(it => it.name === entity.name && it.source === entity.source && it.className === entity.className && it.classSource === entity.classSource);
+
+				if (!found) {
+					const additionalData = await this.pPreloadSideData();
+					found = (additionalData.subclass || []).find(it => it.name === entity.name && it.source === entity.source && it.className === entity.className && it.classSource === entity.classSource);
+				}
+
+				if (!found) return null;
+				return found;
+			}
+
+			default: throw new Error(`Unhandled type "${type}"`);
+		}
+	}
+
+	/** Ported from `_render_renderClassTable` */
+	static async pGetRenderedClassTable (cls, sc, opts = {}) {
+		if (!Config.get("importClass", "isImportClassTable")) return "";
+
+		return UtilDataConverter.pGetWithDescriptionPlugins(async () => {
+			// region Get dereferenced class data, so that the features are available
+			cls = MiscUtil.copy(cls);
+			cls = await DataUtil.class.pGetDereferencedClassData(cls);
+
+			if (sc) {
+				sc = MiscUtil.copy(sc);
+				sc = await DataUtil.class.pGetDereferencedSubclassData(sc);
+			}
+			// endregion
+
+			return this.getRenderedClassTableFromDereferenced(cls, sc, opts);
+		});
+	}
+
+	static getRenderedClassTableFromDereferenced (cls, sc, {isAddHeader = false, isSpellsOnly = false} = {}) {
+		if (!cls) return "";
+
+		Renderer.get().setFirstSection(true);
+
+		const tblGroupHeaders = [];
+		const tblHeaders = [];
+
+		const renderTableGroupHeader = (tableGroup) => {
+			// Render titles (top section)
+			let thGroupHeader;
+			if (tableGroup.title) {
+				thGroupHeader = `<th class="cls-tbl__col-group" colspan="${tableGroup.colLabels.length}">${tableGroup.title}</th>`;
+			} else {
+				// if there's no title, add a spacer
+				thGroupHeader = `<th colspan="${tableGroup.colLabels.length}"></th>`;
+			}
+			tblGroupHeaders.push(thGroupHeader);
+
+			// Render column headers (bottom section)
+			tableGroup.colLabels.forEach(lbl => {
+				tblHeaders.push(`<th class="cls-tbl__col-generic-center"><div class="cls__squash_header">${Renderer.get().render(lbl)}</div></th>`);
+			});
+		};
+
+		if (cls.classTableGroups) {
+			cls.classTableGroups.forEach(tableGroup => {
+				if (isSpellsOnly) tableGroup = this._getRenderedClassTableFromDereferenced_getSpellsOnlyTableGroup(tableGroup);
+				if (!tableGroup) return;
+				renderTableGroupHeader(tableGroup);
+			});
+		}
+
+		if (sc?.subclassTableGroups) {
+			sc.subclassTableGroups.forEach(tableGroup => {
+				if (isSpellsOnly) tableGroup = this._getRenderedClassTableFromDereferenced_getSpellsOnlyTableGroup(tableGroup);
+				if (!tableGroup) return;
+				renderTableGroupHeader(tableGroup);
+			});
+		}
+
+		const tblRows = cls.classFeatures.map((lvlFeatures, ixLvl) => {
+			const pb = Math.ceil((ixLvl + 1) / 4) + 1;
+
+			const lvlFeaturesFilt = lvlFeatures
+				.filter(it => it.name && it.type !== "inset"); // don't add inset entry names to class table
+
+			const dispsFeatures = lvlFeaturesFilt
+				.map((it, ixFeature) => `<div class="inline-block">${it.name}${ixFeature === lvlFeaturesFilt.length - 1 ? "" : `<span class="mr-1">,</span>`}</div>`);
+
+			const ptTableGroups = [];
+
+			const renderTableGroupRow = (tableGroup) => {
+				const row = (tableGroup.rowsSpellProgression || tableGroup.rows)[ixLvl] || [];
+				const cells = row.map(cell => `<td class="cls-tbl__col-generic-center">${cell === 0 ? "\u2014" : Renderer.get().render(cell)}</td>`);
+				ptTableGroups.push(...cells);
+			};
+
+			if (cls.classTableGroups) {
+				cls.classTableGroups.forEach(tableGroup => {
+					if (isSpellsOnly) tableGroup = this._getRenderedClassTableFromDereferenced_getSpellsOnlyTableGroup(tableGroup);
+					if (!tableGroup) return;
+					renderTableGroupRow(tableGroup);
+				});
+			}
+
+			if (sc?.subclassTableGroups) {
+				sc.subclassTableGroups.forEach(tableGroup => {
+					if (isSpellsOnly) tableGroup = this._getRenderedClassTableFromDereferenced_getSpellsOnlyTableGroup(tableGroup);
+					if (!tableGroup) return;
+					renderTableGroupRow(tableGroup);
+				});
+			}
+
+			return `<tr class="cls-tbl__stripe-odd">
+				<td class="cls-tbl__col-level">${Parser.getOrdinalForm(ixLvl + 1)}</td>
+				${isSpellsOnly ? "" : `<td class="cls-tbl__col-prof-bonus">+${pb}</td>`}
+				${isSpellsOnly ? "" : `<td>${dispsFeatures.join("") || `\u2014`}</td>`}
+				${ptTableGroups.join("")}
+			</tr>`;
+		});
+
+		// Don't add a class name header, as we assume this will be embedded in some UI that already has one.
+		return `<table class="cls-tbl shadow-big w-100 mb-3">
+			<tbody>
+			<tr><th class="border" colspan="15"></th></tr>
+			${isAddHeader ? `<tr><th class="cls-tbl__disp-name" colspan="15">${cls.name}</th></tr>` : ""}
+			<tr>
+				<th colspan="${isSpellsOnly ? "1" : "3"}"></th>
+				${tblGroupHeaders.join("")}
+			</tr>
+			<tr>
+				<th class="cls-tbl__col-level">Level</th>
+				${isSpellsOnly ? "" : `<th class="cls-tbl__col-prof-bonus">Proficiency Bonus</th>`}
+				${isSpellsOnly ? "" : `<th>Features</th>`}
+				${tblHeaders.join("")}
+			</tr>
+			${tblRows.join("")}
+			<tr><th class="border" colspan="15"></th></tr>
+			</tbody>
+		</table>`;
+	}
+
+	static _getRenderedClassTableFromDereferenced_getSpellsOnlyTableGroup (tableGroup) {
+		tableGroup = MiscUtil.copy(tableGroup);
+
+		if (/spell/i.test(`${tableGroup.title || ""}`)) return tableGroup;
+
+		if (!tableGroup.colLabels) return null;
+
+		const ixsSpellLabels = new Set(tableGroup.colLabels
+			.map((it, ix) => {
+				const stripped = Renderer.stripTags(`${it || ""}`);
+				return /cantrip|spell|slot level/i.test(stripped) ? ix : null;
+			})
+			.filter(ix => ix != null));
+
+		if (!ixsSpellLabels.size) return null;
+
+		tableGroup.colLabels = tableGroup.colLabels.filter((_, ix) => ixsSpellLabels.has(ix));
+		if (tableGroup.rowsSpellProgression) tableGroup.rowsSpellProgression = tableGroup.rowsSpellProgression.map(row => row.filter((_, ix) => ixsSpellLabels.has(ix)));
+		if (tableGroup.rows) tableGroup.rows = tableGroup.rows.map(row => row.filter((_, ix) => ixsSpellLabels.has(ix)));
+
+		return tableGroup;
+	}
+
+	static isStubClass (cls) {
+		if (!cls) return false;
+		return cls.name === DataConverterClass.STUB_CLASS.name && cls.source === DataConverterClass.STUB_CLASS.source;
+	}
+
+	static isStubSubclass (sc) {
+		if (!sc) return false;
+		return sc.name === DataConverterClass.STUB_SUBCLASS.name && sc.source === DataConverterClass.STUB_SUBCLASS.source;
+	}
+
+	static getClassStub () {
+		const out = MiscUtil.copy(DataConverterClass.STUB_CLASS);
+		out.subclasses = [
+			{
+				...MiscUtil.copy(DataConverterClass.STUB_SUBCLASS),
+				className: out.name,
+				classSource: out.source,
+			},
+		];
+		return out;
+	}
+
+	static getSubclassStub ({cls}) {
+		const out = MiscUtil.copy(DataConverterClass.STUB_SUBCLASS);
+		out.className = cls.name;
+		out.classSource = cls.source;
+		return out;
+	}
+}
+DataConverterClass._SIDE_DATA = null;
+
+// region Fake data used in place of missing records when levelling up
+//   (i.e. if the same set of sources have not been selected when re-opening the Charactermancer)
+DataConverterClass.STUB_CLASS = {
+	name: "Unknown Class",
+	source: SRC_PHB,
+	classFeatures: [...new Array(Consts.CHAR_MAX_LEVEL)].map(() => []),
+	_isStub: true,
+};
+DataConverterClass.STUB_SUBCLASS = {
+	name: "Unknown Subclass",
+	source: SRC_PHB,
+	subclassFeatures: [],
+	_isStub: true,
+};
+// endregion
+
+export {DataConverterClass};

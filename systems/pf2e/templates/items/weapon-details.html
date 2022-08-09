@@ -1,173 +1,159 @@
 <div class="form-group">
     <label>{{localize "PF2E.WeaponTypeLabel"}}</label>
-    <select name="data.weaponType.value" data-dtype="String">
-        {{#select data.weaponType.value}}
-            {{#each weaponTypes as |name type|}}
+    <select name="data.category">
+        {{#select data.category}}
+            {{#each categories as |name type|}}
                 <option value="{{type}}">{{localize name}}</option>
-            {{/each}}
-        {{/select}}
-        {{#select data.weaponType.value}}
-            {{#each martialSkills as |martial key|}}
-                <option value="{{martial._id}}">{{localize martial.name}}</option>
             {{/each}}
         {{/select}}
     </select>
 </div>
-
 <div class="form-group">
     <label>{{localize "PF2E.WeaponGroupLabel"}}</label>
-    <select name="data.group.value" data-dtype="String">
-        {{#select data.group.value}}
-            {{#each weaponGroups as |name type|}}
-                <option value="{{type}}">{{localize name}}</option>
-            {{/each}}
-        {{/select}}
-    </select>
+    {{#if isComboWeapon}}
+        <select disabled="disabled">
+            <option value="firearm">{{localize "PF2E.WeaponGroupFirearm"}}</option>
+        </select>
+        <input type="hidden" name="data.group" value="firearm" />
+    {{else}}
+        <select name="data.group">
+            {{#select data.group}}
+                <option value=""></option>
+                {{#each groups as |name type|}}
+                    <option value="{{type}}">{{localize name}}</option>
+                {{/each}}
+            {{/select}}
+        </select>
+    {{/if}}
 </div>
-
 <div class="form-group">
     <label>{{localize "PF2E.WeaponBaseLabel"}}</label>
-    <select name="data.baseItem" data-dtype="String">
+    <select name="data.baseItem">
         {{#select data.baseItem}}
             <option value=""></option>
-            {{#each baseWeapons as |name slug|}}
+            {{#each baseTypes as |name slug|}}
                 <option value="{{slug}}">{{name}}</option>
             {{/each}}
         {{/select}}
     </select>
 </div>
-
-{{#unless isBomb }}
+<div class="form-group">
+    <label>
+        {{localize "PF2E.WeaponRangeLabel"}}
+        {{#if mandatoryMelee}}
+            <i class="fas fa-info-circle small" title="{{localize "PF2E.Item.Weapon.MandatoryMelee"}}"></i>
+        {{/if}}
+    </label>
+    <select name="data.range" data-dtype="Number" {{disabled mandatoryMelee}}>
+        {{#select data.range}}
+            {{#unless mandatoryRanged}}<option value="">{{localize "PF2E.Item.Weapon.NoRangeMelee"}}</option>{{/unless}}
+            {{#each weaponRanges as |label range|}}
+                <option value="{{range}}">{{localize label range=range}}</option>
+            {{/each}}
+        {{/select}}
+    </select>
+</div>
+{{#if data.range}}
+    <div class="form-group">
+        <label>{{localize "PF2E.WeaponReloadLabel"}}</label>
+        <select name="data.reload.value">
+            {{#select data.reload.value}}
+                <option value=""></option>
+                {{#each weaponReload as |name type|}}
+                    <option value="{{type}}">{{localize name}}</option>
+                {{/each}}
+            {{/select}}
+        </select>
+    </div>
+{{/if}}
+<div class="form-group">
+    <label>{{localize "PF2E.WeaponMAPLabel"}}</label>
+    <select name="data.MAP.value">
+        {{#select data.MAP.value}}
+            <option value="">{{localize "PF2E.WeaponMAPDefaultOption"}}</option>
+            {{#each weaponMAP as |name type|}}
+                <option value="{{type}}">{{name}}</option>
+            {{/each}}
+        {{/select}}
+    </select>
+</div>
+{{#unless isBomb}}
     <ol class="form-list">
-        <li class="form-group">
-            <label>
-                {{localize "PF2E.WeaponMaterialLabel"}}
-            </label>
-        </li>
-
+        <h3>
+            {{localize "PF2E.Item.Weapon.MaterialAndRunes.Title"}}
+            <i class="fas fa-info-circle large" title="{{localize "PF2E.Item.Weapon.MaterialAndRunes.Hint"}}"></i>
+        </h3>
         <div class="form-group">
             <label>{{localize "PF2E.PreciousMaterialLabel"}}</label>
-            <select name="data.preciousMaterial.value" data-dtype="String">
-                {{#select data.preciousMaterial.value}}
-                    <option value=""></option>
-                    {{#each preciousMaterials as |name type|}}
-                        <option value="{{type}}">{{localize name}}</option>
-                    {{/each}}
-                {{/select}}
+            <select name="preciousMaterial">
+                <option value=""></option>
+                {{#each preciousMaterials as |material materialKey|}}
+                    <optgroup label="{{material.label}}">
+                        {{#each material as |grade gradeKey|}}
+                            {{#if grade.label}}
+                                <option value="{{materialKey}}-{{gradeKey}}"{{#if grade.selected}} selected="selected"{{/if}}>
+                                    {{localize "PF2E.Item.Weapon.MaterialAndRunes.MaterialOption" type=material.label grade=grade.label}}
+                                </option>
+                            {{/if}}
+                        {{/each}}
+                    </optgroup>
+                {{/each}}
             </select>
         </div>
-
+        {{#unless abpEnabled}}
+            <div class="form-group">
+                <label>{{localize "PF2E.PotencyRuneLabel"}}</label>
+                <select name="data.potencyRune.value" data-dtype="Number">
+                    {{#select data.potencyRune.value}}
+                        <option value="0"></option>
+                        {{#each weaponPotencyRunes as |name type|}}
+                            <option value="{{type}}">{{localize name}}</option>
+                        {{/each}}
+                    {{/select}}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>{{localize "PF2E.StrikingRuneLabel"}}</label>
+                <select name="data.strikingRune.value">
+                    {{#select data.strikingRune.value}}
+                        <option value=""></option>
+                        {{#each weaponStrikingRunes as |name type|}}
+                            <option value="{{type}}">{{localize name}}</option>
+                        {{/each}}
+                    {{/select}}
+                </select>
+            </div>
+        {{/unless}}
+        {{#each propertyRuneSlots as |slot|}}
+            <div class="form-group">
+                <label>{{slot.label}}</label>
+                {{#if @root.data.specific.value}}
+                    <input type="hidden" name="{{slot.name}}" value="{{slot.value}}" data-dtype="String" />
+                {{/if}}
+                <select{{#if (not @root.data.specific.value)}} name="{{slot.name}}"{{/if}} {{disabled @root.data.specific.value}}>
+                    {{#select slot.value}}
+                        <option value=""></option>
+                        {{#each @root.weaponPropertyRunes as |label type|}}
+                            <option value="{{type}}">{{localize label}}</option>
+                        {{/each}}
+                    {{/select}}
+                </select>
+            </div>
+        {{/each}}
         <div class="form-group">
-            <label>{{localize "PF2E.PreciousMaterialGradeLabel"}}</label>
-            <select name="data.preciousMaterialGrade.value" data-dtype="String">
-                {{#select data.preciousMaterialGrade.value}}
-                    <option value=""></option>
-                    {{#each preciousMaterialGrades as |name type|}}
-                        <option value="{{type}}">{{localize name}}</option>
-                    {{/each}}
-                {{/select}}
-            </select>
-        </div>
-    </ol>
-
-    <ol class="form-list">
-        <li class="form-group">
-            <label>
-                {{localize "PF2E.WeaponRunesLabel"}}
+            <label class="large">
+                {{localize "PF2E.Item.Weapon.SpecificMagicWeapon.Label"}}
+                <i class="fas fa-info-circle large" title="{{localize "PF2E.Item.Weapon.SpecificMagicWeapon.Hint"}}"></i>
             </label>
-        </li>
-
-        <div class="form-group">
-            <label>{{localize "PF2E.PotencyRuneLabel"}}</label>
-            <select name="data.potencyRune.value" data-dtype="Number">
-                {{#select data.potencyRune.value}}
-                    <option value="0"></option>
-                    {{#each weaponPotencyRunes as |name type|}}
-                        <option value="{{type}}">{{localize name}}</option>
-                    {{/each}}
-                {{/select}}
-            </select>
+            <input type="checkbox" name="data.specific.value" {{checked data.specific.value}} />
         </div>
-
-        <div class="form-group">
-            <label>{{localize "PF2E.StrikingRuneLabel"}}</label>
-            <select name="data.strikingRune.value" data-dtype="String">
-                {{#select data.strikingRune.value}}
-                <option value=""></option>
-                {{#each weaponStrikingRunes as |name type|}}
-                <option value="{{type}}">{{localize name}}</option>
-                {{/each}}
-                {{/select}}
-            </select>
-        </div>
-
-        {{#if propertyRuneSlots1}}
-        <div class="form-group">
-            <label>{{localize "PF2E.PropertyRuneLabel1"}}</label>
-            <select name="data.propertyRune1.value" data-dtype="String">
-                {{#select data.propertyRune1.value}}
-                <option value=""></option>
-                {{#each weaponPropertyRunes as |name type|}}
-                <option value="{{type}}">{{localize name}}</option>
-                {{/each}}
-                {{/select}}
-            </select>
-        </div>
-        {{/if}}
-
-        {{#if propertyRuneSlots2}}
-        <div class="form-group">
-            <label>{{localize "PF2E.PropertyRuneLabel2"}}</label>
-            <select name="data.propertyRune2.value" data-dtype="String">
-                {{#select data.propertyRune2.value}}
-                <option value=""></option>
-                {{#each weaponPropertyRunes as |name type|}}
-                <option value="{{type}}">{{localize name}}</option>
-                {{/each}}
-                {{/select}}
-            </select>
-        </div>
-        {{/if}}
-
-        {{#if propertyRuneSlots3}}
-        <div class="form-group">
-            <label>{{localize "PF2E.PropertyRuneLabel3"}}</label>
-            <select name="data.propertyRune3.value" data-dtype="String">
-                {{#select data.propertyRune3.value}}
-                <option value=""></option>
-                {{#each weaponPropertyRunes as |name type|}}
-                <option value="{{type}}">{{localize name}}</option>
-                {{/each}}
-                {{/select}}
-            </select>
-        </div>
-        {{/if}}
-
-        {{#if propertyRuneSlots4}}
-        <div class="form-group">
-            <label>{{localize "PF2E.PropertyRuneLabel4"}}</label>
-            <select name="data.propertyRune4.value" data-dtype="String">
-                {{#select data.propertyRune4.value}}
-                <option value=""></option>
-                {{#each weaponPropertyRunes as |name type|}}
-                <option value="{{type}}">{{localize name}}</option>
-                {{/each}}
-                {{/select}}
-            </select>
-        </div>
-        {{/if}}
     </ol>
 {{/unless}}
-
-
 <ol class="form-list">
-    <li class="form-group">
-        <label title="{{localize "PF2E.WeaponBaseDamageTitle"}}">
-            {{localize "PF2E.WeaponBaseDamageLabel"}}
-            <i class="fas fa-info-circle"></i>
-        </label>
-    </li>
-
+    <h3>
+        {{localize "PF2E.WeaponBaseDamageLabel"}}
+        <i class="fas fa-info-circle large" title="{{localize "PF2E.WeaponBaseDamageTitle"}}"></i>
+    </h3>
     <div class="form-group">
         <label>{{localize "PF2E.WeaponDamageLabel"}}</label>
         <div class="details-container-three-columns">
@@ -178,7 +164,7 @@
                     {{/each}}
                 {{/select}}
             </select>
-            <select name="data.damage.die" data-dtype="String">
+            <select name="data.damage.die">
                 {{#select data.damage.die}}
                     <option value=""></option>
                     {{#each damageDie as |name type|}}
@@ -186,9 +172,9 @@
                     {{/each}}
                 {{/select}}
             </select>
-            <select name="data.damage.damageType" data-dtype="String">
+            <select name="data.damage.damageType">
                 {{#select data.damage.damageType}}
-                    {{#each weaponDamage as |name type|}}
+                    {{#each damageTypes as |name type|}}
                         <option value="{{type}}">{{localize name}}</option>
                     {{/each}}
                 {{/select}}
@@ -197,34 +183,30 @@
     </div>
 
     {{#if isBomb}}
-    <div class="form-group">
-        <label>{{localize "PF2E.WeaponBonusAttackLabel"}}</label>
-        <input type="number" name="data.bonus.value" value="{{data.bonus.value}}" data-dtype="Number"/>
-    </div>
+        <div class="form-group">
+            <label>{{localize "PF2E.WeaponBonusAttackLabel"}}</label>
+            <input type="number" name="data.bonus.value" value="{{data.bonus.value}}" />
+        </div>
     {{/if}}
 
     <div class="form-group">
-      <label>{{localize "PF2E.WeaponSplashDamageLabel"}}</label>
-      <input type="number" name="data.splashDamage.value" value="{{data.splashDamage.value}}" data-dtype="Number"/>
+        <label>{{localize "PF2E.WeaponSplashDamageLabel"}}</label>
+        <input type="number" name="data.splashDamage.value" value="{{data.splashDamage.value}}" />
     </div>
 
     <div class="form-group">
         <label>{{localize "PF2E.WeaponBonusDamageLabel"}}</label>
-        <input type="number" name="data.bonusDamage.value" value="{{data.bonusDamage.value}}" data-dtype="Number"/>
+        <input type="number" name="data.bonusDamage.value" value="{{data.bonusDamage.value}}" />
     </div>
 </ol>
-
 <ol class="form-list">
-    <li class="form-group">
-        <label title="{{localize "PF2E.WeaponCustomDamageTitle"}}">
-            {{localize "PF2E.WeaponCustomDamageLabel"}}
-            <i class="fas fa-info-circle"></i>
-        </label>
-    </li>
-
+    <h3>
+        {{localize "PF2E.WeaponCustomDamageLabel"}}
+        <i class="fas fa-info-circle large" title="{{localize "PF2E.WeaponCustomDamageTitle"}}"></i>
+    </h3>
     <li class="form-group">
         <label>{{localize "PF2E.ItemDescription"}}</label>
-        <input type="text" name="data.property1.value" value="{{data.property1.value}}" data-dtype="String"/>
+        <input type="text" name="data.property1.value" value="{{data.property1.value}}" />
     </li>
 
     <li class="form-group">
@@ -238,7 +220,7 @@
                     {{/each}}
                 {{/select}}
             </select>
-            <select name="data.property1.die" data-dtype="String">
+            <select name="data.property1.die">
                 {{#select data.property1.die}}
                     <option value=""></option>
                     {{#each damageDie as |name type|}}
@@ -246,7 +228,7 @@
                     {{/each}}
                 {{/select}}
             </select>
-            <select name="data.property1.damageType" data-dtype="String">
+            <select name="data.property1.damageType">
                 {{#select data.property1.damageType}}
                     <option value=""></option>
                     {{#each damageTypes as |name type|}}
@@ -256,11 +238,10 @@
             </select>
         </div>
     </li>
-
     <li class="form-group">
         <label>{{localize "PF2E.WeaponPropertyStrikeEffectLabel"}}</label>
         <div class="effects-container">
-            <select name="data.property1.strikeConditionType" data-dtype="String">
+            <select name="data.property1.strikeConditionType">
                 {{#select data.property1.strikeConditionType}}
                     <option value=""></option>
                     {{#each conditionTypes as |name type|}}
@@ -278,7 +259,6 @@
             </select>
         </div>
     </li>
-
     <li class="form-group">
         <label>{{localize "PF2E.WeaponPropertyCriticalDamageLabel"}}</label>
         <div class="details-container">
@@ -290,7 +270,7 @@
                     {{/each}}
                 {{/select}}
             </select>
-            <select name="data.property1.critDie" data-dtype="String">
+            <select name="data.property1.critDie">
                 {{#select data.property1.critDie}}
                     <option value=""></option>
                     {{#each damageDie as |name type|}}
@@ -298,21 +278,20 @@
                     {{/each}}
                 {{/select}}
             </select>
-            <select name="data.property1.critDamageType" data-dtype="String">
+            <select name="data.property1.critDamageType">
                 {{#select data.property1.critDamageType}}
                     <option value=""></option>
                     {{#each damageTypes as |name type|}}
-                        <option value="{{type}}">{{localize name}}</option>
+                        <option value="{{type}}">{{label}}</option>
                     {{/each}}
                 {{/select}}
             </select>
         </div>
     </li>
-
     <li class="form-group">
         <label>{{localize "PF2E.WeaponPropertyCriticalEffectLabel"}}</label>
         <div class="effects-container">
-            <select name="data.property1.criticalConditionType" data-dtype="String">
+            <select name="data.property1.criticalConditionType">
                 {{#select data.property1.criticalConditionType}}
                     <option value=""></option>
                     {{#each conditionTypes as |name type|}}
@@ -331,68 +310,82 @@
         </div>
     </li>
 </ol>
-
-<div class="form-group">
-    <label>{{localize "PF2E.WeaponRangeLabel"}}</label>
-    <select name="data.range.value" data-dtype="String">
-        {{#select data.range.value}}
-            <option value=""></option>
-            {{#each weaponRange as |name type|}}
-                <option value="{{type}}">{{localize name}}</option>
-            {{/each}}
-        {{/select}}
-    </select>
-</div>
-
-
-<div class="form-group">
-    <label>{{localize "PF2E.WeaponReloadLabel"}}</label>
-    <select name="data.reload.value" data-dtype="String">
-        {{#select data.reload.value}}
-            <option value=""></option>
-            {{#each weaponReload as |name type|}}
-                <option value="{{type}}">{{name}}</option>
-            {{/each}}
-        {{/select}}
-    </select>
-</div>
-
-<div class="form-group">
-    <label>{{localize "PF2E.WeaponAbilityLabel"}}</label>
-    <select name="data.ability.value" data-dtype="String">
-        {{#select data.ability.value}}
-            {{#each abilities as |ability a|}}
-                <option value="{{a}}">{{localize ability}}</option>
-            {{/each}}
-        {{/select}}
-    </select>
-</div>
-
-<div class="form-group">
-    <label>{{localize "PF2E.WeaponMAPLabel"}}</label>
-    <select name="data.MAP.value" data-dtype="String">
-        {{#select data.MAP.value}}
-            <option value="">{{localize "PF2E.WeaponMAPDefaultOption"}}</option>
-            {{#each weaponMAP as |name type|}}
-                <option value="{{type}}">{{name}}</option>
-            {{/each}}
-        {{/select}}
-    </select>
-</div>
+{{#if isComboWeapon}}
+    <ol class="form-list">
+        <h3>
+            {{localize "PF2E.Item.Weapon.MeleeUsage.Label"}}
+            <i class="fas fa-info-circle large" title="{{localize "PF2E.Item.Weapon.MeleeUsage.Hint"}}"></i>
+        </h3>
+        <div class="form-group">
+            <label>{{localize "PF2E.WeaponGroupLabel"}}</label>
+            <select name="data.meleeUsage.group">
+                {{#select meleeUsage.group}}
+                    {{#each meleeGroups as |name type|}}
+                        <option value="{{type}}">{{localize name}}</option>
+                    {{/each}}
+                {{/select}}
+            </select>
+        </div>
+        <div class="form-group">
+            <label>{{localize "PF2E.WeaponDamageLabel"}}</label>
+            <div class="details-container-three-columns">
+                <select name="data.meleeUsage.damage.die">
+                    {{#select meleeUsage.damage.die}}
+                        {{#each damageDie as |value faces|}}
+                            <option value="{{faces}}">1{{faces}}</option>
+                        {{/each}}
+                    {{/select}}
+                </select>
+                <select name="data.meleeUsage.damage.type">
+                    {{#select meleeUsage.damage.type}}
+                        {{#each damageTypes as |label type|}}
+                            <option value="{{type}}">{{label}}</option>
+                        {{/each}}
+                    {{/select}}
+                </select>
+            </div>
+        </div>
+        <div class="form-group-stacked">
+            <label>
+                {{localize "PF2E.TraitsLabel"}}
+                <a class="trait-selector" data-trait-selector="basic" data-config-types="weaponTraits" data-property="data.meleeUsage.traits" data-no-custom="true" data-flat="true">
+                    <i class="fas fa-edit"></i>
+                </a>
+            </label>
+            <ul class="traits-list tags">
+                {{#each meleeUsageTraits as |trait|}}
+                    <li class="tag">{{trait.label}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </ol>
+{{/if}}
 
 <div class="form-group-stacked">
     <label>
         {{localize "PF2E.TraitsLabel"}}
-        <a class="trait-selector" data-trait-selector="basic" data-config-types="weaponTraits" data-property="data.traits"><i class="fas fa-edit"></i></a>
+        {{#if editable}}
+            <a class="trait-selector" data-trait-selector="basic" data-config-types="weaponTraits" data-property="data.traits"><i class="fas fa-edit"></i></a>
+        {{/if}}
     </label>
-    <ul class="traits-list pf-value pf-large">
-        {{#each weaponTraits as |trait|}}
-            <li class="tag">{{localize trait}}</li>
+    <ul class="traits-list tags">
+        {{#each traits as |trait|}}
+            <li class="tag">{{trait.label}}</li>
         {{/each}}
     </ul>
 </div>
 
-<div class="form-group">
-    <label>{{localize "PF2E.ArmorEquippedLabel"}}</label>
-    <input type="checkbox" name="data.equipped.value" value="1" data-dtype="Boolean" {{checked data.equipped.value}}/>
+<div class="form-group-stacked">
+    <label>
+        {{localize "PF2E.Item.Physical.OtherTags.Label"}}
+        <i class="fas fa-info-circle other-tags-hint" title="PF2E.Item.Physical.OtherTags.Hint"></i>
+        {{#if editable}}
+            <a class="trait-selector" data-trait-selector="basic" data-config-types="otherWeaponTags" data-title="PF2E.Item.Physical.OtherTags.Label" data-property="data.traits.otherTags"><i class="fas fa-edit"></i></a>
+        {{/if}}
+    </label>
+    <ul class="traits-list tags">
+        {{#each otherTags as |tag|}}
+            <li class="tag tag_alt">{{tag.label}}</li>
+        {{/each}}
+    </ul>
 </div>

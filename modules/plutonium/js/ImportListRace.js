@@ -1,1 +1,610 @@
-const _0xeadb=['some','toolProficiencies','push','items','link','_activateListeners_absorbListItems','resist','Ability','_pImportEntry_pFillTraits','constructor','_isSkippableFeature','_pImportEntry_pImportFeats','speed','getMovement','halflingLucky','getFauxRaceFeature','Size','537497SCiazt','_pImportEntry_fillToken','pPostLoadBrew','_content','token','pFillActorArmorProfData','movement','darkvision','SOURCE_TYP_OFFICIAL_ALL','sourceJsonToAbv','render','sourceShort','_list','entity','vulnerable','data','languages','pFillActorConditionImmunityData','pGetRaceItem','pHasRaceFeatureSideLoadedEffects','Source','join','40202bsOKzW','5etools','_pImportEntry_pFillAbilities','pFillActorVulnerabilityData','conditionImmune','pFillActorAbilityData','pFillActorLanguageData','race','name','18IWoHkz','19TmojuL','Item','pFillActorSkillData','text-center','516511aBoyvX','absorbFnBindListenersRadio','isStubRace','pImportEntry','size','length','pFillActorResistanceData','details','_pImportEntry_pFillItems','armorProf','vision','1497619PBGjhA','feats','SRD','armorProficiencies','raceFeature','_pageFilter','sourceClassName','includes','DataSourceUrl','sourceJsonToFull','DataSourceSpecial','Name','itemData','_pImportEntry_pFillSkills','_pImportEntry_fillFlags','get','Savage\x20Attacks','doHookSpellLinkRender','pMutActorUpdateRaceFeature','pInit','_pImportEntry_pImportToDirectoryGeneric_pGetImportableData','getAbilityData','hover','traits','_pApplyAllAdditionalSpellsToActor','DataSourceFile','map','actor','_vAbility','URL_TO_HASH_BUILDER','2FytBjo','sourceJsonToColor','_baseName','keys','SYM_UI_SKIP','_vSize','pGetRaceFeatureItemEffects','RaceFeatureRequiresEffects','_pImportEntry_pImportToActor','isStreamerMode','sizeAbvToFull','Lucky','SOURCE_TYP_BREW','SOURCE_TYP_CUSTOM','mutateForFilters','Powerful\x20Build','level','ability','sheet','savageAttacks','pGetRaces','source','None','_titleSearch','ImportEntryOpts','Import\x20Races','_initCreateSheetItemHook','pGetHomebrewSources','isToken','update','pCacheAndGet','pAddActorItems','PG_RACES','34467XVSvTo','547875lEkTRU','pFillActorToolProfData','_isRadio','Races','senses','Halfling','dnd5e','Upload\x20File','_titleButtonRun','isCancelled','2862PElnEa','flags','weaponProficiencies','getData','entries','Importing\x20race\x20\x22','pGetSources','pFillActorWeaponProfData','pGetRaceFeatureItem','pGetUserInput','isTemp','absorbFnBindListeners','_actor','bind','_pImportEntry_fillAttributes','dimSight','TASK_EXIT_CANCELLED','attributes','skills','TASK_EXIT_COMPLETE','init','toolProf'];const _0x3699=function(_0x391f73,_0x309d6e){_0x391f73=_0x391f73-0x145;let _0xeadbe9=_0xeadb[_0x391f73];return _0xeadbe9;};const _0x56cd64=_0x3699;(function(_0x34d5ad,_0x18a057){const _0x3ba120=_0x3699;while(!![]){try{const _0x3a24a1=parseInt(_0x3ba120(0x1b1))*-parseInt(_0x3ba120(0x16b))+parseInt(_0x3ba120(0x1b2))*-parseInt(_0x3ba120(0x160))+-parseInt(_0x3ba120(0x192))+parseInt(_0x3ba120(0x1a8))*parseInt(_0x3ba120(0x1df))+parseInt(_0x3ba120(0x161))+-parseInt(_0x3ba120(0x1b6))+parseInt(_0x3ba120(0x1c1));if(_0x3a24a1===_0x18a057)break;else _0x34d5ad['push'](_0x34d5ad['shift']());}catch(_0xff8b86){_0x34d5ad['push'](_0x34d5ad['shift']());}}}(_0xeadb,0x593bd));import{LGT}from'./Util.js';import{Vetools}from'./Vetools.js';import{UtilActors}from'./UtilActors.js';import{DataConverter}from'./DataConverter.js';import{Config}from'./Config.js';import{UtilList2}from'./UtilList2.js';import{DataConverterSpell}from'./DataConverterSpell.js';import{DataConverterRace}from'./DataConverterRace.js';import{UtilApplications}from'./UtilApplications.js';import{Charactermancer_AbilityScoreSelect}from'./UtilCharactermancer.js';import{Charactermancer_AdditionalSpellsSelect}from'./UtilCharactermancerAdditionalSpells.js';import{Charactermancer_Race_FeatSelect,Charactermancer_Race_SizeSelect,Charactermancer_Race_Util}from'./UtilCharactermancerRace.js';import{ImportListFeat}from'./ImportListFeat.js';import{UtilDataSource}from'./UtilDataSource.js';import{ImportListCharacter}from'./ImportListCharacter.js';class ImportListRace extends ImportListCharacter{static[_0x56cd64(0x17f)](){const _0x335a6e=_0x56cd64;this[_0x335a6e(0x159)]({'prop':_0x335a6e(0x1af),'importerName':'Race'});}constructor(_0x2616cc){const _0x3543f2=_0x56cd64;_0x2616cc=_0x2616cc||{},super({'title':_0x3543f2(0x158)},_0x2616cc,{'props':[_0x3543f2(0x1af)],'titleSearch':'races','sidebarTab':_0x3543f2(0x184),'gameProp':_0x3543f2(0x184),'defaultFolderPath':[_0x3543f2(0x164)],'folderType':_0x3543f2(0x1b3),'pageFilter':new PageFilterRaces(),'isActorRadio':!![],'page':UrlUtil[_0x3543f2(0x15f)],'isPreviewable':!![],'isDedupable':!![]});}async['_pPostLoad'](_0x4873bb,_0x52704a){const _0x117d8b=_0x56cd64;return Charactermancer_Race_Util[_0x117d8b(0x194)](_0x52704a);}async[_0x56cd64(0x171)](){const _0x7efadf=_0x56cd64,_0x28457c={'pPostLoad':this['_pPostLoad'][_0x7efadf(0x178)](this)};return[new UtilDataSource[(_0x7efadf(0x1cb))](Config[_0x7efadf(0x1d0)]('ui',_0x7efadf(0x148))?_0x7efadf(0x1c3):_0x7efadf(0x1a9),async()=>(await Vetools[_0x7efadf(0x153)]())[_0x7efadf(0x1af)],{'cacheKey':'5etools-races','filterTypes':[UtilDataSource[_0x7efadf(0x19a)]],'isDefault':!![]}),new UtilDataSource[(_0x7efadf(0x1c9))]('Custom\x20URL','',{..._0x28457c,'filterTypes':[UtilDataSource[_0x7efadf(0x14c)]]}),new UtilDataSource[(_0x7efadf(0x1da))](_0x7efadf(0x168),{..._0x28457c,'filterTypes':[UtilDataSource['SOURCE_TYP_CUSTOM']]}),...(await Vetools[_0x7efadf(0x15a)]('race','subrace'))[_0x7efadf(0x1db)](({name:_0x57a8e3,url:_0x15eda1})=>new UtilDataSource['DataSourceUrl'](_0x57a8e3,_0x15eda1,{..._0x28457c,'filterTypes':[UtilDataSource[_0x7efadf(0x14b)]]}))];}[_0x56cd64(0x16e)](){const _0x198f75=_0x56cd64;return{'isRadio':this[_0x198f75(0x163)],'isPreviewable':this['_isPreviewable'],'titleButtonRun':this[_0x198f75(0x169)],'titleSearch':this[_0x198f75(0x156)],'cols':[{'name':_0x198f75(0x1cc),'width':0x4,'field':'name'},{'name':_0x198f75(0x188),'width':0x5,'field':_0x198f75(0x150)},{'name':_0x198f75(0x191),'width':0x1,'field':'size'},{'name':_0x198f75(0x1a6),'width':0x1,'field':'source','titleProp':'sourceLong','displayProp':_0x198f75(0x19d),'classNameProp':_0x198f75(0x1c7),'rowClassName':_0x198f75(0x1b5)}],'rows':this[_0x198f75(0x195)][_0x198f75(0x1db)]((_0x481084,_0x3ac821)=>{const _0x1897c6=_0x198f75;return this[_0x1897c6(0x1c6)][_0x1897c6(0x18a)][_0x1897c6(0x14d)](_0x481084),_0x481084[_0x1897c6(0x1dd)]=_0x481084[_0x1897c6(0x150)]?Renderer[_0x1897c6(0x1d6)](_0x481084[_0x1897c6(0x150)])['asTextShort']:_0x1897c6(0x155),_0x481084[_0x1897c6(0x1e4)]=(_0x481084[_0x1897c6(0x1ba)]||[SZ_VARIES])[_0x1897c6(0x1db)](_0x4d3244=>Parser[_0x1897c6(0x149)](_0x4d3244))[_0x1897c6(0x1a7)]('/'),{'name':_0x481084['name'],'ability':_0x481084['_vAbility'],'size':_0x481084[_0x1897c6(0x1e4)],'source':_0x481084[_0x1897c6(0x154)],'sourceShort':Parser[_0x1897c6(0x19b)](_0x481084[_0x1897c6(0x154)]),'sourceLong':Parser[_0x1897c6(0x1ca)](_0x481084[_0x1897c6(0x154)]),'sourceClassName':Parser[_0x1897c6(0x1e0)](_0x481084['source']),'ix':_0x3ac821};})};}[_0x56cd64(0x186)](){const _0x3acb07=_0x56cd64;this[_0x3acb07(0x19e)]['doAbsorbItems'](this[_0x3acb07(0x195)],{'fnGetName':_0x277b15=>_0x277b15['name'],'fnGetValues':_0x166389=>({'source':_0x166389['source'],'ability':_0x166389[_0x3acb07(0x1dd)],'size':_0x166389[_0x3acb07(0x1e4)],'hash':UrlUtil[_0x3acb07(0x1de)][this['_page']](_0x166389)}),'fnGetData':UtilList2['absorbFnGetData'],'fnBindListeners':_0x12dd00=>this[_0x3acb07(0x163)]?UtilList2[_0x3acb07(0x1b7)](this[_0x3acb07(0x19e)],_0x12dd00):UtilList2[_0x3acb07(0x176)](this[_0x3acb07(0x19e)],_0x12dd00)});}async[_0x56cd64(0x1b9)](_0xd7fd,_0x4dbd13){const _0x2ba1c1=_0x56cd64;_0x4dbd13=_0x4dbd13||{},console['log'](...LGT,_0x2ba1c1(0x170)+_0xd7fd[_0x2ba1c1(0x1b0)]+'\x22\x20(from\x20\x22'+Parser[_0x2ba1c1(0x19b)](_0xd7fd[_0x2ba1c1(0x154)])+'\x22)');if(DataConverterRace[_0x2ba1c1(0x1b8)](_0xd7fd))return{'imported':[],'status':UtilApplications[_0x2ba1c1(0x17e)]};if(_0x4dbd13[_0x2ba1c1(0x175)])return this['_pImportEntry_pImportToDirectoryGeneric'](_0xd7fd,_0x4dbd13);else{if(this[_0x2ba1c1(0x177)])return this[_0x2ba1c1(0x147)](_0xd7fd,_0x4dbd13);else return this['_pImportEntry_pImportToDirectoryGeneric'](_0xd7fd,_0x4dbd13);}}async[_0x56cd64(0x147)](_0x39c447,_0xc37d35){const _0x30ea96=_0x56cd64,_0xfbe728={'data':{'details':{'race':_0x39c447[_0x30ea96(0x1b0)]}},'token':{}},_0x56aeb6=MiscUtil[_0x30ea96(0x1d0)](this['_actor'],_0x30ea96(0x1a1),_0x30ea96(0x1a1),_0x30ea96(0x1bd),_0x30ea96(0x14f),'value')||0x1,_0x19abdb=new ImportListRace[(_0x30ea96(0x157))]({'isCharactermancer':_0xc37d35['isCharactermancer'],'pb':Math['floor']((_0x56aeb6-0x1)/0x4)+0x2});this[_0x30ea96(0x1cf)](_0x39c447,_0xfbe728,_0x19abdb),await this['_pImportEntry_pFillAbilities'](_0x39c447,_0xfbe728,_0x19abdb);if(_0x19abdb[_0x30ea96(0x16a)])return{'status':UtilApplications[_0x30ea96(0x17b)]};this['_pImportEntry_fillAttributes'](_0x39c447,_0xfbe728[_0x30ea96(0x1a1)],_0x19abdb),await this[_0x30ea96(0x1ce)](_0x39c447,_0xfbe728[_0x30ea96(0x1a1)],_0x19abdb);if(_0x19abdb[_0x30ea96(0x16a)])return{'status':UtilApplications[_0x30ea96(0x17b)]};await this[_0x30ea96(0x189)](_0x39c447,_0xfbe728[_0x30ea96(0x1a1)],_0x19abdb);if(_0x19abdb[_0x30ea96(0x16a)])return{'status':UtilApplications[_0x30ea96(0x17b)]};await this[_0x30ea96(0x193)](_0x39c447,_0xfbe728['token'],_0x19abdb);if(_0x19abdb[_0x30ea96(0x16a)])return{'status':UtilApplications[_0x30ea96(0x17b)]};await this[_0x30ea96(0x1be)](_0x39c447,_0xfbe728,_0x19abdb);if(_0x19abdb[_0x30ea96(0x16a)])return{'status':UtilApplications[_0x30ea96(0x17b)]};await this[_0x30ea96(0x177)][_0x30ea96(0x15c)](_0xfbe728);if(this[_0x30ea96(0x177)][_0x30ea96(0x15b)])this[_0x30ea96(0x177)][_0x30ea96(0x151)][_0x30ea96(0x19c)]();await this[_0x30ea96(0x18c)](_0x39c447,_0xc37d35,_0x19abdb);if(_0x19abdb[_0x30ea96(0x16a)])return{'status':UtilApplications[_0x30ea96(0x17b)]};return{'imported':{'name':_0x39c447[_0x30ea96(0x1b0)],'actor':this[_0x30ea96(0x177)]},'status':UtilApplications[_0x30ea96(0x17e)]};}[_0x56cd64(0x1d5)](_0x5f52a5,_0x50510c){const _0xf5f23b=_0x56cd64;return DataConverterRace[_0xf5f23b(0x1a4)](_0x5f52a5,_0x50510c);}[_0x56cd64(0x1cf)](_0x1326a7,_0x55671b,_0x31cdd8){const _0x200966=_0x56cd64,_0x53ba69={},_0x545d3b={},_0x161a89=_0x1326a7['traitTags']&&_0x1326a7['traitTags'][_0x200966(0x1c8)](_0x200966(0x14e))||_0x1326a7[_0x200966(0x16f)][_0x200966(0x181)](_0x10df03=>_0x10df03[_0x200966(0x1b0)]===_0x200966(0x14e));if(_0x161a89)_0x545d3b['powerfulBuild']=!![];if(_0x1326a7[_0x200966(0x16f)][_0x200966(0x181)](_0x41a362=>_0x41a362['name']===_0x200966(0x1d1)))_0x545d3b[_0x200966(0x152)]=!![];if(_0x1326a7[_0x200966(0x16f)][_0x200966(0x181)](_0x138b4a=>_0x138b4a[_0x200966(0x1b0)]===_0x200966(0x14a))&&_0x1326a7[_0x200966(0x1e1)]===_0x200966(0x166))_0x545d3b[_0x200966(0x18f)]=!![];if(Object[_0x200966(0x1e2)](_0x545d3b)[_0x200966(0x1bb)])_0x53ba69[_0x200966(0x167)]=_0x545d3b;if(Object[_0x200966(0x1e2)](_0x53ba69)[_0x200966(0x1bb)])_0x55671b[_0x200966(0x16c)]=_0x53ba69;}async[_0x56cd64(0x1aa)](_0x4822b8,_0x4aaa4f,_0x573131){const _0x2efc17=_0x56cd64;await Charactermancer_AbilityScoreSelect[_0x2efc17(0x1ad)](this['_actor'],_0x4822b8[_0x2efc17(0x150)],_0x4aaa4f,_0x573131);}[_0x56cd64(0x179)](_0x2919c1,_0x3df48f,_0x338460){const _0x437bc3=_0x56cd64,_0x591bc0={};if(_0x2919c1[_0x437bc3(0x18d)]!=null)_0x591bc0[_0x437bc3(0x198)]=DataConverter[_0x437bc3(0x18e)](_0x2919c1['speed']);_0x2919c1['darkvision']&&_0x2919c1[_0x437bc3(0x199)]>(this[_0x437bc3(0x177)][_0x437bc3(0x1a1)][_0x437bc3(0x1a1)][_0x437bc3(0x17c)]?.['senses']?.['darkvision']||0x0)&&(_0x591bc0[_0x437bc3(0x165)]={'darkvision':_0x2919c1[_0x437bc3(0x199)],'units':'ft'}),_0x3df48f[_0x437bc3(0x17c)]=_0x591bc0;}async[_0x56cd64(0x1ce)](_0x619fce,_0x2894f9,_0x30a81f){const _0x50e294=_0x56cd64;await DataConverter[_0x50e294(0x1b4)](MiscUtil[_0x50e294(0x1d0)](this[_0x50e294(0x177)],_0x50e294(0x1a1),_0x50e294(0x1a1),_0x50e294(0x17d)),_0x619fce['skillProficiencies'],_0x2894f9,_0x30a81f);}async['_pImportEntry_pFillTraits'](_0x2069f1,_0x283554,_0x58fd12){const _0x48eed2=_0x56cd64;_0x283554[_0x48eed2(0x1d8)]={},await this['_pImportEntry_pHandleSize'](_0x2069f1,_0x283554,_0x58fd12);if(_0x58fd12[_0x48eed2(0x16a)])return;await DataConverter[_0x48eed2(0x1ae)](MiscUtil[_0x48eed2(0x1d0)](this[_0x48eed2(0x177)],_0x48eed2(0x1a1),_0x48eed2(0x1a1),'traits',_0x48eed2(0x1a2)),_0x2069f1['languageProficiencies'],_0x283554,_0x58fd12);if(_0x58fd12[_0x48eed2(0x16a)])return;await DataConverter[_0x48eed2(0x162)](MiscUtil[_0x48eed2(0x1d0)](this[_0x48eed2(0x177)],'data','data',_0x48eed2(0x1d8),_0x48eed2(0x180)),_0x2069f1[_0x48eed2(0x182)],_0x283554,_0x58fd12);if(_0x58fd12[_0x48eed2(0x16a)])return;await DataConverter[_0x48eed2(0x197)](MiscUtil[_0x48eed2(0x1d0)](this[_0x48eed2(0x177)],_0x48eed2(0x1a1),_0x48eed2(0x1a1),'traits',_0x48eed2(0x1bf)),_0x2069f1[_0x48eed2(0x1c4)],_0x283554,_0x58fd12);if(_0x58fd12[_0x48eed2(0x16a)])return;await DataConverter[_0x48eed2(0x172)](MiscUtil[_0x48eed2(0x1d0)](this[_0x48eed2(0x177)],_0x48eed2(0x1a1),_0x48eed2(0x1a1),_0x48eed2(0x1d8),'weaponProf'),_0x2069f1[_0x48eed2(0x16d)],_0x283554,_0x58fd12);if(_0x58fd12[_0x48eed2(0x16a)])return;await DataConverter['pFillActorImmunityData'](MiscUtil[_0x48eed2(0x1d0)](this[_0x48eed2(0x177)],_0x48eed2(0x1a1),'data',_0x48eed2(0x1d8),'di'),_0x2069f1['immune'],_0x283554,_0x58fd12);if(_0x58fd12[_0x48eed2(0x16a)])return;await DataConverter[_0x48eed2(0x1bc)](MiscUtil['get'](this['_actor'],_0x48eed2(0x1a1),_0x48eed2(0x1a1),_0x48eed2(0x1d8),'dr'),_0x2069f1[_0x48eed2(0x187)],_0x283554,_0x58fd12);if(_0x58fd12[_0x48eed2(0x16a)])return;await DataConverter[_0x48eed2(0x1ab)](MiscUtil[_0x48eed2(0x1d0)](this[_0x48eed2(0x177)],_0x48eed2(0x1a1),_0x48eed2(0x1a1),_0x48eed2(0x1d8),'dv'),_0x2069f1[_0x48eed2(0x1a0)],_0x283554,_0x58fd12);if(_0x58fd12[_0x48eed2(0x16a)])return;await DataConverter[_0x48eed2(0x1a3)](MiscUtil[_0x48eed2(0x1d0)](this[_0x48eed2(0x177)],'data',_0x48eed2(0x1a1),_0x48eed2(0x1d8),'ci'),_0x2069f1[_0x48eed2(0x1ac)],_0x283554,_0x58fd12);}['_pImportEntry_fillToken'](_0x5b27b7,_0x314dec,_0x2b1942){const _0x1f30a3=_0x56cd64;if(_0x5b27b7['darkvision']){const {dimSight:_0x57e9fc}=this[_0x1f30a3(0x177)][_0x1f30a3(0x1a1)][_0x1f30a3(0x196)]||{};(!_0x57e9fc||!isNaN(_0x57e9fc)&&Number(_0x57e9fc)<_0x5b27b7[_0x1f30a3(0x199)])&&(_0x314dec[_0x1f30a3(0x17a)]=_0x5b27b7['darkvision'],_0x314dec[_0x1f30a3(0x1c0)]=!![]);}}static['_isSkippableFeature'](_0x1c74e8){const _0x4d96d0=_0x56cd64;if(typeof _0x1c74e8==='string')return!![];if(!_0x1c74e8[_0x4d96d0(0x1b0)])return!![];if(_0x1c74e8[_0x4d96d0(0x1b0)]===_0x4d96d0(0x191))return!![];return![];}async[_0x56cd64(0x1be)](_0x31c64e,_0x1af9fe,_0x191d24){const _0xeba7ea=_0x56cd64,_0x21c9e5={},_0x25c09b=[];await this[_0xeba7ea(0x1d9)]({'entity':_0x31c64e,'dataBuilderOpts':_0x191d24,'spellHashToItemPosMap':_0x21c9e5});if(_0x191d24[_0xeba7ea(0x16a)])return;for(const _0x3a911a of _0x31c64e['entries']){if(this[_0xeba7ea(0x18a)][_0xeba7ea(0x18b)](_0x3a911a))continue;const _0x24d6e3=DataConverterRace[_0xeba7ea(0x190)](_0x31c64e,_0x3a911a);await DataConverterRace[_0xeba7ea(0x1d3)](this[_0xeba7ea(0x177)],_0x1af9fe,_0x24d6e3,_0x191d24);if(_0x191d24[_0xeba7ea(0x16a)])return;}const _0x51899d=DataConverterSpell[_0xeba7ea(0x1d2)][_0xeba7ea(0x178)](null,this[_0xeba7ea(0x177)]['id'],_0x21c9e5);await Renderer[_0xeba7ea(0x1d0)]()['pWithPlugin']({'entryType':_0xeba7ea(0x185),'pluginType':'*','fnPlugin':_0x51899d,'pFn':async()=>{const _0x21fe43=_0xeba7ea;for(const _0x5713a5 of _0x31c64e['entries']){if(this[_0x21fe43(0x18a)][_0x21fe43(0x18b)](_0x5713a5))continue;const _0x15abaa=DataConverterRace['getFauxRaceFeature'](_0x31c64e,_0x5713a5),_0x36a036=await DataConverterRace[_0x21fe43(0x173)](_0x31c64e,_0x15abaa,{'actor':this[_0x21fe43(0x177)]});_0x191d24[_0x21fe43(0x184)][_0x21fe43(0x183)](_0x36a036),await DataConverterRace[_0x21fe43(0x1a5)](this[_0x21fe43(0x177)],_0x15abaa)&&_0x25c09b[_0x21fe43(0x183)](new ImportListRace[(_0x21fe43(0x146))]({'actor':this[_0x21fe43(0x177)],'raceFeature':_0x15abaa,'itemData':_0x36a036}));}}});const _0x4a9995=await UtilActors[_0xeba7ea(0x15e)](this[_0xeba7ea(0x177)],_0x191d24['items']),_0x3bfd3a=[];if(_0x25c09b['length'])for(const _0x25b5ed of _0x25c09b){const _0x3aa642=DataConverter['getImportedEmbed'](_0x4a9995,_0x25b5ed[_0xeba7ea(0x1cd)]);if(!_0x3aa642)continue;_0x3bfd3a[_0xeba7ea(0x183)](...await DataConverterRace[_0xeba7ea(0x145)](this[_0xeba7ea(0x177)],_0x31c64e,_0x25b5ed['raceFeature'],_0x3aa642[_0xeba7ea(0x19f)]));}await UtilActors['pAddActorEffects'](this[_0xeba7ea(0x177)],_0x3bfd3a);}async[_0x56cd64(0x18c)](_0x1e928d,_0x3bbc4f,_0x1ca058){const _0x5a93f5=_0x56cd64;if(!_0x1e928d[_0x5a93f5(0x1c2)])return;const _0x31e593=await Charactermancer_Race_FeatSelect['pGetUserInput'](_0x1e928d[_0x5a93f5(0x1c2)]);if(!_0x31e593)return _0x1ca058['isCancelled']=!![];if(_0x31e593===VeCt[_0x5a93f5(0x1e3)])return;if(!(_0x31e593['data']||[])['length'])return;const _0x51d966=new ImportListFeat({'actor':this[_0x5a93f5(0x177)]});await _0x51d966[_0x5a93f5(0x1d4)]();for(const {page:_0xfe927d,source:_0x3ecb04,hash:_0x5e76b3}of _0x31e593[_0x5a93f5(0x1a1)]||[]){const _0x160ef5=await Renderer[_0x5a93f5(0x1d7)][_0x5a93f5(0x15d)](_0xfe927d,_0x3ecb04,_0x5e76b3);await _0x51d966['pImportEntry'](_0x160ef5,_0x3bbc4f);}}async['_pImportEntry_pHandleSize'](_0x855acf,_0x3a5613,_0x545a27){const _0x5a22ae=_0x56cd64,_0x47e7c4=await Charactermancer_Race_SizeSelect[_0x5a22ae(0x174)]({'sizes':_0x855acf['size']});if(_0x47e7c4==null)return _0x545a27['isCancelled']=!![];if(_0x47e7c4===VeCt[_0x5a22ae(0x1e3)])return;_0x3a5613[_0x5a22ae(0x1d8)]['size']=UtilActors['VET_SIZE_TO_ABV'][_0x47e7c4[_0x5a22ae(0x1a1)]||SZ_MEDIUM]||'med';}}ImportListRace[_0x56cd64(0x157)]=class extends ImportListCharacter[_0x56cd64(0x157)]{constructor(_0x5eaeba){_0x5eaeba=_0x5eaeba||{},super(_0x5eaeba),this['pb']=_0x5eaeba['pb'];}},ImportListRace[_0x56cd64(0x146)]=class{constructor({actor:_0x3c04b6,raceFeature:_0x42a132,itemData:_0x2d6831}){const _0x49728b=_0x56cd64;this[_0x49728b(0x1dc)]=_0x3c04b6,this[_0x49728b(0x1c5)]=_0x42a132,this[_0x49728b(0x1cd)]=_0x2d6831;}};export{ImportListRace};
+import {LGT} from "./Util.js";
+import {Vetools} from "./Vetools.js";
+import {UtilActors} from "./UtilActors.js";
+import {DataConverter} from "./DataConverter.js";
+import {Config} from "./Config.js";
+import {UtilList2} from "./UtilList2.js";
+import {DataConverterRace} from "./DataConverterRace.js";
+import {UtilApplications} from "./UtilApplications.js";
+import {Charactermancer_AbilityScoreSelect, Charactermancer_SenseSelect} from "./UtilCharactermancer.js";
+import {
+	Charactermancer_Race_SizeSelect,
+	Charactermancer_Race_Util,
+} from "./UtilCharactermancerRace.js";
+import {UtilDataSource} from "./UtilDataSource.js";
+import {ImportListCharacter} from "./ImportListCharacter.js";
+import {ImportedDocument, ImportSummary, ImportCustomizer} from "./ImportList.js";
+import {UtilDataConverter} from "./UtilDataConverter.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {UtilDocuments} from "./UtilDocuments.js";
+import {DataConverterRaceFeature} from "./DataConverterRaceFeature.js";
+
+// TODO merge parts with `ImportListFeature`
+class ImportListRace extends ImportListCharacter {
+	static get ID () { return "races-and-subraces"; }
+	static get DISPLAY_NAME_TYPE_PLURAL () { return "Races & Subraces"; }
+
+	static _ = this.registerImpl(this);
+
+	// region External
+	static init () {
+		this._initCreateSheetItemHook({
+			prop: "race",
+			importerName: "Race",
+		});
+	}
+	// endregion
+
+	constructor (externalData) {
+		externalData = externalData || {};
+		super(
+			{title: "Import Races"},
+			externalData,
+			{
+				props: ["race"],
+				dirsHomebrew: ["race", "subrace"],
+				titleSearch: "races",
+				sidebarTab: "items",
+				gameProp: "items",
+				defaultFolderPath: ["Races"],
+				pageFilter: new PageFilterRaces(),
+				isActorRadio: true,
+				page: UrlUtil.PG_RACES,
+				isPreviewable: true,
+				isDedupable: true,
+				configGroup: "importRace",
+			},
+		);
+	}
+
+	async _pPostLoad (raceList, fileData) {
+		return Charactermancer_Race_Util.pPostLoadBrew(fileData);
+	}
+
+	async _pGetSources () {
+		const nonVetoolsOpts = {pPostLoad: this._pPostLoad.bind(this)};
+
+		return [
+			new UtilDataSource.DataSourceSpecial(
+				Config.get("ui", "isStreamerMode") ? "SRD" : "5etools",
+				async () => (await Vetools.pGetRaces()).race,
+				{
+					cacheKey: "5etools-races",
+					filterTypes: [UtilDataSource.SOURCE_TYP_OFFICIAL_ALL],
+					isDefault: true,
+				},
+			),
+			new UtilDataSource.DataSourceUrl(
+				"Custom URL",
+				"",
+				{
+					...nonVetoolsOpts,
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			new UtilDataSource.DataSourceFile(
+				"Upload File",
+				{
+					...nonVetoolsOpts,
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			...(await this._pGetSourcesHomebrew(nonVetoolsOpts)),
+		];
+	}
+
+	getData () {
+		return {
+			...super.getData(),
+			buttonsAdditional: [
+				this._content.some(it => it._versions) ? {
+					name: "btn-run-mods",
+					text: "Customize and Import...",
+				} : null,
+			].filter(Boolean),
+			cols: [
+				{
+					name: "Name",
+					width: 4,
+					field: "name",
+				},
+				{
+					name: "Ability",
+					width: 5,
+					field: "ability",
+				},
+				{
+					name: "Size",
+					width: 1,
+					field: "size",
+				},
+				{
+					name: "Source",
+					width: 1,
+					field: "source",
+					titleProp: "sourceLong",
+					displayProp: "sourceShort",
+					classNameProp: "sourceClassName",
+					styleProp: "sourceStyle",
+					rowClassName: "text-center",
+				},
+			],
+			rows: this._content.map((it, ix) => {
+				this._pageFilter.constructor.mutateForFilters(it);
+
+				// region Re-used in fnGetValues
+				it._vAbility = it.ability ? Renderer.getAbilityData(it.ability).asTextShort : "None";
+				it._vSize = (it.size || [SZ_VARIES]).map(sz => Parser.sizeAbvToFull(sz)).join("/");
+				// endregion
+
+				return {
+					name: it.name,
+					ability: it._vAbility,
+					size: it._vSize,
+					source: it.source,
+					sourceShort: Parser.sourceJsonToAbv(it.source),
+					sourceLong: Parser.sourceJsonToFull(it.source),
+					sourceClassName: Parser.sourceJsonToColor(it.source),
+					sourceStyle: BrewUtil2.sourceJsonToStylePart(it.source),
+					isVersion: !!it._versionBase_isVersion,
+					ix,
+				};
+			}),
+		};
+	}
+
+	_renderInner_absorbListItems () {
+		this._list.doAbsorbItems(
+			this._content,
+			{
+				fnGetName: it => it.name,
+				// values used for sorting/search
+				fnGetValues: it => ({
+					source: it.source,
+					ability: it._vAbility,
+					size: it._vSize,
+					hash: UrlUtil.URL_TO_HASH_BUILDER[this._page](it),
+				}),
+				fnGetData: UtilList2.absorbFnGetData,
+				fnBindListeners: it => this._isRadio
+					? UtilList2.absorbFnBindListenersRadio(this._list, it)
+					: UtilList2.absorbFnBindListeners(this._list, it),
+			},
+		);
+	}
+
+	_renderInner_initRunButtonsAdditional () { this._renderInner_initRunButtonsAdditional_genericMods(); }
+
+	_pFnPostProcessEntries (entries, {isUseMods = false} = {}) {
+		if (!isUseMods) return entries;
+
+		return new Promise(resolve => {
+			const detailer = new ImportListRace.ImportCustomizer(entries, resolve, {titleSearch: this._titleSearch, isActor: !!this._actor});
+			detailer.render(true);
+		});
+	}
+
+	/**
+	 * @param race
+	 * @param importOpts Options object.
+	 * @param [importOpts.isTemp] if the item should be temporary, and displayed.
+	 * @param [importOpts.filterValues] Saved filter values to be used instead of our own.
+	 * @param [importOpts.isCharactermancer]
+	 * @return *
+	 */
+	async _pImportEntry (race, importOpts) {
+		importOpts = importOpts || {};
+
+		console.log(...LGT, `Importing race "${race.name}" (from "${Parser.sourceJsonToAbv(race.source)}")`);
+
+		if (DataConverterRace.isStubRace(race)) return ImportSummary.completedStub();
+
+		if (importOpts.isTemp) return this._pImportEntry_pImportToDirectoryGeneric(race, importOpts);
+		if (this._actor) return this._pImportEntry_pImportToActor(race, importOpts);
+		return this._pImportEntry_pImportToDirectoryGeneric(race, importOpts);
+	}
+
+	async _pImportEntry_pImportToActor (race, importOpts) {
+		race = await this._pImportEntry_getUserVersion(race);
+
+		// Build actor update
+		const actUpdate = {
+			data: {
+				details: {
+					race: race.name,
+				},
+			},
+			token: {},
+		};
+
+		const level = MiscUtil.get(this._actor, "data", "data", "details", "level", "value") || 1;
+		const dataBuilderOpts = new ImportListRace.ImportEntryOpts({
+			isCharactermancer: importOpts.isCharactermancer,
+			pb: Math.floor((level - 1) / 4) + 2,
+		});
+
+		this._pImportEntry_fillFlags(race, actUpdate, dataBuilderOpts);
+		await this._pImportEntry_pFillAbilities(race, actUpdate, dataBuilderOpts);
+		if (dataBuilderOpts.isCancelled) return ImportSummary.cancelled();
+		this._pImportEntry_fillAttributes(race, actUpdate, dataBuilderOpts);
+		await this._pImportEntry_pFillSkillsAndTraits(race, actUpdate.data, dataBuilderOpts);
+		if (dataBuilderOpts.isCancelled) return ImportSummary.cancelled();
+
+		// Add actor items
+		await this._pImportEntry_pFillItems(race, actUpdate, dataBuilderOpts);
+		if (dataBuilderOpts.isCancelled) return ImportSummary.cancelled();
+
+		// Update actor
+		await UtilDocuments.pUpdateDocument(this._actor, actUpdate);
+
+		if (this._actor.isToken) this._actor.sheet.render();
+
+		// Handle feats
+		await this._pImportActorAdditionalFeats(race, importOpts, dataBuilderOpts);
+		if (dataBuilderOpts.isCancelled) return ImportSummary.cancelled();
+
+		return new ImportSummary({
+			status: UtilApplications.TASK_EXIT_COMPLETE,
+			imported: [
+				new ImportedDocument({
+					name: race.name,
+					actor: this._actor,
+				}),
+			],
+		});
+	}
+
+	_pImportEntry_pImportToDirectoryGeneric_pGetImportableData (it, getItemOpts) {
+		return DataConverterRace.pGetRaceItem(it, getItemOpts);
+	}
+
+	_pImportEntry_fillFlags (race, act, dataBuilderOpts) {
+		const flags = {};
+		const flagsDnd5e = {};
+
+		const hasPowerfulBuild = (race.traitTags && race.traitTags.includes("Powerful Build"))
+			|| race.entries.some(it => it.name === "Powerful Build");
+		if (hasPowerfulBuild) flagsDnd5e.powerfulBuild = true;
+
+		if (race.entries.some(it => it.name === "Savage Attacks")) flagsDnd5e.savageAttacks = true;
+		if (race.entries.some(it => it.name === "Lucky") && race._baseName === "Halfling") flagsDnd5e.halflingLucky = true;
+
+		if (Object.keys(flagsDnd5e).length) flags.dnd5e = flagsDnd5e;
+		if (Object.keys(flags).length) act.flags = flags;
+	}
+
+	async _pImportEntry_pFillAbilities (race, actUpdate, dataBuilderOpts) {
+		await Charactermancer_AbilityScoreSelect.pFillActorAbilityData(this._actor, race.ability, actUpdate, dataBuilderOpts);
+	}
+
+	_pImportEntry_fillAttributes (race, actUpdate, dataBuilderOpts) {
+		const out = actUpdate.data.attributes = {};
+
+		if (race.speed != null) out.movement = DataConverter.getMovement(race.speed, {configGroup: "importRace"});
+
+		// Note that this also fills `actUpdate.token`
+		const formDataSenses = Charactermancer_SenseSelect.getFormDataFromRace(race);
+		DataConverter.doApplySensesFormDataToActorUpdate({
+			existingSensesActor: MiscUtil.get(this._actor, "data", "data", "attributes", "senses"),
+			existingTokenActor: MiscUtil.get(this._actor, "data", "token"),
+			formData: formDataSenses,
+			actorData: actUpdate.data,
+			actorToken: actUpdate.token,
+			configGroup: "importRace",
+		});
+	}
+
+	async _pImportEntry_pFillSkillsAndTraits (race, data, dataBuilderOpts) {
+		data.traits = {};
+
+		await this._pImportEntry_pHandleSize(race, data, dataBuilderOpts);
+		if (dataBuilderOpts.isCancelled) return;
+
+		// region Skills, tools, and languages
+		// Run these as distinct steps
+		await DataConverter.pFillActorSkillToolLanguageData(
+			{
+				existingProficienciesSkills: MiscUtil.get(this._actor, "data", "data", "skills"),
+				existingProficienciesTools: MiscUtil.get(this._actor, "data", "data", "traits", "toolProf"),
+				existingProficienciesLanguages: MiscUtil.get(this._actor, "data", "data", "traits", "languages"),
+				skillToolLanguageProficiencies: race.skillToolLanguageProficiencies,
+				actorData: data,
+				importOpts: dataBuilderOpts,
+			},
+		);
+		if (dataBuilderOpts.isCancelled) return;
+
+		await DataConverter.pFillActorSkillData(
+			MiscUtil.get(this._actor, "data", "data", "skills"),
+			race.skillProficiencies,
+			data,
+			dataBuilderOpts,
+		);
+		if (dataBuilderOpts.isCancelled) return;
+
+		await DataConverter.pFillActorLanguageData(
+			MiscUtil.get(this._actor, "data", "data", "traits", "languages"),
+			race.languageProficiencies,
+			data,
+			dataBuilderOpts,
+		);
+		if (dataBuilderOpts.isCancelled) return;
+
+		await DataConverter.pFillActorToolProfData(
+			MiscUtil.get(this._actor, "data", "data", "traits", "toolProf"),
+			race.toolProficiencies,
+			data,
+			dataBuilderOpts,
+		);
+		if (dataBuilderOpts.isCancelled) return;
+
+		// region TODO(Future) shared with backgrounds; consider factoring this out
+		await DataConverter.pFillActorArmorProfData(
+			MiscUtil.get(this._actor, "data", "data", "traits", "armorProf"),
+			race.armorProficiencies,
+			data,
+			dataBuilderOpts,
+		);
+		if (dataBuilderOpts.isCancelled) return;
+
+		await DataConverter.pFillActorWeaponProfData(
+			MiscUtil.get(this._actor, "data", "data", "traits", "weaponProf"),
+			race.weaponProficiencies,
+			data,
+			dataBuilderOpts,
+		);
+		if (dataBuilderOpts.isCancelled) return;
+
+		await DataConverter.pFillActorImmunityData(
+			MiscUtil.get(this._actor, "data", "data", "traits", "di"),
+			race.immune,
+			data,
+			dataBuilderOpts,
+		);
+		if (dataBuilderOpts.isCancelled) return;
+
+		await DataConverter.pFillActorResistanceData(
+			MiscUtil.get(this._actor, "data", "data", "traits", "dr"),
+			race.resist,
+			data,
+			dataBuilderOpts,
+		);
+		if (dataBuilderOpts.isCancelled) return;
+
+		await DataConverter.pFillActorVulnerabilityData(
+			MiscUtil.get(this._actor, "data", "data", "traits", "dv"),
+			race.vulnerable,
+			data,
+			dataBuilderOpts,
+		);
+		if (dataBuilderOpts.isCancelled) return;
+
+		await DataConverter.pFillActorConditionImmunityData(
+			MiscUtil.get(this._actor, "data", "data", "traits", "ci"),
+			race.conditionImmune,
+			data,
+			dataBuilderOpts,
+		);
+		if (dataBuilderOpts.isCancelled) return;
+
+		await DataConverter.pFillActorExpertiseData(
+			{
+				existingProficienciesSkills: MiscUtil.get(this._actor, "data", "data", "skills"),
+				existingProficienciesTools: MiscUtil.get(this._actor, "data", "data", "traits", "toolProf"),
+				expertise: race.expertise,
+				actorData: data,
+				importOpts: dataBuilderOpts,
+			},
+		);
+		// endregion
+	}
+
+	static _isSkippableFeature (ent) {
+		if (typeof ent === "string") return true; // Skip pure string entries; these are notes.
+		if (!ent.name) return true; // Skip un-named entries, e.g. Tortle "AL" note
+		if (ent.name === "Size") return true; // Skip "Size" entries
+		return false;
+	}
+
+	async _pImportEntry_pFillItems (race, actUpdate, dataBuilderOpts) {
+		const spellHashToItemPosMap = {};
+
+		const raceFeaturesRequiresEffects = [];
+
+		await this._pApplyAllAdditionalSpellsToActor({entity: race, dataBuilderOpts, spellHashToItemPosMap});
+		if (dataBuilderOpts.isCancelled) return;
+
+		// region Race Features
+		for (const ent of race.entries) {
+			if (this.constructor._isSkippableFeature(ent)) continue;
+
+			const fauxRaceFeature = DataConverterRaceFeature.getFauxRaceFeature(race, ent);
+			await DataConverterRaceFeature.pMutActorUpdateRaceFeature(this._actor, actUpdate, fauxRaceFeature, dataBuilderOpts);
+			if (dataBuilderOpts.isCancelled) return;
+		}
+
+		const tagHashItemIdMap = {};
+		Object.entries(spellHashToItemPosMap)
+			.forEach(([hash, id]) => MiscUtil.set(tagHashItemIdMap, "spell", hash, id));
+
+		await UtilDataConverter.pGetWithDescriptionPlugins(
+			async () => {
+				for (const ent of race.entries) {
+					if (this.constructor._isSkippableFeature(ent)) continue;
+
+					const raceFeature = DataConverterRaceFeature.getFauxRaceFeature(race, ent);
+					const raceFeaturesAlias = DataConverterRaceFeature.getFauxRaceFeaturesAlias(raceFeature);
+
+					const raceFeatureItem = await DataConverterRaceFeature.pGetRaceFeatureItem(raceFeature, {actor: this._actor});
+					dataBuilderOpts.items.push(raceFeatureItem);
+
+					if (await DataConverterRaceFeature.pHasRaceFeatureSideLoadedEffects(this._actor, raceFeature)) {
+						raceFeaturesRequiresEffects.push(
+							new ImportListRace.RaceFeatureRequiresEffects({
+								actor: this._actor,
+								raceFeature: raceFeature,
+								itemData: raceFeatureItem,
+							}),
+						);
+					}
+
+					if (raceFeaturesAlias && await DataConverterRaceFeature.pHasRaceFeatureSideLoadedEffects(this._actor, raceFeaturesAlias)) {
+						raceFeaturesRequiresEffects.push(
+							new ImportListRace.RaceFeatureRequiresEffects({
+								actor: this._actor,
+								raceFeature: raceFeaturesAlias,
+								itemData: raceFeatureItem,
+							}),
+						);
+					}
+				}
+			},
+			{
+				actorId: this._actor.id,
+				tagHashItemIdMap,
+			},
+		);
+		// endregion
+
+		const importedEmbeds = await UtilActors.pAddActorItems(this._actor, dataBuilderOpts.items);
+
+		// region Add item effects
+		const effectsToAdd = [];
+		if (raceFeaturesRequiresEffects.length) {
+			for (const raceFeatureRequiresEffects of raceFeaturesRequiresEffects) {
+				const importedEmbed = DataConverter.getImportedEmbed(importedEmbeds, raceFeatureRequiresEffects.itemData);
+
+				if (!importedEmbed) continue;
+
+				effectsToAdd.push(...(await DataConverterRaceFeature.pGetRaceFeatureItemEffects(this._actor, raceFeatureRequiresEffects.raceFeature, importedEmbed.document)));
+			}
+		}
+
+		effectsToAdd.push(...(await DataConverterRace.pGetSpeedEffects(race.speed, {actor: this._actor, iconEntity: race, iconPropCompendium: "race"})));
+
+		await UtilActors.pAddActorEffects(this._actor, effectsToAdd);
+		// endregion
+	}
+
+	async _pImportEntry_pHandleSize (race, actUpdate, dataBuilderOpts) {
+		const formData = await Charactermancer_Race_SizeSelect.pGetUserInput({
+			sizes: race.size,
+		});
+
+		if (formData == null) return dataBuilderOpts.isCancelled = true;
+		if (formData === VeCt.SYM_UI_SKIP) return;
+
+		actUpdate.traits.size = UtilActors.VET_SIZE_TO_ABV[formData.data || SZ_MEDIUM] || "med";
+	}
+}
+
+ImportListRace.ImportEntryOpts = class extends ImportListCharacter.ImportEntryOpts {
+	constructor (opts) {
+		opts = opts || {};
+		super(opts);
+
+		this.pb = opts.pb;
+	}
+};
+
+ImportListRace.RaceFeatureRequiresEffects = class {
+	/**
+	 * Represents a tuple of: <loaded 5etools raceFeature>, <raw Foundry sheet item data>
+	 * @param actor
+	 * @param raceFeature
+	 * @param itemData Sheet item data, which we expect will be loaded as an embedded item.
+	 */
+	constructor ({actor, raceFeature, itemData}) {
+		this.actor = actor;
+		this.raceFeature = raceFeature;
+		this.itemData = itemData;
+	}
+};
+
+ImportListRace.ImportCustomizer = class extends ImportCustomizer {
+	/**
+	 * @param dataList
+	 * @param resolve
+	 * @param opts Options object.
+	 * @param opts.titleSearch Used in prompt text in the search bar.
+	 * @param opts.isActor
+	 */
+	constructor (dataList, resolve, opts) {
+		super(
+			dataList,
+			resolve,
+			{
+				...opts,
+				title: "Customize Import",
+				template: `${SharedConsts.MODULE_LOCATION}/template/ImportListRaceCustomizer.hbs`,
+			},
+		);
+	}
+
+	getData () {
+		return {
+			...super.getData(),
+			rows: this._dataList.map((it, ix) => ({
+				name: it.name,
+				source: it.source,
+				sourceShort: Parser.sourceJsonToAbv(it.source),
+				sourceLong: Parser.sourceJsonToFull(it.source),
+				sourceClassName: Parser.sourceJsonToColor(it.source),
+				sourceStyle: BrewUtil2.sourceJsonToStylePart(it.source),
+
+				hasVersions: it._versions?.length,
+				availableVersions: DataUtil.proxy.getVersions(it.__prop, it).map((ver, ix) => ({ix, name: ver.name})),
+
+				ix,
+			})),
+		};
+	}
+
+	_activateListeners_initList ({$html}) {
+		// Init list library
+		this._list = new List({
+			$iptSearch: $html.find(`.search`),
+			$wrpList: $html.find(`.veapp__list`),
+			valueNames: ["name", "source", "ix"],
+		});
+		this._list.doAbsorbItems(
+			this._dataList,
+			{
+				fnGetName: it => it.name,
+				fnGetValues: it => ({source: it.source}),
+				fnGetData: it => {
+					const $e = $(it.ele);
+					return {
+						$selVersion: $e.find(`[name="sel-version"]`),
+					};
+				},
+			},
+		);
+		this._list.init();
+	}
+
+	_activateListeners_bindControls ({$html, $wrpBtnsSort}) {
+		this._$btnReset = $html.find(`[name="btn-reset"]`).click(() => {
+			$html.find(`.search`).val("");
+			if (this._list) this._list.reset();
+		});
+
+		$html.find(`[name="btn-run"]`).click(async () => {
+			const toImport = this._list.items.map(it => {
+				const ixVersion = it.data.$selVersion.length
+					? Number(it.data.$selVersion.val()) === -1 ? null : Number(it.data.$selVersion.val())
+					: null;
+
+				if (!~ixVersion) return this._dataList[it.ix];
+
+				const versions = DataUtil.proxy.getVersions(this._dataList[it.ix]?.__prop, this._dataList[it.ix]);
+				return versions[ixVersion];
+			});
+
+			this._resolve(toImport);
+			this.close();
+		});
+	}
+};
+
+export {ImportListRace};

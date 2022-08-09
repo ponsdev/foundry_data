@@ -64,8 +64,8 @@ class MltRequestBatch {
   }
 
   _scene(scene) {
-    if (!(scene._id in this._scenes)) {
-      this._scenes[scene._id] = {
+    if (!(scene.id in this._scenes)) {
+      this._scenes[scene.id] = {
         create: [],
         updateAnimateDiff: [],
         updateAnimated: [],
@@ -78,7 +78,7 @@ class MltRequestBatch {
         updateSound: [],
         delete: []};
     }
-    return this._scenes[scene._id];
+    return this._scenes[scene.id];
   }
 }
 
@@ -122,6 +122,8 @@ class MultilevelTokens {
     Hooks.on("createToken", this._onCreateToken.bind(this));
     Hooks.on("preUpdateToken", this._onPreUpdateToken.bind(this));
     Hooks.on("updateToken", this._onUpdateToken.bind(this));
+    Hooks.on("createActiveEffect", this._onUpdateActiveEffect.bind(this));
+    Hooks.on("deleteActiveEffect", this._onUpdateActiveEffect.bind(this));
     Hooks.on("controlToken", this._onControlToken.bind(this));
     Hooks.on("preDeleteToken", this._onPreDeleteToken.bind(this));
     Hooks.on("deleteToken", this._onDeleteToken.bind(this));
@@ -156,7 +158,7 @@ class MultilevelTokens {
   _getActiveGamemasters() {
     return game.users
         .filter(user => user.active && user.role === CONST.USER_ROLES.GAMEMASTER)
-        .map(user => user._id)
+        .map(user => user.id)
         .sort();
   }
 
@@ -165,7 +167,7 @@ class MultilevelTokens {
       return false;
     }
     const activeGamemasters = this._getActiveGamemasters();
-    return activeGamemasters.length === 1 && activeGamemasters[0] === game.user._id;
+    return activeGamemasters.length === 1 && activeGamemasters[0] === game.user.id;
   }
 
   _isPrimaryGamemaster() {
@@ -175,7 +177,7 @@ class MultilevelTokens {
       return false;
     }
     const activeGamemasters = this._getActiveGamemasters();
-    return activeGamemasters.length > 0 && activeGamemasters[0] === game.user._id;
+    return activeGamemasters.length > 0 && activeGamemasters[0] === game.user.id;
   }
 
   _isAuthorisedRegion(drawing) {
@@ -227,7 +229,7 @@ class MultilevelTokens {
 
   _getSourceTokenForReplicatedToken(scene, token) {
     const sourceScene = this._getSourceSceneForReplicatedToken(scene, token);
-    return sourceScene && sourceScene.data.tokens.find(t => t._id === token.flags[MLT.SCOPE][MLT.FLAG_SOURCE_TOKEN]);
+    return sourceScene && sourceScene.data.tokens.find(t => t.id === token.flags[MLT.SCOPE][MLT.FLAG_SOURCE_TOKEN])?.data;
   }
 
   _getAllLinkedCanvasTokens(token) {
@@ -247,28 +249,28 @@ class MultilevelTokens {
   }
 
   _isInvalidReplicatedToken(scene, token) {
-    if (!scene.data.drawings.some(d => d._id === token.flags[MLT.SCOPE][MLT.FLAG_TARGET_REGION])) {
+    if (!scene.data.drawings.some(d => d.id === token.flags[MLT.SCOPE][MLT.FLAG_TARGET_REGION])) {
       return true;
     }
     const sourceScene = this._getSourceSceneForReplicatedToken(scene, token);
     if (!sourceScene) {
       return true;
     }
-    return !sourceScene.data.drawings.some(d => d._id === token.flags[MLT.SCOPE][MLT.FLAG_SOURCE_REGION]) ||
-           !sourceScene.data.tokens.some(t => t._id === token.flags[MLT.SCOPE][MLT.FLAG_SOURCE_TOKEN]);
+    return !sourceScene.data.drawings.some(d => d.id === token.flags[MLT.SCOPE][MLT.FLAG_SOURCE_REGION]) ||
+           !sourceScene.data.tokens.some(t => t.id === token.flags[MLT.SCOPE][MLT.FLAG_SOURCE_TOKEN]);
   }
 
   _isReplicationForSourceToken(sourceScene, sourceToken, targetScene, targetToken) {
     return targetToken.flags[MLT.SCOPE][MLT.FLAG_SOURCE_TOKEN] === sourceToken._id &&
         (MLT.FLAG_SOURCE_SCENE in targetToken.flags[MLT.SCOPE]
-            ? targetToken.flags[MLT.SCOPE][MLT.FLAG_SOURCE_SCENE] === sourceScene._id
+            ? targetToken.flags[MLT.SCOPE][MLT.FLAG_SOURCE_SCENE] === sourceScene.id
             : sourceScene === targetScene);
   }
 
   _isReplicationForSourceRegion(scene, region, targetScene, targetToken) {
     return targetToken.flags[MLT.SCOPE][MLT.FLAG_SOURCE_REGION] === region._id &&
         (MLT.FLAG_SOURCE_SCENE in targetToken.flags[MLT.SCOPE]
-            ? targetToken.flags[MLT.SCOPE][MLT.FLAG_SOURCE_SCENE] === scene._id
+            ? targetToken.flags[MLT.SCOPE][MLT.FLAG_SOURCE_SCENE] === scene.id
             : scene === targetScene);
   }
 
@@ -281,6 +283,30 @@ class MultilevelTokens {
            this._isReplicationForSourceRegion(scene, region, targetScene, targetToken);
   }
 
+  _getDrawingBounds(drawing) {
+    if (drawing.type === CONST.DRAWING_TYPES.POLYGON) {
+      let xMin = Number.MAX_VALUE;
+      let xMax = Number.MIN_VALUE;
+      let yMin = Number.MAX_VALUE;
+      let yMax = Number.MIN_VALUE;
+      drawing.points.forEach(p => {
+         const x = p[0] + drawing.x;
+         const y = p[1] + drawing.y;
+         xMin = Math.min(xMin, x);
+         xMax = Math.max(xMax, x);
+         yMin = Math.min(yMin, y);
+         yMax = Math.max(yMax, y);
+      });
+      return {
+        x: xMin,
+        y: yMin,
+        width: xMax - xMin,
+        height: yMax - yMin,
+      }
+    }
+    return drawing;
+  }
+
   _getDrawingCentre(drawing) {
     return {
       x: drawing.x + drawing.width / 2,
@@ -291,8 +317,10 @@ class MultilevelTokens {
   _getSceneScaleFactor(scene) {
     const hexScale = 2 / Math.sqrt(3);
     return {
-      x: scene.data.gridType === GRID_TYPES.HEXODDR || scene.data.gridType === GRID_TYPES.HEXEVENR ? hexScale : 1,
-      y: scene.data.gridType === GRID_TYPES.HEXODDQ || scene.data.gridType === GRID_TYPES.HEXEVENQ ? hexScale : 1,
+      x: scene.data.gridType === CONST.GRID_TYPES.HEXODDR ||
+         scene.data.gridType === CONST.GRID_TYPES.HEXEVENR ? hexScale : 1,
+      y: scene.data.gridType === CONST.GRID_TYPES.HEXODDQ ||
+         scene.data.gridType === CONST.GRID_TYPES.HEXEVENQ ? hexScale : 1,
     };
   }
 
@@ -317,8 +345,9 @@ class MultilevelTokens {
       point = this._rotate(this._getDrawingCentre(region), point, -region.rotation);
     }
 
-    const inBox = point.x >= region.x && point.x <= region.x + region.width &&
-                  point.y >= region.y && point.y <= region.y + region.height;
+    const boundingBox = this._getDrawingBounds(region);
+    const inBox = point.x >= boundingBox.x && point.x <= boundingBox.x + boundingBox.width &&
+                  point.y >= boundingBox.y && point.y <= boundingBox.y + boundingBox.height;
     if (!inBox) {
       return false;
     }
@@ -369,15 +398,17 @@ class MultilevelTokens {
       point = this._rotate(this._getDrawingCentre(sourceRegion), point, -sourceRegion.rotation);
     }
 
-    const px = (point.x - sourceRegion.x) * (targetRegion.width / sourceRegion.width);
-    const py = (point.y - sourceRegion.y) * (targetRegion.height / sourceRegion.height);
+    const sourceBounds = this._getDrawingBounds(sourceRegion);
+    const targetBounds = this._getDrawingBounds(targetRegion);
+    const px = (point.x - sourceBounds.x) * (targetBounds.width / sourceBounds.width);
+    const py = (point.y - sourceBounds.y) * (targetBounds.height / sourceBounds.height);
     let target = {
       x: this._hasRegionFlag(targetRegion, "flipX")
-          ? targetRegion.x + targetRegion.width - px
-          : targetRegion.x + px,
+          ? targetBounds.x + targetBounds.width - px
+          : targetBounds.x + px,
       y: this._hasRegionFlag(targetRegion, "flipY")
-          ? targetRegion.y + targetRegion.height - py
-          : targetRegion.y + py,
+          ? targetBounds.y + targetBounds.height - py
+          : targetBounds.y + py,
     };
     if (targetRegion.rotation) {
       target = this._rotate(this._getDrawingCentre(targetRegion), target, targetRegion.rotation);
@@ -385,15 +416,28 @@ class MultilevelTokens {
     return target;
   }
 
+  _duplicateTokenData(token) {
+    const data = duplicate(token.data);
+    if (token.actor && token.actor.temporaryEffects) {
+      data.actorData = {"effects": []};
+      for (var i = 0; i < token.actor.temporaryEffects.length; ++i) {
+        data.actorData.effects.push({"icon": token.actor.temporaryEffects[i].data.icon});
+      }
+    }
+    return data;
+  }
+
   _getReplicatedTokenCreateData(sourceScene, token, sourceRegion, targetScene, targetRegion) {
     const extraScale = this._getRegionFlag(targetRegion, "scale") || 1;
     const sourceScale = this._getSceneScaleFactor(sourceScene);
     const targetScale = this._getSceneScaleFactor(targetScene);
+    const sourceBounds = this._getDrawingBounds(sourceRegion);
+    const targetBounds = this._getDrawingBounds(targetRegion);
     const scale = {
       x: Math.abs(extraScale * (sourceScale.x / targetScale.x) *
-            (targetRegion.width / targetScene.data.grid) / (sourceRegion.width / sourceScene.data.grid)),
+            (targetBounds.width / targetScene.data.grid) / (sourceBounds.width / sourceScene.data.grid)),
       y: Math.abs(extraScale * (sourceScale.y / targetScale.y) *
-            (targetRegion.height / targetScene.data.grid) / (sourceRegion.height / sourceScene.data.grid)),
+            (targetBounds.height / targetScene.data.grid) / (sourceBounds.height / sourceScene.data.grid)),
     };
     const targetCentre = this._mapPosition(this._getTokenCentre(sourceScene, token), sourceRegion, targetRegion);
 
@@ -417,6 +461,15 @@ class MultilevelTokens {
     if (scale.y < scale.x) {
       data.scale = data.scale ? data.scale * scale.y / scale.x : scale.y / scale.x;
     }
+    if (data.actorData) {
+      if (data.actorData.effects) {
+        data.effects = [];
+        for (var i = 0; i < data.actorData.effects.length; ++i) {
+          data.effects.push(data.actorData.effects[i].icon);
+        }
+      }
+      delete data.actorData;
+    }
 
     const targetPosition = this._getTokenPositionFromCentre(targetScene, data, targetCentre);
     data.x = targetPosition.x;
@@ -428,7 +481,7 @@ class MultilevelTokens {
     }
     data.flags[MLT.SCOPE] = {};
     if (sourceScene !== targetScene) {
-      data.flags[MLT.SCOPE][MLT.FLAG_SOURCE_SCENE] = sourceScene._id;
+      data.flags[MLT.SCOPE][MLT.FLAG_SOURCE_SCENE] = sourceScene.id;
     }
     data.flags[MLT.SCOPE][MLT.FLAG_SOURCE_TOKEN] = token._id;
     data.flags[MLT.SCOPE][MLT.FLAG_SOURCE_REGION] = sourceRegion._id;
@@ -451,27 +504,28 @@ class MultilevelTokens {
     const flagMatch = d => this._hasRegionFlag(d, filterFlags) && this._getRegionFlag(d, idFlag) === id;
     if (this._hasRegionFlag(region, "local")) {
       return scene.data.drawings
-          .filter(d => d._id !== region._id && flagMatch(d))
-          .map(result => [region, scene, result]);
+          .filter(d => d.id !== region._id && flagMatch(d.data))
+          .map(result => [region, scene, result.data]);
     }
     return game.scenes.map(resultScene => resultScene.data.drawings
-        .filter(d => (d._id !== region._id || scene !== resultScene) && flagMatch(d))
-        .map(result => [region, resultScene, result])
+        .filter(d => (d.id !== region._id || scene !== resultScene) && flagMatch(d.data))
+        .map(result => [region, resultScene, result.data])
     ).flat();
   }
 
   _getNumericallyAdjacentLevelRegions(scene, levelRegion) {
     const levelNumber = parseInt(this._getRegionFlag(levelRegion, "levelNumber"));
     return scene.data.drawings.filter(d => {
-      const otherNumber = parseInt(this._getRegionFlag(d, "levelNumber"));
+      const otherNumber = parseInt(this._getRegionFlag(d.data, "levelNumber"));
       return otherNumber == levelNumber + 1 || otherNumber == levelNumber - 1;
-    });
+    }).map(d => d.data);
   }
 
   _getFlaggedRegionsContainingPoint(scene, point, flags) {
     return scene.data.drawings
-        .filter(drawing => this._hasRegionFlag(drawing, flags) &&
-                           this._isPointInRegion(point, drawing));
+        .filter(drawing => this._hasRegionFlag(drawing.data, flags) &&
+                           this._isPointInRegion(point, drawing.data))
+        .map(d => d.data);
   }
 
   _getFlaggedRegionsContainingToken(scene, token, flags) {
@@ -486,9 +540,11 @@ class MultilevelTokens {
       {x: mapNote.x + epsilon, y: mapNote.y - epsilon},
       {x: mapNote.x + epsilon, y: mapNote.y + epsilon},
     ];
-    return scene.data.drawings.filter(drawing =>
-        this._hasRegionFlag(drawing, "in") && this._hasRegionFlag(drawing, "activateViaMapNote") &&
-        points.some(p => this._isPointInRegion(p, drawing)));
+    return scene.data.drawings
+        .filter(drawing =>
+            this._hasRegionFlag(drawing.data, "in") && this._hasRegionFlag(drawing.data, "activateViaMapNote") &&
+            points.some(p => this._isPointInRegion(p, drawing.data)))
+        .map(d => d.data);
   }
 
   _filterRegionsAndUpdateLastTeleport(token, inRegions) {
@@ -507,45 +563,47 @@ class MultilevelTokens {
 
   _getReplicatedTokensForSourceToken(sourceScene, sourceToken) {
     return game.scenes.map(scene => scene.data.tokens
-        .filter(token => this._isReplicatedToken(token) &&
-                         this._isReplicationForSourceToken(sourceScene, sourceToken, scene, token))
-        .map(token => [scene, token])
+        .filter(token => this._isReplicatedToken(token.data) &&
+                         this._isReplicationForSourceToken(sourceScene, sourceToken, scene, token.data))
+        .map(token => [scene, token.data])
     ).flat();
   }
 
   _getReplicatedTokensForSourceRegion(sourceScene, sourceRegion) {
     const scenes = this._hasRegionFlag(sourceRegion, "local") ? [sourceScene] : game.scenes;
     return scenes.map(s => s.data.tokens
-        .filter(token => this._isReplicatedToken(token) &&
-                         this._isReplicationForSourceRegion(sourceScene, sourceRegion, s, token))
-        .map(token => [s, token])
+        .filter(token => this._isReplicatedToken(token.data) &&
+                         this._isReplicationForSourceRegion(sourceScene, sourceRegion, s, token.data))
+        .map(token => [s, token.data])
     ).flat();
   }
 
   _getReplicatedTokensForTargetRegion(targetScene, targetRegion) {
     return targetScene.data.tokens
-        .filter(token => this._isReplicatedToken(token) &&
-                         this._isReplicationForTargetRegion(targetScene, targetRegion, targetScene, token))
-        .map(token => [targetScene, token]);
+        .filter(token => this._isReplicatedToken(token.data) &&
+                         this._isReplicationForTargetRegion(targetScene, targetRegion, targetScene, token.data))
+        .map(token => [targetScene, token.data]);
   }
 
   _getReplicatedTokensForRegion(scene, region) {
     const scenes = this._hasRegionFlag(region, "source") && !this._hasRegionFlag(region, "local") ? game.scenes : [scene];
     return scenes.map(s => s.data.tokens
-        .filter(token => this._isReplicatedToken(token) &&
-                         this._isReplicationForRegion(scene, region, s, token))
-        .map(token => [s, token])
+        .filter(token => this._isReplicatedToken(token.data) &&
+                         this._isReplicationForRegion(scene, region, s, token.data))
+        .map(token => [s, token.data])
     ).flat();
   }
 
   _getTokensToReplicateForRegion(scene, sourceRegion) {
     return scene.data.tokens
-        .filter(token => this._isTokenInRegion(scene, token, sourceRegion) && this._isProperToken(token));
+        .filter(token => this._isTokenInRegion(scene, token.data, sourceRegion) && this._isProperToken(token.data))
+        .map(t => this._duplicateTokenData(t));
   }
 
   _getInvalidReplicatedTokensForScene(scene) {
     return scene.data.tokens
-        .filter(token => this._isReplicatedToken(token) && this._isInvalidReplicatedToken(scene, token));
+        .filter(token => this._isReplicatedToken(token.data) && this._isInvalidReplicatedToken(scene, token.data))
+        .map(t => t.data);
   }
 
   _replicateTokenFromRegionToRegion(requestBatch, scene, token, sourceRegion, targetScene, targetRegion) {
@@ -593,8 +651,8 @@ class MultilevelTokens {
           if (!sourceScene) {
             return;
           }
-          const sourceToken = sourceScene.data.tokens.find(t => t._id === targetToken.flags[MLT.SCOPE][MLT.FLAG_SOURCE_TOKEN]);
-          const sourceRegion = sourceScene.data.drawings.find(d => d._id === targetToken.flags[MLT.SCOPE][MLT.FLAG_SOURCE_REGION]);
+          const sourceToken = sourceScene.data.tokens.find(t => t.id === targetToken.flags[MLT.SCOPE][MLT.FLAG_SOURCE_TOKEN])?.data;
+          const sourceRegion = sourceScene.data.drawings.find(d => d.id === targetToken.flags[MLT.SCOPE][MLT.FLAG_SOURCE_REGION])?.data;
           if (sourceToken && sourceRegion) {
             this._updateReplicatedToken(requestBatch, sourceScene, sourceToken, sourceRegion, targetScene, targetToken, targetRegion);
           }
@@ -607,7 +665,7 @@ class MultilevelTokens {
 
     replicatedTokens.forEach(([targetScene, targetToken]) => {
       const sourceToken = tokens.find(t => this._isReplicationForSourceToken(sourceScene, t, targetScene, targetToken));
-      const targetRegion = targetScene.data.drawings.find(d => targetToken.flags[MLT.SCOPE][MLT.FLAG_TARGET_REGION] === d._id);
+      const targetRegion = targetScene.data.drawings.find(d => d.id === targetToken.flags[MLT.SCOPE][MLT.FLAG_TARGET_REGION])?.data;
       if (sourceToken && targetRegion) {
         this._updateReplicatedToken(requestBatch, sourceScene, sourceToken, sourceRegion, targetScene, targetToken, targetRegion);
       } else {
@@ -694,55 +752,46 @@ class MultilevelTokens {
         continue;
       }
       if (data.delete.length) {
-        // Also remove from combats.
-        for (const combat of game.combats.entities) {
-          if (combat.scene === scene) {
-            const combatants = data.delete.map(id => combat.getCombatantByToken(id)).flatMap(c => c ? [c._id] : []);
-            if (combatants.length) {
-              promise = promise.then(() => combat.deleteEmbeddedEntity("Combatant", combatants));
-            }
-          }
-        }
-        promise = promise.then(() => scene.deleteEmbeddedEntity(Token.embeddedName, data.delete, options));
+        promise = promise.then(() => scene.deleteEmbeddedDocuments(Token.embeddedName, data.delete, options));
       }
       if (data.updateAnimateDiff.length) {
-        promise = promise.then(() => scene.updateEmbeddedEntity(Token.embeddedName, data.updateAnimateDiff,
-                                                                Object.assign({diff: true}, options)));
+        promise = promise.then(() => scene.updateEmbeddedDocuments(Token.embeddedName, data.updateAnimateDiff,
+                                                                   Object.assign({diff: true}, options)));
       }
       if (data.updateAnimated.length) {
-        promise = promise.then(() => scene.updateEmbeddedEntity(Token.embeddedName, data.updateAnimated,
-                                                                Object.assign({diff: false}, options)));
+        promise = promise.then(() => scene.updateEmbeddedDocuments(Token.embeddedName, data.updateAnimated,
+                                                                   Object.assign({diff: false}, options)));
       }
       if (data.updateInstant.length) {
-        promise = promise.then(() => scene.updateEmbeddedEntity(Token.embeddedName, data.updateInstant,
-                                                                Object.assign({diff: false, animate: false}, options)));
+        promise = promise.then(() => scene.updateEmbeddedDocuments(Token.embeddedName, data.updateInstant,
+                                                                   Object.assign({diff: false, animate: false}, options)));
       }
       if (data.updateTile.length) {
-        promise = promise.then(() => scene.updateEmbeddedEntity(Tile.embeddedName, data.updateTile,
-                                                                Object.assign({diff: false}, options)));
+        promise = promise.then(() => scene.updateEmbeddedDocuments(Tile.embeddedName, data.updateTile,
+                                                                   Object.assign({diff: false}, options)));
       }
       if (data.updateWall.length) {
-        promise = promise.then(() => scene.updateEmbeddedEntity(Wall.embeddedName, data.updateWall,
-                                                                Object.assign({diff: false}, options)));
+        promise = promise.then(() => scene.updateEmbeddedDocuments(Wall.embeddedName, data.updateWall,
+                                                                   Object.assign({diff: false}, options)));
       }
       if (data.updateDrawing.length) {
-        promise = promise.then(() => scene.updateEmbeddedEntity(Drawing.embeddedName, data.updateDrawing,
-                                                                Object.assign({diff: false}, options)));
+        promise = promise.then(() => scene.updateEmbeddedDocuments(Drawing.embeddedName, data.updateDrawing,
+                                                                   Object.assign({diff: false}, options)));
       }
       if (data.updateMapNote.length) {
-        promise = promise.then(() => scene.updateEmbeddedEntity(Note.embeddedName, data.updateMapNote,
-                                                                Object.assign({diff: false}, options)));
+        promise = promise.then(() => scene.updateEmbeddedDocuments(Note.embeddedName, data.updateMapNote,
+                                                                   Object.assign({diff: false}, options)));
       }
       if (data.updateLight.length) {
-        promise = promise.then(() => scene.updateEmbeddedEntity(AmbientLight.embeddedName, data.updateLight,
-                                                                Object.assign({diff: false}, options)));
+        promise = promise.then(() => scene.updateEmbeddedDocuments(AmbientLight.embeddedName, data.updateLight,
+                                                                   Object.assign({diff: false}, options)));
       }
       if (data.updateSound.length) {
-        promise = promise.then(() => scene.updateEmbeddedEntity(AmbientSound.embeddedName, data.updateSound,
-                                                                Object.assign({diff: false}, options)));
+        promise = promise.then(() => scene.updateEmbeddedDocuments(AmbientSound.embeddedName, data.updateSound,
+                                                                   Object.assign({diff: false}, options)));
       }
       if (data.create.length) {
-        promise = promise.then(() => scene.createEmbeddedEntity(Token.embeddedName, data.create, options));
+        promise = promise.then(() => scene.createEmbeddedDocuments(Token.embeddedName, data.create, options));
       }
     }
     for (const f of requestBatch._extraActions) {
@@ -793,10 +842,10 @@ class MultilevelTokens {
   _initializeLastTeleportAndMacroTracking() {
     if (game.user.isGM) {
       game.scenes.forEach(scene => scene.data.tokens.forEach(token => {
-        this._setLastTeleport(scene, token);
-        const macroRegions = this._getFlaggedRegionsContainingToken(scene, token, ["macroEnter", "macroLeave", "macroMove"]);
+        this._setLastTeleport(scene, token.data);
+        const macroRegions = this._getFlaggedRegionsContainingToken(scene, token.data, ["macroEnter", "macroLeave", "macroMove"]);
         if (macroRegions.length) {
-          this._lastMacro[token._id] = macroRegions.map(r => r._id);
+          this._lastMacro[token.id] = macroRegions.map(r => r.id);
         }
       }));
     }
@@ -833,7 +882,7 @@ class MultilevelTokens {
     const movedMacroRegions = currentMacroRegions.flatMap(r =>
         this._hasRegionFlag(r, "macroMove") && previousMacroRegionIds.includes(r._id) ? [[r, MLT.MOVE]] : []);
     const leftMacroRegions = previousMacroRegionIds.flatMap(id => {
-        const r = scene.data.drawings.find(d => d._id === id);
+        const r = scene.data.drawings.find(d => d.id === id)?.data;
         return r && this._hasRegionFlag(r, "macroLeave") && !currentMacroRegions.some(s => s._id === id) ? [[r, MLT.LEAVE]] : [];
     });
 
@@ -846,7 +895,7 @@ class MultilevelTokens {
 
       if (macro.data.type === "chat") {
         this._chatMacroSpeaker = {
-          scene: scene._id,
+          scene: scene.id,
           actor: token.actorId,
           token: token._id,
           alias: token.name,
@@ -860,9 +909,9 @@ class MultilevelTokens {
         const outerToken = token;
         const outerRegion = region;
         {
-          const token = canvas.tokens.get(outerToken._id) || new Token(outerToken, scene);
+          const token = scene.data.tokens.get(outerToken._id);
           const actor = token.actor;
-          const region = canvas.drawings.get(outerRegion[0]._id) || new Drawing(outerRegion[0], scene);
+          const region = scene.data.drawings.get(outerRegion[0]._id);
           const event = outerRegion[1];
           const args = this._getMacroArgs(outerRegion[0]);
           try {
@@ -878,7 +927,7 @@ class MultilevelTokens {
 
   _overrideNotesDisplayForToken(scene, token) {
     const actor = game.actors.get(token.actorId);
-    if (!actor || !actor.hasPerm(game.user, "OWNER")) {
+    if (!actor || !actor.testUserPermission(game.user, "OWNER")) {
       return;
     }
 
@@ -920,11 +969,11 @@ class MultilevelTokens {
           columns: [CONST.GRID_TYPES.HEXODDQ, CONST.GRID_TYPES.HEXEVENQ].includes(outScene.data.gridType),
           even: [CONST.GRID_TYPES.HEXEVENR, CONST.GRID_TYPES.HEXEVENQ].includes(outScene.data.gridType)
         };
-        if (outScene.data.gridType === GRID_TYPES.SQUARE) {
+        if (outScene.data.gridType === CONST.GRID_TYPES.SQUARE) {
           const gridSize = options.dimensions.size;
           position.x = gridSize * Math.round(position.x / gridSize);
           position.y = gridSize * Math.round(position.y / gridSize);
-        } else if (outScene.data.gridType === GRID_TYPES.GRIDLESS) {
+        } else if (outScene.data.gridType === CONST.GRID_TYPES.GRIDLESS) {
           position.x = Math.round(position.x);
           position.y = Math.round(position.y);
         } else {
@@ -952,8 +1001,8 @@ class MultilevelTokens {
         token.y = position.y;
 
         const actor = game.actors.get(token.actorId);
-        const owners = actor ? game.users.filter(u => !u.isGM && actor.hasPerm(u, "OWNER")) : [];
-        if (!scene.data.tokens.find(t => t._id === id)) {
+        const owners = actor ? game.users.filter(u => !u.isGM && actor.testUserPermission(u, "OWNER")) : [];
+        if (!scene.data.tokens.find(t => t.id === id)) {
           // If the token has already gone, don't teleport it. Otherwise we could end up with things like the token getting
           // duplicated multiple times.
           continue;
@@ -961,7 +1010,7 @@ class MultilevelTokens {
         requestBatch.deleteToken(scene, id);
         requestBatch.createToken(outScene, token);
         owners.forEach(user => {
-          requestBatch.extraAction(() => game.socket.emit("pullToScene", outScene._id, user._id));
+          requestBatch.extraAction(() => game.socket.emit("pullToScene", outScene.id, user.id));
         })
       }
     });
@@ -1000,15 +1049,15 @@ class MultilevelTokens {
 
     for (const inRegion of inRegions) {
       const tokens = scene.data.tokens.filter(token => {
-        if (!this._isProperToken(token) || !this._isTokenInRegion(scene, token, inRegion)) {
+        if (!this._isProperToken(token.data) || !this._isTokenInRegion(scene, token.data, inRegion)) {
           return false;
         }
         if (user.isGM) {
           return true;
         }
-        const actor = game.actors.get(token.actorId);
-        return actor && actor.hasPerm(user, "OWNER");
-      });
+        const actor = game.actors.get(token.data.actorId);
+        return actor && actor.testUserPermission(user, "OWNER");
+      }).map(t => t.data);
       this._activateTeleport(scene, inRegion, tokens);
     }
   }
@@ -1024,7 +1073,7 @@ class MultilevelTokens {
       return false;
     }
 
-    const allStairTokens = scene.data.tokens.filter(t => t.name === MLT.TOKEN_STAIRS);
+    const allStairTokens = scene.data.tokens.filter(t => t.data.name === MLT.TOKEN_STAIRS).map(t => t.data);
     const sourceStairTokens =
         allStairTokens.filter(t => this._isPointInToken(scene, this._getTokenCentre(scene, token), t));
     if (!sourceStairTokens.length) {
@@ -1066,93 +1115,6 @@ class MultilevelTokens {
     return true;
   }
 
-  _legacyTagsToFlags(text) {
-    const flags = {
-      in: false,
-      out: false,
-      teleportId: undefined,
-      animate: false,
-      activateViaMapNote: false,
-      snapToGrid: false,
-      source: false,
-      target: false,
-      tintColor: MLT.DEFAULT_TINT_COLOR,
-      flipX: false,
-      flipY: false,
-      macroEnter: false,
-      macroLeave: false,
-      macroMove: false,
-      macroName: undefined,
-      macroArgs: undefined,
-      level: false,
-      levelNumber: 0,
-      local: false,
-    };
-    let converted = false;
-    const convertTag = (name, f) => {
-      if (text.startsWith(name)) {
-        converted = true;
-        f(text.substring(name.length));
-      }
-    }
-    const isLocal = id => id.startsWith("!");
-    const stripLocal = id => isLocal(id) ? id.substring(1) : id;
-    convertTag("@in:", id => {
-      flags.in = true;
-      flags.local = isLocal(id);
-      flags.teleportId = stripLocal(id);
-    });
-    convertTag("@out:", id => {
-      flags.out = true;
-      flags.local = isLocal(id);
-      flags.teleportId = stripLocal(id);
-    });
-    convertTag("@inout:", id => {
-      flags.in = true;
-      flags.out = true;
-      flags.local = isLocal(id);
-      flags.teleportId = stripLocal(id);
-    });
-    convertTag("@source:", id => {
-      flags.source = true;
-      flags.local = isLocal(id);
-      flags.cloneId = stripLocal(id);
-    });
-    convertTag("@target:", id => {
-      flags.target = true;
-      flags.local = isLocal(id);
-      flags.cloneId = stripLocal(id);
-    });
-    convertTag("@macro:", name => {
-      flags.macroEnter = true;
-      flags.macroName = name;
-    })
-    convertTag("@level:", n => {
-      flags.level = true;
-      flags.levelNumber = parseInt(n);
-    });
-    return converted ? flags : null;
-  }
-
-  _migrateRegion(requestBatch, scene, drawing) {
-    if (!this._isAuthorisedRegion(drawing) || !drawing.text) {
-      return;
-    }
-    const flags = this._legacyTagsToFlags(drawing.text)
-    if (!flags) {
-      return;
-    }
-    const data = {_id: drawing._id, flags: {}, text: this._flagsToLabel(flags)};
-    data.flags[MLT.SCOPE] = flags;
-    requestBatch.updateDrawing(scene, data);
-  }
-
-  _migrateRegions() {
-    this._queueAsync(requestBatch =>
-        game.scenes.forEach(scene =>
-            scene.data.drawings.forEach(r => this._migrateRegion(requestBatch, scene, r))));
-  }
-
   _flagsToLabel(flags) {
     let lines = [];
     if (flags.disabled) {
@@ -1185,126 +1147,122 @@ class MultilevelTokens {
     const contents = `
     <div class="tab" data-tab="multilevel-tokens">
       <p class="notes">${game.i18n.localize("MLT.TabNotes")}</p>
-      <hr>
       <h3 class="form-header">
         <i class="fas fa-random"/></i> ${game.i18n.localize("MLT.SectionTeleports")}
       </h3>
       <p class="notes">${game.i18n.localize("MLT.SectionTeleportsNotes")}</p>
       <div class="form-group">
-        <label for="mltIn">${game.i18n.localize("MLT.FieldIn")}</label>
-        <input type="checkbox" name="mltIn" data-dtype="Boolean"/>
+        <label for="flags.multilevel-tokens.in">${game.i18n.localize("MLT.FieldIn")}</label>
+        <input type="checkbox" name="flags.multilevel-tokens.in" data-dtype="Boolean"/>
       </div>
       <div class="form-group">
-        <label for="mltOut">${game.i18n.localize("MLT.FieldOut")}</label>
-        <input type="checkbox" name="mltOut" data-dtype="Boolean"/>
+        <label for="flags.multilevel-tokens.out">${game.i18n.localize("MLT.FieldOut")}</label>
+        <input type="checkbox" name="flags.multilevel-tokens.out" data-dtype="Boolean"/>
       </div>
       <div class="form-group">
-        <label for="mltTeleportId">${game.i18n.localize("MLT.FieldTeleportId")}</label>
-        <input type="text" name="mltTeleportId" data-dtype="String"/>
+        <label for="flags.multilevel-tokens.teleportId">${game.i18n.localize("MLT.FieldTeleportId")}</label>
+        <input type="text" name="flags.multilevel-tokens.teleportId" data-dtype="String"/>
       </div>
       <hr>
       <div class="form-group">
-        <label for="mltSnapToGrid">${game.i18n.localize("MLT.FieldSnapToGrid")}</label>
-        <input type="checkbox" name="mltSnapToGrid" data-dtype="Boolean"/>
+        <label for="flags.multilevel-tokens.snapToGrid">${game.i18n.localize("MLT.FieldSnapToGrid")}</label>
+        <input type="checkbox" name="flags.multilevel-tokens.snapToGrid" data-dtype="Boolean"/>
         <p class="notes">${game.i18n.localize("MLT.FieldSnapToGridNotes")}</p>
       </div>
       <div class="form-group">
-        <label for="mltAnimate">${game.i18n.localize("MLT.FieldAnimateMovement")}</label>
-        <input type="checkbox" name="mltAnimate" data-dtype="Boolean"/>
+        <label for="flags.multilevel-tokens.animate">${game.i18n.localize("MLT.FieldAnimateMovement")}</label>
+        <input type="checkbox" name="flags.multilevel-tokens.animate" data-dtype="Boolean"/>
       </div>
       <div class="form-group">
-        <label for="mltActivateViaMapNote">${game.i18n.localize("MLT.FieldActivateViaMapNote")}</label>
-        <input type="checkbox" name="mltActivateViaMapNote" data-dtype="Boolean"/>
+        <label for="flags.multilevel-tokens.activateViaMapNote">${game.i18n.localize("MLT.FieldActivateViaMapNote")}</label>
+        <input type="checkbox" name="flags.multilevel-tokens.activateViaMapNote" data-dtype="Boolean"/>
         <p class="notes">${game.i18n.localize("MLT.FieldActivateViaMapNoteNotes")}</p>
       </div>
       <hr>
       <div class="form-group">
-        <label for="mltLocal">${game.i18n.localize("MLT.FieldSceneLocal")}</label>
-        <input type="checkbox" name="mltLocal" data-dtype="Boolean"/>
+        <label for="flags.multilevel-tokens.local">${game.i18n.localize("MLT.FieldSceneLocal")}</label>
+        <input type="checkbox" name="flags.multilevel-tokens.local" data-dtype="Boolean"/>
         <p class="notes">${game.i18n.localize("MLT.FieldSceneLocalNotes")}</p>
       </div>
-      <hr>
       <h3 class="form-header">
         <i class="far fa-clone"/></i> ${game.i18n.localize("MLT.SectionTokenCloning")}
       </h3>
       <p class="notes">${game.i18n.localize("MLT.SectionTokenCloningNotes")}</p>
       <div class="form-group">
-        <label for="mltSource">${game.i18n.localize("MLT.FieldSource")}</label>
-        <input type="checkbox" name="mltSource" data-dtype="Boolean"/>
+        <label for="flags.multilevel-tokens.source">${game.i18n.localize("MLT.FieldSource")}</label>
+        <input type="checkbox" name="flags.multilevel-tokens.source" data-dtype="Boolean"/>
       </div>
       <div class="form-group">
-        <label for="mltTarget">${game.i18n.localize("MLT.FieldTarget")}</label>
-        <input type="checkbox" name="mltTarget" data-dtype="Boolean"/>
+        <label for="flags.multilevel-tokens.target">${game.i18n.localize("MLT.FieldTarget")}</label>
+        <input type="checkbox" name="flags.multilevel-tokens.target" data-dtype="Boolean"/>
       </div>
       <div class="form-group">
-        <label for="mltCloneId">${game.i18n.localize("MLT.FieldCloneId")}</label>
-        <input type="text" name="mltCloneId" data-dtype="String"/>
+        <label for="flags.multilevel-tokens.cloneId">${game.i18n.localize("MLT.FieldCloneId")}</label>
+        <input type="text" name="flags.multilevel-tokens.cloneId" data-dtype="String"/>
       </div>
       <hr>
       <p class="notes">${game.i18n.localize("MLT.SectionTargetRegionNotes")}</p>
       <div class="form-group">
-        <label for="mltTintColor">${game.i18n.localize("MLT.FieldClonedTokenTintColor")}</label>
+        <label for="flags.multilevel-tokens.tintColor">${game.i18n.localize("MLT.FieldClonedTokenTintColor")}</label>
         <div class="form-fields">
-          <input class="color" type="text" name="mltTintColor">
-          <input type="color" name="mltTintColorPicker" data-edit="mltTintColor">
+          <input class="color" type="text" name="flags.multilevel-tokens.tintColor">
+          <input type="color" name="flags.multilevel-tokens.tintColorPicker" data-edit="flags.multilevel-tokens.tintColor">
         </div>
       </div>
       <div class="form-group">
-        <label for="mltScale">${game.i18n.localize("MLT.FieldClonedTokenScale")}</label>
-        <input type="text" name="mltScale" value="1" data-dtype="Number"/>
+        <label for="flags.multilevel-tokens.scale">${game.i18n.localize("MLT.FieldClonedTokenScale")}</label>
+        <input type="text" name="flags.multilevel-tokens.scale" value="1" data-dtype="Number"/>
       </div>
       <div class="form-group">
-        <label for="mltFlipX">${game.i18n.localize("MLT.FieldMirrorHorizontally")}</label>
-        <input type="checkbox" name="mltFlipX" data-dtype="Boolean"/>
+        <label for="flags.multilevel-tokens.flipX">${game.i18n.localize("MLT.FieldMirrorHorizontally")}</label>
+        <input type="checkbox" name="flags.multilevel-tokens.flipX" data-dtype="Boolean"/>
       </div>
       <div class="form-group">
-        <label for="mltFlipY">${game.i18n.localize("MLT.FieldMirrorVertically")}</label>
-        <input type="checkbox" name="mltFlipY" data-dtype="Boolean"/>
+        <label for="flags.multilevel-tokens.flipY">${game.i18n.localize("MLT.FieldMirrorVertically")}</label>
+        <input type="checkbox" name="flags.multilevel-tokens.flipY" data-dtype="Boolean"/>
       </div>
-      <hr>
       <h3 class="form-header">
         <i class="fas fa-magic"/></i> ${game.i18n.localize("MLT.SectionMacroTriggers")}
       </h3>
       <p class="notes">${game.i18n.localize("MLT.SectionMacroTriggersNotes")}</p>
       <div class="form-group">
-        <label for="mltMacroEnter">${game.i18n.localize("MLT.FieldTriggerOnEnter")}</label>
-        <input type="checkbox" name="mltMacroEnter" data-dtype="Boolean"/>
+        <label for="flags.multilevel-tokens.macroEnter">${game.i18n.localize("MLT.FieldTriggerOnEnter")}</label>
+        <input type="checkbox" name="flags.multilevel-tokens.macroEnter" data-dtype="Boolean"/>
       </div>
       <div class="form-group">
-        <label for="mltMacroLeave">${game.i18n.localize("MLT.FieldTriggerOnLeave")}</label>
-        <input type="checkbox" name="mltMacroLeave" data-dtype="Boolean"/>
+        <label for="flags.multilevel-tokens.macroLeave">${game.i18n.localize("MLT.FieldTriggerOnLeave")}</label>
+        <input type="checkbox" name="flags.multilevel-tokens.macroLeave" data-dtype="Boolean"/>
       </div>
       <div class="form-group">
-        <label for="mltMacroMove">${game.i18n.localize("MLT.FieldTriggerOnMove")}</label>
-        <input type="checkbox" name="mltMacroMove" data-dtype="Boolean"/>
+        <label for="flags.multilevel-tokens.macroMove">${game.i18n.localize("MLT.FieldTriggerOnMove")}</label>
+        <input type="checkbox" name="flags.multilevel-tokens.macroMove" data-dtype="Boolean"/>
       </div>
       <p class="notes">${game.i18n.localize("MLT.SectionMacroEventsNotes")}</p>
       <div class="form-group">
-        <label for="mltMacroName">${game.i18n.localize("MLT.FieldMacroName")}</label>
-        <input type="text" name="mltMacroName" data-dtype="String"/>
+        <label for="flags.multilevel-tokens.macroName">${game.i18n.localize("MLT.FieldMacroName")}</label>
+        <input type="text" name="flags.multilevel-tokens.macroName" data-dtype="String"/>
       </div>
       <div class="form-group">
-        <label for="mltMacroName">${game.i18n.localize("MLT.FieldAdditionalArguments")}</label>
-        <input type="text" name="mltMacroArgs" data-dtype="String"/>
+        <label for="flags.multilevel-tokens.macroArgs">${game.i18n.localize("MLT.FieldAdditionalArguments")}</label>
+        <input type="text" name="flags.multilevel-tokens.macroArgs" data-dtype="String"/>
         <p class="notes">${game.i18n.localize("MLT.FieldAdditionalArgumentsNotes")}</p>
       </div>
-      <hr>
       <h3 class="form-header">
         <i class="fas fa-bars"/></i> ${game.i18n.localize("MLT.SectionLevels")}
       </h3>
       <p class="notes">${game.i18n.localize("MLT.SectionLevelsNotes")}</p>
       <div class="form-group">
-        <label for="mltLevel">${game.i18n.localize("MLT.FieldLevelRegion")}</label>
-        <input type="checkbox" name="mltLevel" data-dtype="Boolean"/>
+        <label for="flags.multilevel-tokens.level">${game.i18n.localize("MLT.FieldLevelRegion")}</label>
+        <input type="checkbox" name="flags.multilevel-tokens.level" data-dtype="Boolean"/>
       </div>
       <div class="form-group">
-        <label for="mltLevelNumber">${game.i18n.localize("MLT.FieldLevelNumber")}</label>
-        <input type="text" name="mltLevelNumber" value="0" data-dtype="Number"/>
+        <label for="flags.multilevel-tokens.levelNumber">${game.i18n.localize("MLT.FieldLevelNumber")}</label>
+        <input type="text" name="flags.multilevel-tokens.levelNumber" value="0" data-dtype="Number"/>
       </div>
       <hr>
       <div class="form-group">
-        <label for="mltDisabled">${game.i18n.localize("MLT.FieldDisableRegion")}</label>
-        <input type="checkbox" name="mltDisabled" data-dtype="Boolean"/>
+        <label for="flags.multilevel-tokens.disabled">${game.i18n.localize("MLT.FieldDisableRegion")}</label>
+        <input type="checkbox" name="flags.multilevel-tokens.disabled" data-dtype="Boolean"/>
         <p class="notes">${game.i18n.localize("MLT.FieldDisableRegionNotes")}</p>
       </div>
     </div>`;
@@ -1312,59 +1270,59 @@ class MultilevelTokens {
     html.find(".tabs .item").last().after(tab);
     html.find(".tab").last().after(contents);
     const mltTab = html.find(".tab").last();
-    const input = (name) => mltTab.find(`input[name="${name}"]`);
+    const input = (name) => mltTab.find(`input[name="flags.multilevel-tokens.${name}"]`);
 
-    input("mltIn").prop("checked", flags.in);
-    input("mltOut").prop("checked", flags.out);
-    input("mltTeleportId").prop("value", flags.teleportId);
-    input("mltAnimate").prop("checked", flags.animate);
-    input("mltActivateViaMapNote").prop("checked", flags.activateViaMapNote);
-    input("mltSnapToGrid").prop("checked", "snapToGrid" in flags ? flags.snapToGrid : true);
-    input("mltSource").prop("checked", flags.source);
-    input("mltTarget").prop("checked", flags.target);
-    input("mltCloneId").prop("value", flags.cloneId);
-    input("mltTintColor").prop("value", flags.tintColor || MLT.DEFAULT_TINT_COLOR);
-    input("mltTintColorPicker").prop("value", flags.tintColor || MLT.DEFAULT_TINT_COLOR);
-    input("mltScale").prop("value", flags.scale || 1);
-    input("mltFlipX").prop("checked", flags.flipX);
-    input("mltFlipY").prop("checked", flags.flipY);
-    input("mltMacroEnter").prop("checked", flags.macroEnter);
-    input("mltMacroLeave").prop("checked", flags.macroLeave);
-    input("mltMacroMove").prop("checked", flags.macroMove);
-    input("mltMacroName").prop("value", flags.macroName);
-    input("mltMacroArgs").prop("value", flags.macroArgs);
-    input("mltLevel").prop("checked", flags.level);
-    input("mltLevelNumber").prop("value", flags.levelNumber || 0);
-    input("mltLocal").prop("checked", flags.local);
-    input("mltDisabled").prop("checked", flags.disabled);
+    input("in").prop("checked", flags.in);
+    input("out").prop("checked", flags.out);
+    input("teleportId").prop("value", flags.teleportId);
+    input("animate").prop("checked", flags.animate);
+    input("activateViaMapNote").prop("checked", flags.activateViaMapNote);
+    input("snapToGrid").prop("checked", "snapToGrid" in flags ? flags.snapToGrid : true);
+    input("source").prop("checked", flags.source);
+    input("target").prop("checked", flags.target);
+    input("cloneId").prop("value", flags.cloneId);
+    input("tintColor").prop("value", flags.tintColor || MLT.DEFAULT_TINT_COLOR);
+    input("tintColorPicker").prop("value", flags.tintColor || MLT.DEFAULT_TINT_COLOR);
+    input("scale").prop("value", flags.scale || 1);
+    input("flipX").prop("checked", flags.flipX);
+    input("flipY").prop("checked", flags.flipY);
+    input("macroEnter").prop("checked", flags.macroEnter);
+    input("macroLeave").prop("checked", flags.macroLeave);
+    input("macroMove").prop("checked", flags.macroMove);
+    input("macroName").prop("value", flags.macroName);
+    input("macroArgs").prop("value", flags.macroArgs);
+    input("level").prop("checked", flags.level);
+    input("levelNumber").prop("value", flags.levelNumber || 0);
+    input("local").prop("checked", flags.local);
+    input("disabled").prop("checked", flags.disabled);
 
     const isChecked = name => input(name).is(":checked");
     const enable = (name, enabled) => input(name).prop("disabled", !enabled);
     const onChange = () => {
-      const isIn = isChecked("mltIn");
-      const isOut = isChecked("mltOut");
+      const isIn = isChecked("in");
+      const isOut = isChecked("out");
       const isTeleport = isIn || isOut;
-      const isSource = isChecked("mltSource");
-      const isTarget = isChecked("mltTarget");
-      const isMacro = isChecked("mltMacroEnter") || isChecked("mltMacroLeave") || isChecked("mltMacroMove");
-      const isLevel = isChecked("mltLevel");
+      const isSource = isChecked("source");
+      const isTarget = isChecked("target");
+      const isMacro = isChecked("macroEnter") || isChecked("macroLeave") || isChecked("macroMove");
+      const isLevel = isChecked("level");
 
-      enable("mltTeleportId", isTeleport);
-      enable("mltAnimate", isTeleport);
-      enable("mltActivateViaMapNote", isIn);
-      enable("mltSnapToGrid", isOut);
-      enable("mltCloneId", isSource || isTarget);
-      enable("mltTintColor", isTarget);
-      enable("mltTintColorPicker", isTarget);
-      enable("mltScale", isTarget);
-      enable("mltFlipX", isTarget);
-      enable("mltFlipY", isTarget);
-      enable("mltMacroName", isMacro);
-      enable("mltMacroArgs", isMacro);
-      enable("mltLevelNumber", isLevel);
-      enable("mltLocal", isTeleport || isSource || isTarget);
+      enable("teleportId", isTeleport);
+      enable("animate", isTeleport);
+      enable("activateViaMapNote", isIn);
+      enable("snapToGrid", isOut);
+      enable("cloneId", isSource || isTarget);
+      enable("tintColor", isTarget);
+      enable("tintColorPicker", isTarget);
+      enable("scale", isTarget);
+      enable("flipX", isTarget);
+      enable("flipY", isTarget);
+      enable("macroName", isMacro);
+      enable("macroArgs", isMacro);
+      enable("levelNumber", isLevel);
+      enable("local", isTeleport || isSource || isTarget);
     };
-    if (this._isUserGamemaster(game.user._id)) {
+    if (this._isUserGamemaster(game.user.id)) {
       mltTab.find("input").on("change", onChange);
     } else {
       mltTab.find("input").prop("disabled", true);
@@ -1374,62 +1332,11 @@ class MultilevelTokens {
   }
 
   _convertDrawingConfigUpdateData(data, update) {
-    if (!("mltIn" in update) && (!update.flags || !update.flags[MLT.SCOPE])) {
+    if (!update.flags || !update.flags[MLT.SCOPE]) {
       return;
     }
 
-    delete update["mltTintColorPicker"];
-    const convertFlag = (inputName, flagName) => {
-      if (!(inputName in update)) {
-        return;
-      }
-      if (!data.flags || !data.flags[MLT.SCOPE] || data.flags[MLT.SCOPE][flagName] !== update[inputName]) {
-        if (!update.flags) {
-          update.flags = {};
-        }
-        if (!update.flags[MLT.SCOPE]) {
-          update.flags[MLT.SCOPE] = {};
-        }
-        update.flags[MLT.SCOPE][flagName] = update[inputName];
-      }
-      delete update[inputName];
-    };
-
-    convertFlag("mltIn", "in");
-    convertFlag("mltOut", "out");
-    convertFlag("mltTeleportId", "teleportId");
-    convertFlag("mltAnimate", "animate");
-    convertFlag("mltActivateViaMapNote", "activateViaMapNote");
-    convertFlag("mltSnapToGrid", "snapToGrid");
-    convertFlag("mltSource", "source");
-    convertFlag("mltTarget", "target");
-    convertFlag("mltCloneId", "cloneId");
-    convertFlag("mltTintColor", "tintColor");
-    convertFlag("mltScale", "scale");
-    convertFlag("mltFlipX", "flipX");
-    convertFlag("mltFlipY", "flipY");
-    convertFlag("mltMacroEnter", "macroEnter");
-    convertFlag("mltMacroLeave", "macroLeave");
-    convertFlag("mltMacroMove", "macroMove");
-    convertFlag("mltMacroName", "macroName");
-    convertFlag("mltMacroArgs", "macroArgs");
-    convertFlag("mltLevel", "level");
-    convertFlag("mltLevelNumber", "levelNumber");
-    convertFlag("mltLocal", "local");
-    convertFlag("mltDisabled", "disabled");
-
     let manualText = "text" in update && update.text;
-    if (manualText) {
-      const convertedFlags = this._legacyTagsToFlags(update.text);
-      if (convertedFlags) {
-        if (!update.flags) {
-          update.flags = {};
-        }
-        update.flags[MLT.SCOPE] = convertedFlags;
-        manualText = false;
-      }
-    }
-
     if (!update.flags || !update.flags[MLT.SCOPE]) {
       return;
     }
@@ -1465,8 +1372,8 @@ class MultilevelTokens {
             .forEach(token => requestBatch.deleteToken(scene, token._id));
 
         scene.data.drawings
-            .filter(r => this._hasRegionFlag(r, "source"))
-            .forEach(r => this._updateAllReplicatedTokensForSourceRegion(requestBatch, scene, r));
+            .filter(r => this._hasRegionFlag(r.data, "source"))
+            .forEach(r => this._updateAllReplicatedTokensForSourceRegion(requestBatch, scene, r.data));
       });
     });
   }
@@ -1474,7 +1381,6 @@ class MultilevelTokens {
   _onReady() {
     // Replications might be out of sync if there was previously no GM and we just logged in.
     if (this._isOnlyGamemaster()) {
-      this._migrateRegions();
       this.refreshAll();
     }
     if (game.user.isGM) {
@@ -1488,9 +1394,9 @@ class MultilevelTokens {
       // Workaround for issue where imported scene contains drawings whose author is an invalid user ID.
       // Can assume a GM took the import action and update to use their ID instead.
       this._queueAsync(requestBatch => {
-        scene.data.drawings.filter(d => !game.users.find(u => u.id === d.author)).forEach(d => {
+        scene.data.drawings.filter(d => !game.users.find(u => u.id === d.data.author)).forEach(d => {
           requestBatch.updateDrawing(scene, {
-            _id: d._id,
+            _id: d.id || d._id,
             author: game.user.id,
           });
         });
@@ -1500,87 +1406,87 @@ class MultilevelTokens {
     return true;
   }
 
-  _onCreateDrawing(scene, drawing, options, userId) {
-    if (this._hasRegionFlag(drawing, "source")) {
-      const d = duplicate(drawing);
-      this._queueAsync(requestBatch => this._replicateAllFromSourceRegion(requestBatch, scene, d));
+  _onCreateDrawing(drawing, options, userId) {
+    if (this._hasRegionFlag(drawing.data, "source")) {
+      const d = duplicate(drawing.data);
+      this._queueAsync(requestBatch => this._replicateAllFromSourceRegion(requestBatch, drawing.parent, d));
     }
-    if (this._hasRegionFlag(drawing, "target")) {
-      const d = duplicate(drawing);
-      this._queueAsync(requestBatch => this._replicateAllToTargetRegion(requestBatch, scene, d));
+    if (this._hasRegionFlag(drawing.data, "target")) {
+      const d = duplicate(drawing.data);
+      this._queueAsync(requestBatch => this._replicateAllToTargetRegion(requestBatch, drawing.parent, d));
     }
   }
 
-  _onPreUpdateDrawing(scene, drawing, update, options, userId) {
-    this._convertDrawingConfigUpdateData(drawing, update);
+  _onPreUpdateDrawing(drawing, update, options, userId) {
+    this._convertDrawingConfigUpdateData(drawing.data, update);
     if (update.flags && update.flags[MLT.SCOPE]) {
-      this._onDeleteDrawing(scene, drawing, update, options, userId);
+      this._onDeleteDrawing(drawing, options, userId);
     }
     return true;
   }
 
-  _onUpdateDrawing(scene, drawing, update, options, userId) {
+  _onUpdateDrawing(drawing, update, options, userId) {
     if (update.flags && update.flags[MLT.SCOPE]) {
-      this._onCreateDrawing(scene, drawing, options, userId);
-    } else if (this._hasRegionFlag(drawing, "source") || this._hasRegionFlag(drawing, "target")) {
-      const d = duplicate(drawing);
+      this._onCreateDrawing(drawing, options, userId);
+    } else if (this._hasRegionFlag(drawing.data, "source") || this._hasRegionFlag(drawing.data, "target")) {
+      const d = duplicate(drawing.data);
       this._queueAsync(requestBatch => {
         if (this._hasRegionFlag(d, "source")) {
-          this._updateAllReplicatedTokensForSourceRegion(requestBatch, scene, d);
+          this._updateAllReplicatedTokensForSourceRegion(requestBatch, drawing.parent, d);
         }
         if (this._hasRegionFlag(d, "target")) {
-          this._updateAllReplicatedTokensForTargetRegion(requestBatch, scene, d);
+          this._updateAllReplicatedTokensForTargetRegion(requestBatch, drawing.parent, d);
         }
       });
     }
   }
 
-  _onDeleteDrawing(scene, drawing, options, userId) {
-    if (this._hasRegionFlag(drawing, ["source", "target"])) {
-      const d = duplicate(drawing);
-      this._queueAsync(requestBatch => this._removeReplicationsForRegion(requestBatch, scene, d));
+  _onDeleteDrawing(drawing, options, userId) {
+    if (this._hasRegionFlag(drawing.data, ["source", "target"])) {
+      const d = duplicate(drawing.data);
+      this._queueAsync(requestBatch => this._removeReplicationsForRegion(requestBatch, drawing.parent, d));
     }
   }
 
-  _onPreCreateToken(scene, token, options, userId) {
-    return this._allowTokenOperation(token, options);
+  _onPreCreateToken(token, data, options, userId) {
+    return this._allowTokenOperation(token.data, options);
   }
 
-  _onCreateToken(scene, token, options, userId) {
-    if (this._isProperToken(token)) {
-      const t = duplicate(token);
-      this._queueAsync(requestBatch => this._replicateTokenToAllRegions(requestBatch, scene, t));
-      this._setLastTeleport(scene, token);
+  _onCreateToken(token, options, userId) {
+    if (this._isProperToken(token.data)) {
+      const t = this._duplicateTokenData(token);
+      this._queueAsync(requestBatch => this._replicateTokenToAllRegions(requestBatch, token.parent, t));
+      this._setLastTeleport(token.parent, token.data);
     }
   }
 
-  _onPreUpdateToken(scene, token, update, options, userId) {
-    if (this._allowTokenOperation(token, options) || this._isInvalidReplicatedToken(scene, token)) {
+  _onPreUpdateToken(token, update, options, userId) {
+    if (this._allowTokenOperation(token.data, options) || this._isInvalidReplicatedToken(token.parent, token.data)) {
       return true;
     }
     // Attempt to update replicated token.
-    if ('x' in update || 'y' in update || 'rotation' in update || 'actorId' in update) {
+    if ('x' in update || 'y' in update || 'rotation' in update || 'effects' in update || 'actorId' in update) {
       return false;
     }
-    const sourceScene = this._getSourceSceneForReplicatedToken(scene, token);
-    const sourceToken = this._getSourceTokenForReplicatedToken(scene, token);
+    const sourceScene = this._getSourceSceneForReplicatedToken(token.parent, token.data);
+    const sourceToken = this._getSourceTokenForReplicatedToken(token.parent, token.data);
     if (sourceScene && sourceToken) {
       const newUpdate = duplicate(update);
       newUpdate._id = sourceToken._id;
-      sourceScene.updateEmbeddedEntity(Token.embeddedName, newUpdate, options);
+      sourceScene.updateEmbeddedDocuments(Token.embeddedName, [newUpdate], options);
     }
     return false;
   }
 
-  _onUpdateToken(scene, token, update, options, userId) {
+  _onUpdateToken(token, update, options, userId) {
     if (MLT.REPLICATED_UPDATE in options && "animate" in options && !options.animate &&
         ('x' in update || 'y' in update)) {
       // Workaround for issues with a non-animated position update on a token that is already animating.
-      const canvasToken = canvas.tokens.placeables.find(t => t.id === token._id);
-      if (canvasToken && canvasToken._movement) {
+      const canvasToken = canvas.tokens.placeables.find(t => t.id === token.data._id);
+      if (canvasToken) {
         canvasToken._movement = null;
         canvasToken.stopAnimation();
-        canvasToken._onUpdate({x: token.x, y: token.y}, {animate: false});
+        canvasToken._onUpdate({x: token.data.x, y: token.data.y}, {animate: false});
         canvas.triggerPendingOperations();
       }
       // Workaround for vision bug on 0.7.4.
@@ -1589,20 +1495,36 @@ class MultilevelTokens {
       }
     }
     if (!game.user.isGM) {
-      this._overrideNotesDisplayForToken(scene, token);
+      this._overrideNotesDisplayForToken(token.parent, token.data);
     }
-    if (this._isProperToken(token)) {
-      const t = duplicate(token);
-      this._queueAsync(requestBatch => this._updateAllReplicatedTokensForToken(requestBatch, scene, t, Object.keys(update)));
+    if (this._isProperToken(token.data)) {
+      const t = this._duplicateTokenData(token);
+      this._queueAsync(requestBatch =>
+          this._updateAllReplicatedTokensForToken(requestBatch, token.parent, t, Object.keys(update)));
       if ('x' in update || 'y' in update) {
-        this._doMacros(scene, token);
+        this._doMacros(token.parent, token.data);
       }
       if (MLT.REPLICATED_UPDATE in options) {
-        this._setLastTeleport(scene, token);
+        this._setLastTeleport(token.parent, token.data);
       } else {
-        this._doTeleport(scene, token) || this._doLevelTeleport(scene, token);
+        this._doTeleport(token.parent, token.data) || this._doLevelTeleport(token.parent, token.data);
       }
     }
+  }
+
+  _onUpdateActiveEffect(effect, options, userId) {
+    console.log("hi!");
+    const actor = effect.parent;
+    this._queueAsync(requestBatch => {
+      game.scenes.forEach(scene => {
+        scene.tokens.forEach(token => {
+          if (token.actor && token.actor == actor) {
+            const t = this._duplicateTokenData(token);
+            this._updateAllReplicatedTokensForToken(requestBatch, scene, t, ["effects"]);
+          }
+        });
+      });
+    });
   }
 
   _onControlToken(token, control) {
@@ -1611,16 +1533,16 @@ class MultilevelTokens {
     }
   }
 
-  _onPreDeleteToken(scene, token, options, userId) {
-    return this._allowTokenOperation(token, options) || this._isInvalidReplicatedToken(scene, token);
+  _onPreDeleteToken(token, options, userId) {
+    return this._allowTokenOperation(token.data, options) || this._isInvalidReplicatedToken(token.parent, token.data);
   }
 
-  _onDeleteToken(scene, token, options, userId) {
-    if (this._isProperToken(token)) {
-      const t = duplicate(token);
-      this._queueAsync(requestBatch => this._removeReplicationsForSourceToken(requestBatch, scene, t));
-      delete this._lastTeleport[token._id];
-      delete this._lastMacro[token._id];
+  _onDeleteToken(token, options, userId) {
+    if (this._isProperToken(token.data)) {
+      const t = this._duplicateTokenData(token);
+      this._queueAsync(requestBatch => this._removeReplicationsForSourceToken(requestBatch, token.parent, t));
+      delete this._lastTeleport[token.data._id];
+      delete this._lastMacro[token.data._id];
     }
   }
 
@@ -1664,8 +1586,9 @@ class MultilevelTokens {
     }
   }
 
-  _onPreCreateCombatant(combat, combatant, options, userId) {
-    const token = combat.scene.data.tokens.find(t => t._id === combatant.tokenId);
+  _onPreCreateCombatant(combatant, data, options, userId) {
+    const combat = combatant.parent;
+    const token = combat.scene.data.tokens.find(t => t.id === combatant.data.tokenId)?.data;
     if (!token || !this._isReplicatedToken(token)) {
       return true;
     }
@@ -1677,9 +1600,14 @@ class MultilevelTokens {
     if (sourceToken) {
       const activeCombatant = combat.getCombatantByToken(sourceToken._id);
       if (activeCombatant) {
-        combat.deleteEmbeddedEntity("Combatant", activeCombatant._id);
+        combat.deleteEmbeddedDocuments("Combatant", [activeCombatant.data._id]);
       } else {
-        combat.createEmbeddedEntity("Combatant", { tokenId: sourceToken._id, hidden: sourceToken.hidden});
+        combat.createEmbeddedDocuments("Combatant", [{
+            tokenId: sourceToken._id,
+            sceneId: combat.scene.id,
+            actorId: sourceToken.actorId,
+            hidden: sourceToken.hidden
+        }]);
       }
     }
     return false;
@@ -1701,7 +1629,7 @@ class MultilevelTokens {
     if (!scene) {
       return;
     }
-    const token = scene.data.tokens.find(t => t._id === message.data.speaker.token);
+    const token = scene.data.tokens.find(t => t.id === message.data.speaker.token)?.data;
     if (!token) {
       return;
     }
@@ -1728,7 +1656,7 @@ class MultilevelTokens {
       if (!scene || !user) {
         return;
       }
-      const note = scene.data.notes.find(note => note._id === data.note);
+      const note = scene.data.notes.find(note => note.id === data.note)?.data;
       if (note) {
         this._doMapNoteTeleport(scene, note, user);
       }

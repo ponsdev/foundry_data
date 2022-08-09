@@ -1,1 +1,117 @@
-const _0x2ca5=['261469bJBvfO','1JBfznN','name','38017uInxLZ','176231RIZErr','toLowerCase','255110FzlKux','46EcnlBj','register','MODULE_NAME','_init_tryPatchGetRollData','4LIqceR','259252QoXKig','47365rlzgET','init','3251QyoFbK','MODULE_NAME_FAKE','error','replace','LIBWRAPPER_MODE_WRAPPER','1yrqYTQ'];const _0x21a6=function(_0x15a395,_0x1c8b58){_0x15a395=_0x15a395-0xdc;let _0x2ca5f5=_0x2ca5[_0x15a395];return _0x2ca5f5;};const _0x3f99d8=_0x21a6;(function(_0x1ede5b,_0x559a5d){const _0xb02323=_0x21a6;while(!![]){try{const _0x12d77e=-parseInt(_0xb02323(0xee))+-parseInt(_0xb02323(0xf0))+-parseInt(_0xb02323(0xed))*parseInt(_0xb02323(0xe0))+parseInt(_0xb02323(0xe9))*parseInt(_0xb02323(0xea))+-parseInt(_0xb02323(0xe1))*-parseInt(_0xb02323(0xeb))+parseInt(_0xb02323(0xe2))+-parseInt(_0xb02323(0xe4))*-parseInt(_0xb02323(0xdc));if(_0x12d77e===_0x559a5d)break;else _0x1ede5b['push'](_0x1ede5b['shift']());}catch(_0x320d2f){_0x1ede5b['push'](_0x1ede5b['shift']());}}}(_0x2ca5,0x20c4f));import{libWrapper,UtilLibWrapper}from'./PatcherLibWrapper.js';import{SharedConsts}from'../shared/SharedConsts.js';import{LGT}from'./Util.js';class Patcher_Item{static[_0x3f99d8(0xe3)](){this['_init_tryPatchGetRollData']();}static[_0x3f99d8(0xdf)](){const _0x27e5a5=_0x3f99d8;try{libWrapper[_0x27e5a5(0xdd)](SharedConsts[_0x27e5a5(0xde)],'CONFIG.Item.entityClass.prototype.getRollData',function(_0x76d9a6,..._0x36e5de){const _0x285f66=_0x27e5a5,_0x4ecdfd=_0x76d9a6(..._0x36e5de);if(!_0x4ecdfd)return _0x4ecdfd;return _0x4ecdfd[_0x285f66(0xec)]=this[_0x285f66(0xec)],_0x4ecdfd[SharedConsts[_0x285f66(0xe5)]]={'name':{[this[_0x285f66(0xec)][_0x285f66(0xef)]()[_0x285f66(0xe7)](/[^a-zA-Z0-9]/g,'')]:0x1}},_0x4ecdfd;},UtilLibWrapper[_0x27e5a5(0xe8)]);}catch(_0x2893e8){console[_0x27e5a5(0xe6)](...LGT,'Failed\x20to\x20bind\x20getRollData\x20handler!',_0x2893e8);}}}export{Patcher_Item};
+import {UtilLibWrapper} from "./PatcherLibWrapper.js";
+import {LGT} from "./Util.js";
+import {Patcher_RollData} from "./PatcherRollData.js";
+import {Config} from "./Config.js";
+import {ConfigConsts} from "./ConfigConsts.js";
+import {UtilActors} from "./UtilActors.js";
+
+class Patcher_Item {
+	static init () {
+		this._init_tryPatchGetRollData();
+	}
+
+	static _init_tryPatchGetRollData () {
+		try {
+			UtilLibWrapper.addPatch(
+				"CONFIG.Item.documentClass.prototype.getRollData",
+				this._lw_CONFIG_Item_documentClass_prototype_getRollData,
+				UtilLibWrapper.LIBWRAPPER_MODE_WRAPPER,
+			);
+		} catch (e) {
+			console.error(...LGT, `Failed to bind getRollData handler!`, e);
+		}
+	}
+
+	static handleConfigUpdate ({isInit = false} = {}) {
+		this._handleConfigUpdate_togglePatches();
+		try {
+			return this._handleConfigUpdate_();
+		} catch (e) {
+			if (!isInit) throw e;
+			Config.handleFailedInitConfigApplication("importSpell", "spellPointsMode");
+			Config.handleFailedInitConfigApplication("importSpell", "spellPointsModeNpc", e);
+		}
+	}
+
+	static _lw_CONFIG_Item_documentClass_prototype_getRollData (fn, ...args) {
+		const out = fn(...args);
+		return Patcher_Item._getRollData(this, out);
+	}
+
+	static _getRollData (item, rollData) {
+		if (!rollData) return rollData;
+		Object.assign(rollData, Patcher_RollData.getAdditionalRollDataBase(item));
+		return rollData;
+	}
+
+	static _handleConfigUpdate_ () {
+		this._handleConfigUpdate_togglePatches();
+	}
+
+	static _handleConfigUpdate_togglePatches () {
+		UtilLibWrapper.togglePatch(
+			"CONFIG.Item.documentClass.prototype._getUsageUpdates",
+			this._lw_CONFIG_Item_documentClass_prototype_getUsageUpdates,
+			UtilLibWrapper.LIBWRAPPER_MODE_WRAPPER,
+			Config.get("importSpell", "spellPointsMode") !== ConfigConsts.C_SPELL_POINTS_MODE__DISABLED
+			|| Config.get("importSpell", "spellPointsModeNpc") !== ConfigConsts.C_SPELL_POINTS_MODE__DISABLED,
+		);
+	}
+
+	static _lw_CONFIG_Item_documentClass_prototype_getUsageUpdates (fn, ...args) {
+		const out = fn(...args);
+		if (!out) return out;
+
+		const {consumeSpellLevel} = args[0];
+		if (!consumeSpellLevel) return out;
+
+		if (this?.data?.type !== "spell") return out;
+
+		if (!(this.parent instanceof Actor)) return out;
+
+		const configKeyMode = Config.getSpellPointsKey({actorType: this.parent.type});
+
+		const spellPointsMode = Config.get("importSpell", configKeyMode);
+		if (spellPointsMode === ConfigConsts.C_SPELL_POINTS_MODE__DISABLED) return out;
+
+		const mSpellLevel = /^spell(?<castAtLevel>\d+)$/.exec(`${consumeSpellLevel}`);
+		if (!mSpellLevel) return;
+
+		const originalItem = this.parent.items.get(this.id);
+		if (!originalItem) return out;
+
+		const originalLevel = originalItem.data.data.level;
+		if (isNaN(originalLevel)) return out;
+
+		const castAtLevel = Number(mSpellLevel.groups.castAtLevel);
+		if (castAtLevel === originalLevel) return out;
+
+		const resource = Config.getSpellPointsResource({isValueKey: true});
+		const consumeAmountBase = Parser.spLevelToSpellPoints(originalLevel);
+		const consumeAmountCurrent = Parser.spLevelToSpellPoints(castAtLevel);
+
+		const delta = Math.max(0, consumeAmountCurrent - consumeAmountBase);
+
+		if (resource === ConfigConsts.C_SPELL_POINTS_RESOURCE__SHEET_ITEM) {
+			const spellPointsItem = UtilActors.getActorSpellPointsItem({actor: this.parent});
+			if (!spellPointsItem) return out;
+
+			const toUpdate = out.resourceUpdates.find(it => it._id === spellPointsItem.id);
+			if (!toUpdate) return out;
+
+			if (toUpdate["data.uses.value"] == null) return out;
+
+			toUpdate["data.uses.value"] -= delta;
+
+			return out;
+		}
+
+		if (out.actorUpdates[`data.${resource}`] == null) return out;
+
+		out.actorUpdates[`data.${resource}`] -= delta;
+
+		return out;
+	}
+}
+
+export {Patcher_Item};

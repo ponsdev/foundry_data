@@ -86,7 +86,7 @@ export const addFavorites = async function(app, html, data, position) {
   // processing all items and put them in their respective lists if they're favorited
   for (let item of items) {
 
-      item.owner = app.actor.owner;
+      item.owner = app.actor.isOwner;
       
       // do not add the fav button for class items
       if (item.type == "class") continue;
@@ -108,7 +108,7 @@ export const addFavorites = async function(app, html, data, position) {
       if (app.options.editable) {
         let favBtn = $(`<a class="item-control item-fav ${isFav ? 'active' : ''}" title="${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}" data-fav="${isFav}"><i class="${isFav ? "fas fa-bookmark" : "fas fa-bookmark inactive"}"></i> <span class="control-label">${isFav ? game.i18n.localize("TIDY5E.RemoveFav") : game.i18n.localize("TIDY5E.AddFav")}</span></a>`);
         favBtn.click(ev => {
-          app.actor.getOwnedItem(item._id).update({ "flags.favtab.isFavorite": !item.flags.favtab.isFavorite });
+          app.actor.items.get(item._id).update({ "flags.favtab.isFavorite": !item.flags.favtab.isFavorite });
         });
         html.find(`.item[data-item-id="${item._id}"]`).find('.item-controls .item-edit').before(favBtn);
         if(item.flags.favtab.isFavorite){
@@ -124,6 +124,7 @@ export const addFavorites = async function(app, html, data, position) {
           let translation = {
               none : game.i18n.localize("DND5E.None"),
               action : game.i18n.localize("DND5E.Action"),
+              crew : game.i18n.localize("DND5E.VehicleCrewAction"),
               bonus : game.i18n.localize("DND5E.BonusAction"),
               reaction : game.i18n.localize("DND5E.Reaction"),
               legendary : game.i18n.localize("DND5E.LegAct"),
@@ -131,7 +132,9 @@ export const addFavorites = async function(app, html, data, position) {
               special : game.i18n.localize("DND5E.Special"),
               day : game.i18n.localize("DND5E.TimeDay"),
               hour : game.i18n.localize("DND5E.TimeHour"),
-              minute : game.i18n.localize("DND5E.TimeMinute")
+              minute : game.i18n.localize("DND5E.TimeMinute"),
+              reactiondamage : game.i18n.localize("midi-qol.reactionDamaged"),
+              reactionmanual : game.i18n.localize("midi-qol.reactionManual")
           }
 
           function translateLabels (key){
@@ -255,6 +258,7 @@ export const addFavorites = async function(app, html, data, position) {
       }
 
       // sorting favSpells alphabetically
+      /*
       const favSpellsArray = Object.keys(favSpells);
       for (let key of favSpellsArray){
         favSpells[key].spells.sort(function(a, b){
@@ -266,8 +270,10 @@ export const addFavorites = async function(app, html, data, position) {
          return 0; //default return value (no sorting)
         });
       }
+      */
 
       // sorting favSpellsPrepMode alphabetically
+      /*
       const favSpellsPrepModeArray = Object.keys(favSpellsPrepMode);
       for (let key of favSpellsPrepModeArray){
         favSpellsPrepMode[key].spells.sort(function(a, b){
@@ -279,6 +285,7 @@ export const addFavorites = async function(app, html, data, position) {
          return 0; //default return value (no sorting)
         });
       }
+      */
 
       let attributesTab = html.find('.item[data-tab="attributes"]');
       let favContainer = html.find('.favorites-wrap');
@@ -320,33 +327,33 @@ export const addFavorites = async function(app, html, data, position) {
           // editing the item
           favHtml.find('.item-control.item-edit').click(ev => {
             let itemId = $(ev.target).parents('.item')[0].dataset.itemId;
-            app.actor.getOwnedItem(itemId).sheet.render(true);
+            app.actor.items.get(itemId).sheet.render(true);
           });
 
           // toggle item icon
           favHtml.find('.item-control.item-toggle').click(ev => {
             ev.preventDefault();
             let itemId = ev.currentTarget.closest(".item").dataset.itemId;
-            let item = app.actor.getOwnedItem(itemId);
+            let item = app.actor.items.get(itemId);
             let attr = item.data.type === "spell" ? "data.preparation.prepared" : "data.equipped";
             return item.update({ [attr]: !getProperty(item.data, attr) });
           });
 
           // update item attunement
           favHtml.find('.item-control.item-attunement').click( async (ev) => {
-            event.preventDefault();
+            ev.preventDefault();
             let itemId = ev.currentTarget.closest(".item").dataset.itemId;
-            let item = app.actor.getOwnedItem(itemId);
+            let item = app.actor.items.get(itemId);
 
             if(item.data.data.attunement == 2) {
-              app.actor.getOwnedItem(itemId).update({'data.attunement': 1});
+              app.actor.items.get(itemId).update({'data.attunement': 1});
             } else {
 
               if(app.actor.data.data.details.attunedItemsCount >= app.actor.data.data.details.attunedItemsMax) {
                 let count = actor.data.data.details.attunedItemsCount;
                 ui.notifications.warn(`${game.i18n.format("TIDY5E.AttunementWarning", {number: count})}`);
               } else {
-                app.actor.getOwnedItem(itemId).update({'data.attunement': 2});
+                app.actor.items.get(itemId).update({'data.attunement': 2});
               }
             }
           });
@@ -354,8 +361,8 @@ export const addFavorites = async function(app, html, data, position) {
           // removing item from favorite list
           favHtml.find('.item-fav').click(ev => {
             let itemId = $(ev.target).parents('.item')[0].dataset.itemId;
-            let val = !app.actor.getOwnedItem(itemId).data.flags.favtab.isFavorite
-            app.actor.getOwnedItem(itemId).update({ "flags.favtab.isFavorite": val });
+            let val = !app.actor.items.get(itemId).data.flags.favtab.isFavorite
+            app.actor.items.get(itemId).update({ "flags.favtab.isFavorite": val });
           });
 
           // changing the charges values (removing if both value and max are 0)
@@ -364,7 +371,7 @@ export const addFavorites = async function(app, html, data, position) {
             let path = ev.target.dataset.path;
             let data = {};
             data[path] = Number(ev.target.value);
-            app.actor.getOwnedItem(itemId).update(data);
+            app.actor.items.get(itemId).update(data);
             // app.activateFavs = true;
           });
 
@@ -378,39 +385,41 @@ export const addFavorites = async function(app, html, data, position) {
           // creating charges for the item
           favHtml.find('.addCharges').click(ev => {
             let itemId = $(ev.target).parents('.item')[0].dataset.itemId;
-            let item = app.actor.getOwnedItem(itemId);
+            let item = app.actor.items.get(itemId);
 
             item.data.uses = { value: 1, max: 1 };
             let data = {};
             data['data.uses.value'] = 1;
             data['data.uses.max'] = 1;
 
-            app.actor.getOwnedItem(itemId).update(data);
+            app.actor.items.get(itemId).update(data);
           });
 
           // charging features
           favHtml.find('.item-recharge').click(ev => {
             ev.preventDefault();
             let itemId = $(ev.target).parents('.item')[0].dataset.itemId;
-            let item = app.actor.getOwnedItem(itemId);
+            let item = app.actor.items.get(itemId);
             return item.rollRecharge();
           });
 
           // custom sorting
           favHtml.find('.item').on('drop', ev => {
             ev.preventDefault();
-            ev.stopPropagation();
+            // ev.stopPropagation();
 
             let dropData = JSON.parse(ev.originalEvent.dataTransfer.getData('text/plain'));
 
-            if (dropData.actorId !== app.actor.id || dropData.data.type === 'spell') {
-                  // only do sorting if the item is from the same actor (not droped from outside) and is not a spell
+            if (dropData.actorId !== app.actor.id) {
+                  // only do sorting if the item is from the same actor (not dropped from outside)
                   return;
                 }
 
                 let list = null;
                 if (dropData.data.type === 'feat') {
                   list = favFeats;
+                } else if(dropData.data.type === 'spell') {
+                  list = favSpells[dropData.data.data.level].spells;
                 } else {
                   list = favItems;
                 }
@@ -420,8 +429,11 @@ export const addFavorites = async function(app, html, data, position) {
                 let targetId = ev.target.closest('.item').dataset.itemId;
                 let dragTarget = siblings.find(s => s._id === targetId);
 
+                // console.log(`dragSource: ${dragSource} // siblings: ${siblings} // targetID: ${targetId} // dragTarget: ${dragTarget}`)
+
                 if (dragTarget === undefined) {
                   // catch trying to drag from one list to the other, which is not supported
+                  // console.log("folder not supported")
                   return;
                 }
 
@@ -433,7 +445,7 @@ export const addFavorites = async function(app, html, data, position) {
                 return update;
               });
 
-              app.actor.updateEmbeddedEntity("OwnedItem", updateData);
+              app.actor.updateEmbeddedDocuments("Item", updateData);
             });
         }
 

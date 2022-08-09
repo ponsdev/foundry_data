@@ -1,1 +1,93 @@
-const _0x5370=['pGetConditionDiseaseItem','getNameWithSourcePart','entries','933769OkiuzD','199231UWXELw','permission','370645oVjynQ','1303158LGYPHx','get','MODULE_NAME_FAKE','916009ymEkJB','<div>','</div>','1JHAaNH','feat','1kttici','MODULE_NAME','pGetAdditionalData_','disease','foundryCondition','983999wYzEMT','importConditionDisease','isImportDescription','/media/icon/','__prop','foundryDisease','setFirstSection','permissions','URL_TO_HASH_BUILDER','isAddPermission','render','getSourceWithPagePart','_pGetAdditionalData','840249IZfBqq'];const _0x3f55=function(_0xe0d6f1,_0x200347){_0xe0d6f1=_0xe0d6f1-0x11d;let _0x5370a3=_0x5370[_0xe0d6f1];return _0x5370a3;};const _0x3a3156=_0x3f55;(function(_0x1e3de6,_0x288bdf){const _0x4e209e=_0x3f55;while(!![]){try{const _0xd09592=parseInt(_0x4e209e(0x13b))+parseInt(_0x4e209e(0x12a))*-parseInt(_0x4e209e(0x136))+parseInt(_0x4e209e(0x126))+-parseInt(_0x4e209e(0x12d))+-parseInt(_0x4e209e(0x134))*parseInt(_0x4e209e(0x12b))+-parseInt(_0x4e209e(0x131))+parseInt(_0x4e209e(0x12e));if(_0xd09592===_0x288bdf)break;else _0x1e3de6['push'](_0x1e3de6['shift']());}catch(_0x24ffb5){_0x1e3de6['push'](_0x1e3de6['shift']());}}}(_0x5370,0xacca8));import{UtilApplications}from'./UtilApplications.js';import{SharedConsts}from'../shared/SharedConsts.js';import{Config}from'./Config.js';import{DataConverter}from'./DataConverter.js';import{Vetools}from'./Vetools.js';class DataConverterConditionDisease{static async[_0x3a3156(0x127)](_0x3049dc,_0x16318f){const _0x413436=_0x3a3156;_0x16318f=_0x16318f||{};const _0x3f2cb0=Config[_0x413436(0x12f)](_0x413436(0x13c),_0x413436(0x13d))?_0x413436(0x132)+Renderer[_0x413436(0x12f)]()[_0x413436(0x11f)](!![])[_0x413436(0x123)]({'entries':_0x3049dc[_0x413436(0x129)]},0x2)+_0x413436(0x133):'',_0x33bce2=await this['_pGetAdditionalData'](_0x3049dc),_0x190bb={'name':UtilApplications['getCleanEntityName'](DataConverter[_0x413436(0x128)](_0x3049dc,{'isActorItem':_0x16318f['isActorItem']})),'data':{'source':DataConverter[_0x413436(0x124)](_0x3049dc),'description':{'value':_0x3f2cb0,'chat':'','unidentified':''},'activation':{'type':'','cost':0x0,'condition':''},'duration':{'value':0x0,'units':''},'target':{'value':0x0,'units':'','type':''},'range':{'value':0x0,'long':0x0,'units':null},'uses':{'value':0x0,'max':0x0,'per':''},'ability':'','actionType':'','attackBonus':0x0,'chatFlavor':'','critical':null,'damage':{'parts':[],'versatile':''},'formula':'','save':{'ability':'','dc':null},'requirements':'','recharge':{'value':0x0,'charged':!![]},..._0x33bce2},'permission':{'default':0x0},'type':_0x413436(0x135),'img':'modules/'+SharedConsts[_0x413436(0x137)]+_0x413436(0x13e)+(_0x3049dc['__prop']===_0x413436(0x139)?'parmecia.svg':'knockout.svg'),'flags':{[SharedConsts[_0x413436(0x130)]]:{'page':UrlUtil['PG_CONDITIONS_DISEASES'],'source':_0x3049dc['source'],'hash':UrlUtil[_0x413436(0x121)][UrlUtil['PG_CONDITIONS_DISEASES']](_0x3049dc)}},'effects':[]};if(_0x16318f[_0x413436(0x122)])_0x190bb[_0x413436(0x12c)]={'default':Config[_0x413436(0x12f)](_0x413436(0x13c),_0x413436(0x120))};return _0x190bb;}static async[_0x3a3156(0x125)](_0x50c034){const _0x502d67=_0x3a3156;return DataConverter[_0x502d67(0x138)](_0x50c034,{'propBrew':_0x50c034['__prop']==='disease'?_0x502d67(0x11e):_0x502d67(0x13a),'fnLoadJson':Vetools['pGetConditionDiseaseSideData'],'propJson':_0x50c034[_0x502d67(0x11d)]});}}export{DataConverterConditionDisease};
+import {UtilApplications} from "./UtilApplications.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {Config} from "./Config.js";
+import {DataConverter} from "./DataConverter.js";
+import {Vetools} from "./Vetools.js";
+import {UtilDataConverter} from "./UtilDataConverter.js";
+
+class DataConverterConditionDisease extends DataConverter {
+	static _getSideLoadOpts (conDis) {
+		return {
+			propBrew: conDis.__prop === "disease" ? "foundryDisease" : "foundryCondition",
+			fnLoadJson: Vetools.pGetConditionDiseaseSideData,
+			propJson: conDis.__prop,
+		};
+	}
+
+	/**
+	 * @param conDis
+	 * @param [opts] Options object.
+	 * @param [opts.isAddPermission]
+	 * @param [opts.defaultPermission]
+	 * @param [opts.isActorItem]
+	 */
+	static async pGetConditionDiseaseItem (conDis, opts) {
+		opts = opts || {};
+
+		const content = Config.get("importConditionDisease", "isImportDescription")
+			? await UtilDataConverter.pGetWithDescriptionPlugins(() => `<div>${Renderer.get().setFirstSection(true).render({entries: conDis.entries}, 2)}</div>`)
+			: "";
+
+		const img = await this._pGetSaveImagePath(conDis);
+
+		const additionalData = await this._pGetDataSideLoaded(conDis);
+		const additionalFlags = await this._pGetFlagsSideLoaded(conDis);
+
+		const effects = await this._pGetEffectsSideLoaded({ent: conDis, img});
+		DataConverter.mutEffectsDisabledTransfer(effects, "importConditionDisease");
+
+		const out = {
+			name: UtilApplications.getCleanEntityName(UtilDataConverter.getNameWithSourcePart(conDis, {isActorItem: opts.isActorItem})),
+			data: {
+				source: UtilDataConverter.getSourceWithPagePart(conDis),
+				description: {
+					value: content,
+					chat: "",
+					unidentified: "",
+				},
+
+				activation: {type: "", cost: 0, condition: ""},
+				duration: {value: 0, units: ""},
+				target: {value: 0, units: "", type: ""},
+				range: {value: 0, long: 0, units: null},
+				uses: {value: 0, max: 0, per: ""},
+				ability: "",
+				actionType: "",
+				attackBonus: null,
+				chatFlavor: "",
+				critical: {threshold: null, damage: ""},
+				damage: {parts: [], versatile: ""},
+				formula: "",
+				save: {ability: "", dc: null},
+				requirements: "",
+				recharge: {value: 0, charged: true},
+
+				...additionalData,
+			},
+			permission: {default: 0},
+			type: "feat",
+			img,
+			flags: {
+				[SharedConsts.MODULE_NAME_FAKE]: {
+					page: UrlUtil.PG_CONDITIONS_DISEASES,
+					source: conDis.source,
+					hash: UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CONDITIONS_DISEASES](conDis),
+					propDroppable: conDis.__prop,
+				},
+				...additionalFlags,
+			},
+			effects,
+		};
+
+		if (opts.defaultPermission != null) out.permission = {default: opts.defaultPermission};
+		else if (opts.isAddPermission) out.permission = {default: Config.get("importConditionDisease", "permissions")};
+
+		return out;
+	}
+
+	static _getImgFallback (conDis) {
+		return `modules/${SharedConsts.MODULE_NAME}/media/icon/${conDis.__prop === "disease" ? "parmecia.svg" : "knockout.svg"}`;
+	}
+}
+
+export {DataConverterConditionDisease};

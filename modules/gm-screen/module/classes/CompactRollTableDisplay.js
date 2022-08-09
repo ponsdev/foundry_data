@@ -1,28 +1,31 @@
 import { log } from "../helpers.js";
 import { TEMPLATES } from "../constants.js";
 export class CompactRollTableDisplay extends RollTableConfig {
-    constructor(options, cellId) {
-        super(options);
+    constructor(object, options) {
+        super(object, options);
         log(false, 'CompactRollTableDisplay constructor', {
             options,
-            cellId,
         });
-        this.cellId = cellId;
+        this.cellId = options.cellId;
+    }
+    get isEditable() {
+        return false;
     }
     static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             template: TEMPLATES.compactRollTable,
             editable: false,
             popOut: false,
         });
     }
-    _replaceHTML(element, html, options) {
+    _replaceHTML(element, html) {
+        $(this.cellId).find('.gm-screen-grid-cell-title').text(this.title);
         const gridCellContent = $(this.cellId).find('.gm-screen-grid-cell-content');
-        //@ts-ignore
         gridCellContent.html(html);
         this._element = html;
     }
-    _injectHTML(html, options) {
+    _injectHTML(html) {
+        $(this.cellId).find('.gm-screen-grid-cell-title').text(this.title);
         const gridCellContent = $(this.cellId).find('.gm-screen-grid-cell-content');
         log(false, 'CompactJournalEntryDisplay _injectHTML', {
             cellId: this.cellId,
@@ -40,15 +43,11 @@ export class CompactRollTableDisplay extends RollTableConfig {
             });
             switch (action) {
                 case 'rolltable-reset': {
-                    this.entity.reset();
+                    this.document.reset();
                     break;
                 }
                 case 'rolltable': {
-                    let tableRoll = this.entity.roll();
-                    const draws = this.entity._getResultsForRoll(tableRoll.roll.total);
-                    if (draws.length) {
-                        this.entity.draw(tableRoll);
-                    }
+                    this.document.draw();
                     break;
                 }
             }
@@ -56,9 +55,9 @@ export class CompactRollTableDisplay extends RollTableConfig {
         // we purposefully are not calling
         // super.activateListeners(html);
     }
-    //@ts-ignore
     getData() {
         const sheetData = super.getData();
+        // TODO: Rolltable.Result and Results wrong
         const enrichedResults = sheetData.results.map((result) => {
             let label;
             switch (result.type) {

@@ -92,15 +92,23 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "traitLabelsEnabled", {
 			name: `${game.i18n.localize("TIDY5E.Settings.TraitLabels.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.TraitLabels.hint"),
-			scope: "user",
+			scope: "world",
 			config: false,
-			default: false,
+			default: true,
 			type: Boolean
 		});
 
 		// Settings Menu
 	
 		// PC Sheet Settings
+		game.settings.register("tidy5e-sheet", "journalTabDisabled", {
+			name: `${game.i18n.localize("TIDY5E.Settings.JournalTab.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.JournalTab.hint"),
+			scope: "user",
+			config: false,
+			default: false,
+			type: Boolean
+		});
 	
 		game.settings.register("tidy5e-sheet", "classListDisabled", {
 			name: `${game.i18n.localize("TIDY5E.Settings.ClassList.name")}`,
@@ -177,6 +185,15 @@ export function settingsList(){
 		game.settings.register("tidy5e-sheet", "traitsMovedBelowResource", {
 			name: `${game.i18n.localize("TIDY5E.Settings.TraitsMovedBelowResource.name")}`,
 			hint: game.i18n.localize("TIDY5E.Settings.TraitsMovedBelowResource.hint"),
+			scope: "user",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+
+		game.settings.register("tidy5e-sheet", "ammoEquippedOnly", {
+			name: `${game.i18n.localize("TIDY5E.Settings.AmmoEquippedOnly.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.AmmoEquippedOnly.hint"),
 			scope: "user",
 			config: false,
 			default: false,
@@ -382,6 +399,16 @@ export function settingsList(){
 			type: Boolean
 		});
 		
+		// Hidden Death Saves
+		game.settings.register("tidy5e-sheet", "hiddenDeathSavesEnabled", {
+			name: `${game.i18n.localize("TIDY5E.Settings.HiddenDeathSaves.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.HiddenDeathSaves.hint"),
+			scope: "world",
+			config: false,
+			default: false,
+			type: Boolean
+		});
+		
 		// Item quantity
 		game.settings.register("tidy5e-sheet", "quantityAlwaysShownEnabled", {
 			name: `${game.i18n.localize("TIDY5E.Settings.QuantityAlwaysShown.name")}`,
@@ -494,5 +521,50 @@ export function settingsList(){
 			config: false,
 			default: false,
 			type: Boolean
+		});
+
+		// Set default Tab for character actions list
+		
+		game.settings.register("tidy5e-sheet", "defaultActionsTab", {
+			name: `${game.i18n.localize("TIDY5E.Settings.defaultActionsTab.name")}`,
+			hint: game.i18n.localize("TIDY5E.Settings.defaultActionsTab.hint"),
+			scope: "world",
+			config: false,
+			type: String,
+			choices: {
+				"default": game.i18n.localize("TIDY5E.Settings.defaultActionsTab.default"),
+				"attributes": game.i18n.localize("TIDY5E.Settings.defaultActionsTab.attributes"),
+			},
+			default: 'default'
+		});
+
+		// Default width for player sheet
+		
+		game.settings.register("tidy5e-sheet", "playerSheetWidth", {
+			name: `${game.i18n.localize("TIDY5E.Settings.playerSheetWidth")}`,
+			scope: "user",
+			config: false,
+			type: Number,
+			default: 740
+		});
+
+		// Default width for NPC sheet
+		
+		game.settings.register("tidy5e-sheet", "npsSheetWidth", {
+			name: `${game.i18n.localize("TIDY5E.Settings.npsSheetWidth")}`,
+			scope: "user",
+			config: false,
+			type: Number,
+			default: 740
+		});
+
+		// Default width for vehicle sheet
+		
+		game.settings.register("tidy5e-sheet", "vehicleSheetWidth", {
+			name: `${game.i18n.localize("TIDY5E.Settings.vehicleSheetWidth")}`,
+			scope: "user",
+			config: false,
+			type: Number,
+			default: 740
 		});
 }

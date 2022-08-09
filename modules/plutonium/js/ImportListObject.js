@@ -1,1 +1,306 @@
-const _0x30f3=['pAddActorItems','fluff','_pImportEntry_fillData_Traits','details','_isSkipFolder','2HXSqLM','659TELOHH','capPassenger','_pImportEntry_pGetFolderId','type','Objects','movement','_pImportEntry_fillData_Cargo','5BAclZE','195137AobYyw','pGetSources','capCrew','Upload\x20File','name','_pImportEntry_fillData_Abilities','SOURCE_TYP_OFFICIAL_ALL','importObject','Actor','attackEntries','push','SOURCE_TYP_CUSTOM','currency','vehicle','length','med','_pImportEntry_fillData_Attributes','folder','14701uQvPVD','_pImportEntry_pFillItems_pActionEntry','VET_SIZE_TO_ABV','15700xyWNrN','SRD','ImportEntryOpts','getShipCreatureCapacity','spelldc','DATA_URL_OBJECTS','5etools','Import\x20Objects','_pImportEntry_pFillBase','objects','_pImportEntry_fillConditionsDamage','getEntryDescription','source','SOURCE_TYP_BREW','DataSourceUrl','items','isStreamerMode','size','toLowerCase','getSourceWithPagePart','41318AzJsam','feat','capCargo','_getBiographyValue','speed','isTemp','52lddWaU','_pack','permission','3digoBf','permissions','number','pGetParsedAction','_pImportEntry_pFillItems','hitEntries','2543QxAGkA','action','240491oWzLBM','attack','attributes','biography','string','681EuzSpD','object','Unnamed\x20Action','DataSourceFile','data','attackType','cargo','_pFillWeaponItem','45utjAjT','creature','objectType','_pImportEntry_fillData_Details','6FoxiQf','stringify','actions','pGetHomebrewSources','entries','getMovement','Custom\x20URL','actors'];const _0x42c5=function(_0x24ae65,_0x34121e){_0x24ae65=_0x24ae65-0x194;let _0x30f3ce=_0x30f3[_0x24ae65];return _0x30f3ce;};const _0x5638a4=_0x42c5;(function(_0x1bccc3,_0x54eafb){const _0x523c14=_0x42c5;while(!![]){try{const _0xdc206a=parseInt(_0x523c14(0x1db))*-parseInt(_0x523c14(0x1b0))+parseInt(_0x523c14(0x1ac))*parseInt(_0x523c14(0x1d8))+-parseInt(_0x523c14(0x1be))*-parseInt(_0x523c14(0x1a4))+-parseInt(_0x523c14(0x19d))*-parseInt(_0x523c14(0x1bd))+parseInt(_0x523c14(0x1c5))*parseInt(_0x523c14(0x1c6))+parseInt(_0x523c14(0x19f))*parseInt(_0x523c14(0x197))+-parseInt(_0x523c14(0x194))*parseInt(_0x523c14(0x1ef));if(_0xdc206a===_0x54eafb)break;else _0x1bccc3['push'](_0x1bccc3['shift']());}catch(_0x559bca){_0x1bccc3['push'](_0x1bccc3['shift']());}}}(_0x30f3,0x8b1e8));import{ImportListActor}from'./ImportListActor.js';import{Vetools}from'./Vetools.js';import{Config}from'./Config.js';import{DataConverter}from'./DataConverter.js';import{UtilActors}from'./UtilActors.js';import{DataConverterObject}from'./DataConverterObject.js';import{UtilDataSource}from'./UtilDataSource.js';class ImportListObject extends ImportListActor{constructor(_0x3a4edd){const _0x47db2d=_0x42c5;_0x3a4edd=_0x3a4edd||{},super({'title':_0x47db2d(0x1e2)},_0x3a4edd,{'props':[_0x47db2d(0x1a5)],'titleSearch':_0x47db2d(0x1e4),'sidebarTab':_0x47db2d(0x1b7),'gameProp':'actors','defaultFolderPath':[_0x47db2d(0x1c2)],'folderType':_0x47db2d(0x1ce),'pageFilter':new PageFilterObjects(),'page':UrlUtil['PG_OBJECTS'],'isDedupable':!![]},{'actorType':_0x47db2d(0x1d3)});}async[_0x5638a4(0x1c7)](){const _0x21eaec=_0x5638a4;return[new UtilDataSource[(_0x21eaec(0x1e9))](Config['get']('ui',_0x21eaec(0x1eb))?_0x21eaec(0x1dc):_0x21eaec(0x1e1),Vetools[_0x21eaec(0x1e0)],{'filterTypes':[UtilDataSource[_0x21eaec(0x1cc)]],'isDefault':!![]}),new UtilDataSource[(_0x21eaec(0x1e9))](_0x21eaec(0x1b6),'',{'filterTypes':[UtilDataSource[_0x21eaec(0x1d1)]]}),new UtilDataSource[(_0x21eaec(0x1a7))](_0x21eaec(0x1c9),{'filterTypes':[UtilDataSource[_0x21eaec(0x1d1)]]}),...(await Vetools[_0x21eaec(0x1b3)](_0x21eaec(0x1a5)))['map'](({name:_0x27d1f0,url:_0x315d6e})=>new UtilDataSource[(_0x21eaec(0x1e9))](_0x27d1f0,_0x315d6e,{'filterTypes':[UtilDataSource[_0x21eaec(0x1e8)]]}))];}async['_pImportEntry_pGetImportMetadata'](_0x3ead35,_0x2f5e41,_0x509fa6){const _0x288fd8=_0x5638a4,_0x492445={},_0x8e8398=_0x2f5e41[_0x288fd8(0x1b4)]?{'entries':_0x2f5e41[_0x288fd8(0x1b4)]}:null,_0x1a9c52=new ImportListObject['ImportEntryOpts']({'actor':_0x3ead35,'fluff':_0x8e8398});await this[_0x288fd8(0x1e3)](_0x2f5e41,_0x492445,_0x1a9c52[_0x288fd8(0x1b9)],{'isUseTokenImageAsPortrait':!![]}),_0x492445[_0x288fd8(0x1a8)]={};if(!this[_0x288fd8(0x1bc)]&&!_0x509fa6[_0x288fd8(0x1f4)]&&!this['_pack']){const _0x4b3bab=await this[_0x288fd8(0x1c0)](_0x2f5e41);if(_0x4b3bab)_0x492445[_0x288fd8(0x1d7)]=_0x4b3bab;}return _0x492445[_0x288fd8(0x196)]={'default':Config['get'](_0x288fd8(0x1cd),_0x288fd8(0x198))},this[_0x288fd8(0x1cb)](_0x2f5e41,_0x492445[_0x288fd8(0x1a8)],_0x1a9c52),this['_pImportEntry_fillData_Attributes'](_0x2f5e41,_0x492445[_0x288fd8(0x1a8)],_0x1a9c52),this['_pImportEntry_fillData_Details'](_0x2f5e41,_0x492445[_0x288fd8(0x1a8)],_0x1a9c52),this[_0x288fd8(0x1ba)](_0x2f5e41,_0x492445['data'],_0x1a9c52),this['_pImportEntry_fillData_Currency'](_0x2f5e41,_0x492445['data'],_0x1a9c52),this[_0x288fd8(0x1c4)](_0x2f5e41,_0x492445['data'],_0x1a9c52),await this['_pImportEntry_pFillToken'](_0x2f5e41,_0x492445,_0x288fd8(0x1cd)),{'dataBuilderOpts':_0x1a9c52,'actorData':_0x492445};}[_0x5638a4(0x1d6)](_0x19e031,_0x1b8fcf){const _0x46a480=_0x5638a4,_0x583dc4={};_0x583dc4['init']={'value':0x0,'bonus':0x0,'mod':0x0,'prof':0x0,'total':0x0},_0x583dc4[_0x46a480(0x1df)]=null;if(_0x19e031[_0x46a480(0x1f3)]!=null)_0x583dc4[_0x46a480(0x1c3)]=DataConverter[_0x46a480(0x1b5)](_0x19e031['speed']);else _0x583dc4['movement']={'walk':0x0};typeof _0x19e031['ac']==='number'&&(_0x583dc4['ac']={'value':_0x19e031['ac'],'motionless':''}),typeof _0x19e031['hp']===_0x46a480(0x199)&&(_0x583dc4['hp']={'value':_0x19e031['hp'],'min':0x0,'max':_0x19e031['hp'],'temp':0x0,'tempmax':0x0,'dt':0x0,'mt':0x0}),(_0x19e031[_0x46a480(0x1c8)]!=null||_0x19e031[_0x46a480(0x1bf)]!=null||_0x19e031[_0x46a480(0x1f1)]!=null)&&(_0x583dc4['capacity']={'creature':Renderer[_0x46a480(0x1d3)][_0x46a480(0x1de)](_0x19e031),'cargo':typeof _0x19e031[_0x46a480(0x1f1)]===_0x46a480(0x1a3)?0x0:_0x19e031[_0x46a480(0x1f1)]}),_0x1b8fcf[_0x46a480(0x1a1)]=_0x583dc4;}[_0x5638a4(0x1af)](_0x595bf9,_0x4a7dc1,_0x56557d){const _0x592647=_0x5638a4,_0x1d2812={};_0x1d2812[_0x592647(0x1a2)]={'value':this[_0x592647(0x1f2)](_0x56557d[_0x592647(0x1b9)],{'isImportText':!![]})},_0x1d2812[_0x592647(0x1e7)]=DataConverter[_0x592647(0x1ee)](_0x595bf9),_0x4a7dc1[_0x592647(0x1bb)]=_0x1d2812;}[_0x5638a4(0x1ba)](_0x3f1d55,_0x5cf9f3){const _0x302e4d=_0x5638a4,_0x8a777d={};_0x8a777d[_0x302e4d(0x1ec)]=UtilActors[_0x302e4d(0x1da)][_0x3f1d55[_0x302e4d(0x1ec)]]||_0x302e4d(0x1d5),this[_0x302e4d(0x1e5)](_0x3f1d55,_0x8a777d),_0x5cf9f3['traits']=_0x8a777d;}['_pImportEntry_fillData_Currency'](_0x293b27,_0x3cdd69){const _0x27b32b=_0x5638a4;_0x3cdd69[_0x27b32b(0x1d2)]={'pp':0x0,'gp':0x0,'ep':0x0,'sp':0x0,'cp':0x0};}async[_0x5638a4(0x19b)](_0x5dea9d,_0x4b408e,_0x401745,_0x2cd4c4){const _0x50d49a=_0x5638a4;if(_0x5dea9d['actionEntries']?.[_0x50d49a(0x1d4)])for(const _0x18a49c of _0x5dea9d['actionEntries'])await this[_0x50d49a(0x1d9)](_0x5dea9d,_0x4b408e,_0x18a49c,_0x401745);const _0x29baab=_0x2cd4c4[_0x50d49a(0x1f4)]||this[_0x50d49a(0x195)]!=null;await UtilActors[_0x50d49a(0x1b8)](_0x401745['actor'],_0x401745[_0x50d49a(0x1ea)],_0x29baab);}async[_0x5638a4(0x1d9)](_0x16d208,_0x1b8ff4,_0x19289c,_0x16dc5e){const _0x26a7eb=_0x5638a4;if(_0x19289c[_0x26a7eb(0x1c1)]===_0x26a7eb(0x1b2)){for(const _0x33e790 of _0x19289c[_0x26a7eb(0x1b4)]){if(typeof _0x33e790==='object'){const _0x413e3e=MiscUtil['copy'](_0x33e790);_0x413e3e['name']=_0x413e3e[_0x26a7eb(0x1ca)]||_0x19289c[_0x26a7eb(0x1ca)],_0x33e790['type']===_0x26a7eb(0x1a0)&&_0x413e3e[_0x26a7eb(0x1cf)]?.[_0x26a7eb(0x1d4)]===0x1&&_0x413e3e['hitEntries']?.[_0x26a7eb(0x1d4)]===0x1&&typeof _0x413e3e['attackEntries'][0x0]===_0x26a7eb(0x1a3)&&typeof _0x413e3e[_0x26a7eb(0x19c)][0x0]===_0x26a7eb(0x1a3)&&(_0x413e3e[_0x26a7eb(0x1b4)]=['{@atk\x20'+_0x33e790[_0x26a7eb(0x1a9)][_0x26a7eb(0x1ed)]()+'}\x20'+_0x413e3e['attackEntries'][0x0]+'\x20{@h}'+_0x413e3e[_0x26a7eb(0x19c)][0x0]],delete _0x413e3e[_0x26a7eb(0x1cf)],delete _0x413e3e[_0x26a7eb(0x19c)]),await this[_0x26a7eb(0x1d9)](_0x16d208,_0x1b8ff4,_0x413e3e,_0x16dc5e);}else await this[_0x26a7eb(0x1d9)](_0x16d208,_0x1b8ff4,_0x33e790,_0x16dc5e);}return;}_0x19289c=typeof _0x19289c===_0x26a7eb(0x1a5)?_0x19289c:{'name':_0x26a7eb(0x1a6),'entries':[_0x19289c]};const _0x485107=DataConverter[_0x26a7eb(0x1e6)](_0x19289c),_0x33e391=_0x19289c[_0x26a7eb(0x1b4)]?JSON[_0x26a7eb(0x1b1)](_0x19289c[_0x26a7eb(0x1b4)]):null,{damageTuples:_0x22f4d2,formula:_0x1c2c29,isAttack:_0x49a2c3,rangeShort:_0x2822ca,rangeLong:_0x2fa116,actionType:_0x3c0939,isProficient:_0x5b2b06,attackBonus:_0x5bbe4f,_foundryData:_0x41927,foundryData:_0x5f4bfe,_foundryFlags:_0x29c42a,foundryFlags:_0x1efce7,img:_0x1ef7aa}=await DataConverterObject[_0x26a7eb(0x19a)](_0x16d208,_0x19289c,_0x16dc5e),_0x14a27a=_0x22f4d2,{saveAbility:_0x4c73bf,saveScaling:_0x4230d,saveDc:_0x143bb0}=this['_getSavingThrowData'](_0x33e391);_0x49a2c3?await this[_0x26a7eb(0x1ab)](_0x16d208,_0x1b8ff4,_0x19289c,_0x16dc5e,{'damageParts':_0x14a27a,'formula':_0x1c2c29,'rangeShort':_0x2822ca,'rangeLong':_0x2fa116,'actionType':_0x3c0939,'isProficient':_0x5b2b06,'description':_0x485107,'saveAbility':_0x4c73bf,'saveDc':_0x143bb0,'saveScaling':_0x4230d,'attackBonus':_0x5bbe4f,'_foundryData':_0x41927,'foundryData':_0x5f4bfe,'_foundryFlags':_0x29c42a,'foundryFlags':_0x1efce7,'img':_0x1ef7aa,'isSiegeWeapon':_0x16d208[_0x26a7eb(0x1ae)]==='SW'}):_0x16dc5e[_0x26a7eb(0x1ea)][_0x26a7eb(0x1d0)](DataConverter['getItemActorPassive'](_0x19289c,{'mode':_0x26a7eb(0x1ad),'fvttType':_0x26a7eb(0x1f0),'activationType':_0x26a7eb(0x19e),'activationCost':0x1,'description':_0x485107,'saveAbility':_0x4c73bf,'saveDc':_0x143bb0,'saveScaling':_0x4230d,'damageParts':_0x14a27a,'formula':_0x1c2c29,'attackBonus':_0x5bbe4f,'_foundryData':_0x41927,'foundryData':_0x5f4bfe,'_foundryFlags':_0x29c42a,'foundryFlags':_0x1efce7,'img':_0x1ef7aa,'entity':_0x16d208,'source':_0x16d208[_0x26a7eb(0x1e7)],'actor':{'data':_0x1b8ff4}}));}[_0x5638a4(0x1c4)](_0x31bffa,_0x35142e){const _0x22c8b8=_0x5638a4;_0x35142e[_0x22c8b8(0x1aa)]={'crew':[],'passengers':[]};}}ImportListObject['ImportEntryOpts']=class extends ImportListActor[_0x5638a4(0x1dd)]{};export{ImportListObject};
+import {ImportListActor} from "./ImportListActor.js";
+import {Vetools} from "./Vetools.js";
+import {Config} from "./Config.js";
+import {DataConverter} from "./DataConverter.js";
+import {UtilActors} from "./UtilActors.js";
+import {DataConverterObject} from "./DataConverterObject.js";
+import {UtilDataSource} from "./UtilDataSource.js";
+import {UtilDataConverter} from "./UtilDataConverter.js";
+
+class ImportListObject extends ImportListActor {
+	static get ID () { return "objects"; }
+	static get DISPLAY_NAME_TYPE_PLURAL () { return "Objects"; }
+
+	static _ = this.registerImpl(this);
+
+	constructor (externalData) {
+		externalData = externalData || {};
+		super(
+			{
+				title: "Import Objects",
+			},
+			externalData,
+			{
+				props: ["object"],
+				dirsHomebrew: ["object"],
+				propsBrewAdditionalData: ["foundryObject"],
+				fnLoadSideData: Vetools.pGetObjectSideData,
+				titleSearch: "objects",
+				sidebarTab: "actors",
+				gameProp: "actors",
+				defaultFolderPath: ["Objects"],
+				pageFilter: new PageFilterObjects(),
+				page: UrlUtil.PG_OBJECTS,
+				isPreviewable: true,
+				isDedupable: true,
+				configGroup: "importObject",
+			},
+			{
+				actorType: "vehicle",
+				DataConverter: DataConverterObject,
+			},
+		);
+	}
+
+	async _pGetSources () {
+		return [
+			new UtilDataSource.DataSourceUrl(
+				Config.get("ui", "isStreamerMode") ? "SRD" : "5etools",
+				Vetools.DATA_URL_OBJECTS,
+				{
+					filterTypes: [UtilDataSource.SOURCE_TYP_OFFICIAL_ALL],
+					isDefault: true,
+				},
+			),
+			new UtilDataSource.DataSourceUrl(
+				"Custom URL",
+				"",
+				{
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			new UtilDataSource.DataSourceFile(
+				"Upload File",
+				{
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			...(await this._pGetSourcesHomebrew()),
+		];
+	}
+
+	async _pImportEntry_pGetImportMetadata (actor, obj, importOpts) {
+		const act = {};
+
+		const fluff = obj.entries ? {entries: obj.entries} : null;
+
+		const dataBuilderOpts = new ImportListObject.ImportEntryOpts({actor, fluff});
+
+		await this._pImportEntry_pFillBase(obj, act, dataBuilderOpts.fluff, {isUseTokenImageAsPortrait: true});
+
+		act.data = {};
+
+		await this._pImportEntry_pFillFolder(obj, act, importOpts);
+
+		if (importOpts.defaultPermission != null) act.permission = {default: importOpts.defaultPermission};
+		else act.permission = {default: Config.get(this._configGroup, "permissions")};
+
+		this._pImportEntry_fillData_Abilities(obj, act.data, dataBuilderOpts);
+		this._pImportEntry_fillData_Attributes(obj, act.data, dataBuilderOpts);
+		await this._pImportEntry_pFillData_Details(obj, act.data, dataBuilderOpts);
+		this._pImportEntry_fillData_Traits(obj, act.data, dataBuilderOpts);
+		this._pImportEntry_fillData_Currency(obj, act.data, dataBuilderOpts);
+		this._pImportEntry_fillData_Cargo(obj, act.data, dataBuilderOpts);
+
+		await this._pImportEntry_pFillToken({importable: obj, actor: act});
+
+		return {dataBuilderOpts: dataBuilderOpts, actorData: act};
+	}
+
+	_pImportEntry_fillData_Attributes (obj, data) {
+		const out = {};
+
+		out.init = {
+			value: 0,
+			bonus: 0,
+			mod: 0,
+			prof: 0,
+			total: 0,
+		};
+
+		out.spelldc = null;
+
+		if (obj.speed != null) out.movement = DataConverter.getMovement(obj.speed, {configGroup: "importObject"});
+		else out.movement = {walk: 0};
+
+		if (typeof obj.ac === "number") {
+			out.ac = {flat: obj.ac, motionless: `${obj.ac}`};
+		}
+
+		if (typeof obj.hp === "number") {
+			out.hp = {
+				value: obj.hp,
+				min: 0,
+				max: obj.hp,
+				temp: 0,
+				tempmax: 0,
+				dt: 0,
+				mt: 0,
+			};
+		}
+
+		if (obj.capCrew != null || obj.capPassenger != null || obj.capCargo != null) {
+			out.capacity = {
+				creature: Renderer.vehicle.getShipCreatureCapacity(obj),
+				cargo: typeof obj.capCargo === "string" ? 0 : obj.capCargo,
+			};
+		}
+
+		data.attributes = out;
+	}
+
+	async _pImportEntry_pFillData_Details (obj, data, dataBuilderOpts) {
+		const out = {};
+
+		out.biography = {
+			value: await this._pGetBiographyValue(obj, dataBuilderOpts.fluff, {isImportText: true}),
+		};
+
+		out.source = UtilDataConverter.getSourceWithPagePart(obj);
+
+		data.details = out;
+	}
+
+	_pImportEntry_fillData_Traits (obj, data) {
+		const out = {};
+
+		out.size = UtilActors.VET_SIZE_TO_ABV[obj.size] || "med";
+
+		this._pImportEntry_fillConditionsDamage(obj, out);
+
+		data.traits = out;
+	}
+
+	_pImportEntry_fillData_Currency (obj, data) {
+		// Dummy data
+		data.currency = {
+			pp: 0,
+			gp: 0,
+			ep: 0,
+			sp: 0,
+			cp: 0,
+		};
+	}
+
+	async _pImportEntry_pFillItems (obj, act, dataBuilderOpts, importOpts) {
+		if (obj.actionEntries?.length) {
+			for (const actionEntry of obj.actionEntries) await this._pImportEntry_pFillItems_pActionEntry(obj, act, actionEntry, dataBuilderOpts);
+		}
+
+		const isTemporary = importOpts.isTemp || this._pack != null;
+		await UtilActors.pAddActorItems(dataBuilderOpts.actor, dataBuilderOpts.items, {isTemporary});
+	}
+
+	async _pImportEntry_pFillItems_pActionEntry (obj, act, ent, dataBuilderOpts) {
+		if (ent.type === "actions") {
+			for (const action of ent.entries) {
+				if (typeof action === "object") {
+					// Convert the attack entry into something the generic parser can comprehend
+					const cpyAction = MiscUtil.copy(action);
+
+					cpyAction.name = cpyAction.name || ent.name;
+					if (action.type === "attack" && cpyAction.attackEntries?.length === 1 && cpyAction.hitEntries?.length === 1 && typeof cpyAction.attackEntries[0] === "string" && typeof cpyAction.hitEntries[0] === "string") {
+						cpyAction.entries = [
+							`{@atk ${action.attackType.toLowerCase()}} ${cpyAction.attackEntries[0]} {@h}${cpyAction.hitEntries[0]}`,
+						];
+
+						delete cpyAction.attackEntries;
+						delete cpyAction.hitEntries;
+					}
+
+					await this._pImportEntry_pFillItems_pActionEntry(obj, act, cpyAction, dataBuilderOpts);
+				} else {
+					await this._pImportEntry_pFillItems_pActionEntry(obj, act, action, dataBuilderOpts);
+				}
+			}
+			return;
+		}
+
+		ent = typeof ent === "object" ? ent : {name: "Unnamed Action", entries: [ent]};
+
+		const description = await DataConverter.pGetEntryDescription(ent);
+		const strEntries = ent.entries ? JSON.stringify(ent.entries) : null;
+
+		const {
+			damageTuples,
+			formula,
+			isAttack,
+			rangeShort,
+			rangeLong,
+			actionType,
+			isProficient,
+			attackBonus,
+			_foundryData,
+			foundryData,
+			_foundryFlags,
+			foundryFlags,
+			img,
+		} = await DataConverterObject.pGetParsedAction(obj, ent, dataBuilderOpts);
+
+		const damageParts = damageTuples;
+
+		// region Saving throw
+		const {
+			saveAbility,
+			saveScaling,
+			saveDc,
+		} = this._getSavingThrowData(strEntries);
+		// endregion
+
+		// If it was an attack, treat is as a weapon. Otherwise, treat it as a generic action.
+		if (isAttack) {
+			await this._pFillWeaponItem(
+				obj,
+				act,
+				ent,
+				dataBuilderOpts,
+				{
+					damageParts,
+					formula,
+					rangeShort,
+					rangeLong,
+					actionType,
+					isProficient,
+					description,
+					saveAbility,
+					saveDc,
+					saveScaling,
+					attackBonus,
+					_foundryData,
+					foundryData,
+					_foundryFlags,
+					foundryFlags,
+					img,
+					isSiegeWeapon: obj.objectType === "SW",
+				},
+			);
+		} else {
+			dataBuilderOpts.items.push(await DataConverter.pGetItemActorPassive(
+				ent,
+				{
+					mode: "creature",
+					fvttType: "feat",
+					activationType: "action",
+					activationCost: 1,
+					description,
+					saveAbility,
+					saveDc,
+					saveScaling,
+					damageParts,
+					formula,
+					attackBonus,
+					_foundryData,
+					foundryData,
+					_foundryFlags,
+					foundryFlags,
+					img,
+					entity: obj,
+					source: obj.source,
+					actor: {data: act}, // wrap our update data to give the appearance of a real actor
+				},
+			));
+		}
+	}
+
+	_pImportEntry_fillData_Cargo (obj, data) {
+		// Dummy data
+		data.cargo = {
+			crew: [],
+			passengers: [],
+		};
+	}
+}
+
+ImportListObject.ImportEntryOpts = class extends ImportListActor.ImportEntryOpts {};
+
+export {ImportListObject};

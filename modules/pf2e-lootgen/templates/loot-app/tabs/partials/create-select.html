@@ -1,0 +1,18 @@
+<div class="form-group create-select">
+    <div class="input-group">
+        <label for="{{create-flag name}}">{{label}}</label>
+        <select id="{{create-flag name}}" name="{{create-flag name}}">
+            {{#select (walk @root.actor (create-flag name))}}
+                {{#each options as |option|}}
+                    <option value="{{option.slug}}">{{localize option.label}}</option>
+                {{/each}}
+            {{/select}}
+        </select>
+    </div>
+    {{#with (walk @root.actor (create-flag name)) as |key|}}
+        {{#with (lookup ../options key) as |data|}}
+            {{> rune-stats level=data.level price=data.price }}
+        {{/with}}
+    {{/with}}
+</div>
+

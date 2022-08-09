@@ -3,9 +3,9 @@
     "title": "Compendium Folders",
     "description": "Collapsable folders for compendiums",
     "author": "Erceron",
-    "version": "2.2.42",
-    "minimumCoreVersion": "0.6.5",
-    "compatibleCoreVersion":"0.7.9",
+    "version": "2.4.6",
+    "minimumCoreVersion": "9",
+    "compatibleCoreVersion":"9",
     "esmodules": [
         "./compendium-folders.js"
       ],
@@ -37,7 +37,7 @@
       },
       {
         "lang": "sv",
-        "name": "Swedish",
+        "name": "Svenska",
         "path": "lang/sv.json"
       },
       {
@@ -54,6 +54,6 @@
     ],
     "styles": ["./styles.css"],
     "url": "https://github.com/earlSt1/vtt-compendium-folders",
-    "manifest": "https://raw.githubusercontent.com/earlSt1/vtt-compendium-folders/master/module.json",
-    "download": "https://github.com/earlSt1/vtt-compendium-folders/releases/download/2.2.42/2.2.42.zip"
+    "manifest": "https://raw.githubusercontent.com/earlSt1/vtt-compendium-folders/09x-update/module.json",
+    "download": "https://github.com/earlSt1/vtt-compendium-folders/releases/download/2.4.6/2.4.6.zip"
   }

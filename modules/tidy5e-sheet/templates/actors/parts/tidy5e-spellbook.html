@@ -39,10 +39,10 @@
       {{#each section.spells as |item i|}}
       <li class="item {{#if ../../owner}}context-enabled{{/if}} {{~#if data.preparation.prepared}} prepared{{/if}}{{#if (eq data.preparation.mode 'always')}} alwaysPrepared{{/if}}" data-item-id="{{item._id}}">
         <div class="item-name rollable">
-          <div class="item-image" style="background-image: url({{item.img}})">
+          <div class="item-image" style="background-image: url('{{item.img}}')">
             <i class="fa fa-dice-d20"></i>
           </div>
-          <h4 title="{{localize 'TIDY5E.ToggleInfo'}} ({{item.name}})">
+          <h4>
             {{item.name}}
           </h4>
 
@@ -61,8 +61,8 @@
         </div>
         {{/if}}
         <div class="item-detail spell-comps">
-          {{#each labels.components}}
-          <span class="spell-component {{this}}">{{this}}</span>
+          {{#each labels.components.all}}
+          <span class="spell-component{{#if tag}} {{abbr}}{{/if}}">{{abbr}}</span>
           {{/each}}
         </div>
         <div class="item-detail spell-school" title="{{localize 'DND5E.SpellSchool'}}: {{labels.school}}"><span class="truncate">{{labels.school}}</span></div>

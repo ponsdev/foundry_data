@@ -1,45 +1,83 @@
 {
-	"name": "CautiousGamemastersPack",
-	"title": "Cautious Gamemaster's Pack",
-	"description": "Offers various simple handy options.",
-	"version": "0.1.6",
-	"minimumCoreVersion" : "0.6.0",
-	"compatibleCoreVersion": "0.7.0",
-	"author": "Shoyu Vanilla",
-
-	"esmodules": ["scripts/main.js"],
-	"styles": ["style.css"],
-	"socket": true,
-
-	"languages": [
-		{
-			"lang": "en",
-			"name": "English",
-			"path": "lang/en.json"
-		},
-		{
-			"lang": "ko",
-			"name": "한국어 (Korean)",
-			"path": "lang/ko.json"
-		},
-		{
-			"lang": "ja",
-			"name": "日本語",
-			"path": "lang/ja.json"
-		},
-		{
-			"lang": "pt-BR",
-			"name": "Português (Brasil)",
-			"path": "lang/pt-BR.json"
-		},
-		{
-			"lang": "es",
-			"name": "Castellano",
-			"path": "lang/es-ES.json"
-		}
-	],
-
-	"url": "https://github.com/ShoyuVanilla/FoundryVTT-CGMP",
-	"manifest": "https://raw.githubusercontent.com/ShoyuVanilla/FoundryVTT-CGMP/master/module/module.json",
-	"download": "https://github.com/ShoyuVanilla/FoundryVTT-CGMP/releases/download/v0.1.6/release.zip"
+    "id": "CautiousGamemastersPack",
+    "name": "CautiousGamemastersPack",
+    "type": "module",
+    "title": "Cautious Gamemaster's Pack",
+    "description": "Offers various simple handy options.",
+    "version": "0.9.0",
+    "library": false,
+    "manifestPlusVersion": "1.2.0",
+    "compatibility": {
+        "minimum": "0.8.6",
+        "verified": "10"
+    },
+    "minimumCoreVersion": "0.8.6",
+    "compatibleCoreVersion": "10",
+    "authors": [
+        {
+            "name": "Alan Davies",
+            "discord": "cs96and#3764",
+            "ko-fi": "cs96and"
+        },
+        {
+            "name": "Shoyu Vanilla"
+        }
+    ],
+    "author": "Alan Davies",
+    "dependencies": [
+        {
+            "id": "lib-wrapper",
+            "name": "lib-wrapper",
+            "type": "module"
+        }
+    ],
+    "conflicts": [
+        {
+            "name": "cautious-gamemasters-pack-2",
+            "type": "module"
+        }
+    ],
+    "esmodules": [
+        "scripts/main.js"
+    ],
+    "scripts": [],
+    "styles": [
+        "styles/cgmp.css"
+    ],
+    "socket": true,
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        },
+        {
+            "lang": "ko",
+            "name": "한국어 (Korean)",
+            "path": "lang/ko.json"
+        },
+        {
+            "lang": "ja",
+            "name": "日本語",
+            "path": "lang/ja.json"
+        },
+        {
+            "lang": "pt-BR",
+            "name": "Português (Brasil)",
+            "path": "lang/pt-BR.json"
+        },
+        {
+            "lang": "es",
+            "name": "Castellano",
+            "path": "lang/es-ES.json"
+        },
+        {
+            "lang": "fr-CA",
+            "name": "Francais (Canada)",
+            "path": "lang/fr-CA.json"
+        }
+    ],
+    "url": "https://github.com/cs96and/FoundryVTT-CGMP",
+    "manifest": "https://github.com/cs96and/FoundryVTT-CGMP/releases/latest/download/module.json",
+    "download": "https://github.com/cs96and/FoundryVTT-CGMP/releases/download/0.9.0/module.zip"
 }

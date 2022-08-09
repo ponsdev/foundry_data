@@ -1,1 +1,127 @@
-const _0x3cef=['fa-user-circle','29426qXCaas','Bulk\x20Permission\x20Editor','Bulk\x20Directory\x20Mover','_pHandleButtonClick','9295LvxLkM','journal','469116vMECII','renderJournalDirectory','fa-sitemap','$getDirButton','Unhandled\x20hook\x20type\x20\x22','fa-trash-alt','renderActorDirectory','click','stopPropagation','1200382UcVJaU','1POTQEi','Directory\x20Deduplicator','1148344KatLoV','plutonium-collection-tools-menu','Directory\x20Cleaner','Bulk\x20Prototype\x20Token\x20Editor','item','fa-object-group','_pOpenMenu','1EMQEfm','_EVT_NAMESPACE','674099YjSrSY','preventDefault','_TOOL_LIST','814268iCFLFk','2lgoUIG','renderItemDirectory','actor'];const _0x4151=function(_0x3f732e,_0x451154){_0x3f732e=_0x3f732e-0xb4;let _0x3cefeb=_0x3cef[_0x3f732e];return _0x3cefeb;};const _0x29d32a=_0x4151;(function(_0x396180,_0x19f813){const _0x19b92b=_0x4151;while(!![]){try{const _0x357c06=parseInt(_0x19b92b(0xcd))*parseInt(_0x19b92b(0xce))+-parseInt(_0x19b92b(0xba))*-parseInt(_0x19b92b(0xc2))+-parseInt(_0x19b92b(0xd0))+parseInt(_0x19b92b(0xb6))*-parseInt(_0x19b92b(0xb4))+-parseInt(_0x19b92b(0xbe))+parseInt(_0x19b92b(0xb9))+parseInt(_0x19b92b(0xc4));if(_0x357c06===_0x19f813)break;else _0x396180['push'](_0x396180['shift']());}catch(_0x4cd3de){_0x396180['push'](_0x396180['shift']());}}}(_0x3cef,0x9ecf7));import{Menu}from'./Menu.js';import{CollectionCleaner}from'./CollectionCleaner.js';import{CollectionFolderizer}from'./CollectionFolderizer.js';import{CollectionPermissionUpdater}from'./CollectionPermissionUpdater.js';import{CollectionTokenUpdater}from'./CollectionTokenUpdater.js';import{CollectionDeduplicator}from'./CollectionDeduplicator.js';class MenuCollectionTools extends Menu{static[_0x29d32a(0xc7)](_0x1784fd){const _0x59bafe=_0x29d32a;return $('<button\x20class=\x22ml-0\x20mr-1\x20w-initial\x22\x20title=\x22Open\x20tools\x20list\x22><span\x20class=\x22fas\x20fa-toolbox\x22></span></button>')[_0x59bafe(0xcb)](_0x5a9a8b=>{const _0x4edda7=_0x59bafe,_0x132a05=new MenuCollectionTools();return _0x132a05[_0x4edda7(0xc1)](_0x5a9a8b,_0x1784fd);});}constructor(){const _0x4b03ab=_0x29d32a;super({'eventNamespace':MenuCollectionTools[_0x4b03ab(0xb5)],'toolsList':MenuCollectionTools[_0x4b03ab(0xb8)],'direction':'down'});}[_0x29d32a(0xc1)](_0x3af882,_0x15f65e){const _0x52783b=_0x29d32a;_0x3af882[_0x52783b(0xb7)](),_0x3af882[_0x52783b(0xcc)]();let _0x11ff96;switch(_0x15f65e){case _0x52783b(0xca):_0x11ff96='actor';break;case _0x52783b(0xbb):_0x11ff96=_0x52783b(0xd4);break;case _0x52783b(0xc5):_0x11ff96=_0x52783b(0xc3);break;case'renderRollTableDirectory':_0x11ff96='rolltable';break;default:throw new Error(_0x52783b(0xc8)+_0x15f65e+'\x22');}return this[_0x52783b(0xd6)](_0x3af882,_0x11ff96);}}MenuCollectionTools[_0x29d32a(0xb5)]=_0x29d32a(0xd1),MenuCollectionTools[_0x29d32a(0xb8)]=[{'name':_0x29d32a(0xd2),'Class':CollectionCleaner,'iconClass':_0x29d32a(0xc9)},{'name':_0x29d32a(0xcf),'Class':CollectionDeduplicator,'iconClass':_0x29d32a(0xd5)},{'name':_0x29d32a(0xc0),'Class':CollectionFolderizer,'iconClass':_0x29d32a(0xc6)},{'name':_0x29d32a(0xbf),'Class':CollectionPermissionUpdater,'iconClass':'fa-id-card'},{'name':_0x29d32a(0xd3),'Class':CollectionTokenUpdater,'iconClass':_0x29d32a(0xbd),'fnCheckRequirements':_0x213e6d=>_0x213e6d===_0x29d32a(0xbc)}];export{MenuCollectionTools};
+import {Menu} from "./Menu.js";
+import {CollectionCleaner} from "./CollectionCleaner.js";
+import {CollectionFolderizer} from "./CollectionFolderizer.js";
+import {CollectionPermissionUpdater} from "./CollectionPermissionUpdater.js";
+import {CollectionTokenUpdater} from "./CollectionTokenUpdater.js";
+import {CollectionDeduplicator} from "./CollectionDeduplicator.js";
+import {ImportSpecialPackages} from "./ImportSpecialPackages.js";
+import {CompendiumListVisibilityToggler} from "./CompendiumListVisibilityToggler.js";
+import {LootGeneratorApp} from "./LootGeneratorApp.js";
+import {MenuToolInfo} from "./UtilMenu.js";
+import {WorldDataSourceSelector} from "./WorldDataSourceSelector.js";
+import {WorldContentBlacklistSourceSelector, WorldContentBlacklist} from "./WorldContentBlacklist.js";
+import {ImportSpecialImagePreloader} from "./ImportSpecialImagePreloader.js";
+import {Config} from "./Config.js";
+
+class MenuCollectionTools extends Menu {
+	// region External
+	static $getDirButton (hookName) {
+		return $(`<button class="ml-0 mr-1 w-initial" title="Open ${Config.get("ui", "isStreamerMode") ? "" : "Plutonium "}Tools List"><span class="fas fa-fw fa-toolbox"></span></button>`)
+			.click(evt => {
+				const menu = new MenuCollectionTools();
+				return menu._pHandleButtonClick(evt, hookName);
+			});
+	}
+	// endregion
+
+	constructor () {
+		super({
+			eventNamespace: MenuCollectionTools._EVT_NAMESPACE,
+			toolsList: MenuCollectionTools._TOOL_LIST,
+			direction: "down",
+		});
+	}
+
+	_pHandleButtonClick (evt, hookName) {
+		evt.preventDefault();
+		evt.stopPropagation();
+
+		let type;
+		switch (hookName) {
+			case "renderSceneDirectory": type = "scene"; break;
+			case "renderActorDirectory": type = "actor"; break;
+			case "renderItemDirectory": type = "item"; break;
+			case "renderJournalDirectory": type = "journal"; break;
+			case "renderRollTableDirectory": type = "rolltable"; break;
+			case "renderMacroDirectory": type = "macro"; break;
+			case "renderCompendiumDirectory": type = "compendium"; break;
+			case "renderCardsDirectory": type = "cards"; break;
+			default: throw new Error(`Unhandled hook type "${hookName}"`);
+		}
+
+		return this._pOpenMenu(evt, type);
+	}
+}
+MenuCollectionTools._EVT_NAMESPACE = "plutonium-collection-tools-menu";
+MenuCollectionTools._TOOL_LIST = [
+	new MenuToolInfo({
+		name: "Directory Cleaner",
+		Class: CollectionCleaner,
+		iconClass: "fa-trash-alt",
+		fnCheckRequirements: type => type !== "compendium",
+	}),
+	new MenuToolInfo({
+		name: "Directory Deduplicator",
+		Class: CollectionDeduplicator,
+		iconClass: "fa-object-group",
+		fnCheckRequirements: type => type !== "compendium",
+	}),
+	new MenuToolInfo({
+		name: "Bulk Directory Mover",
+		Class: CollectionFolderizer,
+		iconClass: "fa-sitemap",
+		fnCheckRequirements: type => !["compendium"].includes(type),
+	}),
+	new MenuToolInfo({
+		name: "Bulk Permission Editor",
+		Class: CollectionPermissionUpdater,
+		iconClass: "fa-id-card",
+		fnCheckRequirements: type => !["scene", "compendium"].includes(type),
+	}),
+	new MenuToolInfo({
+		name: "Bulk Prototype Token Editor",
+		Class: CollectionTokenUpdater,
+		iconClass: "fa-user-circle",
+		fnCheckRequirements: type => type === "actor",
+	}),
+	new MenuToolInfo({
+		name: "Visibility Toggler",
+		Class: CompendiumListVisibilityToggler,
+		iconClass: "fa-eye",
+		fnCheckRequirements: type => type === "compendium",
+	}),
+	null,
+	new MenuToolInfo({
+		name: "Loot Generator",
+		Class: LootGeneratorApp,
+		iconClass: "fa-search-dollar",
+		fnCheckRequirements: type => ["item", "journal", "compendium"].includes(type),
+	}),
+	null,
+	new MenuToolInfo({
+		name: WorldDataSourceSelector.APP_TITLE,
+		Class: WorldDataSourceSelector,
+		iconClass: "fa-globe-africa",
+		fnCheckRequirements: type => type !== "compendium" && game.user.isGM,
+	}),
+	new MenuToolInfo({
+		name: WorldContentBlacklist.APP_TITLE,
+		Class: WorldContentBlacklistSourceSelector,
+		iconClass: "fa-ban",
+		fnCheckRequirements: type => type !== "compendium" && game.user.isGM,
+	}),
+	null,
+	new MenuToolInfo({
+		name: "Package Importer",
+		Class: ImportSpecialPackages,
+		iconClass: "fa-cube",
+		fnCheckRequirements: type => type !== "compendium",
+	}),
+	new MenuToolInfo({
+		name: ImportSpecialImagePreloader.APP_TITLE,
+		Class: ImportSpecialImagePreloader,
+		iconClass: "fa-file-image",
+	}),
+];
+
+export {MenuCollectionTools};

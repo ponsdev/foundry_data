@@ -1,23 +1,14 @@
-import { DTMod } from "./calendar/DTMod.js";
-import { CountDown } from "./display/CountDown.js";
-import { RealTimeCountDown } from "./display/RealTimeCountDown.js";
 import { ElapsedTime } from "./ElapsedTime.js";
 import { Quentry } from "./FastPirorityQueue.js";
 const _moduleSocket = "module.about-time";
-const _updateClock = "about-time.updateClock";
 const _eventTrigger = "about-time.eventTrigger";
 const _queryMaster = "about-time.queryMaster";
 const _masterResponse = "about-time.masterResponse";
 const _masterMutiny = "about-time.Arrrgh...Matey";
 const _runningClock = "about-time.clockRunningStatus";
 const _acquiredMaster = "about-time.pseudoclockMaster";
-const _startCountDown = "about-time.startCountDown";
-const _startRealCountDown = "about-time.startRealCountDown";
-const _setRealTimeCountDown = "about-time.setRealTimeCountDown";
-const _updateRealTimeCountDown = "about-time.updateRealTimeCountDown";
 export const _addEvent = "about.time.addEvent";
 let _userId = "";
-let debug;
 let log = (...args) => {
     console.log("about-time | ", ...args);
 };
@@ -31,96 +22,32 @@ export class PseudoClockMessage {
     }
 }
 export class PseudoClock {
-    static get timeZeroOffset() { return this._timeZeroOffset; }
-    ;
-    static set timeZeroOffset(offset) { this._timeZeroOffset = offset; }
-    static get clockStartYear() { return this._clockStartYear; }
-    ;
-    static setDebug(val) {
-        debug = val;
-    }
-    static get isGM() { return PseudoClock._isGM; }
     static _initialize(currentTime = 0, realTimeMult = 0, realTimeInterval, running = false) {
-        PseudoClock._running = running;
-        PseudoClock._globalRunning = running;
-        PseudoClock._realTimeMult = game.settings.get("about-time", "real-time-multiplier");
-        PseudoClock._realTimeInterval = game.settings.get("about-time", "real-time-interval");
-        //@ts-ignore
-        PseudoClock.serverTime = game.time.serverTime;
-        PseudoClock._save(true);
-        if (!CONFIG.time.roundTime)
-            CONFIG.time.roundTime = 6;
-    }
-    static get currentTime() {
-        //@ts-ignore
-        return game.time.worldTime + PseudoClock._timeZeroOffset;
-    }
-    static _createFromData(data) {
-        PseudoClock._running = data._running;
-        PseudoClock._globalRunning = data._running;
-        PseudoClock._realTimeMult = game.settings.get("about-time", "real-time-multiplier");
-        PseudoClock._realTimeInterval = game.settings.get("about-time", "real-time-interval");
-        if (!CONFIG.time.roundTime)
-            CONFIG.time.roundTime = 6;
-        if (data._currentTime && false) {
-            console.warn("save data contains current time using ", data._currentTime);
-            game.settings.set("core", "time", data._currentTime);
-        } // else log("No settings saved time found")
     }
     static get isMaster() {
         return PseudoClock._isMaster;
     }
     static warnNotMaster(operation) {
         ui.notifications.error(`${game.user.name} ${operation} - ${game.i18n.localize("about-time.notMaster")}`);
-        console.warn(`Non master timekeeper attempting to ${operation}`);
+        console.warn(`about-time | Non master timekeeper attempting to ${operation}`);
     }
     static warnNotGM(operation) {
         ui.notifications.error(`${game.user.name} ${operation} - ${game.i18n.localize("about-time.notMaster")}`);
-        console.warn(`Non GM attempting to ${operation}`);
-    }
-    static status() {
-        console.log(PseudoClock._realTimeMult, PseudoClock._running, PseudoClock._globalRunning);
+        console.warn(`about-time | Non GM attempting to ${operation}`);
     }
     static _displayCurrentTime() {
         //@ts-ignore .time
-        console.log(`Elapsed time ${game.time.worldTime + PseudoClock._timeZeroOffset}`);
-    }
-    static getDHMS() {
-        //@ts-ignore .time
-        return DTMod.fromSeconds(game.time.worldTime + PseudoClock._timeZeroOffset);
+        console.log(`Elapsed time ${game.time.worldTime}`);
     }
     static advanceClock(timeIncrement) {
-        if (PseudoClock.isGM)
-            //@ts-ignore
-            game.time.advance(timeIncrement);
-        else
-            PseudoClock.warnNotGM("Advance clock");
+        console.error("about-time | advance clock Not supported");
     }
     static setClock(newTime) {
-        if (PseudoClock.isGM) {
-            newTime = Math.floor(newTime) - PseudoClock._timeZeroOffset;
-            game.settings.set("core", "time", newTime);
-        }
-    }
-    static _realTimeHandler() {
-        if (debug)
-            log("Real time handler fired");
-        //@ts-ignore .time
-        let newServerTime = game.time.serverTime;
-        if (!game.paused && PseudoClock._running) {
-            //@ts-ignore
-            let dt = newServerTime - this.serverTime;
-            let gameTimeAdvance = PseudoClock._realTimeInterval * PseudoClock._realTimeMult;
-            PseudoClock.advanceClock(gameTimeAdvance);
-        }
-        PseudoClock.serverTime = newServerTime;
+        console.error("about-time | set clock Not supported");
     }
     static demote() {
         PseudoClock._isMaster = false;
         Hooks.callAll(_acquiredMaster, false);
-        ElapsedTime._save(true);
-        if (PseudoClock._realTimeTimerID)
-            clearInterval(PseudoClock._realTimeTimerID);
     }
     static notifyMutiny() {
         let message = new PseudoClockMessage({ action: _masterMutiny, userId: _userId });
@@ -128,59 +55,24 @@ export class PseudoClock {
     }
     static mutiny() {
         PseudoClock.notifyMutiny();
-        let timeout = game.settings.get("about-time", "election-timeout") / 2 * 1000;
+        let timeout = 10;
         // 2 set a timeout, if it expires assume master timekeeper role.
         PseudoClock._queryTimeoutId = setTimeout(() => {
-            log("Mutineer assuming master timekeeper role ", PseudoClock._realTimeInterval);
+            log("Mutineer assuming master timekeeper role ", 5);
             PseudoClock._isMaster = true;
-            PseudoClock._load();
             ElapsedTime._load();
-            if (PseudoClock._realTimeTimerID)
-                clearInterval(PseudoClock._realTimeTimerID);
-            PseudoClock._realTimeTimerID = setInterval(PseudoClock._realTimeHandler, PseudoClock._realTimeInterval * 1000);
             Hooks.callAll(_acquiredMaster, true);
             let message = new PseudoClockMessage({ action: _masterResponse, userId: _userId });
             PseudoClock._notifyUsers(message);
-        }, timeout);
+        }, timeout * 1000);
     }
     static notifyRunning(status) {
-        let message = new PseudoClockMessage({ action: _runningClock, userId: _userId }, status);
-        PseudoClock._notifyUsers(message);
-        Hooks.callAll(_runningClock, status);
-    }
-    /* Start the real time clock */
-    static startRealTime() {
-        if (PseudoClock._isMaster) {
-            if (PseudoClock._realTimeTimerID)
-                clearInterval(PseudoClock._realTimeTimerID);
-            PseudoClock._realTimeTimerID = setInterval(PseudoClock._realTimeHandler, PseudoClock._realTimeInterval * 1000);
-            PseudoClock._running = true;
-            PseudoClock._globalRunning = true;
-            PseudoClock.notifyRunning(true);
-        }
-        else
-            PseudoClock.warnNotMaster("Start realtime");
-    }
-    static stopRealTime() {
-        if (PseudoClock.isMaster) {
-            if (PseudoClock.isMaster && PseudoClock.isRunning)
-                if (PseudoClock._realTimeTimerID)
-                    clearInterval(PseudoClock._realTimeTimerID);
-            PseudoClock._running = false;
-            PseudoClock._globalRunning = false;
-            PseudoClock.notifyRunning(false);
-        }
-        else
-            PseudoClock.warnNotMaster("Stop realtime");
-    }
-    static pauseRealTime() {
-        PseudoClock._running = false;
-    }
-    static resumeRealTime() {
-        PseudoClock._running = PseudoClock._globalRunning;
+        console.error("about-time | notify running not supported");
     }
     static isRunning() {
-        return PseudoClock._globalRunning;
+        //@ts-ignore
+        const clockStatus = window.SimpleCalendar.api.clockStatus();
+        return clockStatus.started && !clockStatus.paused;
     }
     static _processAction(message) {
         if (message._userId === _userId)
@@ -215,53 +107,15 @@ export class PseudoClock {
                     log(userName, " took control as master timekeeper. Aaaahhhrrr");
                 }
                 break;
-            case _runningClock:
-                PseudoClock._globalRunning = message._args[0];
-                Hooks.callAll(_runningClock);
-                break;
             case _addEvent:
                 if (!PseudoClock.isMaster)
                     return;
                 ElapsedTime._eventQueue.add(Quentry.createFromJSON(message._args[0]));
                 ElapsedTime._save(true);
                 break;
-            case _startCountDown:
-                CountDown.startTimer(message._args[0], message._args[1]);
-                break;
-            case _startRealCountDown:
-                RealTimeCountDown.startTimer(message._args[0]);
-                break;
-            case _updateRealTimeCountDown:
-                RealTimeCountDown.updateRealTimeCountDown(message._args[0]);
-                break;
-            case _setRealTimeCountDown:
-                RealTimeCountDown.setRealTimeCountDown(message._args[0], message._args[1]);
-                break;
         }
     }
     ;
-    static startTimerAllPlayers(duration = { minutes: 10 }, forceRealTime) {
-        if (game.user.isGM) {
-            let message = new PseudoClockMessage({ action: _startCountDown, userId: game.user.id }, duration, forceRealTime);
-            PseudoClock._notifyUsers(message);
-        }
-        CountDown.startTimer(duration, forceRealTime);
-    }
-    static startRealTimerAllPlayers(duration = { minutes: 10 }) {
-        if (game.user.isGM) {
-            let message = new PseudoClockMessage({ action: _startRealCountDown, userId: game.user.id }, duration);
-            PseudoClock._notifyUsers(message);
-        }
-        RealTimeCountDown.startTimer(duration);
-    }
-    static setRealTimeCountDown(running, targetTime) {
-        let message = new PseudoClockMessage({ action: _setRealTimeCountDown, userId: game.user.id }, running, targetTime);
-        PseudoClock._notifyUsers(message);
-    }
-    static updateRealTimeCountDown(targetTime) {
-        let message = new PseudoClockMessage({ action: _updateRealTimeCountDown, userId: game.user.id }, targetTime);
-        PseudoClock._notifyUsers(message);
-    }
     static async notifyEvent(eventName, ...args) {
         let message = new PseudoClockMessage({ action: _eventTrigger, userId: _userId, newTime: 0 }, eventName, ...args);
         Hooks.callAll(_eventTrigger, ...message._args);
@@ -280,50 +134,10 @@ export class PseudoClock {
     }
     ;
     static _load() {
-        let saveData = game.settings.get("about-time", "pseudoclock");
-        if (debug)
-            log("_load", saveData);
-        try {
-            if (!saveData) {
-                if (debug)
-                    log("no saved data re-initializing");
-                PseudoClock._initialize(0, 0, 30, false);
-            }
-            else {
-                if (debug)
-                    log("loaded saved Data. ", saveData);
-                PseudoClock._createFromData(saveData);
-            }
-        }
-        catch (err) {
-            console.log(err);
-            PseudoClock._initialize(0, 0, 30, false);
-        }
         PseudoClock._fetchParams();
     }
     ;
-    static _save(force) {
-        let newSaveTime = Date.now();
-        if (PseudoClock._isMaster) {
-            if (debug)
-                log("save times are ", newSaveTime, PseudoClock._lastSaveTime, PseudoClock._saveInterval);
-            if ((newSaveTime - PseudoClock._lastSaveTime > PseudoClock._saveInterval) || force) {
-                if (debug)
-                    log("_save saving", new Date(), PseudoClock.currentTime);
-                let saveData = {
-                    _running: PseudoClock._running,
-                };
-                game.settings.set("about-time", "pseudoclock", saveData);
-                // put something in to throttle saving
-                PseudoClock._lastSaveTime = newSaveTime;
-            }
-        }
-    }
     static init() {
-        _userId = game.user.id;
-        PseudoClock._isGM = game.user.isGM;
-        PseudoClock._lastSaveTime = Date.now();
-        PseudoClock._fetchParams();
         Hooks.on("updateWorldTime", (newTime, dt) => {
             Hooks.callAll("pseudoclockSet", newTime);
         });
@@ -332,36 +146,23 @@ export class PseudoClock {
         PseudoClock._isMaster = false;
         PseudoClock._setupSocket();
         // 1 send a message to see if there is another master clock already out there
-        if (debug)
+        if (ElapsedTime.debug)
             log("pseudoclock sending query master message");
         let message = new PseudoClockMessage({ action: _queryMaster, userId: _userId });
         PseudoClock._notifyUsers(message);
-        if (PseudoClock.isGM) {
-            let timeout = game.settings.get("about-time", "election-timeout") * 1000;
+        if (game.user.isGM) {
+            let timeout = 5;
             // 2 set a timeout, if it expires assume master timekeeper role.
             PseudoClock._queryTimeoutId = setTimeout(() => {
-                log("Assuming master timekeeper role", PseudoClock._realTimeInterval);
                 PseudoClock.notifyMutiny();
                 PseudoClock._isMaster = true;
-                PseudoClock._load();
-                if (PseudoClock._realTimeTimerID)
-                    clearInterval(PseudoClock._realTimeTimerID);
-                PseudoClock._realTimeTimerID = setInterval(PseudoClock._realTimeHandler, PseudoClock._realTimeInterval * 1000);
                 Hooks.callAll(_acquiredMaster, true);
-            }, timeout);
+            }, timeout * 1000);
         }
-        if (debug)
+        if (ElapsedTime.debug)
             log("election-timeout: timeout set id is ", PseudoClock._queryTimeoutId);
+        console.warn("about-time | election-timeout: timeout set id is ", PseudoClock._queryTimeoutId);
     }
     static _fetchParams() {
-        PseudoClock._realTimeMult = game.settings.get("about-time", "real-time-multiplier");
-        if (isNaN(PseudoClock._realTimeMult))
-            PseudoClock._realTimeMult = 1;
-        PseudoClock._realTimeInterval = (game.settings.get("about-time", "real-time-interval") || 15);
-        if (game.settings.get("about-time", "seconds-per-round"))
-            CONFIG.time.roundTime = game.settings.get("about-time", "seconds-per-round");
     }
 }
-PseudoClock._saveInterval = 1 * 60 * 1000; // only save every 1 minutes real time. make a param.
-PseudoClock._clockStartYear = 1;
-PseudoClock._timeZeroOffset = 0;

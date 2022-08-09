@@ -1,1 +1,2629 @@
-const _0x5c7a=['The\x20default\x20(i.e.\x20used\x20for\x20all\x20players\x20unless\x20a\x20player-specific\x20permission\x20level\x20is\x20set)\x20permissions\x20for\x20an\x20imported\x20table.','Pact\x20Magic','If\x20enabled,\x20a\x20spell\x27s\x20text\x20will\x20be\x20imported\x20as\x20item\x20description.','SRD_COMPENDIUMS_CLASSES','join','The\x20default\x20Display\x20Bars\x20mode\x20for\x20imported\x20tokens.','Token\x20Name\x20Display\x20Mode','Import\x20(Feats)','MODULE_MIDI_QOL','This\x20moves\x20extra\x20attack\x20damage\x20rolls\x20(for\x20example,\x20the\x20poison\x20damage\x20done\x20by\x20a\x20Giant\x20Spider\x27s\x20bite)\x20to\x20the\x20\x22Other\x20Formula\x22\x20dice\x20field,\x20which\x20can\x20improve\x20compatibility\x20with\x20some\x20modules.','The\x20default\x20Display\x20Name\x20mode\x20for\x20imported\x20tokens.','Control','299525AkSyLw','Use\x20Token\x20Image\x20as\x20Portrait','Gamemaster','Scene\x20controls','The\x20default\x20(i.e.\x20used\x20for\x20all\x20players\x20unless\x20a\x20player-specific\x20permission\x20level\x20is\x20set)\x20permissions\x20for\x20an\x20imported\x20option/feature.','\x22Gurt\x27s\x20Greataxe\x22\x20scaling\x20(exponential)','Enable\x20Token\x20Vision','Disable\x20the\x20warning\x20confirmation\x20dialogue\x20shown\x20when\x20importing\x20a\x20large\x20number\x20of\x20entities.','Token\x20Disposition','Compact\x20Header\x20Buttons','Name\x20Browser\x20Tab\x20After\x20Active\x20Scene','Compact\x20Actors\x20Directory','The\x20default\x20(i.e.\x20used\x20for\x20all\x20players\x20unless\x20a\x20player-specific\x20permission\x20level\x20is\x20set)\x20permissions\x20for\x20an\x20imported\x20vehicle.','system','If\x20enabled,\x20a\x20background\x27s\x20text\x20will\x20be\x20imported\x20as\x20item\x20description.','If\x20items\x20should\x20have\x20active\x20effects\x20created\x20during\x20import.','The\x20default\x20Token\x20Disposition\x20mode\x20for\x20imported\x20tokens.','Update\x20Existing','Import\x20(Psionics)','Make\x20various\x20tweaks\x20to\x20the\x20appearance\x20of\x20chat,\x20in\x20order\x20to\x20fit\x20more\x20on-screen.\x20Hold\x20down\x20SHIFT\x20while\x20hovering\x20over\x20a\x20message\x20to\x20expand\x20it,\x20revealing\x20its\x20header\x20and\x20delete\x20button.','Prepare\x20Spell\x20Items','If\x20enabled,\x20a\x20vehicle\x20upgrade\x27s\x20text\x20will\x20be\x20imported\x20as\x20item\x20description.','34852SmXjXn','If\x20enabled,\x20the\x20\x22sheet\x22\x20(i.e.,\x20configuration\x20UI)\x20for\x20a\x20scene\x20will\x20be\x20shown\x20upon\x20creation\x20(by\x20drag-dropping\x20an\x20image\x20to\x20the\x20canvas).','Avoid\x20sending\x20a\x20network\x20request\x20during\x20module\x20initialisation\x20to\x20check\x20if\x20the\x20modded\x20Plutonium\x20backend\x20is\x20installed.','Attuned','Whether\x20or\x20not\x20item\x20weight\x20units\x20should\x20be\x20converted\x20to\x20an\x20approximate\x20metric\x20equivalent\x20(1\x20pound\x20≈\x200.5\x20kilograms).','If\x20a\x20duplicate\x20is\x20found\x20for\x20a\x20would-be\x20import\x20entity,\x20the\x20existing\x20entity\x20is\x20updated.','Add\x20Page\x20Numbers\x20to\x20Sources','Import\x20(Classes)','C_IMPORT_DEDUPE_MODE_SKIP','Add\x20a\x20\x22Set\x20Embed\x20URL\x22\x20context\x20menu\x20option\x20to\x20journal\x20entry\x20directory\x20items,\x20allowing\x20the\x20contents\x20of\x20the\x20journal\x20item\x20to\x20be\x20replaced\x20with\x20embedded\x20web\x20content\x20(Google\x20Doc,\x20reference\x20page,\x20YouTube\x20video,\x20etc.).','Display\x20Scene\x20Sheets\x20on\x20Creation','SRD_COMPENDIUMS_OPTIONAL_FEATURES','If\x20enabled,\x20importing\x20a\x20class\x20will\x20create\x20a\x20\x22Base\x20AC\x22\x20active\x20effect\x20(calculated\x20as\x2010\x20+\x20dexterity\x20modifier),\x20unless\x20one\x20already\x20exists.','Javelin','SRD_COMPENDIUMS_CLASS_FEATURES','The\x20default\x20(i.e.\x20used\x20for\x20all\x20players\x20unless\x20a\x20player-specific\x20permission\x20level\x20is\x20set)\x20permissions\x20for\x20an\x20imported\x20psionic.','The\x20place(s)\x20where\x20the\x20Art\x20Browser\x20button\x20should\x20be\x20visible.','Allows\x20the\x20use\x20of\x20roll\x20syntax,\x20and\x20notably\x20variables\x20(such\x20as\x20\x22@abilities.dex.mod\x22),\x20in\x20active\x20effect\x20values.','TRUSTED','No\x20scaling','Equipment\x20Shop','Import\x20Class\x20Table\x20to\x20Description','The\x20default\x20(i.e.\x20used\x20for\x20all\x20players\x20unless\x20a\x20player-specific\x20permission\x20level\x20is\x20set)\x20permissions\x20for\x20an\x20imported\x20object.','If\x20a\x20duplicate\x20is\x20found\x20for\x20a\x20would-be\x20imported\x20entity,\x20that\x20entity\x20is\x20not\x20imported.','Import\x20(Gifts\x20&\x20Rewards)','If\x20enabled,\x20any\x20fluff\x20text\x20which\x20is\x20available\x20for\x20a\x20vehicle\x20will\x20be\x20imported\x20into\x20that\x20vehicle\x27s\x20description.','If\x20enabled,\x20a\x20condition/disease\x27s\x20text\x20will\x20be\x20imported\x20as\x20item\x20description.','If\x20the\x20modded\x20Plutonium\x20backend\x20is\x20installed,\x20adventure\x20packages\x20(modules/worlds)\x20will\x20be\x20installed,\x20automatically,\x20using\x20the\x20mod,\x20rather\x20than\x20providing\x20you\x20with\x20a\x20list\x20of\x20links\x20to\x20copy-paste\x20into\x20Foundry\x27s\x20\x22Setup\x22.','Import\x20Packs\x20to\x20Actors\x20as\x20Constituent\x20Items','Actor\x20Spell\x20Preparation\x20Mode','Import\x20(Creatures)','If\x20an\x20item\x20which\x20is\x20formed\x20of\x20multiple\x20constituent\x20items\x20of\x20the\x20same\x20type,\x20such\x20as\x20\x22Bag\x20of\x20Ball\x20Bearings\x20(1,000)\x22,\x20should\x20be\x20split\x20up\x20into\x20its\x20constituent\x20items\x20(a\x20\x22Ball\x20Bearing\x22\x20item\x20with\x20its\x20sheet\x20quantity\x20set\x20to\x201,000,\x20in\x20this\x20example).','C_ART_IMAGE_MODE_TILE','The\x20default\x20(i.e.\x20used\x20for\x20all\x20players\x20unless\x20a\x20player-specific\x20permission\x20level\x20is\x20set)\x20permissions\x20for\x20an\x20imported\x20spell.','Journal\x20Notes','The\x20resource\x20consumed\x20by\x20spells\x20imported\x20with\x20\x22Use\x20Spell\x20Points\x22\x20enabled.','If\x20enabled,\x20a\x20race\x27s\x20text\x20will\x20be\x20imported\x20as\x20item\x20description.','assets/art','The\x20root\x20server\x20URL\x20from\x20which\x20to\x20load\x20data\x20and\x20source\x20images,\x20and\x20to\x20link\x20in\x20rendered\x20text.\x20Note\x20that,\x20where\x20possible,\x20the\x20module\x20will\x20use\x20its\x20own\x20built-in\x20data\x20files,\x20rather\x20than\x20call\x20out\x20to\x20a\x20remote\x20server.\x20Note\x20that\x20this\x20should\x20end\x20with\x20a\x20forward\x20slash\x20(\x22/\x22).','Import\x20(Vehicles)','Based\x20on\x20the\x20rules\x20for\x20calculating\x20the\x20weight\x20and\x20cost\x20of\x20barding,\x20as\x20presented\x20in\x20the\x20Player\x27s\x20Handbook\x20(p.\x20155).','Token\x20Size','PLAYER','Enable\x20URL\x20Embeds','Spell\x20Points\x20Resource','arrayStringShort','Import\x20Fluff\x20to\x20Description','Auto-Roll\x20Multiattacks','The\x20default\x20(i.e.\x20used\x20for\x20all\x20players\x20unless\x20a\x20player-specific\x20permission\x20level\x20is\x20set)\x20permissions\x20for\x20an\x20imported\x20rule.','The\x20attunement\x20type\x20to\x20use\x20when\x20importing\x20an\x20item\x20which\x20can\x20be\x20attuned.','No\x20deduplication\x20is\x20done.','16006JeZeMA','2PWuRKX','Owner','Gargantuan\x20or\x20larger','The\x20type\x20of\x20canvas\x20object\x20that\x20should\x20be\x20created\x20when\x20drag-dropping\x20images\x20from\x20the\x20art\x20browser\x20to\x20the\x20canvas.','Add\x20a\x20\x22Popout\x22\x20button\x20to\x20sheet\x20headers,\x20which\x20opens\x20the\x20sheet\x20as\x20a\x20popup\x20browser\x20window.','If\x20enabled,\x20a\x20psionic\x27s\x20text\x20will\x20be\x20imported\x20as\x20item\x20description.','Reduce\x20the\x20height\x20of\x20Items\x20Directory\x20list\x20items,\x20to\x20fit\x20more\x20on-screen.','The\x20default\x20(i.e.\x20used\x20for\x20all\x20players\x20unless\x20a\x20player-specific\x20permission\x20level\x20is\x20set)\x20permissions\x20for\x20an\x20imported\x20adventure.','SRD_COMPENDIUMS_ITEMS','boolean','If\x20the\x20page\x20number\x20(where\x20available)\x20of\x20each\x20imported\x20entry\x20should\x20be\x20appended\x20to\x20the\x20\x22source\x22\x20field\x20of\x20the\x20entry.','Based\x20on\x20the\x20giant-size\x20greateaxe\x20of\x20the\x20same\x20name\x20found\x20in\x20Storm\x20King\x27s\x20Thunder\x20(p.\x20234).','C_CREATURE_NAMETAGS_TYPE_WITH_TAGS','Treat\x20\x22Save\x20Halves\x22\x20Additional\x20Attack\x20Damage\x20as\x20\x22Other\x20Formula\x22','values','pact','C_ITEM_ATTUNEMENT_REQUIRED','Token\x20Bar\x202\x20Attribute','Import\x20(Items)','The\x20default\x20(i.e.\x20used\x20for\x20all\x20players\x20unless\x20a\x20player-specific\x20permission\x20level\x20is\x20set)\x20permissions\x20for\x20an\x20imported\x20class\x20or\x20subclass.','If\x20enabled,\x20an\x20item\x27s\x20text\x20will\x20be\x20imported\x20as\x20item\x20description.','If\x20enabled,\x20a\x20feat\x27s\x20text\x20will\x20be\x20imported\x20as\x20item\x20description.','Import\x20(Rules)','Miscellaneous','588603KSdQjY','Import\x20(Vehicle\x20Upgrades)','A\x20comma-separated\x20list\x20of\x20compendiums\x20that\x20the\x20race\x20importer\x20will\x20attempt\x20to\x20pull\x20additional\x20data\x20(including\x20art)\x20from\x20rather\x20than\x20use\x20the\x20default\x20Plutonium\x20icons.','If\x20enabled,\x20a\x20creature\x27s\x20token\x20image\x20will\x20be\x20preferred\x20over\x20its\x20portrait\x20image\x20when\x20populating\x20its\x20sheet\x20portrait\x20during\x20import.','Token\x20Bar\x20Display\x20Mode','If\x20enabled,\x20any\x20fluff\x20text\x20which\x20is\x20available\x20for\x20a\x20creature\x20will\x20be\x20imported\x20into\x20that\x20creature\x27s\x20biography.','Display\x20Detected\x20Backend','Compact\x20Directory\x20Buttons','19471ChCVDT','Import\x20Text\x20as\x20Description','multipleChoice','Fix\x20ESC\x20Key','enum','C_ART_IMAGE_MODE_TOKEN','If\x20enabled,\x20an\x20optional\x20feature\x27s\x20text\x20will\x20be\x20imported\x20as\x20item\x20description.','Huge','Drag-Drop\x20Images\x20As','Prepared','C_ITEM_ATTUNEMENT_NONE','If\x20the\x20\x22Enable\x20Journal\x20Embeds\x22\x20option\x20is\x20enabled,\x20this\x20determines\x20whether\x20or\x20not\x20the\x20embedded\x20content\x20is\x20expanded\x20by\x20default.','Convert\x20Item\x20Weights\x20to\x20Metric','Add\x20Tag\x20Suffixes\x20to\x20Names','Tools','Reduce\x20the\x20height\x20of\x20Actors\x20Directory\x20list\x20items,\x20to\x20fit\x20more\x20on-screen.','getPermissionsEnum','C_ART_IMAGE_MODE_NOTE','Actor','C_ITEM_ATTUNEMENT_ATTUNED','Sets\x20the\x20browser\x20tab\x20name\x20to\x20be\x20that\x20of\x20the\x20currently-active\x20scene.','Additional\x20Data\x20Compendiums\x20(Features)','Enable\x20Journal\x20Embeds','Use\x20Modded\x20Package\x20Installer','If\x20enabled,\x20the\x20Collection\x20Deduplicator\x20will\x20ignore\x20entity\x20types,\x20treating\x20e.g.\x20a\x20PC\x20sheet\x20and\x20an\x20NPC\x20sheet\x20with\x20the\x20same\x20name\x20as\x20a\x20set\x20of\x20duplicates.','Add\x20\x22Delete\x22\x20to\x20Navbar\x20Scene\x20Context\x20Menu','Use\x20Spell\x20Points','User\x20Art\x20Directory','always','Ignore\x20Types\x20When\x20Deduplicating','Owner\x20Hover','ASSISTANT','A\x20comma-separated\x20list\x20of\x20compendiums\x20that\x20the\x20item\x20importer\x20will\x20attempt\x20to\x20pull\x20additional\x20data\x20(including\x20art)\x20from\x20rather\x20than\x20use\x20the\x20default\x20Plutonium\x20icons.','Compact\x20Rollable\x20Tables','Throwing\x20Items','A\x20comma-separated\x20list\x20of\x20compendiums\x20that\x20the\x20creature\x20importer\x20will\x20attempt\x20to\x20pull\x20additional\x20data\x20(including\x20art)\x20from\x20rather\x20than\x20use\x20the\x20default\x20Plutonium\x20icons.','Include\x20Fluff\x20Image\x20to\x20Biography','A\x20comma-separated\x20list\x20of\x20compendiums\x20that\x20the\x20vehicle\x20importer\x20will\x20attempt\x20to\x20pull\x20additional\x20data\x20(including\x20art)\x20from\x20rather\x20than\x20use\x20the\x20default\x20Plutonium\x20icons.','Net','getModelBarAttributes','Add\x20[type\x20(with\x20tags)]\x20tag','Assistant','Hover','Journal\x20Entries','(None)','Auto-Expand\x20Journal\x20Embeds','Tiles','SRD_COMPENDIUMS_CREATURE_FEATURES','dnd5e.classfeatures','prepared','Use\x20whichever\x20spellcasting\x20trait\x20has\x20the\x20most\x20spells\x20listed.','C_ART_IMAGE_MODE_SCENE','Token\x20Bar\x201\x20Attribute','A\x20list\x20of\x20items\x20which\x20are\x20imported\x20with\x20their\x20usage\x20set\x20to\x20deplete\x20their\x20own\x20quantity\x20when\x20used.','\x22Equipment\x20Shop\x22\x20button\x20will\x20be\x20hidden\x20for\x20any\x20user\x20with\x20a\x20role\x20less\x20than\x20the\x20chosen\x20role.','The\x20default\x20spell\x20preparation\x20mode\x20for\x20spells\x20imported\x20to\x20the\x20items\x20directory.','Add\x20Source\x20to\x20Names','If\x20enabled,\x20any\x20data\x20which\x20would\x20normally\x20be\x20loaded\x20from\x20the\x20module\x27s\x20local\x20copies\x20is\x20instead\x20loaded\x20from\x20the\x20sites\x20URL\x20(which\x20may\x20be\x20customised\x20by\x20editing\x20the\x20\x22Base\x20Site\x20Url\x22\x20config\x20option)','Increase\x20the\x20speed\x20of\x20some\x20token\x20movement\x20animations.','Import','Add\x20tags\x20to\x20an\x20imported\x20creature\x27s\x20name,\x20to\x20allow\x20easier\x20searching\x20(especially\x20within\x20compendiums).','Import\x20Fluff\x20to\x20Biography','174078jmIFxP','NONE','Import\x20(Books)','Additional\x20Data\x20Compendiums\x20(Classes)','MODULE_DAE','Item\x20Weight\x20&\x20Value\x20Scaling','Import\x20(Table)','_template_getEntityPermissions','USER_ROLES','Whether\x20or\x20not\x20spell\x20range/area\x20units\x20should\x20be\x20converted\x20to\x20an\x20approximate\x20metric\x20equivalent\x20(5\x20feet\x20≈\x201.5\x20metres;\x201\x20mile\x20≈\x201.6\x20kilometres).','If\x20the\x20source\x20of\x20each\x20imported\x20entry\x20(e.g.\x20\x22MM\x22\x20for\x20Monster\x20Manual)\x20should\x20be\x20appended\x20to\x20the\x20name\x20of\x20the\x20entry.','If\x20enabled,\x20a\x20scene\x20will\x20be\x20activated\x20upon\x20creation\x20(by\x20drag-dropping\x20an\x20image\x20to\x20the\x20canvas).','Fvtt','C_IMPORT_DEDUPE_MODE_NONE','Requires\x20the\x20\x22Name\x20Browser\x20Tab\x20After\x20Active\x20Scene\x22\x20option\x20to\x20be\x20enabled.\x20A\x20custom\x20name\x20suffix\x20to\x20append\x20to\x20the\x20scene\x20name\x20displayed\x20in\x20the\x20tab\x20(separated\x20by\x20a\x20Foundry-style\x20bullet\x20character).','Display\x20Missing\x20Health','If\x20enabled,\x20a\x20vehicle\x27s\x20token\x20image\x20will\x20be\x20preferred\x20over\x20its\x20portrait\x20image\x20when\x20populating\x20its\x20sheet\x20portrait\x20during\x20import.','Hostile','If\x20enabled,\x20a\x20class\x27s\x20table\x20will\x20be\x20imported\x20as\x20part\x20of\x20the\x20class\x20item\x27s\x20description.','Convert\x20Spell\x20Ranges\x20to\x20Metric','Some\x20Foundry\x20items\x20(backgrounds,\x20races,\x20spells,\x20items,\x20etc.),\x20when\x20imported\x20via\x20Plutonium\x20and\x20later\x20drag-dropped\x20to\x20an\x20actor\x20sheet,\x20have\x20special\x20handling\x20allowing\x20for\x20greater\x20functionality\x20(such\x20as\x20populating\x20skills\x20and\x20features).\x20This\x20allows\x20you\x20to\x20control\x20whether\x20or\x20not\x20that\x20special\x20handling\x20is\x20used,\x20rather\x20than\x20the\x20baseline\x20Foundry\x20drag-drop.\x20Note\x20that\x20if\x20you\x20modify\x20an\x20item,\x20the\x20changes\x20will\x20not\x20be\x20reflected\x20in\x20the\x20version\x20imported\x20to\x20the\x20sheet\x20by\x20Plutonium.','Additional\x20Data\x20Compendiums','Fix\x20Freehand\x20Drawing\x20Minimum\x20Distance','The\x20sub-directory\x20of\x20the\x20\x22User\x20Data\x22\x20directory\x20where\x20downloaded\x20images\x20and\x20image\x20packs\x20will\x20be\x20saved.','Base\x20Site\x20URL','A\x20factor\x20by\x20which\x20to\x20scale\x20placed\x20tiles,\x20and\x20by\x20which\x20to\x20scale\x20scene\x20backgrounds.','Price\x20Multiplier','copy','Hide\x20the\x20Plutonium\x20directory\x20buttons.','Handaxe','The\x20default\x20(i.e.\x20used\x20for\x20all\x20players\x20unless\x20a\x20player-specific\x20permission\x20level\x20is\x20set)\x20permissions\x20for\x20an\x20imported\x20condition/diseases.','Increase\x20the\x20speed\x20of\x20various\x20UI\x20animations.','The\x20default\x20(i.e.\x20used\x20for\x20all\x20players\x20unless\x20a\x20player-specific\x20permission\x20level\x20is\x20set)\x20permissions\x20for\x20an\x20imported\x20vehicle\x20upgrades.','help','Base\x20Homebrew\x20Repository\x20URL','Avoid\x20Loading\x20Local\x20Data','A\x20comma-separated\x20list\x20of\x20compendiums\x20that\x20the\x20class\x20importer\x20will\x20attempt\x20to\x20pull\x20additional\x20data\x20(including\x20art)\x20from\x20rather\x20than\x20use\x20the\x20default\x20Plutonium\x20icons.','dnd5e.classes','Determines\x20what\x20action\x20is\x20taken\x20when\x20importing\x20duplicate\x20content\x20to\x20a\x20directory\x20or\x20compendium.\x20An\x20entity\x20is\x20considered\x20a\x20duplicate\x20if\x20and\x20only\x20if\x20its\x20name\x20and\x20source\x20match\x20an\x20existing\x20entity.\x20Note\x20that\x20this\x20does\x20not\x20function\x20when\x20importing\x20to\x20actor\x20sheets.','Innate\x20Spellcasting','Adds\x20a\x20\x22Delete\x22\x20option\x20to\x20the\x20context\x20menu\x20found\x20when\x20right-clicking\x20a\x20scene\x20in\x20the\x20navigation\x20bar.\x20Note\x20that\x20this\x20does\x20not\x20include\x20the\x20currently-active\x20scene.','Tab\x20Name\x20Suffix','dnd5e.items','If\x20enabled,\x20a\x20class\x27s\x20text\x20will\x20be\x20imported\x20as\x20item\x20description.','Trusted','If\x20enabled,\x20images\x20will\x20be\x20sourced\x20from\x20an\x20\x22img\x22\x20directory\x20within\x20the\x20module\x27s\x20directory.\x20This\x20directory\x20should\x20contain\x20the\x20contents\x20of\x20the\x20\x225eTools\x20image\x20files\x22\x20ZIP,\x20available\x20from\x20https://get.5e.tools.','Adds\x20a\x20list\x20of\x20potential\x20active\x20effect\x20attribute\x20keys\x20to\x20the\x20Configure\x20Active\x20Effect\x20window\x27s\x20\x22Effects\x22\x20tab,\x20and\x20a\x20field\x20for\x20configuring\x20priority.','Minimum\x20Permission\x20Level','resources.primary.value','Add\x20[type]\x20tag','C_CREATURE_NAMETAGS_TYPE','_TEMPLATE_ENTITY_PERMISSIONS','Enhance\x20Active\x20Effect\x20Config\x20UI','Spell\x20Item\x20Preparation\x20Mode','Medium\x20or\x20smaller','dnd5e.monsterfeatures','Compact\x20Chat','Token\x20scene\x20controls','Activate\x20Scenes\x20on\x20Creation','The\x20default\x20size\x20of\x20placed\x20tokens.','C_IMPORT_DEDUPE_MODE_OVERWRITE','If\x20enabled,\x20imported\x20spells\x20which\x20would\x20use\x20spell\x20slots\x20will\x20instead\x20be\x20marked\x20as\x20\x22at\x20will\x22\x20and\x20set\x20to\x20consume\x20an\x20actor\x27s\x20primary/secondary/tertiary\x20resource.\x20(The\x20\x22Spell\x20Points\x22\x20variant\x20rule\x20can\x20be\x20found\x20in\x20the\x20DMG,\x20page\x20288.)','C_IMPORT_DRAG_DROP_MODE_NEVER','dnd5e.tradegoods','Import\x20(Objects)','1WvfdjX','Prompt','SRD_COMPENDIUMS_RACES_AND_FEATURES','Add\x20[CR]\x20tag','Reduce\x20the\x20minimum\x20mouse\x20movement\x20distance\x20required\x20to\x20start\x20a\x20freehand\x20drawing.','Prevents\x20links\x20to\x20other\x205etools\x20content\x20from\x20being\x20added\x20to\x20the\x20text\x20of\x20imported\x205etools\x20content.','This\x20allows\x20players\x20to\x20see\x20\x22damage\x20dealt\x22\x20to\x20a\x20token,\x20without\x20revealing\x20the\x20token\x27s\x20total\x20health.\x20If\x20enabled,\x20each\x20token\x27s\x20missing\x20health\x20is\x20displayed\x20as\x20a\x20number\x20in\x20the\x20bottom-right\x20corner\x20of\x20the\x20token.','Default\x20Permissions','Import\x20(Adventures)','37713eTcFPu','If\x20enabled,\x20a\x20supernatural\x20gift/reward\x27s\x20text\x20will\x20be\x20imported\x20as\x20item\x20description.','model','npc','Tokens','If\x20enabled,\x20any\x20fluff\x20image\x20which\x20is\x20available\x20for\x20a\x20creature\x20will\x20be\x20imported\x20into\x20that\x20creature\x27s\x20biography.','None','Use\x20whichever\x20spellcasting\x20trait\x20has\x20the\x20highest\x20associated\x20ability\x20score.\x20Note\x20that\x20this\x20may\x20prefer\x20innate\x20spellcasting\x20traits\x20over\x20spellcasting\x20class\x20levels.','Import\x20(Backgrounds)','The\x20default\x20(i.e.\x20used\x20for\x20all\x20players\x20unless\x20a\x20player-specific\x20permission\x20level\x20is\x20set)\x20permissions\x20for\x20an\x20imported\x20item.','\x22Barding\x22\x20scaling\x20(multiplicative)','GAMEMASTER','Spellcasting\x20Primary\x20Trait\x20Selection\x20Method','The\x20default\x20token\x20bar\x202\x20attribute\x20for\x20imported\x20creature\x20tokens.','Never','Reduce\x20the\x20height\x20of\x20Journal\x20Entries\x20list\x20items,\x20to\x20fit\x20more\x20on-screen.','Add\x20Base\x20AC\x20Active\x20Effect','C_CREATURE_NAMETAGS_CR','Compact\x20Items\x20Directory','Always','Skip\x20Duplicates','_template_getTokenSettings','If\x20enabled,\x20a\x20player\x20viewing\x20the\x20config\x20will\x20see\x20only\x20the\x20limited\x20subset\x20of\x20settings\x20they\x20are\x20allowed\x20to\x20modify.\x20If\x20disabled,\x20a\x20player\x20viewing\x20the\x20config\x20will\x20see\x20all\x20settings,\x20regardless\x20of\x20whether\x20or\x20not\x20they\x20can\x20modify\x20those\x20settings.','Always\x20Available','A\x20comma-separated\x20list\x20of\x20compendiums\x20that\x20the\x20optional\x20feature\x20importer\x20will\x20attempt\x20to\x20pull\x20additional\x20data\x20(including\x20art)\x20from\x20rather\x20than\x20use\x20the\x20default\x20Plutonium\x20icons.','Populate\x20Active\x20Effects','SRD_COMPENDIUMS_SPELLS','Disable\x205etools\x20Links','dnd5e.races','Add\x20Sort\x20Order\x20Prefix\x20to\x20Journal\x20Entry\x20Names','The\x20default\x20(i.e.\x20used\x20for\x20all\x20players\x20unless\x20a\x20player-specific\x20permission\x20level\x20is\x20set)\x20permissions\x20for\x20an\x20imported\x20book.','Light\x20Hammer','Use\x20Importer\x20when\x20Drag-Dropping\x20Items\x20to\x20Actors','The\x20URL\x20of\x20the\x20index\x20file\x20from\x20which\x20world/module\x20package\x20metadata\x20is\x20loaded.','Additional\x20Data\x20Compendiums\x20(Races)','The\x20default\x20(i.e.\x20used\x20for\x20all\x20players\x20unless\x20a\x20player-specific\x20permission\x20level\x20is\x20set)\x20permissions\x20for\x20an\x20imported\x20creature.','Compact\x20Scenes\x20Directory','Enable\x20vision\x20for\x20tokens.','Rivet','Import\x20Item\x20Stacks\x20to\x20Actors\x20as\x20Constituent\x20Items','string','Import\x20(Options\x20&\x20Features)','Tile/Scene\x20Scaling','C_IMPORT_DRAG_DROP_MODE_PROMPT','Prepare\x20Actor\x20Spells'];const _0x3c02=function(_0x4b1a9a,_0x2840e5){_0x4b1a9a=_0x4b1a9a-0x110;let _0x5c7a50=_0x5c7a[_0x4b1a9a];return _0x5c7a50;};const _0x2c0fd1=_0x3c02;(function(_0x2e9bba,_0xe12cc3){const _0x128e7b=_0x3c02;while(!![]){try{const _0xe35a9f=-parseInt(_0x128e7b(0x1af))+-parseInt(_0x128e7b(0x1ed))+parseInt(_0x128e7b(0x15b))+-parseInt(_0x128e7b(0x18f))*-parseInt(_0x128e7b(0x18e))+-parseInt(_0x128e7b(0x145))+parseInt(_0x128e7b(0x237))+parseInt(_0x128e7b(0x22e))*parseInt(_0x128e7b(0x1a7));if(_0xe35a9f===_0xe12cc3)break;else _0x2e9bba['push'](_0x2e9bba['shift']());}catch(_0x162c49){_0x2e9bba['push'](_0x2e9bba['shift']());}}}(_0x5c7a,0x30daa));import{Util}from'./Util.js';import{UtilActors}from'./UtilActors.js';import{UtilCompat}from'./UtilCompat.js';class ConfigConsts{static[_0x2c0fd1(0x1f4)](_0x134e00){const _0x2c906d=_0x2c0fd1,_0x85a181=MiscUtil[_0x2c906d(0x208)](ConfigConsts[_0x2c906d(0x220)]);return _0x85a181[_0x2c906d(0x19d)]=Util[_0x2c906d(0x1f9)][_0x2c906d(0x1bf)](),_0x85a181[_0x2c906d(0x20e)]=_0x134e00,_0x85a181;}static[_0x2c0fd1(0x121)](){const _0x4716eb=_0x2c0fd1;return{'tokenNameDisplay':{'name':_0x4716eb(0x13f),'help':_0x4716eb(0x143),'default':0x14,'type':_0x4716eb(0x1b3),'values':[{'value':0x0,'name':_0x4716eb(0x112)},{'value':0xa,'name':'Control'},{'value':0x14,'name':_0x4716eb(0x1cd)},{'value':0x1e,'name':'Hover'},{'value':0x28,'name':_0x4716eb(0x190)},{'value':0x32,'name':_0x4716eb(0x11f)}]},'tokenDisposition':{'name':_0x4716eb(0x14d),'help':_0x4716eb(0x155),'default':-0x1,'type':_0x4716eb(0x1b3),'values':[{'value':-0x1,'name':_0x4716eb(0x1fe)},{'value':0x0,'name':'Neutral'},{'value':0x1,'name':'Friendly'}]},'tokenBarDisplay':{'name':_0x4716eb(0x1ab),'help':_0x4716eb(0x13e),'default':0x28,'type':_0x4716eb(0x1b3),'values':[{'value':0x0,'name':_0x4716eb(0x112)},{'value':0xa,'name':_0x4716eb(0x144)},{'value':0x14,'name':'Owner\x20Hover'},{'value':0x1e,'name':_0x4716eb(0x1d9)},{'value':0x28,'name':_0x4716eb(0x190)},{'value':0x32,'name':_0x4716eb(0x11f)}]},'tokenBar1Attribute':{'name':_0x4716eb(0x1e3),'help':'The\x20default\x20token\x20bar\x201\x20attribute\x20for\x20imported\x20creature\x20tokens.','default':'attributes.hp','type':_0x4716eb(0x1b3),'values':()=>UtilActors['getModelBarAttributes'](game[_0x4716eb(0x152)]['model'][_0x4716eb(0x1c1)][_0x4716eb(0x23a)]),'isNullable':!![]},'tokenBar2Attribute':{'name':_0x4716eb(0x1a0),'help':_0x4716eb(0x119),'default':null,'type':_0x4716eb(0x1b3),'values':()=>UtilActors[_0x4716eb(0x1d6)](game[_0x4716eb(0x152)][_0x4716eb(0x239)]['Actor'][_0x4716eb(0x23a)]),'isNullable':!![]},'tokenIsAddVision':{'name':_0x4716eb(0x14b),'help':_0x4716eb(0x131),'default':!![],'type':_0x4716eb(0x198)}};}}ConfigConsts[_0x2c0fd1(0x220)]={'name':_0x2c0fd1(0x235),'default':-0x1,'type':_0x2c0fd1(0x1b3)},ConfigConsts['SRD_COMPENDIUMS_CREATURES']=['dnd5e.monsters'],ConfigConsts[_0x2c0fd1(0x1de)]=[_0x2c0fd1(0x224)],ConfigConsts[_0x2c0fd1(0x13c)]=[_0x2c0fd1(0x212)],ConfigConsts[_0x2c0fd1(0x169)]=[_0x2c0fd1(0x1df)],ConfigConsts[_0x2c0fd1(0x197)]=[_0x2c0fd1(0x217),_0x2c0fd1(0x22c)],ConfigConsts[_0x2c0fd1(0x126)]=['dnd5e.spells'],ConfigConsts[_0x2c0fd1(0x166)]=[_0x2c0fd1(0x1df)],ConfigConsts[_0x2c0fd1(0x230)]=[_0x2c0fd1(0x128)],ConfigConsts[_0x2c0fd1(0x1b4)]=0x0,ConfigConsts[_0x2c0fd1(0x17b)]=0x1,ConfigConsts[_0x2c0fd1(0x1c0)]=0x2,ConfigConsts[_0x2c0fd1(0x1e2)]=0x3,ConfigConsts[_0x2c0fd1(0x1fa)]=0x0,ConfigConsts[_0x2c0fd1(0x163)]=0x1,ConfigConsts[_0x2c0fd1(0x229)]=0x2,ConfigConsts[_0x2c0fd1(0x22b)]=0x0,ConfigConsts[_0x2c0fd1(0x137)]=0x1,ConfigConsts['C_IMPORT_DRAG_DROP_MODE_ALWAYS']=0x2,ConfigConsts['C_CREATURE_NAMETAGS_CR']=0x0,ConfigConsts[_0x2c0fd1(0x21f)]=0x1,ConfigConsts[_0x2c0fd1(0x19b)]=0x2,ConfigConsts[_0x2c0fd1(0x1b9)]=0x0,ConfigConsts[_0x2c0fd1(0x19f)]=0x1,ConfigConsts['C_ITEM_ATTUNEMENT_ATTUNED']=0x2,ConfigConsts['DEFAULT_CONFIG_']={'ui':{'name':'UI','settings':{'isStreamerMode':{'name':'Streamer\x20Mode','help':'Remove\x20identifiable\x205etools/Plutonium\x20references\x20from\x20the\x20UI.','default':![],'type':_0x2c0fd1(0x198),'isReloadRequired':!![],'isPlayerEditable':!![]},'isShowPopout':{'name':'Enable\x20Sheet\x20Popout\x20Buttons','help':_0x2c0fd1(0x193),'default':!![],'type':_0x2c0fd1(0x198),'isPlayerEditable':!![]},'isCompactWindowBar':{'name':_0x2c0fd1(0x14e),'help':'Combine\x20the\x20Plutonium-specific\x20header\x20buttons\x20into\x20a\x20single\x20dropdown,\x20and\x20re-style\x20other\x20header\x20buttons\x20to\x20match.','default':!![],'type':_0x2c0fd1(0x198),'isPlayerEditable':!![]},'isCompactDirectoryButtons':{'name':_0x2c0fd1(0x1ae),'help':'Reduce\x20the\x20height\x20of\x20\x22Create\x20X\x22/\x22Create\x20Folder\x22\x20buttons\x20in\x20the\x20directory,\x20to\x20offset\x20the\x20additional\x20space\x20requirements\x20of\x20Plutonium\x27s\x20UI.','default':!![],'type':_0x2c0fd1(0x198),'isPlayerEditable':!![]},'isCompactChat':{'name':_0x2c0fd1(0x225),'help':_0x2c0fd1(0x158),'default':!![],'type':_0x2c0fd1(0x198),'isPlayerEditable':!![]},'isCompactScenes':{'name':_0x2c0fd1(0x130),'help':'Reduce\x20the\x20height\x20of\x20scene\x20thumbnails\x20in\x20the\x20Scenes\x20Directory,\x20to\x20fit\x20more\x20on-screen.','default':!![],'type':'boolean','isPlayerEditable':!![]},'isCompactActors':{'name':_0x2c0fd1(0x150),'help':_0x2c0fd1(0x1be),'default':!![],'type':_0x2c0fd1(0x198),'isPlayerEditable':!![]},'isCompactItems':{'name':_0x2c0fd1(0x11e),'help':_0x2c0fd1(0x195),'default':!![],'type':_0x2c0fd1(0x198),'isPlayerEditable':!![]},'isCompactJournal':{'name':'Compact\x20Journal\x20Entries','help':_0x2c0fd1(0x11b),'default':!![],'type':'boolean','isPlayerEditable':!![]},'isCompactTables':{'name':_0x2c0fd1(0x1d0),'help':'Reduce\x20the\x20height\x20of\x20Rollable\x20Tables\x20list\x20items,\x20to\x20fit\x20more\x20on-screen.','default':!![],'type':_0x2c0fd1(0x198),'isPlayerEditable':!![]},'isHidePlutoniumDirectoryButtons':{'name':'Hide\x20Directory\x20Buttons','help':_0x2c0fd1(0x209),'default':![],'type':_0x2c0fd1(0x198)},'isNameTabFromScene':{'name':_0x2c0fd1(0x14f),'help':_0x2c0fd1(0x1c3),'default':!![],'type':_0x2c0fd1(0x198)},'tabNameSuffix':{'name':_0x2c0fd1(0x216),'help':_0x2c0fd1(0x1fb),'default':null,'isNullable':!![],'type':_0x2c0fd1(0x134)},'isDisplayBackendStatus':{'name':_0x2c0fd1(0x1ad),'help':'Adds\x20a\x20cool\x20green\x20hacker\x20tint\x20to\x20the\x20Foundry\x20\x22anvil\x22\x20logo\x20in\x20the\x20top-left\x20corner\x20of\x20the\x20screen\x20if\x20Plutonium\x27s\x20backend\x20is\x20detected.','default':!![],'type':'boolean','isPlayerEditable':!![]},'isExpandActiveEffectConfig':{'name':_0x2c0fd1(0x221),'help':_0x2c0fd1(0x21b),'default':!![],'type':'boolean','compatibilityModeValues':{[UtilCompat['MODULE_DAE']]:![]}},'isAddDeleteToSceneNavOptions':{'name':_0x2c0fd1(0x1c8),'help':_0x2c0fd1(0x215),'default':!![],'type':_0x2c0fd1(0x198)}},'settingsAdvanced':{'isHideGmOnlyConfig':{'name':'Hide\x20GM-Only\x20Config','help':_0x2c0fd1(0x122),'default':!![],'type':_0x2c0fd1(0x198)},'isDisableLargeImportWarning':{'name':'Disable\x20Large\x20Import\x20Warning','help':_0x2c0fd1(0x14c),'default':![],'type':_0x2c0fd1(0x198),'isPlayerEditable':!![]}},'settingsHacks':{'isFastAnimations':{'name':'Fast\x20Animations','help':_0x2c0fd1(0x20c),'default':![],'type':_0x2c0fd1(0x198),'isPlayerEditable':!![]},'isFixEscapeKey':{'name':_0x2c0fd1(0x1b2),'help':'Bind\x20the\x20\x22Escape\x22\x20key\x20to\x20(in\x20this\x20order):\x20de-select\x20active\x20input\x20fields;\x20de-select\x20selected\x20canvas\x20elements;\x20close\x20context\x20menus;\x20close\x20individual\x20windows\x20in\x20most-recently-active-first\x20order;\x20toggle\x20the\x20main\x20menu.','default':!![],'type':_0x2c0fd1(0x198),'isPlayerEditable':!![]},'isAddOpenMainMenuButtonToSettings':{'name':'Add\x20\x22Open\x20Game\x20Menu\x22\x20Button\x20if\x20\x22Fix\x20ESC\x20Key\x22\x20Is\x20Enabled','help':'Add\x20an\x20alternate\x20\x22Open\x20Game\x20Menu\x22\x20button\x20to\x20the\x20Settings\x20tab\x20if\x20the\x20\x22Fix\x20ESC\x20Key\x22\x20Config\x20option\x20is\x20enabled.\x20This\x20allows\x20you\x20to\x20quickly\x20open\x20the\x20main\x20menu\x20without\x20first\x20having\x20to\x20close\x20all\x20open\x20windows.','default':!![],'type':'boolean','isPlayerEditable':!![]},'isFixDrawingFreehandMinDistance':{'name':_0x2c0fd1(0x203),'help':_0x2c0fd1(0x232),'default':!![],'type':_0x2c0fd1(0x198),'isPlayerEditable':!![]}}},'tokens':{'name':_0x2c0fd1(0x110),'settings':{'isDisplayDamageDealt':{'name':_0x2c0fd1(0x1fc),'help':_0x2c0fd1(0x234),'default':![],'type':_0x2c0fd1(0x198)}},'settingsHacks':{'isFastAnimations':{'name':'Fast\x20Animations','help':_0x2c0fd1(0x1e9),'default':![],'type':_0x2c0fd1(0x198)}}},'import':{'name':_0x2c0fd1(0x1ea),'settings':{'isAddSourceToName':{'name':_0x2c0fd1(0x1e7),'help':_0x2c0fd1(0x1f7),'default':![],'type':_0x2c0fd1(0x198),'isPlayerEditable':!![]},'isAddPageNumberToSource':{'name':_0x2c0fd1(0x161),'help':_0x2c0fd1(0x199),'default':![],'type':_0x2c0fd1(0x198),'isPlayerEditable':!![]},'isRendererLinksDisabled':{'name':_0x2c0fd1(0x127),'help':_0x2c0fd1(0x233),'default':![],'type':_0x2c0fd1(0x198),'isPlayerEditable':!![]},'deduplicationMode':{'name':'Duplicate\x20Handling\x20Mode','help':_0x2c0fd1(0x213),'default':0x0,'type':_0x2c0fd1(0x1b3),'values':[{'value':ConfigConsts[_0x2c0fd1(0x1fa)],'name':_0x2c0fd1(0x112),'help':_0x2c0fd1(0x18d)},{'value':ConfigConsts[_0x2c0fd1(0x163)],'name':_0x2c0fd1(0x120),'help':_0x2c0fd1(0x172)},{'value':ConfigConsts[_0x2c0fd1(0x229)],'name':_0x2c0fd1(0x156),'help':_0x2c0fd1(0x160)}]},'minimumRole':{'name':'Minimum\x20Permission\x20Level\x20for\x20Import','help':'\x22Import\x22\x20buttons\x20will\x20be\x20hidden\x20for\x20any\x20user\x20with\x20a\x20role\x20less\x20than\x20the\x20chosen\x20role.','default':CONST[_0x2c0fd1(0x1f5)][_0x2c0fd1(0x1ee)],'type':_0x2c0fd1(0x1b3),'values':[{'value':CONST['USER_ROLES'][_0x2c0fd1(0x1ee)],'name':'None'},{'value':CONST[_0x2c0fd1(0x1f5)][_0x2c0fd1(0x185)],'name':'Player'},{'value':CONST[_0x2c0fd1(0x1f5)][_0x2c0fd1(0x16d)],'name':_0x2c0fd1(0x219)},{'value':CONST[_0x2c0fd1(0x1f5)][_0x2c0fd1(0x1ce)],'name':_0x2c0fd1(0x1d8)},{'value':CONST[_0x2c0fd1(0x1f5)][_0x2c0fd1(0x117)],'name':_0x2c0fd1(0x147)}]},'dragDropMode':{'name':_0x2c0fd1(0x12c),'help':_0x2c0fd1(0x201),'default':ConfigConsts[_0x2c0fd1(0x137)],'type':'enum','values':[{'value':ConfigConsts['C_IMPORT_DRAG_DROP_MODE_NEVER'],'name':_0x2c0fd1(0x11a)},{'value':ConfigConsts[_0x2c0fd1(0x137)],'name':_0x2c0fd1(0x22f)},{'value':ConfigConsts['C_IMPORT_DRAG_DROP_MODE_ALWAYS'],'name':'Always'}],'isPlayerEditable':!![]},'isUseOtherFormulaFieldForSaveHalvesDamage':{'name':_0x2c0fd1(0x19c),'help':_0x2c0fd1(0x142),'default':![],'type':_0x2c0fd1(0x198)}},'settingsAdvanced':{'baseSiteUrl':{'name':_0x2c0fd1(0x205),'help':_0x2c0fd1(0x181),'type':_0x2c0fd1(0x134),'default':null,'isNullable':!![],'isReloadRequired':!![]},'isNoLocalData':{'name':_0x2c0fd1(0x210),'help':_0x2c0fd1(0x1e8),'default':![],'type':_0x2c0fd1(0x198)},'isUseLocalImages':{'name':'Use\x20Local\x20Images','help':_0x2c0fd1(0x21a),'default':![],'type':'boolean','isReloadRequired':!![]},'isStrictMatching':{'name':'Use\x20Strict\x20Entity\x20Matching','help':'If\x20enabled,\x20any\x20Plutonium\x20feature\x20which\x20searches\x20for\x20existing\x20data\x20(for\x20example,\x20the\x20class\x20importer\x20attempting\x20to\x20find\x20existing\x20class\x20levels\x20in\x20a\x20given\x20class)\x20will\x20match\x20by\x20name\x20and\x20source.\x20If\x20disabled,\x20only\x20name\x20is\x20used.','default':![],'type':'boolean','isPlayerEditable':!![]},'baseBrewUrl':{'name':_0x2c0fd1(0x20f),'help':'The\x20root\x20GitHub\x20repository\x20URL\x20from\x20which\x20to\x20load\x20data\x20and\x20source\x20images,\x20and\x20to\x20link\x20in\x20rendered\x20text,\x20when\x20importing\x20homebrew\x20content.','type':_0x2c0fd1(0x134),'default':null,'isNullable':!![],'isReloadRequired':!![]}}},'importCreature':{'name':_0x2c0fd1(0x179),'settings':{'permissions':ConfigConsts[_0x2c0fd1(0x1f4)](_0x2c0fd1(0x12f)),'isImportBio':{'name':_0x2c0fd1(0x1ec),'help':_0x2c0fd1(0x1ac),'default':!![],'type':_0x2c0fd1(0x198)},'isImportBioImages':{'name':_0x2c0fd1(0x1d3),'help':_0x2c0fd1(0x111),'default':![],'type':_0x2c0fd1(0x198)},...ConfigConsts['_template_getTokenSettings'](),'itemWeightAndValueSizeScaling':{'name':_0x2c0fd1(0x1f2),'help':'The\x20method\x20by\x20which\x20to\x20scale\x20the\x20weights\x20and\x20values\x20of\x20non-standard-sizes\x20items\x20carried\x20by\x20creatures.','default':0x1,'type':_0x2c0fd1(0x1b3),'values':[{'value':0x1,'name':_0x2c0fd1(0x16e)},{'value':0x2,'name':_0x2c0fd1(0x116),'help':_0x2c0fd1(0x183)},{'value':0x3,'name':_0x2c0fd1(0x14a),'help':_0x2c0fd1(0x19a)}]},'spellcastingPrimaryTraitMode':{'name':_0x2c0fd1(0x118),'help':'The\x20method\x20by\x20which\x20a\x20primary\x20spellcasting\x20trait\x20(i.e.,\x20the\x20spellcasting\x20trait\x20used\x20to\x20set\x20spellcasting\x20ability,\x20spell\x20DC,\x20and\x20spell\x20attack\x20bonus)\x20is\x20selected\x20if\x20a\x20creature\x20has\x20multiple\x20spellcasting\x20traits\x20with\x20associated\x20ability\x20scores.','default':0x1,'type':'enum','values':[{'value':0x1,'name':'Highest\x20spell\x20count','help':_0x2c0fd1(0x1e1)},{'value':0x2,'name':'Highest\x20ability\x20score','help':_0x2c0fd1(0x113)}]},'nameTags':{'name':_0x2c0fd1(0x1bc),'help':_0x2c0fd1(0x1eb),'default':{[ConfigConsts[_0x2c0fd1(0x11d)]]:![],[ConfigConsts[_0x2c0fd1(0x21f)]]:![],[ConfigConsts['C_CREATURE_NAMETAGS_TYPE_WITH_TAGS']]:![]},'type':_0x2c0fd1(0x1b1),'choices':[_0x2c0fd1(0x231),_0x2c0fd1(0x21e),_0x2c0fd1(0x1d7)]}},'settingsAdvanced':{'additionalDataCompendium':{'name':_0x2c0fd1(0x202),'help':'A\x20comma-separated\x20list\x20of\x20compendiums\x20that\x20the\x20creature\x20importer\x20will\x20attempt\x20to\x20pull\x20additional\x20data\x20(including\x20art)\x20from\x20rather\x20than\x20use\x20the\x20default\x20Plutonium\x20icons.','default':ConfigConsts['SRD_COMPENDIUMS_CREATURES'][_0x2c0fd1(0x13d)](',\x20'),'type':'string','isNullable':!![]},'additionalDataCompendiumFeatures':{'name':_0x2c0fd1(0x1c4),'help':_0x2c0fd1(0x1d2),'default':ConfigConsts[_0x2c0fd1(0x1de)][_0x2c0fd1(0x13d)](',\x20'),'type':'string','isNullable':!![]},'isUseTokenImageAsPortrait':{'name':_0x2c0fd1(0x146),'help':_0x2c0fd1(0x1aa),'default':![],'type':_0x2c0fd1(0x198)}}},'importVehicle':{'name':_0x2c0fd1(0x182),'settings':{'permissions':ConfigConsts[_0x2c0fd1(0x1f4)](_0x2c0fd1(0x151)),...ConfigConsts[_0x2c0fd1(0x121)](),'isImportBio':{'name':_0x2c0fd1(0x189),'help':_0x2c0fd1(0x174),'default':!![],'type':_0x2c0fd1(0x198)},'isImportBioImages':{'name':'Include\x20Fluff\x20Image\x20to\x20Description','help':'If\x20enabled,\x20any\x20fluff\x20image\x20which\x20is\x20available\x20for\x20a\x20vehicle\x20will\x20be\x20imported\x20into\x20that\x20creature\x27s\x20description.','default':![],'type':_0x2c0fd1(0x198)}},'settingsAdvanced':{'additionalDataCompendium':{'name':_0x2c0fd1(0x202),'help':_0x2c0fd1(0x1d4),'default':'','type':_0x2c0fd1(0x134),'isNullable':!![]},'isUseTokenImageAsPortrait':{'name':_0x2c0fd1(0x146),'help':_0x2c0fd1(0x1fd),'default':![],'type':_0x2c0fd1(0x198)}}},'importVehicleUpgrade':{'name':_0x2c0fd1(0x1a8),'settings':{'permissions':ConfigConsts[_0x2c0fd1(0x1f4)](_0x2c0fd1(0x20d))},'settingsAdvanced':{'isImportDescription':{'name':_0x2c0fd1(0x1b0),'help':_0x2c0fd1(0x15a),'default':!![],'type':_0x2c0fd1(0x198)}}},'importObject':{'name':_0x2c0fd1(0x22d),'settings':{'permissions':ConfigConsts[_0x2c0fd1(0x1f4)](_0x2c0fd1(0x171)),...ConfigConsts[_0x2c0fd1(0x121)]()}},'importFeat':{'name':_0x2c0fd1(0x140),'settings':{'permissions':ConfigConsts[_0x2c0fd1(0x1f4)]('The\x20default\x20(i.e.\x20used\x20for\x20all\x20players\x20unless\x20a\x20player-specific\x20permission\x20level\x20is\x20set)\x20permissions\x20for\x20an\x20imported\x20feat.')},'settingsAdvanced':{'isImportDescription':{'name':_0x2c0fd1(0x1b0),'help':_0x2c0fd1(0x1a4),'default':!![],'type':'boolean'}}},'importBackground':{'name':_0x2c0fd1(0x114),'settings':{'permissions':ConfigConsts[_0x2c0fd1(0x1f4)]('The\x20default\x20(i.e.\x20used\x20for\x20all\x20players\x20unless\x20a\x20player-specific\x20permission\x20level\x20is\x20set)\x20permissions\x20for\x20an\x20imported\x20background.')},'settingsAdvanced':{'isImportDescription':{'name':_0x2c0fd1(0x1b0),'help':_0x2c0fd1(0x153),'default':!![],'type':_0x2c0fd1(0x198)}}},'importClass':{'name':_0x2c0fd1(0x162),'settings':{'permissions':ConfigConsts[_0x2c0fd1(0x1f4)](_0x2c0fd1(0x1a2)),'isAddBaseAcActiveEffect':{'name':_0x2c0fd1(0x11c),'help':_0x2c0fd1(0x167),'default':!![],'type':'boolean','isPlayerEditable':!![]},'isImportClassTable':{'name':_0x2c0fd1(0x170),'help':_0x2c0fd1(0x1ff),'default':!![],'type':_0x2c0fd1(0x198),'isPlayerEditable':!![]}},'settingsAdvanced':{'additionalDataCompendium':{'name':_0x2c0fd1(0x1f0),'help':_0x2c0fd1(0x211),'default':ConfigConsts[_0x2c0fd1(0x13c)][_0x2c0fd1(0x13d)](',\x20'),'type':_0x2c0fd1(0x134),'isNullable':!![]},'additionalDataCompendiumFeatures':{'name':_0x2c0fd1(0x1c4),'help':'A\x20comma-separated\x20list\x20of\x20compendiums\x20that\x20the\x20class\x20importer\x20will\x20attempt\x20to\x20pull\x20additional\x20data\x20(including\x20art)\x20from\x20rather\x20than\x20use\x20the\x20default\x20Plutonium\x20icons.','default':ConfigConsts[_0x2c0fd1(0x169)][_0x2c0fd1(0x13d)](',\x20'),'type':_0x2c0fd1(0x134),'isNullable':!![]},'isImportDescription':{'name':_0x2c0fd1(0x1b0),'help':_0x2c0fd1(0x218),'default':!![],'type':'boolean'}}},'importItem':{'name':_0x2c0fd1(0x1a1),'settings':{'permissions':ConfigConsts['_template_getEntityPermissions'](_0x2c0fd1(0x115)),'isAddActiveEffects':{'name':_0x2c0fd1(0x125),'help':_0x2c0fd1(0x154),'default':!![],'type':_0x2c0fd1(0x198)},'isMetric':{'name':_0x2c0fd1(0x1bb),'help':_0x2c0fd1(0x15f),'default':![],'type':'boolean'},'isSplitPacksActor':{'name':_0x2c0fd1(0x177),'help':'If\x20\x22pack\x22\x20items\x20(explorer\x27s\x20pack,\x20dungeoneer\x27s\x20pack)\x20should\x20be\x20broken\x20down\x20and\x20imported\x20as\x20their\x20constituent\x20items\x20when\x20importing\x20to\x20an\x20actor\x27s\x20items.','default':!![],'type':_0x2c0fd1(0x198),'isPlayerEditable':!![]},'isSplitAtomicPacksActor':{'name':_0x2c0fd1(0x133),'help':_0x2c0fd1(0x17a),'default':![],'type':_0x2c0fd1(0x198),'isPlayerEditable':!![]},'throwables':{'name':_0x2c0fd1(0x1d1),'help':_0x2c0fd1(0x1e4),'default':[_0x2c0fd1(0x20a),_0x2c0fd1(0x168),_0x2c0fd1(0x12b),'Dart',_0x2c0fd1(0x1d5)],'type':_0x2c0fd1(0x188),'isPlayerEditable':!![]},'attunementType':{'name':'Attunement\x20Type\x20for\x20Attunable\x20Items','help':_0x2c0fd1(0x18c),'default':ConfigConsts[_0x2c0fd1(0x19f)],'type':_0x2c0fd1(0x1b3),'values':[{'value':ConfigConsts['C_ITEM_ATTUNEMENT_NONE'],'name':_0x2c0fd1(0x112)},{'value':ConfigConsts[_0x2c0fd1(0x19f)],'name':'Attunement\x20Required'},{'value':ConfigConsts[_0x2c0fd1(0x1c2)],'name':_0x2c0fd1(0x15e)}]}},'settingsAdvanced':{'additionalDataCompendium':{'name':_0x2c0fd1(0x202),'help':_0x2c0fd1(0x1cf),'default':ConfigConsts[_0x2c0fd1(0x197)][_0x2c0fd1(0x13d)](',\x20'),'type':_0x2c0fd1(0x134),'isNullable':!![]},'isImportDescription':{'name':_0x2c0fd1(0x1b0),'help':_0x2c0fd1(0x1a3),'default':!![],'type':_0x2c0fd1(0x198)}}},'importPsionic':{'name':_0x2c0fd1(0x157),'settings':{'permissions':ConfigConsts[_0x2c0fd1(0x1f4)](_0x2c0fd1(0x16a))},'settingsAdvanced':{'isImportDescription':{'name':_0x2c0fd1(0x1b0),'help':_0x2c0fd1(0x194),'default':!![],'type':'boolean'}}},'importRace':{'name':'Import\x20(Races)','settings':{'permissions':ConfigConsts[_0x2c0fd1(0x1f4)]('The\x20default\x20(i.e.\x20used\x20for\x20all\x20players\x20unless\x20a\x20player-specific\x20permission\x20level\x20is\x20set)\x20permissions\x20for\x20an\x20imported\x20race.')},'settingsAdvanced':{'additionalDataCompendium':{'name':_0x2c0fd1(0x12e),'help':_0x2c0fd1(0x1a9),'default':ConfigConsts[_0x2c0fd1(0x230)][_0x2c0fd1(0x13d)](',\x20'),'type':_0x2c0fd1(0x134),'isNullable':!![]},'additionalDataCompendiumFeatures':{'name':_0x2c0fd1(0x1c4),'help':'A\x20comma-separated\x20list\x20of\x20compendiums\x20that\x20the\x20race\x20importer\x20will\x20attempt\x20to\x20pull\x20additional\x20data\x20(including\x20art)\x20from\x20rather\x20than\x20use\x20the\x20default\x20Plutonium\x20icons.','default':ConfigConsts['SRD_COMPENDIUMS_RACES_AND_FEATURES'][_0x2c0fd1(0x13d)](',\x20'),'type':'string','isNullable':!![]},'isImportDescription':{'name':_0x2c0fd1(0x1b0),'help':_0x2c0fd1(0x17f),'default':!![],'type':_0x2c0fd1(0x198)}}},'importTable':{'name':_0x2c0fd1(0x1f3),'settings':{'permissions':ConfigConsts['_template_getEntityPermissions'](_0x2c0fd1(0x139))}},'importSpell':{'name':'Import\x20(Spells)','settings':{'permissions':ConfigConsts[_0x2c0fd1(0x1f4)](_0x2c0fd1(0x17c)),'prepareActorSpells':{'name':_0x2c0fd1(0x138),'help':'Whether\x20or\x20not\x20spells\x20that\x20are\x20imported\x20to\x20actor\x20sheets\x20should\x20be\x20prepared\x20by\x20default.','default':!![],'type':_0x2c0fd1(0x198),'isPlayerEditable':!![]},'prepareSpellItems':{'name':_0x2c0fd1(0x159),'help':'Whether\x20or\x20not\x20spells\x20that\x20are\x20imported\x20to\x20the\x20items\x20directory\x20should\x20be\x20prepared\x20by\x20default.','default':![],'type':_0x2c0fd1(0x198)},'actorSpellPreparationMode':{'name':_0x2c0fd1(0x178),'help':'The\x20default\x20spell\x20preparation\x20mode\x20for\x20spells\x20imported\x20to\x20actor\x20sheets.','default':_0x2c0fd1(0x1e0),'type':'enum','values':[{'value':'','name':_0x2c0fd1(0x1db)},{'value':_0x2c0fd1(0x1cb),'name':_0x2c0fd1(0x123)},{'value':_0x2c0fd1(0x1e0),'name':_0x2c0fd1(0x1b8)},{'value':'innate','name':_0x2c0fd1(0x214)},{'value':_0x2c0fd1(0x19e),'name':_0x2c0fd1(0x13a)}],'isPlayerEditable':!![]},'spellItemPreparationMode':{'name':_0x2c0fd1(0x222),'help':_0x2c0fd1(0x1e6),'default':'prepared','type':'enum','values':[{'value':'','name':'(None)'},{'value':_0x2c0fd1(0x1cb),'name':'Always\x20Available'},{'value':_0x2c0fd1(0x1e0),'name':'Prepared'},{'value':'innate','name':'Innate\x20Spellcasting'},{'value':_0x2c0fd1(0x19e),'name':_0x2c0fd1(0x13a)}]},'isSpellPoints':{'name':_0x2c0fd1(0x1c9),'help':_0x2c0fd1(0x22a),'default':![],'type':_0x2c0fd1(0x198),'isPlayerEditable':!![]},'spellPointsResource':{'name':_0x2c0fd1(0x187),'help':_0x2c0fd1(0x17e),'default':_0x2c0fd1(0x21d),'type':_0x2c0fd1(0x1b3),'values':[{'value':_0x2c0fd1(0x21d)},{'value':'resources.secondary.value'},{'value':'resources.tertiary.value'}],'isPlayerEditable':!![]},'isMetric':{'name':_0x2c0fd1(0x200),'help':_0x2c0fd1(0x1f6),'default':![],'type':_0x2c0fd1(0x198)}},'settingsAdvanced':{'additionalDataCompendium':{'name':_0x2c0fd1(0x202),'help':'A\x20comma-separated\x20list\x20of\x20compendiums\x20that\x20the\x20spell\x20importer\x20will\x20attempt\x20to\x20pull\x20additional\x20data\x20(including\x20art)\x20from\x20rather\x20than\x20use\x20the\x20default\x20Plutonium\x20icons.','default':ConfigConsts[_0x2c0fd1(0x126)]['join'](',\x20'),'type':_0x2c0fd1(0x134),'isNullable':!![]},'isImportDescription':{'name':_0x2c0fd1(0x1b0),'help':_0x2c0fd1(0x13b),'default':!![],'type':'boolean'}}},'importRule':{'name':_0x2c0fd1(0x1a5),'settings':{'permissions':ConfigConsts[_0x2c0fd1(0x1f4)](_0x2c0fd1(0x18b))}},'importOptionalFeature':{'name':_0x2c0fd1(0x135),'settings':{'permissions':ConfigConsts[_0x2c0fd1(0x1f4)](_0x2c0fd1(0x149))},'settingsAdvanced':{'additionalDataCompendium':{'name':_0x2c0fd1(0x202),'help':_0x2c0fd1(0x124),'default':ConfigConsts[_0x2c0fd1(0x166)][_0x2c0fd1(0x13d)](',\x20'),'type':_0x2c0fd1(0x134),'isNullable':!![]},'isImportDescription':{'name':_0x2c0fd1(0x1b0),'help':_0x2c0fd1(0x1b5),'default':!![],'type':_0x2c0fd1(0x198)}}},'importConditionDisease':{'name':'Import\x20(Conditions\x20&\x20Diseases)','settings':{'permissions':ConfigConsts[_0x2c0fd1(0x1f4)](_0x2c0fd1(0x20b))},'settingsAdvanced':{'isImportDescription':{'name':_0x2c0fd1(0x1b0),'help':_0x2c0fd1(0x175),'default':!![],'type':_0x2c0fd1(0x198)}}},'importReward':{'name':_0x2c0fd1(0x173),'settings':{'permissions':ConfigConsts[_0x2c0fd1(0x1f4)]('The\x20default\x20(i.e.\x20used\x20for\x20all\x20players\x20unless\x20a\x20player-specific\x20permission\x20level\x20is\x20set)\x20permissions\x20for\x20an\x20imported\x20supernatural\x20gift/reward.')},'settingsAdvanced':{'isImportDescription':{'name':'Import\x20Text\x20as\x20Description','help':_0x2c0fd1(0x238),'default':!![],'type':_0x2c0fd1(0x198)}}},'importAdventure':{'name':_0x2c0fd1(0x236),'settings':{'permissions':ConfigConsts['_template_getEntityPermissions'](_0x2c0fd1(0x196)),'isOrderingPrefixJournalNames':{'name':_0x2c0fd1(0x129),'help':'If\x20imported\x20journal\x20entries\x20should\x20be\x20prefixed\x20with\x20a\x20sorting-friendly\x20identifier,\x20to\x20avoid\x20directory\x20sorting\x20from\x20re-ordering\x20them.','type':'boolean','default':![]},'isUseModdedInstaller':{'name':_0x2c0fd1(0x1c6),'help':_0x2c0fd1(0x176),'type':_0x2c0fd1(0x198),'default':!![]},'indexUrl':{'name':'Package\x20Index\x20URL','help':_0x2c0fd1(0x12d),'type':'string','default':'https://foundry.5e.tools/plutonium/index.json','isReloadRequired':!![]}}},'importBook':{'name':_0x2c0fd1(0x1ef),'settings':{'permissions':ConfigConsts[_0x2c0fd1(0x1f4)](_0x2c0fd1(0x12a)),'isOrderingPrefixJournalNames':{'name':_0x2c0fd1(0x129),'help':'If\x20imported\x20journal\x20entries\x20should\x20be\x20prefixed\x20with\x20a\x20sorting-friendly\x20identifier,\x20to\x20avoid\x20directory\x20sorting\x20from\x20re-ordering\x20them.','type':_0x2c0fd1(0x198),'default':![]}}},'actor':{'name':'Actors','settingsHacks':{'isAutoMultiattack':{'name':_0x2c0fd1(0x18a),'help':'Attempt\x20to\x20detect\x20and\x20automatically\x20roll\x20components\x20of\x20a\x20creature\x27s\x20\x22Multiattack\x22\x20sheet\x20item\x20on\x20activation.','default':![],'type':_0x2c0fd1(0x198),'compatibilityModeValues':{[UtilCompat[_0x2c0fd1(0x141)]]:![]}},'isUseExtendedActiveEffectsParser':{'name':'Support\x20Variables\x20in\x20Active\x20Effect\x20Values','help':_0x2c0fd1(0x16c),'default':!![],'type':_0x2c0fd1(0x198),'compatibilityModeValues':{[UtilCompat[_0x2c0fd1(0x1f1)]]:![]}}}},'rivet':{'name':_0x2c0fd1(0x132),'settings':{'targetActorId':{'name':'Target\x20Actor','help':'The\x20ID\x20of\x20an\x20actor\x20to\x20which\x20Rivet\x20content\x20should\x20be\x20imported.','default':'','type':'string','isPlayerEditable':!![]}}},'artBrowser':{'name':'Art\x20Browser','settings':{'importImagesAs':{'name':_0x2c0fd1(0x1b7),'help':_0x2c0fd1(0x192),'default':0x0,'type':_0x2c0fd1(0x1b3),'values':[{'value':ConfigConsts['C_ART_IMAGE_MODE_TOKEN'],'name':_0x2c0fd1(0x1dd)},{'value':ConfigConsts[_0x2c0fd1(0x17b)],'name':_0x2c0fd1(0x110)},{'value':ConfigConsts[_0x2c0fd1(0x1c0)],'name':_0x2c0fd1(0x17d)},{'value':ConfigConsts[_0x2c0fd1(0x1e2)],'name':'Scenes'}]},'scale':{'name':_0x2c0fd1(0x136),'help':_0x2c0fd1(0x206),'default':0x1,'type':'number','min':0.01,'max':0x64},'tokenSize':{'name':_0x2c0fd1(0x184),'help':_0x2c0fd1(0x228),'default':0x1,'type':'enum','values':[{'value':0x1,'name':_0x2c0fd1(0x223)},{'value':0x2,'name':'Large'},{'value':0x3,'name':_0x2c0fd1(0x1b6)},{'value':0x4,'name':_0x2c0fd1(0x191)}]},'isSwitchToCreatedScene':{'name':_0x2c0fd1(0x227),'help':_0x2c0fd1(0x1f8),'default':!![],'type':_0x2c0fd1(0x198)},'isDisplaySheetCreatedScene':{'name':_0x2c0fd1(0x165),'help':_0x2c0fd1(0x15c),'default':!![],'type':_0x2c0fd1(0x198)},'artDirectoryPath':{'name':_0x2c0fd1(0x1ca),'help':_0x2c0fd1(0x204),'default':_0x2c0fd1(0x180),'type':_0x2c0fd1(0x134),'isNullable':!![]},'buttonDisplay':{'name':'Add\x20Button\x20To','help':_0x2c0fd1(0x16b),'default':{[ConfigConsts[_0x2c0fd1(0x1b4)]]:!![],[ConfigConsts['C_ART_IMAGE_MODE_TILE']]:!![],[ConfigConsts[_0x2c0fd1(0x1c0)]]:!![],[ConfigConsts[_0x2c0fd1(0x1e2)]]:!![]},'type':_0x2c0fd1(0x1b1),'choices':[_0x2c0fd1(0x226),'Tile\x20scene\x20controls','Note\x20scene\x20controls',_0x2c0fd1(0x148)]}}},'journalEntries':{'name':_0x2c0fd1(0x1da),'settings':{'isEnableUrlEmbeds':{'name':_0x2c0fd1(0x186),'help':_0x2c0fd1(0x164),'default':![],'type':_0x2c0fd1(0x198)},'isEnableContentEmbeds':{'name':_0x2c0fd1(0x1c5),'help':'Add\x20custom\x20syntax\x20to\x20journal\x20entries,\x20which\x20allows\x20other\x20journal\x20entries\x20to\x20be\x20embedded.\x20This\x20syntax\x20is\x20similar\x20to\x20that\x20used\x20to\x20link\x20a\x20journal\x20entry;\x20simply\x20prepend\x20\x22Embed\x22\x20to\x20a\x20content\x20link.\x20For\x20example,\x20\x22@JournalEntry[Entry\x20Name]\x22\x20would\x20become\x20\x22@EmbedJournalEntry[Entry\x20Name]\x22.','default':![],'type':'boolean'},'isAutoExpandContentEmbeds':{'name':_0x2c0fd1(0x1dc),'help':_0x2c0fd1(0x1ba),'default':!![],'type':_0x2c0fd1(0x198)}}},'tools':{'name':_0x2c0fd1(0x1bd),'settings':{'isDeduplicateIgnoreType':{'name':_0x2c0fd1(0x1cc),'help':_0x2c0fd1(0x1c7),'default':![],'type':'boolean'}}},'misc':{'name':_0x2c0fd1(0x1a6),'settingsAdvanced':{'isSkipBackendCheck':{'name':'Skip\x20Backend\x20Check','help':_0x2c0fd1(0x15d),'default':![],'type':'boolean','isPlayerEditable':!![]}}},'equipmentShop':{'name':_0x2c0fd1(0x16f),'settings':{'priceMultiplier':{'name':_0x2c0fd1(0x207),'help':'A\x20factor\x20by\x20which\x20the\x20prices\x20in\x20the\x20equipment\x20shop\x20are\x20multiplied.','default':0x1,'type':'number','min':0.0001},'minimumRole':{'name':_0x2c0fd1(0x21c),'help':_0x2c0fd1(0x1e5),'default':CONST[_0x2c0fd1(0x1f5)]['NONE'],'type':_0x2c0fd1(0x1b3),'values':[{'value':CONST['USER_ROLES'][_0x2c0fd1(0x1ee)],'name':_0x2c0fd1(0x112)},{'value':CONST[_0x2c0fd1(0x1f5)][_0x2c0fd1(0x185)],'name':'Player'},{'value':CONST[_0x2c0fd1(0x1f5)][_0x2c0fd1(0x16d)],'name':_0x2c0fd1(0x219)},{'value':CONST[_0x2c0fd1(0x1f5)][_0x2c0fd1(0x1ce)],'name':'Assistant'},{'value':CONST[_0x2c0fd1(0x1f5)][_0x2c0fd1(0x117)],'name':_0x2c0fd1(0x147)}]}}}};export{ConfigConsts};
+import {Util} from "./Util.js";
+import {UtilCompat} from "./UtilCompat.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+
+class ConfigConsts {
+	static _flushCaches () {
+		this._DEFAULT_CONFIG = null;
+		this._DEFAULT_CONFIG_SORTED = null;
+		this._DEFAULT_CONFIG_SORTED_FLAT = null;
+	}
+
+	/** id -> name */
+	static _IMPORTERS = {};
+	static registerImporter ({id, name}) {
+		this._IMPORTERS[id] = name;
+		this._flushCaches();
+	}
+
+	static _template_getImporterToggles () {
+		return {
+			hiddenImporterIds: {
+				name: "Hidden Importers",
+				help: `Importers which should not be shown in the Import Wizard UI.`,
+				default: {
+					"background-features": true,
+					// TODO(v10) enable
+					// "creature-features": true,
+					"race-and-subrace-features": true,
+				},
+				type: "multipleChoice",
+				choices: Object.entries(this._IMPORTERS)
+					.map(([id, name]) => ({name, value: id}))
+					.sort(({name: nameA}, {name: nameB}) => SortUtil.ascSortLower(nameA, nameB)),
+			},
+		};
+	}
+
+	/**
+	 * Loop over a data model and collect all the possible attributes which could be used in token bars. This is (currently
+	 * as of 2020-01-26) what Foundry does to generate the available bar list.
+	 *
+	 * Based on Foundry's `_getBarAttributes`
+	 */
+	static _getModelBarAttributes (model) {
+		if (!model) return [];
+
+		function _searchBarAttributes (stack, data, path) {
+			for (let [k, v] of Object.entries(data)) {
+				const nxtPath = [...path, k];
+
+				if (v instanceof Object) {
+					const isBar = Number.isFinite(parseFloat(v.value)) && Number.isFinite(parseFloat(v.max));
+
+					if (isBar) stack.push(nxtPath);
+					else _searchBarAttributes(stack, data[k], nxtPath);
+				} else if (Number.isFinite(v)) {
+					stack.push(nxtPath);
+				}
+			}
+		}
+
+		const stack = [];
+		_searchBarAttributes(stack, model, []);
+		return stack.map(v => v.join("."));
+	}
+
+	static _template_getEntityPermissions (help) {
+		const out = MiscUtil.copy(ConfigConsts._TEMPLATE_ENTITY_PERMISSIONS);
+		out.values = Util.Fvtt.getPermissionsEnum();
+		out.help = help;
+		return out;
+	}
+
+	static _template_getTokenSettings () {
+		return {
+			tokenNameDisplay: {
+				name: "Token Name Display Mode",
+				help: `The default Display Name mode for imported tokens.`,
+				default: 20,
+				type: "enum",
+				values: [
+					{
+						value: ConfigConsts.C_USE_GAME_DEFAULT,
+						name: "Use game setting",
+					},
+					{
+						value: 0,
+						name: "None",
+					},
+					{
+						value: 10,
+						name: "Control",
+					},
+					{
+						value: 20,
+						name: "Owner Hover",
+					},
+					{
+						value: 30,
+						name: "Hover",
+					},
+					{
+						value: 40,
+						name: "Owner",
+					},
+					{
+						value: 50,
+						name: "Always",
+					},
+				],
+			},
+			tokenDisposition: {
+				name: "Token Disposition",
+				help: `The default Token Disposition mode for imported tokens.`,
+				default: -1,
+				type: "enum",
+				values: [
+					{
+						value: ConfigConsts.C_USE_GAME_DEFAULT,
+						name: "Use game setting",
+					},
+					{
+						value: -1,
+						name: "Hostile",
+					},
+					{
+						value: 0,
+						name: "Neutral",
+					},
+					{
+						value: 1,
+						name: "Friendly",
+					},
+				],
+			},
+			tokenLockRotation: {
+				name: "Token Lock Rotation",
+				help: `The default Lock Rotation mode for imported tokens.`,
+				default: ConfigConsts.C_USE_PLUT_VALUE,
+				type: "enum",
+				values: [
+					{
+						value: ConfigConsts.C_USE_GAME_DEFAULT,
+						name: "Use game setting",
+					},
+					{
+						value: ConfigConsts.C_USE_PLUT_VALUE,
+						name: "Allow importer to set",
+					},
+				],
+			},
+			tokenIsAddVision: {
+				name: "Enable Token Vision",
+				help: `Enable vision for tokens.`,
+				default: ConfigConsts.C_BOOL_ENABLED,
+				type: "enum",
+				values: [
+					{
+						value: ConfigConsts.C_USE_GAME_DEFAULT,
+						name: "Use game setting",
+					},
+					{
+						value: ConfigConsts.C_BOOL_DISABLED,
+						name: "Disabled",
+					},
+					{
+						value: ConfigConsts.C_BOOL_ENABLED,
+						name: "Enabled",
+					},
+				],
+			},
+			tokenDimSight: {
+				name: "Token Dim Vision Distance",
+				help: `How token Dim Vision (Distance) should be set.`,
+				default: ConfigConsts.C_USE_PLUT_VALUE,
+				type: "enum",
+				values: [
+					{
+						value: ConfigConsts.C_USE_GAME_DEFAULT,
+						name: "Use game setting",
+					},
+					{
+						value: ConfigConsts.C_USE_PLUT_VALUE,
+						name: "Allow importer to set",
+					},
+				],
+			},
+			tokenBrightSight: {
+				name: "Token Bright Vision Distance",
+				help: `How token Bright Vision (Distance) should be set.`,
+				default: ConfigConsts.C_USE_PLUT_VALUE,
+				type: "enum",
+				values: [
+					{
+						value: ConfigConsts.C_USE_GAME_DEFAULT,
+						name: "Use game setting",
+					},
+					{
+						value: ConfigConsts.C_USE_PLUT_VALUE,
+						name: "Allow importer to set",
+					},
+				],
+			},
+			tokenSightAngle: {
+				name: "Token Sight Angle",
+				help: `How token Sight Angle (Degrees) should be set.`,
+				default: ConfigConsts.C_USE_PLUT_VALUE,
+				type: "enum",
+				values: [
+					{
+						value: ConfigConsts.C_USE_GAME_DEFAULT,
+						name: "Use game setting",
+					},
+					{
+						value: ConfigConsts.C_USE_PLUT_VALUE,
+						name: "Allow importer to set",
+					},
+				],
+			},
+			tokenDimLight: {
+				name: "Token Dim Light Radius",
+				help: `How token Dim Light Radius (Distance) should be set.`,
+				default: ConfigConsts.C_USE_PLUT_VALUE,
+				type: "enum",
+				values: [
+					{
+						value: ConfigConsts.C_USE_GAME_DEFAULT,
+						name: "Use game setting",
+					},
+					{
+						value: ConfigConsts.C_USE_PLUT_VALUE,
+						name: "Allow importer to set",
+					},
+				],
+			},
+			tokenBrightLight: {
+				name: "Token Bright Light Radius",
+				help: `How token Bright Light Radius (Distance) should be set.`,
+				default: ConfigConsts.C_USE_PLUT_VALUE,
+				type: "enum",
+				values: [
+					{
+						value: ConfigConsts.C_USE_GAME_DEFAULT,
+						name: "Use game setting",
+					},
+					{
+						value: ConfigConsts.C_USE_PLUT_VALUE,
+						name: "Allow importer to set",
+					},
+				],
+			},
+			tokenLightAngle: {
+				name: "Token Light Emission Angle",
+				help: `How token Light Emission (Angle) should be set.`,
+				default: ConfigConsts.C_USE_PLUT_VALUE,
+				type: "enum",
+				values: [
+					{
+						value: ConfigConsts.C_USE_GAME_DEFAULT,
+						name: "Use game setting",
+					},
+					{
+						value: ConfigConsts.C_USE_PLUT_VALUE,
+						name: "Allow importer to set",
+					},
+				],
+			},
+			tokenLightColor: {
+				name: "Token Light Color",
+				help: `How token Light Color should be set.`,
+				default: ConfigConsts.C_USE_PLUT_VALUE,
+				type: "enum",
+				values: [
+					{
+						value: ConfigConsts.C_USE_GAME_DEFAULT,
+						name: "Use game setting",
+					},
+					{
+						value: ConfigConsts.C_USE_PLUT_VALUE,
+						name: "Allow importer to set",
+					},
+				],
+			},
+			tokenLightAlpha: {
+				name: "Token Light Intensity",
+				help: `How token Color Intensity should be set.`,
+				default: ConfigConsts.C_USE_PLUT_VALUE,
+				type: "enum",
+				values: [
+					{
+						value: ConfigConsts.C_USE_GAME_DEFAULT,
+						name: "Use game setting",
+					},
+					{
+						value: ConfigConsts.C_USE_PLUT_VALUE,
+						name: "Allow importer to set",
+					},
+				],
+			},
+			tokenLightAnimationType: {
+				name: "Token Light Animation Type",
+				help: `How token Light Animation Type should be set.`,
+				default: ConfigConsts.C_USE_PLUT_VALUE,
+				type: "enum",
+				values: [
+					{
+						value: ConfigConsts.C_USE_GAME_DEFAULT,
+						name: "Use game setting",
+					},
+					{
+						value: ConfigConsts.C_USE_PLUT_VALUE,
+						name: "Allow importer to set",
+					},
+				],
+			},
+			tokenLightAnimationSpeed: {
+				name: "Token Light Animation Speed",
+				help: `How token Light Animation Speed should be set.`,
+				default: ConfigConsts.C_USE_PLUT_VALUE,
+				type: "enum",
+				values: [
+					{
+						value: ConfigConsts.C_USE_GAME_DEFAULT,
+						name: "Use game setting",
+					},
+					{
+						value: ConfigConsts.C_USE_PLUT_VALUE,
+						name: "Allow importer to set",
+					},
+				],
+			},
+			tokenLightAnimationIntensity: {
+				name: "Token Light Animation Intensity",
+				help: `How token Light Animation Intensity should be set.`,
+				default: ConfigConsts.C_USE_PLUT_VALUE,
+				type: "enum",
+				values: [
+					{
+						value: ConfigConsts.C_USE_GAME_DEFAULT,
+						name: "Use game setting",
+					},
+					{
+						value: ConfigConsts.C_USE_PLUT_VALUE,
+						name: "Allow importer to set",
+					},
+				],
+			},
+			tokenBarDisplay: {
+				name: "Token Bar Display Mode",
+				help: `The default Display Bars mode for imported tokens.`,
+				default: 40,
+				type: "enum",
+				values: [
+					{
+						value: ConfigConsts.C_USE_GAME_DEFAULT,
+						name: "Use game setting",
+					},
+					{
+						value: 0,
+						name: "None",
+					},
+					{
+						value: 10,
+						name: "Control",
+					},
+					{
+						value: 20,
+						name: "Owner Hover",
+					},
+					{
+						value: 30,
+						name: "Hover",
+					},
+					{
+						value: 40,
+						name: "Owner",
+					},
+					{
+						value: 50,
+						name: "Always",
+					},
+				],
+			},
+			tokenBar1Attribute: {
+				name: "Token Bar 1 Attribute",
+				help: `The default token bar 1 attribute for imported tokens.`,
+				default: "attributes.hp",
+				type: "enum",
+				values: () => [
+					{value: ConfigConsts.C_USE_GAME_DEFAULT, name: "Use game setting"},
+					...ConfigConsts._getModelBarAttributes(game.system.model.Actor.npc),
+				],
+				isNullable: true,
+			},
+			tokenBar2Attribute: {
+				name: "Token Bar 2 Attribute",
+				help: `The default token bar 2 attribute for imported tokens.`,
+				default: null,
+				type: "enum",
+				values: () => [
+					{value: ConfigConsts.C_USE_GAME_DEFAULT, name: "Use game setting"},
+					...ConfigConsts._getModelBarAttributes(game.system.model.Actor.npc),
+				],
+				isNullable: true,
+			},
+			tokenScale: {
+				name: "Token Scale",
+				help: `The default token scale for imported tokens.`,
+				default: null,
+				type: "number",
+				placeholder: "(Use default)",
+				min: 0.2,
+				max: 3,
+				isNullable: true,
+			},
+			isTokenMetric: {
+				name: "Convert Token Vision Ranges to Metric",
+				help: "Whether or not token vision range units should be converted to an approximate metric equivalent (5 feet \u2248 1.5 metres).",
+				default: false,
+				type: "boolean",
+			},
+		};
+	}
+
+	static _template_getAdventureBookSettings () {
+		return {
+			isOrderingPrefixJournalNames: {
+				name: "Add Sort Order Prefix to Journal Entry Names",
+				help: `If imported journal entries should be prefixed with a sorting-friendly identifier, to avoid directory sorting from re-ordering them.`,
+				type: "boolean",
+				default: true,
+			},
+			journalEntrySplitMode: {
+				name: "Text Splitting Mode",
+				help: `Which strategy to use when splitting text into journal entries.`,
+				type: "enum",
+				default: ConfigConsts.C_IMPORT_ADVBOOK_JOURNAL_SPLIT_STRATEGY_CHAPTER,
+				values: [
+					{
+						value: ConfigConsts.C_IMPORT_ADVBOOK_JOURNAL_SPLIT_STRATEGY_CHAPTER,
+						name: `By chapter`,
+					},
+					{
+						value: ConfigConsts.C_IMPORT_ADVBOOK_JOURNAL_SPLIT_STRATEGY_CONTENTS,
+						name: `By contents`,
+					},
+					{
+						value: ConfigConsts.C_IMPORT_ADVBOOK_JOURNAL_SPLIT_STRATEGY_HEADINGS,
+						name: `By heading`,
+					},
+				],
+			},
+			isUseJournalEmbeds: {
+				name: "Link Journals as Embeds",
+				help: `If enabled, and the "Enable Journal Embeds" Journal Entries Config option is also enabled, links between sections will be rendered as embedded journal entries, rather than simple links.`,
+				type: "boolean",
+				default: true,
+			},
+		};
+	}
+
+	static _template_getSceneImportSettings () {
+		return {
+			scenePadding: {
+				name: "Scene Padding",
+				help: `The amount of scene padding to apply when creating a scene.`,
+				default: 0,
+				type: "number",
+				min: 0,
+				max: 0.5,
+			},
+			sceneBackgroundColor: {
+				name: "Scene Background Color",
+				help: `The background color to apply when creating a scene.`,
+				default: "#222222",
+				type: "color",
+			},
+			isSceneTokenVision: {
+				name: "Scene Token Vision",
+				help: `Whether or not token vision should be enabled for a created scene.`,
+				default: true,
+				type: "boolean",
+			},
+			isSceneFogExploration: {
+				name: "Scene Fog Exploration",
+				help: `Whether or not fog exploration should be enabled for a created scene.`,
+				default: true,
+				type: "boolean",
+			},
+			isSceneAddToNavigation: {
+				name: "Add Scenes to Navigation",
+				help: `Whether or not a created scene should be added to the navigation bar.`,
+				default: false,
+				type: "boolean",
+			},
+			isSceneGenerateThumbnail: {
+				name: "Generate Scene Thumbnails",
+				help: `Whether or not a thumbnail should be generated for a created scene. Note that this greatly slows down the scene creation process.`,
+				default: true,
+				type: "boolean",
+			},
+			isSceneGridMetric: {
+				name: "Convert Scene Grid Distances to Metric",
+				help: `Whether or not scene grid distances should be converted to an approximate metric equivalent (${ConfigConsts._DISP_METRIC_FEET}; ${ConfigConsts._DISP_METRIC_MILES}).`,
+				default: false,
+				type: "boolean",
+			},
+		};
+	}
+
+	static _template_getActiveEffectsDisabledTransferSettings ({name}) {
+		return {
+			setEffectDisabled: {
+				name: `Override Effect &quot;Disabled&quot; Value`,
+				help: `If set, overrides the "Disabled" value present on any effects tied to imported ${name}.`,
+				type: "enum",
+				default: ConfigConsts.C_USE_PLUT_VALUE,
+				compatibilityModeValues: {
+					[UtilCompat.MODULE_MIDI_QOL]: {
+						value: ConfigConsts.C_USE_PLUT_VALUE,
+						name: "Allow importer to set",
+					},
+				},
+				values: [
+					{
+						value: ConfigConsts.C_USE_PLUT_VALUE,
+						name: "Allow importer to set",
+					},
+					{
+						value: ConfigConsts.C_BOOL_DISABLED,
+						name: `Set to "False"`,
+					},
+					{
+						value: ConfigConsts.C_BOOL_ENABLED,
+						name: `Set to "True"`,
+					},
+				],
+			},
+			setEffectTransfer: {
+				name: `Override Effect &quot;Transfer&quot; Value`,
+				help: `If set, overrides the "Transfer to Actor" value present on any effects tied to imported ${name}.`,
+				type: "enum",
+				default: ConfigConsts.C_USE_PLUT_VALUE,
+				compatibilityModeValues: {
+					[UtilCompat.MODULE_MIDI_QOL]: {
+						value: ConfigConsts.C_USE_PLUT_VALUE,
+						name: "Allow importer to set",
+					},
+				},
+				values: [
+					{
+						value: ConfigConsts.C_USE_PLUT_VALUE,
+						name: "Allow importer to set",
+					},
+					{
+						value: ConfigConsts.C_BOOL_DISABLED,
+						name: `Set to "False"`,
+					},
+					{
+						value: ConfigConsts.C_BOOL_ENABLED,
+						name: `Set to "True"`,
+					},
+				],
+			},
+		};
+	}
+
+	static _template_getMinimumRole ({name, help}) {
+		const out = MiscUtil.copy(ConfigConsts._TEMPALTE_MINIMUM_ROLE);
+		out.values = Util.Fvtt.getMinimumRolesEnum();
+		out.name = name;
+		out.help = help;
+		return out;
+	}
+
+	// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	static _DEFAULT_CONFIG = null;
+	static getDefaultConfig_ () {
+		return this._DEFAULT_CONFIG = this._DEFAULT_CONFIG || {
+			ui: {
+				name: "UI",
+				settings: {
+					isStreamerMode: {
+						name: "Streamer Mode",
+						help: `Remove identifiable 5etools/Plutonium references from the UI, and replaces them with "SRD Enhanced."`,
+						default: false,
+						type: "boolean",
+						isReloadRequired: true,
+						isPlayerEditable: true,
+					},
+					isShowPopout: {
+						name: "Enable Sheet Popout Buttons",
+						help: `Add a "Popout" button to sheet headers, which opens the sheet as a popup browser window.`,
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isCompactWindowBar: {
+						name: "Compact Header Buttons",
+						help: `Combine the Plutonium-specific header buttons into a single dropdown, and re-style other header buttons to match.`,
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isCompactDirectoryButtons: {
+						name: "Compact Directory Buttons",
+						help: `Reduce the height of "Create X"/"Create Folder" buttons in the directory, to offset the additional space requirements of Plutonium's UI.`,
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isCompactChat: {
+						name: "Compact Chat",
+						help: "Make various tweaks to the appearance of chat, in order to fit more on-screen. Hold down SHIFT while hovering over a message to expand it, revealing its header and delete button.",
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isCompactScenes: {
+						name: "Compact Scenes Directory",
+						help: "Reduce the height of scene thumbnails in the Scenes Directory, to fit more on-screen.",
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isCompactActors: {
+						name: "Compact Actors Directory",
+						help: "Reduce the height of Actors Directory directory items, to fit more on-screen.",
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isCompactItems: {
+						name: "Compact Items Directory",
+						help: "Reduce the height of Items Directory directory items, to fit more on-screen.",
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isCompactJournal: {
+						name: "Compact Journal Entries",
+						help: "Reduce the height of Journal Entries directory items, to fit more on-screen.",
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isCompactTables: {
+						name: "Compact Rollable Tables",
+						help: "Reduce the height of Rollable Tables directory items, to fit more on-screen.",
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isCompactCards: {
+						name: "Compact Card Stacks",
+						help: "Reduce the height of Card Stacks directory items, to fit more on-screen.",
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isCompactMacros: {
+						name: "Compact Macros",
+						help: "Reduce the height of Macro directory items, to fit more on-screen.",
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isHidePlutoniumDirectoryButtons: {
+						name: "Hide Directory Buttons",
+						help: `Hide the Plutonium directory buttons.`,
+						default: false,
+						type: "boolean",
+					},
+					isNameTabFromScene: {
+						name: "Prepend Active Scene Name to Browser Tab Name",
+						help: "Sets the browser tab name to be that of the currently-active scene.",
+						default: true,
+						type: "boolean",
+					},
+					tabNameSuffix: {
+						name: "Tab Name Suffix",
+						help: `Requires the "Name Browser Tab After Active Scene" option to be enabled. A custom name suffix to append to the scene name displayed in the tab (separated by a Foundry-style bullet character).`,
+						default: null,
+						isNullable: true,
+						type: "string",
+					},
+					isDisplayBackendStatus: {
+						name: "Display Detected Backend",
+						help: `Adds a cool green hacker tint to the Foundry "anvil" logo in the top-left corner of the screen if Plutonium's backend is detected.`,
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isExpandActiveEffectConfig: {
+						name: "Enhance Active Effect Config UI",
+						help: `Adds a list of potential active effect attribute keys to the Configure Active Effect window's "Effects" tab, and a field for configuring priority.`,
+						default: true,
+						type: "boolean",
+						compatibilityModeValues: {
+							[UtilCompat.MODULE_DAE]: false,
+						},
+					},
+					isAddDeleteToSceneNavOptions: {
+						name: `Add "Delete" to Navbar Scene Context Menu`,
+						help: `Adds a "Delete" option to the context menu found when right-clicking a scene in the navigation bar. Note that this does not include the currently-active scene.`,
+						default: true,
+						type: "boolean",
+					},
+				},
+				settingsAdvanced: {
+					isHideGmOnlyConfig: {
+						name: "Hide GM-Only Config",
+						help: `If enabled, a player viewing the config will see only the limited subset of settings they are allowed to modify. If disabled, a player viewing the config will see all settings, regardless of whether or not they can modify those settings.`,
+						default: true,
+						type: "boolean",
+					},
+					isDisableLargeImportWarning: {
+						name: "Disable Large Import Warning",
+						help: `Disable the warning confirmation dialogue shown when importing a large number of entities.`,
+						default: false,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+				},
+				settingsHacks: {
+					isFastAnimations: {
+						name: "Fast Animations",
+						help: "Increase the speed of various UI animations.",
+						// N.B.: avoid making this default, as it causes sheet "close()" calls to mysteriously fail to set the
+						//   sheet "_state" flag to CLOSED (instead leaving them on CLOSING) for some users. Was unable to
+						//   reproduce, but having users run:
+						//   `CONFIG.Actor.collection.instance.forEach(it => Object.values(it.apps).forEach(it => it._state = it._state === -2 ? -1 : it._state))`
+						//   successfully "unstuck" their sheets.
+						default: false,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isFixEscapeKey: {
+						name: "Fix ESC Key",
+						help: `Bind the "Escape" key to (in this order): de-select active input fields; de-select selected canvas elements; close context menus; close individual windows in most-recently-active-first order; toggle the main menu.`,
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isAddOpenMainMenuButtonToSettings: {
+						name: `Add "Open Game Menu" Button if &quot;Fix ESC Key&quot; Is Enabled`,
+						help: `Add an alternate "Open Game Menu" button to the Settings tab if the "Fix ESC Key" Config option is enabled. This allows you to quickly open the main menu without first having to close all open windows.`,
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isFixDrawingFreehandMinDistance: {
+						name: "Fix Freehand Drawing Minimum Distance",
+						help: `Reduce the minimum mouse movement distance required to start a freehand drawing.`,
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isEnableIncreasedFolderDepth: {
+						name: "Render >3 Levels of Folder Nesting",
+						help: `If enabled, Foundry's default folder nesting limit (of 3) will be bypassed, for the purpose of rendering directories. Note that this does not necessarily allow you to create additionally-nested folders without using the game API.`,
+						default: true,
+						type: "boolean",
+						compatibilityModeValues: {
+							[UtilCompat.MODULE_BETTER_ROLLTABLES]: false,
+						},
+					},
+					isEnableFolderNameWrap: {
+						name: "Wrap Long Folder Names",
+						help: `Wrap long folder names over multiple lines, instead of clipping the name.`,
+						default: false,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isEnableSubPopouts: {
+						name: "Allow Popout Chaining",
+						help: `Automatically pop out apps opened from within popped-out apps. If disabled, apps opened from within popped-out apps will appear in the main window, instead.`,
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isSuppressMissingRollDataNotifications: {
+						name: `Suppress &quot;Missing Roll Data&quot; Notifications`,
+						help: `If enabled, notification warning  messages of the form "The attribute <X> was not present in the provided roll data." will be suppressed, and logged as console warnings instead.`,
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isLazyActorAndItemRendering: {
+						name: "Minimize Actor/Item Re-Renders",
+						help: `If enabled, actor/item sheet re-rendering will be skipped where possible. This may reduce UI flickering, and may reduce unexpected input deselection when tabbing or clicking through fields. It may also horribly break your game, and is not expected to work with anything except default dnd5e sheets. Use with caution.`,
+						default: false,
+						type: "boolean",
+						isPlayerEditable: true,
+						isReloadRequired: true,
+					},
+					isAlwaysResizableApps: {
+						name: "Default Resizeable Applications",
+						help: `If enabled, applications will be resizeable by default. Note that specific applications may still override this.`,
+						default: false,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+				},
+			},
+			tokens: {
+				name: "Tokens",
+				settings: {
+					isDisplayDamageDealt: {
+						name: "Display Missing Health",
+						help: `This allows players to see "damage dealt" to a token, without revealing the token's total health. If enabled, each token's missing health is displayed as a number in the bottom-right corner of the token.`,
+						default: false,
+						type: "boolean",
+					},
+					damageDealtBloodiedThreshold: {
+						name: `Display Missing Health &quot;Wounded&quot; Threshold`,
+						help: `The health-loss threshold at which the Missing Health text turns red.`,
+						default: 0.5,
+						type: "percentage",
+						min: 0.0,
+						max: 1.0,
+					},
+					isDamageDealtBelowToken: {
+						name: `Missing Health Below Token`,
+						help: `If the Missing Health text should be displayed beneath a token, rather than as an overlay.`,
+						default: false,
+						type: "boolean",
+					},
+					nameplateFontSizeMultiplier: {
+						name: "Font Size Multiplier",
+						help: `A multiplier which is applied to token nameplate/tooltip font size, e.g. a value of "0.5" will decrease token nameplate/tooltip font size by half.`,
+						default: null,
+						type: "number",
+						placeholder: "(Use default)",
+						min: 0.1,
+						max: 10,
+						isNullable: true,
+					},
+					isAllowNameplateFontWrap: {
+						name: "Allow Text Wrap",
+						help: `If enabled, token nameplate/tooltip text will wrap.`,
+						default: ConfigConsts.C_USE_GAME_DEFAULT,
+						type: "enum",
+						values: [
+							{
+								value: ConfigConsts.C_USE_GAME_DEFAULT,
+								name: "Use Foundry default",
+							},
+							{
+								value: false,
+								name: "Disabled",
+							},
+							{
+								value: true,
+								name: "Enabled",
+							},
+						],
+					},
+					nameplateFontWrapWidthMultiplier: {
+						name: "Text Wrap Max Width Multiplier",
+						help: `A multiplier which is applied to token nameplate/tooltip text wrapping maximum size, e.g. a value of "0.5" will force token nameplates/tooltips to wrap at half their usual length. The base value to which this multiplier is applied is: "2.5 × token width".`,
+						default: null,
+						type: "number",
+						placeholder: "(Use default)",
+						min: 0.1,
+						max: 10,
+						isNullable: true,
+					},
+					npcHpRollMode: {
+						name: "NPC HP Roll Mode",
+						help: `Determines whether or not token HP, for NPC tokens which are not linked to their actor's data, should be rolled upon token creation. If a mode other than "None" is selected, and the token has a valid HP dice formula, the token will roll for HP. For example, a Goblin (7 HP; formula is 2d6) could be created with anywhere between 2 and 12 HP (inclusive).`,
+						default: ConfigConsts.C_TOKEN_NPC_HP_ROLL_MODE_NONE,
+						type: "enum",
+						values: [
+							{
+								value: ConfigConsts.C_TOKEN_NPC_HP_ROLL_MODE_NONE,
+								name: `None`,
+								help: `Do not roll NPC token health.`,
+							},
+							{
+								value: ConfigConsts.C_TOKEN_NPC_HP_ROLL_MODE_STANDARD,
+								name: `Standard Roll`,
+							},
+							{
+								value: ConfigConsts.C_TOKEN_NPC_HP_ROLL_MODE_GM,
+								name: `GM Roll`,
+							},
+							{
+								value: ConfigConsts.C_TOKEN_NPC_HP_ROLL_MODE_BLIND,
+								name: `Blind Roll`,
+							},
+							{
+								value: ConfigConsts.C_TOKEN_NPC_HP_ROLL_MODE_SELF,
+								name: `Self Roll`,
+							},
+							{
+								value: ConfigConsts.C_TOKEN_NPC_HP_ROLL_MODE_HIDDEN,
+								name: `Hidden Roll`,
+								help: `Roll NPC token health, but do not post the result to chat.`,
+							},
+							{
+								value: ConfigConsts.C_TOKEN_NPC_HP_ROLL_MODE_MIN,
+								name: `Minimum Value`,
+								help: `Use the minimum possible roll value.`,
+							},
+							{
+								value: ConfigConsts.C_TOKEN_NPC_HP_ROLL_MODE_MAX,
+								name: `Maximum Value`,
+								help: `Use the maximum possible roll value.`,
+							},
+						],
+					},
+					isFastAnimations: {
+						name: "Disable Animations",
+						help: "Disable token animations.",
+						default: false,
+						type: "boolean",
+					},
+				},
+				settingsHacks: {
+					isDisableFastAnimationsForWaypointMovement: {
+						name: "Avoid Disabling Animations for Ruler Movement",
+						help: `Suppresses the "Disable Animations" option for a token being moved via ruler waypoints (i.e. when CTRL-dragging from a token and pressing SPACE). Note that dismissing the ruler during the move will end this suppression.`,
+						default: true,
+						type: "boolean",
+					},
+				},
+			},
+			import: {
+				name: "Import",
+				settings: {
+					isAddSourceToName: {
+						name: "Add Source to Names",
+						help: `If the source of each imported entry (e.g. "MM" for Monster Manual) should be appended to the name of the entry.`,
+						default: false,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isAddPageNumberToSource: {
+						name: "Add Page Numbers to Sources",
+						help: `If the page number (where available) of each imported entry should be appended to the "source" field of the entry.`,
+						default: false,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isRenderLinksAsTags: {
+						name: `Render Links as &quot;@tag&quot;s`,
+						help: `If links found in description text should be rendered as Plutonium-specific @tag syntax, e.g. a link to "goblin" would be rendered as "@creature[goblin|mm]". (By default, a link to the 5etools page will be rendered instead.)`,
+						default: true,
+						type: "boolean",
+					},
+					isRendererLinksDisabled: {
+						name: "Disable 5etools Links",
+						help: `Prevents links to other 5etools content from being added to the text of imported 5etools content.`,
+						default: false,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isRendererDiceDisabled: {
+						name: "Render Dice as Plain Text",
+						help: `Forces dice expressions, usually rendered as "[[/r XdY + Z ...]]", to be rendered as plain text when importing 5etools content.`,
+						default: false,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					deduplicationMode: {
+						name: "Duplicate Handling Mode",
+						help: `Determines what action is taken when importing duplicate content to a directory or compendium. An entity is considered a duplicate if and only if its name and source match an existing entity. Note that this does not function when importing to actor sheets.`,
+						default: ConfigConsts.C_IMPORT_DEDUPE_MODE_NONE,
+						type: "enum",
+						values: [
+							{
+								value: ConfigConsts.C_IMPORT_DEDUPE_MODE_NONE,
+								name: `None`,
+								help: `No deduplication is done.`,
+							},
+							{
+								value: ConfigConsts.C_IMPORT_DEDUPE_MODE_SKIP,
+								name: `Skip duplicates`,
+								help: `If a duplicate is found for a would-be imported entity, that entity is not imported.`,
+							},
+							{
+								value: ConfigConsts.C_IMPORT_DEDUPE_MODE_OVERWRITE,
+								name: `Update existing`,
+								help: `If a duplicate is found for a would-be import entity, the existing entity is updated.`,
+							},
+						],
+					},
+					minimumRole: ConfigConsts._template_getMinimumRole({
+						name: "Minimum Permission Level for Import",
+						help: `"Import" buttons will be hidden for any user with a role less than the chosen role.`,
+					}),
+					dragDropMode: {
+						name: "Use Importer when Drag-Dropping Items to Actors",
+						help: `Some Foundry items (backgrounds, races, spells, items, etc.), when imported via Plutonium and later drag-dropped to an actor sheet, have special handling allowing for greater functionality (such as populating skills and features). This allows you to control whether or not that special handling is used, rather than the baseline Foundry drag-drop. Note that if you modify an item, the changes will not be reflected in the version imported to the sheet by Plutonium.`,
+						default: ConfigConsts.C_IMPORT_DRAG_DROP_MODE_PROMPT,
+						type: "enum",
+						values: [
+							{
+								value: ConfigConsts.C_IMPORT_DRAG_DROP_MODE_NEVER,
+								name: `Never`,
+							},
+							{
+								value: ConfigConsts.C_IMPORT_DRAG_DROP_MODE_PROMPT,
+								name: `Prompt`,
+							},
+							{
+								value: ConfigConsts.C_IMPORT_DRAG_DROP_MODE_ALWAYS,
+								name: `Always`,
+							},
+						],
+						isPlayerEditable: true,
+					},
+					isUseOtherFormulaFieldForSaveHalvesDamage: {
+						name: `Treat &quot;Save Halves&quot; Additional Attack Damage as &quot;Other Formula&quot;`,
+						help: `This moves extra attack damage rolls (for example, the poison damage done by a Giant Spider's bite) to the "Other Formula" dice field, which can improve compatibility with some modules.`,
+						default: false,
+						type: "boolean",
+					},
+					isGlobalMetricDistance: {
+						name: "Prefer Metric Distance/Speed (Where Available)",
+						help: `If enabled, metric distance/speed units will be preferred, where the importer supports them. Enabling this option effectively overrides all other metric distance/speed options, causing the importer to treat each as though it was enabled.`,
+						default: false,
+						type: "boolean",
+					},
+					isGlobalMetricWeight: {
+						name: "Prefer Metric Weight (Where Available)",
+						help: `If enabled, metric weight units will be preferred, where the importer supports them. Enabling this option effectively overrides all other metric weight options, causing the importer to treat each as though it was enabled.`,
+						default: false,
+						type: "boolean",
+					},
+					isShowVariantsInLists: {
+						name: "Show Variants/Versions",
+						help: `If variants/versions of base entries should be shown in list views (with grayed-out names).`,
+						default: true,
+						type: "boolean",
+					},
+					isSaveImagesToServer: {
+						name: "Save Imported Images to Server",
+						help: `If images referenced in imported content should be saved to your server files, rather than referenced from an external server.`,
+						default: false,
+						type: "boolean",
+					},
+					isSaveTokensToServer: {
+						name: "Save Imported Tokens to Server",
+						help: `If tokens for imported actors should be saved to your server files, rather than referenced from an external server.`,
+						default: true,
+						type: "boolean",
+					},
+					localImageDirectoryPath: {
+						name: "Image/Token Directory",
+						help: `The sub-directory of the "User Data" directory where imported images/tokens will be saved to when using the "Save Imported Images to Server" option or the "Save Imported Tokens to Server" option. If the "Use Local Images" option is enabled, images will be loaded from this directory by default.`,
+						default: `assets/${SharedConsts.MODULE_NAME_FAKE}`,
+						type: "string",
+					},
+					isPreferFoundryImages: {
+						name: "Prefer Foundry/System Images",
+						help: `If enabled, portraits for actors and images for items will be sourced from built-in compendiums first, then Plutonium second. If disabled, portraits/images will be sourced from Plutonium first, then built-in compendiums second.`,
+						default: false,
+						type: "boolean",
+					},
+					isPreferFoundryTokens: {
+						name: "Prefer Foundry/System Tokens",
+						help: `If enabled, tokens will be sourced from built-in compendiums first, then Plutonium second. If disabled, tokens will be sourced from Plutonium first, then built-in compendiums second.`,
+						default: false,
+						type: "boolean",
+					},
+					isLoadLocalHomebrewIndex: {
+						name: "Load Local Homebrew",
+						help: `If enabled, the directory specified by the "Local Homebrew Directory" option will be read, and its contents added to the list of available sources.`,
+						default: false,
+						type: "boolean",
+					},
+					localHomebrewDirectoryPath: {
+						name: "Local Homebrew Directory",
+						help: `The sub-directory of the "User Data" directory from which homebrew should be automatically loaded if the "Load Local Homebrew" option is enabled.`,
+						default: `assets/homebrew`,
+						type: "string",
+					},
+					isUseLocalHomebrewIndexJson: {
+						name: `Use <code>index.json</code> for Local Homebrew`,
+						help: `If, rather than read the local homebrew directory directly, an "index.json" file should be read when loading local homebrew. This file should be of the form: {"toImport": [ ... list of filenames ... ]}. Note that this is required if players do not have "Use File Browser" permissions.`,
+						default: false,
+						type: "boolean",
+					},
+					localHomebrew: {
+						name: "Additional Homebrew Files",
+						help: `Homebrew files which should be automatically loaded and added to the list of available sources.`,
+						default: [],
+						type: "arrayStringShort",
+						isCaseSensitive: true,
+					},
+				},
+				settingsAdvanced: {
+					...ConfigConsts._template_getImporterToggles(),
+					baseSiteUrl: {
+						name: "Base Site URL",
+						help: `The root server URL from which to load data and source images, and to link in rendered text. Note that, where possible, the module will use its own built-in data files, rather than call out to a remote server.`,
+						type: "url",
+						default: null,
+						isNullable: true,
+						isReloadRequired: true,
+					},
+					isNoLocalData: {
+						name: "Avoid Loading Local Data",
+						help: `If enabled, any data which would normally be loaded from the module's local copies is instead loaded from the sites URL (which may be customised by editing the "Base Site Url" config option).`,
+						default: false,
+						type: "boolean",
+					},
+					isNoHomebrewIndexes: {
+						name: "Avoid Loading Homebrew Indexes on Startup",
+						help: `If enabled, homebrew repository indexes won't be loaded during initial module load. This will effectively prevent any homebrew sources from appearing in source listings. Note that these indexes are loaded in the background/asynchronously during normal operation, so should not negatively impact game load times, unless you have a particularly terrible internet connection.`,
+						default: false,
+						type: "boolean",
+					},
+					isUseLocalImages: {
+						name: "Use Local Images",
+						help: `If enabled, images will be sourced from the "Image/Token Directory" directory, defined above.`,
+						default: false,
+						type: "boolean",
+					},
+					isStrictMatching: {
+						name: "Use Strict Entity Matching",
+						help: `If enabled, any Plutonium feature which searches for existing data (for example, the class importer attempting to find existing class levels in a given class) will match by name and source. If disabled, only name is used.`,
+						default: false,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					baseBrewUrl: {
+						name: "Base Homebrew Repository URL",
+						help: `The root GitHub repository URL from which to load data and source images, and to link in rendered text, when importing homebrew content. URLs should be of the form "https://raw.githubusercontent.com/[username]/[repository name]/master".`,
+						type: "url",
+						default: null,
+						isNullable: true,
+						isReloadRequired: true,
+					},
+					tempFolderName: {
+						name: "Temp Folder Name",
+						help: `The name of a temporary folder created/deleted by some operations. Note that the importer will delete this folder regardless of its contents, as anything contained within it is assumed to be a temporary entity created by the importer.`,
+						type: "string",
+						default: "Temp",
+					},
+				},
+			},
+			importCreature: {
+				name: "Import (Creatures)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported creature.`),
+					isImportBio: {
+						name: "Import Fluff to Biography",
+						help: `If enabled, any fluff text which is available for a creature will be imported into that creature's biography.`,
+						default: true,
+						type: "boolean",
+					},
+					isImportBioImages: {
+						name: "Include Fluff Image in Biography",
+						help: `If enabled, any fluff image which is available for a creature will be imported into that creature's biography.`,
+						default: false,
+						type: "boolean",
+					},
+					isImportBioVariants: {
+						name: "Include Variants in Biography",
+						help: `If enabled, any inset variant boxes associated with a creature will be imported into that creature's biography.`,
+						default: true,
+						type: "boolean",
+					},
+					isImportVariantsAsFeatures: {
+						name: "Import Variants as Features",
+						help: `If enabled, any inset variant boxes associated with a creature will be imported into that creature's features.`,
+						default: false,
+						type: "boolean",
+					},
+					isSecretWrapAttacks: {
+						name: `&quot;Secret&quot; Attack Descriptions`,
+						help: `If enabled, creature attack descriptions will be wrapped in "Secret" blocks, which are not shown when rolling.`,
+						default: false,
+						type: "boolean",
+					},
+					...ConfigConsts._template_getTokenSettings(),
+					itemWeightAndValueSizeScaling: {
+						name: "Item Weight & Value Scaling",
+						help: `The method by which to scale the weights and values of non-standard-sizes items carried by creatures.`,
+						default: 1,
+						type: "enum",
+						values: [
+							{
+								value: 1,
+								name: "No scaling",
+							},
+							{
+								value: 2,
+								name: `"Barding" scaling (multiplicative)`,
+								help: `Based on the rules for calculating the weight and cost of barding, as presented in the Player's Handbook (p. 155).`,
+							},
+							{
+								value: 3,
+								name: `"Gurt's Greataxe" scaling (exponential)`,
+								help: `Based on the giant-size greateaxe of the same name found in Storm King's Thunder (p. 234).`,
+							},
+						],
+					},
+					isMetricDistance: {
+						name: "Convert Speeds to Metric",
+						help: `Whether or not creature speed units should be converted to an approximate metric equivalent (${ConfigConsts._DISP_METRIC_FEET}).`,
+						default: false,
+						type: "boolean",
+					},
+					spellcastingPrimaryTraitMode: {
+						name: "Spellcasting Primary Trait Selection Method",
+						help: `The method by which a primary spellcasting trait (i.e., the spellcasting trait used to set spellcasting ability, spell DC, and spell attack bonus) is selected if a creature has multiple spellcasting traits with associated ability scores.`,
+						default: 1,
+						type: "enum",
+						values: [
+							{
+								value: 1,
+								name: "Highest spell count",
+								help: `Use whichever spellcasting trait has the most spells listed.`,
+							},
+							{
+								value: 2,
+								name: `Highest ability score`,
+								help: `Use whichever spellcasting trait has the highest associated ability score. Note that this may prefer innate spellcasting traits over spellcasting class levels.`,
+							},
+						],
+					},
+					nameTags: {
+						name: "Add Tag Suffixes to Names",
+						help: `Add tags to an imported creature's name, to allow easier searching (especially within compendiums).`,
+						default: {
+							[ConfigConsts.C_CREATURE_NAMETAGS_CR]: false,
+							[ConfigConsts.C_CREATURE_NAMETAGS_TYPE]: false,
+							[ConfigConsts.C_CREATURE_NAMETAGS_TYPE_WITH_TAGS]: false,
+						},
+						type: "multipleChoice",
+						choices: [
+							"Add [CR] tag",
+							"Add [type] tag",
+							"Add [type (with tags)] tag",
+						],
+					},
+					isAddSoundEffect: {
+						name: "MLD: Add Audio as Sound Effect",
+						help: `If, when the Monk's Little Details module is active, an imported creature should have its sound effect set, where an audio clip is available (for official data, this will usually be an audio clip of the creature's name being pronounced).`,
+						default: false,
+						type: "boolean",
+					},
+				},
+				settingsAdvanced: {
+					additionalDataCompendium: {
+						name: "Additional Data Compendiums",
+						help: `A comma-separated list of compendiums that the Creature Importer will attempt to pull additional data (including art) from rather than use the default Plutonium icons.`,
+						default: ConfigConsts.SRD_COMPENDIUMS_CREATURES.join(", "),
+						type: "string",
+						typeSub: "compendiums",
+						isNullable: true,
+					},
+					additionalDataCompendiumFeatures: {
+						name: "Additional Data Compendiums (Features)",
+						help: `A comma-separated list of compendiums that the Creature Importer will attempt to pull additional data (including art) from rather than use the default Plutonium icons.`,
+						default: ConfigConsts.SRD_COMPENDIUMS_CREATURE_FEATURES.join(", "),
+						type: "string",
+						typeSub: "compendiums",
+						isNullable: true,
+					},
+					isUseTokenImageAsPortrait: {
+						name: "Use Token Image as Portrait",
+						help: `If enabled, a creature's token image will be preferred over its portrait image when populating its sheet portrait during import.`,
+						default: false,
+						type: "boolean",
+					},
+					isUseStaticAc: {
+						name: "Use Static AC Values",
+						help: `If enabled, creature AC will be imported as a static number (rather than relying on the sheet's formula calculation), and creature armor will be imported as unequipped.`,
+						default: false,
+						type: "boolean",
+					},
+					isUseCustomNaturalAc: {
+						name: "Use Custom Natural Armor Formula",
+						help: `If enabled, creatures with natural armor will have their armor formula broken down as "@attributes.ac.armor + @attributes.ac.dex + <naturalBonus>", allowing any later Dexterity score changes to be reflected in the creatures AC.`,
+						default: false,
+						type: "boolean",
+					},
+				},
+			},
+			importVehicle: {
+				name: "Import (Vehicles)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported vehicle.`),
+					...ConfigConsts._template_getTokenSettings(),
+					isMetricDistance: {
+						name: "Convert Speeds to Metric",
+						help: `Whether or not vehicle speed units should be converted to an approximate metric equivalent (${ConfigConsts._DISP_METRIC_FEET}; ${ConfigConsts._DISP_METRIC_MILES}).`,
+						default: false,
+						type: "boolean",
+					},
+					isImportBio: {
+						name: "Import Fluff to Description",
+						help: `If enabled, any fluff text which is available for a vehicle will be imported into that vehicle's description.`,
+						default: true,
+						type: "boolean",
+					},
+					isImportBioImages: {
+						name: "Include Fluff Image in Description",
+						help: `If enabled, any fluff image which is available for a vehicle will be imported into that creature's description.`,
+						default: false,
+						type: "boolean",
+					},
+				},
+				settingsAdvanced: {
+					additionalDataCompendium: {
+						name: "Additional Data Compendiums",
+						help: `A comma-separated list of compendiums that the vehicle importer will attempt to pull additional data (including art) from rather than use the default Plutonium icons.`,
+						default: "",
+						type: "string",
+						typeSub: "compendiums",
+						isNullable: true,
+					},
+					isUseTokenImageAsPortrait: {
+						name: "Use Token Image as Portrait",
+						help: `If enabled, a vehicle's token image will be preferred over its portrait image when populating its sheet portrait during import.`,
+						default: false,
+						type: "boolean",
+					},
+					...ConfigConsts._template_getActiveEffectsDisabledTransferSettings({name: "vehicles"}),
+				},
+			},
+			importVehicleUpgrade: {
+				name: "Import (Vehicle Upgrades)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported vehicle upgrades.`),
+					isMetricDistance: {
+						name: "Convert Speeds to Metric",
+						help: `Whether or not vehicle upgrade speed units should be converted to an approximate metric equivalent (${ConfigConsts._DISP_METRIC_FEET}).`,
+						default: false,
+						type: "boolean",
+					},
+				},
+				settingsAdvanced: {
+					...ConfigConsts._template_getActiveEffectsDisabledTransferSettings({name: "vehicle upgrades"}),
+					isImportDescription: {
+						name: "Import Text as Description",
+						help: `If enabled, a vehicle upgrade's text will be imported as item description.`,
+						default: true,
+						type: "boolean",
+					},
+				},
+			},
+			importObject: {
+				name: "Import (Objects)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported object.`),
+					...ConfigConsts._template_getTokenSettings(),
+					isMetricDistance: {
+						name: "Convert Speeds to Metric",
+						help: `Whether or not object speed units should be converted to an approximate metric equivalent (${ConfigConsts._DISP_METRIC_FEET}).`,
+						default: false,
+						type: "boolean",
+					},
+				},
+			},
+			importFeat: {
+				name: "Import (Feats)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported feat.`),
+					isMetricDistance: {
+						name: "Convert Speeds to Metric",
+						help: `Whether or not feat speed units should be converted to an approximate metric equivalent (${ConfigConsts._DISP_METRIC_FEET}).`,
+						default: false,
+						type: "boolean",
+					},
+				},
+				settingsAdvanced: {
+					...ConfigConsts._template_getActiveEffectsDisabledTransferSettings({name: "feats"}),
+					isImportDescription: {
+						name: "Import Text as Description",
+						help: `If enabled, a feat's text will be imported as item description.`,
+						default: true,
+						type: "boolean",
+					},
+				},
+			},
+			importBackground: {
+				name: "Import (Backgrounds)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported background.`),
+				},
+				settingsAdvanced: {
+					additionalDataCompendium: {
+						name: "Additional Data Compendiums (Backgrounds)",
+						help: `A comma-separated list of compendiums that the background importer will attempt to pull additional data (including art) from rather than use the default Plutonium icons.`,
+						default: ConfigConsts.SRD_COMPENDIUMS_BACKGROUNDS_AND_FEATURES.join(", "),
+						type: "string",
+						typeSub: "compendiums",
+						isNullable: true,
+					},
+					additionalDataCompendiumFeatures: {
+						name: "Additional Data Compendiums (Features)",
+						help: `A comma-separated list of compendiums that the background importer will attempt to pull additional data (including art) from rather than use the default Plutonium icons.`,
+						default: ConfigConsts.SRD_COMPENDIUMS_BACKGROUNDS_AND_FEATURES.join(", "),
+						type: "string",
+						typeSub: "compendiums",
+						isNullable: true,
+					},
+					...ConfigConsts._template_getActiveEffectsDisabledTransferSettings({name: "backgrounds"}),
+					isImportDescription: {
+						name: "Import Text as Description",
+						help: `If enabled, a background's text will be imported as item description.`,
+						default: true,
+						type: "boolean",
+					},
+				},
+			},
+			importBackgroundFeature: {
+				name: "Import (Background Features)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported background feature.`),
+				},
+			},
+			importClass: {
+				name: "Import (Classes)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported class or subclass.`),
+					isAddUnarmedStrike: {
+						name: "Add Unarmed Strike",
+						help: `If enabled, importing a class to an actor will create an "Unarmed Strike" weapon, unless one already exists.`,
+						default: false,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isImportClassTable: {
+						name: "Import Class Table to Description",
+						help: `If enabled, a class's table will be imported as part of the class item's description.`,
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isAddLevelUpButton: {
+						name: `Add &quot;Level Up&quot; Button to Character Sheets`,
+						help: `If enabled, a "Level Up" button will be displayed in the top-right corner of a character's sheet (assuming the default dnd5e sheet is used).`,
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isSetXp: {
+						name: "Set Minimum Actor XP on Class Import",
+						help: `If enabled, during class import, actor XP will be set to the minimum XP value required for the actor's new level, if the actor's current XP is insufficient for them to reach their new level.`,
+						default: false,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+				},
+				settingsAdvanced: {
+					additionalDataCompendiumClasses: {
+						name: "Additional Data Compendiums (Classes)",
+						help: `A comma-separated list of compendiums that the class importer will attempt to pull additional data (including art) from rather than use the default Plutonium icons.`,
+						default: ConfigConsts.SRD_COMPENDIUMS_CLASSES.join(", "),
+						type: "string",
+						typeSub: "compendiums",
+						isNullable: true,
+					},
+					additionalDataCompendiumSubclasses: {
+						name: "Additional Data Compendiums (Subclasses)",
+						help: `A comma-separated list of compendiums that the class importer will attempt to pull additional data (including art) from rather than use the default Plutonium icons.`,
+						default: ConfigConsts.SRD_COMPENDIUMS_SUBCLASSES.join(", "),
+						type: "string",
+						typeSub: "compendiums",
+						isNullable: true,
+					},
+					additionalDataCompendiumFeatures: {
+						name: "Additional Data Compendiums (Features)",
+						help: `A comma-separated list of compendiums that the class importer will attempt to pull additional data (including art) from rather than use the default Plutonium icons.`,
+						default: ConfigConsts.SRD_COMPENDIUMS_CLASS_FEATURES.join(", "),
+						type: "string",
+						typeSub: "compendiums",
+						isNullable: true,
+					},
+					...ConfigConsts._template_getActiveEffectsDisabledTransferSettings({name: "class"}),
+					isImportDescription: {
+						name: "Import Text as Description",
+						help: `If enabled, a class's text will be imported as item description.`,
+						default: true,
+						type: "boolean",
+					},
+					isUseDefaultSubclassImage: {
+						name: "Subclass Default Image Fallback",
+						help: `If enabled, when importing a subclass which has no well-defined image, use a default image based on class. If disabled, a generic black and white image will be used as a fallback instead.`,
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isHideSubclassRows: {
+						name: "Hide Subclasses in Class Importer",
+						help: `If enabled, the class/subclass list in the Class Importer will only show classes.`,
+						default: false,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+				},
+				settingsHacks: {
+					isSuppressAdvancementsOnImportedDrop: {
+						name: "Suppress Advancements During Drop Flow",
+						help: `If enabled, dropping a Plutonium-imported class/subclass to a sheet will briefly disable the default advancement workflow, potentially allowing Plutonium's importer to run instead.`,
+						default: true,
+						type: "boolean",
+					},
+				},
+			},
+			importClassSubclassFeature: {
+				name: "Import (Class & Sub Features)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported class/subclass feature.`),
+					isMetricDistance: {
+						name: "Convert Speeds to Metric",
+						help: `Whether or not class/subclass feature speed units should be converted to an approximate metric equivalent (${ConfigConsts._DISP_METRIC_FEET}).`,
+						default: false,
+						type: "boolean",
+					},
+				},
+				settingsAdvanced: {
+					...ConfigConsts._template_getActiveEffectsDisabledTransferSettings({name: "class features"}),
+					isImportDescription: {
+						name: "Import Text as Description",
+						help: `If enabled, a class/subclass feature's text will be imported as item description.`,
+						default: true,
+						type: "boolean",
+					},
+				},
+			},
+			importItem: {
+				name: "Import (Items)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported item.`),
+					isAddActiveEffects: {
+						name: "Populate Active Effects",
+						help: `If items should have active effects created during import.`,
+						default: true,
+						type: "boolean",
+						// No player editable, since calculations are different with/without this option
+					},
+					isMetricDistance: {
+						name: "Convert Item Ranges to Metric",
+						help: `Whether or not item range units should be converted to an approximate metric equivalent (${ConfigConsts._DISP_METRIC_FEET}).`,
+						default: false,
+						type: "boolean",
+					},
+					isMetricWeight: {
+						name: "Convert Item Weights to Metric",
+						help: `Whether or not item weight units should be converted to an approximate metric equivalent (${ConfigConsts._DISP_METRIC_POUNDS}).`,
+						default: false,
+						type: "boolean",
+					},
+					inventoryStackingMode: {
+						name: "Inventory Stacking Mode",
+						help: `If imported items should "stack" with existing items when imported to an actor's inventory. If stacking is allowed, the importer will check for an existing item when importing an item to an actor's sheet. If the item already exists, the importer will increase the quantity of that item in the actor's inventory, rather than create a new copy of the item in the actor's inventory.`,
+						default: ConfigConsts.C_ITEM_ATTUNEMENT_SMART,
+						type: "enum",
+						values: [
+							{
+								value: ConfigConsts.C_ITEM_ATTUNEMENT_NEVER,
+								name: `Never Stack`,
+							},
+							{
+								value: ConfigConsts.C_ITEM_ATTUNEMENT_SMART,
+								name: `Sometimes Stack (e.g. consumables, throwables)`,
+							},
+							{
+								value: ConfigConsts.C_ITEM_ATTUNEMENT_ALWAYS,
+								name: `Always Stack`,
+							},
+						],
+					},
+					isSplitPacksActor: {
+						name: "Import Packs to Actors as Constituent Items",
+						help: `If "pack" items (explorer's pack, dungeoneer's pack) should be broken down and imported as their constituent items when importing to an actor's items.`,
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isSplitAtomicPacksActor: {
+						name: "Import Item Stacks to Actors as Constituent Items",
+						help: `If an item which is formed of multiple constituent items of the same type, such as "Bag of Ball Bearings (1,000)", should be split up into its constituent items (a "Ball Bearing" item with its sheet quantity set to 1,000, in this example).`,
+						default: false,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					throwables: {
+						name: "Throwing Items",
+						help: `A list of items which are imported with their usage set to deplete their own quantity when used.`,
+						default: ["Handaxe", "Javelin", "Light Hammer", "Dart", "Net"],
+						type: "arrayStringShort",
+						isPlayerEditable: true,
+					},
+					attunementType: {
+						name: "Attunement Type for Attunable Items",
+						help: `The attunement type to use when importing an item which can be attuned.`,
+						default: ConfigConsts.C_ITEM_ATTUNEMENT_REQUIRED,
+						type: "enum",
+						values: [
+							{
+								value: ConfigConsts.C_ITEM_ATTUNEMENT_NONE,
+								name: `None`,
+							},
+							{
+								value: ConfigConsts.C_ITEM_ATTUNEMENT_REQUIRED,
+								name: `Attunement required`,
+							},
+							{
+								value: ConfigConsts.C_ITEM_ATTUNEMENT_ATTUNED,
+								name: `Attuned`,
+							},
+						],
+					},
+					isImportDescriptionHeader: {
+						name: "Include Damage, Properties, Rarity, and Attunement in Description",
+						help: `If enabled, an imported item's description will include text generated from its rarity, attunement requirements, damage, and other properties.`,
+						default: false,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+				},
+				settingsAdvanced: {
+					additionalDataCompendium: {
+						name: "Additional Data Compendiums",
+						help: `A comma-separated list of compendiums that the Item Importer will attempt to pull additional data (including art) from rather than use the default Plutonium icons.`,
+						default: ConfigConsts.SRD_COMPENDIUMS_ITEMS.join(", "),
+						type: "string",
+						typeSub: "compendiums",
+						isNullable: true,
+					},
+					replacementDataCompendium: {
+						name: "Replacement Data Compendiums",
+						help: `A comma-separated list of compendiums that the Item Importer will attempt to pull items from, rather than using the data Plutonium would otherwise generate. This is useful when the Item Importer is used by other importers, e.g. when the Creature Importer is adding items to newly-created actors.`,
+						default: "",
+						type: "string",
+						typeSub: "compendiums",
+						isNullable: true,
+					},
+					...ConfigConsts._template_getActiveEffectsDisabledTransferSettings({name: "items"}),
+					isImportDescription: {
+						name: "Import Text as Description",
+						help: `If enabled, an item's text will be imported as item description.`,
+						default: true,
+						type: "boolean",
+					},
+				},
+			},
+			importPsionic: {
+				name: "Import (Psionics)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported psionic.`),
+					psiPointsResource: {
+						name: "Psi Points Resource",
+						help: `The resource consumed by psionics.`,
+						default: "resources.primary.value",
+						type: "enum",
+						values: [
+							{
+								value: "resources.primary",
+							},
+							{
+								value: "resources.secondary",
+							},
+							{
+								value: "resources.tertiary",
+							},
+							{
+								value: ConfigConsts.C_SPELL_POINTS_RESOURCE__SHEET_ITEM,
+								name: `"Psi Points" sheet item`,
+							},
+							{
+								value: ConfigConsts.C_SPELL_POINTS_RESOURCE__ATTRIBUTE_CUSTOM,
+								name: `Custom (see below)`,
+							},
+						],
+						isPlayerEditable: true,
+					},
+					psiPointsResourceCustom: {
+						name: "Psi Points Custom Resource",
+						help: `The name of the custom resource to use if "Custom" is selected for "Psi Points Resource", above. This supports modules that expand the number of available sheet resources, such as "5e-Sheet Resources Plus" (which adds e.g. "resources.fourth", "resources.fifth", ...).`,
+						type: "string",
+						default: null,
+						isNullable: true,
+						isPlayerEditable: true,
+					},
+					isImportAsSpell: {
+						name: "Import as Spells",
+						help: `If enabled, psionics will be imported as spells, rather than features.`,
+						default: false,
+						type: "boolean",
+					},
+				},
+				settingsAdvanced: {
+					...ConfigConsts._template_getActiveEffectsDisabledTransferSettings({name: "psionic"}),
+					isImportDescription: {
+						name: "Import Text as Description",
+						help: `If enabled, a psionic's text will be imported as item description.`,
+						default: true,
+						type: "boolean",
+					},
+				},
+			},
+			importRace: {
+				name: "Import (Races)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported race.`),
+					isMetricDistance: {
+						name: "Convert Speeds to Metric",
+						help: `Whether or not race speed units should be converted to an approximate metric equivalent (${ConfigConsts._DISP_METRIC_FEET}).`,
+						default: false,
+						type: "boolean",
+					},
+				},
+				settingsAdvanced: {
+					additionalDataCompendium: {
+						name: "Additional Data Compendiums (Races)",
+						help: `A comma-separated list of compendiums that the race importer will attempt to pull additional data (including art) from rather than use the default Plutonium icons.`,
+						default: ConfigConsts.SRD_COMPENDIUMS_RACES_AND_FEATURES.join(", "),
+						type: "string",
+						typeSub: "compendiums",
+						isNullable: true,
+					},
+					additionalDataCompendiumFeatures: {
+						name: "Additional Data Compendiums (Features)",
+						help: `A comma-separated list of compendiums that the race importer will attempt to pull additional data (including art) from rather than use the default Plutonium icons.`,
+						default: ConfigConsts.SRD_COMPENDIUMS_RACES_AND_FEATURES.join(", "),
+						type: "string",
+						typeSub: "compendiums",
+						isNullable: true,
+					},
+					...ConfigConsts._template_getActiveEffectsDisabledTransferSettings({name: "races"}),
+					isImportDescription: {
+						name: "Import Text as Description",
+						help: `If enabled, a race's text will be imported as item description.`,
+						default: true,
+						type: "boolean",
+					},
+				},
+			},
+			importRaceFeature: {
+				name: "Import (Race Features)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported race feature.`),
+				},
+			},
+			importTable: {
+				name: "Import (Table)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported table.`),
+				},
+				settingsAdvanced: {
+					additionalDataCompendium: {
+						name: "Additional Data Compendiums",
+						help: `A comma-separated list of compendiums that the Table Importer will attempt to pull additional data (including art) from rather than use the default Plutonium icons.`,
+						default: ConfigConsts.SRD_COMPENDIUMS_TABLES.join(", "),
+						type: "string",
+						typeSub: "compendiums",
+						isNullable: true,
+					},
+				},
+			},
+			importSpell: {
+				name: "Import (Spells)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported spell.`),
+					prepareActorSpells: {
+						name: "Prepare Actor Spells",
+						help: "Whether or not spells that are imported to actor sheets should be prepared by default.",
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					prepareSpellItems: {
+						name: "Prepare Spell Items",
+						help: "Whether or not spells that are imported to the items directory should be prepared by default.",
+						default: false,
+						type: "boolean",
+					},
+					actorSpellPreparationMode: {
+						name: "Actor Spell Preparation Mode",
+						help: `The default spell preparation mode for spells imported to actor sheets.`,
+						default: "prepared",
+						type: "enum",
+						values: [
+							{
+								value: "",
+								name: "(None)",
+							},
+							{
+								value: "always",
+								name: "Always Prepared",
+							},
+							{
+								value: "prepared",
+								name: "Prepared",
+							},
+							{
+								value: "innate",
+								name: "Innate Spellcasting",
+							},
+							{
+								value: "pact",
+								name: "Pact Magic",
+							},
+						],
+						isPlayerEditable: true,
+					},
+					isAutoDetectActorSpellPreparationMode: {
+						name: "Auto-Detect Actor Spell Preparation Mode",
+						help: `If enabled, the default spell preparation mode for spells imported to actor sheets (as defined by "Actor Spell Preparation Mode") may be automatically overridden, e.g. "pact magic" is automatically used when importing to a warlock.`,
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					spellItemPreparationMode: {
+						name: "Spell Item Preparation Mode",
+						help: `The default spell preparation mode for spells imported to the items directory.`,
+						default: "prepared",
+						type: "enum",
+						values: [
+							{
+								value: "",
+								name: "(None)",
+							},
+							{
+								value: "always",
+								name: "Always Prepared",
+							},
+							{
+								value: "prepared",
+								name: "Prepared",
+							},
+							{
+								value: "innate",
+								name: "Innate Spellcasting",
+							},
+							{
+								value: "pact",
+								name: "Pact Magic",
+							},
+						],
+					},
+					spellPointsMode: {
+						name: "Use Spell Points",
+						help: `If enabled, imported spells which would use spell slots will instead be marked as "at will" and set to consume an a sheet or feature resource. (The "Spell Points" variant rule can be found in the DMG, page 288.)`,
+						default: ConfigConsts.C_SPELL_POINTS_MODE__DISABLED,
+						type: "enum",
+						values: [
+							{
+								name: "Disabled",
+								value: ConfigConsts.C_SPELL_POINTS_MODE__DISABLED,
+							},
+							{
+								name: "Enabled",
+								value: ConfigConsts.C_SPELL_POINTS_MODE__ENABLED,
+							},
+							{
+								name: "Enabled, but Use 99 Slots",
+								value: ConfigConsts.C_SPELL_POINTS_MODE__ENABLED_AND_UNLIMITED_SLOTS,
+								help: `If enabled, an imported spells will retain its "Spell Preparation Mode" in addition to consuming a "Spell Points" sheet/feature resource. This improves compatibility with many sheets and modules. To allow "unlimited" spellcasting at each spell level, a character's spell slots for each level will be set to 99.`,
+							},
+						],
+						isPlayerEditable: true,
+					},
+					spellPointsResource: {
+						name: "Spell Points Resource",
+						help: `The resource consumed by spells imported with "Use Spell Points" enabled.`,
+						default: "resources.primary.value",
+						type: "enum",
+						values: [
+							{
+								value: "resources.primary",
+							},
+							{
+								value: "resources.secondary",
+							},
+							{
+								value: "resources.tertiary",
+							},
+							{
+								value: ConfigConsts.C_SPELL_POINTS_RESOURCE__SHEET_ITEM,
+								name: `"Spell Points" sheet item`,
+							},
+							{
+								value: ConfigConsts.C_SPELL_POINTS_RESOURCE__ATTRIBUTE_CUSTOM,
+								name: `Custom (see below)`,
+							},
+						],
+						isPlayerEditable: true,
+					},
+					spellPointsResourceCustom: {
+						name: "Spell Points Custom Resource",
+						help: `The name of the custom resource to use if "Custom" is selected for "Spell Points Resource", above. This supports modules that expand the number of available sheet resources, such as "5e-Sheet Resources Plus" (which adds e.g. "resources.fourth", "resources.fifth", ...).`,
+						type: "string",
+						default: null,
+						isNullable: true,
+						isPlayerEditable: true,
+					},
+					isIncludeClassesInDescription: {
+						name: "Include Caster Classes in Spell Description",
+						help: `If enabled, an imported spell's description will include the list of classes which have the spell on their spell list.`,
+						default: false,
+						type: "boolean",
+					},
+					isMetricDistance: {
+						name: "Convert Spell Ranges and Areas to Metric",
+						help: `Whether or not spell range/area units should be converted to an approximate metric equivalent (${ConfigConsts._DISP_METRIC_FEET}; ${ConfigConsts._DISP_METRIC_MILES}).`,
+						default: false,
+						type: "boolean",
+					},
+					isFilterOnOpen: {
+						name: "Apply Class Filter when Opening on Actor",
+						help: "If enabled, and the importer is opened from an actor, the spell list will be filtered according to that actor's current class(es).",
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+				},
+				settingsAdvanced: {
+					additionalDataCompendium: {
+						name: "Additional Data Compendiums",
+						help: `A comma-separated list of compendiums that the Spell Importer will attempt to pull additional data (including art) from rather than use the default Plutonium icons.`,
+						default: ConfigConsts.SRD_COMPENDIUMS_SPELLS.join(", "),
+						type: "string",
+						typeSub: "compendiums",
+						isNullable: true,
+					},
+					replacementDataCompendium: {
+						name: "Replacement Data Compendiums",
+						help: `A comma-separated list of compendiums that the Spell Importer will attempt to pull spells from, rather than using the data Plutonium would otherwise generate. This is useful when the Spell Importer is used by other importers, e.g. when the Creature Importer is adding spells to newly-created actors.`,
+						default: "",
+						type: "string",
+						typeSub: "compendiums",
+						isNullable: true,
+					},
+					...ConfigConsts._template_getActiveEffectsDisabledTransferSettings({name: "spells"}),
+					isImportDescription: {
+						name: "Import Text as Description",
+						help: `If enabled, a spell's text will be imported as item description.`,
+						default: true,
+						type: "boolean",
+					},
+					isUseCustomSrdIcons: {
+						name: "Use Custom Icons for SRD Spells",
+						help: `If enabled, imported SRD spells will use an alternate icon set, as curated by the community..`,
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					isUseDefaultSchoolImage: {
+						name: "School Default Image Fallback",
+						help: `If enabled, when importing a spell which has no well-defined image, use a default image based on the school of the spell. If disabled, a generic black and white image will be used as a fallback instead.`,
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+					spellPointsModeNpc: {
+						name: "Use Spell Points (NPCs)",
+						help: `If enabled, a spell imported to an NPC which would use spell slots will instead be marked as "at will" and set to consume an a sheet or feature resource. (The "Spell Points" variant rule can be found in the DMG, page 288.)`,
+						default: ConfigConsts.C_SPELL_POINTS_MODE__DISABLED,
+						type: "enum",
+						values: [
+							{
+								name: "Disabled",
+								value: ConfigConsts.C_SPELL_POINTS_MODE__DISABLED,
+							},
+							{
+								name: "Enabled",
+								value: ConfigConsts.C_SPELL_POINTS_MODE__ENABLED,
+							},
+							{
+								name: "Enabled, but Use 99 Slots",
+								value: ConfigConsts.C_SPELL_POINTS_MODE__ENABLED_AND_UNLIMITED_SLOTS,
+								help: `If enabled, imported spells will retain their "prepared"/etc. types in addition to consuming a "Spell Points" sheet/feature resource. This allows easier organisation of spells, and better compatibility with many modules. To allow "unlimited" spellcasting at each spell level, a character's spell slots for each level will be set to 99.`,
+							},
+						],
+					},
+				},
+			},
+			importRule: {
+				name: "Import (Rules)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported rule.`),
+				},
+			},
+			importLanguage: {
+				name: "Import (Languages)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported language.`),
+				},
+			},
+			importOptionalFeature: {
+				name: "Import (Options & Features)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported option/feature.`),
+					isMetricDistance: {
+						name: "Convert Speeds to Metric",
+						help: `Whether or not optional feature speed units should be converted to an approximate metric equivalent (${ConfigConsts._DISP_METRIC_FEET}).`,
+						default: false,
+						type: "boolean",
+					},
+				},
+				settingsAdvanced: {
+					additionalDataCompendium: {
+						name: "Additional Data Compendiums",
+						help: `A comma-separated list of compendiums that the optional feature importer will attempt to pull additional data (including art) from rather than use the default Plutonium icons.`,
+						default: ConfigConsts.SRD_COMPENDIUMS_OPTIONAL_FEATURES.join(", "),
+						type: "string",
+						typeSub: "compendiums",
+						isNullable: true,
+					},
+					...ConfigConsts._template_getActiveEffectsDisabledTransferSettings({name: "optional features"}),
+					isImportDescription: {
+						name: "Import Text as Description",
+						help: `If enabled, an optional feature's text will be imported as item description.`,
+						default: true,
+						type: "boolean",
+					},
+				},
+			},
+			importConditionDisease: {
+				name: "Import (Conditions & Diseases)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported condition/diseases.`),
+				},
+				settingsAdvanced: {
+					...ConfigConsts._template_getActiveEffectsDisabledTransferSettings({name: "conditions/diseases"}),
+					isImportDescription: {
+						name: "Import Text as Description",
+						help: `If enabled, a condition/disease's text will be imported as item description.`,
+						default: true,
+						type: "boolean",
+					},
+				},
+			},
+			importCultBoon: {
+				name: "Import (Cults & Supernatural Boons)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported cult/boon.`),
+				},
+				settingsAdvanced: {
+					...ConfigConsts._template_getActiveEffectsDisabledTransferSettings({name: "cults/boons"}),
+					isImportDescription: {
+						name: "Import Text as Description",
+						help: `If enabled, a cult/boon's text will be imported as item description.`,
+						default: true,
+						type: "boolean",
+					},
+				},
+			},
+			importAction: {
+				name: "Import (Actions)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported action.`),
+				},
+				settingsAdvanced: {
+					...ConfigConsts._template_getActiveEffectsDisabledTransferSettings({name: "actions"}),
+					isImportDescription: {
+						name: "Import Text as Description",
+						help: `If enabled, a action's text will be imported as item description.`,
+						default: true,
+						type: "boolean",
+					},
+				},
+			},
+			importReward: {
+				name: "Import (Gifts & Rewards)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported supernatural gift/reward.`),
+					isMetricDistance: {
+						name: "Convert Speeds to Metric",
+						help: `Whether or not gift/reward speed units should be converted to an approximate metric equivalent (${ConfigConsts._DISP_METRIC_FEET}).`,
+						default: false,
+						type: "boolean",
+					},
+				},
+				settingsAdvanced: {
+					...ConfigConsts._template_getActiveEffectsDisabledTransferSettings({name: "gift/rewards"}),
+					isImportDescription: {
+						name: "Import Text as Description",
+						help: `If enabled, a supernatural gift/reward's text will be imported as item description.`,
+						default: true,
+						type: "boolean",
+					},
+				},
+			},
+			importCharCreationOption: {
+				name: "Import (Char. Creation Options)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported character creation option.`),
+					isMetricDistance: {
+						name: "Convert Speeds to Metric",
+						help: `Whether or not character creation option speed units should be converted to an approximate metric equivalent (${ConfigConsts._DISP_METRIC_FEET}).`,
+						default: false,
+						type: "boolean",
+					},
+				},
+				settingsAdvanced: {
+					...ConfigConsts._template_getActiveEffectsDisabledTransferSettings({name: "character creation options"}),
+					isImportDescription: {
+						name: "Import Text as Description",
+						help: `If enabled, a character creation option's text will be imported as item description.`,
+						default: true,
+						type: "boolean",
+					},
+				},
+			},
+			importDeity: {
+				name: "Import (Deities)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported deity.`),
+				},
+			},
+			importRecipe: {
+				name: "Import (Recipes)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported recipe.`),
+				},
+			},
+			importTrap: {
+				name: "Import (Traps)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported trap.`),
+					...ConfigConsts._template_getTokenSettings(),
+				},
+			},
+			importHazard: {
+				name: "Import (Hazards)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported hazard.`),
+				},
+			},
+			importAdventure: {
+				name: "Import (Adventures)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported adventure.`),
+					...ConfigConsts._template_getAdventureBookSettings(),
+					isUseModdedInstaller: {
+						name: "Use Modded Package Installer",
+						help: `If the modded Plutonium backend is installed, adventure packages (modules/worlds) will be installed, automatically, using the mod, rather than providing you with a list of links to copy-paste into Foundry's "Setup".`,
+						type: "boolean",
+						default: false,
+					},
+					isUseLegacyImporter: {
+						name: "Enable Legacy Package Importer",
+						help: `If Plutonium should allow adventure packages (modules/worlds) to be imported directly, rather than providing references for the user to investigate themselves.`,
+						type: "boolean",
+						default: false,
+						unlockCode: "unlock",
+					},
+					indexUrl: {
+						name: "Package Index URL",
+						help: `The URL of the index file from which world/module package metadata is loaded.`,
+						type: "url",
+						default: "https://raw.githubusercontent.com/DMsGuild201/Foundry_Resources/master/worlds/index.json",
+						isReloadRequired: true,
+					},
+				},
+			},
+			importBook: {
+				name: "Import (Books)",
+				settings: {
+					permissions: ConfigConsts._template_getEntityPermissions(`The default (i.e. used for all players unless a player-specific permission level is set) permissions for an imported book.`),
+					...ConfigConsts._template_getAdventureBookSettings(),
+				},
+			},
+			importMap: {
+				name: "Import (Maps)",
+				settings: {
+					...ConfigConsts._template_getSceneImportSettings(),
+				},
+			},
+			actor: {
+				name: "Actors",
+				settings: {
+					isRefreshOtherOwnedSheets: {
+						name: `Refresh Sheets using &quot;@${SharedConsts.MODULE_NAME_FAKE}.userchar&quot; when Updating Player Character`,
+						help: `Player only. If enabled, when you update your character, the sheets of other actors you control which use "@${SharedConsts.MODULE_NAME_FAKE}.userchar. ..." attributes will be automatically refreshed to reflect any changes made to your character. If disabled, you may notice a "lag" between updating your character and seeing the changes reflected in other sheets (a refresh can be forced manually by editing any field on the other sheet, or refreshing your browser tab).`,
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+				},
+				settingsHacks: {
+					isAutoMultiattack: {
+						name: "Auto-Roll Multiattacks",
+						help: `Attempt to detect and automatically roll components of a creature's "Multiattack" sheet item on activation.`,
+						default: false,
+						type: "boolean",
+						compatibilityModeValues: {
+							[UtilCompat.MODULE_MIDI_QOL]: false,
+						},
+					},
+					isUseExtendedActiveEffectsParser: {
+						name: "Support Variables in Active Effect Values",
+						help: `Allows the use of roll syntax, and notably variables (such as "@abilities.dex.mod"), in active effect values.`,
+						default: true,
+						type: "boolean",
+						compatibilityModeValues: {
+							[UtilCompat.MODULE_DAE]: false,
+						},
+					},
+				},
+			},
+			rivet: {
+				name: "Rivet",
+				settings: {
+					targetActorId: {
+						name: "Target Actor",
+						help: `The ID of an actor to which Rivet content should be imported.`,
+						default: "",
+						type: "string",
+						isPlayerEditable: true,
+					},
+					isDisplayStatus: {
+						name: "Display Extension Detected",
+						help: `Adds a "paper plane" icon to the Foundry "anvil" logo in the top-left corner of the screen if Rivet is detected.`,
+						default: true,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+				},
+			},
+			artBrowser: {
+				name: "Art Browser",
+				settings: {
+					importImagesAs: {
+						name: "Drag-Drop Images As",
+						help: `The type of canvas object that should be created when drag-dropping images from the art browser to the canvas.`,
+						default: ConfigConsts.C_ART_IMAGE_MODE_TOKEN,
+						type: "enum",
+						values: [
+							{
+								value: ConfigConsts.C_ART_IMAGE_MODE_TOKEN,
+								name: "Tokens",
+							},
+							{
+								value: ConfigConsts.C_ART_IMAGE_MODE_TILE,
+								name: "Tiles",
+							},
+							{
+								value: ConfigConsts.C_ART_IMAGE_MODE_NOTE,
+								name: "Journal notes",
+							},
+							{
+								value: ConfigConsts.C_ART_IMAGE_MODE_SCENE,
+								name: "Scenes",
+							},
+						],
+					},
+					scale: {
+						name: "Tile/Scene Scaling",
+						help: `A factor by which to scale placed tiles, and by which to scale scene backgrounds.`,
+						default: 1.0,
+						type: "number",
+						min: 0.01,
+						max: 100,
+					},
+					...ConfigConsts._template_getSceneImportSettings(),
+					tokenSize: {
+						name: "Token Size",
+						help: `The default size of placed tokens.`,
+						default: 1,
+						type: "enum",
+						values: [
+							{
+								value: 1,
+								name: "Medium or smaller",
+							},
+							{
+								value: 2,
+								name: "Large",
+							},
+							{
+								value: 3,
+								name: "Huge",
+							},
+							{
+								value: 4,
+								name: "Gargantuan or larger",
+							},
+						],
+					},
+					isSwitchToCreatedScene: {
+						name: "Activate Scenes on Creation",
+						help: `If enabled, a scene will be activated upon creation (by drag-dropping an image to the canvas).`,
+						default: true,
+						type: "boolean",
+					},
+					isDisplaySheetCreatedScene: {
+						name: "Display Scene Sheets on Creation",
+						help: `If enabled, the "sheet" (i.e., configuration UI) for a scene will be shown upon creation (by drag-dropping an image to the canvas).`,
+						default: true,
+						type: "boolean",
+					},
+					artDirectoryPath: {
+						name: "User Art Directory",
+						help: `The sub-directory of the "User Data" directory where downloaded images and image packs will be saved.`,
+						default: "assets/art",
+						type: "string",
+						isNullable: true,
+					},
+					buttonDisplay: {
+						name: "Add Button To",
+						help: `The place(s) where the Art Browser button should be visible.`,
+						default: {
+							[ConfigConsts.C_ART_IMAGE_MODE_TOKEN]: true,
+							[ConfigConsts.C_ART_IMAGE_MODE_TILE]: true,
+							[ConfigConsts.C_ART_IMAGE_MODE_NOTE]: true,
+							[ConfigConsts.C_ART_IMAGE_MODE_SCENE]: true,
+						},
+						type: "multipleChoice",
+						choices: [
+							"Token scene controls",
+							"Tile scene controls",
+							"Note scene controls",
+							"Scene controls",
+						],
+					},
+					imageSaveMode: {
+						name: "Image Saving Mode",
+						help: `How images should be saved to the server. If "Default" is selected, an imported image will only be saved if it cannot be referenced via URL. If "Always" is selected, an imported image will be saved to the server, regardless of whether or not it can be referenced via URL. If "Never" is selected, an imported image will only be referenced by URL; if it cannot be referenced via URL, the import will fail. Note that saving images requires the Plutonium backend mod to be installed.`,
+						default: ConfigConsts.C_ART_IMAGE_SAVE_MODE__DEFAULT,
+						type: "enum",
+						values: [
+							{
+								value: ConfigConsts.C_ART_IMAGE_SAVE_MODE__DEFAULT,
+								name: `Default`,
+							},
+							{
+								value: ConfigConsts.C_ART_IMAGE_SAVE_MODE__ALWAYS,
+								name: `Always`,
+							},
+							{
+								value: ConfigConsts.C_ART_IMAGE_SAVE_MODE__NEVER,
+								name: `Never`,
+							},
+						],
+					},
+				},
+			},
+			journalEntries: {
+				name: "Journal Entries",
+				settings: {
+					isEnableUrlEmbeds: {
+						name: "Enable URL Entries",
+						help: `Add a "Set URL" context menu option to journal entry directory items, allowing the contents of the journal item to be replaced with embedded web content (Google Doc, reference page, YouTube video, etc.).`,
+						default: false,
+						type: "boolean",
+						compatibilityModeValues: {
+							[UtilCompat.MODULE_KANKA_FOUNDRY]: false,
+							[UtilCompat.MODULE_MONKS_ENHANCED_JOURNAL]: false,
+						},
+					},
+					isEnableJournalEmbeds: {
+						name: "Enable Journal Embeds",
+						help: `Add custom syntax to journal entries, which allows other journal entries to be embedded. This syntax is similar to that used to link a journal entry; simply prepend "Embed" to a content link. For example, "@JournalEntry[Entry Name]" would become "@EmbedJournalEntry[Entry Name]".`,
+						default: false,
+						type: "boolean",
+					},
+					isAutoExpandJournalEmbeds: {
+						name: "Auto-Expand Journal Embeds",
+						help: `If the "Enable Journal Embeds" option is enabled, this determines whether or not the embedded content is expanded by default.`,
+						default: true,
+						type: "boolean",
+					},
+				},
+			},
+			tools: {
+				name: "Tools",
+				settings: {
+					isDeduplicateIgnoreType: {
+						name: "Ignore Types When Deduplicating",
+						help: `If enabled, the Collection Deduplicator will ignore entity types, treating e.g. a PC sheet and an NPC sheet with the same name as a set of duplicates.`,
+						default: false,
+						type: "boolean",
+					},
+					minimumRolePolymorph: ConfigConsts._template_getMinimumRole({
+						name: "Minimum Permission Level for Polymorph Tool",
+						help: `Actor "Polymorph" buttons will be hidden for any user with a role less than the chosen role.`,
+					}),
+					minimumRoleActorTools: ConfigConsts._template_getMinimumRole({
+						name: "Minimum Permission Level for Other Actor Tools",
+						help: `Actor "Feature/Spell Cleaner," "Prepared Spell Mass-Toggler," etc. buttons will be hidden for any user with a role less than the chosen role.`,
+					}),
+					minimumRoleTableTools: ConfigConsts._template_getMinimumRole({
+						name: "Minimum Permission Level for Other Table Tools",
+						help: `Table "Row Cleaner" button will be hidden for any user with a role less than the chosen role.`,
+					}),
+				},
+			},
+			text: {
+				name: "Text and Tags",
+				settings: {
+					isEnableContentLinks: {
+						name: "Enable Content @tag Links",
+						help: `Add custom syntax to journal entries, which enables an approximation of 5etools @tag syntax. This syntax is of the form "@tagName[name|source|...]". For example, "@creature[goblin]{goblins!}" could be used to insert the link "goblins!" which, when clicked, would load a (temporary) Goblin actor via the importer. For a complete list of available tags, see the 5etools Renderer Demo page (https://5e.tools/renderdemo.html).`,
+						default: true,
+						type: "boolean",
+					},
+					isEnableHoverForLinkTags: {
+						name: `Enable Hover Popups for &quot;@tag&quot; Links`,
+						help: `If links rendered from @tag syntax should display popups when hovered.`,
+						default: false,
+						type: "boolean",
+						isReloadRequired: true,
+					},
+					isAutoRollActorEmbeddedDocumentTags: {
+						name: "Roll Items Linked by @ActorEmbeddedItem on Click",
+						help: `If enabled, clicking a rendered @ActorEmbeddedItem tag will roll the linked embedded item. If disabled, clicking the tag will open the item's sheet instead. Note that SHIFT-click will roll the linked embedded item in either case.`,
+						default: false,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+				},
+			},
+			misc: {
+				name: "Miscellaneous",
+				settingsAdvanced: {
+					isSkipBackendCheck: {
+						name: "Skip Backend Check",
+						help: `Avoid sending a network request during module initialisation to check if the modded Plutonium backend is installed.`,
+						default: false,
+						type: "boolean",
+						isPlayerEditable: true,
+					},
+				},
+			},
+			equipmentShop: {
+				name: "Equipment Shop",
+				settings: {
+					priceMultiplier: {
+						name: "Price Multiplier",
+						help: `A factor by which the prices in the equipment shop are multiplied.`,
+						default: 1.0,
+						type: "percentage",
+						min: 0.0001,
+					},
+					startingGold: {
+						name: "Class Starting Gold",
+						help: `A starting gold amount to use instead of a class's starting gold, when using the equipment shop during class creation.`,
+						default: null,
+						type: "number",
+						isNullable: true,
+					},
+					minimumRole: ConfigConsts._template_getMinimumRole({
+						name: "Minimum Permission Level",
+						help: `"Equipment Shop" button will be hidden for any user with a role less than the chosen role.`,
+					}),
+				},
+			},
+			dataSources: {
+				name: "Data Sources",
+				settings: {
+					isEnableSourceSelection: {
+						name: "Enable Data Source Filtering",
+						help: `Whether or not ${ConfigConsts._STR_DATA_SOURCES} are filtered down to only those chosen in the "World Data Source Selector" application.`,
+						default: false,
+						type: "boolean",
+						isReloadRequired: true,
+					},
+					isPlayerForceSelectAllowedSources: {
+						name: "Force Select All for Players",
+						help: `Whether or not all available ${ConfigConsts._STR_DATA_SOURCES} are forcibly selected for players. Note that this can seriously degrade performance for players if data source filtering is not also enabled.`,
+						default: false,
+						type: "boolean",
+						isReloadRequired: true,
+					},
+					isGmForceSelectAllowedSources: {
+						name: "Force Select All for GMs",
+						help: `Whether or not all available ${ConfigConsts._STR_DATA_SOURCES} are forcibly selected for GMs. Note that this can seriously degrade performance for GMs if data source filtering is not also enabled.`,
+						default: false,
+						type: "boolean",
+						isReloadRequired: true,
+					},
+				},
+			},
+		};
+	}
+
+	static _DEFAULT_CONFIG_SORTED = null;
+	static getDefaultConfigSorted_ () {
+		return this._DEFAULT_CONFIG_SORTED = this._DEFAULT_CONFIG_SORTED || Object.entries(this.getDefaultConfig_())
+			.sort(([, vA], [, vB]) => SortUtil.ascSortLower(vA.name, vB.name));
+	}
+
+	static _DEFAULT_CONFIG_SORTED_FLAT = null;
+	static getDefaultConfigSortedFlat_ () {
+		if (this._DEFAULT_CONFIG_SORTED_FLAT) return this._DEFAULT_CONFIG_SORTED_FLAT;
+
+		return this._DEFAULT_CONFIG_SORTED_FLAT = this._DEFAULT_CONFIG_SORTED_FLAT || this.getDefaultConfigSorted_()
+			.map(([groupKey, group]) => {
+				const flatGroup = {};
+				this._KEYS_SETTINGS_METAS.forEach(keySettings => {
+					Object.entries(group[keySettings] || {})
+						.forEach(([key, meta]) => {
+							flatGroup[key] = meta;
+						});
+				});
+				return [groupKey, flatGroup];
+			});
+	}
+
+	// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	/**
+	 * @return An array of the form:
+	 *
+	 * ```
+	 * [
+	 * 	["importCreature", "additionalDataCompendium"],
+	 * 	["importCreature", "additionalDataCompendiumFeatures"],
+	 * 	["importVehicle", "additionalDataCompendium"],
+	 * 	...
+	 * ]
+	 * ```
+	 */
+	static getCompendiumPaths () {
+		const out = [];
+		Object.entries(this.getDefaultConfig_())
+			.forEach(([groupKey, group]) => {
+				this._KEYS_SETTINGS_METAS.forEach(prop => {
+					if (!group[prop]) return;
+
+					Object.entries(group[prop])
+						.forEach(([key, meta]) => {
+							if (meta.typeSub !== "compendiums") return;
+
+							out.push([groupKey, key]);
+						});
+				});
+			});
+		return out;
+	}
+}
+
+ConfigConsts._STR_DATA_SOURCES = `"data sources" (e.g. those displayed in the Import Wizard)`;
+
+ConfigConsts._KEYS_SETTINGS_METAS = ["settings", "settingsHacks", "settingsAdvanced"];
+
+ConfigConsts._TEMPLATE_ENTITY_PERMISSIONS = {
+	name: "Default Permissions",
+	default: 0,
+	type: "enum",
+};
+
+ConfigConsts._TEMPALTE_MINIMUM_ROLE = {
+	default: 0,
+	type: "enum",
+	isReloadRequired: true,
+};
+
+// region Metric
+ConfigConsts._DISP_METRIC_POUNDS = `1 pound \u2248 0.5 kilograms`;
+ConfigConsts._DISP_METRIC_FEET = `5 feet \u2248 1.5 metres`;
+ConfigConsts._DISP_METRIC_MILES = `1 mile \u2248 1.6 kilometres`;
+// endregion
+
+// region Compendiums
+ConfigConsts.SRD_COMPENDIUMS_CREATURES = ["dnd5e.monsters"];
+ConfigConsts.SRD_COMPENDIUMS_CREATURE_FEATURES = ["dnd5e.monsterfeatures"];
+ConfigConsts.SRD_COMPENDIUMS_CLASSES = ["dnd5e.classes"];
+ConfigConsts.SRD_COMPENDIUMS_SUBCLASSES = ["dnd5e.subclasses"];
+ConfigConsts.SRD_COMPENDIUMS_CLASS_FEATURES = ["dnd5e.classfeatures"];
+ConfigConsts.SRD_COMPENDIUMS_ITEMS = ["dnd5e.items", "dnd5e.tradegoods"];
+ConfigConsts.SRD_COMPENDIUMS_SPELLS = ["dnd5e.spells"];
+ConfigConsts.SRD_COMPENDIUMS_OPTIONAL_FEATURES = ["dnd5e.classfeatures"];
+ConfigConsts.SRD_COMPENDIUMS_RACES_AND_FEATURES = ["dnd5e.races"];
+ConfigConsts.SRD_COMPENDIUMS_BACKGROUNDS_AND_FEATURES = ["dnd5e.backgrounds"];
+ConfigConsts.SRD_COMPENDIUMS_TABLES = ["dnd5e.tables"];
+// endregion
+
+// region Constants
+ConfigConsts.C_ART_IMAGE_MODE_TOKEN = 0;
+ConfigConsts.C_ART_IMAGE_MODE_TILE = 1;
+ConfigConsts.C_ART_IMAGE_MODE_NOTE = 2;
+ConfigConsts.C_ART_IMAGE_MODE_SCENE = 3;
+
+ConfigConsts.C_ART_IMAGE_SAVE_MODE__DEFAULT = 0;
+ConfigConsts.C_ART_IMAGE_SAVE_MODE__ALWAYS = 1;
+ConfigConsts.C_ART_IMAGE_SAVE_MODE__NEVER = 2;
+
+ConfigConsts.C_IMPORT_DEDUPE_MODE_NONE = 0;
+ConfigConsts.C_IMPORT_DEDUPE_MODE_SKIP = 1;
+ConfigConsts.C_IMPORT_DEDUPE_MODE_OVERWRITE = 2;
+
+ConfigConsts.C_IMPORT_DRAG_DROP_MODE_NEVER = 0;
+ConfigConsts.C_IMPORT_DRAG_DROP_MODE_PROMPT = 1;
+ConfigConsts.C_IMPORT_DRAG_DROP_MODE_ALWAYS = 2;
+
+ConfigConsts.C_CREATURE_NAMETAGS_CR = 0;
+ConfigConsts.C_CREATURE_NAMETAGS_TYPE = 1;
+ConfigConsts.C_CREATURE_NAMETAGS_TYPE_WITH_TAGS = 2;
+
+ConfigConsts.C_SPELL_POINTS_MODE__DISABLED = 0;
+ConfigConsts.C_SPELL_POINTS_MODE__ENABLED = 1;
+ConfigConsts.C_SPELL_POINTS_MODE__ENABLED_AND_UNLIMITED_SLOTS = 2;
+
+ConfigConsts.C_SPELL_POINTS_RESOURCE__SHEET_ITEM = "sheetItem";
+ConfigConsts.C_SPELL_POINTS_RESOURCE__ATTRIBUTE_CUSTOM = "attributeCustom";
+
+ConfigConsts.C_ITEM_ATTUNEMENT_NONE = 0;
+ConfigConsts.C_ITEM_ATTUNEMENT_REQUIRED = 1;
+ConfigConsts.C_ITEM_ATTUNEMENT_ATTUNED = 2;
+
+ConfigConsts.C_ITEM_ATTUNEMENT_NEVER = 0;
+ConfigConsts.C_ITEM_ATTUNEMENT_SMART = 1;
+ConfigConsts.C_ITEM_ATTUNEMENT_ALWAYS = 2;
+
+ConfigConsts.C_USE_GAME_DEFAULT = "VE_USE_GAME_DEFAULT";
+ConfigConsts.C_USE_PLUT_VALUE = "VE_USE_MODULE_VALUE";
+ConfigConsts.C_BOOL_DISABLED = 0;
+ConfigConsts.C_BOOL_ENABLED = 1;
+
+ConfigConsts.C_IMPORT_ADVBOOK_JOURNAL_SPLIT_STRATEGY_CHAPTER = 0;
+ConfigConsts.C_IMPORT_ADVBOOK_JOURNAL_SPLIT_STRATEGY_CONTENTS = 1;
+ConfigConsts.C_IMPORT_ADVBOOK_JOURNAL_SPLIT_STRATEGY_HEADINGS = 2;
+
+ConfigConsts.C_TOKEN_NPC_HP_ROLL_MODE_NONE = 0;
+ConfigConsts.C_TOKEN_NPC_HP_ROLL_MODE_STANDARD = 1;
+ConfigConsts.C_TOKEN_NPC_HP_ROLL_MODE_GM = 2;
+ConfigConsts.C_TOKEN_NPC_HP_ROLL_MODE_BLIND = 3;
+ConfigConsts.C_TOKEN_NPC_HP_ROLL_MODE_SELF = 4;
+ConfigConsts.C_TOKEN_NPC_HP_ROLL_MODE_HIDDEN = 5;
+ConfigConsts.C_TOKEN_NPC_HP_ROLL_MODE_MIN = 6;
+ConfigConsts.C_TOKEN_NPC_HP_ROLL_MODE_MAX = 7;
+// endregion
+
+export {ConfigConsts};

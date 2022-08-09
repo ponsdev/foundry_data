@@ -1,0 +1,53 @@
+<!-- TODO: Localization -->
+<div class="tab-container" data-type="create">
+
+    <div class="template-drop">
+
+        <div class="help">
+            <p>Drop an item here to set the template; press <i>Forge</i> when you're done</p>
+            <a class="item-control inventory-browse" title="Open Inventory Browser" data-type="weapon"><i class="fas fa-search"></i></a>
+        </div>
+
+        <div class="item">
+            {{#if create.template }}
+                <div class="item-link">
+                    <img class="profile item-profile" src="{{ create.template.img }}"/>
+                    {{{ enrichHTML create.templateLink }}}
+                </div>
+            {{else}}
+                <div class="item-link">
+                    <img class="profile item-profile" src="systems/pf2e/icons/default-icons/weapon.svg"/>
+                    <h4 class="entity-name">Waiting for template...</h4>
+                </div>
+            {{/if}}
+        </div>
+
+    </div>
+
+    <div class="create-settings">
+
+        {{#if (eq create.type "weapon")}}
+            {{> modules/pf2e-lootgen/templates/loot-app/tabs/create/weapon.html }}
+        {{/if}}
+
+        {{#if (eq create.type "armor")}}
+            {{> modules/pf2e-lootgen/templates/loot-app/tabs/create/armor.html }}
+        {{/if}}
+
+        {{#if (eq create.type "buckler")}}
+            {{> modules/pf2e-lootgen/templates/loot-app/tabs/create/shield.html }}
+        {{/if}}
+        {{#if (eq create.type "shield")}}
+            {{> modules/pf2e-lootgen/templates/loot-app/tabs/create/shield.html }}
+        {{/if}}
+        {{#if (eq create.type "tower")}}
+            {{> modules/pf2e-lootgen/templates/loot-app/tabs/create/shield.html }}
+        {{/if}}
+
+    </div>
+
+    <div class="create-item">
+        <button id="create-item" {{#if create.template }}{{else}}disabled{{/if}}>Forge</button>
+    </div>
+
+</div>

@@ -50,23 +50,39 @@
 
     {{#if isItem}}
     <div class="form-group">
-      <label>{{ localize "dae.Transfer" }}</label>
+      <label>{{ localize "dae.transfer.Name" }}</label>
       <input type="checkbox" name="transfer" {{ checked effect.transfer }} />
     </div>
+    {{ localize "dae.transfer.Hint" }}
+
+    
+    <div class="form-group">
+      <label>{{ localize "dae.SelfTarget.Name" }}</label>
+      <input type="checkbox" name="flags.dae.selfTarget" {{ checked effect.flags.dae.selfTarget }} />
+    </div>
+    {{ localize "dae.SelfTarget.Hint" }}
+
     {{/if}}
+
+    <div class="form-group">
+      <label>{{ localize "dae.forceToHud.Name" }}</label>
+      <div class="form-fields">
+        <input type="text" name="flags.core.statusId" value="{{ effect.flags.core.statusId }}" />
+      </div>
+    </div>
+    {{ localize "dae.forceToHud.Hint" }}
 
     {{#if isItem}}
     <div class="form-group">
-      <label>{{ localize "dae.Stackable" }}</label>
-      <input type="checkbox" name="flags.dae.stackable" {{ checked effect.flags.dae.stackable }} />
-    </div>
-    {{/if}}
-    <div class="form-group">
-      <label>{{ localize "EFFECT.Origin" }} ({{ sourceName }})</label>
+      <label>{{localize "dae.Stackable"}}</label>
       <div class="form-fields">
-        <input type="text" name="origin" value="{{ effect.origin }}" disabled />
+        <select name="flags.dae.stackable" data-dtype="String">
+          {{selectOptions stackableOptions selected=effect.flags.dae.stackable}}
+        </select>
       </div>
     </div>
+    {{/if}}
+   
   </section>
 
   <!-- Duration Tab -->
@@ -77,6 +93,15 @@
         <input type="number" name="duration.seconds" value="{{ effect.duration.seconds }}" />
       </div>
     </div>
+
+    {{#if isItem}}
+    <div class="form-group">
+      <label>{{ localize "dae.DurationExpression" }}</label>
+      <div class="form-fields">
+        <input type="text" name="flags.dae.durationExpression" value="{{ effect.flags.dae.durationExpression }}" />
+      </div>
+    </div>
+    {{/if}}
     {{#if startTimeString}}
     <div>
       {{ startTimeString }}
@@ -186,11 +211,19 @@
             </select>
           </div>
         </div>
+        {{#if change.modes}}
         <div class="mode" style="width:80px">
           <select name="changes.{{i}}.mode" data-dtype="Number" style="width:80px">
             {{selectOptions change.modes selected=change.mode}}
           </select>
         </div>
+        {{else}}
+        <div class="mode" style="width:80px">
+          <select name="changes.{{i}}.mode" data-dtype="Number" style="width:80px">
+            {{selectOptions ../modes selected=change.mode}}
+          </select>
+        </div>
+        {{/if}}
         {{#if change.options}}
         <div class="value">
           <select name="changes.{{i}}.value" data-dtype="String">
@@ -198,9 +231,10 @@
           </select>
         </div>
         {{else}}
-        <div class="value">
-          <input type="text" style="width:25-px" name="changes.{{i}}.value" value="{{change.value}}" />
+        <div class="value flex-grow">
+          <textarea rows="1" name="changes.{{i}}.value">{{change.value}}</textarea>
         </div>
+
         {{/if}}
         <div class="priority">
           <input type="text" name="changes.{{i}}.priority" value="{{change.priority}}" />

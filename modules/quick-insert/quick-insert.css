@@ -1,4 +1,4 @@
-.quick-insert {
+.quick-insert-app {
   position: absolute;
   display: flex;
   width: 300px;
@@ -13,7 +13,7 @@
   overflow: hidden;
 }
 
-.quick-insert .search-editable-input {
+.quick-insert-app .search-editable-input {
   font-size: 110%;
   background: #ddd;
   white-space: nowrap;
@@ -26,14 +26,14 @@
   padding-left: 3px;
 }
 
-.quick-insert .search-editable-input span {
+.quick-insert-app .search-editable-input span {
   -webkit-user-select: text;
   -moz-user-select: text;
   -ms-user-select: text;
   user-select: text;
 }
 
-.quick-insert .search-editable-input span.search-tag {
+.quick-insert-app .search-editable-input span.search-tag {
   user-select: all;
   background: #454159;
   color: #f0f0e0;
@@ -46,11 +46,11 @@
   vertical-align: bottom;
 }
 
-.quick-insert .search-editable-input span.search-tag::selection {
+.quick-insert-app .search-editable-input span.search-tag::selection {
   background: #222;
 }
 
-.quick-insert .search-editable-input br {
+.quick-insert-app .search-editable-input br {
   display: none;
 }
 
@@ -211,13 +211,13 @@
   align-items: center;
 }
 
-.quick-insert .search-selected a,
+.quick-insert-app .search-selected a,
 .quick-insert-result li a:hover {
   background: #d6d5ca;
   text-shadow: none;
 }
 
-.quick-insert .search-selected a:hover {
+.quick-insert-app .search-selected a:hover {
   background: #c4c2b0;
 }
 
@@ -585,6 +585,9 @@
 .dnd5e.sheet.actor .inventory-list .item-controls {
   flex: 0 0 55px;
 }
+.dnd5e.sheet .items-list .item-controls a {
+  white-space: nowrap;
+}
 
 .tidy5e.sheet.actor
   .inventory-list
@@ -610,6 +613,13 @@
 
 .swade.actor .header-field-add .quick-insert-link {
   margin-left: 5px;
+}
+
+.swade-official .section-header .quick-insert-link {
+  grid-column: 3;
+  font-size: 75%;
+  display: flex;
+  align-items: center;
 }
 
 .app.window-app.sheet.wfrp4e.actor
@@ -687,4 +697,11 @@
 .sfrpg.sheet.actor .inventory-list .crew-header .crew-controls a.crew-create,
 .sfrpg.sheet.actor .crew-list .crew-header .crew-controls a.crew-create {
   flex-shrink: 1;
+}
+
+.demonlord .features .header .edit {
+  width: 36px;
+}
+.demonlord .item-controls .quick-insert-link {
+  margin-left: 2px;
 }

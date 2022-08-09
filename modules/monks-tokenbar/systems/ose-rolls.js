@@ -10,17 +10,29 @@ export class OSERolls extends BaseRolls {
             { id: "save", text: i18n("MonksTokenBar.SavingThrow"), groups: this.config.saves_long }
         ].concat(this._requestoptions);
 
+        /*
         this._defaultSetting = mergeObject(this._defaultSetting, {
             stat1: "ac.value"
-        });
+        });*/
     }
 
     get _supportedSystem() {
         return true;
     }
 
+    getXP(actor) {
+        return {
+            value: actor.data.data.details.xp.value,
+            max: actor.data.data.details.xp.next
+        };
+    }
+
+    get defaultStats() {
+        return [{ stat: "ac.value", icon: "fa-shield-alt" }];
+    }
+
     defaultRequest(app) {
-        let allPlayers = (app.tokens.filter(t => t.actor?.hasPlayerOwner).length == app.tokens.length);
+        let allPlayers = (app.entries.filter(t => t.actor?.hasPlayerOwner).length == app.entries.length);
         return (allPlayers ? 'scores:str' : null);
     }
 
@@ -28,9 +40,9 @@ export class OSERolls extends BaseRolls {
         return 'scores:str';
     }
 
-    roll({ id, actor, request, requesttype, fastForward = false }, callback, e) {
+    roll({ id, actor, request, rollMode, requesttype, fastForward = false }, callback, e) {
         let rollfn = null;
-        let options = { fastForward: fastForward, chatMessage: false, event: e };
+        let options = { rollMode: rollMode, fastForward: fastForward, chatMessage: false, event: e };
         if (requesttype == 'scores') {
             rollfn = actor.rollCheck;
         } else if (requesttype == 'save') {
@@ -51,12 +63,12 @@ export class OSERolls extends BaseRolls {
     async assignXP(msgactor) {
         let actor = game.actors.get(msgactor.id);
         await actor.update({
-            "data.details.xp.value": actor.data.data.details.xp.value + msgactor.xp
+            "data.details.xp.value": parseInt(actor.data.data.details.xp.value) + parseInt(msgactor.xp)
         });
 
         if (setting("send-levelup-whisper") && actor.data.data.details.xp.value >= actor.data.data.details.xp.next) {
             ChatMessage.create({
-                user: game.user._id,
+                user: game.user.id,
                 content: i18n("MonksTokenBar.Levelup"),
                 whisper: ChatMessage.getWhisperRecipients(actor.data.name)
             }).then(() => { });

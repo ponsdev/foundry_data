@@ -469,7 +469,14 @@
   text-transform: uppercase;
 }
 
-.dice-tray button.dice-tray__advantage:hover, .dice-tray button.dice-tray__advantage.active {
+.dice-tray button.dice-tray__advantage:hover {
+  color: #0a9843;
+  border-color: #0a9843;
+  -webkit-box-shadow: 0 0 6px inset #0a9843;
+  box-shadow: 0 0 6px inset #0a9843;
+}
+
+.dice-tray button.dice-tray__advantage.active {
   background: #0a9843;
   -webkit-box-shadow: 0 0 6px inset #0a9843;
   box-shadow: 0 0 6px inset #0a9843;
@@ -477,11 +484,40 @@
   color: #fff;
 }
 
-.dice-tray button.dice-tray__disadvantage:hover, .dice-tray button.dice-tray__disadvantage.active {
+.dice-tray button.dice-tray__advantage.active:hover {
+  -webkit-box-shadow: 0 0 6px inset #fff;
+  box-shadow: 0 0 6px inset #fff;
+  border-color: #fff;
+}
+
+.dice-tray button.dice-tray__disadvantage:hover {
+  color: #ff6400;
+  border-color: #ff6400;
+  -webkit-box-shadow: 0 0 6px inset #ff6400;
+  box-shadow: 0 0 6px inset #ff6400;
+}
+
+.dice-tray button.dice-tray__disadvantage.active {
   background: #ff6400;
   -webkit-box-shadow: 0 0 6px inset #ff6400;
   box-shadow: 0 0 6px inset #ff6400;
   color: #fff;
+}
+
+.dice-tray button.dice-tray__disadvantage.active:hover {
+  -webkit-box-shadow: 0 0 6px inset #fff;
+  box-shadow: 0 0 6px inset #fff;
+  border-color: #fff;
+}
+
+.dice-tray button.dice-tray__dicechain {
+  font-size: 10px;
+  height: 17px;
+  -webkit-box-flex: 17px;
+  -ms-flex: 17px;
+  flex: 17px;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .dice-tray button svg {

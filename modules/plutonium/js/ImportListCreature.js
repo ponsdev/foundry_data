@@ -1,1 +1,2592 @@
-const _0x4ae8=['isImportBio','creature','sourceLong','_plut_isLegendaryResistance','lower','formula','every','\x20+\x20@mod','activateListeners','_pCr','prop','escapeRegexp','permissions','monTypeToFullObj','isEquipped','_getSpellCount','Type\x20(With\x20Tags)','titleSearch','updateEntity','_pImportEntry_pFillItems_pLairActions','_postLoadVetools','_$btnReset','SOURCE_TYP_ARCANA','_pack','will','max','_page','getSourceWithPagePart','_pImportEntry_pFillItems_pAddItem','_pImportEntry_pFillBase','bonusAc','sourceJsonToColor','_getSavingThrowData','SOURCE_TYP_BREW','name','con','findIndex','environment','_pImportEntry_fillData_Currency','[name=\x22sel-cr\x22]','rest','PRIORITY_BONUS','data','C_CREATURE_NAMETAGS_TYPE_WITH_TAGS','str','details','_pImportEntry_fillData_Spells','_pTypes','alignmentListToFull','fnPreProcess','perm','day','importCreature','sourceShort','pGetAllCreatures','btn-run-mods','group','lair','.search','829068tysjhS','MODULE_NAME_FAKE','pGetCreatureIndex','action','SOURCE_TYP_CUSTOM','Lair\x20Action','headerEntries','assumedPb','isImportBioImages','Miscellaneous','getDamagePartsAndOtherFormula','filter','getFolderPathMeta','5etools-creatures','close','Failed\x20to\x20find\x20sheet\x20item\x20for\x20item\x20\x22','_getActorSheetName','absorbFnBindListeners','med','getEntryDescription','C_CREATURE_NAMETAGS_TYPE','spells','constant','skills','copy','includes','/template/ImportListCreatureScaleRename.handlebars','biography','spellLevel','mergeMap','sortMonsters','val','get','actor','_pImportEntry_fillData_Resources','string','toTitleCase','target','traits','_pFnPostProcessEntries','innate','DataSourceFile','attributes','mutateForFilters','ability','walk','asText','_isSkipFolder','find','[data-name=\x22wrp-btns-sort\x22]','_content','truesight','URL_TO_HASH_BUILDER','276961ymIFUG','join','Legendary\x20Actions','bardingType','initBtnSortHandlers','split','_initAssumedPb','dex','getMovement','_pImportEntry_pGetFolderId','SOURCES_ADVENTURES','hover','custom','doHookSpellLinkRender','_pImportEntry_pFillData_Attributes','getLegendaryActionIntro','_getAbsorbListItemOpts','entries','spellClass','DataSourceUrl','_pImportEntry_fillData_Skills','Upload\x20File','following\x20breath\x20weapon','_pImportEntry_pFillItems_lairActions_addLairAction','[name=\x22btn-reset\x22]','map','pGetChooseImporterUserDataForSources','Unknown\x20CR','_vCr','dexterityMax','average','pWithPlugin','_list','pGetTraitReactionLegendaryImage','isSingletonSource_officialAdventure','ABIL_ABVS','stringify','VET_SIZE_TO_ABV','1hrMvuI','senses','spellDc','pact','pGetParsedAction','entry','943403XFVPOB','</div>','blindsight','uid','_pageFilter','pGetItemItem','sort','Actor','size','isStreamerMode','legendary','class','_pImportEntry_pFillItems_pInventory','pCacheAndGetHash','_userData','_getRenamedMon','toLowerCase','set','items','CR_CUSTOM','monCrToFull','cha','list','push','spellAbility','\x20or\x20','_pImportEntry_pFillItems_pTraitsReactionsLegendaries','MODULE_LOCATION','special','text-center','_initSpellcasterData','forEach','isUseTokenImageAsPortrait','monster','absorbFnBindListenersRadio','nameTags','link','Breath\x20Weapons:\x20','spelldc','number','getMaxWindowHeight','Custom\x20URL','length','_pImportEntry_pGetImportMetadata','_getFolderTypeWithTags','Type','attribute','lairActions','_getFolderCr','substring','_displayName','render','legres','mon','[name=\x22ipt-rename\x22]','legendaryMeta','_pImportEntry_pFillItems_pActions','startsWith','2493378lPQWKn','resources','ascSort','_dataList','ACTIVE_EFFECT_MODES','replace','/media/icon/mighty-force.svg','resources.legres.value','_pImportEntry_fillData_Abilities','exec','_getCasterClassFromEntry','reset','alias','ADD','charges','PG_ITEMS','sourceJsonToAbv','source','monsterFluff','updateEmbeddedEntity','add','daily','_pImportEntry_pFillItems_addTextOnlyItem','_pImportEntry_pFillItems_pLegendaryHeader','_getLairActionName','getItemActorPassive','isAddActiveEffects','Lair\x20Actions','_isUseMods','speed','type','_pImportEntry_pFillItems_pSpellcasting','_resolve','_WALER_RENAME','Name','_isRadio','feat','style','doAbsorbItems','_titleSearch','pGetSpellHashToItemPosMapAndFillSpells','.veapp__list','Eye\x20Ray:\x20','flags','Creatures','currency','permission','_pImportEntry_pFillItems_pRegionalEffects','data/bestiary/','min','Source','scale','bind','MODULE_NAME','_pImportEntry_fillData_Traits','weekly','getValues','joinConjunct','_getFolderType','_pImportEntry_pFillData_Attributes_Ac','postItemItemUpdates','_pImportEntry_pFillItems_pAction','_numberCleanRegexp','_plut_cleanName','trim','filterBox','ImportEntryOpts','_getItemHashesFromAcItem','<div>','bonus','_plut_legActions','crToXpNumber','_id','click','getData','spellcasting','237293RNiqIK','_tmpItemId','movement','alignment','79900ifIGRg','variant','from','darkvision','pGetLairActionImage','int','PG_BESTIARY','has','pGetSpellcastingImage','keys','uppercaseFirst','stripTags','actors','data.attributes.ac.value','ScaleRename','npc','_getDamageTuplesWithMod','trait','fluff','item','warn','_pImportEntry_pFillItems','getMetaGroup','pAddActorItems','_getBiographyValue','Other\x20AC\x20Bonus','([^a-zA-Z0-9]|$)','getAbilityModNumber','crToNumber','isTemp','postProcessFluff','effects','importItem','_getItemHashesFromString','_getCasterLevelFromEntry','getCreatureUrl','OwnedItem','test','tremorsense','_pImportEntry_pFillItems_getSubActions','SOURCE_TYP_OFFICIAL_SINGLE','_pImportEntry_fillData_Details','reaction','languages','_pImportEntry_pFillItems_pSpellcasting_recharge','constructor','pGetFluff','247332hJmTRl','absorbFnGetData','getParsedActionEntryData','resources.legact.value'];const _0x5416=function(_0x1db088,_0x5d5ea5){_0x1db088=_0x1db088-0x10b;let _0x4ae8b5=_0x4ae8[_0x1db088];return _0x4ae8b5;};const _0x14efab=_0x5416;(function(_0x48a1c7,_0x2db47f){const _0x1d83d4=_0x5416;while(!![]){try{const _0x29625e=parseInt(_0x1d83d4(0x1bc))+-parseInt(_0x1d83d4(0x22a))+-parseInt(_0x1d83d4(0x1eb))+-parseInt(_0x1d83d4(0x1b8))+-parseInt(_0x1d83d4(0x132))+parseInt(_0x1d83d4(0x25f))*parseInt(_0x1d83d4(0x12c))+parseInt(_0x1d83d4(0x16c));if(_0x29625e===_0x2db47f)break;else _0x48a1c7['push'](_0x48a1c7['shift']());}catch(_0x3071ad){_0x48a1c7['push'](_0x48a1c7['shift']());}}}(_0x4ae8,0x90cf7));import{ImportListActor}from'./ImportListActor.js';import{Vetools}from'./Vetools.js';import{Util,LGT}from'./Util.js';import{UtilActors}from'./UtilActors.js';import{DataConverter}from'./DataConverter.js';import{DataConverterItem}from'./DataConverterItem.js';import{SharedConsts}from'../shared/SharedConsts.js';import{Config}from'./Config.js';import{UtilList2}from'./UtilList2.js';import{DataConverterSpell}from'./DataConverterSpell.js';import{DataConverterCreature}from'./DataConverterCreature.js';import{UtilDataSource}from'./UtilDataSource.js';import{ConfigConsts}from'./ConfigConsts.js';import{DataConverterActor}from'./DataConverterActor.js';import{UtilActiveEffects}from'./UtilActiveEffects.js';class ImportListCreature extends ImportListActor{constructor(_0x1bc91f,_0x3a9565,_0x2c578a,_0x13b6e8){const _0x4b679a=_0x5416;_0x1bc91f=_0x1bc91f||{},_0x3a9565=_0x3a9565||{},_0x2c578a=_0x2c578a||{},_0x13b6e8=_0x13b6e8||{},super({'title':'Import\x20Creatures',..._0x3a9565},_0x1bc91f,{'props':[_0x4b679a(0x153)],'titleSearch':'creatures','sidebarTab':_0x4b679a(0x1c8),'gameProp':_0x4b679a(0x1c8),'defaultFolderPath':[_0x4b679a(0x198)],'folderType':_0x4b679a(0x139),'fnListSort':PageFilterBestiary[_0x4b679a(0x248)],'pageFilter':new PageFilterBestiary(),'isActorRadio':!![],'page':UrlUtil[_0x4b679a(0x1c2)],'isPreviewable':!![],'isModdable':!![],'isDedupable':!![],..._0x2c578a},{'actorType':_0x4b679a(0x1cb),..._0x13b6e8}),this[_0x4b679a(0x188)]=![];}async['pGetSources'](){const _0x3e7c06=_0x5416,_0x361250=await Vetools[_0x3e7c06(0x22c)]();return[new UtilDataSource['DataSourceSpecial'](Config[_0x3e7c06(0x24a)]('ui',_0x3e7c06(0x13b))?'SRD':'5etools',async()=>(await Vetools[_0x3e7c06(0x225)]())[_0x3e7c06(0x153)],{'cacheKey':_0x3e7c06(0x237),'filterTypes':[UtilDataSource['SOURCE_TYP_OFFICIAL_ALL']],'isDefault':!![]}),new UtilDataSource['DataSourceUrl'](_0x3e7c06(0x15b),'',{'filterTypes':[UtilDataSource[_0x3e7c06(0x22e)]]}),new UtilDataSource[(_0x3e7c06(0x253))](_0x3e7c06(0x11b),{'filterTypes':[UtilDataSource[_0x3e7c06(0x22e)]]}),...Object[_0x3e7c06(0x117)](_0x361250)[_0x3e7c06(0x11f)](([_0xfac629,_0x35ee64])=>new UtilDataSource[(_0x3e7c06(0x119))](Parser['sourceJsonToFull'](_0xfac629),Vetools[_0x3e7c06(0x1df)](_0x35ee64),{'source':_0xfac629,'pPostLoad':ImportListCreature[_0x3e7c06(0x203)][_0x3e7c06(0x1a0)](ImportListCreature,_0xfac629),'filterTypes':SourceUtil['isNonstandardSource'](_0xfac629)?[UtilDataSource[_0x3e7c06(0x205)]]:[UtilDataSource[_0x3e7c06(0x1e4)]]})),...(await Vetools['pGetHomebrewSources'](_0x3e7c06(0x1f0)))[_0x3e7c06(0x11f)](({name:_0x2c08ac,url:_0x2cfa0a})=>new UtilDataSource[(_0x3e7c06(0x119))](_0x2c08ac,_0x2cfa0a,{'filterTypes':[UtilDataSource[_0x3e7c06(0x210)]]}))];}static[_0x14efab(0x203)](_0x2d2789,_0x23a5ac){const _0x29187a=_0x14efab;return _0x23a5ac['filter'](_0x4a39e7=>_0x4a39e7[_0x29187a(0x17d)]===_0x2d2789);}async[_0x14efab(0x120)](_0x531d0f){const _0x4fe70f=_0x14efab;return{'isSingletonSource_officialAdventure':_0x531d0f[_0x4fe70f(0x15c)]===0x1&&_0x531d0f[0x0]['source']&&Parser[_0x4fe70f(0x110)][_0x4fe70f(0x1c3)](_0x531d0f[0x0][_0x4fe70f(0x17d)])};}async['_pPostFilterRender'](){const _0x1295c0=_0x14efab;if(!this[_0x1295c0(0x140)])return;const _0x3d27a4=this[_0x1295c0(0x140)][_0x1295c0(0x128)];this[_0x1295c0(0x140)]=null;if(!_0x3d27a4)return;const _0x1b99fb=_0x1295c0(0x233),_0x7f5cc9=this[_0x1295c0(0x136)][_0x1295c0(0x1ad)][_0x1295c0(0x1a4)]()[_0x1b99fb];this[_0x1295c0(0x136)][_0x1295c0(0x1ad)]['setFromValues']({[_0x1b99fb]:{...Object[_0x1295c0(0x117)](_0x7f5cc9)[_0x1295c0(0x235)](([_0x555a3d])=>!_0x555a3d[_0x1295c0(0x16b)]('_'))[_0x1295c0(0x247)](([_0x2d8515,_0x570397])=>({[_0x2d8515]:_0x570397})),'Adventure\x20NPC':0x0}});}[_0x14efab(0x1b6)](){const _0x31f616=_0x14efab;return{'isRadio':this[_0x31f616(0x18f)],'isPreviewable':this['_isPreviewable'],'titleButtonRun':this['_titleButtonRun'],'titleSearch':this[_0x31f616(0x193)],'buttonsAdditional':[{'name':_0x31f616(0x226),'text':'Import\x20with\x20CR\x20Scaling/Renames'}],'cols':[{'name':_0x31f616(0x18e),'width':0x4,'field':_0x31f616(0x211)},{'name':_0x31f616(0x15f),'width':0x5,'field':_0x31f616(0x18a)},{'name':'CR','width':0x1,'field':'cr','rowClassName':_0x31f616(0x14f)},{'name':_0x31f616(0x19e),'width':0x1,'field':_0x31f616(0x17d),'titleProp':_0x31f616(0x1f1),'displayProp':_0x31f616(0x224),'classNameProp':'sourceClassName','rowClassName':'text-center'}],'rows':this['_content'][_0x31f616(0x11f)]((_0x293400,_0x1db39e)=>{const _0x14f138=_0x31f616;return this[_0x14f138(0x136)][_0x14f138(0x1e9)][_0x14f138(0x255)](_0x293400),_0x293400[_0x14f138(0x122)]=_0x293400[_0x14f138(0x1f8)]||'—',{'name':_0x293400[_0x14f138(0x211)],'type':_0x293400['_pTypes'][_0x14f138(0x258)][_0x14f138(0x1c6)](),'cr':_0x293400[_0x14f138(0x122)],'source':_0x293400[_0x14f138(0x17d)],'sourceShort':Parser['sourceJsonToAbv'](_0x293400['source']),'sourceLong':Parser['sourceJsonToFull'](_0x293400[_0x14f138(0x17d)]),'sourceClassName':Parser[_0x14f138(0x20e)](_0x293400[_0x14f138(0x17d)]),'ix':_0x1db39e};})};}[_0x14efab(0x116)](){const _0x1c16f=_0x14efab;return{'fnGetName':_0x8e61c1=>_0x8e61c1[_0x1c16f(0x211)],'fnGetValues':_0x383137=>({'source':_0x383137[_0x1c16f(0x17d)],'type':_0x383137[_0x1c16f(0x21e)][_0x1c16f(0x258)],'cr':_0x383137[_0x1c16f(0x122)],'group':_0x383137[_0x1c16f(0x227)]||'','alias':(_0x383137[_0x1c16f(0x178)]||[])['map'](_0x20d3a8=>'\x22'+_0x20d3a8+'\x22')[_0x1c16f(0x260)](','),'hash':UrlUtil['URL_TO_HASH_BUILDER'][this[_0x1c16f(0x209)]](_0x383137)}),'fnGetData':UtilList2[_0x1c16f(0x1ec)],'fnBindListeners':_0x5379f1=>this[_0x1c16f(0x18f)]?UtilList2[_0x1c16f(0x154)](this[_0x1c16f(0x126)],_0x5379f1):UtilList2[_0x1c16f(0x23b)](this['_list'],_0x5379f1)};}['_activateListeners_absorbListItems'](){const _0x56f270=_0x14efab;this[_0x56f270(0x126)][_0x56f270(0x192)](this[_0x56f270(0x25c)],this[_0x56f270(0x116)]());}[_0x14efab(0x236)](){const _0xf9cc0c=_0x14efab;return{...super['getFolderPathMeta'](),'cr':{'label':'Challenge\x20Rating','getter':_0x47aab0=>this[_0xf9cc0c(0x1e9)][_0xf9cc0c(0x162)](_0x47aab0)},'type':{'label':_0xf9cc0c(0x15f),'getter':_0x3ee03f=>this[_0xf9cc0c(0x1e9)]['_getFolderType'](_0x3ee03f)},'typeTags':{'label':_0xf9cc0c(0x1ff),'getter':_0x582a4d=>this[_0xf9cc0c(0x1e9)][_0xf9cc0c(0x15e)](_0x582a4d)}};}static[_0x14efab(0x162)](_0x40bcd4){const _0x5ef21f=_0x14efab;return _0x40bcd4['cr']?_0x40bcd4['cr']['cr']||_0x40bcd4['cr']:_0x5ef21f(0x121);}static[_0x14efab(0x1a6)](_0x34bda6){const _0x10bd36=_0x14efab;return Parser[_0x10bd36(0x1fc)](_0x34bda6[_0x10bd36(0x18a)])['type'][_0x10bd36(0x24e)]();}static[_0x14efab(0x15e)](_0x2b3fa8){const _0x396233=_0x14efab;return Parser['monTypeToFullObj'](_0x2b3fa8[_0x396233(0x18a)])[_0x396233(0x258)]['uppercaseFirst']();}[_0x14efab(0x251)](_0x1176ae){if(!this['_isUseMods'])return _0x1176ae;return new Promise(_0x3d7c56=>{const _0x4cd883=_0x5416,_0x14c232=new ImportListCreature['ScaleRename'](_0x1176ae,_0x3d7c56,{'titleSearch':this[_0x4cd883(0x193)]});_0x14c232[_0x4cd883(0x165)](!![]);});}async[_0x14efab(0x15d)](_0x1b3ba7,_0x52474d,_0x2f295f){const _0x238724=_0x14efab,_0x454d7a={},_0x967401=await Renderer['utils'][_0x238724(0x1ea)]({'entity':_0x52474d,'pFnPostProcess':Renderer[_0x238724(0x153)][_0x238724(0x1da)][_0x238724(0x1a0)](null,_0x52474d),'fluffBaseUrl':_0x238724(0x19c),'fluffProp':_0x238724(0x17e)}),_0x227ae7=new ImportListCreature[(_0x238724(0x1ae))]({'actor':_0x1b3ba7,'mon':_0x52474d,'fluff':_0x967401});await this[_0x238724(0x20c)](_0x52474d,_0x454d7a,_0x227ae7['fluff'],{'isUseTokenImageAsPortrait':Config['get']('importCreature',_0x238724(0x152))}),_0x454d7a[_0x238724(0x219)]={};if(!this[_0x238724(0x259)]&&!_0x2f295f[_0x238724(0x1d9)]&&!this[_0x238724(0x206)]){const _0x375632=await this[_0x238724(0x10f)](_0x52474d);if(_0x375632)_0x454d7a['folder']=_0x375632;}return _0x454d7a[_0x238724(0x19a)]={'default':Config[_0x238724(0x24a)](_0x238724(0x223),_0x238724(0x1fb))},this[_0x238724(0x174)](_0x52474d,_0x454d7a['data'],_0x227ae7),await this[_0x238724(0x114)](_0x52474d,_0x454d7a,_0x227ae7),this[_0x238724(0x1e5)](_0x52474d,_0x454d7a[_0x238724(0x219)],_0x227ae7),this['_pImportEntry_fillData_Skills'](_0x52474d,_0x454d7a[_0x238724(0x219)],_0x227ae7),this[_0x238724(0x1a2)](_0x52474d,_0x454d7a[_0x238724(0x219)],_0x227ae7),this[_0x238724(0x215)](_0x52474d,_0x454d7a[_0x238724(0x219)],_0x227ae7),this['_pImportEntry_fillData_Spells'](_0x52474d,_0x454d7a[_0x238724(0x219)],_0x227ae7),this[_0x238724(0x24c)](_0x52474d,_0x454d7a[_0x238724(0x219)],_0x227ae7),await this['_pImportEntry_pFillToken'](_0x52474d,_0x454d7a,'importCreature'),{'dataBuilderOpts':_0x227ae7,'actorData':_0x454d7a};}[_0x14efab(0x23a)](_0x305ab0){const _0x1a59f0=_0x14efab,_0x5a4989=[DataConverter['getNameWithSourcePart'](_0x305ab0)],_0x235dc0=Config[_0x1a59f0(0x24a)](_0x1a59f0(0x223),_0x1a59f0(0x155));return Object['entries'](_0x235dc0)[_0x1a59f0(0x235)](([,_0x5c0ed2])=>_0x5c0ed2)[_0x1a59f0(0x151)](([_0x248ea5])=>{const _0x5cd661=_0x1a59f0;switch(Number(_0x248ea5)){case ConfigConsts['C_CREATURE_NAMETAGS_CR']:_0x5a4989[_0x5cd661(0x149)]('['+this[_0x5cd661(0x1e9)]['_getFolderCr'](_0x305ab0)+']');break;case ConfigConsts[_0x5cd661(0x23e)]:_0x5a4989[_0x5cd661(0x149)]('['+this[_0x5cd661(0x1e9)][_0x5cd661(0x1a6)](_0x305ab0)+']');break;case ConfigConsts[_0x5cd661(0x21a)]:_0x5a4989['push']('['+this['constructor']['_getFolderTypeWithTags'](_0x305ab0)+']');break;}}),_0x5a4989[_0x1a59f0(0x260)]('\x20');}async[_0x14efab(0x114)](_0x249fdf,_0x439365,_0x320e9c){const _0x32fece=_0x14efab,_0x4ec07f=_0x439365[_0x32fece(0x219)],_0x112d42={};let _0x217127=0xa;if(_0x249fdf['ac']&&_0x249fdf['ac'][_0x32fece(0x15c)]){const _0x69e3d=_0x249fdf['ac'][0x0];if(typeof _0x69e3d===_0x32fece(0x159))_0x217127=_0x69e3d;else{if(typeof _0x69e3d['ac']===_0x32fece(0x159))_0x217127=_0x69e3d['ac'];}_0x217127=await this[_0x32fece(0x1a7)](_0x249fdf,_0x439365,_0x320e9c,_0x217127,_0x69e3d);}_0x112d42['ac']={'min':0x0,'value':_0x217127};let _0x81ab42=0x0,_0x284fac='';if(_0x249fdf['hp']){if(_0x249fdf['hp'][_0x32fece(0x124)])_0x81ab42=_0x249fdf['hp'][_0x32fece(0x124)];if(_0x249fdf['hp'][_0x32fece(0x1f4)])_0x284fac=_0x249fdf['hp'][_0x32fece(0x1f4)];}_0x112d42['hp']={'value':_0x81ab42,'min':0x0,'max':_0x81ab42,'temp':0x0,'tempmax':0x0,'formula':_0x284fac},_0x112d42['init']={'value':0x0,'mod':0x0,'bonus':0x0,'total':Parser[_0x32fece(0x1d7)](_0x249fdf[_0x32fece(0x10d)]),'prof':0x0},_0x112d42['prof']=_0x320e9c['pb'],_0x112d42[_0x32fece(0x1ba)]=DataConverter[_0x32fece(0x10e)](_0x249fdf[_0x32fece(0x189)]),_0x112d42[_0x32fece(0x1b7)]=_0x320e9c['spellAbility'],_0x112d42[_0x32fece(0x158)]=_0x320e9c[_0x32fece(0x12e)],_0x112d42[_0x32fece(0x12d)]={'darkvision':0x0,'blindsight':0x0,'tremorsense':0x0,'truesight':0x0,'units':'ft','special':''},_0x112d42['senses'][_0x32fece(0x14e)]=(_0x249fdf['senses']||[])[_0x32fece(0x235)](_0x3f6614=>{const _0x2f34ce=_0x32fece;_0x3f6614=_0x3f6614['replace'](Parser[_0x2f34ce(0x1aa)],'');const _0x33d730=/(blindsight|darkvision|tremorsense|truesight)\s*(\d+)/i[_0x2f34ce(0x175)](_0x3f6614);if(!_0x33d730)return!![];const _0x573829=Number(_0x33d730[0x2]);switch(_0x33d730[0x1]){case _0x2f34ce(0x1bf):_0x112d42[_0x2f34ce(0x12d)]['darkvision']=_0x573829;break;case _0x2f34ce(0x134):_0x112d42['senses'][_0x2f34ce(0x134)]=_0x573829;break;case'tremorsense':_0x112d42[_0x2f34ce(0x12d)][_0x2f34ce(0x1e2)]=_0x573829;break;case'truesight':_0x112d42[_0x2f34ce(0x12d)][_0x2f34ce(0x25d)]=_0x573829;break;}return![];})[_0x32fece(0x260)](',\x20'),_0x4ec07f[_0x32fece(0x254)]=_0x112d42;}async[_0x14efab(0x1a7)](_0x37e8c6,_0x2be402,_0xddbd82,_0x56529f,_0x28822b){const _0x548465=_0x14efab;if(!_0x28822b[_0x548465(0x1be)])return _0x56529f;if(this['_pack'])return _0x56529f;const _0xef1837=this[_0x548465(0x1e9)]['_getItemHashesFromAcItem'](_0x28822b);if(!_0xef1837[_0x548465(0x15c)])return _0x56529f;const _0x2005d4=await this['_pImportEntry_pFillData_Attributes_Ac_getAcFromItemEffects'](_0x37e8c6,_0xef1837);_0x56529f!==_0x2005d4&&_0xddbd82[_0x548465(0x1db)]['push']({'label':_0x548465(0x1d5),'icon':'modules/'+SharedConsts[_0x548465(0x1a1)]+_0x548465(0x172),'changes':[{'key':_0x548465(0x1c9),'value':_0x56529f-_0x2005d4,'mode':CONST[_0x548465(0x170)][_0x548465(0x179)],'priority':UtilActiveEffects[_0x548465(0x218)]}],'disabled':![],'duration':{'startTime':null,'seconds':null,'rounds':null,'turns':null,'startRound':null,'startTurn':null},'origin':null,'tint':'','transfer':![],'flags':{}});if(!Config[_0x548465(0x24a)](_0x548465(0x1dc),_0x548465(0x186)))return _0x2005d4;return 0xa+Parser[_0x548465(0x1d7)](_0x37e8c6['dex']);}async['_pImportEntry_pFillData_Attributes_Ac_getAcFromItemEffects'](_0x2fceb0,_0x7f6279){const _0x4585a8=_0x14efab;let _0x4b115d=0xa,_0x4ff5fc=0x0,_0x176ed4=0x0;for(const _0x2a8d5e of _0x7f6279){const _0x3f7b56=await Renderer[_0x4585a8(0x111)][_0x4585a8(0x13f)](UrlUtil[_0x4585a8(0x17b)],_0x2a8d5e);if(!_0x3f7b56)continue;let _0x5c92c5=Number(_0x3f7b56[_0x4585a8(0x20d)]||0x0);if(isNaN(_0x5c92c5))_0x5c92c5=0x0;switch(_0x3f7b56[_0x4585a8(0x262)]||_0x3f7b56[_0x4585a8(0x18a)]){case'HA':{_0x4b115d=Math[_0x4585a8(0x208)](_0x4b115d,(_0x3f7b56['ac']||0xa)+_0x5c92c5);break;}case'MA':{const _0x2d13f9=_0x3f7b56['dexterityMax']===null?Number['MAX_SAFE_INTEGER']:_0x3f7b56[_0x4585a8(0x123)]!=null?_0x3f7b56['dexterityMax']:0x2;_0x4b115d=Math['max'](_0x4b115d,(_0x3f7b56['ac']||0xa)+Math[_0x4585a8(0x19d)](_0x2d13f9,Parser['getAbilityModNumber'](_0x2fceb0[_0x4585a8(0x10d)]||0xa))+_0x5c92c5);break;}case'LA':{_0x4b115d=Math[_0x4585a8(0x208)](_0x4b115d,(_0x3f7b56['ac']||0xa)+Parser[_0x4585a8(0x1d7)](_0x2fceb0[_0x4585a8(0x10d)]||0xa)+_0x5c92c5);break;}case'S':{_0x4ff5fc=Math['max'](_0x4ff5fc,0x2+_0x5c92c5);break;}default:{if(Config[_0x4585a8(0x24a)](_0x4585a8(0x1dc),_0x4585a8(0x186)))_0x176ed4+=_0x5c92c5;}}}return _0x4b115d+_0x4ff5fc+_0x176ed4;}[_0x14efab(0x1e5)](_0x412900,_0x374ec0,_0x151978){const _0x557caf=_0x14efab,_0x434f25={};_0x434f25[_0x557caf(0x1bb)]=_0x412900['alignment']?Parser[_0x557caf(0x21f)](_0x412900[_0x557caf(0x1bb)])['toLowerCase']():'',_0x434f25[_0x557caf(0x245)]={'value':this[_0x557caf(0x1d4)](_0x151978[_0x557caf(0x1ce)],{'isImportText':Config[_0x557caf(0x24a)](_0x557caf(0x223),_0x557caf(0x1ef)),'isImportImages':Config[_0x557caf(0x24a)]('importCreature',_0x557caf(0x232))})};_0x151978[_0x557caf(0x246)]||_0x151978[_0x557caf(0x118)]?_0x434f25[_0x557caf(0x13d)]={'level':_0x151978['spellLevel'],'name':_0x151978[_0x557caf(0x118)]}:_0x434f25[_0x557caf(0x13d)]={};_0x434f25[_0x557caf(0x246)]=_0x151978[_0x557caf(0x246)],_0x434f25['race']='',_0x434f25[_0x557caf(0x18a)]=Parser[_0x557caf(0x1fc)](_0x412900[_0x557caf(0x18a)])['asText'],_0x434f25[_0x557caf(0x214)]=_0x412900[_0x557caf(0x214)]?_0x412900['environment'][_0x557caf(0x138)](SortUtil['ascSortLower'])[_0x557caf(0x11f)](_0xae0e50=>_0xae0e50[_0x557caf(0x24e)]())['join'](',\x20'):'';const _0x18c42a=Parser[_0x557caf(0x1d8)](_0x412900['cr']);_0x434f25['cr']=_0x18c42a>=VeCt[_0x557caf(0x145)]?0x0:_0x18c42a,_0x434f25['xp']={'value':_0x412900['cr']?Parser[_0x557caf(0x1b3)](_0x412900['cr'])||0x0:0x0},_0x434f25[_0x557caf(0x17d)]=DataConverter[_0x557caf(0x20a)](_0x412900),_0x374ec0[_0x557caf(0x21c)]=_0x434f25;}[_0x14efab(0x11a)](_0x1f0caf,_0x3eca84,_0x2f5e7a){const _0x811e3b=_0x14efab;_0x3eca84[_0x811e3b(0x241)]=DataConverterCreature['getDataSkills'](_0x1f0caf,_0x3eca84,_0x2f5e7a);}[_0x14efab(0x1a2)](_0x24c427,_0x143d1d,_0x10f7eb){const _0x15923d=_0x14efab,_0x3a8484={};_0x3a8484[_0x15923d(0x13a)]=UtilActors[_0x15923d(0x12b)][_0x24c427[_0x15923d(0x13a)]]||_0x15923d(0x23c);const _0x1c1242=new Set();let _0x196b08=[];_0x24c427[_0x15923d(0x1e7)]&&_0x24c427[_0x15923d(0x1e7)][_0x15923d(0x151)](_0x209b7b=>{const _0x152977=_0x15923d,_0x37ccdf=UtilActors['VALID_LANGUAGES'][_0x209b7b[_0x152977(0x142)]()[_0x152977(0x1ac)]()];if(_0x37ccdf)_0x1c1242[_0x152977(0x180)](_0x37ccdf);else _0x1c1242[_0x152977(0x180)](_0x152977(0x112)),_0x196b08[_0x152977(0x149)](_0x209b7b);}),_0x3a8484['languages']={'value':[..._0x1c1242],'custom':_0x196b08[_0x15923d(0x235)](Boolean)[_0x15923d(0x260)](';\x20')},this['_pImportEntry_fillConditionsDamage'](_0x24c427,_0x3a8484),_0x143d1d[_0x15923d(0x250)]=_0x3a8484;}[_0x14efab(0x215)](_0x478070,_0x5cbadb,_0x45ac33){const _0x46f6b7=_0x14efab;_0x5cbadb[_0x46f6b7(0x199)]={'pp':0x0,'gp':0x0,'ep':0x0,'sp':0x0,'cp':0x0};}[_0x14efab(0x21d)](_0x3e589d,_0x1ee7c4,_0x2db0b2){_0x1ee7c4['spells']=DataConverterCreature['getDataSpells'](_0x3e589d,_0x1ee7c4,_0x2db0b2);}[_0x14efab(0x24c)](_0x147c9a,_0x1e69b8,_0x144985){const _0x195117=_0x14efab,_0x55ab4c={};let _0x409256=0x0;if(_0x147c9a[_0x195117(0x13c)])_0x409256=_0x147c9a['legendaryActions']||0x3;_0x55ab4c['legact']={'value':_0x409256,'max':_0x409256};let _0x521d05=0x0;if(_0x147c9a['trait']){const _0x2fa8a7=_0x147c9a[_0x195117(0x1cd)][_0x195117(0x25a)](_0x586e7b=>/legendary resistance/gi[_0x195117(0x1e1)](_0x586e7b[_0x195117(0x211)]||''));if(_0x2fa8a7){const _0x469b72=/\((\d+)\/Day\)/i['exec'](_0x2fa8a7[_0x195117(0x211)]);if(_0x469b72)_0x521d05=Number(_0x469b72[0x1]);}}_0x55ab4c[_0x195117(0x166)]={'value':_0x521d05,'max':_0x521d05},_0x55ab4c[_0x195117(0x228)]={'value':!!(_0x144985['legendaryMeta']&&_0x144985[_0x195117(0x169)]['lairActions']),'initiative':0x14},_0x1e69b8[_0x195117(0x16d)]=_0x55ab4c;}async[_0x14efab(0x1d1)](_0x259227,_0x2097a8,_0x5d5479,_0x3a7a8b){const _0x5c430e=_0x14efab;await this[_0x5c430e(0x16a)](_0x259227,_0x2097a8,_0x5d5479),await this[_0x5c430e(0x14c)](_0x259227,_0x2097a8,_0x5d5479,{'prop':_0x5c430e(0x1cd),'fnPreProcess':_0x19d4b4=>{const _0x42464c=_0x5c430e;if(!/legendary resistance/gi['test'](_0x19d4b4[_0x42464c(0x211)]||''))return;_0x19d4b4[_0x42464c(0x1f2)]=!![];}},{'consumeType':_0x396edb=>_0x396edb['_plut_isLegendaryResistance']?'attribute':null,'consumeTarget':_0x14a1e1=>_0x14a1e1[_0x5c430e(0x1f2)]?_0x5c430e(0x173):null,'consumeAmount':_0x3aa27a=>_0x3aa27a[_0x5c430e(0x1f2)]?0x1:null}),await this[_0x5c430e(0x14c)](_0x259227,_0x2097a8,_0x5d5479,{'prop':_0x5c430e(0x1b1)},{'activationType':_0x5c430e(0x1b1),'activationCost':0x1}),await this[_0x5c430e(0x14c)](_0x259227,_0x2097a8,_0x5d5479,{'prop':_0x5c430e(0x1e6)},{'activationType':_0x5c430e(0x1e6),'activationCost':0x1}),await this[_0x5c430e(0x183)](_0x259227,_0x2097a8,_0x5d5479),await this[_0x5c430e(0x14c)](_0x259227,_0x2097a8,_0x5d5479,{'prop':_0x5c430e(0x13c),'fnPreProcess':_0x5f37d6=>{const _0x2dd1cc=_0x5c430e;_0x5f37d6[_0x2dd1cc(0x1b2)]=0x1,_0x5f37d6[_0x2dd1cc(0x211)]&&(_0x5f37d6[_0x2dd1cc(0x211)]=_0x5f37d6[_0x2dd1cc(0x211)][_0x2dd1cc(0x171)](/\(costs (\d+) actions?\)/i,(..._0x28a049)=>{const _0x1950ff=_0x2dd1cc;return _0x5f37d6[_0x1950ff(0x1b2)]=Number(_0x28a049[0x1]),'';})['trim']());}},{'activationType':_0x5c430e(0x13c),'activationCost':_0x46bf21=>_0x46bf21[_0x5c430e(0x1b2)],'consumeType':_0x5c430e(0x160),'consumeTarget':_0x5c430e(0x1ee),'consumeAmount':_0x21a81a=>_0x21a81a['_plut_legActions']}),await this['_pImportEntry_pFillItems_pLairActions'](_0x259227,_0x2097a8,_0x5d5479),await this[_0x5c430e(0x19b)](_0x259227,_0x2097a8,_0x5d5479),await this['_pImportEntry_pFillItems_pInventory'](_0x259227,_0x2097a8,_0x5d5479);const _0xe7b753=_0x3a7a8b[_0x5c430e(0x1d9)]||this['_pack']!=null;await this[_0x5c430e(0x18b)](_0x259227,_0x2097a8,_0xe7b753,_0x5d5479),await UtilActors[_0x5c430e(0x1d3)](_0x5d5479[_0x5c430e(0x24b)],_0x5d5479['items'],_0xe7b753);}[_0x14efab(0x182)](_0x269009,_0x459763,_0x594cec,_0x3c1ee0,_0x595481){const _0xb53318=_0x14efab;_0x459763[_0xb53318(0x144)][_0xb53318(0x149)](DataConverter[_0xb53318(0x185)](_0x3c1ee0,{..._0x595481,'mode':_0xb53318(0x1f0),'pb':_0x459763[_0xb53318(0x231)],'entity':_0x269009,'source':_0x269009[_0xb53318(0x17d)],'actor':{'data':_0x594cec}}));}async['_pImportEntry_pFillItems_pLegendaryHeader'](_0x92528e,_0x38f607,_0x5c72aa){const _0x72b54=_0x14efab;let _0x2ef366=0x0;if(_0x92528e[_0x72b54(0x13c)])_0x2ef366=_0x92528e['legendaryActions']||0x3;if(!_0x2ef366)return;const _0x40e8ee=_0x72b54(0x1b0)+Renderer[_0x72b54(0x153)][_0x72b54(0x115)](_0x92528e)+_0x72b54(0x133),_0xd61c84=await DataConverterCreature[_0x72b54(0x127)](_0x92528e,{'name':_0x72b54(0x261)},_0x5c72aa);_0x5c72aa[_0x72b54(0x144)]['push'](DataConverter['getItemActorPassive']({'name':_0x72b54(0x261)},{'fvttType':_0x72b54(0x190),'description':_0x40e8ee,'mode':'creature','pb':_0x5c72aa[_0x72b54(0x231)],'entity':_0x92528e,'source':_0x92528e[_0x72b54(0x17d)],'actor':{'data':_0x38f607},'img':_0xd61c84}));}async[_0x14efab(0x14c)](_0x491acc,_0x5940c3,_0x366605,_0x3247d9,_0xe517e){const _0x26811d=_0x14efab;_0xe517e=_0xe517e||{};if(!_0x491acc[_0x3247d9[_0x26811d(0x1f9)]])return;for(let _0x3e3aa1 of _0x491acc[_0x3247d9[_0x26811d(0x1f9)]]){_0x3247d9['fnPreProcess']&&(_0x3e3aa1=MiscUtil[_0x26811d(0x242)](_0x3e3aa1),_0x3247d9[_0x26811d(0x220)](_0x3e3aa1));const _0x599919={};Object[_0x26811d(0x117)](_0xe517e)[_0x26811d(0x151)](([_0x5465d3,_0x183421])=>{const _0x329cda=_0x26811d;if(typeof _0x183421==='function')_0x599919[_0x5465d3]=_0x183421(_0x3e3aa1);else _0x599919[_0x5465d3]=MiscUtil[_0x329cda(0x242)](_0x183421);});const _0x11a909=await DataConverterCreature[_0x26811d(0x127)](_0x491acc,_0x3e3aa1,_0x366605,{'isLegendary':_0x3247d9[_0x26811d(0x1f9)]===_0x26811d(0x13c)});this[_0x26811d(0x182)](_0x491acc,_0x366605,_0x5940c3,_0x3e3aa1,{..._0x599919,'fvttType':_0x26811d(0x190),'img':_0x11a909});}}static[_0x14efab(0x184)](_0x1ea5a2){const _0x49ae2f=_0x14efab,_0x206661=Renderer[_0x49ae2f(0x1c7)](_0x1ea5a2);let _0x11b461='Lair:\x20';const _0x3ba854=_0x206661['split']('\x20');for(const _0x449a99 of _0x3ba854){if(_0x11b461[_0x49ae2f(0x15c)]+_0x449a99[_0x49ae2f(0x15c)]<0x32)_0x11b461+=_0x449a99+'\x20';else break;}if(_0x206661[_0x49ae2f(0x15c)]>_0x11b461[_0x49ae2f(0x1ac)]()[_0x49ae2f(0x15c)])_0x11b461+='...';else _0x11b461=_0x11b461[_0x49ae2f(0x1ac)]();return _0x11b461;}async[_0x14efab(0x202)](_0x58f14c,_0x5a086e,_0x35533c){const _0x1fd6af=_0x14efab;if(!_0x35533c[_0x1fd6af(0x169)]?.[_0x1fd6af(0x161)])return;const _0x532dde=_0x35533c[_0x1fd6af(0x169)][_0x1fd6af(0x161)],_0x51a2d0=_0x532dde[_0x1fd6af(0x25a)](_0xb909d5=>_0xb909d5[_0x1fd6af(0x18a)]===_0x1fd6af(0x148));if(_0x51a2d0)for(let _0x89e51=0x0;_0x89e51<_0x51a2d0[_0x1fd6af(0x144)]['length'];++_0x89e51){const _0x5ae968=_0x51a2d0[_0x1fd6af(0x144)][_0x89e51];await this[_0x1fd6af(0x11d)](_0x58f14c,_0x5a086e,_0x35533c,_0x5ae968,_0x89e51);}else await this[_0x1fd6af(0x11d)](_0x58f14c,_0x5a086e,_0x35533c,_0x532dde);}async[_0x14efab(0x11d)](_0x5492cb,_0x21dd81,_0x563652,_0x1e5199,_0x5e6b90){const _0x56e825=_0x14efab;if(_0x1e5199 instanceof Array)typeof _0x1e5199[0x0]===_0x56e825(0x24d)?_0x1e5199={'type':_0x56e825(0x117),'name':this[_0x56e825(0x1e9)][_0x56e825(0x184)](_0x1e5199[0x0]),'entries':_0x1e5199}:_0x1e5199={'type':'entries','name':_0x56e825(0x22f)+(_0x5e6b90!=null?'\x20'+(_0x5e6b90+0x1):''),'entries':_0x1e5199};else{if(typeof _0x1e5199===_0x56e825(0x24d))_0x1e5199={'type':_0x56e825(0x117),'name':this[_0x56e825(0x1e9)][_0x56e825(0x184)](_0x1e5199),'entries':[_0x1e5199]};else throw new Error('Unhandled\x20lair\x20action\x20format!');}const _0x2f5586=JSON['stringify'](_0x1e5199),{saveAbility:_0x234887,saveScaling:_0x740f1f,saveDc:_0x4bf760}=this[_0x56e825(0x20f)](_0x5492cb,_0x563652[_0x56e825(0x231)],_0x2f5586),_0x191dbc=[];let _0x1cd55f='';if(typeof _0x1e5199[_0x56e825(0x117)][0x0]==='string'){const {damageTupleMetas:_0x3ea364}=DataConverter['getDamageTupleMetas'](_0x1e5199[_0x56e825(0x117)][0x0]),{damageParts:_0x555b3a,formula:_0x2ebe2c}=DataConverter[_0x56e825(0x234)](_0x3ea364);_0x191dbc[_0x56e825(0x149)](..._0x555b3a),_0x1cd55f=_0x2ebe2c;}const _0x19ee35=this[_0x56e825(0x1cc)](_0x191dbc),_0x3ca568=await DataConverterCreature[_0x56e825(0x1c0)](_0x5492cb,{'name':_0x56e825(0x187)},_0x563652);this[_0x56e825(0x182)](_0x5492cb,_0x563652,_0x21dd81,_0x1e5199,{'fvttType':'feat','activationType':_0x56e825(0x228),'activationCost':0x1,'img':_0x3ca568,'saveAbility':_0x234887,'saveDc':_0x4bf760,'saveScaling':_0x740f1f,'damageParts':_0x19ee35,'formula':_0x1cd55f});}async['_pImportEntry_pFillItems_pRegionalEffects'](_0x42cee7,_0x347fde,_0x5ed648){const _0x2f45fa=_0x14efab;if(!_0x5ed648[_0x2f45fa(0x169)]?.['regionalEffects'])return;const _0x1c1893={'type':'entries','name':'Regional\x20Effects','entries':MiscUtil['copy'](_0x5ed648[_0x2f45fa(0x169)]['regionalEffects'])},_0x2b767d=await DataConverterCreature[_0x2f45fa(0x1c0)](_0x42cee7,_0x1c1893,_0x5ed648);this[_0x2f45fa(0x182)](_0x42cee7,_0x5ed648,_0x347fde,_0x1c1893,{'fvttType':_0x2f45fa(0x190),'img':_0x2b767d});}async['_pImportEntry_pFillItems_pActions'](_0x27fbe7,_0xbfe536,_0x32e7f3){const _0x4b5b09=_0x14efab;if(!_0x27fbe7[_0x4b5b09(0x22d)])return;for(const _0x731cac of _0x27fbe7[_0x4b5b09(0x22d)]){const _0x5d2b57=this[_0x4b5b09(0x1e3)](_0x731cac,_0x32e7f3);for(const _0x5ef037 of _0x5d2b57){await this['_pImportEntry_pFillItems_pAction'](_0x27fbe7,_0xbfe536,_0x5ef037,_0x32e7f3);}}}[_0x14efab(0x1e3)](_0x2dd7dd,_0x58694a){const _0x4b682c=_0x14efab;if(!_0x2dd7dd[_0x4b682c(0x211)]||!_0x2dd7dd[_0x4b682c(0x117)])return[_0x2dd7dd];if(_0x2dd7dd[_0x4b682c(0x117)][_0x4b682c(0x15c)]===0x2&&typeof _0x2dd7dd['entries'][0x0]===_0x4b682c(0x24d)&&_0x2dd7dd['entries'][0x0][_0x4b682c(0x243)](_0x4b682c(0x11c))&&_0x2dd7dd[_0x4b682c(0x117)][0x1][_0x4b682c(0x18a)]===_0x4b682c(0x148)&&_0x2dd7dd[_0x4b682c(0x117)][0x1]['items']['every'](_0x34cc47=>_0x34cc47[_0x4b682c(0x211)]&&_0x34cc47[_0x4b682c(0x131)])){const _0x32fdec=[],_0x2c4405=CryptUtil['uid'](),_0x408293=_0x2dd7dd[_0x4b682c(0x117)][0x1][_0x4b682c(0x144)][_0x4b682c(0x11f)](_0x1a8870=>{const _0x1200fc=_0x4b682c,_0x1ca99d=_0x1a8870[_0x1200fc(0x211)][_0x1200fc(0x171)](/\.\s*$/,''),_0x4e72ea=_0x1200fc(0x157)+_0x1ca99d,_0x24ab1d=CryptUtil[_0x1200fc(0x135)]();return _0x58694a[_0x1200fc(0x1a8)][_0x1200fc(0x149)](async({actor:_0x2065a2,isTemp:_0x4325e0,isPack:_0x4509ee,pack:_0x4082a8})=>{const _0x3f0002=_0x1200fc;if(_0x4325e0)return;const _0x443de6=_0x2065a2[_0x3f0002(0x219)]['items'][_0x3f0002(0x25a)](_0x9cc3de=>_0x9cc3de[_0x3f0002(0x197)]?.[SharedConsts[_0x3f0002(0x22b)]]?.[_0x3f0002(0x1b9)]===_0x2c4405);if(!_0x443de6)return console[_0x3f0002(0x1d0)](...LGT,'Failed\x20to\x20find\x20parent\x20sheet\x20item\x20for\x20item\x20\x22'+_0x1a8870[_0x3f0002(0x211)]+'\x22');const _0x35b427=_0x2065a2[_0x3f0002(0x219)][_0x3f0002(0x144)][_0x3f0002(0x25a)](_0x1a9db0=>_0x1a9db0[_0x3f0002(0x197)]?.[SharedConsts[_0x3f0002(0x22b)]]?.[_0x3f0002(0x1b9)]===_0x24ab1d);if(!_0x35b427)return console[_0x3f0002(0x1d0)](...LGT,_0x3f0002(0x239)+_0x1a8870[_0x3f0002(0x211)]+'\x22');if(_0x4509ee){MiscUtil[_0x3f0002(0x143)](_0x35b427,_0x3f0002(0x219),'consume',_0x3f0002(0x24f),_0x443de6[_0x3f0002(0x1b4)]||_0x443de6['id']);const _0x542093=MiscUtil['copy'](_0x2065a2['data']);await _0x4082a8[_0x3f0002(0x201)](_0x542093);}else{const _0x40ce76={'_id':_0x35b427[_0x3f0002(0x1b4)],'data':{'consume':{'target':_0x443de6[_0x3f0002(0x1b4)]||_0x443de6['id']}}};await _0x2065a2[_0x3f0002(0x17f)](_0x3f0002(0x1e0),_0x40ce76);}}),{'name':_0x4e72ea,'_plut_cleanName':_0x1ca99d,'entries':[_0x1a8870[_0x1200fc(0x131)]],'_foundryData':{'consume.type':_0x1200fc(0x17a),'consume.amount':0x1},'_foundryFlags':{[SharedConsts[_0x1200fc(0x22b)]]:{'_tmpItemId':_0x24ab1d}}};});return _0x32fdec[_0x4b682c(0x149)]({'name':_0x2dd7dd['name'],'entries':[_0x2dd7dd['entries'][0x0][_0x4b682c(0x1ac)]()[_0x4b682c(0x171)](/[.,!?:]$/,'')+':\x20'+_0x408293[_0x4b682c(0x11f)](_0x5d2db0=>_0x5d2db0[_0x4b682c(0x1ab)])[_0x4b682c(0x1a5)](',\x20',_0x4b682c(0x14b))],'_foundryFlags':{[SharedConsts[_0x4b682c(0x22b)]]:{'_tmpItemId':_0x2c4405}}}),_0x408293['forEach'](_0x5f7567=>delete _0x5f7567['_plut_cleanName']),_0x32fdec['push'](..._0x408293),_0x32fdec;}if(/^eye ray/gi[_0x4b682c(0x1e1)](_0x2dd7dd[_0x4b682c(0x211)])&&_0x2dd7dd[_0x4b682c(0x117)][_0x4b682c(0x25a)](_0x3e20d9=>_0x3e20d9[_0x4b682c(0x18a)]===_0x4b682c(0x148)&&(_0x3e20d9[_0x4b682c(0x144)]||[])['every'](_0x5f4a29=>_0x5f4a29[_0x4b682c(0x18a)]===_0x4b682c(0x1cf)))){const _0x18850f=[],_0x38ec2c=MiscUtil[_0x4b682c(0x242)](_0x2dd7dd),_0x433b5a=_0x2dd7dd[_0x4b682c(0x117)][_0x4b682c(0x213)](_0x4d0bcb=>_0x4d0bcb[_0x4b682c(0x18a)]==='list'&&(_0x4d0bcb['items']||[])[_0x4b682c(0x1f5)](_0x5b342b=>_0x5b342b[_0x4b682c(0x18a)]===_0x4b682c(0x1cf))),_0xcfd779=_0x2dd7dd[_0x4b682c(0x117)][_0x433b5a];return _0x38ec2c['entries']['splice'](_0x433b5a,0x1),_0x18850f['push'](_0x38ec2c),_0xcfd779[_0x4b682c(0x144)][_0x4b682c(0x151)](_0x4e1b4e=>{const _0x154e8c=_0x4b682c,_0x4bede6={..._0x4e1b4e,'type':'entries','name':_0x154e8c(0x196)+_0x4e1b4e[_0x154e8c(0x211)][_0x154e8c(0x171)](/[.,!:?]\\s*$/,'')};_0x4bede6[_0x154e8c(0x131)]&&(_0x4bede6['entries']=[_0x4bede6[_0x154e8c(0x131)]],delete _0x4bede6[_0x154e8c(0x131)]),delete _0x4bede6[_0x154e8c(0x191)],_0x18850f[_0x154e8c(0x149)](_0x4bede6);}),_0x18850f;}return[_0x2dd7dd];}async[_0x14efab(0x1a9)](_0xb08883,_0xe43ffa,_0x1f737d,_0x1cfa9c){const _0x33f776=_0x14efab,_0x2769d3=DataConverter[_0x33f776(0x23d)](_0x1f737d),_0x3c31c3=_0x1f737d[_0x33f776(0x117)]?JSON['stringify'](_0x1f737d[_0x33f776(0x117)]):null,{damageTuples:_0x464195,formula:_0x14d415,offensiveAbility:_0xc0796d,isAttack:_0x287920,rangeShort:_0x203e46,rangeLong:_0x866ec4,actionType:_0xed1722,isProficient:_0x11d5b4,attackBonus:_0x4e74cb,_foundryData:_0x31dce3,foundryData:_0x251ab1,_foundryFlags:_0xb989b4,foundryFlags:_0xcdc08e,img:_0x5ee196}=await DataConverterCreature[_0x33f776(0x130)](_0xb08883,_0x1f737d,_0x1cfa9c),_0x1f9cdb=[];_0x1f9cdb[_0x33f776(0x149)](...this[_0x33f776(0x1cc)](_0x464195,_0xb08883[_0xc0796d]));const {saveAbility:_0x570e99,saveScaling:_0x1d009f,saveDc:_0xfea40e}=this[_0x33f776(0x20f)](_0xb08883,_0x1cfa9c[_0x33f776(0x231)],_0x3c31c3);_0x287920?await this['_pFillWeaponItem'](_0xb08883,_0xe43ffa,_0x1f737d,_0x1cfa9c,{'offensiveAbility':_0xc0796d,'damageParts':_0x1f9cdb,'formula':_0x14d415,'rangeShort':_0x203e46,'rangeLong':_0x866ec4,'actionType':_0xed1722,'isProficient':_0x11d5b4,'description':_0x2769d3,'saveAbility':_0x570e99,'saveDc':_0xfea40e,'saveScaling':_0x1d009f,'attackBonus':_0x4e74cb,'_foundryData':_0x31dce3,'foundryData':_0x251ab1,'_foundryFlags':_0xb989b4,'foundryFlags':_0xcdc08e,'img':_0x5ee196,'isMagical':(_0xb08883['traitTags']||[])[_0x33f776(0x243)]('Magic\x20Weapons')}):this[_0x33f776(0x182)](_0xb08883,_0x1cfa9c,_0xe43ffa,_0x1f737d,{'fvttType':'feat','activationType':_0x33f776(0x22d),'activationCost':0x1,'description':_0x2769d3,'saveAbility':_0x570e99,'saveDc':_0xfea40e,'saveScaling':_0x1d009f,'damageParts':_0x1f9cdb,'formula':_0x14d415,'attackBonus':_0x4e74cb,'_foundryData':_0x31dce3,'foundryData':_0x251ab1,'_foundryFlags':_0xb989b4,'foundryFlags':_0xcdc08e,'img':_0x5ee196});}[_0x14efab(0x20f)](_0xf66cfb,_0x4da9ec,_0x4346f7){const _0x21e993=_0x14efab;let {saveAbility:_0x239535,saveScaling:_0x41e384,saveDc:_0x42b761,isFoundParse:_0x122b57}=super[_0x21e993(0x20f)](_0x4346f7);if(_0x122b57){if(_0x4da9ec){const _0x180947=_0x42b761-_0x4da9ec-0x8;for(const _0x48a61c of[_0x21e993(0x147),'wis',_0x21e993(0x1c1),_0x21e993(0x21b),_0x21e993(0x10d),_0x21e993(0x212)]){const _0x3f4938=Parser[_0x21e993(0x1d7)](_0xf66cfb[_0x48a61c]);if(_0x3f4938===_0x180947){_0x41e384=_0x48a61c;break;}}}}return{'saveAbility':_0x239535,'saveScaling':_0x41e384,'saveDc':_0x42b761};}[_0x14efab(0x1cc)](_0x4ed983,_0x271181){const _0x4f68eb=_0x14efab;if(!_0x4ed983['length'])return[];return _0x4ed983=MiscUtil[_0x4f68eb(0x242)](_0x4ed983),_0x271181&&_0x4ed983[_0x4f68eb(0x151)](_0x58b6ee=>{const _0x1b04a2=_0x4f68eb,_0x4f8326=Parser[_0x1b04a2(0x1d7)](_0x271181),_0x3fc075=/(\d+d\d+\s*)([-+]\s*\d+)([ -+].*)?$/['exec'](_0x58b6ee[0x0]);if(!_0x3fc075)return;const _0x47d260=Number(_0x3fc075[0x2][_0x1b04a2(0x171)](/\s*/g,''));if(_0x47d260===_0x4f8326)_0x58b6ee[0x0]=_0x3fc075[0x1]+_0x1b04a2(0x1f6)+(_0x3fc075[0x3]||'');}),_0x4ed983[_0x4f68eb(0x235)](_0x77529c=>_0x77529c[_0x4f68eb(0x15c)]);}static[_0x14efab(0x1af)](_0x29d09c){const _0x34ad76=_0x14efab,_0xb498=[];if(!_0x29d09c[_0x34ad76(0x1be)]||!_0x29d09c[_0x34ad76(0x1be)][_0x34ad76(0x15c)])return _0xb498;return _0x29d09c['from'][_0x34ad76(0x151)](_0x215320=>{const _0x2dbb56=_0x34ad76,_0x3551bc=this[_0x2dbb56(0x1dd)](_0x215320);_0x3551bc[_0x2dbb56(0x151)](_0xc5db83=>{const _0x10cee1=_0x2dbb56;if(!_0xb498[_0x10cee1(0x243)](_0xc5db83))_0xb498['push'](_0xc5db83);});}),_0xb498;}static[_0x14efab(0x1dd)](_0x53669b){const _0x310276=_0x14efab,_0x3ec523=[];return _0x53669b[_0x310276(0x171)](/{@item ([^}]+)}/gi,(..._0x40d717)=>{const _0x3affcf=_0x310276,[_0x5ee320,_0x5107e8]=_0x40d717[0x1][_0x3affcf(0x1ac)]()[_0x3affcf(0x142)]()[_0x3affcf(0x10b)]('|'),_0x20a1dd=UrlUtil[_0x3affcf(0x25e)][UrlUtil[_0x3affcf(0x17b)]]({'name':_0x5ee320,'source':_0x5107e8||SRC_DMG});if(!_0x3ec523['includes'](_0x20a1dd))_0x3ec523[_0x3affcf(0x149)](_0x20a1dd);}),[..._0x3ec523];}async[_0x14efab(0x13e)](_0x4e898b,_0x45acf6,_0xf0a84){const _0x342cb6=_0x14efab,_0x1f4339=new Set(),_0x39fd02=new Set();(_0x4e898b['ac']||[])[_0x342cb6(0x151)]((_0x4453a6,_0x431924)=>{const _0x47dd5f=_0x342cb6,_0x4fb01e=this[_0x47dd5f(0x1e9)][_0x47dd5f(0x1af)](_0x4453a6);_0x4fb01e[_0x47dd5f(0x151)](_0x5ba100=>_0x1f4339[_0x47dd5f(0x180)](_0x5ba100));if(_0x431924===0x0)_0x4fb01e[_0x47dd5f(0x151)](_0x1567f1=>_0x39fd02[_0x47dd5f(0x180)](_0x1567f1));});for(const _0xdaaf14 of _0x1f4339){const _0x157c35=await Renderer[_0x342cb6(0x111)][_0x342cb6(0x13f)](UrlUtil[_0x342cb6(0x17b)],_0xdaaf14);if(!_0x157c35)continue;await this[_0x342cb6(0x20b)](_0x4e898b,_0x45acf6,_0x157c35,_0xf0a84,{'isEquipped':_0x39fd02[_0x342cb6(0x1c3)](_0xdaaf14)});}const _0x5855b0=(_0x4e898b[_0x342cb6(0x1cd)]||[])[_0x342cb6(0x235)](_0x36050f=>_0x36050f[_0x342cb6(0x211)]&&_0x36050f['entries']&&/equipment/i['test'](_0x36050f[_0x342cb6(0x211)][_0x342cb6(0x1ac)]()))['map'](_0x1a0612=>this[_0x342cb6(0x1e9)][_0x342cb6(0x1dd)](JSON[_0x342cb6(0x12a)](_0x1a0612[_0x342cb6(0x117)])))['flat']()[_0x342cb6(0x235)](_0x570300=>!_0x1f4339['has'](_0x570300));for(const _0x354fce of _0x5855b0){const _0x5f2c76=await Renderer['hover'][_0x342cb6(0x13f)](UrlUtil['PG_ITEMS'],_0x354fce);if(!_0x5f2c76)continue;if(_0x5f2c76[_0x342cb6(0x18a)]==='S'||_0x5f2c76[_0x342cb6(0x18a)]==='R'||_0x5f2c76['weaponCategory'])continue;await this[_0x342cb6(0x20b)](_0x4e898b,_0x45acf6,_0x5f2c76,_0xf0a84,{'isEquipped':!![]});}}async[_0x14efab(0x20b)](_0x3abdf0,_0x4d6695,_0x46364e,_0x38f2b3,_0x3d7dbb){const _0xbb03bd=_0x14efab;_0x3d7dbb=_0x3d7dbb||{};const _0x28840f=await Renderer['item']['pGetFluff'](_0x46364e),_0x4818e6=await DataConverterItem[_0xbb03bd(0x137)](_0x46364e,{'isActorItem':!![],'fluff':_0x28840f,'size':_0x3abdf0['size'],'isEquipped':_0x3d7dbb[_0xbb03bd(0x1fd)],'dexMod':Parser[_0xbb03bd(0x1d7)](_0x3abdf0[_0xbb03bd(0x10d)])});_0x38f2b3['items'][_0xbb03bd(0x149)](_0x4818e6);}async[_0x14efab(0x18b)](_0x5e96f3,_0x4b2920,_0x3659bc,_0x44cf5b){const _0x32a257=_0x14efab;if(!_0x5e96f3[_0x32a257(0x1b7)])return;const _0x29d450={},_0x5a0803=_0x45ab3d=>{const _0x589db6=_0x32a257;Object[_0x589db6(0x117)](_0x45ab3d)['forEach'](([_0x5abb49,_0x28fa70])=>{_0x29d450[_0x5abb49]=_0x29d450[_0x5abb49]||_0x28fa70;});},_0x2b7743=!![],_0x7b5c5f=[];for(const _0x489fb8 of _0x5e96f3[_0x32a257(0x1b7)]){const _0x5cf2f0=MiscUtil['copy'](_0x489fb8);if(_0x5cf2f0['spells']){const _0x341ea1=Object[_0x32a257(0x1c5)](_0x5cf2f0[_0x32a257(0x23f)]);for(const _0x45c1a8 of _0x341ea1){const _0x2c74bb=_0x5cf2f0[_0x32a257(0x23f)][_0x45c1a8],_0x19e4ee=_0x2c74bb[_0x32a257(0x1f3)]!=null?_0x32a257(0x12f):'prepared',_0x4797bf=await DataConverterSpell[_0x32a257(0x194)](_0x44cf5b[_0x32a257(0x24b)],JSON[_0x32a257(0x12a)](_0x2c74bb[_0x32a257(0x23f)]),{'isTemporary':_0x3659bc,'optsGetSpellItem':{'casterLevel':_0x44cf5b[_0x32a257(0x246)],'abilityAbv':_0x44cf5b[_0x32a257(0x14a)],'isPrepared':_0x2b7743,'preparationMode':_0x19e4ee}});_0x5a0803(_0x4797bf);}delete _0x5cf2f0['spells'];}_0x5cf2f0[_0x32a257(0x1a3)]&&await this[_0x32a257(0x1e8)](_0x44cf5b,_0x5cf2f0,_0x32a257(0x1a3),_0x5a0803,{'isTemporary':_0x3659bc,'isPrepared':_0x2b7743,'usesPer':_0x32a257(0x17a)});_0x5cf2f0[_0x32a257(0x181)]&&await this[_0x32a257(0x1e8)](_0x44cf5b,_0x5cf2f0,'daily',_0x5a0803,{'isTemporary':_0x3659bc,'isPrepared':_0x2b7743,'usesPer':_0x32a257(0x222)});_0x5cf2f0[_0x32a257(0x217)]&&await this[_0x32a257(0x1e8)](_0x44cf5b,_0x5cf2f0,_0x32a257(0x181),_0x5a0803,{'isTemporary':_0x3659bc,'isPrepared':_0x2b7743,'usesPer':'sr'});if(_0x5cf2f0[_0x32a257(0x207)]){const _0x56275d=_0x32a257(0x252),_0x38019e=await DataConverterSpell[_0x32a257(0x194)](_0x44cf5b['actor'],JSON['stringify'](_0x5cf2f0[_0x32a257(0x207)]),{'isTemporary':_0x3659bc,'optsGetSpellItem':{'casterLevel':_0x44cf5b[_0x32a257(0x246)],'abilityAbv':_0x44cf5b[_0x32a257(0x14a)],'isPrepared':_0x2b7743,'preparationMode':_0x56275d}});_0x5a0803(_0x38019e),delete _0x5cf2f0['will'];}if(_0x5cf2f0[_0x32a257(0x240)]){const _0x167786=_0x32a257(0x252),_0x5dbc1d=await DataConverterSpell['pGetSpellHashToItemPosMapAndFillSpells'](_0x44cf5b[_0x32a257(0x24b)],JSON[_0x32a257(0x12a)](_0x5cf2f0['constant']),{'isTemporary':_0x3659bc,'optsGetSpellItem':{'casterLevel':_0x44cf5b[_0x32a257(0x246)],'abilityAbv':_0x44cf5b[_0x32a257(0x14a)],'isPrepared':_0x2b7743,'preparationMode':_0x167786,'durationAmount':null,'durationUnit':_0x32a257(0x221)}});_0x5a0803(_0x5dbc1d),delete _0x5cf2f0[_0x32a257(0x240)];}_0x7b5c5f['push'](_0x5cf2f0);}await DataConverterSpell[_0x32a257(0x194)](_0x44cf5b[_0x32a257(0x24b)],JSON[_0x32a257(0x12a)](_0x7b5c5f),{'isTemporary':_0x3659bc,'hashToIdMap':_0x29d450,'optsGetSpellItem':{'casterLevel':_0x44cf5b[_0x32a257(0x246)],'abilityAbv':_0x44cf5b[_0x32a257(0x14a)]}});const _0x398734=DataConverterSpell[_0x32a257(0x113)][_0x32a257(0x1a0)](null,_0x44cf5b[_0x32a257(0x24b)]['id'],_0x29d450);await Renderer[_0x32a257(0x24a)]()[_0x32a257(0x125)]({'entryType':_0x32a257(0x156),'pluginType':'*','fnPlugin':_0x398734,'pFn':async()=>{const _0x133c06=_0x32a257,_0x2908fb=Renderer['monster']['getSpellcastingRenderedTraits'](Renderer[_0x133c06(0x24a)](),_0x5e96f3);for(const _0xc71ec3 of _0x2908fb){const _0x76ab4d=await DataConverterCreature[_0x133c06(0x1c4)](_0x5e96f3,_0xc71ec3,_0x44cf5b);this[_0x133c06(0x182)](_0x5e96f3,_0x44cf5b,_0x4b2920,_0xc71ec3,{'fvttType':_0x133c06(0x190),'img':_0x76ab4d,'description':_0xc71ec3['rendered']});}}});}async[_0x14efab(0x1e8)](_0x29c862,_0x290452,_0x55793c,_0x191b59,{isTemporary:_0xe63a93,isPrepared:_0x4d3a84,usesPer:_0xe46356}){const _0x2d0b67=_0x14efab,_0x77c2be=_0x2d0b67(0x252);for(let _0x134b83=0x1;_0x134b83<=0x9;++_0x134b83){const _0x2ef922=_0x134b83+'e',_0x25dee9=[...(_0x290452[_0x55793c]||{})[_0x134b83]||[],...(_0x290452[_0x55793c]||{})[_0x2ef922]||[]];if(!_0x25dee9[_0x2d0b67(0x15c)])continue;const _0x2d7984=await DataConverterSpell[_0x2d0b67(0x194)](_0x29c862[_0x2d0b67(0x24b)],JSON[_0x2d0b67(0x12a)](_0x25dee9),{'isTemporary':_0xe63a93,'optsGetSpellItem':{'casterLevel':_0x29c862['spellLevel'],'abilityAbv':_0x29c862[_0x2d0b67(0x14a)],'isPrepared':_0x4d3a84,'preparationMode':_0x77c2be,'usesCurrent':_0x134b83,'usesMax':_0x134b83,'usesPer':_0xe46356}});_0x191b59(_0x2d7984);}delete _0x290452[_0x55793c];}static[_0x14efab(0x1de)](_0x4dc2d1){const _0x16e47f=_0x14efab;let _0x229cb7=0x0;return _0x4dc2d1[_0x16e47f(0x230)]&&JSON[_0x16e47f(0x12a)](_0x4dc2d1[_0x16e47f(0x230)])[_0x16e47f(0x171)](/an? (\d+)[A-Za-z]+-level/i,(..._0x5ef986)=>{const _0x29598e=Number(_0x5ef986[0x1]);if(!isNaN(_0x29598e))_0x229cb7=_0x29598e;}),_0x229cb7;}static[_0x14efab(0x176)](_0x51f61c){const _0x19ff72=_0x14efab;let _0x1f2897='';return _0x51f61c['headerEntries']&&JSON[_0x19ff72(0x12a)](_0x51f61c[_0x19ff72(0x230)])[_0x19ff72(0x171)](/(?:^| )(bard|cleric|druid|paladin|ranger|sorcerer|warlock|wizard)(?:\W|$)?/i,(..._0x45e743)=>{_0x1f2897=_0x45e743[0x1];}),_0x1f2897;}}ImportListCreature[_0x14efab(0x1ae)]=class extends ImportListActor[_0x14efab(0x1ae)]{constructor(_0x3cb923){const _0x33e9e1=_0x14efab;_0x3cb923=_0x3cb923||{},super(_0x3cb923),this[_0x33e9e1(0x167)]=_0x3cb923[_0x33e9e1(0x167)],this['pb']=Parser['crToPb'](this[_0x33e9e1(0x167)]['cr']),this[_0x33e9e1(0x231)]=this['pb'],this[_0x33e9e1(0x169)]=DataUtil['monster'][_0x33e9e1(0x1d2)](this['mon']),this[_0x33e9e1(0x14a)]='',this['spellDc']=0x8,this[_0x33e9e1(0x246)]=0x0,this[_0x33e9e1(0x118)]='',this[_0x33e9e1(0x150)](this[_0x33e9e1(0x167)]),this[_0x33e9e1(0x10c)](this[_0x33e9e1(0x167)]);}[_0x14efab(0x10c)](_0x3c7cf9){const _0x96a257=_0x14efab;if(!_0x3c7cf9[_0x96a257(0x22d)])return;_0x3c7cf9[_0x96a257(0x22d)][_0x96a257(0x151)](_0x227882=>DataConverterActor[_0x96a257(0x1ed)](_0x3c7cf9,_0x227882,this));}[_0x14efab(0x150)](_0xe04f66){const _0x362321=_0x14efab;if(!_0xe04f66[_0x362321(0x1b7)])return;const _0x19de17=_0xe04f66['spellcasting'][_0x362321(0x235)](_0x5b50f9=>_0x5b50f9['ability'])[_0x362321(0x11f)](_0x11f9a7=>{const _0x2ca1ef=_0x362321;if(Parser[_0x2ca1ef(0x129)][_0x2ca1ef(0x243)](_0x11f9a7[_0x2ca1ef(0x256)]))return _0x11f9a7;const _0x67b25f=_0x11f9a7[_0x2ca1ef(0x256)][_0x2ca1ef(0x163)](0x0,0x3);if(Parser[_0x2ca1ef(0x129)]['includes'](_0x67b25f))return _0x11f9a7[_0x2ca1ef(0x256)]=_0x67b25f,_0x11f9a7;return null;})['filter'](Boolean);if(_0x19de17[_0x362321(0x15c)]){let _0x22b852=_0x19de17[0x0];if(_0x19de17[_0x362321(0x15c)]>0x1)switch(Config[_0x362321(0x24a)](_0x362321(0x223),'spellcastingPrimaryTraitMode')){case 0x1:{_0x22b852=_0x19de17[_0x362321(0x138)]((_0xb85185,_0x3490c0)=>{const _0x56d837=_0x362321,_0xc184e1=this[_0x56d837(0x1e9)][_0x56d837(0x1fe)](_0xb85185),_0x16ef2c=this[_0x56d837(0x1e9)][_0x56d837(0x1fe)](_0x3490c0);return SortUtil[_0x56d837(0x16e)](_0x16ef2c,_0xc184e1);})[0x0];break;}case 0x2:{_0x22b852=_0x19de17['sort']((_0x5eca7f,_0x4c0133)=>SortUtil[_0x362321(0x16e)](Parser[_0x362321(0x1d7)](_0xe04f66[_0x4c0133[_0x362321(0x256)]]),Parser['getAbilityModNumber'](_0xe04f66[_0x5eca7f[_0x362321(0x256)]])))[0x0];break;}}const _0x2dbbc1=_0x22b852[_0x362321(0x256)],_0x251d1a=Parser[_0x362321(0x1d7)](_0xe04f66[_0x2dbbc1]);this['spellAbility']=_0x2dbbc1,this[_0x362321(0x12e)]=_0x251d1a+this['pb'];}this[_0x362321(0x246)]=_0xe04f66[_0x362321(0x1b7)][_0x362321(0x11f)](_0x29cb5f=>ImportListCreature['_getCasterLevelFromEntry'](_0x29cb5f))['find'](Boolean)||0x0,this['spellClass']=_0xe04f66['spellcasting']['map'](_0x26f4af=>ImportListCreature[_0x362321(0x176)](_0x26f4af))[_0x362321(0x25a)](Boolean)||'';}static[_0x14efab(0x1fe)](_0x76e7ae){const _0x15c11c=_0x14efab;let _0xb2d50d=0x0;return JSON['stringify'](_0x76e7ae)[_0x15c11c(0x171)](/{@spell [^}]+}/g,()=>{return _0xb2d50d++,'';}),_0xb2d50d;}},ImportListCreature[_0x14efab(0x1ca)]=class extends Application{constructor(_0x56a6f0,_0x1bc5bb,_0x20f5f0){const _0x1bd2f6=_0x14efab;super({'title':'Scale\x20and\x20Rename\x20Creatures','template':SharedConsts[_0x1bd2f6(0x14d)]+_0x1bd2f6(0x244),'width':0x3c0,'height':Util[_0x1bd2f6(0x15a)](),'resizable':!![]}),this[_0x1bd2f6(0x16f)]=_0x56a6f0,this[_0x1bd2f6(0x18c)]=_0x1bc5bb,this[_0x1bd2f6(0x193)]=_0x20f5f0[_0x1bd2f6(0x200)],this[_0x1bd2f6(0x126)]=null,this[_0x1bd2f6(0x204)]=null;}[_0x14efab(0x1b6)](){const _0x5ae371=_0x14efab;return{'titleSearch':this[_0x5ae371(0x193)],'rows':this[_0x5ae371(0x16f)][_0x5ae371(0x11f)]((_0x3fa2cf,_0x4ccb7f)=>({'name':_0x3fa2cf['name'],'source':_0x3fa2cf[_0x5ae371(0x17d)],'sourceShort':Parser[_0x5ae371(0x17c)](_0x3fa2cf[_0x5ae371(0x17d)]),'sourceLong':Parser['sourceJsonToFull'](_0x3fa2cf[_0x5ae371(0x17d)]),'sourceClassName':Parser[_0x5ae371(0x20e)](_0x3fa2cf[_0x5ae371(0x17d)]),'cr':Parser[_0x5ae371(0x146)](_0x3fa2cf['cr']),'isAdjustable':Parser[_0x5ae371(0x1d8)](_0x3fa2cf['cr'])<VeCt[_0x5ae371(0x145)],'ix':_0x4ccb7f}))};}['activateListeners'](_0x5ea687){const _0x19e0f3=_0x14efab;super[_0x19e0f3(0x1f7)](_0x5ea687),this[_0x19e0f3(0x126)]=new List({'$iptSearch':_0x5ea687[_0x19e0f3(0x25a)](_0x19e0f3(0x229)),'$wrpList':_0x5ea687[_0x19e0f3(0x25a)](_0x19e0f3(0x195)),'valueNames':[_0x19e0f3(0x211),_0x19e0f3(0x17d),'cr','ix']}),SortUtil[_0x19e0f3(0x263)](_0x5ea687[_0x19e0f3(0x25a)](_0x19e0f3(0x25b)),this[_0x19e0f3(0x126)]),this[_0x19e0f3(0x126)][_0x19e0f3(0x192)](this[_0x19e0f3(0x16f)],{'fnGetName':_0x67ba7=>_0x67ba7['name'],'fnGetValues':_0x4166da=>({'source':_0x4166da[_0x19e0f3(0x17d)],'cr':Parser['monCrToFull'](_0x4166da['cr'])})}),this[_0x19e0f3(0x126)]['init'](),this[_0x19e0f3(0x204)]=_0x5ea687[_0x19e0f3(0x25a)](_0x19e0f3(0x11e))['click'](()=>{const _0x2e47c8=_0x19e0f3;_0x5ea687[_0x2e47c8(0x25a)](_0x2e47c8(0x229))[_0x2e47c8(0x249)]('');if(this['_list'])this['_list'][_0x2e47c8(0x177)]();}),_0x5ea687[_0x19e0f3(0x25a)]('[name=\x22btn-run\x22]')[_0x19e0f3(0x1b5)](async()=>{const _0xd640c9=_0x19e0f3,_0x402e89=this['_list'][_0xd640c9(0x144)][_0xd640c9(0x11f)](_0xc2eeb1=>{const _0x121cbd=_0xd640c9,_0x9e1608=$(_0xc2eeb1['ele']),_0x4e3762=_0x9e1608[_0x121cbd(0x25a)](_0x121cbd(0x216));return{'ix':_0xc2eeb1['ix'],'targetCr':_0x4e3762[_0x121cbd(0x15c)]?Number(_0x4e3762['val']())===-0x1?null:Number(_0x4e3762['val']()):null,'rename':_0x9e1608['find'](_0x121cbd(0x168))[_0x121cbd(0x249)]()[_0x121cbd(0x1ac)]()};}),_0x244c38=await Promise['all'](_0x402e89[_0xd640c9(0x11f)](async({ix:_0x412380,targetCr:_0x5de314,rename:_0xa26492})=>{const _0x52678e=_0xd640c9;let _0x1a640d=this[_0x52678e(0x16f)][_0x412380];if(_0x5de314!=null&&_0x5de314!==Parser['crToNumber'](_0x1a640d['cr']))_0x1a640d=await ScaleCreature[_0x52678e(0x19f)](_0x1a640d,_0x5de314);if(_0xa26492)_0x1a640d=ImportListCreature[_0x52678e(0x1ca)][_0x52678e(0x141)](_0x1a640d,_0xa26492);return _0x1a640d;}));this[_0xd640c9(0x18c)](_0x244c38),this['close']();});if(this[_0x19e0f3(0x204)])this[_0x19e0f3(0x204)][_0x19e0f3(0x1b5)]();}static[_0x14efab(0x141)](_0x1fc564,_0x52ed94){const _0x181752=_0x14efab;ImportListCreature['ScaleRename'][_0x181752(0x18d)]=ImportListCreature[_0x181752(0x1ca)]['_WALER_RENAME']||MiscUtil['getWalker'](),_0x1fc564=MiscUtil[_0x181752(0x242)](_0x1fc564);const _0x36bddf=_0x52ed94[_0x181752(0x171)](/\\/g,'\x5c\x5c')['replace'](/"/g,'\x5c\x22'),_0x1446f1=new RegExp('(^|[^a-zA-Z0-9])'+_0x1fc564['name'][_0x181752(0x1fa)]()+_0x181752(0x1d6),'gi'),_0x469685=_0x2ad103=>{_0x1fc564[_0x2ad103]&&_0x1fc564[_0x2ad103]['forEach'](_0xeb405=>{const _0xbd3e6b=_0x5416;_0xeb405[_0xbd3e6b(0x117)]&&(_0xeb405[_0xbd3e6b(0x117)]=ImportListCreature['ScaleRename'][_0xbd3e6b(0x18d)][_0xbd3e6b(0x257)](_0xeb405['entries'],{'string':_0x12eb0b=>_0x12eb0b[_0xbd3e6b(0x171)](_0x1446f1,(..._0x3f6543)=>''+_0x3f6543[0x1]+_0x36bddf+_0x3f6543[0x2])})),_0xeb405['headerEntries']&&(_0xeb405['headerEntries']=ImportListCreature['ScaleRename'][_0xbd3e6b(0x18d)][_0xbd3e6b(0x257)](_0xeb405[_0xbd3e6b(0x230)],{'string':_0x2b955d=>_0x2b955d[_0xbd3e6b(0x171)](_0x1446f1,(..._0xae2db6)=>''+_0xae2db6[0x1]+_0x36bddf+_0xae2db6[0x2])}));});};return _0x469685('action'),_0x469685(_0x181752(0x1b1)),_0x469685('reaction'),_0x469685('trait'),_0x469685('legendary'),_0x469685(_0x181752(0x1bd)),_0x1fc564[_0x181752(0x164)]=_0x52ed94,_0x1fc564;}async[_0x14efab(0x238)](){const _0x3500e3=_0x14efab;return this[_0x3500e3(0x18c)](null),super[_0x3500e3(0x238)]();}},ImportListCreature[_0x14efab(0x1ca)]['_WALER_RENAME']=null;export{ImportListCreature};
+import {ImportListActor} from "./ImportListActor.js";
+import {Vetools} from "./Vetools.js";
+import {LGT} from "./Util.js";
+import {UtilActors} from "./UtilActors.js";
+import {DataConverter} from "./DataConverter.js";
+import {DataConverterItem} from "./DataConverterItem.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {Config} from "./Config.js";
+import {UtilList2} from "./UtilList2.js";
+import {DataConverterCreature} from "./DataConverterCreature.js";
+import {UtilDataSource} from "./UtilDataSource.js";
+import {ConfigConsts} from "./ConfigConsts.js";
+import {DataConverterActor} from "./DataConverterActor.js";
+import {UtilActiveEffects} from "./UtilActiveEffects.js";
+import {ImportListSpell} from "./ImportListSpell.js";
+import {UtilDataConverter} from "./UtilDataConverter.js";
+import {ImportCustomizer} from "./ImportList.js";
+import {UtilDocuments} from "./UtilDocuments.js";
+import {UtilCompat} from "./UtilCompat.js";
+
+class ImportListCreature extends ImportListActor {
+	static get ID () { return "creatures"; }
+	static get DISPLAY_NAME_TYPE_PLURAL () { return "Creatures"; }
+
+	static _ = this.registerImpl(this);
+
+	constructor (externalData, applicationOptsOverride, subclassOptsOverride, actorImporterOptsOverride) {
+		externalData = externalData || {};
+		applicationOptsOverride = applicationOptsOverride || {};
+		subclassOptsOverride = subclassOptsOverride || {};
+		actorImporterOptsOverride = actorImporterOptsOverride || {};
+		super(
+			{
+				title: "Import Creatures",
+				...applicationOptsOverride,
+			},
+			externalData,
+			{
+				props: ["monster"],
+				dirsHomebrew: ["creature"],
+				propsBrewAdditionalData: ["foundryMonster"],
+				fnLoadSideData: Vetools.pGetCreatureSideData,
+				titleSearch: "creatures",
+				sidebarTab: "actors",
+				gameProp: "actors",
+				defaultFolderPath: ["Creatures"],
+				fnListSort: PageFilterBestiary.sortMonsters,
+				pageFilter: new PageFilterBestiary(),
+				isActorRadio: true,
+				page: UrlUtil.PG_BESTIARY,
+				isPreviewable: true,
+				isDedupable: true,
+				configGroup: "importCreature",
+				...subclassOptsOverride,
+			},
+			{
+				actorType: "npc",
+				DataConverter: DataConverterCreature,
+				...actorImporterOptsOverride,
+			},
+		);
+	}
+
+	async pInit () {
+		await super.pInit();
+		await DataUtil.monster.pPreloadMeta();
+	}
+
+	async _pGetSources () {
+		const creatureIndex = await Vetools.pGetCreatureIndex();
+
+		return [
+			new UtilDataSource.DataSourceSpecial(
+				Config.get("ui", "isStreamerMode") ? "SRD" : "5etools",
+				async () => (await Vetools.pGetAllCreatures()).monster,
+				{
+					cacheKey: "5etools-creatures",
+					filterTypes: [UtilDataSource.SOURCE_TYP_OFFICIAL_ALL],
+					isDefault: true,
+				},
+			),
+			new UtilDataSource.DataSourceUrl(
+				"Custom URL",
+				"",
+				{
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			new UtilDataSource.DataSourceFile(
+				"Upload File",
+				{
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			...Object.entries(creatureIndex).map(([src, filename]) => new UtilDataSource.DataSourceUrl(
+				Parser.sourceJsonToFull(src),
+				Vetools.getCreatureUrl(filename),
+				{
+					source: src,
+					pPostLoad: ImportListCreature._postLoadVetools.bind(ImportListCreature, src),
+					filterTypes: SourceUtil.isNonstandardSource(src) ? [UtilDataSource.SOURCE_TYP_ARCANA] : [UtilDataSource.SOURCE_TYP_OFFICIAL_SINGLE],
+				},
+			)),
+			...(await this._pGetSourcesHomebrew()),
+		];
+	}
+
+	static _postLoadVetools (src, monList) {
+		return monList.filter(it => it.source === src);
+	}
+
+	async pGetChooseImporterUserDataForSources (sources) {
+		return {
+			isSingletonSource_officialAdventure: sources.length === 1 && sources[0].source && Parser.SOURCES_ADVENTURES.has(sources[0].source),
+		};
+	}
+
+	async _pPostFilterRender () {
+		if (!this._userData) return;
+
+		// If we're loading an official adventure, and this is the only source, wipe the "Adventure NPC" denial filter
+		const isSingletonSourceOfficialAdventure = this._userData.isSingletonSource_officialAdventure;
+		this._userData = null;
+		if (!isSingletonSourceOfficialAdventure) return;
+
+		const KEY_MISC = "Miscellaneous";
+		const miscValues = this._pageFilter.filterBox.getValues()[KEY_MISC];
+		this._pageFilter.filterBox.setFromValues({
+			[KEY_MISC]: {
+				...Object.entries(miscValues)
+					.filter(([k]) => !k.startsWith("_"))
+					.mergeMap(([k, v]) => ({[k]: v})),
+				"Adventure NPC": 0,
+			},
+		});
+	}
+
+	getData () {
+		return {
+			...super.getData(),
+			buttonsAdditional: [
+				{
+					name: "btn-run-mods",
+					text: "Customize and Import...",
+				},
+			],
+			cols: [
+				{
+					name: "Name",
+					width: 4,
+					field: "name",
+				},
+				{
+					name: "Type",
+					width: 5,
+					field: "type",
+				},
+				{
+					name: "CR",
+					width: 1,
+					field: "cr",
+					rowClassName: "text-center",
+				},
+				{
+					name: "Source",
+					width: 1,
+					field: "source",
+					titleProp: "sourceLong",
+					displayProp: "sourceShort",
+					classNameProp: "sourceClassName",
+					styleProp: "sourceStyle",
+					rowClassName: "text-center",
+				},
+			],
+			rows: this._content.map((it, ix) => {
+				this._pageFilter.constructor.mutateForFilters(it);
+
+				// region Re-used in fnGetValues
+				it._vCr = it._pCr || "\u2014";
+				// endregion
+
+				return {
+					name: it.name,
+					type: it._pTypes.asText.uppercaseFirst(),
+					cr: it._vCr,
+					source: it.source,
+					sourceShort: Parser.sourceJsonToAbv(it.source),
+					sourceLong: Parser.sourceJsonToFull(it.source),
+					sourceClassName: Parser.sourceJsonToColor(it.source),
+					sourceStyle: BrewUtil2.sourceJsonToStylePart(it.source),
+					isVersion: !!it._versionBase_isVersion,
+					ix,
+				};
+			}),
+		};
+	}
+
+	_getAbsorbListItemOpts () {
+		return {
+			fnGetName: it => it.name,
+			// values used for sorting/search
+			fnGetValues: it => ({
+				source: it.source,
+				type: it._pTypes.asText,
+				cr: it._vCr,
+				group: it.group || "",
+				alias: (it.alias || []).map(it => `"${it}"`).join(","),
+				hash: UrlUtil.URL_TO_HASH_BUILDER[this._page](it),
+			}),
+			fnGetData: UtilList2.absorbFnGetData,
+			fnBindListeners: it => this._isRadio
+				? UtilList2.absorbFnBindListenersRadio(this._list, it)
+				: UtilList2.absorbFnBindListeners(this._list, it),
+		};
+	}
+
+	_renderInner_absorbListItems () { this._list.doAbsorbItems(this._content, this._getAbsorbListItemOpts()); }
+
+	getFolderPathMeta () {
+		return {
+			...super.getFolderPathMeta(),
+			cr: {
+				label: "Challenge Rating",
+				getter: it => this.constructor._getFolderCr(it),
+			},
+			type: {
+				label: "Type",
+				getter: it => this.constructor._getFolderType(it),
+			},
+			typeTags: {
+				label: "Type (With Tags)",
+				getter: it => this.constructor._getFolderTypeWithTags(it),
+			},
+		};
+	}
+
+	static _getFolderCr (it) { return it.cr ? (it.cr.cr || it.cr) : "Unknown CR"; }
+	static _getFolderType (it) { return Parser.monTypeToFullObj(it.type).type.toTitleCase(); }
+	static _getFolderTypeWithTags (it) { return Parser.monTypeToFullObj(it.type).asText.uppercaseFirst(); }
+
+	_renderInner_initRunButtonsAdditional () { this._renderInner_initRunButtonsAdditional_genericMods(); }
+
+	_pFnPostProcessEntries (entries, {isUseMods = false} = {}) {
+		if (!isUseMods) return entries;
+
+		return new Promise(resolve => {
+			const scaler = new ImportListCreature.ImportCustomizer(entries, resolve, {titleSearch: this._titleSearch});
+			scaler.render(true);
+		});
+	}
+
+	async _pImportEntry_pGetImportMetadata (actor, mon, importOpts) {
+		const act = {};
+
+		const fluff = await Renderer.utils.pGetFluff({
+			entity: mon,
+			pFnPostProcess: Renderer.monster.postProcessFluff.bind(null, mon),
+			fluffBaseUrl: `data/bestiary/`,
+			fluffProp: "monsterFluff",
+		});
+
+		const dataBuilderOpts = new ImportListCreature.ImportEntryOpts({actor, mon, fluff});
+
+		await this._pImportEntry_pFillBase(mon, act, dataBuilderOpts.fluff, {isUseTokenImageAsPortrait: Config.get(this._configGroup, "isUseTokenImageAsPortrait")});
+
+		act.data = {};
+
+		await this._pImportEntry_pFillFolder(mon, act, importOpts);
+
+		if (importOpts.defaultPermission != null) act.permission = {default: importOpts.defaultPermission};
+		else act.permission = {default: Config.get(this._configGroup, "permissions")};
+
+		this._pImportEntry_fillData_Abilities(mon, act.data, dataBuilderOpts);
+		await this._pImportEntry_pFillData_Attributes(mon, act, dataBuilderOpts);
+		await this._pImportEntry_pFillData_Details(mon, act.data, dataBuilderOpts);
+		this._pImportEntry_fillData_Skills(mon, act.data, dataBuilderOpts);
+		this._pImportEntry_fillData_Traits(mon, act.data, dataBuilderOpts);
+		this._pImportEntry_fillData_Currency(mon, act.data, dataBuilderOpts);
+		this._pImportEntry_fillData_Spells(mon, act.data, dataBuilderOpts);
+		this._pImportEntry_fillData_Resources(mon, act.data, dataBuilderOpts);
+
+		await this._pImportEntry_pFillToken({importable: mon, actor: act});
+
+		return {dataBuilderOpts: dataBuilderOpts, actorData: act};
+	}
+
+	_getActorSheetName (it) {
+		const out = [UtilDataConverter.getNameWithSourcePart(it)];
+
+		const tagsToAdd = Config.get(this._configGroup, "nameTags");
+
+		Object.entries(tagsToAdd)
+			.filter(([, v]) => v)
+			.forEach(([k]) => {
+				switch (Number(k)) {
+					case ConfigConsts.C_CREATURE_NAMETAGS_CR: out.push(`[${this.constructor._getFolderCr(it)}]`); break;
+					case ConfigConsts.C_CREATURE_NAMETAGS_TYPE: out.push(`[${this.constructor._getFolderType(it)}]`); break;
+					case ConfigConsts.C_CREATURE_NAMETAGS_TYPE_WITH_TAGS: out.push(`[${this.constructor._getFolderTypeWithTags(it)}]`); break;
+				}
+			});
+
+		return out.join(" ");
+	}
+
+	_getActorFlags (mon) {
+		const out = super._getActorFlags(mon);
+
+		if (
+			UtilCompat.isMonksLittleDetailsActive()
+			&& Config.get("importCreature", "isAddSoundEffect")
+			&& mon.soundClip
+		) {
+			out["monks-little-details"] = {"sound-effect": Renderer.utils.getMediaUrl(mon, "soundClip", "audio")};
+		}
+
+		return out;
+	}
+
+	async _pImportEntry_pFillData_Attributes (mon, act, monOpts) {
+		const data = act.data;
+
+		const out = {};
+
+		const acMeta = mon.ac && mon.ac.length ? (await this._pImportEntry_getAcMeta(mon, monOpts)) : null;
+
+		out.ac = {
+			flat: acMeta?.flat,
+			min: 0,
+			calc: acMeta?.calc || "default",
+			formula: acMeta?.formula,
+			value: acMeta?.value,
+		};
+
+		let hpMax = 0;
+		let hpFormula = "";
+		if (mon.hp) {
+			// Try to parse the "special" value, in case it is either a number, or starts with "<number> + ..."
+			if (mon.hp.special) {
+				mon.hp.special.replace(/^(?<hp>\d+)\s*(?:[-+]|$)/, (...m) => {
+					hpMax = Number(m.last().hp);
+				});
+			}
+
+			if (mon.hp.average) hpMax = mon.hp.average;
+			if (mon.hp.formula) hpFormula = mon.hp.formula;
+		}
+
+		out.hp = {
+			value: hpMax,
+			min: 0,
+			max: hpMax,
+			temp: 0,
+			tempmax: 0,
+			formula: hpFormula,
+		};
+
+		out.init = {
+			value: 0,
+			mod: 0,
+			bonus: 0,
+			total: Parser.getAbilityModNumber(mon.dex),
+			prof: 0,
+		};
+
+		out.prof = monOpts.pb;
+
+		out.movement = DataConverter.getMovement(mon.speed, {configGroup: "importCreature"});
+
+		out.spellcasting = monOpts.spellAbility;
+
+		out.spelldc = monOpts.spellDc;
+
+		out.senses = {
+			darkvision: 0,
+			blindsight: 0,
+			tremorsense: 0,
+			truesight: 0,
+			units: Config.getMetricUnitDistance({configGroup: "importCreature", configKey: "isTokenMetric", originalUnit: "ft"}),
+			special: "",
+		};
+
+		out.senses.special = (mon.senses || [])
+			.filter(sens => {
+				sens = sens.replace(Parser._numberCleanRegexp, "");
+
+				const mSense = /(blindsight|darkvision|tremorsense|truesight)\s*(\d+)/i.exec(sens);
+				if (!mSense) return true;
+
+				// This is *technically* incorrect, since we're using a "token" config option for main-sheet data, but we
+				//   later use this same data to populate the token.
+				// Marrying the two together is (hopefully) less confusing for the user, besides.
+				const num = Config.getMetricNumberDistance({configGroup: "importCreature", configKey: "isTokenMetric", originalValue: Number(mSense[2]), originalUnit: "feet"});
+				switch (mSense[1]) {
+					case "darkvision": out.senses.darkvision = num; break;
+					case "blindsight": out.senses.blindsight = num; break;
+					case "tremorsense": out.senses.tremorsense = num; break;
+					case "truesight": out.senses.truesight = num; break;
+				}
+				return false;
+			})
+			.join(", ");
+
+		data.attributes = out;
+	}
+
+	/**
+	 * Convert excess AC (beyond that which is provided by equipped items) into an active effect.
+	 *   This allows compatibility with e.g. the Dynamic Active Effects module.
+	 */
+	async _pImportEntry_getAcMeta (mon, monOpts) {
+		const ac0 = mon.ac[0];
+		const acVal = this.constructor._pImportEntry_getAcMeta_getAcVal({ac0});
+
+		if (Config.get("importCreature", "isUseStaticAc")) {
+			const acValStatic = acVal == null ? 10 : acVal;
+			return {calc: "custom", formula: `${acValStatic}`, value: acValStatic};
+		}
+
+		const acHashes = this.constructor._getItemHashesFromAcItem(ac0);
+
+		if (!acHashes.length) {
+			if (acVal == null || (10 + Parser.getAbilityModNumber(mon.dex)) === acVal) return {calc: "default", formula: null, value: null};
+		}
+
+		const {ac: acFromItemEffects, isDexIncluded: isDexAlreadyIncluded, isAnyItemIncluded} = await this._pImportEntry_pFillData_Attributes_Ac_getAcFromItems(mon, acHashes);
+
+		// If we, for whatever reason, have AC items but no defined AC score, use the default and assume it will turn out correct
+		if (acVal == null) return {calc: "default", formula: null, value: null};
+
+		const delta = acVal - (acFromItemEffects + (isDexAlreadyIncluded ? 0 : Parser.getAbilityModNumber(mon.dex)));
+		// If the final AC is exactly equal to our expected value, allow the auto-calculation to do its job.
+		if (!delta) return {calc: "default", formula: null, value: null};
+
+		if (!isAnyItemIncluded) {
+			// If we have a natural armor item, use it
+			if (!Config.get("importCreature", "isUseCustomNaturalAc") && (ac0.from || []).some(it => /^natural armor$/i.test(`${it}`.trim()))) {
+				return {calc: "natural", formula: null, value: null, flat: acVal};
+			}
+
+			// Otherwise, if we have no item AC, create a custom formula
+			return {calc: "custom", formula: `@attributes.ac.armor + @attributes.ac.dex ${UiUtil.intToBonus(delta)}`, value: null};
+		}
+
+		// If we can't use active effects (i.e. DAE compatibility), set a static value
+		if (!Config.get("importItem", "isAddActiveEffects")) return {calc: "custom", formula: null, value: acVal};
+
+		// If we *do* have AC from items, and the total doesn't line up with our expected AC (for e.g. Cambion), then,
+		//   create an active effect to bridge the gap, and use the base formula.
+		// N.B.: We *could* add a post-import step where we use a `preCreateItem` hook to then go back and
+		//   update this effect by trying to find some sheet item (e.g. Cambion's "Fiendish Blessing") to connect
+		//   this effect to. So the flow would be:
+		//   - Create "Importing..." actor
+		//   - Build data and update (which includes setting the effects)
+		//   - Bind hook
+		//   - Create sheet items, during which our hook fires and we may update the effect we previously created,
+		//     by trying to match on the text in our items for "AC bonus"/etc.
+		//   - Unbind hook
+		//   - Update the actor again, to persist our changes to the effect (if we made any)
+		//  This is a massive amount of complexity (not to mention performance loss) for something so
+		//    trivial, however.
+		monOpts.effects.push({
+			label: "Other AC Bonus",
+			icon: `modules/${SharedConsts.MODULE_NAME}/media/icon/mighty-force.svg`,
+			changes: [
+				{
+					key: "data.attributes.ac.bonus",
+					value: delta,
+					mode: CONST.ACTIVE_EFFECT_MODES.ADD,
+					priority: UtilActiveEffects.PRIORITY_BONUS,
+				},
+			],
+			disabled: false,
+			duration: {
+				startTime: null,
+				seconds: null,
+				rounds: null,
+				turns: null,
+				startRound: null,
+				startTurn: null,
+			},
+			origin: null,
+			tint: "",
+			transfer: false,
+			flags: {},
+		});
+
+		return {calc: "default", formula: null, value: null};
+	}
+
+	static _pImportEntry_getAcMeta_getAcVal ({ac0}) {
+		if (ac0.ac != null) return ac0.ac;
+		if (ac0.special == null) return typeof ac0 === "number" ? ac0 : null;
+		const mSpecial = /^(?<number>\d+)\s*([-+]|plus|minus)/gi.exec(ac0.special);
+		if (!mSpecial) return null;
+		return Number(mSpecial.groups.number);
+	}
+
+	async _pImportEntry_pFillData_Attributes_Ac_getAcFromItems (mon, acHashes) {
+		let isAnyItem = false;
+		let acBase = 10;
+		let acBonusShield = 0; // Only one shield can be used at a time--take the highest value we find
+		let acBonusOther = 0;
+		let isDexIncluded = false;
+
+		for (const acHash of acHashes) {
+			const item = await Renderer.hover.pCacheAndGetHash(UrlUtil.PG_ITEMS, acHash);
+			if (!item) continue;
+
+			let bonusAc = Number(item.bonusAc || 0);
+			if (isNaN(bonusAc)) bonusAc = 0;
+
+			switch (item.bardingType || item.type) {
+				case "HA": { // Heavy armor
+					isAnyItem = true;
+					acBase = Math.max(acBase, (item.ac || 10) + bonusAc);
+					isDexIncluded = true;
+					break;
+				}
+
+				case "MA": { // Medium armor
+					isAnyItem = true;
+					const maxDex = item.dexterityMax === null ? Number.MAX_SAFE_INTEGER : item.dexterityMax != null ? item.dexterityMax : 2;
+					acBase = Math.max(acBase, (item.ac || 10) + Math.min(maxDex, Parser.getAbilityModNumber(mon.dex || 10)) + bonusAc);
+					isDexIncluded = true;
+					break;
+				}
+
+				case "LA": { // Light armor
+					isAnyItem = true;
+					acBase = Math.max(acBase, (item.ac || 10) + Parser.getAbilityModNumber(mon.dex || 10) + bonusAc);
+					isDexIncluded = true;
+					break;
+				}
+
+				case "S": { // Shield
+					isAnyItem = true;
+					acBonusShield = Math.max(acBonusShield, 2 + bonusAc);
+					break;
+				}
+
+				default: {
+					// If we're using Plutonium item effects (and so not in e.g. DAE compatibility mode), we can add our
+					//   extra bonus AC defined on non-armor items here.
+					// DAE won't/can't pick up non-armor items, so otherwise avoid adding this bonus to maintain
+					//   compatibility.
+					if (Config.get("importItem", "isAddActiveEffects")) {
+						isAnyItem = true;
+						acBonusOther += bonusAc;
+					}
+				}
+			}
+		}
+
+		return {
+			ac: acBase + acBonusShield + acBonusOther,
+			isDexIncluded,
+			isAnyItemIncluded: isAnyItem,
+		};
+	}
+
+	async _pImportEntry_pFillData_Details (mon, data, monOpts) {
+		const out = {};
+
+		out.alignment = mon.alignment ? Parser.alignmentListToFull(mon.alignment).toLowerCase() : "";
+
+		out.biography = {
+			value: await this._pGetBiographyValue(
+				mon,
+				monOpts.fluff,
+				{
+					isImportText: Config.get(this._configGroup, "isImportBio"),
+					isImportImages: Config.get(this._configGroup, "isImportBioImages"),
+					additionalHtml: Config.get(this._configGroup, "isImportBioVariants") ? Renderer.monster.getRenderedVariants(mon) : null,
+				},
+			),
+		};
+
+		if (monOpts.spellLevel || monOpts.spellClass) {
+			out.class = {
+				level: monOpts.spellLevel,
+				name: monOpts.spellClass,
+			};
+		} else {
+			out.class = {};
+		}
+
+		out.spellLevel = monOpts.spellLevel;
+
+		out.race = "";
+
+		ImportListCreature._CREATURE_TYPES = ImportListCreature._CREATURE_TYPES || new Set(Object.keys(CONFIG.DND5E.creatureTypes));
+
+		const typeInfo = Parser.monTypeToFullObj(mon.type);
+		if (ImportListCreature._CREATURE_TYPES.has(typeInfo.type)) {
+			out.type = {
+				value: typeInfo.type,
+				subtype: typeInfo.tags.join(", "),
+				swarm: typeInfo.swarmSize ? UtilActors.VET_SIZE_TO_ABV[typeInfo.swarmSize] : null,
+			};
+		} else {
+			out.type = {
+				custom: Parser.monTypeToFullObj(mon.type).asText,
+			};
+		}
+
+		out.environment = mon.environment ? mon.environment.sort(SortUtil.ascSortLower).map(it => it.toTitleCase()).join(", ") : "";
+
+		const crNum = Parser.crToNumber(mon.cr);
+		out.cr = crNum >= VeCt.CR_CUSTOM ? 0 : crNum;
+
+		out.xp = {
+			value: mon.cr ? (Parser.crToXpNumber(mon.cr) || 0) : 0,
+		};
+
+		out.source = UtilDataConverter.getSourceWithPagePart(mon);
+
+		data.details = out;
+	}
+
+	_pImportEntry_fillData_Skills (mon, data, dataBuilderOpts) {
+		data.skills = DataConverterCreature.getDataSkills(mon, data, dataBuilderOpts);
+	}
+
+	_pImportEntry_fillData_Traits (mon, data, dataBuilderOpts) {
+		const out = {};
+
+		out.size = UtilActors.VET_SIZE_TO_ABV[dataBuilderOpts.size] || "med";
+
+		const allLangs = new Set();
+		let customLangs = [];
+
+		if (mon.languages) {
+			mon.languages.forEach(l => {
+				const lClean = l.toLowerCase().trim();
+				const lMapped = UtilActors.VALID_LANGUAGES[lClean];
+
+				if (lMapped) allLangs.add(lMapped);
+				else if (lClean === "all") {
+					Object.values(UtilActors.VALID_LANGUAGES).forEach(vl => allLangs.add(vl));
+				} else {
+					customLangs.push(l);
+				}
+			});
+		}
+
+		// Add any valid languages found in tags, as e.g. "Common plus any four languages" is treated as "custom"
+		//  This may produce duplicate text in the "special" field, but this is preferable to the alternatives, which are:
+		//  - storing well-formatted language data for all creatures in the bestiary
+		//  - find-replacing strings in the "special" field, as this may result in garbled text
+		if (mon.languageTags) {
+			mon.languageTags
+				.map(lt => Parser.monLanguageTagToFull(lt))
+				.map(fl => UtilActors.VALID_LANGUAGES[fl.toLowerCase()])
+				.filter(Boolean)
+				.forEach(ml => allLangs.add(ml));
+		}
+
+		out.languages = {
+			value: [...allLangs],
+			custom: customLangs.filter(Boolean).join("; "),
+		};
+
+		this._pImportEntry_fillConditionsDamage(mon, out);
+
+		data.traits = out;
+	}
+
+	_pImportEntry_fillData_Currency (mon, data, monOpts) {
+		// Dummy data
+		data.currency = {
+			pp: 0,
+			gp: 0,
+			ep: 0,
+			sp: 0,
+			cp: 0,
+		};
+	}
+
+	_pImportEntry_fillData_Spells (mon, data, monOpts) {
+		data.spells = DataConverterCreature.getDataSpells(mon, data, monOpts);
+
+		if (
+			!DataConverterCreature.isSlotSpellcaster(mon)
+			|| Config.get("importSpell", "spellPointsModeNpc") !== ConfigConsts.C_SPELL_POINTS_MODE__ENABLED_AND_UNLIMITED_SLOTS
+		) return;
+
+		const {data: dataSpellPoints} = UtilActors.getActorSpellPointsSlotsUpdateData();
+		foundry.utils.mergeObject(data, dataSpellPoints);
+
+		if (!monOpts.spellLevel) return;
+
+		monOpts.postItemItemUpdates.push(async ({actor}) => {
+			await UtilActors.pGetCreateActorSpellPointsItem({actor: actor, totalSpellcastingLevels: monOpts.spellLevel});
+		});
+	}
+
+	_pImportEntry_fillData_Resources (mon, data, monOpts) {
+		const out = {};
+
+		let legAct = 0;
+		if (mon.legendary || mon.mythic) legAct = mon.legendaryActions || 3;
+
+		out.legact = {
+			value: legAct,
+			max: legAct,
+		};
+
+		let legRes = 0;
+		if (mon.trait) {
+			const legResTrait = mon.trait.find(it => /legendary resistance/gi.test(it.name || ""));
+			if (legResTrait) {
+				const m = /\((\d+)\/Day\)/i.exec(legResTrait.name);
+				if (m) legRes = Number(m[1]);
+			}
+		}
+
+		out.legres = {
+			value: legRes,
+			max: legRes,
+		};
+
+		out.lair = {
+			value: !!(monOpts.legendaryMeta && monOpts.legendaryMeta.lairActions),
+			initiative: 20, // is this always correct?
+		};
+
+		data.resources = out;
+	}
+
+	async _pImportEntry_pFillItems (mon, act, monOpts, importOpts) {
+		// TODO handle `<x>Header` for actions, bonus actions, reactions--add them as "special" items?
+		// Do actions first, as they set the prof bonus if the creature has no CR
+		await this._pImportEntry_pFillItems_pActions(mon, act, monOpts);
+		await this._pImportEntry_pFillItems_pTraitsReactionsLegendaries(
+			mon,
+			act,
+			monOpts,
+			{
+				prop: "trait",
+				fnPreProcess: trait => {
+					if (!/legendary resistance/gi.test(trait.name || "")) return;
+					trait._plut_isLegendaryResistance = true;
+				},
+			},
+			{
+				consumeType: trait => trait._plut_isLegendaryResistance ? "attribute" : null,
+				consumeTarget: trait => trait._plut_isLegendaryResistance ? "resources.legres.value" : null,
+				consumeAmount: trait => trait._plut_isLegendaryResistance ? 1 : null,
+			},
+		);
+		await this._pImportEntry_pFillItems_pTraitsReactionsLegendaries(mon, act, monOpts, {prop: "bonus"}, {
+			activationType: "bonus",
+			activationCost: 1,
+		});
+		await this._pImportEntry_pFillItems_pTraitsReactionsLegendaries(mon, act, monOpts, {prop: "reaction"}, {
+			activationType: "reaction",
+			activationCost: 1,
+		});
+		const legendaryItems = await this._pImportEntry_pFillItems_pTraitsReactionsLegendaries(
+			mon,
+			act,
+			monOpts,
+			{
+				prop: "legendary",
+				fnPreProcess: legEnt => {
+					this.constructor._mutLegendaryActionNameAndCost(legEnt);
+				},
+			},
+			{
+				activationType: "legendary",
+				activationCost: legEnt => legEnt._plut_legActions,
+				consumeType: "attribute",
+				consumeTarget: "resources.legact.value",
+				consumeAmount: legEnt => legEnt._plut_legActions,
+			},
+		);
+		await this._pImportEntry_pFillItems_pLegendaryHeader(mon, act, monOpts, legendaryItems);
+		const mythicItems = await this._pImportEntry_pFillItems_pTraitsReactionsLegendaries(
+			mon,
+			act,
+			monOpts,
+			{
+				prop: "mythic",
+				fnPreProcess: legEnt => {
+					this.constructor._mutLegendaryActionNameAndCost(legEnt);
+				},
+			},
+			{
+				activationType: "legendary",
+				activationCost: legEnt => legEnt._plut_legActions,
+				consumeType: "attribute",
+				consumeTarget: "resources.legact.value",
+				consumeAmount: legEnt => legEnt._plut_legActions,
+			},
+		);
+		await this._pImportEntry_pFillItems_pMythicHeader(mon, act, monOpts, mythicItems);
+		await this._pImportEntry_pFillItems_pOtherHeaders(mon, act, monOpts, mythicItems);
+		await this._pImportEntry_pFillItems_pLairActions(mon, act, monOpts);
+		await this._pImportEntry_pFillItems_pRegionalEffects(mon, act, monOpts);
+		await this._pImportEntry_pFillItems_pVariants(mon, act, monOpts);
+
+		await this._pImportEntry_pFillItems_pInventory(mon, act, monOpts);
+
+		const isTemporary = importOpts.isTemp || this._pack != null;
+
+		// Add the items we have collected so far, as we may want to attach spells which use item charges to these items
+		monOpts.importedSheetItems = await UtilActors.pAddActorItems(monOpts.actor, monOpts.items, {isTemporary});
+
+		// Cache current items and reset to-be-added item list
+		const tempItems = monOpts.items;
+		monOpts.items = [];
+
+		// Add spellcasting items (i.e., spells)
+		await this._pImportEntry_pFillItems_pSpellcasting(mon, act, isTemporary, monOpts);
+		const importedSheetItemsSpells = await UtilActors.pAddActorItems(monOpts.actor, monOpts.items, {isTemporary});
+
+		// (Repopulate the full items list, to avoid breaking anything further down the line)
+		monOpts.importedSheetItems = [...monOpts.importedSheetItems, ...importedSheetItemsSpells];
+		monOpts.items = [...tempItems, ...monOpts.items];
+	}
+
+	static _mutLegendaryActionNameAndCost (legEnt) {
+		if (!legEnt) return;
+
+		legEnt._plut_legActions = legEnt._plut_legActions || 1;
+		if (!legEnt.name) return;
+
+		legEnt.name = legEnt.name.replace(/\(costs (\d+) actions?\)/i, (...m) => {
+			legEnt._plut_legActions = Number(m[1]);
+			return "";
+		}).trim();
+	}
+
+	/**
+	 * @param mon Monster.
+	 * @param dataBuilderOpts Import options.
+	 * @param act Actor update data.
+	 * @param entry Entry to process.
+	 * @param [prop] Property from which this data originates.
+	 * @param [opts_getItem] Options object.
+	 * @param [opts_getItem.fvttType] Foundry type.
+	 * @param [opts_getItem.activationType] Foundry activation type.
+	 * @param [opts_getItem.activationCost] Foundry action type (getter function or static value)
+	 * @param [opts_getItem.img] Image path.
+	 * @param [opts_getItem.description] Pre-rendered description.
+	 */
+	async _pImportEntry_pFillItems_pAddTextOnlyItem ({mon, dataBuilderOpts, act, entry, opts_getItem, prop}) {
+		const foundryFlags = {};
+
+		if (prop) {
+			const propChild = `monster${prop.uppercaseFirst()}`;
+
+			Object.assign(
+				foundryFlags,
+				{
+					[SharedConsts.MODULE_NAME_FAKE]: {
+						page: propChild,
+						source: entry.source || mon.source,
+						hash: UrlUtil.URL_TO_HASH_BUILDER[propChild]({
+							source: mon.source,
+							...entry,
+							monsterName: mon.name,
+							monsterSource: mon.source,
+						}),
+					},
+				},
+			);
+		}
+
+		const item = await DataConverter.pGetItemActorPassive(
+			entry,
+			{
+				...opts_getItem,
+				mode: "creature",
+				pb: dataBuilderOpts.getSheetPb(),
+				entity: mon,
+				source: mon.source,
+				summonSpellLevel: mon._summonedBySpell_level ?? mon.summonedBySpellLevel,
+				actor: {data: act}, // wrap our update data to give the appearance of a real actor
+				foundryFlags,
+			},
+		);
+
+		dataBuilderOpts.items.push(item);
+
+		return item;
+	}
+
+	async _pImportEntry_pFillItems_pLegendaryHeader (mon, act, dataBuilderOpts, legendaryItems) {
+		return this._pImportEntry_pFillItems_pLegendaryMythicHeader({
+			mon,
+			act,
+			dataBuilderOpts,
+			addedItems: legendaryItems,
+			prop: "legendary",
+			itemName: "Legendary Actions",
+			renderedEntries: await UtilDataConverter.pGetWithDescriptionPlugins(() => Renderer.monster.getLegendaryActionIntro(mon, {isUseDisplayName: !!mon._fvttIsRenamed})),
+		});
+	}
+
+	async _pImportEntry_pFillItems_pMythicHeader (mon, act, dataBuilderOpts, mythicItems) {
+		return this._pImportEntry_pFillItems_pLegendaryMythicHeader({
+			mon,
+			act,
+			dataBuilderOpts,
+			addedItems: mythicItems,
+			prop: "mythic",
+			itemName: "Mythic Actions",
+			renderedEntries: await UtilDataConverter.pGetWithDescriptionPlugins(() => Renderer.monster.getSectionIntro(mon, {prop: "mythic"})),
+		});
+	}
+
+	async _pImportEntry_pFillItems_pOtherHeaders (mon, act, dataBuilderOpts) {
+		const propMetas = [
+			{prop: "trait", name: "Traits"},
+			{prop: "action", name: "Actions"},
+			{prop: "bonus", name: "Bonus Actions"},
+			{prop: "reaction", name: "Reactions"},
+		];
+
+		for (const {prop, name} of propMetas) {
+			const noteKey = `${prop}Note`;
+			if (!mon[noteKey]) continue;
+
+			await this._pImportEntry_pFillItems_pAddTextOnlyItem({
+				mon,
+				dataBuilderOpts,
+				act,
+				entry: {
+					name: `${name} \u2013 ${mon[noteKey]}`,
+					entries: [],
+				},
+				opts_getItem: {
+					img: "icons/sundries/books/book-red-exclamation.webp",
+					description: "",
+				},
+			});
+		}
+
+		for (const {prop, name} of propMetas) {
+			const headerKey = `${prop}Header`;
+			if (!mon[headerKey]) continue;
+
+			await this._pImportEntry_pFillItems_pAddTextOnlyItem({
+				mon,
+				dataBuilderOpts,
+				act,
+				entry: {
+					name: `${name} \u2013 Note`,
+					entries: mon[headerKey],
+				},
+				opts_getItem: {
+					img: "icons/sundries/books/book-red-exclamation.webp",
+				},
+			});
+		}
+	}
+
+	async _pImportEntry_pFillItems_pLegendaryMythicHeader (
+		{
+			mon,
+			act,
+			dataBuilderOpts,
+			addedItems,
+			prop,
+			itemName,
+			renderedEntries,
+		},
+	) {
+		if (!mon[prop]) return;
+
+		const legendaryItemTags = addedItems
+			.map(it => `@ActorEmbeddedItem[${dataBuilderOpts.actor.id}][${it.name}]`);
+
+		const description = `<div>
+			<div>${renderedEntries}</div>
+			${legendaryItemTags.length ? `<div>${Renderer.get().render({type: "list", items: legendaryItemTags})}</div>` : ""}
+		</div>`;
+
+		const img = await DataConverterCreature.pGetTraitReactionLegendaryImage(mon, {name: itemName}, dataBuilderOpts);
+
+		dataBuilderOpts.items.push(await DataConverter.pGetItemActorPassive(
+			{name: itemName},
+			{
+				description,
+				mode: "creature",
+				pb: dataBuilderOpts.getSheetPb(),
+				entity: mon,
+				source: mon.source,
+				summonSpellLevel: mon._summonedBySpell_level ?? mon.summonedBySpellLevel,
+				actor: {data: act}, // wrap our update data to give the appearance of a real actor
+				img,
+			},
+		));
+	}
+
+	/**
+	 * @param mon Monster.
+	 * @param act Actor data.
+	 * @param dataBuilderOpts Import metadata.
+	 * @param opts Options object.
+	 * @param opts.prop Monster property to loop through (if it exists)
+	 * @param opts.img Image path.
+	 * @param [opts.fnPreProcess]
+	 * @param [optsFoundryData] Properties can be either values of functions.
+	 * @param [optsFoundryData.activationType]
+	 * @param [optsFoundryData.activationCost]
+	 * @param [optsFoundryData.consumeType]
+	 * @param [optsFoundryData.consumeTarget]
+	 * @param [optsFoundryData.consumeAmount]
+	 */
+	async _pImportEntry_pFillItems_pTraitsReactionsLegendaries (mon, act, dataBuilderOpts, opts, optsFoundryData) {
+		optsFoundryData = optsFoundryData || {};
+
+		if (!mon[opts.prop]) return;
+
+		const out = [];
+
+		for (let entry of mon[opts.prop]) {
+			if (opts.fnPreProcess) {
+				entry = MiscUtil.copy(entry);
+				opts.fnPreProcess(entry);
+			}
+
+			const nxtOpts = {};
+			Object.entries(optsFoundryData)
+				.forEach(([k, v]) => {
+					if (typeof v === "function") nxtOpts[k] = v(entry);
+					else nxtOpts[k] = MiscUtil.copy(v);
+				});
+
+			const img = await DataConverterCreature.pGetTraitReactionLegendaryImage(mon, entry, dataBuilderOpts, {isLegendary: opts.prop === "legendary" || opts.prop === "mythic"});
+
+			const addedItem = await this._pImportEntry_pFillItems_pAddTextOnlyItem({
+				mon,
+				dataBuilderOpts,
+				act,
+				entry,
+				opts_getItem: {
+					...nxtOpts,
+					img,
+				},
+				prop: opts.prop,
+			});
+
+			out.push(addedItem);
+		}
+
+		return out;
+	}
+
+	static _getLairActionName (strEnt) {
+		const stripped = Renderer.stripTags(strEnt);
+
+		let truncatedName = "Lair: ";
+		const spl = stripped.split(" ");
+		for (const pt of spl) {
+			if ((truncatedName.length + pt.length) < 50) {
+				truncatedName += `${pt} `;
+			} else break;
+		}
+		if (stripped.length > truncatedName.trim().length) truncatedName += "...";
+		else truncatedName = truncatedName.trim();
+
+		return truncatedName;
+	}
+
+	async _pImportEntry_pFillItems_pLairActions (mon, act, monOpts) {
+		if (!monOpts.legendaryMeta?.lairActions) return;
+
+		const lairPart = monOpts.legendaryMeta.lairActions;
+
+		// Lair actions are _usually_ in lists, with each list item being a single lair action.
+		const listItems = this._pImportEntry_pFillItems_lairActions_getListItems(lairPart);
+		if (listItems.length) {
+			for (const listItem of listItems) {
+				const ent = this._pImportEntry_pFillItems_lairActions_getLairActionEntryFromListItem(listItem);
+				await this._pImportEntry_pFillItems_lairActions_addLairAction(mon, act, monOpts, ent);
+			}
+			return;
+		}
+
+		// If we can't find any list items, import the whole lair action section as one item
+		const entry = this._pImportEntry_pFillItems_lairActions_getLairActionEntry(lairPart);
+		await this._pImportEntry_pFillItems_lairActions_addLairAction(mon, act, monOpts, entry);
+	}
+
+	_pImportEntry_pFillItems_lairActions_getListItems (ent) {
+		const out = [];
+		MiscUtil.getWalker({isNoModification: true}).walk(
+			ent,
+			{
+				object: obj => {
+					if (obj.type !== "list") return;
+					out.push(...(obj.items || []));
+				},
+			},
+		);
+		return out;
+	}
+
+	_pImportEntry_pFillItems_lairActions_getLairActionEntryFromListItem (ent) {
+		// Handle plain string list items
+		if (typeof ent === "string") {
+			return {
+				type: "entries",
+				name: this.constructor._getLairActionName(ent),
+				entries: [
+					ent,
+				],
+			};
+		}
+
+		// Handle `"type": "item"` list items
+		if (ent.name && (ent.entry || ent.entries)) {
+			const entries = ent.entries || [ent.entry];
+			return {
+				type: "entries",
+				name: this.constructor._getLairActionName(ent.name.replace(/\s*[.?!]$/, "")),
+				entries,
+			};
+		}
+
+		throw new Error(`Unhandled lair action format!`);
+	}
+
+	_pImportEntry_pFillItems_lairActions_getLairActionEntry (ent) {
+		if (typeof ent[0] === "string") {
+			return {
+				type: "entries",
+				name: this.constructor._getLairActionName(ent[0]),
+				entries: ent,
+			};
+		}
+
+		// Fallback on making a generically-named lair action
+		return {
+			type: "entries",
+			name: `Lair Actions`,
+			entries: ent,
+		};
+	}
+
+	async _pImportEntry_pFillItems_lairActions_addLairAction (mon, act, dataBuilderOpts, entry) {
+		const strEntries = JSON.stringify(entry);
+
+		const {
+			saveAbility,
+			saveScaling,
+			saveDc,
+		} = this._getSavingThrowData(mon, dataBuilderOpts.getSheetPb(), strEntries);
+
+		const damageTuples = [];
+		let formula = "";
+		if (typeof entry.entries[0] === "string") {
+			const {damageTupleMetas} = DataConverter.getDamageTupleMetas(entry.entries[0], {summonSpellLevel: mon._summonedBySpell_level ?? mon.summonedBySpellLevel});
+			const {damageParts, formula: formula_} = DataConverter.getDamagePartsAndOtherFormula(damageTupleMetas);
+			damageTuples.push(...damageParts);
+			formula = formula_;
+		}
+
+		const damageParts = this._getDamageTuplesWithMod(damageTuples);
+
+		// Always name the action "Lair Actions" to match the SRD content
+		const img = await DataConverterCreature.pGetLairActionImage(mon, {name: "Lair Actions"}, dataBuilderOpts);
+
+		await this._pImportEntry_pFillItems_pAddTextOnlyItem({
+			mon,
+			dataBuilderOpts,
+			act,
+			entry,
+			opts_getItem: {
+				activationType: "lair",
+				activationCost: 1,
+				img,
+				saveAbility,
+				saveDc,
+				saveScaling,
+				damageParts,
+				formula,
+			},
+			prop: "lairActions",
+		});
+	}
+
+	async _pImportEntry_pFillItems_pRegionalEffects (mon, act, dataBuilderOpts) {
+		if (!dataBuilderOpts.legendaryMeta?.regionalEffects) return;
+
+		const regionalEntry = {
+			type: "entries",
+			name: "Regional Effects",
+			entries: MiscUtil.copy(dataBuilderOpts.legendaryMeta.regionalEffects),
+		};
+
+		const img = await DataConverterCreature.pGetLairActionImage(mon, regionalEntry, dataBuilderOpts);
+
+		await this._pImportEntry_pFillItems_pAddTextOnlyItem({
+			mon,
+			dataBuilderOpts,
+			act,
+			entry: regionalEntry,
+			opts_getItem: {
+				img,
+			},
+			prop: "regionalEffects",
+		});
+	}
+
+	async _pImportEntry_pFillItems_pVariants (mon, act, dataBuilderOpts) {
+		if (!Config.get("importCreature", "isImportVariantsAsFeatures")) return;
+
+		const dragonVariants = Renderer.monster.dragonCasterVariant.getVariantEntries(mon);
+
+		const allVariants = [
+			...(dragonVariants || []),
+			...(mon.variant || []),
+		];
+
+		if (!allVariants.length) return;
+
+		for (const variant of allVariants) {
+			const img = await DataConverterCreature.pGetVariantImage(mon, variant, dataBuilderOpts);
+
+			await this._pImportEntry_pFillItems_pAddTextOnlyItem({
+				mon,
+				dataBuilderOpts,
+				act,
+				entry: variant,
+				opts_getItem: {
+					img,
+				},
+				prop: "variant",
+			});
+		}
+	}
+
+	async _pImportEntry_pFillItems_pActions (mon, act, monOpts) {
+		if (!mon.action) return;
+		for (const action of mon.action) {
+			// Split actions into multiple (fake) sub-actions in the case of e.g. multi-modal breath weapons.
+			//   For any other action, a single sub-action, which is simply the original action, will be processed.
+			const subActions = this._pImportEntry_pFillItems_getSubActions(action, monOpts);
+
+			let img = null;
+			for (let i = 0; i < subActions.length; ++i) {
+				const subAction = subActions[i];
+				const result = await this._pImportEntry_pFillItems_pAction(mon, act, subAction, monOpts, {img});
+
+				// Use the image of the first action as the image for sub-actions
+				if (i === 0) img = result?.img;
+			}
+		}
+	}
+
+	_pImportEntry_pFillItems_getSubActions (action, monOpts) {
+		if (!action.name || !action.entries) return [action];
+
+		const actorId = monOpts?.actor?.id ?? monOpts?.actor?._id;
+
+		// region Breath weapons
+		if (this.constructor._isActionBreathWeapon(action)) {
+			const out = [];
+			const tmpItemIdParent = CryptUtil.uid();
+
+			const breathActions = action.entries[1].items.map(li => {
+				const cleanName = li.name.replace(/\.\s*$/, "");
+				const itemName = `Breath Weapons: ${cleanName}`;
+				const tmpItemId = CryptUtil.uid();
+
+				monOpts.postItemItemUpdates.push(async ({actor, isTemp, isPack, pack}) => {
+					// Temp items don't have IDs, so we can't link anything up
+					if (isTemp) return;
+
+					const parentSheetItem = actor.items.find(it => it.data.flags?.[SharedConsts.MODULE_NAME_FAKE]?._tmpItemId === tmpItemIdParent);
+					if (!parentSheetItem) return console.warn(...LGT, `Failed to find parent sheet item for item "${li.name}"`);
+
+					const sheetItem = actor.items.find(it => it.data.flags?.[SharedConsts.MODULE_NAME_FAKE]?._tmpItemId === tmpItemId);
+					if (!sheetItem) return console.warn(...LGT, `Failed to find sheet item for item "${li.name}"`);
+
+					const update = {
+						_id: sheetItem.id,
+						data: {consume: {target: parentSheetItem.id}},
+					};
+					await UtilDocuments.pUpdateEmbeddedDocuments(
+						actor,
+						[update],
+						{
+							propData: "items",
+							ClsEmbed: Item,
+						},
+					);
+				});
+
+				return {
+					name: itemName,
+					_plut_cleanName: cleanName,
+					entries: li.entry ? [li.entry] : li.entries,
+					_foundryData: {
+						"consume.type": "charges",
+						"consume.amount": 1,
+					},
+					_foundryFlags: {
+						[SharedConsts.MODULE_NAME_FAKE]: {
+							_tmpItemId: tmpItemId,
+						},
+					},
+				};
+			});
+
+			out.push({
+				name: action.name,
+				entries: [
+					`${action.entries[0].trim().replace(/[.,!?:]$/, "")}: ${breathActions.map(it => actorId ? `@ActorEmbeddedItem[${actorId}][${it.name}]{${it._plut_cleanName}}` : it._plut_cleanName).joinConjunct(", ", " or ")}`,
+				],
+				_foundryFlags: {
+					[SharedConsts.MODULE_NAME_FAKE]: {
+						_tmpItemId: tmpItemIdParent,
+					},
+				},
+			});
+
+			breathActions.forEach(it => delete it._plut_cleanName);
+			out.push(...breathActions);
+
+			return out;
+		}
+		// endregion
+
+		// region Eye rays; other "choose"/"random" lists
+		if (
+			this.constructor._isActionEyeRay(action)
+			|| this.constructor._isActionOtherChooseOneOrRandom(action)
+		) {
+			const out = [];
+
+			const cpy = MiscUtil.copy(action);
+			const ixList = action.entries.findIndex(it => it.type === "list" && this.constructor._isOptionsList(it));
+			const lst = MiscUtil.copy(action.entries[ixList]);
+			out.push(cpy);
+
+			const nxtList = [];
+			cpy.entries[ixList] = {
+				type: "list",
+				items: nxtList,
+			};
+
+			const ptParentNameClean = cpy.name.split(/[.,!:?({]/)[0];
+
+			lst.items.forEach(it => {
+				const ptNameClean = it.name.replace(/[.,!:?]\\s*$/, "");
+				const entSub = {
+					...it,
+					type: "entries",
+					name: `${ptParentNameClean}: ${ptNameClean}`,
+				};
+
+				if (entSub.entry) {
+					entSub.entries = [entSub.entry];
+					delete entSub.entry;
+				}
+
+				delete entSub.style;
+
+				out.push(entSub);
+				nxtList.push(actorId ? `@ActorEmbeddedItem[${actorId}][${entSub.name}]{${ptNameClean}}` : ptNameClean);
+			});
+
+			return out;
+		}
+		// endregion
+
+		return [action];
+	}
+
+	static _isActionBreathWeapon (action) {
+		return action.entries.length === 2
+			&& typeof action.entries[0] === "string"
+			&& action.entries[0].includes("following breath weapon")
+			&& action.entries[1].type === "list"
+			&& action.entries[1].items.every(li => li.name && (li.entry || li.entries));
+	}
+
+	static _isActionEyeRay (action) {
+		return /^eye ray/gi.test(action.name) && action.entries.find(it => it.type === "list" && (it.items || []).every(li => li.type === "item"));
+	}
+
+	static _isActionOtherChooseOneOrRandom (action) {
+		// We expect a single string of intro text, then a list of items
+		if (
+			action.entries.length !== 2
+			|| typeof action.entries[0] !== "string"
+			|| action.entries[1].type !== "list"
+		) return false;
+
+		if (
+			!/\bthe following\b/.test(action.entries[0])
+			&& !/\bchoose one\b/.test(action.entries[0])
+			&& !/\b(?:at|one) random\b/.test(action.entries[0])
+		) return false;
+
+		return this._isOptionsList(action.entries[1]);
+	}
+
+	static _isOptionsList (entry) {
+		return entry?.items?.length && entry.items.every(li => li.name);
+	}
+
+	/**
+	 * @param mon
+	 * @param act
+	 * @param action
+	 * @param dataBuilderOpts
+	 * @param [opts]
+	 * @param [opts.img] Image to use
+	 */
+	async _pImportEntry_pFillItems_pAction (mon, act, action, dataBuilderOpts, opts) {
+		if (!action.entries?.length) return console.warn(...LGT, `${mon.name} (${mon.source}) action "${action?.name}" had no entries!`);
+
+		const description = await DataConverter.pGetEntryDescription(action, {summonSpellLevel: mon._summonedBySpell_level ?? mon.summonedBySpellLevel});
+		const strEntries = action.entries ? JSON.stringify(action.entries) : null;
+
+		const {
+			damageTuples,
+			formula,
+			offensiveAbility,
+			isAttack,
+			rangeShort,
+			rangeLong,
+			actionType,
+			isProficient,
+			attackBonus,
+			_foundryData,
+			foundryData,
+			_foundryFlags,
+			foundryFlags,
+			img,
+		} = await DataConverterCreature.pGetParsedAction(mon, action, dataBuilderOpts);
+
+		const damageParts = [];
+		damageParts.push(...this._getDamageTuplesWithMod(damageTuples, mon[offensiveAbility]));
+
+		// region Saving throw
+		const {
+			saveAbility,
+			saveScaling,
+			saveDc,
+		} = this._getSavingThrowData(mon, dataBuilderOpts.getSheetPb(), strEntries);
+		// endregion
+
+		// If it was an attack, treat is as a weapon. Otherwise, treat it as a generic action.
+		if (isAttack) {
+			return this._pFillWeaponItem(
+				mon,
+				act,
+				action,
+				dataBuilderOpts,
+				{
+					offensiveAbility,
+					damageParts,
+					formula,
+					rangeShort,
+					rangeLong,
+					actionType,
+					isProficient,
+					description: this._getAttackDescription({mon, action, description}),
+					saveAbility,
+					saveDc,
+					saveScaling,
+					attackBonus,
+					_foundryData,
+					foundryData,
+					_foundryFlags,
+					foundryFlags,
+					img: opts?.img ?? img,
+					isMagical: (mon.traitTags || []).includes("Magic Weapons"),
+				},
+			);
+		}
+
+		return this._pImportEntry_pFillItems_pAddTextOnlyItem({
+			mon,
+			dataBuilderOpts,
+			act,
+			entry: action,
+			opts_getItem: {
+				activationType: "action",
+				activationCost: 1,
+				description,
+				saveAbility,
+				saveDc,
+				saveScaling,
+				damageParts,
+				formula,
+				attackBonus,
+				_foundryData,
+				foundryData,
+				_foundryFlags,
+				foundryFlags,
+				img: opts?.img ?? img,
+			},
+			prop: "action",
+		});
+	}
+
+	_getAttackDescription ({mon, action, description}) {
+		if (!Config.get(this._configGroup, "isSecretWrapAttacks")) return description;
+
+		const shortName = Renderer.monster.getShortName(mon, {isSentenceCase: true, isUseDisplayName: !!mon._fvttIsRenamed});
+
+		const actionNameClean = Renderer.stripTags(action.name)
+			// Remove recharge
+			.replace(/ \(Recharge.*\)/g, "")
+			// Remove X/time
+			.replace(/ \(\d+\/.*\)/g, "")
+			.toLowerCase()
+		;
+
+		return `<section class="secret py-1">${description}</section>
+		<p>${shortName} attacks with ${mon.isNamedCreature ? "their" : "its"} ${actionNameClean}.</p>`;
+	}
+
+	_getSavingThrowData (mon, assumedMonProf, strEntries) {
+		let {
+			saveAbility,
+			saveScaling,
+			saveDc,
+			isFoundParse,
+		} = super._getSavingThrowData(strEntries);
+
+		if (isFoundParse) {
+			// Try to find an ability to link the scaling to
+			//   Order of preference: cha > wis > int > str > dex > con
+			//   (Rough heuristic of which saving throw sources are the most common)
+			if (assumedMonProf) {
+				const fromAbil = saveDc - assumedMonProf - 8;
+				for (const abil of ["cha", "wis", "int", "str", "dex", "con"]) {
+					const mod = Parser.getAbilityModNumber(mon[abil]);
+					if (mod === fromAbil) {
+						saveScaling = abil;
+						break;
+					}
+				}
+			}
+		}
+
+		return {saveAbility, saveScaling, saveDc};
+	}
+
+	_getDamageTuplesWithMod (damageTuples, abilityScore) {
+		if (!damageTuples.length) return [];
+
+		damageTuples = MiscUtil.copy(damageTuples);
+
+		if (abilityScore) {
+			// Try to switch generic +damage for +@mod if the value match
+			damageTuples.forEach(dmgTuple => {
+				const abMod = Parser.getAbilityModNumber(abilityScore);
+				const mBonus = /(\d+d\d+\s*)([-+]\s*\d+)([ -+].*)?$/.exec(dmgTuple[0]);
+				if (!mBonus) return;
+
+				const fromAbil = Number(mBonus[2].replace(/\s*/g, ""));
+				if (fromAbil === abMod) dmgTuple[0] = `${mBonus[1]} + @mod${mBonus[3] || ""}`;
+			});
+		}
+
+		return damageTuples.filter(it => it.length);
+	}
+
+	static _getItemHashesFromAcItem (ac) {
+		const out = []; // Use a list to maintain order
+
+		if (!ac.from || !ac.from.length) return out;
+
+		ac.from.forEach(from => {
+			const hashes = this._getItemHashesFromString(from);
+			hashes.forEach(hash => {
+				if (!out.includes(hash)) out.push(hash);
+			});
+		});
+
+		return out;
+	}
+
+	static _getItemHashesFromString (str) {
+		const out = []; // Use a list to maintain order
+
+		str.replace(/{@item ([^}]+)}/gi, (...m) => {
+			const [name, source] = m[1].trim().toLowerCase().split("|");
+
+			const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS]({
+				name,
+				source: source || SRC_DMG,
+			});
+
+			if (!out.includes(hash)) out.push(hash);
+		});
+
+		return [...out];
+	}
+
+	async _pImportEntry_pFillItems_pInventory (mon, act, dataBuilderOpts) {
+		const itemHashes = new Set();
+		const itemHashesEquipped = new Set();
+
+		(mon.ac || [])
+			.forEach((ac, i) => {
+				const acHashes = this.constructor._getItemHashesFromAcItem(ac);
+				acHashes.forEach(hash => itemHashes.add(hash));
+				if (i === 0 && !Config.get("importCreature", "isUseStaticAc")) acHashes.forEach(hash => itemHashesEquipped.add(hash)); // Assume the creature has its first listed armor set equipped
+			});
+
+		for (const itemHash of itemHashes) {
+			const ixExistingItem = dataBuilderOpts.getExistingItemItemIndex(itemHash);
+			if (~ixExistingItem) {
+				dataBuilderOpts.chargesItemsIxs[itemHash] = ixExistingItem;
+				continue;
+			}
+
+			const item = await Renderer.hover.pCacheAndGetHash(UrlUtil.PG_ITEMS, itemHash);
+			if (!item) continue;
+
+			await this._pImportEntry_pFillItems_pAddItem(mon, act, item, dataBuilderOpts, {isEquipped: itemHashesEquipped.has(itemHash)});
+		}
+
+		for (const spellcasting of (mon.spellcasting || [])) {
+			if (!spellcasting.chargesItem) continue;
+
+			const {name, source} = DataUtil.generic.unpackUid(spellcasting.chargesItem, "spell");
+			const itemHash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS]({name, source});
+
+			const ixExistingItem = dataBuilderOpts.getExistingItemItemIndex(itemHash);
+			if (~ixExistingItem) {
+				dataBuilderOpts.chargesItemsIxs[itemHash] = ixExistingItem;
+				continue;
+			}
+
+			const item = await Renderer.hover.pCacheAndGetHash(UrlUtil.PG_ITEMS, itemHash);
+			if (!item) continue;
+
+			dataBuilderOpts.chargesItemsIxs[itemHash] = dataBuilderOpts.items.length - 1;
+
+			await this._pImportEntry_pFillItems_pAddItem(mon, act, item, dataBuilderOpts, {isEquipped: true});
+		}
+
+		// Do these after, to avoid duplicating AC items
+		const itemHashesFromTraits = (mon.trait || [])
+			.filter(it => it.name && it.entries && /equipment/i.test(it.name.trim()))
+			.map(it => this.constructor._getItemHashesFromString(JSON.stringify(it.entries)))
+			.flat()
+			.filter(hash => !itemHashes.has(hash));
+		for (const itemHash of itemHashesFromTraits) {
+			const ixExistingItem = dataBuilderOpts.getExistingItemItemIndex(itemHash);
+			if (~ixExistingItem) {
+				continue;
+			}
+
+			const item = await Renderer.hover.pCacheAndGetHash(UrlUtil.PG_ITEMS, itemHash);
+			if (!item) continue;
+
+			// Skip any weapons, as we assume the actions step will take care of these.
+			if (item.type === "S" || item.type === "R" || item.weaponCategory) continue;
+
+			await this._pImportEntry_pFillItems_pAddItem(mon, act, item, dataBuilderOpts, {isEquipped: true});
+		}
+	}
+
+	/**
+	 * @param mon
+	 * @param act
+	 * @param item
+	 * @param dataBuilderOpts
+	 * @param [opts]
+	 * @param [opts.isEquipped]
+	 */
+	async _pImportEntry_pFillItems_pAddItem (mon, act, item, dataBuilderOpts, opts) {
+		opts = opts || {};
+
+		const fluff = await Renderer.item.pGetFluff(item);
+		const itemData = await DataConverterItem.pGetItemItem(item, {isActorItem: true, fluff, size: dataBuilderOpts.size, isEquipped: opts.isEquipped, dexMod: Parser.getAbilityModNumber(mon.dex), isInfiniteAmmo: true});
+
+		dataBuilderOpts.items.push(itemData);
+	}
+
+	async _pImportEntry_pFillItems_pSpellcasting (mon, act, isTemporary, dataBuilderOpts) {
+		if (!mon.spellcasting) return;
+
+		const importListSpells = new ImportListSpell({actor: dataBuilderOpts.actor});
+		await importListSpells.pInit();
+
+		const hashToIdMap = {};
+
+		// Assume creatures (i.e. npcs) always prepare all their spells
+		const isPrepared = true;
+
+		const spellcastingsUnknownProps = [];
+		for (const spellcasting of mon.spellcasting) {
+			const cpySpellcasting = MiscUtil.copy(spellcasting);
+
+			// region Remove properties which we have no interest in
+			// General entry properties
+			delete cpySpellcasting.name;
+			delete cpySpellcasting.type;
+			delete cpySpellcasting.page;
+			delete cpySpellcasting.id;
+			delete cpySpellcasting.source;
+			delete cpySpellcasting.data;
+
+			// Spellcasting-specific properties
+			delete cpySpellcasting.headerEntries;
+			delete cpySpellcasting.hidden;
+			delete cpySpellcasting.footerEntries;
+			delete cpySpellcasting.displayAs;
+			// endregion
+
+			// region Handle slot-based/pact casters
+			if (cpySpellcasting.spells) {
+				const spellLevels = Object.keys(cpySpellcasting.spells);
+
+				for (const spellLevel of spellLevels) {
+					const levelMeta = cpySpellcasting.spells[spellLevel];
+
+					const preparationMode = levelMeta.lower != null ? "pact" : "prepared";
+
+					await this.constructor._pGetSpellHashToItemPosMapAndFillSpells(
+						dataBuilderOpts.actor,
+						JSON.stringify(levelMeta.spells),
+						{
+							importListSpells,
+							hashToIdMap,
+							isTemporary,
+							optsGetSpellItem: {
+								ability: cpySpellcasting.ability || dataBuilderOpts.spellAbility,
+								isPrepared,
+								preparationMode,
+							},
+						},
+					);
+				}
+
+				delete cpySpellcasting.spells;
+			}
+			// endregion
+
+			// region Handle recharge-based casters
+			if (cpySpellcasting.weekly) {
+				await this._pImportEntry_pFillItems_pSpellcasting_recharge(
+					dataBuilderOpts,
+					cpySpellcasting,
+					"weekly",
+					{
+						importListSpells,
+						hashToIdMap,
+						isTemporary,
+						isPrepared,
+						usesPer: "charges", // Convert "weekly" to "charges" as Foundry doesn't have "weekly"
+					},
+				);
+			}
+
+			if (cpySpellcasting.yearly) {
+				await this._pImportEntry_pFillItems_pSpellcasting_recharge(
+					dataBuilderOpts,
+					cpySpellcasting,
+					"yearly",
+					{
+						importListSpells,
+						hashToIdMap,
+						isTemporary,
+						isPrepared,
+						usesPer: "charges", // Convert "yearly" to "charges" as Foundry doesn't have "yearly"
+					},
+				);
+			}
+
+			if (cpySpellcasting.daily) {
+				await this._pImportEntry_pFillItems_pSpellcasting_recharge(
+					dataBuilderOpts,
+					cpySpellcasting,
+					"daily",
+					{
+						importListSpells,
+						hashToIdMap,
+						isTemporary,
+						isPrepared,
+						usesPer: "day",
+					},
+				);
+			}
+
+			if (cpySpellcasting.rest) {
+				await this._pImportEntry_pFillItems_pSpellcasting_recharge(
+					dataBuilderOpts,
+					cpySpellcasting,
+					"daily",
+					{
+						importListSpells,
+						hashToIdMap,
+						isTemporary,
+						isPrepared,
+						usesPer: "sr", // Convert "rest" to "short rest," as this is a subset of a long rest
+					},
+				);
+			}
+
+			if (cpySpellcasting.charges) {
+				const consumeTarget = this._getChargesSheetItem(cpySpellcasting, dataBuilderOpts);
+
+				await this._pImportEntry_pFillItems_pSpellcasting_recharge(
+					dataBuilderOpts,
+					cpySpellcasting,
+					"charges",
+					{
+						importListSpells,
+						hashToIdMap,
+						isTemporary,
+						isPrepared,
+						preparationMode: "atwill",
+						consumeType: "charges",
+						consumeTarget,
+						isConsumeAmount: true,
+					},
+				);
+
+				delete cpySpellcasting.chargesItem;
+				delete cpySpellcasting.charges;
+			}
+
+			if (cpySpellcasting.will) {
+				await this.constructor._pGetSpellHashToItemPosMapAndFillSpells(
+					dataBuilderOpts.actor,
+					JSON.stringify(cpySpellcasting.will),
+					{
+						importListSpells,
+						hashToIdMap,
+						isTemporary,
+						optsGetSpellItem: {
+							ability: cpySpellcasting.ability || dataBuilderOpts.spellAbility,
+							isPrepared,
+							preparationMode: "innate",
+						},
+					},
+				);
+
+				delete cpySpellcasting.will;
+			}
+
+			if (cpySpellcasting.constant) {
+				await this.constructor._pGetSpellHashToItemPosMapAndFillSpells(
+					dataBuilderOpts.actor,
+					JSON.stringify(cpySpellcasting.constant),
+					{
+						importListSpells,
+						hashToIdMap,
+						isTemporary,
+						optsGetSpellItem: {
+							ability: cpySpellcasting.ability || dataBuilderOpts.spellAbility,
+							isPrepared,
+							preparationMode: "innate",
+							// Give "constant" effects a permanent duration
+							durationValue: null,
+							durationUnit: "perm",
+						},
+					},
+				);
+
+				delete cpySpellcasting.constant;
+			}
+
+			if (cpySpellcasting.ritual) {
+				await this.constructor._pGetSpellHashToItemPosMapAndFillSpells(
+					dataBuilderOpts.actor,
+					JSON.stringify(cpySpellcasting.ritual),
+					{
+						importListSpells,
+						hashToIdMap,
+						isTemporary,
+						optsGetSpellItem: {
+							ability: cpySpellcasting.ability || dataBuilderOpts.spellAbility,
+							isPrepared: false, // Set rituals as "not prepared"
+							preparationMode: "innate",
+							nameSuffix: " (R)", // Add a suffix to the name of the sheet item
+						},
+					},
+				);
+
+				delete cpySpellcasting.ritual;
+			}
+			// endregion
+
+			const remainingKeys = Object.keys(cpySpellcasting).filter(it => it !== "ability");
+			if (remainingKeys.length) {
+				console.warn(...LGT, `No handling defined for the following spellcasting properties: ${remainingKeys.map(it => `"${it}"`).join(", ")}. Spells belonging to these properties will be imported as generic "spell list" spells.`);
+				spellcastingsUnknownProps.push(cpySpellcasting);
+			}
+		}
+
+		// Handle any leftover spells that we didn't pick up above
+		for (const spellcastingUnknownProps of spellcastingsUnknownProps) {
+			await this.constructor._pGetSpellHashToItemPosMapAndFillSpells(
+				dataBuilderOpts.actor,
+				JSON.stringify(spellcastingUnknownProps),
+				{
+					importListSpells,
+					hashToIdMap,
+					isTemporary,
+					optsGetSpellItem: {
+						ability: spellcastingUnknownProps.ability || dataBuilderOpts.spellAbility,
+					},
+				},
+			);
+		}
+
+		// region Spellcasting traits
+		const tagHashItemIdMap = {};
+		Object.entries(hashToIdMap)
+			.forEach(([hash, id]) => MiscUtil.set(tagHashItemIdMap, "spell", hash, id));
+
+		await UtilDataConverter.pGetWithDescriptionPlugins(
+			async () => {
+				const traits = Renderer.monster.getSpellcastingRenderedTraits(Renderer.get(), mon);
+				for (const trait of traits) {
+					const img = await DataConverterCreature.pGetSpellcastingImage(mon, trait, dataBuilderOpts);
+					await this._pImportEntry_pFillItems_pAddTextOnlyItem({
+						mon,
+						dataBuilderOpts,
+						act,
+						entry: trait,
+						opts_getItem: {
+							img,
+							description: trait.rendered,
+						},
+						prop: "spellcasting",
+					});
+				}
+			},
+			{
+				actorId: dataBuilderOpts.actor.id,
+				tagHashItemIdMap,
+			},
+		);
+		// endregion
+	}
+
+	_getChargesSheetItem (spellcasting, dataBuilderOpts) {
+		if (!spellcasting.chargesItem) return null;
+
+		const {name, source} = DataUtil.generic.unpackUid(spellcasting.chargesItem, "spell");
+		const itemHash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS]({name, source});
+
+		const ix = dataBuilderOpts.chargesItemsIxs[itemHash];
+		if (ix == null) return;
+
+		const sheetItem = dataBuilderOpts.importedSheetItems[Number(ix)];
+		if (!sheetItem?.document) return null;
+
+		return sheetItem.document.id ?? sheetItem.document._id;
+	}
+
+	async _pImportEntry_pFillItems_pSpellcasting_recharge (monOpts, cpySpellcasting, prop, {importListSpells, hashToIdMap, isTemporary, isPrepared, usesPer = null, preparationMode = "innate", consumeType = null, isConsumeAmount = false, consumeTarget = null}) {
+		for (let uses = 1; uses <= 9; ++uses) {
+			const keyEach = `${uses}e`;
+
+			// Note that Foundry doesn't yet (2020-05-01) support groups of multiple "X/Time" spells having a single
+			//   charge between them, so just treat them all as being independent.
+			const allSpells = [
+				...((cpySpellcasting[prop] || {})[uses] || []),
+				...((cpySpellcasting[prop] || {})[keyEach] || []),
+			];
+
+			if (!allSpells.length) continue;
+
+			const optsGetSpellItem = {
+				ability: cpySpellcasting.ability || monOpts.spellAbility,
+				isPrepared,
+				preparationMode,
+				consumeType,
+				consumeTarget,
+				usesPer,
+			};
+
+			if (isConsumeAmount) {
+				optsGetSpellItem.consumeAmount = uses;
+			} else {
+				optsGetSpellItem.usesValue = uses;
+				optsGetSpellItem.usesMax = uses;
+			}
+
+			await this.constructor._pGetSpellHashToItemPosMapAndFillSpells(
+				monOpts.actor,
+				JSON.stringify(allSpells),
+				{
+					importListSpells,
+					hashToIdMap,
+					isTemporary,
+					optsGetSpellItem,
+				},
+			);
+		}
+
+		delete cpySpellcasting[prop];
+	}
+
+	static _getCasterLevelFromEntry (casting) {
+		let casterLevel = 0;
+		if (casting.headerEntries) {
+			JSON.stringify(casting.headerEntries).replace(/an? (\d+)[A-Za-z]+-level/i, (...m) => {
+				const lvl = Number(m[1]);
+				if (!isNaN(lvl)) casterLevel = lvl;
+			});
+		}
+		return casterLevel;
+	}
+
+	static _getCasterClassFromEntry (casting) {
+		let casterClass = "";
+		if (casting.headerEntries) {
+			JSON.stringify(casting.headerEntries).replace(/(?:^| )(bard|cleric|druid|paladin|ranger|sorcerer|warlock|wizard)(?:\W|$)?/i, (...m) => {
+				casterClass = m[1];
+			});
+		}
+		return casterClass;
+	}
+
+	// region Add spells from strings
+	/**
+	 * @param actor The actor.
+	 * @param strEntries Stringified entries to search for spell tags.
+	 * @param [opts] Options object.
+	 * @param [opts.hashToIdMap] A pre-made hash-to-item-ID map to use.
+	 * @param [opts.isTemporary] If the actor is a temporary one, so cannot gain Items.
+	 * @param [opts.optsGetSpellItem] Options to pass to the spell entity -> FVTT item converter.
+	 * @return {Promise}
+	 */
+	static async _pGetSpellHashToItemPosMapAndFillSpells (actor, strEntries, {importListSpells, hashToIdMap, isTemporary, optsGetSpellItem} = {}) {
+		const spellUids = new Set();
+		strEntries.replace(/{@spell ([^}]+)}/gi, (...m) => {
+			let [name, source] = m[1].toLowerCase().trim().split("|").map(it => it.trim());
+			if (!source) source = SRC_PHB.toLowerCase();
+
+			spellUids.add(`${name}|${source}`);
+		});
+
+		for (const uid of spellUids) {
+			const [name, source] = uid.split("|");
+			const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_SPELLS]({name, source});
+
+			let spell;
+			try {
+				spell = await Renderer.hover.pCacheAndGet(UrlUtil.PG_SPELLS, source, hash);
+			} catch (e) {
+				console.error(...LGT, `Failed to import spell with hash "${hash}"!`, e);
+				continue;
+			}
+
+			if (!spell) continue;
+
+			const opts_pGetSpellItem = {
+				...(await UtilActors.pGetActorSpellItemOpts({actor})),
+				...(optsGetSpellItem || {}),
+			};
+			// Override any junk preparation modes for cantrips
+			if (spell.level === 0) opts_pGetSpellItem.preparationMode = "always";
+
+			const importSummary = await importListSpells.pImportEntry(
+				spell,
+				{
+					opts_pGetSpellItem,
+				},
+			);
+
+			const id = importSummary.imported[0]?.embeddedDocument?.id;
+
+			if (id == null) continue;
+			if (hashToIdMap[hash]) continue; // TODO(Future) support multiple insertions of the same spell
+			hashToIdMap[hash] = id;
+		}
+	}
+	// endregion
+}
+
+ImportListCreature._CREATURE_TYPES = null;
+
+ImportListCreature.ImportEntryOpts = class extends ImportListActor.ImportEntryOpts {
+	constructor (opts) {
+		opts = opts || {};
+		super({
+			pb: Parser.crToPb(opts.mon.cr),
+			...opts,
+		});
+		this.mon = opts.mon;
+
+		this.legendaryMeta = DataUtil.monster.getMetaGroup(this.mon);
+
+		this.spellAbility = "";
+		this.spellDc = 8;
+		this.spellLevel = 0;
+		this.spellClass = "";
+		this._initSpellcasterData(this.mon);
+
+		this.size = null;
+		this._initSize(this.mon);
+
+		this.chargesItemsIxs = {};
+		this.importedSheetItems = [];
+	}
+
+	// TODO(Future) have size be selectable as part of the import customization
+	_initSize (mon) {
+		if (!mon.size) return this.size = SZ_MEDIUM;
+
+		// Handle legacy data
+		if (typeof mon.size === "string") return this.size = mon.size;
+
+		if (!(mon.size instanceof Array)) return this.size = SZ_MEDIUM;
+		if (mon.size.length === 1) return this.size = mon.size[0];
+
+		// If there are multiple sizes, pick one arbitrarily, favouring "medium"
+		if (mon.size.includes(SZ_MEDIUM)) return this.size = SZ_MEDIUM;
+
+		// Otherwise, use the smallest size
+		this.size = [...mon.size].sort(SortUtil.ascSortSize)[0];
+	}
+
+	_initSpellcasterData (mon) {
+		if (!mon.spellcasting) return;
+
+		const withAbils = mon.spellcasting
+			.filter(it => it.ability)
+			.map(it => {
+				if (Parser.ABIL_ABVS.includes(it.ability)) return it;
+
+				// If e.g. badly-written homebrew
+				const abv = it.ability.substring(0, 3);
+				if (Parser.ABIL_ABVS.includes(abv)) {
+					it.ability = abv;
+					return it;
+				}
+
+				return null;
+			})
+			.filter(Boolean);
+
+		if (withAbils.length) {
+			let withAbil = withAbils[0];
+
+			// As the sheet does not support multiple spellcasting traits with different abilities (e.g. Zephyros
+			//   from SKT), choose a spellcasting trait to be used as the single representative.
+			if (withAbils.length > 1) {
+				switch (Config.get("importCreature", "spellcastingPrimaryTraitMode")) {
+					// "Most spells" mode
+					case 1: {
+						withAbil = withAbils.sort((a, b) => {
+							const spellCountA = this.constructor._getSpellCount(a);
+							const spellCountB = this.constructor._getSpellCount(b);
+							return SortUtil.ascSort(spellCountB, spellCountA);
+						})[0];
+
+						break;
+					}
+
+					// "Maximum ability score" mode
+					case 2: {
+						withAbil = withAbils.sort((a, b) => SortUtil.ascSort(Parser.getAbilityModNumber(mon[b.ability]), Parser.getAbilityModNumber(mon[a.ability])))[0];
+
+						break;
+					}
+				}
+			}
+
+			const ab = withAbil.ability;
+			const abMod = Parser.getAbilityModNumber(mon[ab]);
+
+			this.spellAbility = ab;
+			this.spellDc = abMod + this.pb;
+		}
+
+		this.spellLevel = mon.spellcasting.map(sc => ImportListCreature._getCasterLevelFromEntry(sc)).find(Boolean) || 0;
+		this.spellClass = mon.spellcasting.map(sc => ImportListCreature._getCasterClassFromEntry(sc)).find(Boolean) || "";
+	}
+
+	static _getSpellCount (spellcastingItem) {
+		// A hacky heuristic--simply count the number of @spell tags in the spell block. Future-proof, and
+		//   mostly accurate!
+		let cnt = 0;
+		JSON.stringify(spellcastingItem).replace(/{@spell [^}]+}/g, () => {
+			cnt++;
+			return "";
+		});
+		return cnt;
+	}
+
+	getExistingItemItemIndex (itemHash) {
+		return this.items.findIndex(it => {
+			if (!it?.flags?.[SharedConsts.MODULE_NAME_FAKE]) return false;
+			return it.flags[SharedConsts.MODULE_NAME_FAKE].page === UrlUtil.PG_ITEMS
+				&& it.flags[SharedConsts.MODULE_NAME_FAKE].hash === itemHash;
+		});
+	}
+};
+
+ImportListCreature.ImportCustomizer = class extends ImportCustomizer {
+	/**
+	 * @param dataList
+	 * @param resolve
+	 * @param opts Options object.
+	 * @param opts.titleSearch Used in prompt text in the search bar.
+	 */
+	constructor (dataList, resolve, opts) {
+		super(
+			dataList,
+			resolve,
+			{
+				...opts,
+				title: "Customize Import",
+				template: `${SharedConsts.MODULE_LOCATION}/template/ImportListCreatureCustomizer.hbs`,
+			});
+	}
+
+	static _getAvailableTokens (it) {
+		if (!it.altArt) return [];
+
+		return it.altArt
+			.filter(alt => (alt.name && alt.source) || alt.tokenUrl)
+			.map((alt, ix) => {
+				if (alt.name && alt.source) {
+					return {name: Renderer.monster.getRenderedAltArtEntry(alt, {isPlainText: true}), ix};
+				}
+
+				const nameRaw = `${alt.tokenUrl}`.split("/").last().split(".")[0].trim() || "(Unnamed)";
+				let name;
+				try {
+					name = decodeURIComponent(nameRaw);
+				} catch (e) {
+					name = nameRaw;
+				}
+
+				return ({name: name, ix});
+			});
+	}
+
+	getData () {
+		return {
+			...super.getData(),
+			rows: this._dataList.map((it, ix) => {
+				const variants = this._getData_getVariants(it);
+
+				return {
+					name: it.name,
+					source: it.source,
+					sourceShort: Parser.sourceJsonToAbv(it.source),
+					sourceLong: Parser.sourceJsonToFull(it.source),
+					sourceClassName: Parser.sourceJsonToColor(it.source),
+					sourceStyle: BrewUtil2.sourceJsonToStylePart(it.source),
+					cr: it._vCr,
+					isAdjustableCr: Parser.crToNumber(it.cr) < VeCt.CR_CUSTOM,
+					isAdjustableSummonSpellLevel: it.summonedBySpellLevel != null,
+					availableSummonSpellLevels: it.summonedBySpellLevel != null
+						? [...Renderer.monster.getSelSummonSpellLevel(it).options].map(it => Number(it.value)).filter(it => ~it)
+						: null,
+					isAdjustableSummonClassLevel: it.summonedByClass != null,
+					availableSummonClassLevels: it.summonedByClass != null
+						? [...new Array(VeCt.LEVEL_MAX)].map((_, i) => ({level: i + 1, className: it.summonedByClass.split("|")[0].toTitleCase()}))
+						: null,
+
+					hasVariants: variants.length > 0,
+					availableVariants: variants,
+
+					availableTokens: this.constructor._getAvailableTokens(it),
+
+					ix,
+				};
+			}),
+		};
+	}
+
+	_getData_getVariants (mon) {
+		return this._getAvailableVariants(mon).map((it, ix) => ({ix, name: it.name}));
+	}
+
+	_getAvailableVariants (mon) {
+		if (
+			!mon._versions?.length
+			&& !(mon.variants || []).some(it => it?._version)
+			&& !Renderer.monster.dragonCasterVariant.hasCastingColorVariant(mon)
+		) return [];
+
+		const dragonCasterMeta = Renderer.monster.dragonCasterVariant.hasCastingColorVariant(mon) ? Renderer.monster.dragonCasterVariant.getMeta(mon) : null;
+
+		return [
+			...DataUtil.proxy.getVersions(mon.__prop, mon),
+			dragonCasterMeta?.exampleSpellsFtd?.length
+				? {
+					name: "Dragons as Innate Spellcasters (FTD)",
+					fnApplyVariant: this.constructor._getVariant_dragonInnateSpellcaster_ftd.bind(this.constructor),
+				}
+				: null,
+			dragonCasterMeta?.exampleSpellsUnofficial?.length
+				? {
+					name: "Dragons as Innate Spellcasters (MM)",
+					fnApplyVariant: this.constructor._getVariant_dragonInnateSpellcaster_mm.bind(this.constructor),
+				}
+				: null,
+		]
+			.filter(Boolean);
+	}
+
+	static _getVariant_dragonInnateSpellcaster_ftd (mon) {
+		mon = MiscUtil.copy(mon);
+		mon.spellcasting = [
+			...(mon.spellcasting || []),
+			this._getCastingColorVariantSpellcastingTrait(mon, {propExampleSpells: "exampleSpellsUnofficial"}),
+		];
+		return mon;
+	}
+
+	static _getVariant_dragonInnateSpellcaster_mm (mon) {
+		mon = MiscUtil.copy(mon);
+		mon.spellcasting = [
+			...(mon.spellcasting || []),
+			this._getCastingColorVariantSpellcastingTrait(mon, {propExampleSpells: "exampleSpellsFtd"}),
+		];
+		return mon;
+	}
+
+	activateListeners ($html) {
+		super.activateListeners($html);
+
+		$html
+			.on("change", `select[name="sel-token"]`, evt => {
+				const $sel = $(evt.currentTarget);
+				const $stgCustom = $sel.closest(".veapp__list-row").find(`[data-name="stg-token-custom"]`);
+				$stgCustom.toggleVe(Number($sel.val()) === -2);
+			})
+			.on("click", `button[name="btn-token-custom"]`, async evt => {
+				const $btn = $(evt.currentTarget);
+				const $iptCustom = $btn.closest(".veapp__list-row").find(`[name="ipt-token-custom"]`);
+
+				const fp = new FilePicker({
+					type: "imagevideo",
+					current: $iptCustom.val(),
+					callback: path => {
+						$iptCustom.val(path);
+					},
+				});
+				fp.browse();
+			})
+		;
+	}
+
+	_activateListeners_initList ({$html}) {
+		// Init list library
+		this._list = new List({
+			$iptSearch: $html.find(`.search`),
+			$wrpList: $html.find(`.veapp__list`),
+			valueNames: ["name", "source", "cr", "ix"],
+		});
+		this._list.doAbsorbItems(
+			this._dataList,
+			{
+				fnGetName: it => it.name,
+				fnGetValues: it => ({source: it.source, cr: Parser.monCrToFull(it.cr)}),
+				fnGetData: it => {
+					const $e = $(it.ele);
+					return {
+						$selCr: $e.find(`[name="sel-cr"]`),
+						$selSummonSpellLevel: $e.find(`[name="sel-summon-spell-level"]`),
+						$selSummonClassLevel: $e.find(`[name="sel-summon-class-level"]`),
+						$selVariant: $e.find(`[name="sel-variant"]`),
+						$iptRename: $e.find(`[name="ipt-rename"]`),
+						$iptRenameShort: $e.find(`[name="ipt-rename-short"]`),
+						$cbIsNamedCreature: $e.find(`[name="cb-is-named"]`),
+						$selToken: $e.find(`[name="sel-token"]`),
+						$iptTokenCustom: $e.find(`[name="ipt-token-custom"]`),
+					};
+				},
+			},
+		);
+		this._list.init();
+	}
+
+	_activateListeners_bindControls ({$html, $wrpBtnsSort}) {
+		this._$btnReset = $html.find(`[name="btn-reset"]`).click(() => {
+			$html.find(`.search`).val("");
+			if (this._list) this._list.reset();
+		});
+
+		$html.find(`[name="btn-run"]`).click(async () => {
+			const listValues = this._list.items.map(it => {
+				return {
+					ix: it.ix,
+					targetCr: it.data.$selCr.length
+						? Number(it.data.$selCr.val()) === -1 ? null : Number(it.data.$selCr.val())
+						: null,
+					targetSpellLevel: it.data.$selSummonSpellLevel.length
+						? Number(it.data.$selSummonSpellLevel.val()) === -1 ? null : Number(it.data.$selSummonSpellLevel.val())
+						: null,
+					targetClassLevel: it.data.$selSummonClassLevel.length
+						? Number(it.data.$selSummonClassLevel.val()) === -1 ? null : Number(it.data.$selSummonClassLevel.val())
+						: null,
+					ixVariant: it.data.$selVariant.length
+						? Number(it.data.$selVariant.val()) === -1 ? null : Number(it.data.$selVariant.val())
+						: null,
+					rename: it.data.$iptRename.val().trim(),
+					renameShort: it.data.$iptRenameShort.val().trim(),
+					isNamedCreature: it.data.$cbIsNamedCreature.prop("checked"),
+					ixToken: Number(it.data.$selToken.val()) === -1 ? null : Number(it.data.$selToken.val()),
+					tokenCustom: it.data.$iptTokenCustom.val(),
+				};
+			});
+
+			const scaledMons = await Promise.all(listValues.map(async ({ix, targetCr, targetSpellLevel, targetClassLevel, ixVariant, rename, renameShort, isNamedCreature, ixToken, tokenCustom}) => {
+				let mon = this._dataList[ix];
+
+				if (ixVariant != null) {
+					const variants = this._getAvailableVariants(mon);
+
+					const variant = variants[ixVariant];
+					if (variant.fnApplyVariant) mon = variant.fnApplyVariant(mon);
+					else mon = variant;
+				}
+
+				if (targetCr != null && targetCr !== Parser.crToNumber(mon.cr)) mon = await ScaleCreature.scale(mon, targetCr);
+				else if (targetSpellLevel != null) mon = await ScaleSpellSummonedCreature.scale(mon, targetSpellLevel);
+				else if (targetClassLevel != null) mon = await ScaleClassSummonedCreature.scale(mon, targetClassLevel);
+
+				if (rename) mon = await ImportListCreature.ImportCustomizer._pGetRenamedMon(mon, {newName: rename, newNameShort: renameShort, isNamedCreature});
+
+				if (ixToken === -2) { // Custom token
+					mon.tokenUrl = tokenCustom;
+				} else if (ixToken != null) {
+					const altArt = mon.altArt[ixToken];
+					mon.tokenUrl = Renderer.monster.getTokenUrl({name: altArt.name, source: altArt.source, tokenUrl: altArt.tokenUrl});
+				}
+
+				return mon;
+			}));
+
+			this._resolve(scaledMons);
+			await this.close();
+		});
+	}
+
+	static _getCastingColorVariantSpellcastingTrait (mon, {propExampleSpells}) {
+		const meta = Renderer.monster.dragonCasterVariant.getMeta(mon);
+		const scEntry = Renderer.monster.dragonCasterVariant.getSpellcasterDetailsPart(meta);
+
+		return {
+			name: "Innate Spellcasting",
+			headerEntries: [
+				scEntry,
+			],
+			daily: {
+				"1e": meta[propExampleSpells].map(it => `{@spell ${it}}`),
+			},
+			ability: "cha",
+		};
+	}
+
+	/**
+	 * Try to guess the user's intent--if the name is bog-standard "title case" currently, lowercase it. Otherwise,
+	 *   if it's something we don't understand, return it as-is.
+	 */
+	static getLowercaseName (name) {
+		return name === name.toTitleCase() ? name.toLowerCase() : name;
+	}
+
+	static _pGetRenamedMon (mon, {newName, newNameShort, isNamedCreature}) {
+		ImportListCreature.ImportCustomizer._WALER_RENAME = ImportListCreature.ImportCustomizer._WALER_RENAME || MiscUtil.getWalker();
+
+		mon = MiscUtil.copy(mon);
+
+		let newNameShortSynth = newNameShort || newName;
+		let newNameShortLower = isNamedCreature
+			// Avoid changing the name if proper noun
+			? (newNameShort || newName)
+			: this.getLowercaseName(newNameShortSynth);
+
+		const possibleShortName = this._getPossibleMonShortName(mon);
+
+		const reName = new RegExp(`\\b${isNamedCreature && !mon.isNamedCreature ? `the ` : ""}${mon.name.escapeRegexp()}\\b`, "gi");
+		const rePossibleShortName = possibleShortName && (possibleShortName.trim() !== mon.name.toLowerCase().trim())
+			? new RegExp(`\\b${isNamedCreature && !mon.isNamedCreature ? `the ` : ""}${possibleShortName.escapeRegexp()}\\b`, "gi")
+			: null;
+
+		const applyTo = (prop) => {
+			if (!mon[prop]) return;
+
+			mon[prop].forEach(it => {
+				ImportListCreature.ImportCustomizer._PROPS_SUB.forEach(propSub => {
+					if (!it[propSub]) return;
+
+					it[propSub] = ImportListCreature.ImportCustomizer._WALER_RENAME.walk(
+						it[propSub],
+						{
+							string: (str) => {
+								str = str.replace(reName, (...m) => {
+									if (this._pGetRenamedMon_isSkipReplace({str, m, isNamedCreature})) return m[0];
+									return newNameShortLower;
+								});
+								if (rePossibleShortName) {
+									str = str.replace(rePossibleShortName, (...m) => {
+										if (this._pGetRenamedMon_isSkipReplace({str, m, isNamedCreature})) return m[0];
+										return newNameShortLower;
+									});
+								}
+								return str;
+							},
+						},
+					);
+				});
+			});
+		};
+
+		DataUtil.generic.COPY_ENTRY_PROPS.forEach(prop => applyTo(prop));
+
+		mon._displayName = isNamedCreature
+			? newName
+			// Only adjust caps if the first character is not already caps, as a guess at the user's intentions
+			: ((newName[0] === (newName[0] || "").toUpperCase()) ? newName : newName.toTitleCase());
+		if (isNamedCreature) mon.isNamedCreature = true;
+
+		mon._fvttIsRenamed = true;
+
+		if (!newNameShort) mon._displayShortName = isNamedCreature ? true : newName;
+		else mon._displayShortName = newNameShort;
+
+		return mon;
+	}
+
+	static _pGetRenamedMon_isSkipReplace ({str, m, isNamedCreature}) {
+		const ixStart = m[m.length - 2];
+		if (isNamedCreature && /^ lycanthropy\b/.test(str.slice(ixStart + m[0].length))) return true;
+		return false;
+	}
+
+	static _getPossibleMonShortName (mon) {
+		if (mon.isNamedCreature) return null;
+		if (mon.shortName) return mon.shortName === true ? null : mon.shortName;
+
+		let shortName = null;
+
+		DataUtil.generic.COPY_ENTRY_PROPS.forEach(prop => {
+			if (!mon[prop]) return;
+
+			mon[prop].forEach(it => {
+				ImportListCreature.ImportCustomizer._PROPS_SUB.forEach(propSub => {
+					if (!it[propSub]) return;
+
+					it[propSub] = ImportListCreature.ImportCustomizer._WALER_RENAME.walk(
+						it[propSub],
+						{
+							string: (str) => {
+								if (shortName) return str;
+
+								ImportListCreature.ImportCustomizer._RES_SHORTNAME
+									.forEach(re => {
+										str.replace(re, (...m) => {
+											const name = m.last().name;
+											if (ImportListCreature.ImportCustomizer._RES_SHORTNAME_BLACKLIST.some(it => it.test(name))) return;
+											shortName = name;
+										});
+									});
+
+								return str;
+							},
+						},
+					);
+				});
+			});
+		});
+
+		return shortName;
+	}
+};
+ImportListCreature.ImportCustomizer._WALER_RENAME = null;
+ImportListCreature.ImportCustomizer._PROPS_SUB = [
+	"entries",
+	"headerEntries",
+];
+ImportListCreature.ImportCustomizer._RE_SHORTNAME_PT_VERB = `(?:is|can|starts|has|takes|targets|exhales|fails|makes|dies|regains|moves)`;
+ImportListCreature.ImportCustomizer._RE_SHORTNAME_PT_NAME = `(?<name>[-a-z ]+?)`;
+ImportListCreature.ImportCustomizer._RE_SHORTNAME__IF_THE = new RegExp(`\\b[Ii]f the ${ImportListCreature.ImportCustomizer._RE_SHORTNAME_PT_NAME} ${ImportListCreature.ImportCustomizer._RE_SHORTNAME_PT_VERB}\\b`);
+ImportListCreature.ImportCustomizer._RE_SHORTNAME__THE = new RegExp(`\\b[Tt]he ${ImportListCreature.ImportCustomizer._RE_SHORTNAME_PT_NAME} ${ImportListCreature.ImportCustomizer._RE_SHORTNAME_PT_VERB}\\b`);
+ImportListCreature.ImportCustomizer._RES_SHORTNAME = [
+	ImportListCreature.ImportCustomizer._RE_SHORTNAME__IF_THE,
+	ImportListCreature.ImportCustomizer._RE_SHORTNAME__THE,
+];
+ImportListCreature.ImportCustomizer._RES_SHORTNAME_BLACKLIST = [
+	/^target$/i,
+];
+
+export {ImportListCreature};

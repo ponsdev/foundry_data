@@ -1,0 +1,575 @@
+/*!
+ * Copyright 2021 Andrew Cuccinello
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ *
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*!
+ * Copyright 2021 Andrew Cuccinello
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ *
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+.dj-settings-app.settings-app {
+  min-height: 600px;
+}
+.dj-settings-app.settings-app form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+}
+.dj-settings-app.settings-app form nav.settings-app-nav,
+.dj-settings-app.settings-app form div.settings-app-body {
+  flex-direction: column;
+  height: 100%;
+}
+.dj-settings-app.settings-app form nav.settings-app-nav {
+  display: flex;
+  padding-right: 8px;
+  border-right: 1px solid #782e22c0;
+}
+.dj-settings-app.settings-app form nav.settings-app-nav a.item {
+  border-bottom: 1px solid #782e22;
+  width: 8rem;
+  transition: 0.2s font-size, font-weight;
+}
+.dj-settings-app.settings-app form nav.settings-app-nav a.item:hover {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.dj-settings-app.settings-app form nav.settings-app-nav a.item.active {
+  font-weight: bold;
+}
+.dj-settings-app.settings-app form nav.settings-app-nav button {
+  margin-top: auto;
+}
+.dj-settings-app.settings-app form div.settings-app-body {
+  flex: 1;
+  padding-left: 8px;
+  border-left: 1px solid #999;
+  overflow-y: scroll !important;
+  height: 100%;
+}
+.dj-settings-app.settings-app form div.settings-app-body div.tab.active {
+  display: inline-block;
+  padding-right: 8px;
+  width: 100%;
+}
+.dj-settings-app.settings-app form div.settings-app-body div.tab.active h1 {
+  border-bottom: 1px solid #782e22;
+}
+.dj-settings-app.settings-app section.window-content {
+  overflow-y: hidden;
+}
+
+div.settings-app-body .features h1 {
+  margin: 0;
+}
+div.settings-app-body .features div.feature {
+  padding-bottom: 1em;
+  border-bottom: 1px solid #782e22;
+}
+div.settings-app-body .features div.feature div.feature-header {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #782e22;
+}
+div.settings-app-body .features div.feature div.feature-header span.title {
+  display: block;
+  font-size: 1.5em;
+  flex-grow: 1;
+}
+div.settings-app-body .features div.feature div.feature-header div.attributes {
+  line-height: 1.5rem;
+  flex-shrink: 1;
+}
+div.settings-app-body .features div.feature div.feature-header div.attributes i {
+  display: inline-block;
+  line-height: 1.5rem;
+  cursor: help;
+}
+div.settings-app-body .features div.feature p.feature-description {
+  padding-left: 1em;
+  text-align: justify;
+}
+div.settings-app-body .features div.feature div.feature-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 0.5em;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.1);
+}
+div.settings-app-body .features div.feature div.feature-content label {
+  font-weight: bold;
+}
+div.settings-app-body .features div.feature div.feature-content p.feature-help {
+  margin: 0;
+}
+div.settings-app-body .features div.feature p.feature-help {
+  padding: 0 1em;
+  margin: 1em 0 0 0;
+  font-size: smaller;
+  font-style: italic;
+  text-align: justify;
+}
+
+div.settings-app-body .license p {
+  text-align: justify;
+}
+
+/*!
+ * Copyright 2021 Andrew Cuccinello
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ *
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*!
+ * Copyright 2021 Andrew Cuccinello
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ *
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+form.loot-app section.sheet-sidebar {
+  padding: 0;
+  padding-right: 5px;
+}
+form.loot-app .sheet-sidebar.sidebar.sidebar-loot {
+  width: 220px;
+}
+form.loot-app .inventory-list .list-row .item-controls a.item-control {
+  padding: 0;
+  margin: 0;
+}
+
+/*!
+ * Copyright 2021 Andrew Cuccinello
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ *
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+form.loot-app button,
+form.loot-app label,
+form.loot-app input {
+  line-height: 1em;
+}
+form.loot-app .spell .buttons button.roll-both {
+  padding-left: 0;
+  padding-right: 0;
+  flex: 3;
+}
+
+/*!
+ * Copyright 2021 Andrew Cuccinello
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ *
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+form.loot-app .loot-app-tab .sources .form-group,
+form.loot-app .loot-app-tab .filters .form-group {
+  margin: 0;
+}
+form.loot-app .loot-app-tab .sources .form-group label,
+form.loot-app .loot-app-tab .filters .form-group label {
+  line-height: 1em;
+}
+form.loot-app .loot-app-tab .sources .form-group input,
+form.loot-app .loot-app-tab .filters .form-group input {
+  text-align: right;
+  margin: 0;
+}
+form.loot-app .loot-app-tab .sources .form-group i,
+form.loot-app .loot-app-tab .filters .form-group i {
+  color: var(--light);
+  margin-right: 4px;
+  flex: 0;
+}
+form.loot-app .loot-app-tab .sources .form-group i:hover,
+form.loot-app .loot-app-tab .filters .form-group i:hover {
+  cursor: pointer;
+  color: var(--primary);
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 1000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 1000ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+}
+form.loot-app .loot-app-tab div.config {
+  top: 38px;
+  position: sticky;
+  background: url(/systems/pf2e/assets/sheet/parchment.webp) repeat;
+  z-index: 1;
+  padding: 4px;
+  border: 1px solid var(--primary);
+}
+form.loot-app .loot-app-tab div.config div.buttons {
+  display: flex;
+}
+form.loot-app .loot-app-tab div.config button {
+  flex: 1;
+}
+form.loot-app .loot-app-tab div.config button i {
+  margin: 0;
+}
+form.loot-app .loot-app-tab div.config button.roll {
+  flex: 4;
+}
+form.loot-app .loot-app-tab div.config h3 {
+  text-align: center;
+  border-top: 1px solid var(--primary);
+  border-bottom: 1px solid var(--primary);
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+/*!
+ * Copyright 2021 Andrew Cuccinello
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ *
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*!
+ * Copyright 2021 Andrew Cuccinello
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ *
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+div.weight-range {
+  display: flex;
+  flex-direction: column;
+}
+div.weight-range div.weight-title {
+  display: flex;
+}
+div.weight-range div.weight-title label {
+  flex: 1;
+}
+div.weight-range div.weight-title input[type=checkbox] {
+  margin: 0 0 0 auto;
+  width: 13px;
+  height: 13px;
+}
+div.weight-range div.weight-title i.quick-roll {
+  color: var(--light);
+  margin-right: 5px;
+  height: 1em;
+}
+div.weight-range div.weight-title i.quick-roll:hover {
+  color: var(--secondary);
+  cursor: pointer;
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 1000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 1000ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+}
+div.weight-range div.weight-input {
+  display: flex;
+  align-items: center;
+}
+div.weight-range div.weight-input label {
+  text-align: left;
+  font-weight: bold;
+  width: 12.5%;
+}
+
+/*!
+ * Copyright 2021 Andrew Cuccinello
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ *
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+div.collapsible h4 {
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px groove #f0f0e0;
+  padding: 0 4px;
+  margin: 0;
+  transition: all 0.2s;
+}
+div.collapsible h4:hover {
+  cursor: pointer;
+  color: var(--primary);
+  padding-left: 8px;
+}
+
+/*!
+ * Copyright 2021 Andrew Cuccinello
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ *
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+form.loot-app .sheet-sidebar .tab.create {
+  flex-flow: column;
+}
+form.loot-app .sheet-sidebar .tab.create div.tab-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+form.loot-app .sheet-sidebar .tab.create div.tab-container div.template-drop {
+  top: 38px;
+  position: sticky;
+  text-align: justify;
+  background: url(/systems/pf2e/assets/sheet/parchment.webp) repeat;
+  border: 2px groove #f0f0e0;
+}
+form.loot-app .sheet-sidebar .tab.create div.tab-container div.template-drop div.help {
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+}
+form.loot-app .sheet-sidebar .tab.create div.tab-container div.template-drop div.help p {
+  margin-right: 0.5em;
+}
+form.loot-app .sheet-sidebar .tab.create div.tab-container div.template-drop div.help a {
+  padding: 4px;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove #f0f0e0;
+}
+form.loot-app .sheet-sidebar .tab.create div.tab-container div.template-drop div.item div.item-link {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0.5em;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove #f0f0e0;
+}
+form.loot-app .sheet-sidebar .tab.create div.tab-container div.template-drop div.item div.item-link img {
+  margin-right: 0.5em;
+  max-width: 24px;
+}
+form.loot-app .sheet-sidebar .tab.create div.tab-container div.template-drop div.item div.item-link h4 {
+  margin: 0;
+}
+form.loot-app .sheet-sidebar .tab.create div.tab-container div.template-drop div.item div.item-link a.entity-link {
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 24px - 0.5em);
+}
+form.loot-app .sheet-sidebar .tab.create div.tab-container div.create-settings-container {
+  overflow-y: scroll;
+  height: 80%;
+}
+form.loot-app .sheet-sidebar .tab.create div.tab-container div.create-select {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+form.loot-app .sheet-sidebar .tab.create div.tab-container div.create-select div.input-group,
+form.loot-app .sheet-sidebar .tab.create div.tab-container div.create-select div.info-group {
+  display: flex;
+  justify-content: space-between;
+}
+form.loot-app .sheet-sidebar .tab.create div.tab-container div.create-select div.input-group select {
+  padding: 0;
+}
+form.loot-app .sheet-sidebar .tab.create div.tab-container div.create-select div.input-group label {
+  white-space: nowrap;
+}
+form.loot-app .sheet-sidebar .tab.create div.tab-container div.product-info {
+  margin: 8px 0;
+  padding: 8px 0;
+  border-top: 1px solid var(--secondary);
+  border-bottom: 1px solid var(--secondary);
+}
+form.loot-app .sheet-sidebar .tab.create div.tab-container div.product-info span.product-name {
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 8px;
+}
+form.loot-app .sheet-sidebar .tab.create div.tab-container div.product-info span.final-value {
+  font-weight: bold;
+}
+form.loot-app .sheet-sidebar .tab.create div.tab-container div.create-item button {
+  font-weight: bold;
+  padding: 4px 0;
+}
+form.loot-app .sheet-sidebar .tab.create div.tab-container div.create-item button:disabled {
+  box-shadow: none;
+}
+
+/*!
+ * Copyright 2021 Andrew Cuccinello
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ *
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+div.loot-draw ol.loot-results {
+  list-style: none;
+  padding: 0;
+}
+div.loot-draw ol.loot-results li.loot-result {
+  display: flex;
+  align-items: center;
+}
+div.loot-draw ol.loot-results li.loot-result:nth-child(2n-1) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+div.loot-draw ol.loot-results li.loot-result img.loot-image {
+  width: 32px;
+  height: 32px;
+}
+div.loot-draw ol.loot-results li.loot-result div.loot-text {
+  float: right;
+}
+
+form.loot-app section.sidebar div.loot-app-content.sheet-content-loot {
+  flex: 1;
+}
+form.loot-app nav.sheet-tabs {
+  top: 4px;
+  position: sticky;
+  background: url(/systems/pf2e/assets/sheet/parchment.webp) repeat;
+  z-index: 1;
+}
+form.loot-app div.form-group label {
+  font-weight: bold;
+}
+form.loot-app div.form-group input {
+  text-align: right;
+  margin: 0;
+}
+
+.clearfix {
+  content: "";
+  clear: both;
+  display: table;
+}
+/*# sourceMappingURL=bundle.css.map */

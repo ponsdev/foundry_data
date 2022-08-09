@@ -2,7 +2,7 @@
   "forien-copy-environment": {
     "menu": {
       "copy": "Copy as text",
-      "save": "Save as JSON",
+      "save": "Copy as JSON",
       "export": "Export Settings",
       "import": "Import Settings"
     },
@@ -12,6 +12,7 @@
     "copiedToClipboard": "Environment data copied to clipboard!",
     "updatedReloading": "Updated world settings. Reloading world in 5sec...",
     "import": {
+      "title": "World settings",
       "save": "Import settings",
       "playerList": "Import settings for the following players:",
       "existing": "Import an existing Export:",
@@ -22,7 +23,8 @@
       "existingValue": "Existing values that are unchanged and will be skipped:",
       "existingPlayerValues": "Existing players that are unchanged and will be skipped:",
       "updatedPlayer": "Updated player settings for: {name}",
-      "noChanges": "There are no differences between the current world and the imported settings."
+      "noChanges": "There are no differences between the current world and the imported settings.",
+      "showSettings": "Show {count} settings"
     }
   }
 }

@@ -1,1 +1,81 @@
-const _0x4bc4=['permission','user\x20is','default','381072sgJnUn','\x20currently\x20unable\x20to\x20view\x20this\x20sheet.<br>Would\x20you\x20like\x20to\x20update\x20the\x20default\x20permissions\x20for\x20this\x20sheet,\x20to\x20allow\x20all\x20users\x20to\x20view\x20it?','ENTITY_PERMISSIONS','actor','Update\x20Permissions','_pShowSheet','data','collection','923804rcrGti','visible','pHandleButtonClick','owner','\x22\x20show\x20to\x20authorized\x20players.','_pHandleShowClick','preventDefault','Make\x20Visible\x20to\x20All\x20Users','getDataName','numberToText','_SOCKET_NAMESPACE','Unsupported\x20entity\x20type\x20\x22','info','241548XjofDK','users\x20are','You\x20may\x20only\x20request\x20to\x20show\x20sheets\x20which\x20you\x20own.','length','init','Show\x20to\x20Current\x20Viewers','get','pSendData','9bhzGED','isGM','filter','26DrSKqs','38855bhiyOQ','sheet','entity','LIMITED','1667BnFajT','item','render','1735151JBVMht','1098733ZZNmcz','addSocketEventListener','entities'];const _0x35e1=function(_0xf6bf7a,_0x226e0b){_0xf6bf7a=_0xf6bf7a-0x186;let _0x4bc40e=_0x4bc4[_0xf6bf7a];return _0x4bc40e;};const _0x1bfe8c=_0x35e1;(function(_0x7dba14,_0x4e52b9){const _0x34c0d8=_0x35e1;while(!![]){try{const _0x3c9ffa=-parseInt(_0x34c0d8(0x1aa))+-parseInt(_0x34c0d8(0x196))+parseInt(_0x34c0d8(0x1a1))*parseInt(_0x34c0d8(0x1a2))+-parseInt(_0x34c0d8(0x189))+-parseInt(_0x34c0d8(0x19e))*-parseInt(_0x34c0d8(0x1a6))+parseInt(_0x34c0d8(0x1b0))+parseInt(_0x34c0d8(0x1a9));if(_0x3c9ffa===_0x4e52b9)break;else _0x7dba14['push'](_0x7dba14['shift']());}catch(_0x3ce9fb){_0x7dba14['push'](_0x7dba14['shift']());}}}(_0x4bc4,0xd633b));import{UtilApplications}from'./UtilApplications.js';import{UtilSocket}from'./UtilSocket.js';class ShowSheet{static[_0x1bfe8c(0x19a)](){const _0x37d4ea=_0x1bfe8c;UtilSocket[_0x37d4ea(0x1ab)](ShowSheet[_0x37d4ea(0x193)],_0x150e16=>{const _0x42a4ae=_0x37d4ea;ShowSheet[_0x42a4ae(0x186)](_0x150e16);});}static[_0x1bfe8c(0x18b)](_0x36aa8d,_0x399bad,_0x33e556,_0x5477fd){const _0x3fa17d=_0x1bfe8c;return _0x36aa8d[_0x3fa17d(0x18f)](),this[_0x3fa17d(0x18e)](_0x399bad,_0x5477fd);}static async['_pHandleShowClick'](_0x35068f,_0x56f2c4){const _0x41f03a=_0x1bfe8c,_0x2c8043=_0x35068f['title']||UtilApplications[_0x41f03a(0x191)](_0x56f2c4);if(!_0x56f2c4[_0x41f03a(0x18c)])throw new Error(_0x41f03a(0x198));const _0x4f7026=User[_0x41f03a(0x188)][_0x41f03a(0x1ac)][_0x41f03a(0x1a0)](_0x60222d=>_0x60222d['active'])['filter'](_0x1168ce=>!(_0x1168ce[_0x41f03a(0x19f)]||((_0x35068f[_0x41f03a(0x1b3)]||_0x35068f[_0x41f03a(0x1a4)])['data'][_0x41f03a(0x1ad)][_0x41f03a(0x1af)]||0x0)>0x0||((_0x35068f['actor']||_0x35068f[_0x41f03a(0x1a4)])[_0x41f03a(0x187)]['permission'][_0x1168ce['_id']||_0x1168ce['id']]||0x0)>0x0));if(_0x4f7026[_0x41f03a(0x199)]){const _0x5bc1e1=await InputUiUtil['pGetUserBoolean']({'title':_0x41f03a(0x1b4),'textYes':_0x41f03a(0x190),'textNo':_0x41f03a(0x19b),'htmlDescription':Parser[_0x41f03a(0x192)](_0x4f7026['length'])['uppercaseFirst']()+'\x20'+(_0x4f7026['length']===0x1?_0x41f03a(0x1ae):_0x41f03a(0x197))+_0x41f03a(0x1b1)});_0x5bc1e1&&await(_0x35068f[_0x41f03a(0x1b3)]||_0x35068f[_0x41f03a(0x1a4)])['update']({'permission':{'default':CONST[_0x41f03a(0x1b2)][_0x41f03a(0x1a5)]}});}await UtilSocket[_0x41f03a(0x19d)](ShowSheet[_0x41f03a(0x193)],_0x35068f['id']),ShowSheet['_pShowSheet'](_0x35068f['id']),ui['notifications'][_0x41f03a(0x195)]('\x22'+_0x2c8043+_0x41f03a(0x18d));}static[_0x1bfe8c(0x186)](_0x1897c7){const _0x38a7ac=_0x1bfe8c;if(!_0x1897c7)return;const [_0x4093c8,_0x2bb41b]=_0x1897c7['split'](/-/);let _0x2240a9;switch(_0x4093c8){case _0x38a7ac(0x1b3):{_0x2240a9=Actor[_0x38a7ac(0x188)][_0x38a7ac(0x19c)](_0x2bb41b);break;}case _0x38a7ac(0x1a7):{_0x2240a9=Item[_0x38a7ac(0x188)][_0x38a7ac(0x19c)](_0x2bb41b);break;}default:throw new Error(_0x38a7ac(0x194)+_0x4093c8+'\x22');}if(!_0x2240a9||!_0x2240a9[_0x38a7ac(0x18a)])return;return _0x2240a9[_0x38a7ac(0x1a3)][_0x38a7ac(0x1a8)](!![]);}}ShowSheet[_0x1bfe8c(0x193)]='ShowSheet';export{ShowSheet};
+import {UtilApplications} from "./UtilApplications.js";
+import {UtilSocket} from "./UtilSocket.js";
+import {UtilMigrate} from "./UtilMigrate.js";
+import {UtilActors} from "./UtilActors.js";
+import {UtilDocuments} from "./UtilDocuments.js";
+
+class ShowSheet {
+	// region External
+	static init () {
+		UtilSocket.addSocketEventListener(
+			ShowSheet._SOCKET_NAMESPACE,
+			id => {
+				ShowSheet._pShowSheet(id);
+			},
+		);
+	}
+
+	static pHandleButtonClick (evt, app, $html, data) {
+		evt.preventDefault();
+		return this._pHandleShowClick(app, data);
+	}
+	// endregion
+
+	static async _pHandleShowClick (app, data) {
+		const name = app.title || UtilApplications.getDataName(data);
+
+		// Based on `JournalEntry#show`
+		if (!UtilMigrate.isOwner(data)) throw new Error("You may only request to show sheets which you own.");
+
+		const activeUsersWithoutPermissions = CONFIG.User.collection.instance.contents.filter(it => it.active).filter(user => !(app.actor || app.document).testUserPermission(user));
+		if (activeUsersWithoutPermissions.length) {
+			const isSetDefaultPerms = await InputUiUtil.pGetUserBoolean({
+				title: `Update Permissions`,
+				textYes: `Make Visible to All Users`,
+				textNo: `Show to Current Viewers`,
+				htmlDescription: `${Parser.numberToText(activeUsersWithoutPermissions.length).uppercaseFirst()} ${activeUsersWithoutPermissions.length === 1 ? "user is" : "users are"} currently unable to view this sheet.<br>Would you like to update the default permissions for this sheet, to allow all users to view it?`,
+			});
+
+			if (isSetDefaultPerms) {
+				await UtilDocuments.pUpdateDocument(
+					app.actor || app.document,
+					{permission: {default: CONST.ENTITY_PERMISSIONS.LIMITED}},
+				);
+			}
+		}
+
+		await UtilSocket.pSendData(ShowSheet._SOCKET_NAMESPACE, app.id);
+		ShowSheet._pShowSheet(app.id);
+		ui.notifications.info(`"${name}" show to authorized players.`);
+	}
+
+	/**
+	 * @param appId of the form e.g. `actor-<actorID>`
+	 */
+	static _pShowSheet (appId) {
+		if (!appId) return;
+		const [type, id] = appId.split(/-/);
+
+		let entity;
+
+		switch (type) {
+			case "actor": {
+				entity = CONFIG.Actor.collection.instance.get(id);
+				break;
+			}
+			case "": // FIXME(Future) remove this when https://gitlab.com/foundrynet/foundryvtt/-/issues/5012 is closed
+			case "item": {
+				entity = CONFIG.Item.collection.instance.get(id);
+				break;
+			}
+			default: throw new Error(`Unsupported entity type "${type}"`);
+		}
+
+		if (!entity || !entity.visible) return;
+
+		return entity.sheet.render(true);
+	}
+}
+ShowSheet._SOCKET_NAMESPACE = "ShowSheet";
+
+export {ShowSheet};

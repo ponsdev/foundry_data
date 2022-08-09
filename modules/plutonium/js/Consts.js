@@ -1,1 +1,20 @@
-var _0x136c=['2YiVzvj','Z_INDEX_MAX_FOUNDRY','three','times','four','203066OwyPgm','497325OAAmwU','100507KvjXgU','FLAG_IFRAME_URL','1659127sVcIzm','POUNDS_TO_KILOGRAMS','once','MILES_TO_KILOMETRES','iframe_url','thrice','17105BJBuIq','19lBDWsg','twice','2pQVlYH','CHAR_MAX_LEVEL','217983MWibgs','RUN_TIME','Importing...','2594kcknio'];var _0x3675=function(_0x3b7793,_0x431175){_0x3b7793=_0x3b7793-0x109;var _0x136c7b=_0x136c[_0x3b7793];return _0x136c7b;};var _0x4717f8=_0x3675;(function(_0x3a472e,_0x28f8c8){var _0x5b78bb=_0x3675;while(!![]){try{var _0x40034d=-parseInt(_0x5b78bb(0x10f))+-parseInt(_0x5b78bb(0x11d))*parseInt(_0x5b78bb(0x109))+parseInt(_0x5b78bb(0x118))+-parseInt(_0x5b78bb(0x11b))*parseInt(_0x5b78bb(0x110))+-parseInt(_0x5b78bb(0x10e))+-parseInt(_0x5b78bb(0x120))*parseInt(_0x5b78bb(0x119))+parseInt(_0x5b78bb(0x112));if(_0x40034d===_0x28f8c8)break;else _0x3a472e['push'](_0x3a472e['shift']());}catch(_0x343ce3){_0x3a472e['push'](_0x3a472e['shift']());}}}(_0x136c,0x46b27));class Consts{}Consts[_0x4717f8(0x11e)]=''+Date['now'](),Consts[_0x4717f8(0x115)]=1.6,Consts['FEET_TO_METRES']=0.3,Consts[_0x4717f8(0x113)]=0.5,Consts[_0x4717f8(0x111)]=_0x4717f8(0x116),Consts['TERMS_COUNT']=[{'tokens':[_0x4717f8(0x114)],'count':0x1},{'tokens':[_0x4717f8(0x11a)],'count':0x2},{'tokens':[_0x4717f8(0x117)],'count':0x3},{'tokens':[_0x4717f8(0x10b),'\x20',_0x4717f8(0x10c)],'count':0x3},{'tokens':[_0x4717f8(0x10d),'\x20',_0x4717f8(0x10c)],'count':0x4}],Consts[_0x4717f8(0x10a)]=0x270f,Consts['ACTOR_TEMP_NAME']=_0x4717f8(0x11f),Consts[_0x4717f8(0x11c)]=0x14;export{Consts};
+class Consts {
+	static RUN_TIME = `${Date.now()}`;
+	static FLAG_IFRAME_URL = "iframe_url";
+
+	static TERMS_COUNT = [
+		{tokens: ["once"], count: 1},
+		{tokens: ["twice"], count: 2},
+		{tokens: ["thrice"], count: 3},
+		{tokens: ["three", " ", "times"], count: 3},
+		{tokens: ["four", " ", "times"], count: 4},
+	];
+
+	static Z_INDEX_MAX_FOUNDRY = 9999;
+
+	static ACTOR_TEMP_NAME = "Importing...";
+
+	static CHAR_MAX_LEVEL = 20;
+}
+
+export {Consts};

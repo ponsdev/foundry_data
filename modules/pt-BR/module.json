@@ -1,22 +1,25 @@
 {
-    "name": "pt-BR",
-    "title": "Portuguese (BR) Core",
-    "description": "A translation module to add the option to display the core interface of FoundryVTT in Portuguese (BR).",
-    "version": "1.8.0",
-    "author": "Foundry VTT Brasil",
-    "minimumCoreVersion": "0.5.0",
-    "compatibleCoreVersion": "0.7.9",
-    "scripts": [],
-    "styles": [],
-    "packs": [],
-    "languages": [
-        {
-            "lang": "pt-BR",
-            "name": "Português (Brasil)",
-            "path": "pt-BR.json"
-        }
-    ],
-    "url": "https://gitlab.com/foundryvtt-pt-br/core",
-    "manifest": "https://gitlab.com/foundryvtt-pt-br/core/-/raw/master/pt-BR/module.json",
-    "download": "https://gitlab.com/foundryvtt-pt-br/core/-/jobs/artifacts/v1.8.0/raw/pt-BR.zip?job=build"
+  "name": "pt-BR",
+  "title": "Portuguese (BR) Core",
+  "description": "A translation module to add the option to display the core interface of Foundry VTT in Portuguese (BR).",
+  "version": "1.11.1",
+  "authors": [
+    {
+      "name": "Bellenus",
+      "url": "https://discord.gg/XNC86FBnQ2"
+    }
+  ],
+  "minimumCoreVersion": "0.5.0",
+  "compatibleCoreVersion": "9",
+  "coreTranslation": true,
+  "languages": [
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR/foundry.json"
+    }
+  ],
+  "url": "https://gitlab.com/fvtt-brasil/core",
+  "manifest": "https://gitlab.com/fvtt-brasil/core/-/raw/master/pt-BR/module.json",
+  "download": "https://gitlab.com/api/v4/projects/18230905/packages/generic/pt-BR/1.11.1/pt-BR.zip"
 }

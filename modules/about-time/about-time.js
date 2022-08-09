@@ -11,19 +11,16 @@
  */
 // Import TypeScript modules
 import { registerSettings } from "./module/settings.js";
-import { preloadTemplates } from "./module/preloadTemplates.js";
 import { ElapsedTime } from "./module/ElapsedTime.js";
 import { PseudoClock } from "./module/PseudoClock.js";
-import { DTMod } from "./module/calendar/DTMod.js";
-import { runDateTimeTests } from "./module/calendar/DTSTests.js";
-import { DTCalc } from "./module/calendar/DTCalc.js";
-import { calendars } from "./module/calendar/DTCalc.js";
 import { DateTime } from "./module/calendar/DateTime.js";
-import { SimpleClockDisplay } from "./module/display/Display.js";
-import { SimpleCalendarDisplay } from "./module/display/Calendar.js";
-import { CountDown } from "./module/display/CountDown.js";
-import { CalendarEditor } from "./module/calendarEdtior/CalendarEditor.js";
-import { RealTimeCountDown } from "./module/display/RealTimeCountDown.js";
+import { DTMod } from "./module/calendar/DTMod.js";
+import { DTCalc } from "./module/calendar/DTCalc.js";
+export var simpleCalendar;
+export function DTNow() {
+    //@ts-ignore
+    return DateTime.createFromSeconds(game.time.worldTime);
+}
 /* ------------------------------------ */
 /* Initialize module					*/
 /* ------------------------------------ */
@@ -33,10 +30,11 @@ Hooks.once('init', async function () {
     // Register custom module settings
     registerSettings();
     // Preload Handlebars templates
-    await preloadTemplates();
+    // await preloadTemplates();
     // Register custom sheets (if any)
 });
 let operations;
+export var calendars = {};
 /* ------------------------------------ */
 /* Setup module							*/
 /* ------------------------------------ */
@@ -72,8 +70,18 @@ Hooks.once('setup', function () {
         DTNow: DateTime.now,
         calendars: calendars,
         _notifyEvent: PseudoClock.notifyEvent,
-        startRunning: PseudoClock.startRealTime,
-        stopRunning: PseudoClock.stopRealTime,
+        startRunning: () => {
+            if (ElapsedTime.debug)
+                console.warn("about-time | startRunning deprecated use SimpleCalendar.api.startClock()");
+            //@ts-ignore
+            window.SimpleCalendar.api.startClock();
+        },
+        stopRunning: () => {
+            if (ElapsedTime.debug)
+                console.warn("about-time | stopRunning not supported use SimpleCalendar.api.stopClock()");
+            //@ts-ignore
+            window.SimpleCalendar.api.stopClock();
+        },
         mutiny: PseudoClock.mutiny,
         advanceClock: ElapsedTime.advanceClock,
         advanceTime: ElapsedTime.advanceTime,
@@ -83,52 +91,38 @@ Hooks.once('setup', function () {
         setDateTime: ElapsedTime.setDateTime,
         flushQueue: ElapsedTime._flushQueue,
         reset: ElapsedTime._initialize,
-        resetCombats: ElapsedTime.resetCombats,
+        resetCombats: () => console.error("about-time | not supported"),
         status: ElapsedTime.status,
         pc: PseudoClock,
-        showClock: SimpleClockDisplay.showClock,
-        showCalendar: SimpleCalendarDisplay.showClock,
-        CountDown: CountDown,
-        RealTimeCountDown: RealTimeCountDown,
-        _save: ElapsedTime._save,
+        //@ts-ignore
+        showClock: () => window.SimpleCalendar.api.showCalendar(null, true),
+        //@ts-ignore
+        showCalendar: () => window.SimpleCalendar.api.showCalendar(),
+        CountDown: () => console.error("about-time | not currently supported"),
+        RealTimeCountDown: () => console.error("about-time | not currently supported"),
+        _save: (ElapsedTime._save),
         _load: ElapsedTime._load,
     };
     //@ts-ignore
     game.Gametime = operations;
     //@ts-ignore
     window.Gametime = operations;
+    // runDateTimeTests();
+    // calendar weather support
 });
-function depWrap(f, name) {
-    return (...args) => {
-        console.warn(`game.Gametime.${name} is deprecated please use Gametime.${name} instead}`);
-        return f(...args);
-    };
-}
-function deprecated(operations) {
-    const newOperations = {};
-    Object.keys(operations).forEach(key => {
-        newOperations[key] = depWrap(operations[key], key);
-    });
-    return newOperations;
-}
 /* ------------------------------------ */
 /* When ready							*/
 /* ------------------------------------ */
 Hooks.once('ready', function () {
+    DTCalc.initCalendarWeather();
+    //@ts-ignore
+    if (game.modules.get("foundryvtt-simple-calendar").active) {
+        //@ts-ignore
+    }
+    else
+        console.warn("simple calendar not loaded");
     // emergency clearing of the queue ElapsedTime._flushQueue();
-    DTCalc.loadUserCalendar();
-    DTCalc.createFromData();
     PseudoClock.init();
     ElapsedTime.init();
-    if (ElapsedTime.debug) {
-        runDateTimeTests();
-    }
-    /*
-    new CalendarEditor(
-        calendars[Object.keys(calendars)[game.settings.get("about-time", "calendar")]],
-        {editable: true, closeOnSubmit: true, submitOnClose: false, submitOnUnfocus: false}
-    ).render(false);
-    */
-    //@ts-ignore
-    window.CalendarEditor = CalendarEditor;
+    // Do this until simple calendar is ready early
 });

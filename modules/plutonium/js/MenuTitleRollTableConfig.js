@@ -1,1 +1,29 @@
-var _0x48e6=['pop__mnu-btn-open','plutonium-roll-table-config-title-menu','672202jZnFQs','7mICXcy','Pop\x20Out','1122089ggAapE','1305258rEXWiM','214079nHgTkA','1800592GMYhcX','_HOOK_NAME','14MjVMBT','41663QdZRKr','1eQHXMt','renderRollTableConfig','_TOOL_LIST','1244582UdGLZt'];var _0x7b97=function(_0x10f88b,_0x549687){_0x10f88b=_0x10f88b-0x1af;var _0x48e6ee=_0x48e6[_0x10f88b];return _0x48e6ee;};var _0x327932=_0x7b97;(function(_0x50d4b5,_0x2c1fa2){var _0x4a778b=_0x7b97;while(!![]){try{var _0x5a4ec6=parseInt(_0x4a778b(0x1b2))*-parseInt(_0x4a778b(0x1b1))+-parseInt(_0x4a778b(0x1af))+-parseInt(_0x4a778b(0x1b6))+parseInt(_0x4a778b(0x1be))*parseInt(_0x4a778b(0x1ba))+parseInt(_0x4a778b(0x1b9))+parseInt(_0x4a778b(0x1bc))*parseInt(_0x4a778b(0x1b3))+parseInt(_0x4a778b(0x1bd));if(_0x5a4ec6===_0x2c1fa2)break;else _0x50d4b5['push'](_0x50d4b5['shift']());}catch(_0x27d76e){_0x50d4b5['push'](_0x50d4b5['shift']());}}}(_0x48e6,0xecbae));import{MenuTitle}from'./MenuTitle.js';import{PopoutSheet}from'./PopoutSheet.js';class MenuTitleRollTableConfig extends MenuTitle{}MenuTitleRollTableConfig[_0x327932(0x1b0)]=_0x327932(0x1b4),MenuTitleRollTableConfig['_EVT_NAMESPACE']=_0x327932(0x1b8),MenuTitleRollTableConfig[_0x327932(0x1b5)]=[{'name':_0x327932(0x1bb),'Class':PopoutSheet,'iconClass':'fa-external-link-alt','additionalClassesButton':_0x327932(0x1b7),'additionalClassesPreSpacer':_0x327932(0x1b7)}];export{MenuTitleRollTableConfig};
+import {MenuTitle} from "./MenuTitle.js";
+import {ChooseImporter} from "./ChooseImporter.js";
+import {Config} from "./Config.js";
+import {TableResultCleaner} from "./TableResultCleaner.js";
+import {UtilUi} from "./UtilUi.js";
+import {MenuToolInfo} from "./UtilMenu.js";
+
+class MenuTitleRollTableConfig extends MenuTitle {}
+MenuTitleRollTableConfig._HOOK_NAME = "renderRollTableConfig";
+MenuTitleRollTableConfig._EVT_NAMESPACE = "plutonium-roll-table-config-title-menu";
+MenuTitleRollTableConfig._TOOL_LIST = [
+	new MenuToolInfo({
+		name: "Plutonium Import",
+		streamerName: "Import",
+		Class: ChooseImporter,
+		getIcon: () => UtilUi.getModuleFaIcon(),
+		getMinRole: () => Config.get("import", "minimumRole"),
+		isRequireOwner: true,
+	}),
+	new MenuToolInfo({
+		name: "Row Cleaner",
+		Class: TableResultCleaner,
+		iconClass: "fa-trash-alt",
+		getMinRole: () => Config.get("tools", "minimumRoleTableTools"),
+		isRequireOwner: true,
+	}),
+];
+
+export {MenuTitleRollTableConfig};

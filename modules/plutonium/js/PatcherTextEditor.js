@@ -1,1 +1,376 @@
-const _0x4c49=['jemb__btn-toggle','\x0a\x09\x09\x09\x09<div\x20class=\x22w-100\x20jemb__wrp-content\x20','MODULE_NAME','max','each','closest','</div>\x0a\x09\x09\x09\x09','TextEditor.enrichHTML','html','629DfiRJF','disabled','get','_getEntityEmbed','test','ve-hidden','attr','23RRrsdb','toggleClass','journalEntries','BUTTON','908BCjEyy','getElementsByTagName','<i\x20class=\x22fa\x20fa-caret-square-down\x22></i>','currentTarget','893XVnpSF','_createEntityLink','<i\x20class=\x22fa\x20fa-caret-square-left\x22></i>','classList','_doEnableToggleButtons','entities','handleToggleClick','data','22mtvChI','<button\x20class=\x22btn\x20btn-xxs\x20btn-5et\x20btn-default\x20flex-vh-center\x20mx-1\x20jemb__btn-toggle\x22\x20data-plut-is-expanded=\x22','replace','ENTITY_PERMISSIONS','img','_handleExpandCollapse','733117wMPvBi','isAutoExpandContentEmbeds','find','sheet','634IcSjCY','parent','_getEntityPermissions','</button>','3650327QcTcHP','isGM','\x22\x20title=\x22','permission','</div>\x0a\x09\x09\x09\x09<div\x20class=\x22flex-vh-center\x20jemb__wrp-content\x20','1tCkDFn','JournalSheet.prototype._disableFields','next','user','\x22><a\x20target=\x22_blank\x20w-100\x22\x20href=\x22','OWNER','enrichHTML','762759FOwvJP','content','outerHTML','data-plut-is-expanded','34301qLDfzS','<a\x20class=\x22entity-link\x20broken\x22><i\x20class=\x22fas\x20fa-unlink\x22></i>\x20','isEnableContentEmbeds','_getBtnHtmlToggle','Collapse','_MAX_RECURSION_DEPTH','\x20Journal\x20Entry\x20(SHIFT\x20for\x20All\x20Entries)\x22\x20onclick=\x22window.PlutPatcher.Patcher_TextEditor.handleToggleClick(event)\x22\x20type=\x22button\x22>','</a>','entityClass','_getEntity','register','\x22\x20class=\x22jemb__img\x22></a></div>\x0a\x09\x09\x09</div>','<div\x20class=\x22w-100\x20flex-col\x22>\x0a\x09\x09\x09\x09<div\x20class=\x22flex-v-center\x20mb-1\x20jemb__wrp-lnk\x22>','button[data-plut-is-expanded]','shiftKey','339IugPFL','LIBWRAPPER_MODE_WRAPPER','OBSERVER','Expand','</div>\x0a\x09\x09\x09</div>','_id','contains'];const _0x12a7=function(_0xb16661,_0x5a3401){_0xb16661=_0xb16661-0xf4;let _0x4c49ec=_0x4c49[_0xb16661];return _0x4c49ec;};const _0x51e55e=_0x12a7;(function(_0x3c442a,_0x54bdc7){const _0x27e124=_0x12a7;while(!![]){try{const _0x3d88dd=-parseInt(_0x27e124(0xfb))+parseInt(_0x27e124(0xf5))*-parseInt(_0x27e124(0xff))+-parseInt(_0x27e124(0x10f))+-parseInt(_0x27e124(0x113))*parseInt(_0x27e124(0x139))+-parseInt(_0x27e124(0x141))*parseInt(_0x27e124(0x122))+parseInt(_0x27e124(0x132))*-parseInt(_0x27e124(0x13d))+parseInt(_0x27e124(0x103))*parseInt(_0x27e124(0x108));if(_0x3d88dd===_0x54bdc7)break;else _0x3c442a['push'](_0x3c442a['shift']());}catch(_0x5e91b7){_0x3c442a['push'](_0x3c442a['shift']());}}}(_0x4c49,0x74a19));import{libWrapper,UtilLibWrapper}from'./PatcherLibWrapper.js';import{SharedConsts}from'../shared/SharedConsts.js';import{Config}from'./Config.js';class Patcher_TextEditor{static['init'](){const _0x5baa9f=_0x12a7;libWrapper[_0x5baa9f(0x11d)](SharedConsts[_0x5baa9f(0x12b)],_0x5baa9f(0x130),function(_0x307764,..._0x1d4b71){const _0x5caf77=_0x5baa9f;if(!Config[_0x5caf77(0x134)]('journalEntries',_0x5caf77(0x115)))return _0x307764(..._0x1d4b71);return Patcher_TextEditor[_0x5caf77(0x10e)](_0x307764,..._0x1d4b71);},UtilLibWrapper[_0x5baa9f(0x123)]),libWrapper[_0x5baa9f(0x11d)](SharedConsts[_0x5baa9f(0x12b)],_0x5baa9f(0x109),function(_0x57e3d4,..._0x588194){const _0x1dec89=_0x5baa9f,_0x39b8fd=_0x57e3d4(..._0x588194);if(!Config[_0x1dec89(0x134)](_0x1dec89(0x13b),_0x1dec89(0x115)))return _0x39b8fd;return Patcher_TextEditor[_0x1dec89(0x145)](..._0x588194),_0x39b8fd;},UtilLibWrapper['LIBWRAPPER_MODE_WRAPPER']);}static[_0x51e55e(0x10e)](_0x45a8d2,_0x54fcc5,_0x2e80da,_0x3a4ae4=0x0){const _0x4ed3b8=_0x51e55e;_0x2e80da=_0x2e80da||{},_0x54fcc5=_0x45a8d2(_0x54fcc5,_0x2e80da);if(!_0x2e80da[_0x4ed3b8(0x146)])return _0x54fcc5;return _0x54fcc5=_0x54fcc5[_0x4ed3b8(0xf7)](/@Embed(JournalEntry)\[([^\]]+)](?:{([^}]+)})?/g,(..._0x18233f)=>this[_0x4ed3b8(0x135)](_0x2e80da,_0x3a4ae4,..._0x18233f)),_0x54fcc5;}static['_getEntityEmbed'](_0x5ba5e5,_0x1b23a8,_0x54ebbd,_0x15a925,_0x5013e3,_0x59d9d7){const _0x329b5f=_0x51e55e,_0x2d8642=CONFIG[_0x15a925],_0x1f44c7=_0x2d8642[_0x329b5f(0x11b)]['collection'],_0x37259c=this[_0x329b5f(0x11c)](_0x1f44c7,_0x5013e3);if(!_0x37259c)return _0x329b5f(0x114)+(_0x59d9d7||_0x5013e3)+_0x329b5f(0x11a);if(this[_0x329b5f(0x101)](_0x37259c)<CONST[_0x329b5f(0xf8)][_0x329b5f(0x124)])return _0x329b5f(0x114)+(_0x59d9d7||_0x5013e3)+'\x20<i>(you\x20do\x20not\x20have\x20sufficient\x20permissions\x20to\x20view\x20this\x20journal\x20entry)</i></a>';const _0x50564c=TextEditor[_0x329b5f(0x142)](_0x54ebbd,_0x15a925,_0x5013e3,_0x59d9d7)[_0x329b5f(0x111)],_0x3a5410=Config[_0x329b5f(0x134)]('journalEntries',_0x329b5f(0xfc));if(_0x37259c[_0x329b5f(0xfe)]['_sheetMode']==='image'){const _0x554019=_0x37259c[_0x329b5f(0xf4)][_0x329b5f(0xf9)];return'<div\x20class=\x22w-100\x20flex-col\x22>\x0a\x09\x09\x09\x09<div\x20class=\x22flex-v-center\x20mb-1\x20jemb__wrp-lnk\x22>'+_0x50564c+this['_getBtnHtmlToggle'](_0x3a5410)+_0x329b5f(0x107)+(_0x3a5410?'':_0x329b5f(0x137))+_0x329b5f(0x10c)+_0x554019+'\x22><img\x20src=\x22'+_0x554019+_0x329b5f(0x11e);}else{const _0x5e0738=_0x1b23a8===Patcher_TextEditor[_0x329b5f(0x118)],_0x383c23=_0x5e0738?_0x37259c['data']['content']:TextEditor[_0x329b5f(0x10e)](_0x37259c[_0x329b5f(0xf4)][_0x329b5f(0x110)],_0x5ba5e5,_0x1b23a8+0x1);return _0x329b5f(0x11f)+_0x50564c+this[_0x329b5f(0x116)](_0x3a5410)+_0x329b5f(0x12f)+(_0x5e0738?'<div\x20class=\x22mb-1\x20bold\x20veapp__msg-error\x22>Warning:\x20too\x20many\x20recursive\x20embeds!\x20Have\x20you\x20made\x20an\x20infinite\x20loop?</div>':'')+_0x329b5f(0x12a)+(_0x3a5410?'':_0x329b5f(0x137))+'\x22>'+_0x383c23+_0x329b5f(0x126);}}static[_0x51e55e(0x101)](_0x6c0dc5){const _0x3b2106=_0x51e55e;if(game[_0x3b2106(0x10b)][_0x3b2106(0x104)])return CONST[_0x3b2106(0xf8)][_0x3b2106(0x10d)];return Math[_0x3b2106(0x12c)](_0x6c0dc5[_0x3b2106(0xf4)][_0x3b2106(0x106)][game['user'][_0x3b2106(0x127)]],_0x6c0dc5[_0x3b2106(0xf4)][_0x3b2106(0x106)]['default']);}static[_0x51e55e(0x11c)](_0x5e3931,_0x43fc2c){const _0x539f04=_0x51e55e;let _0x3130cc=null;if(/^[a-zA-Z0-9]{16}$/[_0x539f04(0x136)](_0x43fc2c))_0x3130cc=_0x5e3931[_0x539f04(0x134)](_0x43fc2c);if(!_0x3130cc)_0x3130cc=_0x5e3931['entities'][_0x539f04(0xfd)](_0x2cc6f8=>_0x2cc6f8[_0x539f04(0xf4)]['name']===_0x43fc2c);return _0x3130cc;}static[_0x51e55e(0x147)](_0x10ca45){const _0x3842b4=_0x51e55e,_0x39b69a=$(_0x10ca45[_0x3842b4(0x140)]),_0x581da2=_0x39b69a[_0x3842b4(0x138)](_0x3842b4(0x112))==='1';if(_0x10ca45[_0x3842b4(0x121)]){_0x10ca45['preventDefault']();const _0x17cc1c=_0x39b69a[_0x3842b4(0x12e)]('.editor');_0x17cc1c[_0x3842b4(0xfd)](_0x3842b4(0x120))[_0x3842b4(0x12d)]((_0x2ca4bc,_0x42dc74)=>this[_0x3842b4(0xfa)]($(_0x42dc74),_0x581da2));return;}this[_0x3842b4(0xfa)](_0x39b69a,_0x581da2);}static[_0x51e55e(0xfa)](_0x2fb214,_0x2f26e6){const _0x48975f=_0x51e55e,_0x2234e2=_0x2fb214[_0x48975f(0x100)]()[_0x48975f(0x10a)]();_0x2234e2[_0x48975f(0x13a)](_0x48975f(0x137),_0x2f26e6),_0x2fb214['attr'](_0x48975f(0x112),_0x2f26e6?'0':'1')[_0x48975f(0x131)](_0x2f26e6?'<i\x20class=\x22fa\x20fa-caret-square-left\x22></i>':_0x48975f(0x13f))['title']((_0x2f26e6?_0x48975f(0x125):'Collapse')+'\x20Journal\x20Entry\x20(SHIFT\x20for\x20All\x20Entries)');}static['_getBtnHtmlToggle'](_0x586b7f){const _0x3c078a=_0x51e55e;return _0x3c078a(0xf6)+(_0x586b7f?0x1:0x0)+_0x3c078a(0x105)+(_0x586b7f?_0x3c078a(0x117):_0x3c078a(0x125))+_0x3c078a(0x119)+(_0x586b7f?'<i\x20class=\x22fa\x20fa-caret-square-down\x22></i>':_0x3c078a(0x143))+_0x3c078a(0x102);}static['_doEnableToggleButtons'](_0x23f45c){const _0x139abf=_0x51e55e;for(let _0x134053 of _0x23f45c[_0x139abf(0x13e)](_0x139abf(0x13c))){if(_0x134053[_0x139abf(0x144)][_0x139abf(0x128)](_0x139abf(0x129)))_0x134053['removeAttribute'](_0x139abf(0x133));}}}Patcher_TextEditor['_MAX_RECURSION_DEPTH']=0x45;export{Patcher_TextEditor};
+import {UtilLibWrapper} from "./PatcherLibWrapper.js";
+import {Config} from "./Config.js";
+import {ChooseImporter} from "./ChooseImporter.js";
+import {LGT} from "./Util.js";
+import {UtilApplications} from "./UtilApplications.js";
+import {UtilEvents} from "./UtilEvents.js";
+import {PopoutSheet} from "./PopoutSheet.js";
+
+class Patcher_TextEditor {
+	static init () {
+		UtilLibWrapper.addPatch(
+			"TextEditor.enrichHTML",
+			this._lw_TextEditor_enrichHTML,
+			UtilLibWrapper.LIBWRAPPER_MODE_WRAPPER,
+		);
+
+		UtilLibWrapper.addPatch(
+			"JournalSheet.prototype._disableFields",
+			this._lw_JournalSheet_prototype__disableFields,
+			UtilLibWrapper.LIBWRAPPER_MODE_WRAPPER,
+		);
+
+		UtilEvents.registerDocumentHandler({
+			eventType: "click",
+			selector: `.jemb__btn-toggle`,
+			fnEvent: Patcher_TextEditor.JournalEmbed.handleToggleClick.bind(Patcher_TextEditor.JournalEmbed),
+		});
+
+		UtilEvents.registerDocumentHandler({
+			eventType: "click",
+			selector: `.jlnk__entity-link`,
+			fnEvent: Patcher_TextEditor.ContentLoader.handleClick.bind(Patcher_TextEditor.JournalEmbed),
+		});
+
+		Patcher_TextEditor.ContentDragDrop.init();
+	}
+
+	static _lw_TextEditor_enrichHTML (fn, ...args) {
+		if (!Config.get("journalEntries", "isEnableJournalEmbeds") && !Config.get("text", "isEnableContentLinks")) return fn(...args);
+		return Patcher_TextEditor.enrichHTML(fn, ...args);
+	}
+
+	static _lw_JournalSheet_prototype__disableFields (fn, ...args) {
+		const res = fn(...args);
+		if (!Config.get("journalEntries", "isEnableJournalEmbeds")) return res;
+		Patcher_TextEditor.JournalEmbed._doEnableToggleButtons(...args);
+		return res;
+	}
+
+	/** Based on the original method. */
+	static enrichHTML (originalEnrichHtml, content, opts, depth = 0) {
+		opts = opts || {};
+
+		if (opts.secrets === undefined) opts.secrets = false;
+		if (opts.documents === undefined) opts.documents = true;
+		if (opts.links === undefined) opts.links = true;
+		if (opts.rolls === undefined) opts.rolls = true;
+
+		// Call the original method--"content" is now enriched HTML
+		content = originalEnrichHtml(content, opts);
+
+		// If we are not to replace dynamic entity links, return the base content
+		if (!opts.documents) return content;
+
+		// Don't load compendiums--we don't match `EmbedCompendium`
+		content = content
+			.replace(/@Embed(JournalEntry)\[([^\]]+)](?:{([^}]+)})?/g, (...m) => Patcher_TextEditor.JournalEmbed.getHtml(opts, depth, ...m))
+			.replace(/@(Actor)Embedded(Item)\[([^\]]+)]\[([^\]]+)](?:{([^}]+)})?/g, (...m) => Patcher_TextEditor.EmbeddedDocument.getHtml(opts, depth, ...m))
+			.replace(/@Folder\[([^\]]+)](?:{([^}]+)})?/g, (...m) => Patcher_TextEditor.Folder.getHtml(opts, depth, ...m))
+			.replace(/@([a-zA-Z]+)\[([^\]]+)](?:{([^}]+)})?/g, (...m) => Patcher_TextEditor.ContentLoader.getHtml(opts, depth, ...m))
+		;
+
+		return content;
+	}
+}
+
+Patcher_TextEditor.Enricher = class {
+	static _getEntityPermissions (entity) {
+		if (game.user.isGM) return CONST.ENTITY_PERMISSIONS.OWNER;
+		return entity.permission;
+	}
+
+	static _getEntity (collection, entityNameOrId) {
+		// Match either on ID or by name
+		let entity = null;
+		if (/^[a-zA-Z0-9]{16}$/.test(entityNameOrId)) entity = collection.get(entityNameOrId);
+		if (!entity) entity = (collection.contents || collection.entries).find(e => e.data.name === entityNameOrId);
+		return entity;
+	}
+};
+
+Patcher_TextEditor.JournalEmbed = class extends Patcher_TextEditor.Enricher {
+	static getHtml (enrichOpts, depth, fullText, entityType, entityNameOrId, displayText) {
+		const config = CONFIG[entityType];
+		const collection = config.collection.instance;
+		const entity = this._getEntity(collection, entityNameOrId);
+
+		if (!entity) return `<a class="entity-link broken"><i class="fas fa-unlink"></i> ${displayText || entityNameOrId}</a>`;
+
+		// Get the standard Foundry link
+		const htmlJournalLink = TextEditor._createContentLink(fullText, entityType, entityNameOrId, displayText).outerHTML;
+		if (this._getEntityPermissions(entity) < CONST.ENTITY_PERMISSIONS.OBSERVER) return htmlJournalLink;
+
+		const isAutoExpand = Config.get("journalEntries", "isAutoExpandJournalEmbeds");
+		if (entity.sheet._sheetMode === "image") {
+			const img = entity.data.img;
+			return `<div class="w-100 ve-flex-col">
+				<div class="ve-flex-v-center mb-1 jemb__wrp-lnk">${htmlJournalLink}${this._getBtnHtmlToggle(isAutoExpand)}</div>
+				<div class="ve-flex-vh-center jemb__wrp-content ${isAutoExpand ? "" : "ve-hidden"}"><a target="_blank w-100" href="${img}"><img src="${img}" class="jemb__img"></a></div>
+			</div>`;
+		} else {
+			// Avoid infinite loops
+			const isTooDeep = depth === Patcher_TextEditor.JournalEmbed._MAX_RECURSION_DEPTH;
+			const subContent = isTooDeep ? entity.data.content : TextEditor.enrichHTML(entity.data.content, enrichOpts, depth + 1);
+			return `<div class="w-100 ve-flex-col">
+				<div class="ve-flex-v-center mb-1 jemb__wrp-lnk">${htmlJournalLink}${this._getBtnHtmlToggle(isAutoExpand)}</div>
+				${isTooDeep ? `<div class="mb-1 bold veapp__msg-error">Warning: too many recursive embeds! Have you made an infinite loop?</div>` : ""}
+				<div class="w-100 jemb__wrp-content ${isAutoExpand ? "" : "ve-hidden"}">${subContent}</div>
+			</div>`;
+		}
+	}
+
+	static handleToggleClick (event) {
+		const $btn = $(event.currentTarget);
+		const isExpanded = $btn.attr("data-plut-is-expanded") === "1";
+
+		if (event.shiftKey) {
+			event.preventDefault();
+
+			const $editor = $btn.closest(`.editor`);
+			$editor.find(`button[data-plut-is-expanded]`).each((i, e) => this._handleExpandCollapse($(e), isExpanded));
+			return;
+		}
+
+		this._handleExpandCollapse($btn, isExpanded);
+	}
+
+	static _handleExpandCollapse ($btn, isExpanded) {
+		const $wrp = $btn.parent().next();
+		$wrp.toggleClass("ve-hidden", isExpanded);
+		$btn
+			.attr("data-plut-is-expanded", isExpanded ? "0" : "1")
+			.html(isExpanded ? `<i class="fa fa-caret-square-left"></i>` : `<i class="fa fa-caret-square-down"></i>`)
+			.title(`${isExpanded ? `Expand` : `Collapse`} Journal Entry (SHIFT for All Entries)`);
+	}
+
+	static _getBtnHtmlToggle (isAutoExpand) {
+		return `<button class="btn btn-xxs btn-5et btn-default ve-flex-vh-center mx-1 jemb__btn-toggle" data-plut-is-expanded="${isAutoExpand ? 1 : 0}" title="${isAutoExpand ? "Collapse" : "Expand"} Journal Entry (SHIFT for All Entries)" type="button">${isAutoExpand ? `<i class="fa fa-caret-square-down"></i>` : `<i class="fa fa-caret-square-left"></i>`}</button>`;
+	}
+
+	/** Based on `FormApplication._disableFields` */
+	static _doEnableToggleButtons (form) {
+		for (let el of form.getElementsByTagName("BUTTON")) {
+			if (el.classList.contains("jemb__btn-toggle")) el.removeAttribute("disabled");
+		}
+	}
+};
+Patcher_TextEditor.JournalEmbed._MAX_RECURSION_DEPTH = 69; // Arbitrary number of steps
+
+Patcher_TextEditor.EmbeddedDocument = class extends Patcher_TextEditor.Enricher {
+	static getHtml (enrichOpts, depth, fullText, parentEntityType, childEntityType, parentEntityNameOrId, childEntityNameOrId, displayText) {
+		const config = CONFIG[parentEntityType];
+		const collection = config.collection.instance;
+		const parentEntity = this._getEntity(collection, parentEntityNameOrId);
+
+		if (!parentEntity) return `<a class="entity-link broken"><i class="fas fa-unlink"></i> ${displayText || `${parentEntityNameOrId}.${childEntityNameOrId}`}</a>`;
+
+		const configChild = CONFIG[childEntityType];
+		const childEntity = this._getEntity(parentEntity.items, childEntityNameOrId);
+		if (!childEntity) return `<a class="entity-link broken"><i class="fas fa-unlink"></i> ${displayText || `${parentEntityNameOrId}.${childEntityNameOrId}`}</a>`;
+
+		return `<a class="jlnk__entity-link" data-plut-owned-link="true" data-parent-entity="${parentEntityType}" data-child-entity="Item" data-parent-id="${parentEntity.id}" data-child-id="${childEntity.id}"><i class="${config.sidebarIcon}"></i> <i class="${configChild.sidebarIcon}"></i> ${childEntity.name}</a>`;
+	}
+};
+
+Patcher_TextEditor.Folder = class extends Patcher_TextEditor.Enricher {
+	static getHtml (enrichOpts, depth, fullText, folderNameOrId, displayText) {
+		const folder = this._getEntity(CONFIG.Folder.collection.instance, folderNameOrId);
+
+		if (!folder) return `<a class="entity-link broken"><i class="fas fa-unlink"></i> ${displayText || folderNameOrId}</a>`;
+
+		return `<a class="jlnk__entity-link" data-plut-folder-link="true" data-entity="Folder" data-entity-id="${folder.id}"><i class="fas fa-folder fa-fw"></i> ${folder.name}</a>`;
+	}
+};
+
+Patcher_TextEditor.ContentLoader = class {
+	static getHtml (enrichOpts, depth, fullText, tag, pipeParts, displayText) {
+		const importerMeta = ChooseImporter.getImporterClassMeta(tag);
+
+		const name = (Renderer.splitTagByPipe(pipeParts)[0] || "");
+
+		if (!importerMeta) return `<a class="entity-link broken" title="Unknown Tag &quot;${tag.qq()}&quot;"><i class="fas fa-unlink"></i> ${StrUtil.qq(displayText || name)}</a>`;
+
+		const {Class: Importer, isViewOnly} = importerMeta;
+
+		const {displayText: displayTextPipe, page, pageHover, source, hash, preloadId, hashPreEncoded, hashHover, hashPreEncodedHover, subhashes, subhashesHover} = Renderer.utils.getTagMeta(`@${tag}`, pipeParts);
+
+		const ptsHover = `data-plut-hover-page="${page.qq()}"
+			${pageHover ? `data-plut-hover-page-hover="${pageHover.qq()}"` : ""}
+			data-plut-hover-source="${source.qq()}"
+			data-plut-hover-hash="${hash.qq()}"
+			data-plut-hover-tag="${tag}"
+			${preloadId ? `data-plut-hover-preload-id="${preloadId.qq()}"` : ""}
+			${hashPreEncoded ? `data-plut-hover-hash-pre-encoded="${hashPreEncoded}"` : ""}
+			${hashHover ? `data-plut-hover-hash-hover="${hashHover.qq()}"` : ""}
+			${hashPreEncodedHover ? `data-plut-hover-hash-pre-encoded-hover="${hashPreEncodedHover}"` : ""}
+			${subhashes?.length ? `data-plut-hover-subhashes="${JSON.stringify(subhashes).qq()}"` : ""}
+			${subhashesHover?.length ? `data-plut-hover-subhashes-hover="${JSON.stringify(subhashesHover).qq()}"` : ""}
+			${isViewOnly ? `data-plut-hover-is-faux-page="true"` : ""}`;
+
+		if (isViewOnly) {
+			return `<span
+				class="help help--hover"
+				data-plut-hover="${true}"
+				${ptsHover}
+			>${StrUtil.qq(displayTextPipe || displayText || name)}</span>`;
+		}
+
+		const config = CONFIG[Importer.FOLDER_TYPE];
+
+		// (Should never occur)
+		if (!config) return `<a class="entity-link broken" title="No CONFIG found for type &quot;${Importer.FOLDER_TYPE}&quot;\u2014this is a bug!"><i class="fas fa-unlink"></i> ${StrUtil.qq(displayText || name)}</a>`;
+
+		return `<a
+			class="jlnk__entity-link"
+			draggable="true"
+			${Config.get("text", "isEnableHoverForLinkTags") ? `data-plut-hover="${true}"` : `title="SHIFT-Click to Import"`}
+			${ptsHover}
+			data-plut-rich-link="${true}"
+			data-plut-rich-link-entity-type="${Importer.FOLDER_TYPE}"
+			data-plut-rich-link-original-text="${fullText.slice(1).qq()}"
+		><i class="fas ${config.sidebarIcon}"></i> ${StrUtil.qq(displayTextPipe || displayText || name)}</a>`;
+	}
+
+	static handleClick (evt) {
+		evt.stopPropagation();
+		evt.preventDefault();
+
+		// The "@" is stripped to avoid issues when recursively rendering embedded text, so add it back here
+		const originalText = `@${evt.currentTarget.dataset.plutRichLinkOriginalText}`;
+
+		const tag = evt.currentTarget.dataset.plutHoverTag;
+		const page = evt.currentTarget.dataset.plutHoverPage;
+		const source = evt.currentTarget.dataset.plutHoverSource;
+		let hash = evt.currentTarget.dataset.plutHoverHash;
+		const hashPreEncoded = !!evt.currentTarget.dataset.plutHoverHashPreEncoded;
+		const pageHover = evt.currentTarget.dataset.plutHoverPageHover || page;
+		let hashHover = evt.currentTarget.dataset.plutHoverHashHover;
+		const hashPreEncodedHover = !!evt.currentTarget.dataset.plutHoverHashPreEncodedHover;
+		const subhashesHover = evt.currentTarget.dataset.plutHoverSubhashesHover;
+
+		if (!pageHover || !source || !hash) return;
+
+		const importer = ChooseImporter.getImporter(tag) || ChooseImporter.getImporter(page);
+
+		if (!hashPreEncoded) hash = UrlUtil.encodeForHash(hash);
+		if (hashHover && !hashPreEncodedHover) hashHover = UrlUtil.encodeForHash(hashHover);
+		if (!hashHover) hashHover = hash;
+
+		if (subhashesHover) {
+			const parsed = JSON.parse(subhashesHover);
+			hashHover += Renderer.utils.getLinkSubhashString(parsed);
+		}
+
+		const isPermanent = !!evt.shiftKey
+			&& (
+				(game.user.can("ACTOR_CREATE") && importer.gameProp === "actors")
+				|| (game.user.can("ITEM_CREATE") && importer.gameProp === "items")
+				|| (game.user.can("JOURNAL_CREATE") && importer.gameProp === "journal")
+				|| (game.user.can("ROLL_TABLE_CREATE") && importer.gameProp === "tables")
+			);
+		const isPopout = evt.view !== window && Config.get("ui", "isEnableSubPopouts");
+
+		Renderer.hover.pCacheAndGet(pageHover, source, hashHover)
+			.then(ent => {
+				const msgErrorBase = `Could not load content for tag "${originalText}"!`;
+
+				if (!ent) {
+					const msgError = `${msgErrorBase} Could not find matching entity.`;
+					console.error(...LGT, msgError);
+					return ui.notifications.error(msgError);
+				}
+
+				importer.pImportEntry(ent, {isTemp: !isPermanent, defaultPermission: !isPermanent ? CONST.ENTITY_PERMISSIONS.OWNER : undefined})
+					.then(async importSummary => {
+						if (isPermanent) UtilApplications.doShowImportedNotification(importSummary);
+
+						const renderMetas = await Promise.all(
+							(importSummary.imported || [])
+								.map(it => it.document)
+								.filter(Boolean)
+								.map(doc => UtilApplications.pForceRenderApp(doc.sheet ? doc.sheet : doc)),
+						);
+
+						if (!isPopout) return;
+						renderMetas.filter(Boolean).forEach(({app, data}) => PopoutSheet.doPopout(app, data));
+					})
+					.catch(err => {
+						console.error(...LGT, err);
+						ui.notifications.error(`${msgErrorBase} ${VeCt.STR_SEE_CONSOLE}`);
+					});
+			});
+	}
+};
+
+/** Drag-and-drop for @tag links. */
+Patcher_TextEditor.ContentDragDrop = class {
+	static init () {
+		UtilLibWrapper.addPatch(
+			"ActorSheet.prototype._onDragStart",
+			this._lw_ActorSheet_prototype__onDragStart,
+			UtilLibWrapper.LIBWRAPPER_MODE_MIXED,
+		);
+
+		UtilLibWrapper.addPatch(
+			"TextEditor._onDropEditorData",
+			this._lw_TextEditor__onDropEditorData,
+			UtilLibWrapper.LIBWRAPPER_MODE_MIXED,
+		);
+	}
+
+	static _lw_ActorSheet_prototype__onDragStart (fn, ...args) {
+		const evt = args[0];
+		if (evt.target.dataset.plutRichLink) return;
+		return fn(...args);
+	}
+
+	static async _lw_TextEditor__onDropEditorData (fn, ...args) {
+		return Patcher_TextEditor.ContentDragDrop._pHandleEditorDrop({fn, args});
+	}
+
+	static async _pHandleEditorDrop ({fn, args}) {
+		const [evt, editor] = args;
+		evt.preventDefault();
+
+		const data = Patcher_TextEditor.ContentDragDrop._getEvtData(evt);
+		if (!data) return fn(...args);
+
+		// region Handle drag-drop from importer lists; render these as `@<tag>[...]`s
+		if (data?.subType === UtilEvents.EVT_DATA_SUBTYPE__IMPORT) {
+			editor.insertContent(data.tag);
+			return true;
+		}
+		// endregion
+
+		// region Based on `TextEditor._onDropEditorData`
+		// If we're drag-dropping an actor's sheet item, create an `@ActorEmbeddedItem` link
+		if (data.actorId && data.type === "Item" && !data.pack) {
+			const config = CONFIG[data.type];
+			if (!config) return false;
+			const parent = game.actors.get(data.actorId);
+			if (!parent) return false;
+			const entity = parent[config.documentClass.metadata.collection].get(data.data._id);
+			if (!entity) return false;
+			editor.insertContent(`@ActorEmbedded${data.type}[${data.actorId}][${entity.id}]{${entity.name}}`);
+			return true;
+		}
+		// endregion
+
+		if (data?.subType !== UtilEvents.EVT_DATA_SUBTYPE__HOVER) return fn(...args);
+
+		editor.insertContent(data.originalText);
+
+		return true;
+	}
+
+	static _getEvtData (evt) {
+		try {
+			return JSON.parse(evt.dataTransfer.getData("text/plain"));
+		} catch (e) {
+			return null;
+		}
+	}
+};
+
+export {Patcher_TextEditor};

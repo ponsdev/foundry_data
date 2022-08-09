@@ -3,36 +3,48 @@ import * as BUTLER from "./butler.js";
  * Provides helper methods for use elsewhere in the module (and has your back in a melee)
  */
 export class Sidekick {
+    /**
+     * Creates the CUB div in the Sidebar
+     * @param {*} html 
+     */
     static createCUBDiv(html) {
-
+        if (!game.user.isGM) return;
+        
         const cubDiv = $(
             `<div id="combat-utility-belt">
                     <h4>Combat Utility Belt</h4>
                 </div>`
         );
 
-        const setupButton = html.find("button[data-action='setup']");
-        setupButton.after(cubDiv);
-
+        const setupButton = html.find("div#settings-game");
+        setupButton.append(cubDiv);
     }
 
+    /**
+     * Get a single setting using the provided key
+     * @param {*} key 
+     * @returns {Object} setting
+     */
     static getSetting(key) {
         return game.settings.get(BUTLER.NAME, key);
     }
 
+    /**
+     * Get all CUB settings
+     * @returns {Array} settings
+     */
     static getAllSettings() {
         const settings = [...game.settings.settings].filter((k,v) => String(k).startsWith(BUTLER.NAME));
         return settings;
     }
 
-    /*
-    static async setSetting(key, value, awaitResult=false) {
-        return awaitResult ? 
-            await game.settings.set(BUTLER.NAME, key, value) : 
-            game.settings.set(BUTLER.NAME, key, value);
-    }
-    */
-
+    /**
+     * Sets a single game setting
+     * @param {*} key 
+     * @param {*} value 
+     * @param {*} awaitResult 
+     * @returns 
+     */
     static setSetting(key, value, awaitResult=false) {
         if (!awaitResult) {
             return game.settings.set(BUTLER.NAME, key, value);
@@ -45,14 +57,31 @@ export class Sidekick {
         });
     }
 
+    /**
+     * Register a single setting using the provided key and setting data
+     * @param {*} key 
+     * @param {*} metadata 
+     * @returns 
+     */
     static registerSetting(key, metadata) {
         return game.settings.register(BUTLER.NAME, key, metadata);
     }
 
+    /**
+     * Register a menu setting using the provided key and setting data
+     * @param {*} key 
+     * @param {*} metadata 
+     * @returns 
+     */
     static registerMenu(key, metadata) {
         return game.settings.registerMenu(BUTLER.NAME, key, metadata);
     }
 
+    /**
+     * Register all provided setting data
+     * @param {*} settingsData 
+     * @returns 
+     */
     static registerAllSettings(settingsData) {
         return Object.keys(settingsData).forEach((key) => Sidekick.registerSetting(key, settingsData[key]));
     }
@@ -78,21 +107,27 @@ export class Sidekick {
     static async fetchJsons(source, path) {
         const extensions = [".json"];
         const fp = await FilePicker.browse(source, path, {extensions});
-
-        if (!fp.files.length) {
-            return;
-        }
-
-        const jsons = [];
-
-        for (let file of fp.files) {
-            const jsonFile = await fetch(file);
-            const json = await jsonFile.json();
-
-            json instanceof Object ? jsons.push(json) : console.warn("not a valid json:", json);
-        }
+        const fetchedJsons = fp?.files?.length ? await Promise.all(fp.files.map(f => Sidekick.fetchJson(f))) : [];
+        const jsons = fetchedJsons.filter(j => !!j);
         
         return jsons;
+    }
+
+    /**
+     * Fetch a JSON from a given file
+     * @param {File} file 
+     * @returns JSON | null
+     */
+    static async fetchJson(file) {
+        try {
+            const jsonFile = await fetch(file);
+            const json = await jsonFile.json();
+            if (!json instanceof Object) throw new Error("Not a valid JSON!");
+            return json;
+        } catch (e) {
+            console.warn(e.message);
+            return null;
+        }
     }
 
     /**
@@ -270,6 +305,11 @@ export class Sidekick {
         .forEach((textNode) => textNode.textContent = textNode.textContent.replace(pattern, string)));
     };
 
+    /**
+     * Get text nodes in a given element
+     * @param {*} el 
+     * @returns 
+     */
     static getTextNodesIn(el) {
         return $(el).find(":not(iframe)").addBack().contents().filter((i, e) => e.nodeType == 3 && /\S/.test(e.nodeValue));
     };
@@ -283,8 +323,11 @@ export class Sidekick {
         let slug = string.slugify();
 
         const existingIds = idList.filter(id => id === slug);
-        const uniqueIndex = existingIds.length ? Math.max(...existingIds.map(id => id.match(/\d+/g)[0])) + 1 : "";
-        slug = slug + uniqueIndex;
+
+        if (!existingIds.length) return slug;
+
+        const uniqueIndex = existingIds.length > 1 ? Math.max(...existingIds.map(id => id.match(/\d+/g)[0])) + 1 : 1;
+        slug = slug.replace(/\d+$/g, uniqueIndex);
         
         return slug;
     }
@@ -307,5 +350,99 @@ export class Sidekick {
 
         const name = Sidekick.toTitleCase(filename);
         return name;
+    }
+
+    /**
+     * Gets the first GM user
+     * @returns {GM | null} a GM object or null if none found
+     */
+    static getFirstGM() {
+        const gmUsers = game.users.filter(u => u.isGM && u.active).sort((a, b) => a.name.localeCompare(b.name));
+
+        return gmUsers.length ? gmUsers[0] : null;
+    }
+
+    /**
+     * Checks if the current user is the first active GM
+     * @returns {Boolean}
+     */
+    static isFirstGM() {
+        return game.user.id === this.getFirstGM()?.id;
+    }
+
+    /**
+     * Gets an Actor from an Actor or Token UUID
+     * @param {*} uuid 
+     */
+    static async getActorFromUuid(uuid) {
+        const isActor = uuid.includes("Actor");
+        const isToken = uuid.includes("Token");
+
+        if (isActor) return await fromUuid(uuid);
+        else if (isToken) {
+            const tokenDocument = await fromUuid(uuid);
+            return tokenDocument?.actor ?? undefined;
+        }
+
+        return;
+    }
+
+    /**
+     * Filters an array down to just its duplicate elements based on the property specified
+     * @param {*} arrayToCheck 
+     * @param {*} filterProperty 
+     * @returns 
+     */
+    static findArrayDuplicates(arrayToCheck, filterProperty) {
+        const lookup = arrayToCheck.reduce((a, e) => {
+            a.set(e[filterProperty], (a.get(e[filterProperty]) ?? 0) + 1);
+            return a;
+        }, new Map());
+
+        return arrayToCheck.filter(e => lookup.get(e[filterProperty] > 1));
+    }
+
+    /**
+     * Returns true for each array element that is a duplicate based on the property specified
+     * @param {*} arrayToCheck 
+     * @param {*} filterProperty 
+     * @returns 
+     */
+    static identifyArrayDuplicatesByProperty(arrayToCheck, filterProperty) {
+        const seen = new Set();
+        return arrayToCheck.map(e => {
+            if (seen.size === seen.add(e[filterProperty]).size) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+    }
+
+    /**
+     * Loads templates for partials
+     */
+    static async loadTemplates() {
+        const templates = [
+            `${BUTLER.PATH}/templates/partials/chat-card-condition-list.hbs`,
+            `${BUTLER.PATH}/templates/partials/condition-lab-row.hbs`,
+            `${BUTLER.PATH}/templates/partials/triggler-icon.hbs`
+        ];
+        await loadTemplates(templates)
+    }
+
+    /**
+     * Retrieves all the owners of a given document
+     * @param {*} document 
+     * @returns 
+     */
+    static getDocumentOwners(document) {
+        const permissions = document.data?.permission;
+        if (!permissions) return null;
+        const owners = [];
+        for (const userId in permissions) {
+            if (permissions[userId] === 3) owners.push(userId);
+        }
+        return owners;
     }
 }

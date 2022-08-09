@@ -1,1 +1,100 @@
-const _0x277b=['forceClose','get','getFlag','MODULE_LOCATION','doRemovePatch','name','627rKqjhP','maximize','2UhIQZH','_sheetMode','length','2eaycBp','1734891OyfQfs','journalEntries','doApplyPatch','JournalEntry','sheetClass','_DID_PATCH','_HAS_PATCHED','windows','893732kyhgnv','2296499BqEesL','/mod-template/journal/sheet.handlebars','values','77603MGHkbJ','_LAST_IS_ENABLED','JournalSheet','1409825PGQMOc','showVe','close','893197tFqtuB','isEnableUrlEmbeds','element','MODULE_NAME','defaultOptions','object','template','FLAG_IFRAME_URL','render','1579etaWDw','1jTMfXt','image'];const _0x45d4=function(_0x2f079e,_0x5a5b17){_0x2f079e=_0x2f079e-0xca;let _0x277b2c=_0x277b[_0x2f079e];return _0x277b2c;};const _0x5c05ab=_0x45d4;(function(_0x3bddbe,_0x2e87fc){const _0x22e532=_0x45d4;while(!![]){try{const _0xbafdb9=parseInt(_0x22e532(0xdb))+parseInt(_0x22e532(0xd4))*parseInt(_0x22e532(0xf2))+parseInt(_0x22e532(0xd8))*parseInt(_0x22e532(0xcb))+-parseInt(_0x22e532(0xf0))*parseInt(_0x22e532(0xe7))+-parseInt(_0x22e532(0xde))+-parseInt(_0x22e532(0xe8))*-parseInt(_0x22e532(0xcc))+-parseInt(_0x22e532(0xd5));if(_0xbafdb9===_0x2e87fc)break;else _0x3bddbe['push'](_0x3bddbe['shift']());}catch(_0x3fb10e){_0x3bddbe['push'](_0x3bddbe['shift']());}}}(_0x277b,0xdd989));import{Config}from'./Config.js';import{SharedConsts}from'../shared/SharedConsts.js';import{Consts}from'./Consts.js';import{UtilApplications}from'./UtilApplications.js';class JournalSheet_Plutonium extends JournalSheet{static['handleConfigUpdate'](){const _0x3fa5d0=_0x45d4,_0x151da8=Config[_0x3fa5d0(0xeb)](_0x3fa5d0(0xcd),_0x3fa5d0(0xdf));if(JournalSheet_Plutonium[_0x3fa5d0(0xd9)]===_0x151da8)return;JournalSheet_Plutonium[_0x3fa5d0(0xd9)]=_0x151da8;if(_0x151da8)JournalSheet_Plutonium['doApplyPatch']();else JournalSheet_Plutonium['doRemovePatch']();}static[_0x5c05ab(0xce)](){const _0x585ec0=_0x5c05ab;JournalSheet_Plutonium[_0x585ec0(0xd2)]=!![],JournalSheet=JournalSheet_Plutonium,CONFIG['JournalEntry'][_0x585ec0(0xd0)]=JournalSheet_Plutonium;}static[_0x5c05ab(0xee)](){const _0x4cbfe8=_0x5c05ab;if(!JournalSheet_Plutonium[_0x4cbfe8(0xd2)])return;JournalSheet=JournalSheet_Plutonium['_CACHED_CLASS'],CONFIG[_0x4cbfe8(0xcf)][_0x4cbfe8(0xd0)]=JournalSheet_Plutonium['_CACHED_CLASS'],Object[_0x4cbfe8(0xd7)](ui[_0x4cbfe8(0xd3)])['forEach'](_0x383d78=>{const _0x1ebad2=_0x4cbfe8;_0x383d78['constructor']===JournalSheet_Plutonium&&_0x383d78[_0x1ebad2(0xe3)][_0x1ebad2(0xec)](SharedConsts['MODULE_NAME'],Consts[_0x1ebad2(0xe5)])&&_0x383d78[_0x1ebad2(0xea)]();});}static get[_0x5c05ab(0xef)](){const _0x1d5709=_0x5c05ab;return _0x1d5709(0xda);}static get[_0x5c05ab(0xe2)](){const _0x11af40=_0x5c05ab;return{...super[_0x11af40(0xe2)],'template':SharedConsts[_0x11af40(0xed)]+_0x11af40(0xd6)};}get[_0x5c05ab(0xe4)](){const _0xe2edc3=_0x5c05ab;if(this['_sheetMode']===_0xe2edc3(0xe9))return ImagePopout['defaultOptions'][_0xe2edc3(0xe4)];return SharedConsts[_0xe2edc3(0xed)]+_0xe2edc3(0xd6);}['close'](..._0x28d65b){const _0x518efa=_0x5c05ab;if(this[_0x518efa(0xe3)]&&this[_0x518efa(0xe3)]['getFlag'](SharedConsts[_0x518efa(0xe1)],Consts[_0x518efa(0xe5)])){this['element']['hideVe']();return;}return super[_0x518efa(0xdd)](..._0x28d65b);}[_0x5c05ab(0xea)](){const _0x29caf0=_0x5c05ab;return super[_0x29caf0(0xdd)]();}['render'](..._0x571508){const _0xf5b10a=_0x5c05ab;if(_0x571508[0x1]&&_0x571508[0x1]['sheetMode']!==this[_0xf5b10a(0xf3)])return super[_0xf5b10a(0xe6)](..._0x571508);if(this['element']&&this[_0xf5b10a(0xe0)][_0xf5b10a(0xca)]){this[_0xf5b10a(0xe0)][_0xf5b10a(0xdc)](),this[_0xf5b10a(0xf1)](),UtilApplications['bringToFront'](this);return;}return super[_0xf5b10a(0xe6)](..._0x571508);}}JournalSheet_Plutonium[_0x5c05ab(0xd1)]=![],JournalSheet_Plutonium['_CACHED_CLASS']=JournalSheet,JournalSheet_Plutonium['_LAST_IS_ENABLED']=null;export{JournalSheet_Plutonium};
+import {Config} from "./Config.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {Consts} from "./Consts.js";
+import {UtilApplications} from "./UtilApplications.js";
+
+class JournalSheet_Plutonium extends JournalSheet {
+	static handleConfigUpdate ({isInit = false} = {}) {
+		try {
+			return this._handleConfigUpdate_();
+		} catch (e) {
+			if (!isInit) throw e;
+			Config.handleFailedInitConfigApplication("journalEntries", "isEnableUrlEmbeds", e);
+		}
+	}
+
+	static _handleConfigUpdate_ () {
+		const isEnabled = Config.get("journalEntries", "isEnableUrlEmbeds");
+
+		if (JournalSheet_Plutonium._LAST_IS_ENABLED === isEnabled) return;
+		JournalSheet_Plutonium._LAST_IS_ENABLED = isEnabled;
+
+		if (isEnabled) JournalSheet_Plutonium.doApplyPatch();
+		else JournalSheet_Plutonium.doRemovePatch();
+	}
+
+	static doApplyPatch () {
+		JournalSheet_Plutonium._HAS_PATCHED = true;
+
+		JournalSheet = JournalSheet_Plutonium;
+		CONFIG.JournalEntry.sheetClass = JournalSheet_Plutonium;
+	}
+
+	static doRemovePatch () {
+		// Avoid clobbering other modules that modify journal sheets if we're not in use
+		if (!JournalSheet_Plutonium._HAS_PATCHED) return;
+
+		JournalSheet = JournalSheet_Plutonium._CACHED_CLASS;
+		CONFIG.JournalEntry.sheetClass = JournalSheet_Plutonium._CACHED_CLASS;
+
+		// Close any lingering open modded windows
+		Object.values(ui.windows).forEach(app => {
+			if (app.constructor === JournalSheet_Plutonium && app.object.getFlag(SharedConsts.MODULE_NAME, Consts.FLAG_IFRAME_URL)) {
+				app.forceClose();
+			}
+		});
+	}
+
+	// Maintain class/hook names
+	static get name () { return "JournalSheet"; }
+
+	static get defaultOptions () {
+		return {
+			...super.defaultOptions,
+			template: `${SharedConsts.MODULE_LOCATION}/mod-template/journal/sheet.hbs`,
+		};
+	}
+
+	get template () {
+		if (this._sheetMode === "image") return ImagePopout.defaultOptions.template;
+		return `${SharedConsts.MODULE_LOCATION}/mod-template/journal/sheet.hbs`;
+	}
+
+	close (...args) {
+		if (this.object && this.object.getFlag(SharedConsts.MODULE_NAME, Consts.FLAG_IFRAME_URL)) {
+			this.element.hideVe();
+			// Flag as "not rendered" so the directory click manager (`_onClickEntityName`) doesn't skip opening the sheet
+			//   on next click.
+			this._state = Application.RENDER_STATES.CLOSED;
+			return;
+		}
+
+		return super.close(...args);
+	}
+
+	forceClose () {
+		return super.close();
+	}
+
+	render (...args) {
+		// On switching sheet mode, force a re-render
+		if (args[1] && args[1].sheetMode !== this._sheetMode) return super.render(...args);
+
+		if (
+			this.element && this.element.length // re-open the existing render rather than creating a new one
+		) {
+			this.element.showVe();
+			this.maximize();
+			UtilApplications.bringToFront(this);
+			this._state = Application.RENDER_STATES.RENDERED;
+			return;
+		}
+
+		return super.render(...args);
+	}
+}
+JournalSheet_Plutonium._DID_PATCH = false;
+JournalSheet_Plutonium._CACHED_CLASS = JournalSheet;
+JournalSheet_Plutonium._LAST_IS_ENABLED = null;
+
+export {JournalSheet_Plutonium};

@@ -1,1 +1,231 @@
-var _0x44db=['566303nXgSRJ','log','Initialising','899412OJggIC','1WKGNfG','357XvHudk','MODULE_TITLE','alert','items','2245UxWJBQ','112951MYUJXb','643187Bwutrn','pInit','init','8qGEQiR','1zFwzsQ','journal','159845aRPQpg','error','Firing\x20\x22init\x22\x20hook...','STR_SEE_CONSOLE','208584TIdkkp','catch','doMonkeyPatch','Failed\x20to\x20initialise\x20','tables','render','ready'];var _0x249c=function(_0x3631ea,_0x142f31){_0x3631ea=_0x3631ea-0xdf;var _0x44dbea=_0x44db[_0x3631ea];return _0x44dbea;};var _0x58e947=_0x249c;(function(_0x1e21b0,_0x37723b){var _0xf23174=_0x249c;while(!![]){try{var _0x449690=-parseInt(_0xf23174(0xe2))*parseInt(_0xf23174(0xe4))+parseInt(_0xf23174(0xe1))*parseInt(_0xf23174(0xf9))+-parseInt(_0xf23174(0xf2))+-parseInt(_0xf23174(0xef))+-parseInt(_0xf23174(0xfa))*-parseInt(_0xf23174(0xf3))+-parseInt(_0xf23174(0xe8))+parseInt(_0xf23174(0xf4))*parseInt(_0xf23174(0xf8));if(_0x449690===_0x37723b)break;else _0x1e21b0['push'](_0x1e21b0['shift']());}catch(_0x2ea92e){_0x1e21b0['push'](_0x1e21b0['shift']());}}}(_0x44db,0x7d844));import{LGT}from'./Util.js';console[_0x58e947(0xf0)](...LGT,_0x58e947(0xf1));import{SharedConsts}from'../shared/SharedConsts.js';import{UtilActors}from'./UtilActors.js';import{Vetools}from'./Vetools.js';import{ArtBrowserApp}from'./ArtBrowserApp.js';import{Config}from'./Config.js';import{UtilHandlebars}from'./UtilHandlebars.js';import{UtilUi}from'./UtilUi.js';import{UtilRenderer}from'./UtilRenderer.js';import{ChooseImporter}from'./ChooseImporter.js';import{MenuActorTitleTools}from'./MenuActorTitleTools.js';import{PopoutSheet}from'./PopoutSheet.js';import{MenuTitleSceneConfig}from'./MenuTitleSceneConfig.js';import{MenuTitleActor}from'./MenuTitleActor.js';import{MenuTitleItem}from'./MenuTitleItem.js';import{MenuTitleJournalSheet}from'./MenuTitleJournalSheet.js';import{MenuTitleRollTableConfig}from'./MenuTitleRollTableConfig.js';import{MenuTitleArtBrowserApp}from'./MenuTitleArtBrowserApp.js';import{MenuTitleCompendium}from'./MenuTitleCompendium.js';import{UtilEvents}from'./UtilEvents.js';import{RivetBridge}from'./RivetBridge.js';import{Styler}from'./Styler.js';import{ActorPolymorpher}from'./ActorPolymorpher.js';import{ActorMultiattack}from'./ActorMultiattack.js';import{WeDontTalk}from'./WeDontTalk.js';import{Patcher}from'./Patcher.js';import{ImportListClass}from'./ImportListClass.js';import{ImportListFeat}from'./ImportListFeat.js';import{ImportListBackground}from'./ImportListBackground.js';import{ImportListItem}from'./ImportListItem.js';import{ImportListPsionic}from'./ImportListPsionic.js';import{ImportListRace}from'./ImportListRace.js';import{MenuTitleActorDirectory}from'./MenuTitleActorDirectory.js';import{MenuTitleItemDirectory}from'./MenuTitleItemDirectory.js';import{MenuTitleJournalDirectory}from'./MenuTitleJournalDirectory.js';import{MenuTitlePlaylistDirectory}from'./MenuTitlePlaylistDirectory.js';import{MenuTitleCompendiumDirectory}from'./MenuTitleCompendiumDirectory.js';import{MenuTitleCombatTracker}from'./MenuTitleCombatTracker.js';import{MenuTitleSceneDirectory}from'./MenuTitleSceneDirectory.js';import{MenuTitleRollTableDirectory}from'./MenuTitleRollTableDirectory.js';import{MenuTitleSettings}from'./MenuTitleSettings.js';import{UtilActiveEffects}from'./UtilActiveEffects.js';import{ShowSheet}from'./ShowSheet.js';import{UtilSocket}from'./UtilSocket.js';import{UtilCompendium}from'./UtilCompendium.js';import{UtilCompat}from'./UtilCompat.js';function handleInit(){ArtBrowserApp['preInit']();}Hooks['on'](_0x58e947(0xe0),()=>{var _0x371e0a=_0x58e947;console[_0x371e0a(0xf0)](...LGT,_0x371e0a(0xe6)),handleInit();});async function handleReady(){var _0x284fc2=_0x58e947;await Config[_0x284fc2(0xdf)](),UtilActors[_0x284fc2(0xe0)](),await Vetools[_0x284fc2(0xea)](),await Vetools['pDoPreload'](),Patcher[_0x284fc2(0xe0)](),UtilSocket[_0x284fc2(0xe0)](),UtilHandlebars['init'](),UtilUi[_0x284fc2(0xe0)](),UtilRenderer[_0x284fc2(0xe0)](),MenuActorTitleTools[_0x284fc2(0xe0)](),ChooseImporter[_0x284fc2(0xe0)](),ImportListBackground[_0x284fc2(0xe0)](),ImportListClass[_0x284fc2(0xe0)](),ImportListFeat[_0x284fc2(0xe0)](),ImportListItem[_0x284fc2(0xe0)](),ImportListPsionic[_0x284fc2(0xe0)](),ImportListRace[_0x284fc2(0xe0)](),PopoutSheet[_0x284fc2(0xe0)](),ShowSheet[_0x284fc2(0xe0)](),MenuTitleSceneConfig['init'](),MenuTitleActor[_0x284fc2(0xe0)](),MenuTitleItem[_0x284fc2(0xe0)](),MenuTitleJournalSheet[_0x284fc2(0xe0)](),MenuTitleRollTableConfig['init'](),MenuTitleCompendium[_0x284fc2(0xe0)](),MenuTitleArtBrowserApp[_0x284fc2(0xe0)](),MenuTitleCombatTracker['init'](),MenuTitleSceneDirectory[_0x284fc2(0xe0)](),MenuTitleActorDirectory['init'](),MenuTitleItemDirectory['init'](),MenuTitleJournalDirectory['init'](),MenuTitleRollTableDirectory[_0x284fc2(0xe0)](),MenuTitlePlaylistDirectory[_0x284fc2(0xe0)](),MenuTitleCompendiumDirectory[_0x284fc2(0xe0)](),MenuTitleSettings[_0x284fc2(0xe0)](),ArtBrowserApp[_0x284fc2(0xe0)](),ActorPolymorpher[_0x284fc2(0xe0)](),ActorMultiattack[_0x284fc2(0xe0)](),UtilEvents['init'](),RivetBridge['init'](),Styler[_0x284fc2(0xe0)](),UtilActiveEffects[_0x284fc2(0xe0)](),UtilCompendium['init'](),UtilCompat['init'](),WeDontTalk[_0x284fc2(0xe0)](),game['actors'][_0x284fc2(0xed)](),game[_0x284fc2(0xf7)]['render'](),game[_0x284fc2(0xe3)]['render'](),game[_0x284fc2(0xec)][_0x284fc2(0xed)](),console[_0x284fc2(0xf0)](...LGT,'Initialisation\x20complete!');}Hooks['on'](_0x58e947(0xee),()=>{var _0x447588=_0x58e947;console[_0x447588(0xf0)](...LGT,'Firing\x20\x22ready\x22\x20hook...'),handleReady()[_0x447588(0xe9)](_0x5ae76c=>{var _0x62cfbd=_0x447588;console[_0x62cfbd(0xe5)](...LGT,_0x5ae76c),window[_0x62cfbd(0xf6)](_0x62cfbd(0xeb)+SharedConsts[_0x62cfbd(0xf5)]+'!\x20'+VeCt[_0x62cfbd(0xe7)]);});});
+import {LGT} from "./Util.js";
+console.log(...LGT, `Initialising`);
+
+// Initial imports
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {UtilActors} from "./UtilActors.js";
+import {Vetools} from "./Vetools.js";
+
+// Pre-init imports
+import {ArtBrowserApp} from "./ArtBrowserApp.js";
+
+// First init imports
+import {Config} from "./Config.js";
+
+// Other init imports
+import {UtilHandlebars} from "./UtilHandlebars.js";
+import {UtilUi} from "./UtilUi.js";
+import {UtilRenderer} from "./UtilRenderer.js";
+import {PopoutSheet} from "./PopoutSheet.js";
+import {MenuTitleSceneConfig} from "./MenuTitleSceneConfig.js";
+import {MenuTitleActor} from "./MenuTitleActor.js";
+import {MenuTitleItem} from "./MenuTitleItem.js";
+import {MenuTitleJournalSheet} from "./MenuTitleJournalSheet.js";
+import {MenuTitleRollTableConfig} from "./MenuTitleRollTableConfig.js";
+import {MenuTitleArtBrowserApp} from "./MenuTitleArtBrowserApp.js";
+import {MenuTitleCompendium} from "./MenuTitleCompendium.js";
+import {UtilEvents} from "./UtilEvents.js";
+import {RivetBridge} from "./RivetBridge.js";
+import {Styler} from "./Styler.js";
+import {ActorPolymorpher} from "./ActorPolymorpher.js";
+import {ActorMultiattack} from "./ActorMultiattack.js";
+import {WeDontTalk} from "./WeDontTalk.js";
+import {Patcher} from "./Patcher.js";
+import {ImportListClass} from "./ImportListClass.js";
+import {ImportListFeat} from "./ImportListFeat.js";
+import {ImportListBackground} from "./ImportListBackground.js";
+import {ImportListItem} from "./ImportListItem.js";
+import {ImportListPsionic} from "./ImportListPsionic.js";
+import {ImportListRace} from "./ImportListRace.js";
+import {MenuTitleActorDirectory} from "./MenuTitleActorDirectory.js";
+import {MenuTitleItemDirectory} from "./MenuTitleItemDirectory.js";
+import {MenuTitleJournalDirectory} from "./MenuTitleJournalDirectory.js";
+import {MenuTitleCardsDirectory} from "./MenuTitleCardsDirectory.js";
+import {MenuTitlePlaylistDirectory} from "./MenuTitlePlaylistDirectory.js";
+import {MenuTitleCompendiumDirectory} from "./MenuTitleCompendiumDirectory.js";
+import {MenuTitleCombatTracker} from "./MenuTitleCombatTracker.js";
+import {MenuTitleSceneDirectory} from "./MenuTitleSceneDirectory.js";
+import {MenuTitleRollTableDirectory} from "./MenuTitleRollTableDirectory.js";
+import {MenuTitleMacroDirectory} from "./MenuTitleMacroDirectory.js";
+import {MenuTitleSettings} from "./MenuTitleSettings.js";
+import {UtilActiveEffects} from "./UtilActiveEffects.js";
+import {ShowSheet} from "./ShowSheet.js";
+import {UtilSocket} from "./UtilSocket.js";
+import {UtilCompendium} from "./UtilCompendium.js";
+import {UtilCompat} from "./UtilCompat.js";
+import {ImportListOptionalFeature} from "./ImportListOptionalFeature.js";
+import {ImportListClassFeature} from "./ImportListClassFeature.js";
+import {ImportListReward} from "./ImportListReward.js";
+import {ImportListCharCreationOption} from "./ImportListCharCreationOption.js";
+import {ImportListVehicleUpgrade} from "./ImportListVehicleUpgrade.js";
+import {Api} from "./Api.js";
+import {Charactermancer_StartingEquipment} from "./UtilCharactermancerEquipment.js";
+import {TokenHpRoller} from "./TokenHpRoller.js";
+import {LootGeneratorApp} from "./LootGeneratorApp.js";
+import {ChooseImporter} from "./ChooseImporter.js";
+import {DataConverterClass} from "./DataConverterClass.js";
+import {DataConverterClassSubclassFeature} from "./DataConverterClassSubclassFeature.js";
+import {DataConverterOptionalfeature} from "./DataConverterOptionalfeature.js";
+import {DataConverterFeat} from "./DataConverterFeat.js";
+import {DataConverterReward} from "./DataConverterReward.js";
+import {DataConverterCharCreationOption} from "./DataConverterCharCreationOption.js";
+import {DataConverterVehicleUpgrade} from "./DataConverterVehicleUpgrade.js";
+import {UtilWorldDataSourceSelector} from "./UtilWorldDataSourceSelector.js";
+import {UtilWorldContentBlacklist} from "./UtilWorldContentBlacklist.js";
+import {ImportList} from "./ImportList.js";
+import {GameStorage} from "./GameStorage.js";
+import {UtilChat} from "./UtilChat.js";
+
+let isFail = false;
+
+function handleError (err) {
+	isFail = true;
+	console.error(...LGT, err);
+	window.alert(`Failed to initialise ${SharedConsts.MODULE_TITLE}! ${VeCt.STR_SEE_CONSOLE} (${err.message})`);
+}
+
+// ////////////////////////////////////////////
+
+/**
+ * This should not access Config/GameStorage.
+ */
+function handleInit () {
+	// Add compatibility for old installs, as libWrapper was not always included as a hard dependency.
+	if (!UtilCompat.isLibWrapperActive()) throw new Error(`Plutonium depends on libWrapper! Please ensure libWrapper is installed and up-to-date.`);
+
+	ArtBrowserApp.prePreInit();
+	Patcher.prePreInit();
+	ChooseImporter.prePreInit();
+	Charactermancer_StartingEquipment.prePreInit();
+	Config.prePreInit();
+	LootGeneratorApp.prePreInit();
+	ActorPolymorpher.prePreInit();
+}
+
+Hooks.on("init", () => {
+	if (isFail) return;
+	console.log(...LGT, `Firing "init" hook...`);
+	try {
+		handleInit();
+	} catch (e) {
+		handleError(e);
+	}
+});
+
+// ////////////////////////////////////////////
+
+/**
+ * This should not access Config/GameStorage.
+ */
+function handleSetup () {
+	ImportList.preInit();
+}
+
+Hooks.on("setup", () => {
+	if (isFail) return;
+	console.log(...LGT, `Firing "setup" hook...`);
+	try {
+		handleSetup();
+	} catch (e) {
+		handleError(e);
+	}
+});
+
+// ////////////////////////////////////////////
+
+async function handleReady () {
+	Vetools.doMonkeyPatchPreConfig();
+	await Config.pInit();
+
+	UtilActors.init();
+
+	await Vetools.doMonkeyPatchPostConfig();
+	await Vetools.pDoPreload();
+
+	Patcher.init();
+	UtilSocket.init();
+	UtilHandlebars.init();
+	await UtilUi.pInit();
+	UtilRenderer.init();
+	GameStorage.init();
+	DataConverterClass.init();
+	DataConverterClassSubclassFeature.init();
+	DataConverterOptionalfeature.init();
+	DataConverterFeat.init();
+	DataConverterReward.init();
+	DataConverterCharCreationOption.init();
+	DataConverterVehicleUpgrade.init();
+	ImportList.init();
+	ImportListBackground.init();
+	ImportListClass.init();
+	ImportListFeat.init();
+	ImportListItem.init();
+	ImportListClassFeature.init();
+	ImportListOptionalFeature.init();
+	ImportListPsionic.init();
+	ImportListRace.init();
+	ImportListReward.init();
+	ImportListCharCreationOption.init();
+	ImportListVehicleUpgrade.init();
+	Charactermancer_StartingEquipment.init();
+	PopoutSheet.init();
+	ShowSheet.init();
+	MenuTitleSceneConfig.init();
+	MenuTitleActor.init();
+	MenuTitleItem.init();
+	MenuTitleJournalSheet.init();
+	MenuTitleRollTableConfig.init();
+	MenuTitleCompendium.init();
+	MenuTitleArtBrowserApp.init();
+	MenuTitleCombatTracker.init();
+	MenuTitleSceneDirectory.init();
+	MenuTitleActorDirectory.init();
+	MenuTitleItemDirectory.init();
+	MenuTitleJournalDirectory.init();
+	MenuTitleRollTableDirectory.init();
+	MenuTitleCardsDirectory.init();
+	MenuTitlePlaylistDirectory.init();
+	MenuTitleCompendiumDirectory.init();
+	MenuTitleMacroDirectory.init();
+	MenuTitleSettings.init();
+	ArtBrowserApp.init();
+	LootGeneratorApp.init();
+	ActorPolymorpher.init();
+	ActorMultiattack.init();
+	TokenHpRoller.init();
+	UtilEvents.init();
+	UtilChat.init();
+	RivetBridge.init();
+	Styler.init();
+	UtilActiveEffects.init();
+	UtilCompendium.init();
+	UtilCompat.init();
+	await UtilWorldDataSourceSelector.pInit();
+	await UtilWorldContentBlacklist.pInit();
+	WeDontTalk.init();
+
+	Api.init();
+
+	// Ensure initial hooks fire as the game is already rendered
+	game.scenes.render();
+	game.actors.render();
+	game.items.render();
+	game.journal.render();
+	game.tables.render();
+	game.cards.render();
+
+	// These throw errors, for some reason
+	// ui.controls.render();
+	// ui.compendium.render();
+	ui.chat.render();
+
+	console.log(...LGT, `Initialisation complete!`);
+}
+
+Hooks.on("ready", () => {
+	if (isFail) return;
+	console.log(...LGT, `Firing "ready" hook...`);
+	handleReady().catch(e => {
+		handleError(e);
+	});
+});

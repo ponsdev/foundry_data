@@ -1,0 +1,48 @@
+<!-- TODO: Localization -->
+<div class="tab-container" data-type="spell">
+
+    {{#set-block "pre-buttons"}}
+            <button class="roll-scroll" title="Scrolls"><i class="fas fa-scroll"></i></button>
+            <button class="roll-wand" title="Wands"><i class="fas fa-magic"></i></button>
+            <button class="roll-both" title="Scroll or Wand"><i class="fas fa-scroll"></i><i class="fas fa-magic"></i></button>
+    {{/set-block}}
+    {{> tab-buttons roll=false key="spell" header="Scrolls & Wands" }}
+
+    {{#set-block "collapse-content"}}
+        {{#each @root.sources.spell as |source|}}
+            <div class="source-wrapper" data-source="{{json source}}">
+                {{> weight-range key=(source-flag source) }}
+            </div>
+        {{/each}}
+    {{/set-block}}
+    {{> collapsible title="Data Sources" id="spell-data-sources" }}
+
+    {{#set-block "collapse-content"}}
+        {{#each @root.filters.spell.rarity as |filter|}}
+            {{> weight-range key=(filter-flag filter) }}
+        {{/each}}
+    {{/set-block}}
+    {{> collapsible title="Rarity Filters" id="spell-rarity-filters" }}
+
+    {{#set-block "collapse-content"}}
+        {{#each @root.filters.spell.tradition as |filter|}}
+            {{> weight-range key=(filter-flag filter) }}
+        {{/each}}
+    {{/set-block}}
+    {{> collapsible title="Tradition Filters" id="spell-tradition-filters" }}
+
+    {{#set-block "collapse-content"}}
+        {{#each @root.filters.spell.school as |filter|}}
+            {{> weight-range key=(filter-flag filter) }}
+        {{/each}}
+    {{/set-block}}
+    {{> collapsible title="School Filters" id="spell-school-filters" }}
+
+    {{#set-block "collapse-content"}}
+        {{#each @root.filters.spell.level as |filter|}}
+            {{> weight-range key=(filter-flag filter) }}
+        {{/each}}
+    {{/set-block}}
+    {{> collapsible title="Level Filters" id="spell-level-filters" }}
+
+</div>

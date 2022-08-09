@@ -1,33 +1,8 @@
 import { Sidekick } from "../sidekick.js";
 import * as BUTLER from "../butler.js";
 import { TemporaryCombatants } from "../temporary-combatants/temporary-combatants.js";
-import { PanSelect } from "../pan-select.js";
 
 export class TrackerUtility {
-
-    /**
-     * Hook on the combat update,
-     * Pans or selects the current token
-     */
-    static _hookOnUpdateCombat(combat, update, options, userId) {
-        //let tracker = combat.entities ? combat.entities.find(tr => tr._id === update._id) : combat;
-
-        if (!game.combat || game.combat.turns.length === 0) {
-            return;
-        }
-
-        const enablePan = Sidekick.getSetting(BUTLER.SETTING_KEYS.panSelect.enablePan);
-        const enableSelect = Sidekick.getSetting(BUTLER.SETTING_KEYS.panSelect.enableSelect);
-
-        if (enablePan) {
-            PanSelect._panHandler(combat, update);
-        }
-
-        if (enableSelect) {
-            PanSelect._selectHandler(combat, update);
-        }
-    }
-
     /**
      * Handler for deleteCombat hook
      * @param {*} combat 
@@ -49,18 +24,15 @@ export class TrackerUtility {
 
     /**
      * Handler for deleteCombatant hook
-     * @param {*} combat 
-     * @param {*} combatId 
      * @param {*} combatantId 
      * @param {*} options 
+     * @param {String} userId
      */
-    static _onDeleteCombatant(combat, combatant, options, userId) {
-        if (combatant.token){
-            const tokenData = combatant.token.data || null;
+    static _onDeleteCombatant(combatant, options, userId) {
+        const tempCombatantFlag = combatant?.token?.getFlag(BUTLER.NAME, BUTLER.FLAGS.temporaryCombatants.temporaryCombatant);
 
-            if (hasProperty(tokenData, `flags.${BUTLER.FLAGS.temporaryCombatants.temporaryCombatant}`)) {
-                TemporaryCombatants._removeTemporaryCombatant(combatant, combat.scene);
-            }
+        if (tempCombatantFlag){
+            TemporaryCombatants._removeTemporaryCombatant(combatant, combat.scene);
         }
     }
 
@@ -112,11 +84,19 @@ export class TrackerUtility {
         // Find the parent list element
         const li = event.target.closest("li");
 
-        // Get the tokenId from the list element
-        const tokenId = li.dataset.tokenId;
+        if (!li) return;
+
+        // Get the combatant from the list element
+        const combatantId = li?.dataset?.combatantId;
+        const combatant = combatantId ? game.combat.combatants.find(c => c.id === combatantId) : null;
+
+        if (!combatant) return;
 
         // Find the token and update
-        const token = canvas.tokens.get(tokenId);
-        await token.actor.update({["data." + resource]: event.target.value});
+        const actor = combatant?.token?.actor;
+
+        if (!actor) return;
+
+        return await actor.update({["data." + resource]: event.target.value});
     }
 }

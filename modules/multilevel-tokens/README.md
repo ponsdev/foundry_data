@@ -145,6 +145,20 @@ drawing.update({flags: {"multilevel-tokens": {disabled: !drawing.data.flags["mul
 
 # Version history
 
+* **1.5.4**:
+  * Fix in handling of drawings in scene import.
+  * Only show temporary active effects on cloned tokens.
+* **1.5.3**:
+  * Fixed interaction between cloned tokens and the new Active Effects system and combat updates in Foundry version 9.
+* **1.5.2**:
+  * Removed workaround for issues with CTRL+drag measured movement that is now unnecessary on Foundry 0.8.7.
+  * Fixed use of deprecated `Document#hasPerm` method.
+* **1.5.1**:
+  * Fixed that regions defined using the polygon drawing tool didn't function properly after the 0.8.x update.
+  * Worked around visual glitches that occurred when a token was moved into a teleport region using the CTRL+drag measured movement action.
+* **1.5.0**:
+  * Updated for compatibility with Foundry 0.8.x series. No longer compatible with 0.7.x series.
+  * Added German localization (contributed by [CarnVanBeck](https://github.com/CarnVanBeck)).
 * **1.4.2**:
   * Fixed ordering of macro region triggers. Triggers for tokens leaving should now correctly run before triggers for entering.
   * Cloned tokens are no longer needlessly deleted and recreated when ensuring consistency on startup (contributed by [DemianWright](https://github.com/DemianWright)).

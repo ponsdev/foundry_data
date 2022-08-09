@@ -1,4 +1,4 @@
-import { CharacterSheetContext, getSetting, settings, QuickInsert, setSetting } from './quick-insert.js';
+import { CharacterSheetContext, getSetting, ModuleSetting, QuickInsert, setSetting } from './quick-insert.js';
 import './vendor.js';
 
 // D&D 5th edition integration
@@ -16,10 +16,10 @@ const defaultSheetFilters = {
     loot: "dnd5e.items",
 };
 class Dnd5eSheetContext extends CharacterSheetContext {
-    constructor(entitySheet, anchor, sheetType, insertType) {
-        super(entitySheet, anchor);
+    constructor(documentSheet, anchor, sheetType, insertType) {
+        super(documentSheet, anchor);
         if (sheetType && insertType) {
-            const sheetFilters = getSetting(settings.FILTERS_SHEETS).baseFilters;
+            const sheetFilters = getSetting(ModuleSetting.FILTERS_SHEETS).baseFilters;
             this.filter =
                 sheetFilters[`${sheetType}.${insertType}`] || sheetFilters[insertType];
         }
@@ -41,22 +41,22 @@ function sheet5eRenderHook(app, sheetType) {
     });
 }
 function init() {
-    if (game.user.isGM) {
-        const customFilters = getSetting(settings.FILTERS_SHEETS).baseFilters;
-        setSetting(settings.FILTERS_SHEETS, {
+    if (game.user?.isGM) {
+        const customFilters = getSetting(ModuleSetting.FILTERS_SHEETS).baseFilters;
+        setSetting(ModuleSetting.FILTERS_SHEETS, {
             baseFilters: {
                 ...defaultSheetFilters,
                 ...customFilters,
             },
         });
     }
-    Hooks.on("renderActorSheet5eCharacter", app => getSetting(settings.FILTERS_SHEETS_ENABLED) &&
+    Hooks.on("renderActorSheet5eCharacter", (app) => getSetting(ModuleSetting.FILTERS_SHEETS_ENABLED) &&
         sheet5eRenderHook(app, "character"));
-    Hooks.on("renderActorSheet5eNPC", app => getSetting(settings.FILTERS_SHEETS_ENABLED) &&
+    Hooks.on("renderActorSheet5eNPC", (app) => getSetting(ModuleSetting.FILTERS_SHEETS_ENABLED) &&
         sheet5eRenderHook(app, "npc"));
-    Hooks.on("renderTidy5eSheet", app => getSetting(settings.FILTERS_SHEETS_ENABLED) &&
+    Hooks.on("renderTidy5eSheet", (app) => getSetting(ModuleSetting.FILTERS_SHEETS_ENABLED) &&
         sheet5eRenderHook(app, "character"));
-    Hooks.on("renderTidy5eNPC", app => getSetting(settings.FILTERS_SHEETS_ENABLED) &&
+    Hooks.on("renderTidy5eNPC", (app) => getSetting(ModuleSetting.FILTERS_SHEETS_ENABLED) &&
         sheet5eRenderHook(app, "npc"));
     console.log("Quick Insert | dnd5e system extensions initiated");
 }

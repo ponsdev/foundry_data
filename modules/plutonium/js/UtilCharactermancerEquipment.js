@@ -1,58 +1,1600 @@
-const _0x285b=['populatePropertyAndTypeReference','getRemainingCp','_getOriginalCurrency','render','std__','every','priceMultiplier','scimitar|phb','default','toggleVe','data','greatclub|phb','pRender','pImportEntry','whip|phb','pop','createElement','equipmentType','Name','smith\x27s\x20tools|phb','fromActor','This\x20will\x20discard\x20your\x20current\x20starting\x20gold\x20roll\x20or\x20value.','_state','Are\x20you\x20sure?','startingEquipment','Light\x20Armor',',\x20worth\x20','<button\x20class=\x22btn\x20btn-default\x20btn-xs\x20btn-5et\x22>Reset\x20Starting\x20Gold</button>','_resolve','<div\x20class=\x22veapp__list\x20mb-1\x20h-100\x20min-h-0\x22></div>','currency','weaver\x27s\x20tools|phb','breastplate|phb','actor','orb|phb','You\x20have\x20spent\x20more\x20gold\x20than\x20you\x20possess.\x20Are\x20you\x20sure\x20you\x20want\x20to\x20go\x20into\x20debt?','</span>\x0a\x09\x09\x09<span\x20class=\x22col-2-5\x20text-right\x20px-1\x22>','filter','<button\x20class=\x22btn\x20btn-xxs\x20btn-5et\x20btn-danger\x22\x20title=\x22Remove\x20All\x20Purchases\x22><span\x20class=\x22glyphicon\x20glyphicon-minus\x22></span></button>','</span>\x0a\x09\x09\x09<span\x20class=\x22col-2-5\x20text-center\x20','round','getMaxWindowWidth','\x20pr-0\x22\x20title=\x22','heavy\x20crossbow|phb','uid','_compCurrency','javelin|phb','_prevActorCurrency','Musical\x20Instrument','_compGold','_render_pGoldAlternative','0\x20gp','studded\x20leather\x20armor|phb','toTitleCase','appendTo','pImportEquipmentItemEntries','pCacheAndGetHash','alchemist\x27s\x20supplies|phb','cook\x27s\x20utensils|phb','battleaxe|phb','<div\x20class=\x22w-100\x20h-100\x20min-h-0\x20flex-col\x22></div>','handleClickBtnShowHideListPreview','Spellcasting\x20Focus','displayName','visibleItems','Select\x20Item\x20Sources','get','mr-2','club|phb','Standard\x20Starting\x20Equipment','replace','_triggerCollectionUpdate','entries','state','scale\x20mail|phb','staff|phb','Choose\x20Item','_pResolveAndClose','keys','btn-5et\x20ve-grow','removeAllItems','padded\x20armor|phb','setFromValues','value','mutateAndAddToFilters','WEAPONS_SIMPLE','fnDoShowShop','_isStandalone','shiftKey','2NBPWvV','hide\x20armor|phb','append','close','197232cMFWZX','find','9540dwZQSb','URL_TO_HASH_BUILDER','values','_pageFilter','ModalFilterEquipment','<div\x20class=\x22text-center\x20no-shrink\x20imp__cls__disp-equi-count\x22></div>','itemPurchases','_isValid_gold','<div\x20class=\x22no-shrink\x20text-right\x20imp__cls__disp-equi-cost\x20px-1\x22></div>','_pGetItemEntries','prop','light\x20crossbow|phb','sling|phb','__state','dragonchess\x20set|phb','setCurrencyFromActor','MODULE_LOCATION','PG_ITEMS','addHookCpRolled','halberd|phb','forEach','_renderCollection','Enter\x20Gold\x20Amount','_getRollableExpressionGold','hover','Starting\x20Equipment','_getItemIdWithDisplayName','sourceJsonToFull','maul|phb','greataxe|phb','disabled','sortEntries','addHookRollableExpressionGold','addBoughtItem','active','blowgun|phb','Artisan\x27s\x20Tool','1009320WtGSRe','isFormComplete','_$getFilterColumnHeaders','painter\x27s\x20supplies|phb','activateListeners','_pGetItemDatasDefault','Gold\x20Alternative/Shop','string','pGetUserBoolean','<button\x20class=\x22btn\x20btn-5et\x22\x20title=\x22Toggle\x20Filter\x20Summary\x20Display\x22\x20name=\x22btn-toggle-summary\x22><span\x20class=\x22glyphicon\x20glyphicon-resize-small\x22></span></button>','flute|phb','removeHookCpRolled','_equiSpecialSource','cost','shortsword|phb','Unhandled\x20equipmentType\x20\x22','_$getWrpList','&nbsp;','_activateListeners_renderTab','<div\x20class=\x22flex-vh-center\x20w-100\x20h-100\x20italic\x20ve-muted\x22>No\x20starting\x20equipment\x20available.</div>','rollableExpressionGold','split','addClass','crystal|phb','ComponentBase','sickle|phb','ring\x20mail|phb','_iterChosenStartingEquipment','<div\x20class=\x22vr-1\x22></div>','viol|phb','_$getWrpRollOrManual','You\x20have\x20already\x20rolled\x20or\x20set\x20gold\x20for\x20equipment!<br>Selecting\x20default\x20starting\x20equipment\x20will\x20discard\x20this\x20roll\x20or\x20value.','leather\x20armor|phb','<div\x20class=\x22w-100\x20h-100\x20min-h-0\x20overflow-y-auto\x22></div>','innerHTML','drum|phb','Martial\x20Melee\x20Weapon','_compDefault','pLoadInitialSelection','mergeMap','_compParent','_list','cpRolled','glassblower\x27s\x20tools|phb','spear|phb','btnSendToRight','<button\x20class=\x22btn\x20btn-default\x20btn-xxs\x22\x20title=\x22Choose\x20an\x20Item\x22><span\x20class=\x22fas\x20fa-search\x22></span></button>','chain\x20shirt|phb','<div\x20class=\x22flex-col\x20w-100\x20h-100\x20min-h-0\x22></div>','Gaming\x20Set','_equiSpecialPage','You\x20are\x20about\x20to\x20add\x20','cpSpent','chain\x20mail|phb','ImportListCharacter_StartingEquipment_filter','{@item\x20','worthValue','<button\x20class=\x22btn\x20btn-xxs\x20btn-5et\x20btn-danger\x22\x20title=\x22Remove\x20One\x20(SHIFT\x20to\x20remove\x20\x205)\x22><span\x20class=\x22glyphicon\x20glyphicon-minus\x22></span></button>','_$getColumnHeaderPreviewAll','btn-5et','sourceFilter','push','_$getDispRolledGold','lastElementChild','filterBox','type','enhanceItem','equipmentItemEntries','_reject','toMessage','401509DlBBEj','dart|phb','pGetSources','quarterstaff|phb','addHookCurrency','pWaitForUserInput','/template/ImportListCharacterEquipment.handlebars','copy','<button\x20class=\x22btn\x20btn-default\x20btn-5et\x20','dagger|phb','_removeHookBase','firstElementChild','net|phb','_EQUIPMENT_SETS','handaxe|phb','light\x20hammer|phb','<button\x20class=\x22btn\x20btn-default\x20btn-sm\x20no-shrink\x20flex-vh-center\x20imp__cls__disp-equi-choice-key\x20mr-2\x20bold\x22\x20','ImportListCharacter_modalFilterEquipment','equiSpecialPage','_doHandleModeSwitch','lance|phb','exec','_$getColumnHeaders','_getHumanReadableCoinage','equiSpecialSource','mb-1','addEventListener','52fPSMkX','_allData','_pLock','3909002fhxwAc','join','<button\x20class=\x22btn\x20btn-xxs\x20btn-5et\x20btn-success\x22\x20title=\x22Add\x20Another\x20(SHIFT\x20to\x20add\x205)\x22><span\x20class=\x22glyphicon\x20glyphicon-plus\x22></span></button>','_mode','containsValue','</div>\x0a\x09\x09\x09</div>\x0a\x0a\x09\x09\x09<span\x20class=\x22col-5\x22>','itemUid','preventDefault','comp','longbow|phb','std__choice__','addHookStartingEquipment','appSubTitle','<div\x20class=\x22w-100\x20veapp__list-row-hoverable\x20flex-v-center\x22>\x0a\x09\x09\x09<div\x20class=\x22col-1\x20flex-vh-center\x22>\x0a\x09\x09\x09\x09<div\x20class=\x22ui-list__btn-inline\x22\x20title=\x22Toggle\x20Preview\x22>','5CiXEOV','special','empty','423751qzZyYf','equipmentShop','flat','_addHookAll','_pUserInput','length','SYM_UI_SKIP','./ImportListItem.js','pike|phb','Equipment','three-dragon\x20ante\x20set|phb','_pGetCpSpent','<div\x20class=\x22flex-col\x20w-100\x20h-100\x20min-h-0\x22><div\x20class=\x22flex-vh-center\x20w-100\x20h-100\x20italic\x22>Loading...</div></div>','pGetUserNumber','<button\x20class=\x22btn\x20btn-default\x20mr-3\x22>Skip</button>','</span>\x0a\x09\x09\x09\x09</div>\x0a\x09\x09\x09\x09<span>)</span>\x0a\x09\x09\x09','_$getBtnEnterStartingGold','init','dice\x20set|phb','<button\x20class=\x22btn-5et\x20veapp__btn-filter\x22\x20name=\x22btn-filter\x22>Filter</button>','isAvailable','<button\x20class=\x22btn\x20btn-default\x20btn-xs\x20btn-5et\x22>Roll\x20Starting\x20Gold</button>','</span>\x0a\x09\x09\x09<div\x20class=\x22col-1\x20flex-vh-center\x22><button\x20class=\x22btn\x20btn-xxs\x20btn-default\x20btn-5et\x22\x20title=\x22Add\x20(SHIFT\x20to\x20add\x205;\x20CTRL\x20to\x20ignore\x20price)\x22><span\x20class=\x22glyphicon\x20glyphicon-arrow-right\x22></span></button></div>\x0a\x09\x09</div>','title=\x22Select\x20Equipment\x20Group\x20','px-0\x20w-100\x20veapp__list-row\x20flex-col\x20no-shrink','WEAPONS_MARTIAL','2HjEihc','</button>','_getAvailableCp','mace|phb','Shop','rod|phb','gold','cpFromDefault','_proxyAssignSimple','goldAlternative','getOrAddListItemPreviewLazy','getAsCopper','_doBindRollableExpressionHooks','plate\x20armor|phb','_modalFilter','woodcarver\x27s\x20tools|phb','defaultData','shawm|phb','Melee\x20Weapon','<hr\x20class=hr-1>','html','_$wrpTabs','text','Heavy\x20Armor','reduce','rapier|phb','warhammer|phb','greatsword|phb','_getDefaultState','toggleClass','<button\x20class=\x22btn\x20btn-xs\x20btn-default\x20mr-2\x22><span\x20class=\x22fas\x20fa-check\x22></span></button>','_addHookBase','_$getBtnRollStartingGold','pInit','Currency','_getListItem','horn|phb','Starting\x20','COIN_ABVS','then','calligrapher\x27s\x20supplies|phb','cobbler\x27s\x20tools|phb','cartographer\x27s\x20tools|phb','flail|phb','</i>','removeClass','wand|phb','Medium\x20Armor','pPopulateWrapper','messageInvalid','<button\x20class=\x22btn\x20btn-default\x20w-50\x20btn-5et\x22>','update','isTriggerUpdate','leatherworker\x27s\x20tools|phb','Simple\x20Melee\x20Weapon','_fnsUnhook','name','ComponentGold','fromObject','ve-muted','half\x20plate\x20armor|phb','toLowerCase','tinker\x27s\x20tools|phb','mr-3','_render_standard','longsword|phb','trident|phb','_$btnShowTabGoldAlternative','isIgnoreCost','constructor','map','_fnDoShowShop','Ranged\x20Weapon','_isPredefinedItemDatas','<span\x20class=\x22ve-muted\x22\x20title=\x22Cost\x20Ignored\x22>—</span>','doSimplifyCoins','addItem','click','getComponents','\x20items.\x20Are\x20you\x20sure?','glaive|phb','_$btnShowTabStandard','pan\x20flute|phb','shortbow|phb','quantity','class=\x22veapp__msg-error\x20bold\x22','all','morningstar|phb','_cntModesAvailable','353134oyNrgQ','std__equi__','\x0a\x09\x09\x09\x09<div\x20title=\x22The\x20total\x20cost\x20of\x20all\x20items\x20in\x20the\x20&quot;shopping\x20basket,&quot;\x20listed\x20below.\x22>\x0a\x09\x09\x09\x09\x09<b\x20class=\x22mr-1\x22>Total:</b>\x0a\x09\x09\x09\x09\x09<span>','<button\x20class=\x22btn\x20btn-default\x20btn-xs\x20btn-5et\x22\x20title=\x22Manually\x20enter\x20a\x20starting\x20gold\x20amount,\x20as\x20an\x20alternate\x20to\x20rolling.\x22>Enter\x20Starting\x20Gold</button>','uppercaseFirst','carpenter\x27s\x20tools|phb','source','setDataList','unknown','jeweler\x27s\x20tools|phb','itemDatas','Rolling\x20','pHkItemsPurchased','_isValid_standard','pGetFormData','item'];const _0x510b=function(_0xd2b2d5,_0x5b4759){_0xd2b2d5=_0xd2b2d5-0x81;let _0x285bb1=_0x285b[_0xd2b2d5];return _0x285bb1;};const _0x4cad17=_0x510b;(function(_0x52b03a,_0x1baf0c){const _0x51917d=_0x510b;while(!![]){try{const _0x349455=-parseInt(_0x51917d(0x13d))*-parseInt(_0x51917d(0x9d))+-parseInt(_0x51917d(0x157))*-parseInt(_0x51917d(0x1b0))+-parseInt(_0x51917d(0xa1))*-parseInt(_0x51917d(0x13a))+parseInt(_0x51917d(0x10e))+parseInt(_0x51917d(0xc8))+-parseInt(_0x51917d(0x129))*-parseInt(_0x51917d(0xa3))+-parseInt(_0x51917d(0x12c));if(_0x349455===_0x1baf0c)break;else _0x52b03a['push'](_0x52b03a['shift']());}catch(_0x3a4641){_0x52b03a['push'](_0x52b03a['shift']());}}}(_0x285b,0x834ed));import{Util}from'./Util.js';import{SharedConsts}from'../shared/SharedConsts.js';import{AppSourceSelectorMulti}from'./AppSourceSelectorMulti.js';import{Config}from'./Config.js';import{UtilActors}from'./UtilActors.js';class Charactermancer_StartingEquipment extends Application{static async['pHandleButtonClick'](_0x36ef49,_0x9fa2ea,_0x170f5f,_0x191c99){const _0x241660=_0x510b,_0x4f5986=new this({'actor':_0x9fa2ea[_0x241660(0x1e1)],'isStandalone':!![]}),_0x250451=await _0x4f5986['pWaitForUserInput']();if(!_0x250451)return;if(_0x250451===VeCt['SYM_UI_SKIP'])return;await this[_0x241660(0x1f7)](_0x9fa2ea[_0x241660(0x1e1)],_0x250451),await this['pUpdateActorCurrency'](_0x9fa2ea[_0x241660(0x1e1)],_0x250451);}static async[_0x4cad17(0x1f7)](_0x2dee42,_0x988378){const _0x880457=_0x4cad17;if(!_0x988378?.[_0x880457(0x1ca)]?.[_0x880457(0x10b)]?.[_0x880457(0x142)])return;const {ImportListItem:_0x210409}=await import('./ImportListItem.js'),_0x2a2571=new _0x210409({'actor':_0x2dee42});await _0x2a2571[_0x880457(0x178)]();for(const _0xd30c14 of _0x988378[_0x880457(0x1ca)][_0x880457(0x10b)]){if(_0xd30c14[_0x880457(0x1bf)]&&_0xd30c14[_0x880457(0x18f)]==null&&_0xd30c14['source']==null)await _0x2a2571['pImportEntry'](_0xd30c14['item'],{'quantity':_0xd30c14['quantity']||0x1});else await _0x2a2571[_0x880457(0x1cd)](_0xd30c14);}}static async['pUpdateActorCurrency'](_0x32df3a,_0x5168a7){const _0x4d425c=_0x4cad17;if(!_0x5168a7?.[_0x4d425c(0x1ca)]?.['currency'])return;await _0x32df3a[_0x4d425c(0x18a)]({'data':{'currency':_0x5168a7[_0x4d425c(0x1ca)]['currency']}});}static[_0x4cad17(0x1a5)](_0x57a222,_0x15161d){const _0x21a4a6=_0x4cad17;_0x15161d=_0x15161d||{};const _0x450a9c=_0x57a222?Charactermancer_StartingEquipment[_0x21a4a6(0x179)][_0x21a4a6(0x1d4)](_0x57a222):new Charactermancer_StartingEquipment[(_0x21a4a6(0x179))]();_0x450a9c[_0x21a4a6(0x14e)]();const _0xf9bbd8=new Charactermancer_StartingEquipment['ComponentDefault']({'compCurrency':_0x450a9c,'fnDoShowShop':_0x15161d['fnDoShowShop']}),_0x2c8431=new Charactermancer_StartingEquipment[(_0x21a4a6(0x190))]({'compCurrency':_0x450a9c,'itemDatas':_0x15161d[_0x21a4a6(0x1ba)]});return{'compCurrency':_0x450a9c,'compDefault':_0xf9bbd8,'compGold':_0x2c8431};}constructor(_0x2e2232){const _0x1e8166=_0x4cad17;_0x2e2232=_0x2e2232||{};const _0x448525=_0x2e2232[_0x1e8166(0x1e1)]?Charactermancer_StartingEquipment[_0x1e8166(0x179)]['fromActor'](_0x2e2232[_0x1e8166(0x1e1)]):new Charactermancer_StartingEquipment[(_0x1e8166(0x179))](),_0x1f9a06=new Charactermancer_StartingEquipment['ComponentDefault']({..._0x2e2232,'compCurrency':_0x448525,'fnDoShowShop':()=>{const _0x5550f4=_0x1e8166;this[_0x5550f4(0x12f)]='gold',this[_0x5550f4(0x121)]();}}),_0x35f68a=new Charactermancer_StartingEquipment[(_0x1e8166(0x190))]({..._0x2e2232,'compCurrency':_0x448525});if(_0x2e2232[_0x1e8166(0x1d8)])_0x448525[_0x1e8166(0x1d8)]=_0x2e2232['startingEquipment'];if(_0x2e2232[_0x1e8166(0x126)])_0x1f9a06[_0x1e8166(0x126)]=_0x2e2232[_0x1e8166(0x126)];if(_0x2e2232[_0x1e8166(0x120)])_0x1f9a06[_0x1e8166(0x120)]=_0x2e2232[_0x1e8166(0x120)];super({'title':(_0x448525[_0x1e8166(0xdc)]?_0x1e8166(0x17c):'')+_0x1e8166(0x146)+(_0x2e2232['appSubTitle']?'—'+_0x2e2232[_0x1e8166(0x138)]:''),'template':SharedConsts[_0x1e8166(0xb3)]+_0x1e8166(0x114),'width':Util[_0x1e8166(0x1e9)](0x3e8),'height':Util['getMaxWindowHeight'](),'resizable':!![]}),this[_0x1e8166(0x1ed)]=_0x448525,this[_0x1e8166(0xed)]=_0x1f9a06,this[_0x1e8166(0x1f1)]=_0x35f68a,this['_isStandalone']=_0x2e2232['isStandalone'],this[_0x1e8166(0x1af)]=Number(this[_0x1e8166(0xed)][_0x1e8166(0x151)])+Number(this[_0x1e8166(0x1f1)][_0x1e8166(0x151)]),this[_0x1e8166(0x1af)]&&(this['_resolve']=null,this[_0x1e8166(0x10c)]=null,this[_0x1e8166(0x141)]=new Promise((_0x23589f,_0x4db161)=>{const _0x44b9d0=_0x1e8166;this[_0x44b9d0(0x1dc)]=_0x23589f,this[_0x44b9d0(0x10c)]=_0x4db161;})),this['_mode']=null,this[_0x1e8166(0x16c)]=null,this[_0x1e8166(0x1a8)]=null,this[_0x1e8166(0x19a)]=null;}async[_0x4cad17(0x91)](_0x34e1ad){const _0x49cdf1=_0x4cad17;this[_0x49cdf1(0x1dc)](_0x34e1ad),await this[_0x49cdf1(0xa0)]();}[_0x4cad17(0xcc)](_0x24e90b){const _0x5e8c29=_0x4cad17;if(!this[_0x5e8c29(0x1af)])return;const _0x35deed=[this[_0x5e8c29(0xed)],this['_compGold']][_0x5e8c29(0x1e5)](_0x221aba=>_0x221aba['isAvailable']);if(this[_0x5e8c29(0x1af)]===0x2){this[_0x5e8c29(0x12f)]=_0x5e8c29(0x1c8),this[_0x5e8c29(0x16c)]=_0x35deed[_0x5e8c29(0x19d)](_0x145831=>{const _0x58f6e9=_0x5e8c29,_0xa4f47e=$(_0x58f6e9(0x1fc))['hideVe']();return this[_0x58f6e9(0xda)](_0xa4f47e,_0x145831),_0xa4f47e;}),this[_0x5e8c29(0x1a8)]=$(_0x5e8c29(0x189)+(this[_0x5e8c29(0x1ed)][_0x5e8c29(0xdc)]?_0x5e8c29(0x89):_0x5e8c29(0xbc))+'</button>')['click'](()=>{const _0x261409=_0x5e8c29;this[_0x261409(0x12f)]=_0x261409(0x1c8),this[_0x261409(0x121)]();}),this[_0x5e8c29(0x19a)]=$('<button\x20class=\x22btn\x20btn-default\x20w-50\x20btn-5et\x22>'+(this['_compCurrency']['rollableExpressionGold']?_0x5e8c29(0xce):_0x5e8c29(0x15b))+_0x5e8c29(0x158))[_0x5e8c29(0x1a4)](()=>{const _0x5804ae=_0x5e8c29;this[_0x5804ae(0x12f)]=_0x5804ae(0x15d),this[_0x5804ae(0x121)]();}),this[_0x5e8c29(0x121)](),$$(_0x24e90b)`<div class="flex-col w-100 h-100">
-				<div class="flex no-shrink btn-group mb-1">${this[_0x5e8c29(0x1a8)]}${this[_0x5e8c29(0x19a)]}</div>
-				${this[_0x5e8c29(0x16c)][0x0]}
-				${this[_0x5e8c29(0x16c)][0x1]}
-			</div>`;return;}this[_0x5e8c29(0xda)](_0x24e90b,_0x35deed[0x0]);}['_doHandleModeSwitch'](){const _0x111078=_0x4cad17;this[_0x111078(0x1a8)][_0x111078(0x174)](_0x111078(0xc5),this[_0x111078(0x12f)]===_0x111078(0x1c8)),this[_0x111078(0x19a)][_0x111078(0x174)](_0x111078(0xc5),this[_0x111078(0x12f)]==='gold'),this[_0x111078(0x16c)][0x0][_0x111078(0x1c9)](this['_mode']===_0x111078(0x1c8)),this[_0x111078(0x16c)][0x1][_0x111078(0x1c9)](this[_0x111078(0x12f)]===_0x111078(0x15d));}[_0x4cad17(0xda)](_0x39f2c5,_0x154663){const _0x58b097=_0x4cad17;_0x154663[_0x58b097(0x1cc)](_0x39f2c5)[_0x58b097(0x17e)](_0x19fed9=>{const _0x12312b=_0x58b097,_0x2d01cb=$(_0x12312b(0x116)+(this[_0x12312b(0x9b)]?_0x12312b(0x196):_0x12312b(0x87))+'\x22>Confirm</button>')['click'](async()=>{const _0x28c3f8=_0x12312b,_0x22ff7d=[this[_0x28c3f8(0xed)],this[_0x28c3f8(0x1f1)]]['filter'](_0x504fe4=>_0x504fe4['isAvailable']),_0x5ca688=await Promise[_0x28c3f8(0x1ad)](_0x22ff7d[_0x28c3f8(0x19d)](_0x262a7b=>_0x262a7b['pGetFormData']()));for(const _0x2c91d4 of _0x5ca688){if(!_0x2c91d4[_0x28c3f8(0xc9)]&&!await InputUiUtil[_0x28c3f8(0xd0)]({'title':_0x2c91d4[_0x28c3f8(0x188)]}))return;}const _0x154f7a=await this[_0x28c3f8(0x1ed)][_0x28c3f8(0x1be)](),_0x493ed6={'isFormComplete':_0x5ca688[_0x28c3f8(0x1c5)](_0x1726a3=>_0x1726a3[_0x28c3f8(0xc9)]),'data':{'equipmentItemEntries':_0x5ca688['map'](_0x887c5d=>_0x887c5d['data']?.[_0x28c3f8(0x10b)]||[])[_0x28c3f8(0x13f)](),'currency':_0x154f7a?.['data']?.['currency']}};await this[_0x28c3f8(0x91)](_0x493ed6);}),_0x19c055=this['_isStandalone']?null:$(_0x12312b(0x14b))[_0x12312b(0x1a4)](()=>this[_0x12312b(0x91)](VeCt['SYM_UI_SKIP']));_0x19fed9[_0x12312b(0x9f)](_0x12312b(0x16a)),$$`<div class="flex-v-center flex-h-right w-100">${_0x2d01cb}${_0x19c055}</div>`[_0x12312b(0x1f6)](_0x19fed9);});}async[_0x4cad17(0xa0)](){const _0x4198ac=_0x4cad17;await super[_0x4198ac(0xa0)]();if(this[_0x4198ac(0x1dc)])this[_0x4198ac(0x1dc)](null);}async['pWaitForUserInput'](){const _0x5cda23=_0x4cad17;if(!this[_0x5cda23(0x1af)])return VeCt[_0x5cda23(0x143)];return await this['render'](!![]),this['_pUserInput'];}}Charactermancer_StartingEquipment[_0x4cad17(0x179)]=class extends BaseComponent{static['fromActor'](_0x378d21){const _0x31bd5a=_0x4cad17,_0x153c2b={},_0x8a8230=MiscUtil[_0x31bd5a(0x86)](_0x378d21,_0x31bd5a(0x1ca),_0x31bd5a(0x1ca),_0x31bd5a(0x1de))||{};Parser[_0x31bd5a(0x17d)][_0x31bd5a(0xb7)](_0x2c373d=>_0x153c2b[_0x2c373d]=_0x8a8230[_0x2c373d]||0x0);const _0xd3f3d5=new this();return _0xd3f3d5[_0x31bd5a(0x14e)](),_0xd3f3d5[_0x31bd5a(0xb2)](_0x8a8230),_0xd3f3d5;}constructor(_0x218094){const _0x4f7750=_0x4cad17;super(),_0x218094=_0x218094||{},this[_0x4f7750(0x1ef)]=null,this[_0x4f7750(0xb0)][_0x4f7750(0x1d8)]=_0x218094[_0x4f7750(0x1d8)]?MiscUtil[_0x4f7750(0x115)](_0x218094[_0x4f7750(0x1d8)]):null;}[_0x4cad17(0x14e)](){const _0x48856d=_0x4cad17,_0xcff640=()=>{const _0x536d33=_0x510b;this[_0x536d33(0x1d6)][_0x536d33(0xf2)]=null,this[_0x536d33(0x1d6)][_0x536d33(0xdc)]=this[_0x536d33(0x19c)][_0x536d33(0xba)](this[_0x536d33(0x1d6)][_0x536d33(0x1d8)]);};this[_0x48856d(0x176)](_0x48856d(0x1d8),_0xcff640),_0xcff640();}static[_0x4cad17(0xba)](_0xcf4cab){const _0x31894f=_0x4cad17;if(!_0xcf4cab?.['goldAlternative'])return null;const _0x3a3e3c=/{@dice ([^|]+)/[_0x31894f(0x123)](_0xcf4cab[_0x31894f(0x160)]);return _0x3a3e3c[0x1][_0x31894f(0x8a)](/×/g,'*');}get['startingEquipment'](){const _0x1800aa=_0x4cad17;return this[_0x1800aa(0x1d6)][_0x1800aa(0x1d8)];}set['startingEquipment'](_0x16b424){const _0x520577=_0x4cad17;this[_0x520577(0x1d6)][_0x520577(0x1d8)]=_0x16b424;}get[_0x4cad17(0xdc)](){const _0x116663=_0x4cad17;return this[_0x116663(0x1d6)][_0x116663(0xdc)];}get[_0x4cad17(0xfc)](){const _0x46df34=_0x4cad17;return this[_0x46df34(0x1d6)]['cpSpent'];}set[_0x4cad17(0xfc)](_0x1cb702){const _0x1198a0=_0x4cad17;this[_0x1198a0(0x1d6)][_0x1198a0(0xfc)]=_0x1cb702;}get[_0x4cad17(0xf2)](){const _0x534695=_0x4cad17;return this[_0x534695(0x1d6)][_0x534695(0xf2)];}set[_0x4cad17(0xf2)](_0x2d200f){const _0x5ec08c=_0x4cad17;this['_state'][_0x5ec08c(0xf2)]=_0x2d200f;}set[_0x4cad17(0x15e)](_0x3270a7){const _0x312ac6=_0x4cad17;this[_0x312ac6(0x1d6)][_0x312ac6(0x15e)]=_0x3270a7;}[_0x4cad17(0xb2)](_0x935784){const _0x39795b=_0x4cad17;this[_0x39795b(0x1ef)]=MiscUtil['copy'](_0x935784);const _0x592344={};Parser[_0x39795b(0x17d)][_0x39795b(0xb7)](_0x3e0220=>_0x592344[_0x3e0220]=_0x935784[_0x3e0220]||0x0),this[_0x39795b(0x15f)](_0x39795b(0x8d),_0x592344);}[_0x4cad17(0x159)](){const _0x1fca93=_0x4cad17;return(this[_0x1fca93(0x1d6)][_0x1fca93(0xf2)]||0x0)+(this[_0x1fca93(0x1d6)][_0x1fca93(0x15e)]||0x0)+CurrencyUtil[_0x1fca93(0x162)]({'cp':this[_0x1fca93(0x1d6)]['cp'],'sp':this[_0x1fca93(0x1d6)]['sp'],'gp':this[_0x1fca93(0x1d6)]['gp'],'ep':this[_0x1fca93(0x1d6)]['ep'],'pp':this[_0x1fca93(0x1d6)]['pp']});}[_0x4cad17(0x1c2)](){const _0x2c10ad=_0x4cad17,_0x4a13ea=Parser['COIN_ABVS'][_0x2c10ad(0xef)](_0x397ebe=>({[_0x397ebe]:0x0}));Object[_0x2c10ad(0x8c)](this[_0x2c10ad(0x1ef)]||{})['forEach'](([_0x509823,_0xcb6dfe])=>_0x4a13ea[_0x509823]=(_0x4a13ea[_0x509823]||0x0)+_0xcb6dfe);const _0x5f5b8f=CurrencyUtil['doSimplifyCoins']({'cp':this[_0x2c10ad(0x1d6)][_0x2c10ad(0xf2)]||0x0});Object['entries'](_0x5f5b8f||{})[_0x2c10ad(0xb7)](([_0x52513f,_0x171318])=>_0x4a13ea[_0x52513f]=(_0x4a13ea[_0x52513f]||0x0)+_0x171318);const _0x3624ec=CurrencyUtil[_0x2c10ad(0x1a2)]({'cp':this['_state'][_0x2c10ad(0x15e)]||0x0});return Object[_0x2c10ad(0x8c)](_0x3624ec||{})[_0x2c10ad(0xb7)](([_0xc89c31,_0x49509f])=>_0x4a13ea[_0xc89c31]=(_0x4a13ea[_0xc89c31]||0x0)+_0x49509f),_0x4a13ea;}async[_0x4cad17(0x1be)](){const _0x351f1c=_0x4cad17;return{'isFormComplete':!![],'data':{'currency':CurrencyUtil[_0x351f1c(0x1a2)]({'cp':this[_0x351f1c(0x1c1)]()},{'originalCurrency':this['_getOriginalCurrency'](),'isPopulateAllValues':!![],'currencyConversionTable':Parser['FULL_CURRENCY_CONVERSION_TABLE']})}};}['getRemainingCp'](){const _0x426a39=_0x4cad17;return this[_0x426a39(0x159)]()-this[_0x426a39(0x1d6)][_0x426a39(0xfc)];}[_0x4cad17(0x112)](_0x273e2f){this['_addHookAll']('state',_0x273e2f);}[_0x4cad17(0xb5)](_0xff5a4b){const _0x236dba=_0x4cad17;this[_0x236dba(0x176)]('cpRolled',_0xff5a4b);}[_0x4cad17(0x137)](_0x30b8df){const _0x12c455=_0x4cad17;this[_0x12c455(0x176)](_0x12c455(0x1d8),_0x30b8df);}['addHookRollableExpressionGold'](_0x4e3443){const _0x5a251d=_0x4cad17;this[_0x5a251d(0x176)](_0x5a251d(0xdc),_0x4e3443);}[_0x4cad17(0xd3)](_0x210635){const _0x1bb5c6=_0x4cad17;this[_0x1bb5c6(0x118)](_0x1bb5c6(0xf2),_0x210635);}[_0x4cad17(0x173)](){const _0x568ad0=_0x4cad17;return{'startingEquipment':null,'rollableExpressionGold':null,...Parser['COIN_ABVS'][_0x568ad0(0xef)](_0x2cb40f=>({[_0x2cb40f]:0x0})),'cpSpent':0x0,'cpRolled':null,'cpFromDefault':0x0};}},Charactermancer_StartingEquipment[_0x4cad17(0xe0)]=class extends BaseComponent{constructor(_0x412f46){const _0x1eb103=_0x4cad17;super(),this[_0x1eb103(0x1ed)]=_0x412f46['compCurrency'];}static['_getHumanReadableCoinage'](_0x5c4b2a){const _0x1ffae6=_0x4cad17,_0x3d5701=CurrencyUtil[_0x1ffae6(0x1a2)]({'cp':_0x5c4b2a});return[...Parser[_0x1ffae6(0x17d)]]['reverse']()[_0x1ffae6(0x19d)](_0x51efe1=>_0x3d5701[_0x51efe1]?_0x3d5701[_0x51efe1]['toLocaleString']()+'\x20'+_0x51efe1:null)[_0x1ffae6(0x1e5)](Boolean)[_0x1ffae6(0x12d)](',\x20')||_0x1ffae6(0x1f3);}[_0x4cad17(0x177)](){const _0x5eb04b=_0x4cad17;return $(_0x5eb04b(0x152))['click'](()=>{const _0x868c81=_0x5eb04b,_0x631658=new Roll(this[_0x868c81(0x1ed)][_0x868c81(0xdc)]);_0x631658['roll'](),this[_0x868c81(0x1ed)][_0x868c81(0xf2)]=_0x631658['total']*0x64,_0x631658[_0x868c81(0x10d)]();});}['_$getBtnEnterStartingGold'](){const _0x208a43=_0x4cad17;return $(_0x208a43(0x1b3))['click'](async()=>{const _0x15229a=_0x208a43,_0x706b3f={'min':0x0,'title':_0x15229a(0xb9),'int':!![]};if(this['_compCurrency'][_0x15229a(0xf2)]!=null)_0x706b3f[_0x15229a(0x1c8)]=Math[_0x15229a(0x1e8)](this[_0x15229a(0x1ed)][_0x15229a(0xf2)]/0x64);const _0x369482=await InputUiUtil[_0x15229a(0x14a)](_0x706b3f);if(_0x369482==null)return;this[_0x15229a(0x1ed)]['cpRolled']=_0x369482*0x64;});}[_0x4cad17(0x106)](){const _0x4df4a3=_0x4cad17,_0x29f72e=$('<div></div>'),_0x156eba=()=>{const _0x445feb=_0x510b;if(this[_0x445feb(0x1ed)][_0x445feb(0xf2)]==null&&this[_0x445feb(0x1ed)][_0x445feb(0xdc)]!=null)_0x29f72e[_0x445feb(0x16b)]('<i\x20class=\x22ve-muted\x22>'+this[_0x445feb(0x1ed)][_0x445feb(0xdc)]+_0x445feb(0x183));else _0x29f72e[_0x445feb(0x16b)](this[_0x445feb(0x19c)][_0x445feb(0x125)](this[_0x445feb(0x1ed)][_0x445feb(0xf2)]||0x0));};return _0x156eba(),this[_0x4df4a3(0x1ed)]['addHookRollableExpressionGold'](_0x156eba),this[_0x4df4a3(0x1ed)][_0x4df4a3(0xb5)](_0x156eba),_0x29f72e;}[_0x4cad17(0xe6)]({$btnRoll:_0x431b05,$dispRollOrManual:_0xb2a253,$btnManual:_0x18475b,$dispRolled:_0x4df864}){const _0x5cec93=_0x4df864?$$`<div class="m-1"> = </div>${_0x4df864}`:null;return $$`<div class="flex-v-center">${_0x431b05}${_0xb2a253}${_0x18475b}${_0x5cec93}</div>`;}[_0x4cad17(0x163)]({$dispRollOrManual:_0x48f89d,$btnRoll:_0xa5f7fe,$btnManual:_0x3a9652,$spcRollOrManual:_0x345d92,$wrpRollOrManual:_0x4a1767}){const _0xa2d634=_0x4cad17,_0x23a201=()=>{const _0x4bf883=_0x510b;_0x48f89d[_0x4bf883(0x1c9)](this[_0x4bf883(0x1ed)][_0x4bf883(0xdc)]),_0xa5f7fe[_0x4bf883(0x1c9)](this[_0x4bf883(0x1ed)]['rollableExpressionGold'])['title'](_0x4bf883(0x1bb)+this[_0x4bf883(0x1ed)][_0x4bf883(0xdc)]),_0x3a9652[_0x4bf883(0x1c9)](this['_compCurrency'][_0x4bf883(0x1d8)]);if(_0x345d92)_0x345d92['toggleVe'](!this[_0x4bf883(0x1a0)]&&this['_compCurrency'][_0x4bf883(0x1d8)]);_0x4a1767[_0x4bf883(0x1c9)](this[_0x4bf883(0x1ed)][_0x4bf883(0x1d8)]);};this[_0xa2d634(0x1ed)][_0xa2d634(0x137)](_0x23a201),this[_0xa2d634(0x1ed)][_0xa2d634(0xc3)](_0x23a201),_0x23a201();}},Charactermancer_StartingEquipment['ComponentDefault']=class extends Charactermancer_StartingEquipment[_0x4cad17(0xe0)]{constructor(_0xbd486c){const _0x3dee68=_0x4cad17;super(_0xbd486c),_0xbd486c=_0xbd486c||{},this[_0x3dee68(0xd4)]=_0xbd486c[_0x3dee68(0x126)],this[_0x3dee68(0xfa)]=_0xbd486c['equiSpecialPage'],this['_fnDoShowShop']=_0xbd486c[_0x3dee68(0x9a)],this[_0x3dee68(0x18e)]=[];}set['equiSpecialSource'](_0x19a8a1){this['_equiSpecialSource']=_0x19a8a1;}set['equiSpecialPage'](_0x1e5054){this['_equiSpecialPage']=_0x1e5054;}get[_0x4cad17(0x151)](){const _0x53841e=_0x4cad17;return!!this[_0x53841e(0x1ed)][_0x53841e(0x1d8)]?.[_0x53841e(0x167)]?.[_0x53841e(0x142)];}async['pGetFormData'](){const _0x1cbf35=_0x4cad17,_0xbbe603=[],_0x245d0d=await this[_0x1cbf35(0xcd)]();_0x245d0d&&_0xbbe603['push'](..._0x245d0d);const _0x194371=this[_0x1cbf35(0x1bd)](),_0x2aaffb=_0x194371?null:'You\x20have\x20not\x20made\x20all\x20available\x20choices.\x20Are\x20you\x20sure\x20you\x20want\x20to\x20continue?';return{'isFormComplete':_0x194371,'messageInvalid':_0x2aaffb,'data':{'equipmentItemEntries':_0xbbe603}};}static[_0x4cad17(0xbd)](_0x4916fd,_0x2e3595){const _0x36f1bc=_0x4cad17;if(!_0x2e3595)return _0x4916fd;const _0x1f6a49=_0x4916fd[_0x36f1bc(0xdd)]('|');while(_0x1f6a49[_0x36f1bc(0x142)]>0x2)_0x1f6a49[_0x36f1bc(0x1cf)]();while(_0x1f6a49['length']<0x2)_0x1f6a49[_0x36f1bc(0x105)]('');return _0x1f6a49[_0x36f1bc(0x105)](_0x2e3595),_0x1f6a49[_0x36f1bc(0x12d)]('|');}async[_0x4cad17(0x1cc)](_0x44b1e7){const _0x36235c=_0x4cad17,_0x3380c9=$(_0x36235c(0xf8))[_0x36235c(0x1f6)](_0x44b1e7);return this[_0x36235c(0x197)](_0x3380c9),_0x3380c9;}[_0x4cad17(0xe3)](_0x5055aa){const _0x230bc2=_0x4cad17,_0x368aac=this[_0x230bc2(0x1ed)][_0x230bc2(0x1d8)]?.[_0x230bc2(0x167)]||[];for(let _0x5310aa=0x0;_0x5310aa<_0x368aac[_0x230bc2(0x142)];++_0x5310aa){const _0x351ccf=_0x368aac[_0x5310aa],_0x117935=_0x230bc2(0x136)+_0x5310aa,_0x231def=Object['entries'](_0x351ccf);for(let _0x7a1a7=0x0;_0x7a1a7<_0x231def['length'];++_0x7a1a7){const [_0x14ab57,_0x2cb7e4]=_0x231def[_0x7a1a7];if(this[_0x230bc2(0x1d6)][_0x117935]!==_0x7a1a7)continue;for(let _0x42fb5f=0x0;_0x42fb5f<_0x2cb7e4[_0x230bc2(0x142)];++_0x42fb5f){const _0x3af2c5=_0x2cb7e4[_0x42fb5f],_0x5193ec=_0x5055aa(_0x5310aa,_0x7a1a7,_0x3af2c5);if(_0x5193ec!==undefined)return _0x5193ec;}}}}[_0x4cad17(0x197)](_0x20bc99){const _0x3a5900=_0x4cad17,_0x272196=this['_$getBtnRollStartingGold'](),_0x3634eb=$('<i\x20class=\x22mx-1\x22>–\x20or\x20–</i>'),_0x4b3a6d=this[_0x3a5900(0x14d)](),_0x1e7297=this[_0x3a5900(0xe6)]({'$dispRollOrManual':_0x3634eb,'$btnRoll':_0x272196,'$btnManual':_0x4b3a6d});this[_0x3a5900(0x163)]({'$dispRollOrManual':_0x3634eb,'$btnRoll':_0x272196,'$btnManual':_0x4b3a6d,'$wrpRollOrManual':_0x1e7297});const _0x1481d7=$$`<div class="w-100 py-1 flex-v-center">
+import {LGT, Util} from "./Util.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {AppSourceSelectorMulti} from "./AppSourceSelectorMulti.js";
+import {Config} from "./Config.js";
+import {UtilActors} from "./UtilActors.js";
+import {UtilHooks} from "./UtilHooks.js";
+import {UtilDocuments} from "./UtilDocuments.js";
+import {UtilDataConverter} from "./UtilDataConverter.js";
+import {UtilKeybinding} from "./UtilKeybinding.js";
+import {UtilApplications} from "./UtilApplications.js";
+
+class Charactermancer_StartingEquipment extends Application {
+	// region External
+	static prePreInit () {
+		this._preInit_registerKeybinds();
+	}
+
+	static _preInit_registerKeybinds () {
+		const doKeybindingOpenForCharacter = () => {
+			const actor = UtilKeybinding.getPlayerActor({minRole: Config.get("equipmentShop", "minimumRole")});
+			if (!actor) return true;
+			this._pOpen({actor});
+			return true;
+		};
+
+		const doKeybindingOpenForCurrentSheet = () => {
+			const meta = UtilKeybinding.getCurrentImportableSheetDocumentMeta({isRequireActor: true, isRequireOwnership: true, minRole: Config.get("equipmentShop", "minimumRole")});
+			if (!meta?.actor) return true;
+			this._pOpen({...meta});
+			return true;
+		};
+
+		game.keybindings.register(
+			SharedConsts.MODULE_NAME,
+			"Charactermancer_StartingEquipment__openForCharacter",
+			{
+				name: "Open Equipment Shop Targeting Player Character",
+				editable: [],
+				onDown: () => doKeybindingOpenForCharacter(),
+			},
+		);
+
+		game.keybindings.register(
+			SharedConsts.MODULE_NAME,
+			"Charactermancer_StartingEquipment__openForCurrentSheet",
+			{
+				name: "Open Equipment Shop Targeting Current Sheet",
+				editable: [],
+				onDown: () => doKeybindingOpenForCurrentSheet(),
+			},
+		);
+	}
+
+	static init () {
+		// When updating the config, close any equipment shop windows if settings have been changed.
+		//  We don't otherwise sync the price info, so this is necessary to "update" the shop with the latest values.
+		UtilHooks.on(UtilHooks.HK_CONFIG_UPDATE, async (diff) => {
+			if (!diff) return;
+
+			const prev = MiscUtil.get(diff, "previous", "equipmentShop");
+			const curr = MiscUtil.get(diff, "current", "equipmentShop");
+
+			if (!prev || !curr) return;
+
+			if (CollectionUtil.deepEquals(prev, curr)) return;
+
+			const toClose = Object.values(ui.windows)
+				.filter(it => it.constructor === Charactermancer_StartingEquipment);
+			if (!toClose.length) return;
+
+			if (!await (InputUiUtil.pGetUserBoolean({
+				title: `Existing Shop Windows`,
+				htmlDescription: `You have ${toClose.length === 1 ? `an existing shop window` : `existing shop windows`} open, which will not be affected by your updated Equipment Shop config.<br>Would you like to close ${toClose.length === 1 ? "this window" : "these windows"}?`,
+				textYes: "Yes",
+				textNo: "No",
+			}))) return;
+
+			toClose.forEach(it => it.close());
+		});
+	}
+
+	static async pHandleButtonClick (evt, app, $html, data) {
+		return this._pOpen({actor: app.actor});
+	}
+
+	static async _pOpen ({actor}) {
+		const instance = new this({
+			actor,
+			isStandalone: true,
+		});
+
+		const formData = await instance.pWaitForUserInput();
+
+		if (!formData) return;
+		if (formData === VeCt.SYM_UI_SKIP) return; // This should never occur, as the skip button is hidden in "shop" mode
+
+		await this.pImportEquipmentItemEntries(actor, formData);
+		await this.pUpdateActorCurrency(actor, formData);
+	}
+
+	static async pImportEquipmentItemEntries (actor, formData) {
+		if (!formData?.data?.equipmentItemEntries?.length) return;
+		const {ImportListItem} = await import("./ImportListItem.js");
+		const importListItem = new ImportListItem({actor: actor});
+		await importListItem.pInit();
+		for (const it of formData.data.equipmentItemEntries) {
+			if (it.item && it.name == null && it.source == null) await importListItem.pImportEntry(it.item, {quantity: it.quantity || 1});
+			else await importListItem.pImportEntry(it);
+		}
+	}
+
+	static async pUpdateActorCurrency (actor, formData) {
+		if (!formData?.data?.currency) return;
+
+		await UtilDocuments.pUpdateDocument(
+			actor,
+			{
+				data: {
+					currency: formData.data.currency,
+				},
+			},
+		);
+	}
+
+	/**
+	 * @param actor
+	 * @param [opts]
+	 * @param [opts.itemDatas]
+	 * @param [opts.fnDoShowShop]
+	 */
+	static getComponents (actor, opts) {
+		opts = opts || {};
+
+		const compCurrency = actor ? Charactermancer_StartingEquipment.Currency.fromActor(actor) : new Charactermancer_StartingEquipment.Currency();
+		compCurrency.init();
+
+		const compDefault = new Charactermancer_StartingEquipment.ComponentDefault({compCurrency, fnDoShowShop: opts.fnDoShowShop});
+		const compGold = new Charactermancer_StartingEquipment.ComponentGold({compCurrency, itemDatas: opts.itemDatas});
+
+		return {
+			compCurrency,
+			compDefault,
+			compGold,
+		};
+	}
+	// endregion
+
+	/**
+	 * @param [opts]
+	 * @param [opts.actor]
+	 * @param [opts.startingEquipment] Starting equipment data, in the form used by class data.
+	 * @param [opts.appSubTitle]
+	 * @param [opts.isStandalone]
+	 * @param [opts.equiSpecialSource] The source to be assigned to "special" (i.e. non-statted items).
+	 * @param [opts.equiSpecialPage] The page number to be assigned to "special" (i.e. non-statted items).
+	 */
+	constructor (opts) {
+		opts = opts || {};
+
+		const compCurrency = opts.actor
+			? Charactermancer_StartingEquipment.Currency.fromActor(opts.actor, {isStandalone: !!opts.isStandalone})
+			: new Charactermancer_StartingEquipment.Currency({isStandalone: !!opts.isStandalone});
+		const compDefault = new Charactermancer_StartingEquipment.ComponentDefault({...opts, compCurrency, fnDoShowShop: () => { this._mode = "gold"; this._doHandleModeSwitch(); }});
+		const compGold = new Charactermancer_StartingEquipment.ComponentGold({...opts, compCurrency});
+
+		// region Set sub-component data
+		if (opts.startingEquipment) compCurrency.startingEquipment = opts.startingEquipment;
+		if (opts.equiSpecialSource) compDefault.equiSpecialSource = opts.equiSpecialSource;
+		if (opts.equiSpecialPage) compDefault.equiSpecialPage = opts.equiSpecialPage;
+		// endregion
+
+		super({
+			title: `${compCurrency.rollableExpressionGold ? `Starting ` : ""}Equipment${opts.appSubTitle ? `\u2014${opts.appSubTitle}` : ""}${opts.actor ? ` (Actor "${opts.actor.name}")` : ""}`,
+			template: `${SharedConsts.MODULE_LOCATION}/template/ImportListCharacterEquipment.hbs`,
+			width: Util.getMaxWindowWidth(1000),
+			height: Util.getMaxWindowHeight(),
+			resizable: true,
+		});
+
+		this._compCurrency = compCurrency;
+		this._compDefault = compDefault;
+		this._compGold = compGold;
+
+		this._isStandalone = opts.isStandalone;
+
+		this._cntModesAvailable = Number(this._compDefault.isAvailable) + Number(this._compGold.isAvailable);
+
+		if (this._cntModesAvailable) {
+			this._resolve = null;
+			this._reject = null;
+			this._pUserInput = new Promise((resolve, reject) => {
+				this._resolve = resolve;
+				this._reject = reject;
+			});
+		}
+
+		this._mode = null;
+		this._$wrpTabs = null;
+		this._$btnShowTabStandard = null;
+		this._$btnShowTabGoldAlternative = null;
+	}
+
+	async _pResolveAndClose (resolveAs) {
+		this._resolve(resolveAs);
+		await this.close();
+	}
+
+	activateListeners ($html) {
+		if (!this._cntModesAvailable) return; // Should never occur
+
+		const activeComps = [this._compDefault, this._compGold].filter(it => it.isAvailable);
+
+		if (this._cntModesAvailable === 2) {
+			this._mode = this._compCurrency.cpRolled ? "gold" : "default";
+
+			this._$wrpTabs = activeComps.map(it => {
+				const $wrpTab = $(`<div class="w-100 h-100 min-h-0 ve-flex-col"></div>`).hideVe();
+				this._activateListeners_renderTab($wrpTab, it);
+				return $wrpTab;
+			});
+
+			this._$btnShowTabStandard = $(`<button class="btn btn-default w-50 btn-5et">${this._compCurrency.rollableExpressionGold ? `Standard Starting Equipment` : `Starting Equipment`}</button>`)
+				.click(() => {
+					this._mode = "default";
+					this._doHandleModeSwitch();
+				});
+
+			this._$btnShowTabGoldAlternative = $(`<button class="btn btn-default w-50 btn-5et">${this._compCurrency.rollableExpressionGold ? `Gold Alternative/Shop` : `Shop`}</button>`)
+				.click(() => {
+					this._mode = "gold";
+					this._doHandleModeSwitch();
+				});
+
+			this._doHandleModeSwitch();
+
+			$$($html)`<div class="ve-flex-col w-100 h-100">
+				<div class="ve-flex no-shrink btn-group mb-1">${this._$btnShowTabStandard}${this._$btnShowTabGoldAlternative}</div>
+				${this._$wrpTabs[0]}
+				${this._$wrpTabs[1]}
+			</div>`;
+
+			return;
+		}
+
+		this._activateListeners_renderTab($html, activeComps[0]);
+	}
+
+	_doHandleModeSwitch () {
+		this._$btnShowTabStandard.toggleClass("active", this._mode === "default");
+		this._$btnShowTabGoldAlternative.toggleClass("active", this._mode === "gold");
+		this._$wrpTabs[0].toggleVe(this._mode === "default");
+		this._$wrpTabs[1].toggleVe(this._mode === "gold");
+	}
+
+	_activateListeners_renderTab ($html, comp) {
+		comp.pRender($html)
+			.then($wrpTabInner => {
+				const $btnAccept = $(`<button class="btn btn-default btn-5et ${this._isStandalone ? "mr-3" : "mr-2"}">Confirm</button>`)
+					.click(async () => {
+						const activeComps = [this._compDefault, this._compGold].filter(it => it.isAvailable);
+
+						const formDatas = await Promise.all(activeComps.map(comp => comp.pGetFormData()));
+
+						for (const formData of formDatas) {
+							if (
+								!formData.isFormComplete
+								&& !(await InputUiUtil.pGetUserBoolean({title: formData.messageInvalid}))
+							) return;
+						}
+
+						const formDataCurrency = await this._compCurrency.pGetFormData();
+
+						// Merge the form data from both components
+						const combinedFormData = {
+							isFormComplete: formDatas.every(it => it.isFormComplete),
+							data: {
+								equipmentItemEntries: formDatas.map(it => it.data?.equipmentItemEntries || []).flat(),
+								currency: formDataCurrency?.data?.currency,
+							},
+						};
+
+						await this._pResolveAndClose(combinedFormData);
+					});
+
+				const $btnSkip = this._isStandalone ? null : $(`<button class="btn btn-default mr-3">Skip</button>`)
+					.click(() => this._pResolveAndClose(VeCt.SYM_UI_SKIP));
+
+				$wrpTabInner.append(`<hr class=hr-1>`);
+				$$`<div class="ve-flex-v-center ve-flex-h-right w-100">${$btnAccept}${$btnSkip}</div>`.appendTo($wrpTabInner);
+			});
+	}
+
+	async close () {
+		await super.close();
+		// Forcibly resolve the promise, if it hasn't already been resolved.
+		if (this._resolve) this._resolve(null);
+	}
+
+	async pWaitForUserInput () {
+		if (!this._cntModesAvailable) return VeCt.SYM_UI_SKIP;
+
+		await this.render(true);
+		return this._pUserInput;
+	}
+}
+
+Charactermancer_StartingEquipment.Currency = class extends BaseComponent {
+	static fromActor (actor, {isStandalone = false} = {}) {
+		const initialCurrency = UtilActors.getActorCurrency({actor});
+		const comp = new this({isStandalone});
+		comp.init();
+		comp.setCurrencyFromActor(initialCurrency);
+		return comp;
+	}
+
+	/**
+	 * @param [opts]
+	 * @param [opts.startingEquipment] Starting equipment data, in the form used by class data.
+	 * @param [opts.isStandalone] If this is part of a standalone shop.
+	 */
+	constructor (opts) {
+		super();
+
+		opts = opts || {};
+
+		this._isStandalone = !!opts.isStandalone;
+		this._prevActorCurrency = null; // Save the original currency, so we can try to mimic it on output
+		this.__state.startingEquipment = opts.startingEquipment ? MiscUtil.copy(opts.startingEquipment) : null;
+		this.__state.cpRolled = this._getInitialCpRolled();
+	}
+
+	init () {
+		const hkStartingEquipment = () => {
+			// Reset rolled gold
+			this._state.cpRolled = this._getInitialCpRolled();
+			this._state.rollableExpressionGold = this.constructor._getRollableExpressionGold(this._state.startingEquipment);
+		};
+		this._addHookBase("startingEquipment", hkStartingEquipment);
+		hkStartingEquipment();
+	}
+
+	static _getRollableExpressionGold (startingEquipment) {
+		if (!startingEquipment?.goldAlternative) return null;
+		const m = /{@dice ([^|]+)/.exec(startingEquipment.goldAlternative);
+		if (m) return m[1].replace(/×/g, "*");
+		if (!isNaN(`${startingEquipment.goldAlternative}`.trim())) return startingEquipment.goldAlternative.trim();
+		return null;
+	}
+
+	get startingEquipment () { return this._state.startingEquipment; }
+	set startingEquipment (val) { this._state.startingEquipment = val; }
+
+	get isStandalone () { return this._isStandalone; }
+
+	get rollableExpressionGold () { return this._state.rollableExpressionGold; }
+
+	get cpSpent () { return this._state.cpSpent; }
+	set cpSpent (val) { this._state.cpSpent = val; }
+
+	get cpRolled () { return this._state.cpRolled; }
+	set cpRolled (val) { this._state.cpRolled = val; }
+
+	get hasShownGoldWarning () { return this._state.hasShownGoldWarning; }
+	set hasShownGoldWarning (val) { this._state.hasShownGoldWarning = val; }
+
+	set cpFromDefault (val) { this._state.cpFromDefault = val; }
+
+	setCurrencyFromActor (startingCurrency) {
+		this._prevActorCurrency = MiscUtil.copy(startingCurrency);
+
+		const out = {};
+		Parser.COIN_ABVS.forEach(k => out[k] = startingCurrency[k] || 0);
+		this._proxyAssignSimple("state", out);
+	}
+
+	_getAvailableCp () {
+		return (this._state.cpRolled || 0)
+			+ (this._state.cpFromDefault || 0)
+			+ CurrencyUtil.getAsCopper({cp: this._state.cp, sp: this._state.sp, gp: this._state.gp, ep: this._state.ep, pp: this._state.pp});
+	}
+
+	_getOriginalCurrency () {
+		const out = Parser.COIN_ABVS.mergeMap(it => ({[it]: 0}));
+		Object.entries(this._prevActorCurrency || {})
+			.forEach(([coin, amount]) => out[coin] = (out[coin] || 0) + amount);
+
+		// Add any rolled currency, in gp/sp/cp, to the actor's original currency.
+		const fromRolled = CurrencyUtil.doSimplifyCoins({cp: this._state.cpRolled || 0});
+		Object.entries(fromRolled || {})
+			.forEach(([coin, amount]) => out[coin] = (out[coin] || 0) + amount);
+
+		// Do the same for currency from default starting equipment
+		const fromDefault = CurrencyUtil.doSimplifyCoins({cp: this._state.cpFromDefault || 0});
+		Object.entries(fromDefault || {})
+			.forEach(([coin, amount]) => out[coin] = (out[coin] || 0) + amount);
+
+		return out;
+	}
+
+	isStandardStartingEquipmentActive () {
+		return Object.keys(this.startingEquipment || {}).length && this.cpRolled == null;
+	}
+
+	async pGetFormData () {
+		return {
+			isFormComplete: true,
+			data: {
+				currency: CurrencyUtil.doSimplifyCoins(
+					{
+						cp: this.getRemainingCp(),
+					},
+					{
+						originalCurrency: this._getOriginalCurrency(),
+						isPopulateAllValues: true,
+						currencyConversionTable: Parser.FULL_CURRENCY_CONVERSION_TABLE,
+					},
+				),
+			},
+		};
+	}
+
+	getRemainingCp () {
+		return this._getAvailableCp() - this._state.cpSpent;
+	}
+
+	addHookCurrency (hk) { this._addHookAll("state", hk); }
+	addHookCpRolled (hk) { this._addHookBase("cpRolled", hk); }
+	addHookStartingEquipment (hk) { this._addHookBase("startingEquipment", hk); }
+	addHookRollableExpressionGold (hk) { this._addHookBase("rollableExpressionGold", hk); }
+
+	removeHookCpRolled (hk) { this._removeHookBase("cpRolled", hk); }
+
+	_getInitialCpRolled () {
+		if (this._isStandalone) return null;
+		const startingGp = Config.get("equipmentShop", "startingGold");
+		return startingGp ? CurrencyUtil.getAsCopper({gp: startingGp}) : null;
+	}
+
+	_getDefaultState () {
+		return {
+			startingEquipment: null,
+			rollableExpressionGold: null,
+
+			...Parser.COIN_ABVS.mergeMap(it => ({[it]: 0})),
+			cpSpent: 0,
+			cpRolled: this._getInitialCpRolled(),
+			cpFromDefault: 0,
+
+			hasShownGoldWarning: false,
+		};
+	}
+};
+
+Charactermancer_StartingEquipment.ComponentBase = class extends BaseComponent {
+	/**
+	 *
+	 * @param opts
+	 * @param [opts.compCurrency]
+	 */
+	constructor (opts) {
+		super();
+		this._compCurrency = opts.compCurrency;
+	}
+
+	static _getHumanReadableCoinage (copper) {
+		const asCoins = CurrencyUtil.doSimplifyCoins({cp: copper});
+		return [...Parser.COIN_ABVS]
+			.reverse().map(coin => asCoins[coin] ? `${asCoins[coin].toLocaleString()} ${coin}` : null)
+			.filter(Boolean)
+			.join(", ") || "0 gp";
+	}
+
+	async _pIsIgnoreGoldWarning () {
+		if (!Object.keys(this._compCurrency.startingEquipment || {}).length || this._compCurrency.hasShownGoldWarning) return true;
+
+		const isUseGold = await InputUiUtil.pGetUserBoolean({
+			title: `Are you sure?`,
+			htmlDescription: `Using gold to buy starting equipment is an alternative to standard starting equipment.<br>Are you sure you want to use gold?`,
+			textYes: "Yes",
+			textNo: "Cancel",
+		});
+		if (!isUseGold) return false;
+
+		this._compCurrency.hasShownGoldWarning = true;
+		return true;
+	}
+
+	_$getBtnRollStartingGold () {
+		return $(`<button class="btn btn-default btn-xs btn-5et">Roll Starting Gold</button>`)
+			.click(async () => {
+				if (!(await this._pIsIgnoreGoldWarning())) return;
+
+				const roll = new Roll(this._compCurrency.rollableExpressionGold);
+				await roll.evaluate();
+				this._compCurrency.cpRolled = roll.total * 100;
+				roll.toMessage(); // Send the message async
+			});
+	}
+
+	_$getBtnEnterStartingGold () {
+		return $(`<button class="btn btn-default btn-xs btn-5et" title="Manually enter a starting gold amount, as an alternate to rolling.">Enter Starting Gold</button>`)
+			.click(async () => {
+				if (!(await this._pIsIgnoreGoldWarning())) return;
+
+				const opts = {
+					min: 0,
+					title: "Enter Gold Amount",
+					int: true,
+				};
+				if (this._compCurrency.cpRolled != null) opts.default = Math.round(this._compCurrency.cpRolled / 100);
+
+				const amount = await InputUiUtil.pGetUserNumber(opts);
+				if (amount == null) return;
+
+				this._compCurrency.cpRolled = amount * 100;
+			});
+	}
+
+	_$getDispRolledGold () {
+		const $dispRolled = $(`<div></div>`);
+
+		const hkRolled = () => {
+			if (this._compCurrency.cpRolled == null && this._compCurrency.rollableExpressionGold != null) $dispRolled.html(`<i class="ve-muted">${this._compCurrency.rollableExpressionGold}</i>`);
+			else $dispRolled.html(this.constructor._getHumanReadableCoinage(this._compCurrency.cpRolled || 0));
+		};
+		hkRolled();
+		this._compCurrency.addHookRollableExpressionGold(hkRolled);
+		this._compCurrency.addHookCpRolled(hkRolled);
+
+		return $dispRolled;
+	}
+
+	_$getWrpRollOrManual ({$btnRoll, $dispRollOrManual, $btnManual, $dispRolled}) {
+		const $stgDispRolled = $dispRolled ? $$`<div class="m-1"> = </div>${$dispRolled}` : null;
+		return $$`<div class="ve-flex-v-center">${$btnRoll}${$dispRollOrManual}${$btnManual}${$stgDispRolled}</div>`;
+	}
+
+	_doBindRollableExpressionHooks ({$dispRollOrManual, $btnRoll, $btnManual, $spcRollOrManual, $wrpRollOrManual}) {
+		const hkRollableExpressionGold = () => {
+			// Only show the "roll" controls if we have a rollable expression (which implies we also have starting equipment)
+			$dispRollOrManual.toggleVe(this._compCurrency.rollableExpressionGold);
+			$btnRoll
+				.toggleVe(this._compCurrency.rollableExpressionGold)
+				.title(`Rolling ${this._compCurrency.rollableExpressionGold}`);
+
+			// Show the manual controls if we have any starting equipment
+			$btnManual.toggleVe(this._compCurrency.startingEquipment);
+
+			// Show the roll/manual controls if we have any starting equipment; specific parts may be hidden as per the above
+			if ($spcRollOrManual) $spcRollOrManual.toggleVe(!this._isPredefinedItemDatas && this._compCurrency.startingEquipment);
+			$wrpRollOrManual.toggleVe(this._compCurrency.startingEquipment);
+		};
+		this._compCurrency.addHookStartingEquipment(hkRollableExpressionGold);
+		this._compCurrency.addHookRollableExpressionGold(hkRollableExpressionGold);
+		hkRollableExpressionGold();
+	}
+};
+
+Charactermancer_StartingEquipment.ComponentDefault = class extends Charactermancer_StartingEquipment.ComponentBase {
+	/**
+	 * @param opts
+	 * @param [opts.compCurrency]
+	 * @param [opts.equiSpecialSource] The source to be assigned to "special" (i.e. non-statted items).
+	 * @param [opts.equiSpecialPage] The page number to be assigned to "special" (i.e. non-statted items).
+	 * @param [opts.fnDoShowShop]
+	 */
+	constructor (opts) {
+		super(opts);
+
+		opts = opts || {};
+
+		this._equiSpecialSource = opts.equiSpecialSource;
+		this._equiSpecialPage = opts.equiSpecialPage;
+		this._fnDoShowShop = opts.fnDoShowShop;
+
+		this._fnsUnhook = [];
+	}
+
+	set equiSpecialSource (val) { this._equiSpecialSource = val; }
+	set equiSpecialPage (val) { this._equiSpecialPage = val; }
+
+	get isAvailable () { return !!(this._compCurrency.startingEquipment?.defaultData?.length); }
+
+	async pGetFormData () {
+		const equipmentItemEntries = [];
+
+		const itemDatasDefault = await this._pGetItemDatasDefault();
+		if (itemDatasDefault) {
+			equipmentItemEntries.push(...itemDatasDefault);
+		}
+
+		const isValid = this._isValid_standard();
+		const messageInvalid = isValid ? null : `You have not made all available choices. Are you sure you want to continue?`;
+
+		return {
+			isFormComplete: isValid,
+			messageInvalid: messageInvalid,
+			data: {
+				equipmentItemEntries,
+			},
+		};
+	}
+
+	static _getItemIdWithDisplayName (itemId, displayName) {
+		if (!displayName) return itemId;
+
+		const itemIdParts = itemId.split("|");
+
+		// Ensure the ID is of length two (i.e., is of the form `name|source`)
+		while (itemIdParts.length > 2) itemIdParts.pop();
+		while (itemIdParts.length < 2) itemIdParts.push("");
+
+		itemIdParts.push(displayName);
+
+		return itemIdParts.join("|");
+	}
+
+	async pRender ($wrpTab) {
+		const $wrpTabInner = $(`<div class="ve-flex-col w-100 h-100 min-h-0"></div>`).appendTo($wrpTab);
+		this._render_standard($wrpTabInner);
+		return $wrpTabInner;
+	}
+
+	/** Iterate over the current default equipment choice state, running a function on each piece of equipment. */
+	_iterChosenStartingEquipment (fnEqui) {
+		const defaultData = (this._compCurrency.startingEquipment?.defaultData || []);
+
+		for (let ixGroup = 0; ixGroup < defaultData.length; ++ixGroup) {
+			const group = defaultData[ixGroup];
+			const propGroup = `std__choice__${ixGroup}`;
+
+			const choices = Object.entries(group);
+			for (let ixChoice = 0; ixChoice < choices.length; ++ixChoice) {
+				const [_, choice] = choices[ixChoice];
+
+				// If this choice is not selected, skip it
+				if (this._state[propGroup] !== ixChoice) continue;
+
+				for (let ixEqui = 0; ixEqui < choice.length; ++ixEqui) {
+					const equi = choice[ixEqui];
+
+					const out = fnEqui(ixGroup, ixChoice, equi);
+					if (out !== undefined) return out;
+				}
+			}
+		}
+	}
+
+	_render_standard ($wrpTabStandard) {
+		// region Roll/enter starting gold
+		const $btnRoll = this._$getBtnRollStartingGold();
+		const $dispRollOrManual = $(`<i class="mx-1">\u2013 or \u2013</i>`);
+		const $btnManual = this._$getBtnEnterStartingGold();
+
+		const $wrpRollOrManual = this._$getWrpRollOrManual({$dispRollOrManual, $btnRoll, $btnManual});
+
+		this._doBindRollableExpressionHooks({$dispRollOrManual, $btnRoll, $btnManual, $wrpRollOrManual});
+
+		const $rowSkipToShop = $$`<div class="w-100 py-1 ve-flex-v-center">
 			<div class="mr-1">Alternatively, </div>
-			${_0x1e7297}
+			${$wrpRollOrManual}
 			<div class="ml-1">to skip to the shop.</div>
-		</div>`[_0x3a5900(0x1f6)](_0x20bc99),_0x11153a=$(_0x3a5900(0x1db))[_0x3a5900(0x1a4)](async()=>{const _0x2d8ebf=_0x3a5900,_0x2ed137=await InputUiUtil[_0x2d8ebf(0xd0)]({'title':_0x2d8ebf(0x1d7),'htmlDescription':_0x2d8ebf(0x1d5)});if(!_0x2ed137)return;this[_0x2d8ebf(0x1ed)][_0x2d8ebf(0xf2)]=null;}),_0x1a274a=$$`<div class="w-100 py-1 flex-v-center">
+		</div>`.appendTo($wrpTabStandard);
+
+		const $btnResetStartingGold = $(`<button class="btn btn-default btn-xs btn-5et">Reset Starting Gold</button>`)
+			.click(async () => {
+				const isSure = await InputUiUtil.pGetUserBoolean({
+					title: `Are you sure?`,
+					htmlDescription: `This will discard your current starting gold roll or value.`,
+				});
+				if (!isSure) return;
+				this._compCurrency.cpRolled = null;
+			});
+		const $rowHasCpRolled = $$`<div class="w-100 py-1 ve-flex-v-center">
 			<div class="mr-2">You have rolled or entered a value for starting gold instead of using starting equipment.</div>
-			${_0x11153a}
+			${$btnResetStartingGold}
 			<div class="ml-1">to use the equipment listed below.</div>
-		</div>`[_0x3a5900(0x1f6)](_0x20bc99),_0x4967d3=()=>{const _0x197fdb=_0x3a5900;_0x1481d7['toggleVe'](this[_0x197fdb(0x1ed)][_0x197fdb(0xf2)]==null),_0x1a274a[_0x197fdb(0x1c9)](this[_0x197fdb(0x1ed)][_0x197fdb(0xf2)]!=null);};this[_0x3a5900(0x1ed)][_0x3a5900(0xb5)](_0x4967d3),_0x4967d3();if(this[_0x3a5900(0x19e)]){const _0xf1581d=(_0x43cce7,_0x4956a1,_0x44f7f3)=>{const _0x4bc318=_0x3a5900;if(_0x44f7f3==null&&_0x4956a1!=null)this[_0x4bc318(0x19e)]();};this['_compCurrency'][_0x3a5900(0xb5)](_0xf1581d);}const _0x240c54=$$`<div class="flex-col w-100 h-100 min-h-0 overflow-y-auto"></div>`[_0x3a5900(0x1f6)](_0x20bc99),_0x2490d0=()=>{const _0x306acd=_0x3a5900,_0x543776=this[_0x306acd(0x1ed)][_0x306acd(0x1d8)]?.[_0x306acd(0x167)]||[];this['_fnsUnhook'][_0x306acd(0xb7)](_0x15c274=>_0x15c274()),this['_fnsUnhook']=[],Object[_0x306acd(0x92)](this[_0x306acd(0x1d6)])[_0x306acd(0x1e5)](_0x32d9f1=>_0x32d9f1['startsWith'](_0x306acd(0x1c4)))[_0x306acd(0xb7)](_0x5d2579=>delete this[_0x306acd(0x1d6)][_0x5d2579]),_0x240c54['empty']();const _0x22da88=_0x543776['map']((_0x425b25,_0x16864a)=>{const _0x4fc27a=_0x306acd,_0x2bbde4=Object[_0x4fc27a(0x92)](_0x425b25)['length']===0x1,_0x16682e=_0x4fc27a(0x136)+_0x16864a;this[_0x4fc27a(0x1d6)][_0x16682e]=0x0;const _0x13fb57=Object[_0x4fc27a(0x8c)](_0x425b25),_0x4a7a04=_0x13fb57['map'](([_0x4725f6,_0x46d97a],_0x5b0433)=>{const _0x1a5c16=_0x4fc27a,_0x5e7cd3=[];_0x46d97a[_0x1a5c16(0xb7)]((_0xf79f0d,_0x330d84)=>{const _0x51b2ff=_0x1a5c16;if(typeof _0xf79f0d===_0x51b2ff(0xcf))_0x5e7cd3['push'](Renderer[_0x51b2ff(0x86)]()['render'](_0x51b2ff(0xff)+_0xf79f0d+'}'));else{if(_0xf79f0d[_0x51b2ff(0x1bf)]){const _0x514ea7=this[_0x51b2ff(0x19c)]['_getItemIdWithDisplayName'](_0xf79f0d[_0x51b2ff(0x1bf)],_0xf79f0d[_0x51b2ff(0x83)]);_0x5e7cd3['push'](Renderer[_0x51b2ff(0x86)]()['render']((_0xf79f0d[_0x51b2ff(0x1ab)]?_0xf79f0d['quantity']+'×\x20':'')+'{@item\x20'+_0x514ea7+'}'+(_0xf79f0d[_0x51b2ff(0x130)]?'\x20containing\x20'+this['constructor'][_0x51b2ff(0x125)](_0xf79f0d[_0x51b2ff(0x130)]):'')));}else{if(_0xf79f0d[_0x51b2ff(0x1d1)]){const _0xf13c04=Charactermancer_StartingEquipment[_0x51b2ff(0x11b)][_0xf79f0d['equipmentType']];if(!_0xf13c04)throw new Error(_0x51b2ff(0xd7)+_0xf79f0d['equipmentType']+'\x22');const _0x4ed527=_0xf79f0d[_0x51b2ff(0x1ab)]||0x1;for(let _0x2b73bd=0x0;_0x2b73bd<_0x4ed527;++_0x2b73bd){const _0x367fdd=$('<div\x20class=\x22inline\x22></div>'),_0x5e5b3c=_0x51b2ff(0x1b1)+_0x16864a+'__'+_0x5b0433+'__'+_0x2b73bd,_0x256cb8=()=>{const _0x1714be=_0x51b2ff;if(!this[_0x1714be(0x1d6)][_0x5e5b3c]){_0x367fdd[_0x1714be(0x16b)]('<i\x20class=\x22ve-muted\x22>(select\x20an\x20item)</i>');return;}_0x367fdd['html'](Renderer['get']()[_0x1714be(0x1c3)](_0x1714be(0xff)+this[_0x1714be(0x1d6)][_0x5e5b3c]+'}'));};this[_0x51b2ff(0x176)](_0x5e5b3c,_0x256cb8),this[_0x51b2ff(0x18e)][_0x51b2ff(0x105)](()=>this[_0x51b2ff(0x118)](_0x5e5b3c,_0x256cb8)),_0x256cb8();const _0x586822=$(_0x51b2ff(0xf6))[_0x51b2ff(0x1a4)](()=>{const _0x1f21fd=_0x51b2ff,_0x2e29c0=Charactermancer_StartingEquipment['_EQUIPMENT_SET_NAMES'][_0xf79f0d[_0x1f21fd(0x1d1)]],{$modalInner:_0x4bc574,doClose:_0x41e0fd}=UiUtil['getShowModal']({'title':_0x1f21fd(0x90)+(_0x2e29c0?'\x20—\x20'+_0x2e29c0:'')}),_0x4eb4c3=_0xf13c04['map'](_0x47e333=>{const _0x4117da=_0x1f21fd,_0x57851c=$(_0x4117da(0x175))[_0x4117da(0x1a4)](()=>{const _0x4d68fd=_0x4117da;this[_0x4d68fd(0x1d6)][_0x5e5b3c]=_0x47e333,_0x41e0fd(!![]);});return $$`<div class="flex-v-center py-1 stripe-even">${_0x57851c}${Renderer[_0x4117da(0x86)]()[_0x4117da(0x1c3)](_0x4117da(0xff)+_0x47e333[_0x4117da(0x1b4)]()+'}')}</div>`;});$$(_0x4bc574)`<div class="flex-col h-100">${_0x4eb4c3}</div>`;});_0x5e7cd3[_0x51b2ff(0x105)]($$`<div class="inline">${_0x367fdd} ${_0x586822}</div>`);if(_0x2b73bd<_0x4ed527-0x1)_0x5e7cd3['push'](',\x20');}}else{if(_0xf79f0d[_0x51b2ff(0x13b)])_0x5e7cd3[_0x51b2ff(0x105)](Renderer['get']()[_0x51b2ff(0x1c3)](''+(_0xf79f0d[_0x51b2ff(0x1ab)]?_0xf79f0d[_0x51b2ff(0x1ab)]+'×\x20':'')+_0xf79f0d[_0x51b2ff(0x13b)]+(_0xf79f0d[_0x51b2ff(0x130)]?'\x20containing\x20'+this['constructor'][_0x51b2ff(0x125)](_0xf79f0d['containsValue']):'')+(_0xf79f0d[_0x51b2ff(0x100)]?_0x51b2ff(0x1da)+this[_0x51b2ff(0x19c)][_0x51b2ff(0x125)](_0xf79f0d[_0x51b2ff(0x100)]):'')));else{if(_0xf79f0d[_0x51b2ff(0x97)]!=null)_0x5e7cd3['push'](this['constructor'][_0x51b2ff(0x125)](_0xf79f0d[_0x51b2ff(0x97)]));else throw new Error('Unknown\x20equipment\x20data\x20format:\x20'+JSON['stringify'](_0xf79f0d));}}}}if(_0x330d84<_0x46d97a[_0x51b2ff(0x142)]-0x1)_0x5e7cd3[_0x51b2ff(0x105)](',\x20');});const _0x1963eb=$(_0x1a5c16(0x11e)+(_0x2bbde4?'':_0x1a5c16(0x154)+_0x4725f6+'\x22')+'>'+(_0x2bbde4?_0x1a5c16(0xd9):'('+_0x4725f6+')')+_0x1a5c16(0x158))[_0x1a5c16(0x1a4)](async()=>{const _0x4197a9=_0x1a5c16;if(this[_0x4197a9(0x1ed)][_0x4197a9(0xf2)]!=null){const _0x4f2b5e=await InputUiUtil['pGetUserBoolean']({'title':_0x4197a9(0x1d7),'htmlDescription':_0x4197a9(0xe7)});if(!_0x4f2b5e)return;this[_0x4197a9(0x1ed)][_0x4197a9(0xf2)]=null;}if(_0x2bbde4)return;this[_0x4197a9(0x1d6)][_0x16682e]=_0x5b0433;}),_0x14ca47=$$`<div class="w-100">${_0x5e7cd3}</div>`,_0x2aca80=()=>{const _0x479569=_0x1a5c16;_0x1963eb[_0x479569(0x174)](_0x479569(0x192),this[_0x479569(0x1ed)]['cpRolled']!=null),_0x14ca47[_0x479569(0x174)](_0x479569(0x192),this[_0x479569(0x1ed)][_0x479569(0xf2)]!=null);if(this[_0x479569(0x1ed)][_0x479569(0xf2)]!=null){_0x1963eb[_0x479569(0x184)](_0x479569(0xc5)),_0x1963eb[_0x479569(0xad)](_0x479569(0xc1),![]);return;}if(_0x2bbde4)_0x1963eb[_0x479569(0xad)]('disabled',!![]);if(this[_0x479569(0x1d6)][_0x16682e]===_0x5b0433)_0x1963eb[_0x479569(0xde)](_0x479569(0xc5));else _0x1963eb[_0x479569(0x184)](_0x479569(0xc5));};this[_0x1a5c16(0x176)](_0x16682e,_0x2aca80),this[_0x1a5c16(0x1ed)][_0x1a5c16(0xb5)](_0x2aca80),this[_0x1a5c16(0x18e)][_0x1a5c16(0x105)](()=>this['_removeHookBase'](_0x16682e,_0x2aca80)),this[_0x1a5c16(0x18e)]['push'](()=>this[_0x1a5c16(0x1ed)]['removeHookCpRolled'](_0x2aca80)),_0x2aca80();if(_0x5b0433<_0x13fb57[_0x1a5c16(0x142)]-0x1)_0x1963eb[_0x1a5c16(0xde)](_0x1a5c16(0x127));return $$`<div class="flex-vh-center">
-							${_0x1963eb}
-							${_0x14ca47}
-						</div>`;});return $$`<div class="flex-col w-100 p-1 my-1 imp__cls__wrp-equi-group">${_0x4a7a04}</div>`;});_0x22da88[_0x306acd(0xb7)](_0x4810d5=>_0x240c54[_0x306acd(0x9f)](_0x4810d5)),!_0x22da88[_0x306acd(0x142)]&&_0x240c54[_0x306acd(0x9f)](_0x306acd(0xdb));};this[_0x3a5900(0x1ed)][_0x3a5900(0x137)](_0x2490d0),_0x2490d0();const _0x52cd8c=()=>{let _0x24db6c=0x0;const _0x240845=(_0x26f1d7,_0x143d4a,_0x5e37fe)=>{const _0x552a51=_0x510b;if(_0x5e37fe['item']){if(_0x5e37fe['containsValue'])_0x24db6c+=_0x5e37fe['containsValue'];}else{if(_0x5e37fe[_0x552a51(0x13b)]){if(_0x5e37fe['containsValue'])_0x24db6c+=_0x5e37fe['containsValue'];}else _0x5e37fe[_0x552a51(0x97)]&&(_0x24db6c+=_0x5e37fe['value']);}};this['_iterChosenStartingEquipment'](_0x240845),this['_compCurrency']['cpFromDefault']=_0x24db6c;};this[_0x3a5900(0x140)](_0x3a5900(0x8d),_0x52cd8c),_0x52cd8c();}[_0x4cad17(0x1bd)](){const _0x2a5b03=_0x4cad17;if(!this['isAvailable']||this[_0x2a5b03(0x1ed)][_0x2a5b03(0xf2)]!=null)return!![];const _0x514cd8=(_0x3b86de,_0x2d150f,_0x5f29d8)=>{const _0x21e72d=_0x2a5b03;if(_0x5f29d8['equipmentType']){const _0x4e1c87=_0x5f29d8[_0x21e72d(0x1ab)]||0x1;for(let _0x25b903=0x0;_0x25b903<_0x4e1c87;++_0x25b903){const _0x2e0449=_0x21e72d(0x1b1)+_0x3b86de+'__'+_0x2d150f+'__'+_0x25b903;if(this[_0x21e72d(0x1d6)][_0x2e0449]==null)return![];}}},_0x3bc792=this[_0x2a5b03(0xe3)](_0x514cd8);if(_0x3bc792!==undefined)return _0x3bc792;return!![];}async['_pGetItemDatasDefault'](){const _0x579b35=_0x4cad17;if(this[_0x579b35(0x1ed)][_0x579b35(0xf2)])return[];const _0x5c12c9=[],_0x56e6ef=[],_0x460547=(_0x5635c8,_0x5354b8)=>{const _0x40b804=_0x579b35,_0x50d2cd=_0x5c12c9['find'](_0x3136c4=>_0x3136c4['itemUid']===_0x5635c8);if(_0x50d2cd)_0x50d2cd[_0x40b804(0x1ab)]+=_0x5354b8;else _0x5c12c9[_0x40b804(0x105)]({'itemUid':_0x5635c8,'quantity':_0x5354b8});},_0x41f952=(_0x53f875,_0xdb463a,_0x2694b1)=>{const _0x5a45f0=_0x579b35;if(typeof _0x2694b1===_0x5a45f0(0xcf))_0x460547(_0x2694b1,0x1);else{if(_0x2694b1[_0x5a45f0(0x1bf)])_0x460547(this[_0x5a45f0(0x19c)][_0x5a45f0(0xbd)](_0x2694b1[_0x5a45f0(0x1bf)],_0x2694b1[_0x5a45f0(0x83)]),_0x2694b1['quantity']||0x1);else{if(_0x2694b1[_0x5a45f0(0x1d1)]){const _0x31a611=_0x2694b1[_0x5a45f0(0x1ab)]||0x1;for(let _0x146910=0x0;_0x146910<_0x31a611;++_0x146910){const _0x320b7e='std__equi__'+_0x53f875+'__'+_0xdb463a+'__'+_0x146910,_0x297997=this[_0x5a45f0(0x1d6)][_0x320b7e];if(_0x297997!=null)_0x460547(_0x297997,0x1);}}else _0x2694b1[_0x5a45f0(0x13b)]&&_0x56e6ef['push']({'item':{'name':_0x2694b1[_0x5a45f0(0x13b)][_0x5a45f0(0x1f5)](),'source':this['_equiSpecialSource'],'page':this['_equiSpecialPage'],'type':'OTH','rarity':_0x5a45f0(0x1b8)},'quantity':_0x2694b1[_0x5a45f0(0x1ab)]||0x1});}}};this[_0x579b35(0xe3)](_0x41f952);const _0x432b83=[];for(const _0x3c1d24 of _0x5c12c9){const [_0xc8c9c,_0x4a2f39,_0x36aded]=_0x3c1d24[_0x579b35(0x132)][_0x579b35(0xdd)]('|'),_0x1c69aa=UrlUtil[_0x579b35(0xa4)][UrlUtil[_0x579b35(0xb4)]]({'name':_0xc8c9c,'source':_0x4a2f39}),_0x37f3d0=await Renderer[_0x579b35(0xbb)][_0x579b35(0x1f8)](UrlUtil[_0x579b35(0xb4)],_0x1c69aa);if(_0x36aded)_0x37f3d0['_displayName']=_0x36aded[_0x579b35(0x1f5)]();_0x432b83[_0x579b35(0x105)]({'item':_0x37f3d0,'quantity':_0x3c1d24['quantity']});}const {ImportListItem:_0xc8c48b}=await import(_0x579b35(0x144)),_0x36c9c1=_0x432b83['sort']((_0x1ebe74,_0x5e0d23)=>_0xc8c48b[_0x579b35(0xc2)](_0x1ebe74['item'],_0x5e0d23[_0x579b35(0x1bf)]));return[..._0x36c9c1,..._0x56e6ef];}[_0x4cad17(0x173)](){return{};}},Charactermancer_StartingEquipment[_0x4cad17(0x190)]=class extends Charactermancer_StartingEquipment['ComponentBase']{constructor(_0x10a3c3){const _0x50209d=_0x4cad17;super(_0x10a3c3),this['_isPredefinedItemDatas']=!!_0x10a3c3['itemDatas'];if(_0x10a3c3['itemDatas'])this[_0x50209d(0x1d6)]['itemDatas']=_0x10a3c3[_0x50209d(0x1ba)];this[_0x50209d(0x165)]=null;}get[_0x4cad17(0x151)](){return!![];}async[_0x4cad17(0x1be)](){const _0x1d19bb=_0x4cad17,_0x37b3df=[],_0x473f8f=await this['_pGetItemEntries']();_0x473f8f&&_0x37b3df[_0x1d19bb(0x105)](..._0x473f8f);const _0x5cd8df=await this[_0x1d19bb(0xaa)](),_0x5c29e8=_0x5cd8df?null:_0x1d19bb(0x1e3);return{'isFormComplete':_0x5cd8df,'messageInvalid':_0x5c29e8,'data':{'equipmentItemEntries':_0x37b3df}};}async[_0x4cad17(0x1cc)](_0x18841f){const _0x545a61=_0x4cad17,_0x5cfbf5=$(_0x545a61(0x149))['appendTo'](_0x18841f);return await this[_0x545a61(0x1f2)](_0x5cfbf5),_0x5cfbf5;}async[_0x4cad17(0x1f2)](_0x5780ea){const _0x1a6c4a=_0x4cad17;await Renderer[_0x1a6c4a(0x1bf)][_0x1a6c4a(0x1c0)]();const {ImportListItem:_0x3a93ac}=await import(_0x1a6c4a(0x144)),_0xc67de2=await _0x3a93ac[_0x1a6c4a(0x110)](),_0x40ce18=new AppSourceSelectorMulti({'title':_0x1a6c4a(0x85),'filterNamespace':_0x1a6c4a(0xfe),'savedSelectionKey':'ImportListCharacter_StartingEquipment_savedSelection','sourcesToDisplay':_0xc67de2}),_0x3804fa=this[_0x1a6c4a(0x1a0)]?null:$('<button\x20class=\x22btn\x20btn-xs\x20btn-default\x20btn-5et\x22>Choose\x20Item\x20Sources</button>')['click'](async()=>{const _0x5bed72=_0x1a6c4a;_0x40ce18[_0x5bed72(0x1c3)](!![]);const _0x3765da=await _0x40ce18[_0x5bed72(0x113)]();if(_0x3765da==null)return;this[_0x5bed72(0x1d6)]['itemDatas']=_0x3765da;});!this[_0x1a6c4a(0x1a0)]&&_0x40ce18[_0x1a6c4a(0xee)]()[_0x1a6c4a(0x17e)](_0x2be248=>{const _0x1d62e7=_0x1a6c4a;if(!_0x2be248)return;this['_state'][_0x1d62e7(0x1ba)]=_0x2be248;});const _0x57547e=$('<div\x20class=\x22ml-auto\x20flex-v-center\x22></div>'),_0xeb1d82=()=>{const _0x4ca746=_0x1a6c4a,_0x22f296=this[_0x4ca746(0x1ed)]['getRemainingCp']();_0x57547e[_0x4ca746(0x16b)](_0x4ca746(0x1b2)+this[_0x4ca746(0x19c)][_0x4ca746(0x125)](this[_0x4ca746(0x1ed)][_0x4ca746(0xfc)])+'</span>\x0a\x09\x09\x09\x09</div>\x0a\x09\x09\x09\x09<div\x20class=\x22vr-1\x22></div>\x0a\x09\x09\x09\x09<span>(</span>\x0a\x09\x09\x09\x09<div\x20title=\x22The\x20total\x20remaining\x20gold\x20available\x20to\x20this\x20character.\x20This\x20amount\x20is\x20a\x20combination\x20of\x20the\x20currency\x20on\x20their\x20sheet,\x20plus\x20any\x20contextual\x20modifiers\x20(such\x20as\x20class\x20starting\x20gold\x20when\x20importing\x20a\x20class).\x22>\x0a\x09\x09\x09\x09\x09<b\x20class=\x22mr-1\x22>Remaining:</b>\x0a\x09\x09\x09\x09\x09<span\x20'+(_0x22f296<0x0?_0x4ca746(0x1ac):'')+'>'+this['constructor'][_0x4ca746(0x125)](_0x22f296)+_0x4ca746(0x14c));};this['_compCurrency'][_0x1a6c4a(0x112)](_0xeb1d82),_0xeb1d82();const _0x52ec85=$('<i\x20class=\x22mx-1\x22>–\x20or\x20–</i>'),_0x494fbf=this['_$getBtnRollStartingGold'](),_0x491346=this[_0x1a6c4a(0x14d)](),_0xcfa66b=this[_0x1a6c4a(0x106)](),_0x223c28=$(_0x1a6c4a(0xe4)),_0x40a037=this[_0x1a6c4a(0xe6)]({'$dispRollOrManual':_0x52ec85,'$btnRoll':_0x494fbf,'$btnManual':_0x491346,'$dispRolled':_0xcfa66b})[_0x1a6c4a(0xde)]('mr-3');this[_0x1a6c4a(0x163)]({'$dispRollOrManual':_0x52ec85,'$btnRoll':_0x494fbf,'$btnManual':_0x491346,'$spcRollOrManual':_0x223c28,'$wrpRollOrManual':_0x40a037}),this[_0x1a6c4a(0x165)]=new Charactermancer_StartingEquipment['ModalFilterEquipment'](this);const _0x3ac63e=$('<div\x20class=\x22flex-col\x20w-50\x20h-100\x20min-h-0\x22><div\x20class=\x22flex-vh-center\x20italic\x20w-100\x20h-100\x22>Loading...</div></div>');this[_0x1a6c4a(0x165)][_0x1a6c4a(0x187)](_0x3ac63e,{'isBuildUi':!![],'$btnOpen':$(_0x1a6c4a(0x150)),'$btnToggleSummaryHidden':$(_0x1a6c4a(0xd1)),'$btnReset':$('<button\x20class=\x22btn-5et\x20veapp__btn-list-reset\x22\x20name=\x22btn-reset\x22>Reset</button>')})['then'](_0x2b393b=>{const _0x4d563e=_0x1a6c4a,{list:_0x380403,$btnSendAllToRight:_0x512e34}=_0x2b393b;_0x512e34[_0x4d563e(0xde)](_0x4d563e(0x93))[_0x4d563e(0x1a4)](async _0x5685e1=>{const _0x2abc38=_0x4d563e;if(_0x380403[_0x2abc38(0x84)][_0x2abc38(0x142)]>0xa&&!await InputUiUtil['pGetUserBoolean']({'title':_0x2abc38(0xfb)+_0x380403['visibleItems'][_0x2abc38(0x142)]+_0x2abc38(0x1a6)}))return;const _0x2b3c24=_0x5685e1[_0x2abc38(0x9c)]?0x5:0x1;_0x380403[_0x2abc38(0x84)][_0x2abc38(0xb7)](_0x3173ac=>this[_0x2abc38(0xc4)](_0x3173ac[_0x2abc38(0x18f)]+'|'+_0x3173ac[_0x2abc38(0xa5)][_0x2abc38(0x1b6)],{'quantity':_0x2b3c24,'isTriggerUpdate':![]})),this[_0x2abc38(0x8b)](_0x2abc38(0xa9));}),_0xe1cfe2();});const _0x18d9d1=$(_0x1a6c4a(0xe9)),_0x2802d5=()=>{const _0x27128f=_0x1a6c4a;this[_0x27128f(0xb8)]({'prop':_0x27128f(0xa9),'fnUpdateExisting':(_0x46405e,_0x5f463e)=>{const _0x4f0478=_0x27128f;_0x46405e[_0x4f0478(0x134)]['_proxyAssignSimple'](_0x4f0478(0x8d),_0x5f463e['data'],!![]);},'fnGetNew':_0x171b27=>{const _0x3c4a29=_0x27128f,_0x49b7e2=BaseComponent[_0x3c4a29(0x191)](_0x171b27[_0x3c4a29(0x1ca)]);_0x49b7e2[_0x3c4a29(0x140)](_0x3c4a29(0x8d),()=>{const _0x6dbf1f=_0x3c4a29;_0x171b27[_0x6dbf1f(0x1ca)]=_0x49b7e2['toObject'](),this[_0x6dbf1f(0x8b)]('itemPurchases');});const [_0x3d6bb6,_0x2c2ea4]=_0x171b27['data'][_0x3c4a29(0x1ec)]['split']('|');Renderer[_0x3c4a29(0xbb)][_0x3c4a29(0x1f8)](UrlUtil[_0x3c4a29(0xb4)],UrlUtil[_0x3c4a29(0xa4)][UrlUtil[_0x3c4a29(0xb4)]]({'name':_0x3d6bb6,'source':_0x2c2ea4}))['then'](_0x22a26b=>{const _0x45a6a7=_0x3c4a29;_0x49b7e2['_state'][_0x45a6a7(0x18f)]=_0x22a26b[_0x45a6a7(0x18f)],_0x49b7e2[_0x45a6a7(0x1d6)][_0x45a6a7(0x97)]=_0x22a26b[_0x45a6a7(0x97)]*Config['get'](_0x45a6a7(0x13e),_0x45a6a7(0x1c6));});const _0x494602=()=>{const _0x44244c=_0x3c4a29;if(_0x49b7e2[_0x44244c(0x1d6)][_0x44244c(0x1ab)]>0x0)return;this['_state']['itemPurchases']=this[_0x44244c(0x1d6)][_0x44244c(0xa9)][_0x44244c(0x1e5)](_0x5ccdf0=>_0x5ccdf0!==_0x171b27);};_0x49b7e2[_0x3c4a29(0x176)]('quantity',_0x494602);const _0x271fdc=$(_0x3c4a29(0x101))[_0x3c4a29(0x1a4)](_0x3158c7=>{const _0x323c5f=_0x3c4a29;if(_0x3158c7[_0x323c5f(0x9c)])_0x49b7e2[_0x323c5f(0x1d6)][_0x323c5f(0x1ab)]-=0x5;else _0x49b7e2[_0x323c5f(0x1d6)][_0x323c5f(0x1ab)]--;}),_0x5afc14=$(_0x3c4a29(0x12e))['click'](_0x743778=>{const _0x4e58b6=_0x3c4a29;if(_0x743778[_0x4e58b6(0x9c)])_0x49b7e2[_0x4e58b6(0x1d6)][_0x4e58b6(0x1ab)]+=0x5;else _0x49b7e2['_state'][_0x4e58b6(0x1ab)]++;}),_0x150e8d=$(_0x3c4a29(0xa8)),_0x4ad0b8=()=>_0x150e8d[_0x3c4a29(0x16d)](_0x49b7e2[_0x3c4a29(0x1d6)][_0x3c4a29(0x1ab)]);_0x49b7e2['_addHookBase'](_0x3c4a29(0x1ab),_0x4ad0b8),_0x4ad0b8();const _0x1a0d0f=$('<div\x20class=\x22w-100\x22></div>'),_0x3d536a=()=>_0x1a0d0f[_0x3c4a29(0x16b)](Renderer['get']()[_0x3c4a29(0x1c3)](_0x3c4a29(0xff)+_0x49b7e2['_state'][_0x3c4a29(0x1ec)]+'|'+(_0x49b7e2[_0x3c4a29(0x1d6)][_0x3c4a29(0x18f)]||'')+'}'));_0x49b7e2[_0x3c4a29(0x176)]('name',_0x3d536a),_0x3d536a();const _0x1bc847=$(_0x3c4a29(0xab)),_0x5ab3b5=()=>_0x1bc847[_0x3c4a29(0x16b)](_0x49b7e2[_0x3c4a29(0x1d6)]['isIgnoreCost']?_0x3c4a29(0x1a1):this[_0x3c4a29(0x19c)][_0x3c4a29(0x125)](_0x49b7e2['_state']['value']));_0x49b7e2[_0x3c4a29(0x176)](_0x3c4a29(0x97),_0x5ab3b5),_0x5ab3b5();const _0x47fd24=$(_0x3c4a29(0xab)),_0x501a07=()=>{const _0x412090=_0x3c4a29;if(_0x49b7e2[_0x412090(0x1d6)]['value']==null||_0x49b7e2[_0x412090(0x1d6)][_0x412090(0x1ab)]==null)return;_0x47fd24['html'](_0x49b7e2[_0x412090(0x1d6)]['isIgnoreCost']?_0x412090(0x1a1):this[_0x412090(0x19c)][_0x412090(0x125)](_0x49b7e2[_0x412090(0x1d6)][_0x412090(0x97)]*_0x49b7e2[_0x412090(0x1d6)][_0x412090(0x1ab)]));};_0x49b7e2[_0x3c4a29(0x176)](_0x3c4a29(0x97),_0x501a07),_0x49b7e2[_0x3c4a29(0x176)](_0x3c4a29(0x1ab),_0x501a07),_0x501a07();const _0x55246b=$$`<div class="py-1p my-0 veapp__list-row flex-v-center w-100">
-						<div class="btn-group flex-vh-center no-shrink imp__cls__wrp-equi-btns">
-							${_0x271fdc}
-							${_0x5afc14}
+		</div>`.appendTo($wrpTabStandard);
+
+		const hkCpRolled = () => {
+			$rowSkipToShop.toggleVe(this._compCurrency.cpRolled == null);
+			$rowHasCpRolled.toggleVe(this._compCurrency.cpRolled != null);
+		};
+		this._compCurrency.addHookCpRolled(hkCpRolled);
+		hkCpRolled();
+
+		// Bind "switch to shop view" function to fire when we go from "no money rolled" -> "money rolled"
+		if (this._fnDoShowShop) {
+			const hkOnChangeCurrency = (prop, val, prevVal) => {
+				if (prevVal == null && val != null) this._fnDoShowShop();
+			};
+			this._compCurrency.addHookCpRolled(hkOnChangeCurrency);
+		}
+		// endregion
+
+		const $wrpRows = $$`<div class="ve-flex-col w-100 h-100 min-h-0 overflow-y-auto"></div>`.appendTo($wrpTabStandard);
+
+		const hkStartingEquipment = () => {
+			const defaultData = this._compCurrency.startingEquipment?.defaultData || [];
+
+			// region Cleanup
+			this._fnsUnhook.forEach(fn => fn());
+			this._fnsUnhook = [];
+			Object.keys(this._state).filter(k => k.startsWith(`std__`)).forEach(k => delete this._state[k]);
+			$wrpRows.empty();
+			// endregion
+
+			const $rows = defaultData.map((group, ixGroup) => {
+				const isSingleOption = Object.keys(group).length === 1;
+				const propGroup = `std__choice__${ixGroup}`;
+				this._state[propGroup] = 0; // Default to the first group
+
+				const choices = Object.entries(group);
+
+				const $wrpsChoices = choices
+					.map(([choiceName, choice], ixChoice) => {
+						const children = [];
+						choice.forEach((equi, ixEqui) => {
+							if (typeof equi === "string") children.push(Renderer.get().render(`{@item ${equi}}`));
+							else if (equi.item) {
+								const itemId = this.constructor._getItemIdWithDisplayName(equi.item, equi.displayName);
+
+								children.push(Renderer.get().render(`${equi.quantity ? `${equi.quantity}× ` : ""}{@item ${itemId}}${equi.containsValue ? ` containing ${this.constructor._getHumanReadableCoinage(equi.containsValue)}` : ""}`));
+							} else if (equi.equipmentType) {
+								const equiChoices = Charactermancer_StartingEquipment._EQUIPMENT_SETS[equi.equipmentType];
+								if (!equiChoices) throw new Error(`Unhandled equipmentType "${equi.equipmentType}"`);
+
+								const num = equi.quantity || 1;
+								for (let i = 0; i < num; ++i) {
+									const $dispEqui = $(`<div class="inline"></div>`);
+									const propEqui = `std__equi__${ixGroup}__${ixChoice}__${i}`;
+
+									const hkDispEqui = () => {
+										if (!this._state[propEqui]) {
+											$dispEqui.html(`<i class="ve-muted">(select an item)</i>`);
+											return;
+										}
+
+										$dispEqui.html(Renderer.get().render(`{@item ${this._state[propEqui]}}`));
+									};
+									this._addHookBase(propEqui, hkDispEqui);
+									this._fnsUnhook.push(() => this._removeHookBase(propEqui, hkDispEqui));
+									hkDispEqui();
+
+									const $btnPick = $(`<button class="btn btn-default btn-xxs" title="Choose an Item"><span class="fas fa-fw fa-search"></span></button>`)
+										.click(async () => {
+											const equiChoicesName = Charactermancer_StartingEquipment._EQUIPMENT_SET_NAMES[equi.equipmentType];
+											const {$modalInner, doClose, doAutoResize: doAutoResizeModal} = await UtilApplications.pGetShowApplicationModal({
+												title: `Choose Item${equiChoicesName ? ` \u2014 ${equiChoicesName}` : ""}`,
+											});
+
+											const $rows = equiChoices.map(itemUid => {
+												const $btnChoose = $(`<button class="btn btn-xs btn-default mr-2"><span class="fas fa-fw fa-check"></span></button>`)
+													.click(() => {
+														this._state[propEqui] = itemUid;
+														doClose(true);
+													});
+
+												return $$`<div class="ve-flex-v-center py-1 stripe-even">${$btnChoose}${Renderer.get().render(`{@item ${itemUid.uppercaseFirst()}}`)}</div>`;
+											});
+
+											$$($modalInner)`<div class="ve-flex-col h-100">${$rows}</div>`;
+
+											doAutoResizeModal();
+										});
+
+									children.push($$`<div class="inline">${$btnPick} ${$dispEqui}</div>`);
+
+									if (i < num - 1) children.push(", ");
+								}
+							} else if (equi.special) {
+								children.push(Renderer.get().render(`${equi.quantity ? `${equi.quantity}× ` : ""}${equi.special}${equi.containsValue ? ` containing ${this.constructor._getHumanReadableCoinage(equi.containsValue)}` : ""}${equi.worthValue ? `, worth ${this.constructor._getHumanReadableCoinage(equi.worthValue)}` : ""}`));
+							} else if (equi.value != null) {
+								children.push(this.constructor._getHumanReadableCoinage(equi.value));
+							} else throw new Error(`Unknown equipment data format: ${JSON.stringify(equi)}`);
+
+							if (ixEqui < choice.length - 1) children.push(", ");
+						});
+
+						const $btnSelGroup = $(`<button class="btn btn-default btn-sm no-shrink ve-flex-vh-center imp-cls__disp-equi-choice-key mr-2 bold" ${isSingleOption ? "" : `title="Select Equipment Group ${choiceName}"`}>${isSingleOption ? "&nbsp;" : `(${choiceName})`}</button>`)
+							.click(async () => {
+								if (this._compCurrency.cpRolled != null) {
+									const isSure = await InputUiUtil.pGetUserBoolean({
+										title: `Are you sure?`,
+										htmlDescription: `You have already rolled or set gold for equipment!<br>Selecting default starting equipment will discard this roll or value.`,
+									});
+									if (!isSure) return;
+
+									this._compCurrency.cpRolled = null;
+								}
+
+								if (isSingleOption) return;
+
+								this._state[propGroup] = ixChoice;
+							});
+
+						const $wrpChildren = $$`<div class="w-100">${children}</div>`;
+
+						const hkSelGroup = () => {
+							$btnSelGroup.toggleClass("ve-muted", this._compCurrency.cpRolled != null);
+							$wrpChildren.toggleClass("ve-muted", this._compCurrency.cpRolled != null);
+
+							if (this._compCurrency.cpRolled != null) {
+								$btnSelGroup.removeClass("active");
+								$btnSelGroup.prop("disabled", false);
+								return;
+							}
+
+							if (isSingleOption) $btnSelGroup.prop("disabled", true);
+
+							if (this._state[propGroup] === ixChoice) $btnSelGroup.addClass("active");
+							else $btnSelGroup.removeClass("active");
+						};
+						this._addHookBase(propGroup, hkSelGroup);
+						this._compCurrency.addHookCpRolled(hkSelGroup);
+						this._fnsUnhook.push(() => this._removeHookBase(propGroup, hkSelGroup));
+						this._fnsUnhook.push(() => this._compCurrency.removeHookCpRolled(hkSelGroup));
+						hkSelGroup();
+
+						if (ixChoice < choices.length - 1) $btnSelGroup.addClass("mb-1");
+
+						return $$`<div class="ve-flex-vh-center">
+							${$btnSelGroup}
+							${$wrpChildren}
+						</div>`;
+					});
+
+				return $$`<div class="ve-flex-col w-100 p-1 my-1 imp-cls__wrp-equi-group">${$wrpsChoices}</div>`;
+			});
+
+			$rows.forEach($row => $wrpRows.append($row));
+
+			if (!$rows.length) {
+				$wrpRows.append(`<div class="ve-flex-vh-center w-100 h-100 italic ve-muted">No starting equipment available.</div>`);
+			}
+		};
+		this._compCurrency.addHookStartingEquipment(hkStartingEquipment);
+		hkStartingEquipment();
+
+		const hkSetCoinsFromDefault = () => {
+			// If we have pre-defined starting gold, ignore extras from default equipment
+			if (Config.get("equipmentShop", "startingGold") != null) {
+				this._compCurrency.cpFromDefault = 0;
+				return;
+			}
+
+			// Sum all the coinage that the character would gain, to be added to their sheet
+			let cpValue = 0;
+
+			const fnEqui = (ixGroup, ixChoice, equi) => {
+				if (equi.item) {
+					if (equi.containsValue) cpValue += equi.containsValue;
+				} else if (equi.special) {
+					if (equi.containsValue) cpValue += equi.containsValue;
+				} else if (equi.value) {
+					cpValue += equi.value;
+				}
+			};
+
+			this._iterChosenStartingEquipment(fnEqui);
+
+			this._compCurrency.cpFromDefault = cpValue;
+		};
+		this._addHookAll("state", hkSetCoinsFromDefault);
+		hkSetCoinsFromDefault();
+	}
+
+	_isValid_standard () {
+		if (!this.isAvailable || this._compCurrency.cpRolled != null) return true;
+
+		const fnEqui = (ixGroup, ixChoice, equi) => {
+			if (equi.equipmentType) {
+				const num = equi.quantity || 1;
+				for (let i = 0; i < num; ++i) {
+					const propEqui = `std__equi__${ixGroup}__${ixChoice}__${i}`;
+					if (this._state[propEqui] == null) return false;
+				}
+			}
+		};
+
+		const out = this._iterChosenStartingEquipment(fnEqui);
+		if (out !== undefined) return out;
+		return true;
+	}
+
+	async _pGetItemDatasDefault () {
+		// If gold has been rolled, we assume the user does not want their default items
+		if (this._compCurrency.cpRolled) return [];
+
+		const outUidMetas = [];
+		const outPreloaded = [];
+
+		/** Find an existing array item if it exists, and add quantity to it. Otherwise, create a new one. */
+		const addOutUidMeta = (itemUid, quantity) => {
+			const existing = outUidMetas.find(it => it.itemUid === itemUid);
+			if (existing) existing.quantity += quantity;
+			else outUidMetas.push({itemUid, quantity: quantity});
+		};
+
+		const fnEqui = (ixGroup, ixChoice, equi) => {
+			if (typeof equi === "string") addOutUidMeta(equi, 1);
+			else if (equi.item) {
+				addOutUidMeta(this.constructor._getItemIdWithDisplayName(equi.item, equi.displayName), equi.quantity || 1);
+			} else if (equi.equipmentType) {
+				const num = equi.quantity || 1;
+				for (let i = 0; i < num; ++i) {
+					const propEqui = `std__equi__${ixGroup}__${ixChoice}__${i}`;
+					const itemUid = this._state[propEqui];
+					if (itemUid != null) addOutUidMeta(itemUid, 1);
+				}
+			} else if (equi.special) {
+				// Create dummy items
+				outPreloaded.push({
+					item: {
+						name: equi.special.toTitleCase(),
+						source: this._equiSpecialSource,
+						page: this._equiSpecialPage,
+						type: "OTH",
+						rarity: "unknown",
+					},
+					quantity: equi.quantity || 1,
+				});
+			}
+		};
+
+		this._iterChosenStartingEquipment(fnEqui);
+
+		// Load the items, and sort them such that ammo is imported first
+		const loadedItems = [];
+		for (const itemUidMeta of outUidMetas) {
+			const [name, source, displayName] = itemUidMeta.itemUid.split("|");
+			const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS]({name, source});
+
+			const loadedItem = await Renderer.hover.pCacheAndGetHash(UrlUtil.PG_ITEMS, hash);
+			if (!loadedItem) {
+				console.warn(...LGT, `Failed to load item "${itemUidMeta.itemUid}"!`);
+				continue;
+			}
+
+			if (displayName) loadedItem._displayName = Renderer.stripTags(displayName).toTitleCase();
+			loadedItems.push({
+				item: loadedItem,
+				quantity: itemUidMeta.quantity,
+			});
+		}
+		const {ImportListItem} = await import("./ImportListItem.js");
+		const outFromUids = loadedItems.sort((a, b) => ImportListItem.sortEntries(a.item, b.item));
+
+		return [...outFromUids, ...outPreloaded];
+	}
+
+	_getDefaultState () { return {}; }
+};
+
+Charactermancer_StartingEquipment.ComponentGold = class extends Charactermancer_StartingEquipment.ComponentBase {
+	/**
+	 * @param opts
+	 * @param [opts.compCurrency]
+	 * @param [opts.itemDatas]
+	 */
+	constructor (opts) {
+		super(opts);
+		this._isPredefinedItemDatas = !!opts.itemDatas;
+		this._state.itemDatas = opts.itemDatas;
+
+		this._modalFilter = null;
+	}
+
+	get isAvailable () { return true; }
+
+	async pGetFormData () {
+		const equipmentItemEntries = [];
+
+		const itemDatas = await this._pGetItemEntries();
+		if (itemDatas) {
+			equipmentItemEntries.push(...itemDatas);
+		}
+
+		const isValid = await this._isValid_gold();
+		const messageInvalid = isValid ? null : `You have spent more gold than you possess. Are you sure you want to go into debt?`;
+
+		return {
+			isFormComplete: isValid,
+			messageInvalid,
+			data: {
+				equipmentItemEntries,
+			},
+		};
+	}
+
+	async pRender ($wrpTab) {
+		const $wrpTabInner = $(`<div class="ve-flex-col w-100 h-100 min-h-0"><div class="ve-flex-vh-center w-100 h-100 italic">Loading...</div></div>`).appendTo($wrpTab);
+		await this._render_pGoldAlternative($wrpTabInner);
+		return $wrpTabInner;
+	}
+
+	async _render_pGoldAlternative ($wrpTabGoldAlternative) {
+		await Renderer.item.populatePropertyAndTypeReference();
+
+		const {ImportListItem} = await import("./ImportListItem.js");
+		const importListItemSources = await (new ImportListItem()).pGetSources();
+		const appSourceSelector = new AppSourceSelectorMulti({
+			title: `Select Item Sources`,
+			filterNamespace: `ImportListCharacter_StartingEquipment_filter`,
+			savedSelectionKey: `ImportListCharacter_StartingEquipment_savedSelection`,
+			sourcesToDisplay: importListItemSources,
+			page: UrlUtil.PG_ITEMS,
+			isDedupable: true,
+		});
+
+		const $btnChooseSources = this._isPredefinedItemDatas ? null : $(`<button class="btn btn-xs btn-default btn-5et">Choose Item Sources</button>`)
+			.click(async () => {
+				const choices = await appSourceSelector.pWaitForUserInput();
+				if (choices == null) return;
+
+				this._state.itemDatas = choices;
+			});
+
+		if (!this._isPredefinedItemDatas) {
+			// Load any previous selection the user has made
+			appSourceSelector.pLoadInitialSelection()
+				.then(choices => {
+					if (!choices) return;
+					this._state.itemDatas = choices;
+				});
+		}
+
+		const $dispCurrencyRemaining = $(`<div class="ml-auto ve-flex-v-center"></div>`);
+		const hkCurrency = () => {
+			const remainingCp = this._compCurrency.getRemainingCp();
+			$dispCurrencyRemaining.html(`
+				<div title="The total cost of all items in the &quot;shopping basket,&quot; listed below.">
+					<b class="mr-1">Total:</b>
+					<span>${this.constructor._getHumanReadableCoinage(this._compCurrency.cpSpent)}</span>
+				</div>
+				<div class="vr-1"></div>
+				<span>(</span>
+				<div title="The total remaining gold available to this character. This amount is a combination of the currency on their sheet, plus any contextual modifiers (such as class starting gold when importing a class).">
+					<b class="mr-1">Remaining:</b>
+					<span ${remainingCp < 0 ? `class="veapp__msg-error bold"` : ""}>${this.constructor._getHumanReadableCoinage(remainingCp)}</span>
+				</div>
+				<span>)</span>
+			`);
+		};
+		this._compCurrency.addHookCurrency(hkCurrency);
+		hkCurrency();
+
+		const $dispRollOrManual = $(`<i class="mx-1">\u2013 or \u2013</i>`);
+		const $btnRoll = this._$getBtnRollStartingGold();
+		const $btnManual = this._$getBtnEnterStartingGold();
+		const $dispRolled = this._$getDispRolledGold();
+
+		const $spcRollOrManual = $(`<div class="vr-1"></div>`);
+		const $wrpRollOrManual = this._$getWrpRollOrManual({$dispRollOrManual, $btnRoll, $btnManual, $dispRolled}).addClass("mr-3");
+
+		this._doBindRollableExpressionHooks({$dispRollOrManual, $btnRoll, $btnManual, $spcRollOrManual, $wrpRollOrManual});
+
+		const isStandaloneGmInstance = game.user.isGM && this._compCurrency.isStandalone;
+		const $btnEditPriceMultiplier = !isStandaloneGmInstance ? null : $(`<button class="btn btn-xs btn-default btn-5et">Edit Config</button>`)
+			.click(evt => Config.pHandleButtonClick(evt, "equipmentShop"));
+		const $wrpGmPriceMultiplier = !isStandaloneGmInstance ? null : $$`<div class="ml-auto">
+			${$btnEditPriceMultiplier}
+		</div>`;
+
+		this._modalFilter = new Charactermancer_StartingEquipment.ModalFilterEquipment(this);
+
+		const $wrpItemList = $(`<div class="ve-flex-col w-50 h-100 min-h-0"><div class="ve-flex-vh-center italic w-100 h-100">Loading...</div></div>`);
+
+		// Don't await, as it will load in.
+		// Override the default filter controls, to provide our own styling.
+		this._modalFilter.pPopulateWrapper(
+			$wrpItemList,
+			{
+				isBuildUi: true,
+				$btnOpen: $(`<button class="btn-5et veapp__btn-filter" name="btn-filter">Filter</button>`),
+				$btnToggleSummaryHidden: $(`<button class="btn btn-5et" title="Toggle Filter Summary Display" name="btn-toggle-summary"><span class="glyphicon glyphicon-resize-small"></span></button>`),
+				$btnReset: $(`<button class="btn-5et veapp__btn-list-reset" name="btn-reset">Reset</button>`),
+			},
+		).then(meta => {
+			const {list, $btnSendAllToRight} = meta;
+			$btnSendAllToRight
+				.addClass("btn-5et ve-grow")
+				.click(async evt => {
+					if (list.visibleItems.length > 10 && !(await InputUiUtil.pGetUserBoolean({title: `You are about to add ${list.visibleItems.length} items. Are you sure?`}))) return;
+
+					const quantity = evt.shiftKey ? 5 : 1;
+					list.visibleItems.forEach(it => this.addBoughtItem(`${it.name}|${it.values.source}`, {quantity, isTriggerUpdate: false}));
+					this._triggerCollectionUpdate("itemPurchases");
+				});
+
+			hkItemDatas();
+		});
+
+		const $wrpBoughtList = $(`<div class="w-100 h-100 min-h-0 overflow-y-auto"></div>`);
+
+		const hkGoldItemUids = () => {
+			this._renderCollection({
+				prop: "itemPurchases",
+				fnUpdateExisting: (renderedMeta, itemPurchase) => {
+					renderedMeta.comp._proxyAssignSimple("state", itemPurchase.data, true);
+				},
+				fnGetNew: (itemPurchase) => {
+					const comp = BaseComponent.fromObject(itemPurchase.data);
+					comp._addHookAll("state", () => {
+						itemPurchase.data = comp.toObject();
+						this._triggerCollectionUpdate("itemPurchases");
+					});
+
+					const [name, source] = itemPurchase.data.uid.split("|");
+					Renderer.hover.pCacheAndGetHash(UrlUtil.PG_ITEMS, UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS]({name, source}))
+						.then(item => {
+							comp._state.name = item.name;
+							comp._state.value = item.value * Config.get("equipmentShop", "priceMultiplier");
+						});
+
+					const hkNoQuantity = () => {
+						if (comp._state.quantity > 0) return;
+						this._state.itemPurchases = this._state.itemPurchases.filter(it => it !== itemPurchase);
+					};
+					comp._addHookBase("quantity", hkNoQuantity);
+
+					const $btnSubtract = $(`<button class="btn btn-xxs btn-5et btn-danger" title="Remove One (SHIFT to remove  5)"><span class="glyphicon glyphicon-minus"></span></button>`)
+						.click(evt => {
+							if (evt.shiftKey) comp._state.quantity -= 5;
+							else comp._state.quantity--;
+						});
+
+					const $btnAdd = $(`<button class="btn btn-xxs btn-5et btn-success" title="Add Another (SHIFT to add 5)"><span class="glyphicon glyphicon-plus"></span></button>`)
+						.click(evt => {
+							if (evt.shiftKey) comp._state.quantity += 5;
+							else comp._state.quantity++;
+						});
+
+					const $dispQuantity = $(`<div class="text-center no-shrink imp-cls__disp-equi-count"></div>`);
+					const hkQuantity = () => $dispQuantity.text(comp._state.quantity);
+					comp._addHookBase("quantity", hkQuantity);
+					hkQuantity();
+
+					const $dispName = $(`<div class="w-100"></div>`);
+					const hkName = () => $dispName.html(Renderer.get().render(`{@item ${comp._state.uid}|${comp._state.name || ""}}`));
+					comp._addHookBase("name", hkName);
+					hkName();
+
+					const $dispCostIndividual = $(`<div class="no-shrink text-right imp-cls__disp-equi-cost px-1"></div>`);
+					const hkCostIndividual = () => $dispCostIndividual.html(comp._state.isIgnoreCost ? `<span class="ve-muted" title="Cost Ignored">\u2014</span>` : this.constructor._getHumanReadableCoinage(comp._state.value));
+					comp._addHookBase("value", hkCostIndividual);
+					hkCostIndividual();
+
+					const $dispCostTotal = $(`<div class="no-shrink text-right imp-cls__disp-equi-cost px-1"></div>`);
+					const hkCostTotal = () => {
+						if (comp._state.value == null || comp._state.quantity == null) return;
+						$dispCostTotal.html(comp._state.isIgnoreCost ? `<span class="ve-muted" title="Cost Ignored">\u2014</span>` : this.constructor._getHumanReadableCoinage(comp._state.value * comp._state.quantity));
+					};
+					comp._addHookBase("value", hkCostTotal);
+					comp._addHookBase("quantity", hkCostTotal);
+					hkCostTotal();
+
+					const $wrpRow = $$`<div class="py-1p my-0 veapp__list-row ve-flex-v-center w-100">
+						<div class="btn-group ve-flex-vh-center no-shrink imp-cls__wrp-equi-btns">
+							${$btnSubtract}
+							${$btnAdd}
 						</div>
-						${_0x150e8d}
-						${_0x1a0d0f}
-						${_0x1bc847}
-						${_0x47fd24}
-					</div>`['appendTo'](_0x18d9d1);return{'comp':_0x49b7e2,'$wrpRow':_0x55246b};}});};this['_addHookBase']('itemPurchases',_0x2802d5),_0x2802d5();const _0x22cc6d=async()=>{const _0x2d1c62=_0x1a6c4a;try{await this[_0x2d1c62(0x12b)]('pHkItemsPurchased'),this['_compCurrency']['cpSpent']=await this[_0x2d1c62(0x148)]();}finally{this['_unlock'](_0x2d1c62(0x1bc));}};this['_addHookBase'](_0x1a6c4a(0xa9),_0x22cc6d),_0x22cc6d();const _0xe1cfe2=()=>{const _0x21402d=_0x1a6c4a;this[_0x21402d(0x165)]['setDataList'](this[_0x21402d(0x1d6)][_0x21402d(0x1ba)]);};this[_0x1a6c4a(0x176)](_0x1a6c4a(0x1ba),_0xe1cfe2);const _0x5374ad=$(_0x1a6c4a(0x1e6))[_0x1a6c4a(0x1a4)](async()=>{const _0x16def6=_0x1a6c4a;if(!await InputUiUtil[_0x16def6(0xd0)]({'title':'Are\x20you\x20sure\x20you\x20want\x20to\x20remove\x20all\x20purchased\x20items\x20from\x20the\x20list?'}))return;this['_state']['itemPurchases']=[];});$$(_0x5780ea[_0x1a6c4a(0x13c)]())`
-		<div class="flex-v-center">
-			<div class="w-50 flex-v-center">
-				${_0x3804fa}
-				${_0x223c28}
-				${_0x40a037}
+						${$dispQuantity}
+						${$dispName}
+						${$dispCostIndividual}
+						${$dispCostTotal}
+					</div>`.appendTo($wrpBoughtList);
+
+					return {
+						comp,
+						$wrpRow,
+					};
+				},
+			});
+		};
+		this._addHookBase("itemPurchases", hkGoldItemUids);
+		hkGoldItemUids();
+
+		const pHkItemsPurchased = async () => {
+			try {
+				await this._pLock("pHkItemsPurchased");
+				// Update the currency component
+				this._compCurrency.cpSpent = await this._pGetCpSpent();
+			} finally {
+				this._unlock("pHkItemsPurchased");
+			}
+		};
+		this._addHookBase("itemPurchases", pHkItemsPurchased);
+		pHkItemsPurchased();
+
+		const hkItemDatas = () => {
+			this._modalFilter.setDataList(this._state.itemDatas);
+		};
+		this._addHookBase("itemDatas", hkItemDatas);
+
+		const $btnClearPurchases = $(`<button class="btn btn-xxs btn-5et btn-danger" title="Remove All Purchases"><span class="glyphicon glyphicon-minus"></span></button>`)
+			.click(async () => {
+				if (!(await InputUiUtil.pGetUserBoolean({title: `Are you sure you want to remove all purchased items from the list?`}))) return;
+				this._state.itemPurchases = [];
+			});
+
+		$$($wrpTabGoldAlternative.empty())`
+		<div class="ve-flex-v-center">
+			<div class="w-50 ve-flex-v-center">
+				${$btnChooseSources}
+				${$spcRollOrManual}
+				${$wrpRollOrManual}
+				${$wrpGmPriceMultiplier}
 			</div>
 
 			<div class="vr-1"></div>
 
 			<div class="w-50 split-v-center">
-				${_0x57547e}
+				${$dispCurrencyRemaining}
 			</div>
 		</div>
 
 		<hr class="hr-1">
 
-		<div class="flex h-100 min-h-0 w-100">
-			${_0x3ac63e}
+		<div class="ve-flex h-100 min-h-0 w-100">
+			${$wrpItemList}
 
 			<div class="vr-1"></div>
 
-			<div class="w-50 min-h-0 flex-col">
-				<div class="flex-v-center pb-1">
-					<div class="imp__cls__wrp-equi-btns no-shrink flex-vh-center">${_0x5374ad}</div>
-					<div class="imp__cls__disp-equi-count no-shrink text-center" title="Quantity">Qt.</div>
+			<div class="w-50 min-h-0 ve-flex-col">
+				<div class="ve-flex-v-center pb-1">
+					<div class="imp-cls__wrp-equi-btns no-shrink ve-flex-vh-center">${$btnClearPurchases}</div>
+					<div class="imp-cls__disp-equi-count no-shrink text-center" title="Quantity">Qt.</div>
 					<div class="w-100">Name</div>
-					<div class="imp__cls__disp-equi-cost no-shrink text-center">Cost</div>
-					<div class="imp__cls__disp-equi-cost no-shrink text-center">Line Total</div>
+					<div class="imp-cls__disp-equi-cost no-shrink text-center">Cost</div>
+					<div class="imp-cls__disp-equi-cost no-shrink text-center">Line Total</div>
 				</div>
 
-				${_0x18d9d1}
+				${$wrpBoughtList}
 			</div>
-		</div>`;}[_0x4cad17(0xaa)](){const _0x65f1a7=_0x4cad17;return this[_0x65f1a7(0x1ed)][_0x65f1a7(0x1c1)]()>=0x0;}async[_0x4cad17(0x148)](){const _0x3cb967=_0x4cad17,_0x4c48a3=await Promise['all'](this['_state'][_0x3cb967(0xa9)]['map'](async _0x2cf895=>{const _0x4857d3=_0x3cb967;if(_0x2cf895[_0x4857d3(0x1ca)]['isIgnoreCost'])return 0x0;const [_0x32b664,_0x2b2482]=_0x2cf895['data'][_0x4857d3(0x1ec)]['split']('|'),_0x437813=await Renderer[_0x4857d3(0xbb)][_0x4857d3(0x1f8)](UrlUtil['PG_ITEMS'],UrlUtil[_0x4857d3(0xa4)][UrlUtil[_0x4857d3(0xb4)]]({'name':_0x32b664,'source':_0x2b2482}));return _0x437813[_0x4857d3(0x97)]*Config[_0x4857d3(0x86)]('equipmentShop',_0x4857d3(0x1c6))*(_0x2cf895[_0x4857d3(0x1ca)][_0x4857d3(0x1ab)]||0x1);}));return _0x4c48a3[_0x3cb967(0x16f)]((_0x43122b,_0x267efa)=>_0x43122b+_0x267efa,0x0);}async[_0x4cad17(0xac)](){const _0x3847bf=_0x4cad17;if(!this['_state'][_0x3847bf(0xa9)][_0x3847bf(0x142)])return null;const _0x4e6319={};for(const _0x4288f of this[_0x3847bf(0x1d6)][_0x3847bf(0xa9)]){_0x4e6319[_0x4288f[_0x3847bf(0x1ca)][_0x3847bf(0x1ec)]]=_0x4e6319[_0x4288f[_0x3847bf(0x1ca)]['uid']]||0x0,_0x4e6319[_0x4288f[_0x3847bf(0x1ca)]['uid']]+=_0x4288f[_0x3847bf(0x1ca)]['quantity']||0x1;}const _0x4f43e7=[],_0x527cef=Object['entries'](_0x4e6319);for(const [_0x450dae,_0x4b1bfa]of _0x527cef){const [_0x2ab2b8,_0x4798ba]=_0x450dae[_0x3847bf(0xdd)]('|'),_0x4da3d1=await Renderer[_0x3847bf(0xbb)][_0x3847bf(0x1f8)](UrlUtil[_0x3847bf(0xb4)],UrlUtil[_0x3847bf(0xa4)][UrlUtil[_0x3847bf(0xb4)]]({'name':_0x2ab2b8,'source':_0x4798ba}));_0x4f43e7[_0x3847bf(0x105)]({'item':_0x4da3d1,'quantity':_0x4b1bfa});}return _0x4f43e7;}[_0x4cad17(0xc4)](_0xfaea0c,_0x3ec9b2){const _0x31d90c=_0x4cad17;_0x3ec9b2=_0x3ec9b2||{},_0x3ec9b2[_0x31d90c(0x1ab)]=_0x3ec9b2[_0x31d90c(0x1ab)]===undefined?0x1:_0x3ec9b2['quantity'],_0x3ec9b2[_0x31d90c(0x18b)]=_0x3ec9b2[_0x31d90c(0x18b)]===undefined?!![]:_0x3ec9b2[_0x31d90c(0x18b)],_0x3ec9b2[_0x31d90c(0x19b)]=_0x3ec9b2[_0x31d90c(0x19b)]===undefined?![]:_0x3ec9b2[_0x31d90c(0x19b)],_0xfaea0c=_0xfaea0c[_0x31d90c(0x194)]();const _0x44d9a5=_0xfaea0c+'__'+_0x3ec9b2['isIgnoreCost'],_0x4a4edb=this[_0x31d90c(0x1d6)][_0x31d90c(0xa9)][_0x31d90c(0xa2)](_0x333671=>_0x333671['id']===_0x44d9a5);_0x4a4edb?_0x4a4edb['data'][_0x31d90c(0x1ab)]+=_0x3ec9b2['quantity']:this[_0x31d90c(0x1d6)][_0x31d90c(0xa9)][_0x31d90c(0x105)]({'id':_0x44d9a5,'data':{'uid':_0xfaea0c,'quantity':_0x3ec9b2[_0x31d90c(0x1ab)],'isIgnoreCost':_0x3ec9b2['isIgnoreCost']}});if(_0x3ec9b2[_0x31d90c(0x18b)])this[_0x31d90c(0x8b)](_0x31d90c(0xa9));}[_0x4cad17(0x173)](){return{'itemPurchases':[],'itemDatas':[]};}},Charactermancer_StartingEquipment[_0x4cad17(0xa7)]=class extends ModalFilter{static[_0x4cad17(0xca)](_0x10d4b2){const _0x4dc8f1=_0x4cad17;return super[_0x4dc8f1(0xca)](_0x10d4b2)[_0x4dc8f1(0x19d)](_0x3e0b59=>_0x3e0b59['addClass'](_0x4dc8f1(0x103)));}constructor(_0x1a979c){const _0x2a4142=_0x4cad17;super({'pageFilter':new PageFilterEquipment(),'namespace':_0x2a4142(0x11f)}),this[_0x2a4142(0xf0)]=_0x1a979c;}[_0x4cad17(0x124)](){const _0x3985ee=_0x4cad17,_0x27e569=[{'sort':_0x3985ee(0x18f),'text':_0x3985ee(0x1d2),'width':'5'},{'sort':_0x3985ee(0xd5),'text':'Cost','width':'2-5'},{'sort':'source','text':'Source','width':'2-5'}];return this[_0x3985ee(0x19c)][_0x3985ee(0xca)](_0x27e569);}async['_pLoadAllData'](){return[];}[_0x4cad17(0xd8)](){const _0xb12533=_0x4cad17;return $(_0xb12533(0x1dd));}[_0x4cad17(0x102)](_0x37e52e){const _0x449bde=_0x4cad17;return super[_0x449bde(0x102)](_0x37e52e)[_0x449bde(0xde)]([_0x449bde(0x103),'ve-muted']);}['_getListItem'](_0x58b247,_0x2004b1,_0x57eb6f){const _0x482499=_0x4cad17;if(_0x2004b1['noDisplay'])return null;Renderer[_0x482499(0x1bf)][_0x482499(0x10a)](_0x2004b1),_0x58b247['mutateAndAddToFilters'](_0x2004b1);const _0x256af8=document[_0x482499(0x1d0)]('div');_0x256af8['className']=_0x482499(0x155);const _0x441f90=UrlUtil[_0x482499(0xa4)][UrlUtil[_0x482499(0xb4)]](_0x2004b1),_0x49ba74=Parser['sourceJsonToAbv'](_0x2004b1[_0x482499(0x1b6)]),_0x963cb1=_0x2004b1['_typeListText'][_0x482499(0x12d)](',\x20');_0x256af8[_0x482499(0xea)]=_0x482499(0x139)+ListUiUtil['HTML_GLYPHICON_EXPAND']+_0x482499(0x131)+_0x2004b1[_0x482499(0x18f)]+_0x482499(0x1e4)+Parser['itemValueToFullMultiCurrency'](_0x2004b1,{'isShortForm':!![],'multiplier':Config[_0x482499(0x86)](_0x482499(0x13e),'priceMultiplier')})[_0x482499(0x8a)](/ +/g,'\u00a0')+_0x482499(0x1e7)+Parser['sourceJsonToColor'](_0x2004b1[_0x482499(0x1b6)])+_0x482499(0x1ea)+Parser[_0x482499(0xbe)](_0x2004b1[_0x482499(0x1b6)])+'\x22\x20'+BrewUtil['sourceJsonToStyle'](_0x2004b1['source'])+'>'+_0x49ba74+_0x482499(0x153);const _0x2e1bf3=_0x256af8[_0x482499(0x119)]['firstElementChild']['firstElementChild'];_0x2e1bf3[_0x482499(0x128)](_0x482499(0x1a4),_0x2fa6c1=>{const _0x12d49b=_0x482499;_0x2fa6c1['stopPropagation'](),_0x2fa6c1[_0x12d49b(0x133)]();const _0x436875=ListUiUtil[_0x12d49b(0x161)](_0x20f1f6);ListUiUtil[_0x12d49b(0x81)](_0x2fa6c1,UrlUtil['PG_ITEMS'],_0x2004b1,_0x2e1bf3,_0x436875);});const _0x20f1f6=new ListItem(_0x57eb6f,_0x256af8,_0x2004b1[_0x482499(0x18f)],{'hash':_0x441f90,'source':_0x49ba74,'sourceJson':_0x2004b1['source'],'cost':(_0x2004b1[_0x482499(0x97)]||0x0)*Config[_0x482499(0x86)](_0x482499(0x13e),_0x482499(0x1c6)),'type':_0x963cb1},{'btnSendToRight':_0x256af8[_0x482499(0x119)][_0x482499(0x107)][_0x482499(0x107)],'btnShowHidePreview':_0x2e1bf3});return _0x20f1f6;}[_0x4cad17(0x1b7)](_0x14d946){const _0x5c5985=_0x4cad17;this[_0x5c5985(0xf1)][_0x5c5985(0x94)](),this[_0x5c5985(0x12a)]=_0x14d946[_0x5c5985(0x1e5)](_0x1020b9=>_0x1020b9[_0x5c5985(0x97)]!=null&&_0x1020b9[_0x5c5985(0x109)]!=='$'),this['_allData'][_0x5c5985(0xb7)]((_0x39a3de,_0x4d2c74)=>{const _0x2ff0fc=_0x5c5985;this[_0x2ff0fc(0xa6)][_0x2ff0fc(0x98)](_0x39a3de);const _0x2667f0=this[_0x2ff0fc(0x17a)](this['_pageFilter'],_0x39a3de,_0x4d2c74);this[_0x2ff0fc(0xf1)][_0x2ff0fc(0x1a3)](_0x2667f0);const _0x3d5c28=_0x39a3de[_0x2ff0fc(0x18f)]+'|'+_0x39a3de[_0x2ff0fc(0x1b6)];_0x2667f0[_0x2ff0fc(0x1ca)][_0x2ff0fc(0xf5)][_0x2ff0fc(0x128)](_0x2ff0fc(0x1a4),_0x387a09=>{const _0x1f72e6=_0x2ff0fc,_0x226a0a=_0x387a09['ctrlKey'];if(_0x387a09[_0x1f72e6(0x9c)])this[_0x1f72e6(0xf0)][_0x1f72e6(0xc4)](_0x3d5c28,{'quantity':0x5,'isIgnoreCost':_0x226a0a});else this['_compParent'][_0x1f72e6(0xc4)](_0x3d5c28,{'isIgnoreCost':_0x226a0a});});}),this[_0x5c5985(0xa6)][_0x5c5985(0x104)][_0x5c5985(0x96)]({'Source':{}}),this['_pageFilter'][_0x5c5985(0x108)]['render'](),this[_0x5c5985(0xf1)][_0x5c5985(0x18a)]();}},Charactermancer_StartingEquipment['_EQUIPMENT_SET_NAMES']={'weaponSimple':'Simple\x20Weapon','weaponSimpleMelee':_0x4cad17(0x18d),'weaponMartial':'Martial\x20Weapon','weaponMartialMelee':_0x4cad17(0xec),'instrumentMusical':_0x4cad17(0x1f0),'armorLight':_0x4cad17(0x1d9),'armorMedium':_0x4cad17(0x186),'armorHeavy':_0x4cad17(0x16e),'weaponMelee':_0x4cad17(0x169),'weaponRanged':_0x4cad17(0x19f),'focusSpellcasting':_0x4cad17(0x82),'setGaming':_0x4cad17(0xf9),'toolArtisan':_0x4cad17(0xc7)},Charactermancer_StartingEquipment['_EQUIPMENT_SETS']={'weaponSimple':[...UtilActors[_0x4cad17(0x99)]],'weaponSimpleMelee':[_0x4cad17(0x88),_0x4cad17(0x117),_0x4cad17(0x1cb),_0x4cad17(0x11c),_0x4cad17(0x1ee),'light\x20hammer|phb',_0x4cad17(0x15a),_0x4cad17(0x111),'sickle|phb',_0x4cad17(0xf4)],'weaponMartial':[...UtilActors[_0x4cad17(0x156)]],'weaponMartialMelee':[_0x4cad17(0x1fb),_0x4cad17(0x182),_0x4cad17(0x1a7),'greataxe|phb',_0x4cad17(0x172),_0x4cad17(0xb6),'lance|phb',_0x4cad17(0x198),'maul|phb',_0x4cad17(0x1ae),'pike|phb',_0x4cad17(0x170),_0x4cad17(0x1c7),_0x4cad17(0xd6),_0x4cad17(0x199),'war\x20pick|phb',_0x4cad17(0x171),_0x4cad17(0x1ce)],'instrumentMusical':['bagpipes|phb',_0x4cad17(0xeb),'dulcimer|phb',_0x4cad17(0xd2),_0x4cad17(0x17b),'lute|phb','lyre|phb',_0x4cad17(0x1a9),_0x4cad17(0x168),_0x4cad17(0xe5)],'armorLight':[_0x4cad17(0xe8),_0x4cad17(0x95),_0x4cad17(0x1f4)],'armorMedium':[_0x4cad17(0x9e),_0x4cad17(0xf7),_0x4cad17(0x8e),_0x4cad17(0x1e0),_0x4cad17(0x193)],'armorHeavy':[_0x4cad17(0xe2),_0x4cad17(0xfd),'splint\x20armor|phb',_0x4cad17(0x164)],'weaponMelee':[_0x4cad17(0x1fb),_0x4cad17(0x88),_0x4cad17(0x117),_0x4cad17(0x182),_0x4cad17(0x1a7),_0x4cad17(0xc0),_0x4cad17(0x1cb),'greatsword|phb',_0x4cad17(0xb6),'handaxe|phb',_0x4cad17(0x1ee),_0x4cad17(0x122),_0x4cad17(0x11d),'longsword|phb',_0x4cad17(0x15a),_0x4cad17(0xbf),_0x4cad17(0x1ae),_0x4cad17(0x145),'quarterstaff|phb',_0x4cad17(0x170),_0x4cad17(0x1c7),'shortsword|phb',_0x4cad17(0xe1),_0x4cad17(0xf4),_0x4cad17(0x8f),'trident|phb','war\x20pick|phb',_0x4cad17(0x171),_0x4cad17(0x1ce)],'weaponRanged':[_0x4cad17(0xc6),_0x4cad17(0x10f),'hand\x20crossbow|phb',_0x4cad17(0x1eb),_0x4cad17(0xae),_0x4cad17(0x135),_0x4cad17(0x11a),_0x4cad17(0x1aa),_0x4cad17(0xaf)],'focusSpellcasting':[_0x4cad17(0xdf),_0x4cad17(0x1e2),_0x4cad17(0x15c),'staff|phb',_0x4cad17(0x185)],'setGaming':[_0x4cad17(0x14f),_0x4cad17(0xb1),'playing\x20card\x20set|phb',_0x4cad17(0x147)],'toolArtisan':[_0x4cad17(0x1f9),'brewer\x27s\x20supplies|phb',_0x4cad17(0x17f),_0x4cad17(0x1b5),_0x4cad17(0x181),_0x4cad17(0x180),_0x4cad17(0x1fa),_0x4cad17(0xf3),_0x4cad17(0x1b9),_0x4cad17(0x18c),'mason\x27s\x20tools|phb',_0x4cad17(0xcb),'potter\x27s\x20tools|phb',_0x4cad17(0x1d3),_0x4cad17(0x195),_0x4cad17(0x1df),_0x4cad17(0x166)]};export{Charactermancer_StartingEquipment};
+		</div>`;
+	}
+
+	_isValid_gold () {
+		return this._compCurrency.getRemainingCp() >= 0; // Ensure we're not in debt
+	}
+
+	async _pGetCpSpent () {
+		const expenses = await Promise.all(this._state.itemPurchases.map(async itemMeta => {
+			if (itemMeta.data.isIgnoreCost) return 0;
+
+			const [name, source] = itemMeta.data.uid.split("|");
+			const item = await Renderer.hover.pCacheAndGetHash(UrlUtil.PG_ITEMS, UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS]({name, source}));
+			return item.value * Config.get("equipmentShop", "priceMultiplier") * (itemMeta.data.quantity || 1);
+		}));
+		return expenses.reduce((a, b) => a + b, 0);
+	}
+
+	async _pGetItemEntries () {
+		if (!this._state.itemPurchases.length) return null;
+
+		const combinedItems = {};
+
+		for (const itemPurchase of this._state.itemPurchases) {
+			combinedItems[itemPurchase.data.uid] = combinedItems[itemPurchase.data.uid] || 0;
+			combinedItems[itemPurchase.data.uid] += itemPurchase.data.quantity || 1;
+		}
+
+		const out = [];
+		const entries = Object.entries(combinedItems);
+		for (const [uid, quantity] of entries) {
+			const [name, source] = uid.split("|");
+			const item = await Renderer.hover.pCacheAndGetHash(UrlUtil.PG_ITEMS, UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS]({name, source}));
+			out.push({
+				item,
+				quantity,
+			});
+		}
+
+		return out;
+	}
+
+	/**
+	 * @param itemUid
+	 * @param [opts]
+	 * @param [opts.quantity]
+	 * @param [opts.isTriggerUpdate]
+	 * @param [opts.isIgnoreCost]
+	 */
+	addBoughtItem (itemUid, opts) {
+		opts = opts || {};
+		opts.quantity = opts.quantity === undefined ? 1 : opts.quantity;
+		opts.isTriggerUpdate = opts.isTriggerUpdate === undefined ? true : opts.isTriggerUpdate;
+		opts.isIgnoreCost = opts.isIgnoreCost === undefined ? false : opts.isIgnoreCost;
+
+		itemUid = itemUid.toLowerCase();
+		const collectionId = `${itemUid}__${opts.isIgnoreCost}`;
+
+		const existing = this._state.itemPurchases.find(it => it.id === collectionId);
+		if (existing) {
+			existing.data.quantity += opts.quantity;
+		} else {
+			this._state.itemPurchases.push({
+				id: collectionId,
+				data: {
+					uid: itemUid,
+					quantity: opts.quantity,
+					isIgnoreCost: opts.isIgnoreCost,
+				},
+			});
+		}
+
+		if (opts.isTriggerUpdate) this._triggerCollectionUpdate("itemPurchases");
+	}
+
+	_getDefaultState () {
+		return {
+			itemPurchases: [],
+
+			itemDatas: [],
+		};
+	}
+};
+
+Charactermancer_StartingEquipment.ModalFilterEquipment = class extends ModalFilter {
+	static _$getFilterColumnHeaders (btnMeta) {
+		return super._$getFilterColumnHeaders(btnMeta).map($btn => $btn.addClass(`btn-5et`));
+	}
+
+	constructor (compStartingEquipment) {
+		super({
+			pageFilter: new PageFilterEquipment(),
+			namespace: "ImportListCharacter_modalFilterEquipment",
+		});
+		this._compParent = compStartingEquipment;
+	}
+
+	_$getColumnHeaders () {
+		const btnMeta = [
+			{sort: "name", text: "Name", width: "3-2"},
+			{sort: "type", text: "Type", width: "3-2"},
+			{sort: "cost", text: "Cost", width: "1-8"},
+			{sort: "source", text: "Source", width: "1-8"},
+		];
+		return this.constructor._$getFilterColumnHeaders(btnMeta);
+	}
+
+	async _pLoadAllData () { return []; }
+
+	_$getWrpList () { return $(`<div class="veapp__list mb-1 h-100 min-h-0"></div>`); }
+
+	_$getColumnHeaderPreviewAll (opts) {
+		return super._$getColumnHeaderPreviewAll(opts).addClass(["btn-5et", "ve-muted"]);
+	}
+
+	_getListItem (pageFilter, item, itI) {
+		if (item.noDisplay) return null;
+
+		Renderer.item.enhanceItem(item);
+		pageFilter.mutateAndAddToFilters(item);
+
+		const eleRow = document.createElement("div");
+		eleRow.className = "px-0 w-100 veapp__list-row ve-flex-col no-shrink";
+
+		const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS](item);
+		const source = Parser.sourceJsonToAbv(item.source);
+		const type = item._typeListText.join(", ");
+
+		eleRow.innerHTML = `<div class="w-100 veapp__list-row-hoverable ve-flex-v-center">
+			<div class="col-1 ve-flex-vh-center">
+				<div class="ui-list__btn-inline" title="Toggle Preview (SHIFT to Toggle Info Preview)">${ListUiUtil.HTML_GLYPHICON_EXPAND}</div>
+			</div>
+
+			<span class="col-3-2">${item.name}</span>
+			<span class="col-3-2">${item._typeListText.join(", ").toTitleCase()}</span>
+			<span class="col-1-8 text-right px-1">${Parser.itemValueToFullMultiCurrency(item, {isShortForm: true, multiplier: Config.get("equipmentShop", "priceMultiplier")}).replace(/ +/g, "\u00A0")}</span>
+			<span class="col-1-8 text-center ${Parser.sourceJsonToColor(item.source)} pr-0" title="${Parser.sourceJsonToFull(item.source)}" ${BrewUtil2.sourceJsonToStyle(item.source)}>${source}</span>
+			<div class="col-1 ve-flex-vh-center"><button class="btn btn-xxs btn-default btn-5et" title="Add (SHIFT to add 5; CTRL to ignore price)"><span class="glyphicon glyphicon-arrow-right"></span></button></div>
+		</div>`;
+
+		const btnShowHidePreview = eleRow.firstElementChild.firstElementChild.firstElementChild;
+		btnShowHidePreview.addEventListener("click", evt => {
+			evt.stopPropagation();
+			evt.preventDefault();
+
+			const elePreviewWrp = ListUiUtil.getOrAddListItemPreviewLazy(listItem);
+
+			ListUiUtil.handleClickBtnShowHideListPreview(
+				evt,
+				UrlUtil.PG_ITEMS,
+				item,
+				btnShowHidePreview,
+				elePreviewWrp,
+			);
+		});
+
+		const listItem = new ListItem(
+			itI,
+			eleRow,
+			item.name,
+			{
+				hash,
+				source,
+				sourceJson: item.source,
+				cost: (item.value || 0) * Config.get("equipmentShop", "priceMultiplier"),
+				type,
+			},
+			{
+				btnSendToRight: eleRow.firstElementChild.lastElementChild.lastElementChild,
+				btnShowHidePreview,
+			},
+		);
+
+		return listItem;
+	}
+
+	setDataList (allData) {
+		this._list.removeAllItems();
+
+		this._allData = (allData || []).filter(it => it.value != null && it.type !== "$");
+
+		this._allData.forEach((it, i) => {
+			this._pageFilter.mutateAndAddToFilters(it);
+			const filterListItem = this._getListItem(this._pageFilter, it, i);
+			this._list.addItem(filterListItem);
+			const itemUid = `${it.name}|${it.source}`;
+			filterListItem.data.btnSendToRight.addEventListener("click", evt => {
+				const isIgnoreCost = evt.ctrlKey;
+				if (evt.shiftKey) this._compParent.addBoughtItem(itemUid, {quantity: 5, isIgnoreCost});
+				else this._compParent.addBoughtItem(itemUid, {isIgnoreCost});
+			});
+		});
+
+		// Wipe the source filter, as we assume the user should be able to see everything they either selected
+		//   or were given (in the case of a predefined item list)
+		this._pageFilter.sourceFilter.setFromValues({"Source": {}});
+
+		this._pageFilter.filterBox.render();
+		this._list.update();
+	}
+};
+
+Charactermancer_StartingEquipment._EQUIPMENT_SET_NAMES = {
+	weaponSimple: "Simple Weapon",
+	weaponSimpleMelee: "Simple Melee Weapon",
+	weaponMartial: "Martial Weapon",
+	weaponMartialMelee: "Martial Melee Weapon",
+	instrumentMusical: "Musical Instrument",
+	armorLight: "Light Armor",
+	armorMedium: "Medium Armor",
+	armorHeavy: "Heavy Armor",
+	weaponMelee: "Melee Weapon",
+	weaponRanged: "Ranged Weapon",
+	focusSpellcasting: "Spellcasting Focus",
+	setGaming: "Gaming Set",
+	toolArtisan: "Artisan's Tool",
+};
+Charactermancer_StartingEquipment._EQUIPMENT_SETS = {
+	weaponSimple: [
+		...UtilDataConverter.WEAPONS_SIMPLE,
+	],
+	weaponSimpleMelee: [
+		"club|phb",
+		"dagger|phb",
+		"greatclub|phb",
+		"handaxe|phb",
+		"javelin|phb",
+		"light hammer|phb",
+		"mace|phb",
+		"quarterstaff|phb",
+		"sickle|phb",
+		"spear|phb",
+	],
+	weaponMartial: [
+		...UtilDataConverter.WEAPONS_MARTIAL,
+	],
+	weaponMartialMelee: [
+		"battleaxe|phb",
+		"flail|phb",
+		"glaive|phb",
+		"greataxe|phb",
+		"greatsword|phb",
+		"halberd|phb",
+		"lance|phb",
+		"longsword|phb",
+		"maul|phb",
+		"morningstar|phb",
+		"pike|phb",
+		"rapier|phb",
+		"scimitar|phb",
+		"shortsword|phb",
+		"trident|phb",
+		"war pick|phb",
+		"warhammer|phb",
+		"whip|phb",
+	],
+	instrumentMusical: [
+		"bagpipes|phb",
+		"drum|phb",
+		"dulcimer|phb",
+		"flute|phb",
+		"horn|phb",
+		"lute|phb",
+		"lyre|phb",
+		"pan flute|phb",
+		"shawm|phb",
+		"viol|phb",
+	],
+	armorLight: [
+		"leather armor|phb",
+		"padded armor|phb",
+		"studded leather armor|phb",
+	],
+	armorMedium: [
+		"hide armor|phb",
+		"chain shirt|phb",
+		"scale mail|phb",
+		"breastplate|phb",
+		"half plate armor|phb",
+	],
+	armorHeavy: [
+		"ring mail|phb",
+		"chain mail|phb",
+		"splint armor|phb",
+		"plate armor|phb",
+	],
+	weaponMelee: [
+		"battleaxe|phb",
+		"club|phb",
+		"dagger|phb",
+		"flail|phb",
+		"glaive|phb",
+		"greataxe|phb",
+		"greatclub|phb",
+		"greatsword|phb",
+		"halberd|phb",
+		"handaxe|phb",
+		"javelin|phb",
+		"lance|phb",
+		"light hammer|phb",
+		"longsword|phb",
+		"mace|phb",
+		"maul|phb",
+		"morningstar|phb",
+		"pike|phb",
+		"quarterstaff|phb",
+		"rapier|phb",
+		"scimitar|phb",
+		"shortsword|phb",
+		"sickle|phb",
+		"spear|phb",
+		"staff|phb",
+		"trident|phb",
+		"war pick|phb",
+		"warhammer|phb",
+		"whip|phb",
+	],
+	weaponRanged: [
+		"blowgun|phb",
+		"dart|phb",
+		"hand crossbow|phb",
+		"heavy crossbow|phb",
+		"light crossbow|phb",
+		"longbow|phb",
+		"net|phb",
+		"shortbow|phb",
+		"sling|phb",
+	],
+	focusSpellcasting: [
+		"crystal|phb",
+		"orb|phb",
+		"rod|phb",
+		"staff|phb",
+		"wand|phb",
+	],
+	setGaming: [
+		"dice set|phb",
+		"dragonchess set|phb",
+		"playing card set|phb",
+		"three-dragon ante set|phb",
+	],
+	toolArtisan: [
+		"alchemist's supplies|phb",
+		"brewer's supplies|phb",
+		"calligrapher's supplies|phb",
+		"carpenter's tools|phb",
+		"cartographer's tools|phb",
+		"cobbler's tools|phb",
+		"cook's utensils|phb",
+		"glassblower's tools|phb",
+		"jeweler's tools|phb",
+		"leatherworker's tools|phb",
+		"mason's tools|phb",
+		"painter's supplies|phb",
+		"potter's tools|phb",
+		"smith's tools|phb",
+		"tinker's tools|phb",
+		"weaver's tools|phb",
+		"woodcarver's tools|phb",
+	],
+};
+
+export {
+	Charactermancer_StartingEquipment,
+};

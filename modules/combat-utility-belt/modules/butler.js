@@ -20,7 +20,7 @@ export const GADGETS = {
     concentrator: {
         name: "Concentrator",
         info: "Manages Concentration in the dnd5e game system.",
-        wiki: `${WIKIPATH}/award-xp`
+        wiki: `${WIKIPATH}/concentrator`
     },
     enhancedConditions: {
         name: "Enhanced Conditions",
@@ -102,6 +102,13 @@ export const KNOWN_GAME_SYSTEMS = {
         healthAttribute: "attributes.hp",
         initiative: "attributes.init.mod"
     },
+    ironclaw2e: {
+        id: "ironclaw2e",
+        name: "Ironclaw Second Edition",
+        concentrationAttribute: "",
+        healthAttribute: "",
+        initiative: ""
+    },
     other: {
         id: "other",
         name: "Custom/Other",
@@ -128,13 +135,38 @@ export const DEFAULT_CONFIG = {
         outputChat: false,
         promptRoll: false,
         autoConcentrate: false,
+        autoEndConcentration: false,
+        notifyConcentration: {
+            none: "No one",
+            gm: "GM & Owner/s",
+            all: "Everyone"
+        },
+        notifyConcentrationCheck: {
+            none: "No one",
+            gm: "GM & Owner/s",
+            all: "Everyone"
+        },
         notifyDouble: {
-            none: "None",
-            gm: "GM Only",
+            none: "No one",
+            gm: "GM & Owner/s",
+            all: "Everyone"
+        },
+        notifyEndConcentration: {
+            none: "No one",
+            gm: "GM & Owner/s",
             all: "Everyone"
         },
         icon: "modules/combat-utility-belt/icons/concentrating.svg",
-        alias: "Concentrator"
+        alias: "Concentrator",
+        concentrationStatuses: {
+            breaking: "breaking",
+            active: "active",
+            broken: "broken"
+        },
+        messageVisibility: {
+            gmOwner: "GM And Owner",
+            all: "All"
+        }
     },
     cubPuter: {
         id: "cub-puter",
@@ -158,6 +190,14 @@ export const DEFAULT_CONFIG = {
         conditionLab: {
             id: "cub-condition-lab",
             title: "Condition Lab",
+        },
+        macroConfig: {
+            id: "cub-enhanced-condition-macro-config",
+            title: "CUB Enhanced Condition - Macro Config"
+        },
+        triggerConfig: {
+            id: "cub-enhanced-condition-trigger-config",
+            title: "CUB Enhanced Condition - Trigger Config"
         },
         title: "Enhanced Conditions",
         mapTypes: {
@@ -190,11 +230,16 @@ export const DEFAULT_CONFIG = {
         templates: {
             conditionLab: `${PATH}/templates/condition-lab.hbs`,
             chatOutput: `${PATH}/templates/chat-conditions.hbs`,
-            importDialog: `${PATH}/templates/import-conditions.html`
-        }
+            chatConditionsPartial: `${PATH}/templates/partials/chat-card-condition-list.hbs`,
+            importDialog: `${PATH}/templates/import-conditions.html`,
+            macroConfig: `${PATH}/templates/enhanced-condition-macro-config.hbs`,
+            triggerConfig: `${PATH}/templates/enhanced-condition-trigger-config.hbs`
+        },
+        migrationVersion: null
     },
     giveXP: {
-        enable: false
+        enable: false,
+        modifier: 1
     },
     hideNames: {
         enable: false,
@@ -307,7 +352,8 @@ export const DEFAULT_CONFIG = {
             percent: "%"
         },
         templatePaths: {
-            macroTriggerSelect: `${PATH}/templates/trigger-select.html`
+            macroTriggerSelect: `${PATH}/templates/trigger-select.html`,
+            trigglerButton: `${PATH}/templates/triggler-button.hbs`
         }
         
     }
@@ -318,11 +364,16 @@ export const FLAGS = {
         chatMessage: "concentratorChatMessageParsed",
         damageTaken: "damageWasTaken",
         damageAmount: "damageAmount",
-        isDead: "isDead"
+        isDead: "isDead",
+        updateProcessed: "concentrationUpdateProcessed",
+        concentrationSpell: "concentrationSpell"
     },
     enhancedConditions: {
         conditionId: "conditionId",
         overlay: "overlay"
+    },
+    giveXP: {
+        deselectByDefault: "deselectByDefault"
     },
     mightySummoner: {
         mightySummoner: "mightySummoner"
@@ -334,6 +385,10 @@ export const FLAGS = {
         enable: "enableHideName",
         replacementType: "hideNameReplacementType",
         replacementName: "hideNameReplacement"
+    },
+    panSelect: {
+        shouldPan: "shouldPan",
+        shouldSelect: "shouldSelect"
     }
 }
 
@@ -346,10 +401,15 @@ export const SETTING_KEYS = {
         conditionName: "concentratorConditionName",
         outputChat: "concentratorOutputToChat",
         autoConcentrate: "autoConcentrate",
+        autoEndConcentration: "autoEndConcentration",
         concentrationAttribute: "concentrationAttribute",
+        notifyConcentration: "notifyConcentration",
+        notifyConcentrationCheck: "notifyConcentrationCheck",
         notifyDouble: "notifyDoubleConcentration",
+        notifyEndConcentration: "notifyEndConcentration",
         healthAttribute: "concentratorHealthAttribute", //validate necessity
-        prompt: "concentratorPromptPlayer"
+        prompt: "concentratorPromptPlayer",
+        hideNpcConcentration: "hideNPCConcentration"
     },
     cubPuter: {
         menu: "cubPuter",
@@ -366,10 +426,13 @@ export const SETTING_KEYS = {
         removeDefaultEffects: "removeDefaultEffects",
         outputChat: "conditionsOutputToChat",
         outputCombat: "conditionsOutputDuringCombat",
-        suppressPreventativeSaveReminder: "conditionsSuppressPreventativeSaveReminder"
+        suppressPreventativeSaveReminder: "conditionsSuppressPreventativeSaveReminder",
+        migrationVersion: "enhancedConditionsMigrationVersion",
+        showSortDirectionDialog: "showSortDirectionDialog"
     },
     giveXP: {
-        enable: "enableGiveXP"
+        enable: "enableGiveXP",
+        modifier: "giveXpModifier"
     },
     hideNames: {
         enable: "enableHideNPCNames",

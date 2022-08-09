@@ -4,7 +4,7 @@ export default {
             key: "conversionMultipliers",
             data: {
                 type: String,
-                default: "{\"inch\": 2.5, \"feet\": 0.3, \"mile\": 1.6, \"pound\": 0.5}",
+                default: "{\"inch\": 2.5, \"feet\": 0.3, \"mile\": 1.6, \"pound\": 0.5, \"gallon\": 3.5}",
                 scope: "world",
                 config: false,
                 restricted: true,
@@ -59,6 +59,18 @@ export default {
             },
         },
         {
+            key: "gallonConversionMultiplier",
+            data: {
+                name: "Gallon Conversion Multiplier: ",
+                hint: "1 gallon = this many liters",
+                type: Number,
+                default: 3.5,
+                scope: "world",
+                config: true,
+                restricted: true,
+            },
+        },
+        {
             key: "sceneConversion",
             data: {
                 name: "Enable scene conversion: ",
@@ -81,6 +93,7 @@ export default {
                 config: true,
                 restricted: true,
             }
+
         },
         {
             key: "sceneGridUnits",
@@ -93,6 +106,31 @@ export default {
                 config: true,
                 restricted: true,
             }
+
         },
+        {
+            key: "forceShortening",
+            data: {
+                name: "Force unit shortening?",
+                hint: "Force units to be abbreviated (pound -> kg)",
+                type: Boolean,
+                default: false,
+                scope: "world",
+                config: true,
+                restricted: true,
+            }
+
+        },
+        {
+            key: 'buttonHidden',
+            data: {
+                name: 'Hide metrify button',
+                hint: 'Check this box if you want the metrify button to be hidden',
+                type: Boolean,
+                default: false,
+                scope: 'client',
+                config: true
+            }
+        }
     ]
-};
+}

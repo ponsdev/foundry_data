@@ -1,4 +1,4 @@
-import { CharacterSheetContext, getSetting, settings, QuickInsert, setSetting } from './quick-insert.js';
+import { CharacterSheetContext, getSetting, ModuleSetting, QuickInsert, setSetting } from './quick-insert.js';
 import './vendor.js';
 
 // Savage Worlds Adventure Edition integration
@@ -7,7 +7,7 @@ const defaultSheetFilters = {
     skill: "swade.skills",
     hindrance: "swade.hindrances",
     edge: "swade.edges",
-    power: "",
+    ability: "",
     weapon: "",
     armor: "",
     shield: "",
@@ -18,24 +18,51 @@ const defaultSheetFilters = {
     "vehicle-weapon": "",
 };
 class SwadeSheetContext extends CharacterSheetContext {
-    constructor(entitySheet, anchor, sheetType, insertType) {
-        super(entitySheet, anchor);
+    constructor(documentSheet, anchor, sheetType, insertType, equipped) {
+        super(documentSheet, anchor);
+        this.equipped = false;
+        this.equipped = Boolean(equipped);
         if (sheetType && insertType) {
-            const sheetFilters = getSetting(settings.FILTERS_SHEETS).baseFilters;
+            const sheetFilters = getSetting(ModuleSetting.FILTERS_SHEETS).baseFilters;
             this.filter =
                 sheetFilters[`${sheetType}.${insertType}`] || sheetFilters[insertType];
         }
+    }
+    onSubmit(item) {
+        const res = super.onSubmit(item);
+        if (this.equipped && res) {
+            res.then((items) => {
+                const item = items.length && items[0];
+                if (!item)
+                    return;
+                //@ts-ignore
+                if (item?.data?.equippable) {
+                    item.update({ "data.equipped": true });
+                }
+            });
+        }
+        return res;
     }
 }
 function sheetSwadeRenderHook(app, sheetType) {
     if (app.element.find(".quick-insert-link").length > 0) {
         return;
     }
+    // Legacy sheets
     const link = `<a class="quick-insert-link" title="Quick Insert"><i class="fas fa-search"></i></a>`;
     app.element.find("a.item-create").each((i, el) => {
-        const type = el.dataset.type;
-        if (!Object.keys(defaultSheetFilters).includes(type))
-            return;
+        const type = el.dataset.type || "";
+        const equipped = el.dataset.equipped === "true";
+        const linkEl = $(link);
+        $(el).after(linkEl);
+        linkEl.on("click", () => {
+            const context = new SwadeSheetContext(app, linkEl, sheetType, type, equipped);
+            QuickInsert.open(context);
+        });
+    });
+    // New character sheet
+    app.element.find("button.item-create").each((i, el) => {
+        const type = el.dataset.type || "";
         const linkEl = $(link);
         $(el).after(linkEl);
         linkEl.on("click", () => {
@@ -45,19 +72,19 @@ function sheetSwadeRenderHook(app, sheetType) {
     });
 }
 function init() {
-    if (game.user.isGM) {
-        const customFilters = getSetting(settings.FILTERS_SHEETS).baseFilters;
-        setSetting(settings.FILTERS_SHEETS, {
+    if (game.user?.isGM) {
+        const customFilters = getSetting(ModuleSetting.FILTERS_SHEETS).baseFilters;
+        setSetting(ModuleSetting.FILTERS_SHEETS, {
             baseFilters: {
                 ...defaultSheetFilters,
                 ...customFilters,
             },
         });
     }
-    Hooks.on("renderSwadeCharacterSheet", app => getSetting(settings.FILTERS_SHEETS_ENABLED) &&
+    Hooks.on("renderCharacterSheet", (app) => getSetting(ModuleSetting.FILTERS_SHEETS_ENABLED) &&
         sheetSwadeRenderHook(app, "character"));
-    Hooks.on("renderSwadeNPCSheet", app => sheetSwadeRenderHook(app, "npc"));
-    Hooks.on("renderSwadeVehicleSheet", app => sheetSwadeRenderHook(app, "vehicle"));
+    Hooks.on("renderSwadeNPCSheet", (app) => sheetSwadeRenderHook(app, "npc"));
+    Hooks.on("renderSwadeVehicleSheet", (app) => sheetSwadeRenderHook(app, "vehicle"));
     console.log("Quick Insert | swade system extensions initiated");
 }
 

@@ -1,3 +1,66 @@
+# Version 1.0.24
+
+Adding v10 support.
+
+# Version 1.0.23
+
+Changed the layout so that the folder name isn't displayed when a folder is opened.  It was taking up some room and was a bit redundant.
+
+Change the layout style a bit to try and make it a little easier to see what's happening.
+
+Removed tooltips for the player when hovering over a scene.
+
+Added the option to show for the GM either the real name or the nav name.
+
+# Version 1.0.22
+
+Added drag and drop functionality to re-order the scenes on the Navigation bar.
+
+Added the option to minimize the scene navigation when combat starts, or when a scene is activated.
+
+# Version 1.0.21
+
+Fixed an error where folders weren't closing after opening a new folder.
+
+# Version 1.0.19
+
+Added v9 support.  Mostly with how the directory information is listed.
+
+Removed some debugging information, Scene navigation got very talkative.
+
+# Version 1.0.18
+
+Added the option to double-click on a scene to activate it.  Makes life a little easier when changing between scenes.
+
+# Version 1.0.17
+
+Added option to always show the compass icon, so you can toggle on and off navigation quickly.
+
+Added libWrapper support
+
+Changed the display background setting to be per player, rather than world based.
+
+Updated the spanish language translations, thank you lozalojo
+
+# Version 1.0.16
+
+Fixed some styling issues when not showing the background.
+
+Added the option to not show the scene navigation modifications but keep the other changes to the side bar.
+
+Corrected the onChange in the settings to debounce properly.
+
+Changed some styles so an open folder looks more "open"
+
+# Version 1.0.15
+
+Fixed issue where collapsing the scene navigation wouldn't hide the rows if the background is set to to show.
+
+Fixing issue with setting initial position.
+
+# Version 1.0.14
+Updating to support 0.8.0
+
 # Version 1.0.12
 Fixing some styling to make the icons show a little better.
 

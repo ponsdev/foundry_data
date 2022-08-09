@@ -1,4 +1,5 @@
 const MODULE_NAME = 'foundry-combat-focus'
+const DISPLAY_NAME = 'Combat Focus'
 const CHAT_ON_COMBAT_TRACKER_SETTING = 'showChatOnCombatTrackerTab'
 const CHAT_INPUT_IN_SPLIT_VIEW = 'showChatInputInSplitView'
 const CHAT_HEIGHT_SETTING = 'chatHeight'
@@ -67,11 +68,10 @@ function updateStyleElement() {
     const style = document.getElementById(STYLE_ID)
     if (style != null) {
       style.innerText = `
-        #${CHAT_ID}.${SMALL_CHAT_CLASS},
-        body.emu.e-body#emu #sidebar #${CHAT_ID}.sidebar-tab.${SMALL_CHAT_CLASS} { /* Ernie's Modern UI compatibility */
-          flex-grow: 0;
-          flex-shrink: 0;
-          flex-basis: ${chatHeight}px;
+        #${CHAT_ID}.${SMALL_CHAT_CLASS} {
+          flex-grow: 0 !important;
+          flex-shrink: 0 !important;
+          flex-basis: ${chatHeight}px !important;
         }
       `
       if (scrolledToBottom) {
@@ -169,9 +169,25 @@ function onStopDrag() {
   }
 }
 
-function registerDragResizeListener() {
+let dragStartRegistered = false
+
+function registerDragStartListener() {
+  if (dragStartRegistered) {
+    return
+  }
+
   const chatElement = getChatElement()
-  chatElement.addEventListener('pointerdown', onStartDrag.bind(this, chatElement))
+  if (chatElement.tagName !== 'TEMPLATE') {
+    chatElement.addEventListener('pointerdown', onStartDrag.bind(this, chatElement))
+    dragStartRegistered = true
+    console.log(`[${DISPLAY_NAME}] Drag start listener registered`)
+  } else {
+    console.debug(`[${DISPLAY_NAME}] Skipping to register chat drag handler because the chat isn't rendered yet.`)
+  }
+}
+
+function registerDragResizeListener() {
+  registerDragStartListener()
   document.addEventListener('pointermove', onDrag)
   document.addEventListener('pointerup', onStopDrag)
   document.addEventListener('pointercancel', onStopDrag)
@@ -187,4 +203,8 @@ Hooks.on('ready', () => {
   registerDragResizeListener()
   updateCombatTrackerStyle()
   updateStyleElement()
+})
+
+Hooks.on('renderSidebarTab', function() {
+  registerDragStartListener()
 })

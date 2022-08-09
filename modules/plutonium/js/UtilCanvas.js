@@ -1,1 +1,33 @@
-const _0x3631=['7SXSSSC','grid','1Ivhdva','568849KBPusB','10686vniixh','worldTransform','86798CYZPNS','stage','scale','49wTLYjU','getPosCanvasSpace','getTopLeft','31675aFLVDi','170840vRTbsF','clientX','name','463479JcnVaZ','find','481997OUivvL','clientY'];const _0x21f3=function(_0x3b68c5,_0x2e7eeb){_0x3b68c5=_0x3b68c5-0x1ec;let _0x363111=_0x3631[_0x3b68c5];return _0x363111;};const _0x56f294=_0x21f3;(function(_0x4ef257,_0x3e50e8){const _0x4e9e3f=_0x21f3;while(!![]){try{const _0x239d3b=parseInt(_0x4e9e3f(0x1fd))+parseInt(_0x4e9e3f(0x1ee))+parseInt(_0x4e9e3f(0x1ef))*parseInt(_0x4e9e3f(0x1f4))+-parseInt(_0x4e9e3f(0x1f7))+-parseInt(_0x4e9e3f(0x1f8))+-parseInt(_0x4e9e3f(0x1fb))*parseInt(_0x4e9e3f(0x1ed))+-parseInt(_0x4e9e3f(0x1ff))*parseInt(_0x4e9e3f(0x1f1));if(_0x239d3b===_0x3e50e8)break;else _0x4ef257['push'](_0x4ef257['shift']());}catch(_0x29b322){_0x4ef257['push'](_0x4ef257['shift']());}}}(_0x3631,0x49750));class UtilCanvas{static[_0x56f294(0x1f5)](_0x262de1,_0x2f3c38){const _0x55b67b=_0x56f294,_0x80e39d=canvas['layers'][_0x55b67b(0x1fc)](_0x4a6315=>_0x4a6315[_0x55b67b(0x1fa)]===_0x2f3c38),[_0x2663f1,_0xfd67ec]=[_0x262de1[_0x55b67b(0x1f9)],_0x262de1[_0x55b67b(0x1fe)]],_0x3a7b17=_0x80e39d[_0x55b67b(0x1f0)],_0x2dfce8=(_0x2663f1-_0x3a7b17['tx'])/canvas[_0x55b67b(0x1f2)][_0x55b67b(0x1f3)]['x'],_0x20cfc3=(_0xfd67ec-_0x3a7b17['ty'])/canvas['stage']['scale']['y'],_0x4d2f39=canvas[_0x55b67b(0x1ec)][_0x55b67b(0x1f6)](_0x2dfce8,_0x20cfc3);return{'x':_0x4d2f39[0x0],'y':_0x4d2f39[0x1]};}}export{UtilCanvas};
+class UtilCanvas {
+	/**
+	 * @param evt
+	 * @param layerName One of: "BackgroundLayer", "DrawingsLayer", "GridLayer", "WallsLayer", "TemplateLayer",
+	 * "NotesLayer", "TokenLayer", "ForegroundLayer", "SoundsLayer", "LightingLayer", "SightLayer", "EffectsLayer",
+	 * "ControlsLayer"
+	 * @return {{x: *, y: *}}
+	 */
+	static getPosCanvasSpace (evt, layerName) {
+		const layer = canvas.layers.find(it => it.name === layerName);
+
+		// (Taken from `_onDropActorData`)
+		// Acquire cursor position transformed to Canvas coordinates
+		const [x, y] = [evt.clientX, evt.clientY];
+		const t = layer.worldTransform;
+		const tx = (x - t.tx) / canvas.stage.scale.x;
+		const ty = (y - t.ty) / canvas.stage.scale.y;
+		const p = canvas.grid.getTopLeft(tx, ty);
+
+		return {x: p[0], y: p[1]};
+	}
+
+	/** See: https://stackoverflow.com/a/16282685 */
+	static getCentroid (arr) {
+		const x = arr.map(xy => xy[0]);
+		const y = arr.map(xy => xy[1]);
+		const cx = (Math.min(...x) + Math.max(...x)) / 2;
+		const cy = (Math.min(...y) + Math.max(...y)) / 2;
+		return [cx, cy];
+	}
+}
+
+export {UtilCanvas};

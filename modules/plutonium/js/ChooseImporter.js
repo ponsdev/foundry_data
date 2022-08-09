@@ -1,67 +1,1475 @@
-const _0x3b9a=['_pDoQuickOpen','pack','race','some','_MODE_ID_TABLES','_rowMetasMode','_actor','removeHook','items','spells','_activateListeners_initPredefinedMode','Optional\x20&\x20Variant\x20Rules','manifesturlWorld','Books','pDoQuickOpenUsingExistingSourceSelection','pGetFileOutputs','minimumRole','length','init','PG_VEHICLES','vehicleUpgrade','html','isDedupable','2257nVuJCM','click','isClosable','ChooseImporter_pack_','source','vehicle-upgrades','manifesturlModule','<button\x20class=\x22btn\x20btn-5et\x20imp-wiz__btn-tab-head\x20imp-wiz__btn-tab-head--left\x20w-50\x20ml-2\x20','7MsIgvZ','addHookAll','_INSTANCE_CACHE','vehicleupgrade','pInit','_modes','toggleVe','btn--active','entity','Packages','_getMode','_pFillUi_pFillSourceUi','hasDefaultSource','\x22>Import\x20to\x20Compendium</button>','conditions-diseases','handlePostClose','monster','_pFillUi_handleOpenClick_pGetUrlMeta','Failed\x20to\x20load\x20package\x20(worlds/modules)\x20index!\x20The\x20package\x20importer\x20may\x20not\x20function\x20correctly.\x20','getSaveableState','renderActorDirectory',':\x20Choose\x20Source','tables','_$panel3_tab1','</option>','userData','.imp__btn-open--sheet','renderActorSheet','condition','optional-and-variant-rules','Vehicle\x20Upgrades','_pFillUi','_comp','\x0a\x09\x09</select>','change','$getDirButton','off','prop','getImporter','Open\x20Importer','importerInstance','_pFillUi_pFillConfigUi','wizardTitleButtonOpenImporter','_$panel3WrpLoader','<input\x20class=\x22mr-1\x22\x20type=\x22radio\x22\x20name=\x22package-mode\x22\x20','_$panel2WrpList','ChooseImporter_is_pack_','deleteActor','</button>','getPod','_pGetUi_pCheckOpenCachedInstance','<button\x20class=\x22btn\x20btn-sm\x20btn-5et\x20pl-2\x20pr-1\x20imp-wiz__btn-package-archive\x20h-100\x22>','bind','pGetSources','_pFillUi_handleOpenClick_pGetSpecialMeta','Backgrounds','_trackUiHook','error','folderType','No\x20unlocked/compatible\x20compendiums\x20found\x20for\x20type\x20\x22','set','<div\x20class=\x22flex-col\x20w-100\x20h-100\x20pb-3\x22></div>','packs','Choose\x20','<h4\x20class=\x22imp-wiz__head-panel\x22>','_STORAGE_KEY_LAST_USED_MODE','_activateListeners_pHkMode','<div\x20class=\x22bold\x20veapp__msg-error\x22>Failed\x20to\x20load!</div>','getMaxWindowWidth','props','Please\x20select\x20an\x20import\x20mode\x20first!','warning','$pGetAddAppLoadingOverlay','.\x22\x20You\x20may\x20need\x20to\x20re-open\x20the\x20Wizard.','_activateListeners_fillPanel1','label','isFolderOnly','classes-subclasses','_MODE_ID_CREATURES','toLowerCase','checked','preventDefault','_$panel3WrpConfig',':\x20Choose\x20Source</h4>','_$panel1','PG_OBJECTS','_doSaveStateDebounced','isNonCacheableInstance','owner','namespace','_$panel3Head','_pFillUi_$pGetWrpConfigSettings','bringToFront','get','renderJournalDirectory','background','disabled\x20title=\x22No\x20world\x20available.\x22','remove','warn','adventures','_pFillUi_handleOpenClick_pGetFileMeta','metaOther','411450bLDTcW','_$stgUrl','empty','_pFillUi_$pGetWrpPackageImport','render','isDefault','isTemp','_getImportToPackKey','add','PG_PSIONICS','$btn','_packageIndex','Book','isRemainOpen','_getInstanceCacheKey','then','pPreRender','filter','_MODES','<button\x20class=\x22btn\x20btn-sm\x20btn-5et\x20pl-2\x20pr-1\x20imp-wiz__btn-quick\x20h-100\x22\x20title=\x22Open\x20Default\x20Importer\x22><i\x20class=\x22fas\x20fa-forward\x22></i></button>','notifications','role','activateListeners','_$getDirButtonQuick_getModeId','<button\x20class=\x22mt-auto\x20btn\x20btn-5et\x22\x20disabled>Import\x20Package</button>','_$panel3WrpTabs','gameProp','name','close','modeId','journal','_DEFAULT_STATE','feat','Feats','pImportManifesturlWorld','_uiHooks','page','_resetUiHooks','collection','_getFilterNamespace','Creatures','Supernatural\x20Gifts\x20&\x20Rewards','actor','isAlwaysCloseWindow','copy','pGetElements','_pPackageIndex','packageSource','Failed\x20to\x20load\x20importer!\x20','disabled\x20title=\x22No\x20module\x20available.\x22','item','getMergedPackageIndex','state','_getSourceSelectionKey','metadata','_appSourceSelector','_getDefaultState','predefinedMode','entries','active','STR_SEE_CONSOLE','addHook','reward','Adventure','isRadio','pHandleButtonClick','vehicles','_getSelectedImporterStorageKey','toggleClass','Configure\x20and\x20Import','push','_GAME_PROP_ACTORS','Import','pGet','rewards','cacheKey','<button\x20class=\x22mt-auto\x20btn\x20btn-5et\x22>','$row','find','__comp','_predefinedMode','PG_BESTIARY','Psionics','<button\x20class=\x22btn\x20btn-sm\x20btn-5et\x20w-100\x22>','_pHandleOpenImporter_pSaveLastUsed','_deferredHooks','metaExternalArchive','MODULE_LOCATION','catch','Other\x20Options\x20&\x20Features','variantrule','6546ErGNwS','_GAME_PROP_JOURNAL','_pInitImporter','val','Spells','insertBefore','_pDoSaveState','_$window','_getPackSelectionKey','13949ClawNX','_doAddButtonSheet','_$stgNone','join','_getButtonImportQuickTitle','Importer','_$panel3','<span\x20class=\x22fas\x20fa-atom\x22></span>\x20','[data-panel=\x221\x22]','_pInitSourceSelector','_pHandleOpenImporter','<span\x20class=\x22fas\x20fa-heart\x22></span>','pGetUrlOutputs','_GAME_PROP_TABLES','pImportManifesturlModule','cacheKeys','_importerPreRenderArgs','contents','\x20<i\x20class=\x22fas\x20fa-external-link-alt\x22></i></a>','4JDpBkj','_$panel3_tab2','61FWTfjA','_$panel3_btnImportPackage','psionic','backgrounds','pSyncStateFrom','pGetSelectedSources','_$panel2Head','objects','<button\x20class=\x22imp__btn-open\x20w-100\x20mx-0\x22>','262515KpbmTM','forEach','_GAME_PROP_ITEMS','23PVsiAC','$getCbBool','_isAlwaysCloseWindow','singleName','Configure\x20and\x20Import\x20','_getButtonImportHtml','handlePreClose','196645AfkBcc','Plutonium\x20','\x22>Import\x20to\x20Folder</button>','hasActor','disabled','text','url','PG_TABLES','content','_$stgSpecial','debounce','ixTabPanel3','Classes\x20&\x20Subclasses','PG_VARIANTRULES','PG_CONDITIONS_DISEASES','maximize','_pFillUi_handleOpenClick_pOpen','ChooseImporter_source_filter','ChooseImporter_source_','fnCheckRequirements','_$panel2','spell','[data-panel=\x223\x22]','getMaxWindowHeight','_$panel2WrpLoader','isFile','553364DtYXlf','_activateListeners_fillPanel2','_pGetImportListUserData','optionalfeature','_importer','pSet','_pGetUi_cacheInstance','\x20Source','wizardTitleWindow','constructor','instance','renderRollTableDirectory','/template/ChooseImporterForMode.handlebars','mode','_pFillUi_$getBtnOpenImporter','fromObject','_getButtonImportQuickHtml','hasPackages','showAndRender','append','map','includes','_activateListeners_fillPanel3','_$stgUpload','_MODE_ID_ITEMS','_MODE_ID_ADVENTURES'];const _0x47a0=function(_0xd6bcde,_0xd0bf3d){_0xd6bcde=_0xd6bcde-0x180;let _0x3b9a70=_0x3b9a[_0xd6bcde];return _0x3b9a70;};const _0x5829f8=_0x47a0;(function(_0x370b48,_0x3ae617){const _0x169af2=_0x47a0;while(!![]){try{const _0x266efa=-parseInt(_0x169af2(0x25a))+-parseInt(_0x169af2(0x239))*-parseInt(_0x169af2(0x218))+parseInt(_0x169af2(0x22d))*-parseInt(_0x169af2(0x20f))+parseInt(_0x169af2(0x1b4))+-parseInt(_0x169af2(0x236))+-parseInt(_0x169af2(0x28b))*parseInt(_0x169af2(0x293))+parseInt(_0x169af2(0x22b))*parseInt(_0x169af2(0x240));if(_0x266efa===_0x3ae617)break;else _0x370b48['push'](_0x370b48['shift']());}catch(_0x4c9869){_0x370b48['push'](_0x370b48['shift']());}}}(_0x3b9a,0x46481));import{SharedConsts}from'../shared/SharedConsts.js';import{ImportListFeat}from'./ImportListFeat.js';import{ImportListCreature}from'./ImportListCreature.js';import{ImportListSpell}from'./ImportListSpell.js';import{ImportListItem}from'./ImportListItem.js';import{ImportListRace}from'./ImportListRace.js';import{ImportListClass}from'./ImportListClass.js';import{ImportListBackground}from'./ImportListBackground.js';import{ImportListVariantRule}from'./ImportListVariantRule.js';import{ImportListRollableTable}from'./ImportListRollableTable.js';import{ImportListPsionic}from'./ImportListPsionic.js';import{ImportListOptionalFeature}from'./ImportListOptionalFeature.js';import{ImportListConditionDisease}from'./ImportListConditionDisease.js';import{ImportListVehicle}from'./ImportListVehicle.js';import{ImportListVehicleUpgrade}from'./ImportListVehicleUpgrade.js';import{ImportListObject}from'./ImportListObject.js';import{ImportListAdventure}from'./ImportListAdventure.js';import{ImportListBook}from'./ImportListBook.js';import{ImportListReward}from'./ImportListReward.js';import{UtilApplications}from'./UtilApplications.js';import{Config}from'./Config.js';import{LGT,Util}from'./Util.js';import{FolderPathBuilder}from'./FolderPathBuilder.js';import{AppSourceSelectorMulti}from'./AppSourceSelectorMulti.js';import{ImportSpecialPackages}from'./ImportSpecialPackages.js';import{UtilDataSource}from'./UtilDataSource.js';class ChooseImporter extends Application{static[_0x5829f8(0x286)](){const _0xb15cdf=_0x5829f8;Hooks['on'](_0xb15cdf(0x2ae),(_0x27b3f2,_0x315669,_0x1e22ee)=>ChooseImporter[_0xb15cdf(0x219)](_0x27b3f2,_0x315669,_0x1e22ee));}static[_0x5829f8(0x219)](_0x3884cf,_0x3456d9,_0x3209fd){const _0x2b8c7a=_0x5829f8;if(!_0x3209fd[_0x2b8c7a(0x1a6)])return;const _0x527e84=Config['get']('import',_0x2b8c7a(0x284));if(game['user'][_0x2b8c7a(0x1c9)]<_0x527e84)return;const _0x2b6ba7=_0x3884cf['element']['find']('.window-header');_0x2b6ba7['find'](_0x2b8c7a(0x2ad))[_0x2b8c7a(0x1af)](),$('<a\x20class=\x22imp__btn-open--sheet\x22><span\x20class=\x22fas\x20fa-atom\x22></span>\x20Import</a>')[_0x2b8c7a(0x28c)](_0x2cbbd6=>this[_0x2b8c7a(0x1f5)](_0x2cbbd6,_0x3884cf,_0x3456d9,_0x3209fd))[_0x2b8c7a(0x214)](_0x2b6ba7[_0x2b8c7a(0x202)]('.close'));}static[_0x5829f8(0x1f5)](_0x4e1d92,_0x4c751f,_0x4e4952,_0x1d8250){const _0x7c1d3f=_0x5829f8;_0x4e1d92['preventDefault']();const _0x4bc534=new ChooseImporter(_0x4c751f['actor']);_0x4bc534[_0x7c1d3f(0x1b8)](!![]);}static[_0x5829f8(0x2b6)](_0x330c2e){const _0x496bae=_0x5829f8;return $(_0x496bae(0x235)+this[_0x496bae(0x23e)]()+_0x496bae(0x2c3))['click'](_0x2787e8=>{const _0x48bfc2=_0x496bae;_0x2787e8[_0x48bfc2(0x19f)]();const _0xb6934d=new ChooseImporter();_0xb6934d[_0x48bfc2(0x1b8)](!![]);});}static['_getButtonImportHtml'](){const _0x4ae0b1=_0x5829f8;return _0x4ae0b1(0x21f)+(Config[_0x4ae0b1(0x1ab)]('ui','isStreamerMode')?'':_0x4ae0b1(0x241))+_0x4ae0b1(0x1fc);}static[_0x5829f8(0x26a)](){const _0x3cd5ff=_0x5829f8;return _0x3cd5ff(0x223);}static['_getButtonImportQuickTitle'](){return'Re-open\x20your\x20last-used\x20importer\x20for\x20this\x20directory.';}static['$getDirButtonQuick'](_0x405041){const _0x14afd6=_0x5829f8;return $('<button\x20class=\x22imp__btn-open\x20mx-0\x20w-initial\x22></button>')[_0x14afd6(0x289)](this[_0x14afd6(0x26a)]())['title'](this[_0x14afd6(0x21c)]())['click'](async _0x39019e=>{const _0x27f64f=_0x14afd6;_0x39019e[_0x27f64f(0x19f)]();const _0x700573=await StorageUtil[_0x27f64f(0x1fd)](ChooseImporter[_0x27f64f(0x18f)])||{},_0x275d7b=new ChooseImporter(null,{'modeId':this['_$getDirButtonQuick_getModeId'](_0x405041,_0x700573)});await _0x275d7b[_0x27f64f(0x282)]();});}static[_0x5829f8(0x1cb)](_0x4e385e,_0x227311){const _0x477185=_0x5829f8;switch(_0x4e385e){case _0x477185(0x2a7):return _0x227311?.[ChooseImporter[_0x477185(0x1fb)]]||ChooseImporter[_0x477185(0x19c)];case'renderItemDirectory':return _0x227311?.[ChooseImporter[_0x477185(0x238)]]||ChooseImporter[_0x477185(0x272)];case _0x477185(0x1ac):return _0x227311?.[ChooseImporter['_GAME_PROP_JOURNAL']]||ChooseImporter[_0x477185(0x273)];case _0x477185(0x265):return _0x227311?.[ChooseImporter[_0x477185(0x225)]]||ChooseImporter[_0x477185(0x278)];}}static[_0x5829f8(0x2b9)](_0x50caf1,_0x5327e2){const _0x4327f9=_0x5829f8;switch(_0x50caf1){case _0x4327f9(0x1d4):case UrlUtil['PG_FEATS']:return new ImportListFeat({'actor':_0x5327e2});case _0x4327f9(0x2a3):case UrlUtil[_0x4327f9(0x205)]:return new ImportListCreature({});case _0x4327f9(0x255):case UrlUtil['PG_SPELLS']:return new ImportListSpell({'actor':_0x5327e2});case _0x4327f9(0x1e6):case UrlUtil['PG_ITEMS']:return new ImportListItem({'actor':_0x5327e2});case _0x4327f9(0x276):case UrlUtil['PG_RACES']:return new ImportListRace({'actor':_0x5327e2});case _0x4327f9(0x1ad):case UrlUtil['PG_BACKGROUNDS']:return new ImportListBackground({'actor':_0x5327e2});case _0x4327f9(0x20e):case UrlUtil[_0x4327f9(0x24d)]:return new ImportListVariantRule({});case'table':case UrlUtil[_0x4327f9(0x247)]:return new ImportListRollableTable({});case _0x4327f9(0x22f):case UrlUtil[_0x4327f9(0x1bd)]:return new ImportListPsionic({'actor':_0x5327e2});case _0x4327f9(0x25d):case UrlUtil['PG_OPT_FEATURES']:return new ImportListOptionalFeature({'actor':_0x5327e2});case _0x4327f9(0x2af):case'disease':case UrlUtil[_0x4327f9(0x24e)]:return new ImportListConditionDisease({'actor':_0x5327e2});case _0x4327f9(0x1f2):case UrlUtil['PG_REWARDS']:return new ImportListReward({'actor':_0x5327e2});case'vehicle':case UrlUtil[_0x4327f9(0x287)]:return new ImportListVehicle({});case _0x4327f9(0x288):case _0x4327f9(0x296):return new ImportListVehicleUpgrade({});case'object':case UrlUtil[_0x4327f9(0x1a3)]:return new ImportListObject({});default:return null;}}constructor(_0x3c6739,_0x409aef){const _0x2ec073=_0x5829f8;_0x409aef=_0x409aef||{};const _0xf1640a=_0x409aef[_0x2ec073(0x267)]?Util[_0x2ec073(0x192)](0x3e8):Util[_0x2ec073(0x192)](0x4b0),_0x1c6e7e=_0x409aef[_0x2ec073(0x267)]?SharedConsts[_0x2ec073(0x20b)]+_0x2ec073(0x266):SharedConsts['MODULE_LOCATION']+'/template/ChooseImporter.handlebars';super({'width':_0xf1640a,'height':Util[_0x2ec073(0x257)](0x320),'title':MiscUtil[_0x2ec073(0x1ab)](_0x409aef[_0x2ec073(0x267)],_0x2ec073(0x262))||'Import\x20Wizard','template':_0x1c6e7e,'resizable':!![]}),this[_0x2ec073(0x27a)]=_0x3c6739,this[_0x2ec073(0x204)]=_0x409aef['mode'];if(!this['_predefinedMode']&&_0x409aef[_0x2ec073(0x1d1)])this[_0x2ec073(0x204)]=ChooseImporter['_MODES'][_0x2ec073(0x202)](_0x1e720f=>_0x1e720f['id']===_0x409aef[_0x2ec073(0x1d1)]);this['_namespace']=_0x409aef[_0x2ec073(0x1a7)]||'default',this[_0x2ec073(0x23b)]=!!_0x409aef[_0x2ec073(0x1df)],this['_isTemp']=!!_0x409aef[_0x2ec073(0x1ba)],this['_importerPreRenderArgs']=_0x409aef['importerPreRenderArgs'],this[_0x2ec073(0x203)]=BaseComponent[_0x2ec073(0x269)](ChooseImporter[_0x2ec073(0x1ec)]()),this[_0x2ec073(0x2b3)]=this[_0x2ec073(0x203)][_0x2ec073(0x2c4)](),this[_0x2ec073(0x298)]=[];if(this[_0x2ec073(0x204)])this[_0x2ec073(0x298)]=[this[_0x2ec073(0x204)]];this[_0x2ec073(0x209)]=[],this['_doSaveStateDebounced']=null,this[_0x2ec073(0x216)]=null,this[_0x2ec073(0x1a2)]=null,this[_0x2ec073(0x254)]=null,this[_0x2ec073(0x233)]=null,this[_0x2ec073(0x258)]=null,this['_$panel2WrpList']=null,this[_0x2ec073(0x21e)]=null,this[_0x2ec073(0x1a8)]=null,this['_$panel3WrpLoader']=null,this['_$panel3WrpTabs']=null,this[_0x2ec073(0x1a0)]=null,this[_0x2ec073(0x2aa)]=null,this[_0x2ec073(0x22c)]=null,this[_0x2ec073(0x22e)]=null,this[_0x2ec073(0x279)]=[],this[_0x2ec073(0x25e)]=null,this[_0x2ec073(0x1eb)]=null,this[_0x2ec073(0x21a)]=null,this[_0x2ec073(0x271)]=null,this[_0x2ec073(0x1b5)]=null,this[_0x2ec073(0x249)]=null,this[_0x2ec073(0x1bf)]=null,this['_pPackageIndex']=null,this[_0x2ec073(0x1d7)]={};}[_0x5829f8(0x186)](_0x3eda50,_0x3dc14f){const _0x14318c=_0x5829f8;(this['_uiHooks'][_0x3eda50]=this[_0x14318c(0x1d7)][_0x3eda50]||[])[_0x14318c(0x1fa)](_0x3dc14f);}['_resetUiHooks'](){const _0x2b9c48=_0x5829f8;Object[_0x2b9c48(0x1ee)](this[_0x2b9c48(0x1d7)])['forEach'](([_0x2d140a,_0x22036b])=>{const _0x38d7d3=_0x2b9c48;this['_comp'][_0x38d7d3(0x27b)](_0x2d140a,_0x22036b);}),this[_0x2b9c48(0x1d7)]={};}[_0x5829f8(0x215)](){const _0x15b08d=_0x5829f8;return StorageUtil[_0x15b08d(0x25f)](this['_getSelectedImporterStorageKey'](),this['__comp'][_0x15b08d(0x2a6)]());}[_0x5829f8(0x1ca)](_0x23d67d){const _0x3f9783=_0x5829f8;super[_0x3f9783(0x1ca)](_0x23d67d),this['_$window']=_0x23d67d;this[_0x3f9783(0x27a)]&&Hooks['once'](_0x3f9783(0x2c2),_0x41f6ea=>{const _0x38b67b=_0x3f9783;if(_0x41f6ea['id']===this['_actor']['id']){this[_0x38b67b(0x1d0)]();if(this['_importer'])this[_0x38b67b(0x25e)][_0x38b67b(0x1d0)]();}});if(!this[_0x3f9783(0x204)])this['_$panel1']=_0x23d67d[_0x3f9783(0x202)](_0x3f9783(0x220));this['_$panel2']=_0x23d67d[_0x3f9783(0x202)]('[data-panel=\x222\x22]'),this['_$panel3']=_0x23d67d[_0x3f9783(0x202)](_0x3f9783(0x256));if(!this['_predefinedMode'])this[_0x3f9783(0x198)](this[_0x3f9783(0x1a2)]);else this[_0x3f9783(0x27e)]();this[_0x3f9783(0x25b)](this['_$panel2']),this[_0x3f9783(0x270)](this[_0x3f9783(0x21e)]),this[_0x3f9783(0x1a4)]=MiscUtil[_0x3f9783(0x24a)](()=>this['_pDoSaveState'](),0x32),StorageUtil[_0x3f9783(0x1fd)](this[_0x3f9783(0x1f7)]())[_0x3f9783(0x1c3)](_0x14015e=>{const _0x234dee=_0x3f9783;if(_0x14015e){if(_0x14015e[_0x234dee(0x1e8)])_0x14015e[_0x234dee(0x1e8)][_0x234dee(0x1d1)]=_0x14015e[_0x234dee(0x1e8)][_0x234dee(0x1d1)]||this[_0x234dee(0x298)][0x0]['id'];else _0x14015e[_0x234dee(0x1e8)]={'modeId':this[_0x234dee(0x298)][0x0]['id']};this[_0x234dee(0x203)]['setStateFrom'](_0x14015e);}this[_0x234dee(0x209)][_0x234dee(0x237)](_0x57127a=>_0x57127a()),this[_0x234dee(0x209)]=[],this['_comp'][_0x234dee(0x294)](this[_0x234dee(0x1a4)]);});}[_0x5829f8(0x27e)](){const _0x1f0904=_0x5829f8;this[_0x1f0904(0x2b3)][_0x1f0904(0x1f1)](_0x1f0904(0x1d1),this[_0x1f0904(0x190)][_0x1f0904(0x182)](this)),this[_0x1f0904(0x209)][_0x1f0904(0x1fa)](this[_0x1f0904(0x190)][_0x1f0904(0x182)](this));}[_0x5829f8(0x198)](_0x59fb90){const _0x2fa451=_0x5829f8;this[_0x2fa451(0x298)]=ChooseImporter[_0x2fa451(0x1c6)][_0x2fa451(0x1c5)](_0x2a4410=>!_0x2a4410[_0x2fa451(0x253)]||_0x2a4410['fnCheckRequirements'](this[_0x2fa451(0x27a)])),this[_0x2fa451(0x279)]=this[_0x2fa451(0x298)]['map'](_0x37bda3=>{const _0x29a2d4=_0x2fa451,_0x56b847=$(_0x29a2d4(0x207)+_0x37bda3[_0x29a2d4(0x1cf)]+_0x29a2d4(0x2c3))[_0x29a2d4(0x28c)](()=>this['_comp'][_0x29a2d4(0x18a)](_0x29a2d4(0x1d1),_0x37bda3['id'])),_0x506640=_0x37bda3[_0x29a2d4(0x20a)]?$('<a\x20class=\x22btn\x20btn-sm\x20btn-5et\x20imp-wiz__btn-package-archive\x20no-underline\x22\x20rel=\x22noreferrer\x20noopener\x22\x20href=\x22'+_0x37bda3[_0x29a2d4(0x20a)][_0x29a2d4(0x246)]+'\x22>'+_0x37bda3[_0x29a2d4(0x20a)]['text']+_0x29a2d4(0x22a)):null,_0x29eb0f=_0x37bda3['metaOther']?$(_0x29a2d4(0x181)+_0x37bda3[_0x29a2d4(0x1b3)][_0x29a2d4(0x245)]+'</button>')[_0x29a2d4(0x28c)](()=>_0x37bda3[_0x29a2d4(0x1b3)]['pFn']()):null,_0xeb0e23=_0x37bda3[_0x29a2d4(0x29f)]?$(_0x29a2d4(0x1c7))['click'](()=>this[_0x29a2d4(0x274)](_0x37bda3)):null,_0x11fa28=$$`<div class="w-100 mb-1 flex-v-center input-group">
-				${_0x56b847}
-				${_0x506640}
-				${_0x29eb0f}
-				${_0xeb0e23}
-			</div>`;return{'$btn':_0x56b847,'$row':_0x11fa28,'modeId':_0x37bda3['id']};}),this[_0x2fa451(0x2b3)][_0x2fa451(0x1f1)](_0x2fa451(0x1d1),this[_0x2fa451(0x190)]['bind'](this)),this[_0x2fa451(0x209)]['push'](this[_0x2fa451(0x190)][_0x2fa451(0x182)](this)),$$(_0x59fb90)`
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {ImportListFeat} from "./ImportListFeat.js";
+import {ImportListCreature} from "./ImportListCreature.js";
+// import {ImportListCreatureFeature} from "./ImportListCreatureFeature.js"; // TODO(v10)
+import {ImportListSpell} from "./ImportListSpell.js";
+import {ImportListItem} from "./ImportListItem.js";
+import {ImportListRace} from "./ImportListRace.js";
+import {ImportListRaceFeature} from "./ImportListRaceFeature.js";
+import {ImportListClass} from "./ImportListClass.js";
+import {ImportListClassFeature} from "./ImportListClassFeature.js";
+import {ImportListBackground} from "./ImportListBackground.js";
+import {ImportListBackgroundFeature} from "./ImportListBackgroundFeature.js";
+import {ImportListVariantRule} from "./ImportListVariantRule.js";
+import {ImportListLanguage} from "./ImportListLanguage.js";
+import {ImportListRollableTable} from "./ImportListRollableTable.js";
+import {ImportListPsionic} from "./ImportListPsionic.js";
+import {ImportListOptionalFeature} from "./ImportListOptionalFeature.js";
+import {ImportListConditionDisease} from "./ImportListConditionDisease.js";
+import {ImportListCultBoon} from "./ImportListCultBoon.js";
+import {ImportListAction} from "./ImportListAction.js";
+import {ImportListVehicle} from "./ImportListVehicle.js";
+import {ImportListVehicleUpgrade} from "./ImportListVehicleUpgrade.js";
+import {ImportListObject} from "./ImportListObject.js";
+import {ImportListAdventure} from "./ImportListAdventure.js";
+import {ImportListBook} from "./ImportListBook.js";
+import {ImportListReward} from "./ImportListReward.js";
+import {ImportListCharCreationOption} from "./ImportListCharCreationOption.js";
+import {ImportListDeity} from "./ImportListDeity.js";
+import {ImportListRecipe} from "./ImportListRecipe.js";
+import {ImportListMap} from "./ImportListMap.js";
+import {UtilApplications} from "./UtilApplications.js";
+import {Config} from "./Config.js";
+import {LGT, Util} from "./Util.js";
+import {FolderPathBuilder} from "./FolderPathBuilder.js";
+import {AppSourceSelectorMulti} from "./AppSourceSelectorMulti.js";
+import {ImportSpecialPackages} from "./ImportSpecialPackages.js";
+import {ImportListHazard} from "./ImportListHazard.js";
+import {ImportListTrap} from "./ImportListTrap.js";
+import {UtilCompendium} from "./UtilCompendium.js";
+import {UtilUi} from "./UtilUi.js";
+import {PopoutSheet} from "./PopoutSheet.js";
+import {UtilKeybinding} from "./UtilKeybinding.js";
+import {UtilDataSource} from "./UtilDataSource.js";
+import {UtilHooks} from "./UtilHooks.js";
+
+class ChooseImporter extends Application {
+	// region API
+	static async api_pOpen ({actor, table} = {}) {
+		if (game.user.role < Config.get("import", "minimumRole")) throw new Error(`You do not have sufficient permissions!`);
+
+		if (actor && table) throw new Error(`Options "actor" and "table" are mutually exclusive!`);
+
+		return this._pOpen({actor, table});
+	}
+
+	/**
+	 * You really shouldn't be using this.
+	 * @deprecated
+	 */
+	static async api_pImportAll () {
+		for (const mode of ChooseImporter._MODES) {
+			if (mode.isNotAllable || mode.Importer.FOLDER_TYPE === "JournalEntry") continue;
+
+			// region Sanity checks
+			if (!mode.Importer.ID) throw new Error(`Importer has no ID!`);
+			if (!mode.Importer.DISPLAY_NAME_TYPE_PLURAL) throw new Error(`Importer has no display name!`);
+			// endregion
+
+			const importer = new mode.Importer();
+			await importer.pInit();
+
+			const packLabel = `${SharedConsts.MODULE_TITLE_FAKE} ${mode.Importer.DISPLAY_NAME_TYPE_PLURAL}`;
+			const packName = `${SharedConsts.MODULE_NAME_FAKE}-${mode.Importer.ID}`;
+
+			const existingPack = game.packs.get(`world.${packName}`);
+			if (existingPack) await existingPack.deleteCompendium();
+
+			importer.pack = await CompendiumCollection.createCompendium({
+				type: mode.Importer.FOLDER_TYPE,
+				label: packLabel,
+				name: packName,
+				package: "world",
+			});
+
+			const sources = await importer.pGetSources();
+			const source = sources.find(it => it.isDefault);
+			if (!source) throw new Error(`No default source found for ${mode.Importer.DISPLAY_NAME_TYPE_PLURAL}`);
+
+			const allContentMeta = await UtilDataSource.pGetAllContent({
+				sources: [source],
+				props: importer.props,
+				page: importer.page,
+			});
+			let allContent = allContentMeta.dedupedAllContentFlat;
+			allContent = allContent.filter(it => {
+				// Skip UA/AL
+				if (it.source.startsWith(SRC_UA_PREFIX) || it.source.startsWith(SRC_AL_PREFIX)) return false;
+
+				// Skip specific variants; we let the generic variant/base item take precedence
+				if (it.__prop === "item" && it._category === "Specific Variant") return false;
+
+				return true;
+			});
+
+			const tStart = Date.now();
+			const msgStart = `Importing ${allContent.length} ${mode.Importer.DISPLAY_NAME_TYPE_PLURAL} to compendium ${packLabel}...`;
+			ui.notifications.info(msgStart);
+			console.warn(...LGT, msgStart);
+
+			for (const ent of allContent) {
+				await importer.pImportEntry(ent);
+			}
+
+			const tDelta = Math.round((Date.now() - tStart) / 1000);
+			const msgEnd = `Imported ${allContent.length} ${mode.Importer.DISPLAY_NAME_TYPE_PLURAL} to compendium ${packLabel} in ${tDelta}s.`;
+			ui.notifications.info(msgEnd);
+			console.warn(...LGT, msgEnd);
+		}
+	}
+	// endregion
+
+	// region External
+	static prePreInit () {
+		this._preInit_registerKeybinds();
+		this._preInit_initCacheFlushHooks();
+	}
+
+	static _preInit_registerKeybinds () {
+		const doKeybindingOpen = ({modeId = null} = {}) => {
+			this._pOpen({modeId});
+			return true;
+		};
+
+		const doKeybindingOpenForCharacter = ({modeId = null} = {}) => {
+			const actor = UtilKeybinding.getPlayerActor({minRole: Config.get("import", "minimumRole")});
+			if (!actor) return true;
+			this._pOpen({modeId, actor});
+			return true;
+		};
+
+		const doKeybindingOpenForCurrentSheet = ({modeId = null} = {}) => {
+			const meta = UtilKeybinding.getCurrentImportableSheetDocumentMeta({isRequireOwnership: true, minRole: Config.get("import", "minimumRole")});
+			if (!meta) return true;
+			this._pOpen({modeId, ...meta});
+			return true;
+		};
+
+		game.keybindings.register(
+			SharedConsts.MODULE_NAME,
+			"ChooseImporter__open",
+			{
+				name: "Open Import Wizard",
+				editable: [],
+				onDown: () => doKeybindingOpen(),
+				restricted: true,
+			},
+		);
+
+		game.keybindings.register(
+			SharedConsts.MODULE_NAME,
+			"ChooseImporter__openForCharacter",
+			{
+				name: "Open Import Wizard Targeting Player Character",
+				editable: [],
+				onDown: () => doKeybindingOpenForCharacter(),
+			},
+		);
+
+		game.keybindings.register(
+			SharedConsts.MODULE_NAME,
+			"ChooseImporter__openForCurrentSheet",
+			{
+				name: "Open Import Wizard Targeting Current Sheet",
+				editable: [],
+				onDown: () => doKeybindingOpenForCurrentSheet(),
+			},
+		);
+
+		ChooseImporter._MODES.forEach(mode => {
+			game.keybindings.register(
+				SharedConsts.MODULE_NAME,
+				`ChooseImporter__open__${mode.id}`,
+				{
+					name: `Open Import Wizard (${mode.name})`,
+					editable: [],
+					onDown: () => doKeybindingOpen({modeId: mode.id}),
+					restricted: true,
+				},
+			);
+
+			if (!mode.requires || mode.requires.actor !== false) {
+				game.keybindings.register(
+					SharedConsts.MODULE_NAME,
+					`ChooseImporter__openForCharacter__${mode.id}`,
+					{
+						name: `Open Import Wizard (${mode.name}) Targeting Player Character`,
+						editable: [],
+						onDown: () => doKeybindingOpenForCharacter({modeId: mode.id}),
+					},
+				);
+			}
+
+			if (!mode.requires || mode.requires.actor !== false || mode.requires.table !== false) {
+				game.keybindings.register(
+					SharedConsts.MODULE_NAME,
+					`ChooseImporter__openForCurrentSheet__${mode.id}`,
+					{
+						name: `Open Import Wizard (${mode.name}) Targeting Current Sheet`,
+						editable: [],
+						onDown: () => doKeybindingOpenForCurrentSheet({modeId: mode.id}),
+					},
+				);
+			}
+		});
+
+		this._IMPORTABLE_HOOK_METAS.forEach(meta => {
+			game.keybindings.register(
+				SharedConsts.MODULE_NAME,
+				`ChooseImporter__openLastUsed__${meta.propGame}`,
+				{
+					name: `Open Last Used Importer (${meta.propGame.toTitleCase()})`,
+					editable: [],
+					onDown: () => this._pDoReopenLastUsedImporter({hookName: meta.hookName}),
+					restricted: true,
+				},
+			);
+		});
+	}
+
+	static _preInit_initCacheFlushHooks () {
+		UtilHooks.on(UtilHooks.HK_CONFIG_UPDATE, diff => {
+			Object.entries(ChooseImporter._INSTANCE_CACHE)
+				.forEach(([key, cachedInstanceMeta]) => {
+					if (!cachedInstanceMeta.instance.isInvalidatedByConfigChange(diff)) return;
+
+					this._uncacheInstance(key);
+				});
+		});
+	}
+
+	static _IMPORTABLE_HOOK_METAS = [
+		{hookName: "renderSceneDirectory", propGame: "scenes", importerIdDefault: ImportListAdventure.ID},
+		{hookName: "renderActorDirectory", propGame: "actors", importerIdDefault: ImportListCreature.ID},
+		{hookName: "renderItemDirectory", propGame: "items", importerIdDefault: ImportListItem.ID},
+		{hookName: "renderJournalDirectory", propGame: "journal", importerIdDefault: ImportListAdventure.ID},
+		{hookName: "renderRollTableDirectory", propGame: "tables", importerIdDefault: ImportListRollableTable.ID},
+	];
+
+	static isImportableFvttEntityHook (hookName) {
+		return this._IMPORTABLE_HOOK_METAS.some(it => it.hookName === hookName);
+	}
+
+	static async pHandleButtonClick (evt, app, $html, data) {
+		evt.preventDefault();
+		await this._pOpen({actor: app.actor, table: app instanceof RollTableConfig ? app.document : null});
+	}
+
+	static async _pOpen ({actor, table, modeId = null} = {}) {
+		const chooseImporter = new ChooseImporter({actor, table, modeId});
+		await chooseImporter.render(true);
+		return chooseImporter;
+	}
+
+	static $getDirButton (hookName) {
+		return $(`<button class="imp__btn-open w-100 mx-0">${this._getButtonImportHtml()}</button>`)
+			.click((evt) => {
+				evt.preventDefault();
+				const chooseImporter = new ChooseImporter();
+				chooseImporter.render(true);
+			});
+	}
+
+	static _getButtonImportHtml () { return `${UtilUi.getModuleFaIcon()} ${Config.get("ui", "isStreamerMode") ? "" : "Plutonium "}Import`; }
+	static _getButtonImportQuickHtml () { return `<span class="fas fa-fw fa-heart"></span>`; }
+	static _getButtonImportQuickTitle () { return `Re-open your last-used importer for this directory.`; }
+
+	static $getDirButtonQuick (hookName) {
+		return $(`<button class="imp__btn-open mx-0 w-initial ve-flex-vh-center"></button>`)
+			.html(this._getButtonImportQuickHtml())
+			.title(this._getButtonImportQuickTitle())
+			.click(async evt => {
+				evt.preventDefault();
+				await this._pDoReopenLastUsedImporter({hookName});
+			});
+	}
+
+	static async _pDoReopenLastUsedImporter ({hookName}) {
+		const lastUsedModes = await StorageUtil.pGet(ChooseImporter._STORAGE_KEY_LAST_USED_MODE) || {};
+
+		const chooseImporter = new ChooseImporter({modeId: this._pDoReopenLastUsedImporter_getModeId(hookName, lastUsedModes)});
+		await chooseImporter.pDoQuickOpenUsingExistingSourceSelection();
+	}
+
+	static _pDoReopenLastUsedImporter_getModeId (hookName, lastUsedModes) {
+		const meta = this._IMPORTABLE_HOOK_METAS.find(it => it.hookName === hookName);
+		if (!meta) throw new Error(`Unhandled hook "${hookName}"!`);
+		return lastUsedModes?.[meta.propGame] || meta.importerIdDefault;
+	}
+
+	static getImporterClassMeta (dataPropOrTagOrPage) {
+		switch (dataPropOrTagOrPage) {
+			case "feat":
+			case UrlUtil.PG_FEATS: return {Class: ImportListFeat, isAcceptActor: true};
+			case "creature":
+			case "monster":
+			case UrlUtil.PG_BESTIARY: return {Class: ImportListCreature};
+
+				// region TODO(v10)
+				// TODO other props
+				// TODO better system
+				// case "monsterAction":
+				// 	return {Class: ImportListCreatureFeature};
+				// endregion
+
+			case "spell":
+			case UrlUtil.PG_SPELLS: return {Class: ImportListSpell, isAcceptActor: true};
+			case "item":
+			case "baseitem":
+			case "magicvariant":
+			case UrlUtil.PG_ITEMS: return {Class: ImportListItem, isAcceptActor: true};
+			case "race":
+			case UrlUtil.PG_RACES: return {Class: ImportListRace, isAcceptActor: true};
+			case "raceFeature": return {Class: ImportListRaceFeature, isAcceptActor: true};
+			case "class":
+			case UrlUtil.PG_CLASSES: return {Class: ImportListClass, isAcceptActor: true}; // TODO need to specify the method used
+			case "background":
+			case UrlUtil.PG_BACKGROUNDS: return {Class: ImportListBackground, isAcceptActor: true};
+			case "backgroundFeature": return {Class: ImportListBackgroundFeature, isAcceptActor: true};
+			case "variantrule":
+			case UrlUtil.PG_VARIANTRULES: return {Class: ImportListVariantRule};
+			case "language":
+			case UrlUtil.PG_LANGUAGES: return {Class: ImportListLanguage};
+			case "table":
+			case "tableGroup":
+			case UrlUtil.PG_TABLES: return {Class: ImportListRollableTable};
+			case "psionic":
+			case UrlUtil.PG_PSIONICS: return {Class: ImportListPsionic, isAcceptActor: true};
+			case "optfeature":
+			case "optionalfeature":
+			case UrlUtil.PG_OPT_FEATURES: return {Class: ImportListOptionalFeature, isAcceptActor: true};
+			case "condition":
+			case "disease":
+			case UrlUtil.PG_CONDITIONS_DISEASES: return {Class: ImportListConditionDisease, isAcceptActor: true};
+			case "action":
+			case UrlUtil.PG_ACTIONS: return {Class: ImportListAction, isAcceptActor: true};
+			case "cult":
+			case "boon":
+			case UrlUtil.PG_CULTS_BOONS: return {Class: ImportListCultBoon, isAcceptActor: true};
+			case "reward":
+			case UrlUtil.PG_REWARDS: return {Class: ImportListReward, isAcceptActor: true};
+			case "classFeature":
+			case "subclassFeature": return {Class: ImportListClassFeature, isAcceptActor: true};
+			case "charoption":
+			case UrlUtil.PG_CHAR_CREATION_OPTIONS: return {Class: ImportListCharCreationOption, isAcceptActor: true};
+			case "vehicle":
+			case UrlUtil.PG_VEHICLES: return {Class: ImportListVehicle};
+			case "vehupgrade":
+			case "vehicleUpgrade":
+			case "vehicleupgrade": return {Class: ImportListVehicleUpgrade};
+			case "object":
+			case UrlUtil.PG_OBJECTS: return {Class: ImportListObject};
+			case "deity":
+			case UrlUtil.PG_DEITIES: return {Class: ImportListDeity};
+			case "recipe":
+			case UrlUtil.PG_RECIPES: return {Class: ImportListRecipe};
+			case "trap":
+			case UrlUtil.PG_TRAPS_HAZARDS: return {Class: ImportListTrap};
+			case "hazard": return {Class: ImportListHazard};
+
+			case "skill":
+			case "sense": return {isViewOnly: true};
+
+			default: return null;
+		}
+	}
+
+	static getImporter (dataPropOrTagOrPage, actor) {
+		const meta = this.getImporterClassMeta(dataPropOrTagOrPage);
+		if (!meta) return null;
+
+		const {Class, isAcceptActor} = meta;
+		if (isAcceptActor) return new Class({actor});
+		return new Class();
+	}
+	// endregion
+
+	/**
+	 * @param [opts]
+	 * @param [opts.actor]
+	 * @param [opts.mode] A predefined mode that the wizard should use, rather than allowing the user to pick one.
+	 * @param [opts.mode.id]
+	 * @param [opts.mode.name]
+	 * @param [opts.mode.singleName]
+	 * @param [opts.mode.wizardTitleWindow]
+	 * @param [opts.mode.wizardTitlePanel3]
+	 * @param [opts.mode.wizardTitleButtonOpenImporter]
+	 * @param [opts.mode.importerTitleWindow]
+	 * @param [opts.mode.importerTitleButtonRun]
+	 * @param [opts.modeId] An alternative to `opts.mode`, which has the instance lookup its own copy of the mode.
+	 * @param [opts.namespace] A namespace for this wizard. Useful for non-standard flows.
+	 * @param [opts.isAlwaysCloseWindow] If the window should always be closed on clicking "Import"
+	 * @param [opts.isTemp] If any imported items are temporary, i.e. the folder/compendium controls should be hidden.
+	 * @param [opts.importerPreRenderArgs] Arguments to be passed to an importer's pre-render method.
+	 */
+	constructor (opts) {
+		opts = opts || {};
+
+		// region Validation
+		if (opts.actor && opts.table) throw new Error(`Both "actor" and "table" options were specified!`);
+
+		if (!opts.mode && opts.modeId && !ChooseImporter._MODES.some(it => it.id === opts.modeId)) {
+			const msg = `Could not find importer mode "${opts.modeId}"! The default importer will be shown instead.`;
+			ui.notifications.warn(msg);
+			console.warn(...LGT, msg);
+			opts = {...opts};
+			delete opts.modeId;
+		}
+		// endregion
+
+		const width = (opts.mode || opts.modeId) ? Util.getMaxWindowWidth(1000) : Util.getMaxWindowWidth(1200);
+		const template = (opts.mode || opts.modeId)
+			? `${SharedConsts.MODULE_LOCATION}/template/ChooseImporterForMode.hbs`
+			: `${SharedConsts.MODULE_LOCATION}/template/ChooseImporter.hbs`;
+
+		super({
+			width,
+			height: Util.getMaxWindowHeight(970),
+			title: MiscUtil.get(opts.mode, "wizardTitleWindow") || `Import Wizard${opts.actor || opts.table ? ": Importing to " : ""}${opts.actor ? `Actor "` : opts.table ? `Table "` : ""}${opts.actor?.name || opts.table?.name || ""}${opts.actor || opts.table ? `"` : ""}`,
+			template,
+			resizable: true,
+		});
+
+		this._actor = opts.actor;
+		this._table = opts.table;
+		this._predefinedMode = opts.mode;
+		if (!this._predefinedMode && opts.modeId) this._predefinedMode = ChooseImporter._MODES.find(it => it.id === opts.modeId);
+		this._namespace = opts.namespace || "default";
+		this._isAlwaysCloseWindow = !!opts.isAlwaysCloseWindow;
+		this._isTemp = !!opts.isTemp;
+		this._importerPreRenderArgs = opts.importerPreRenderArgs;
+
+		// Local fields
+		this.__comp = BaseComponent.fromObject(ChooseImporter._getDefaultState());
+		this._comp = this.__comp.getPod();
+
+		this._modes = [];
+		if (this._predefinedMode) this._modes = [this._predefinedMode];
+
+		this._deferredHooks = [];
+
+		this._doSaveStateDebounced = null;
+
+		this._$window = null;
+		this._$panel1 = null;
+		this._$panel2 = null;
+		this._$panel2Head = null;
+		this._$panel2WrpLoader = null;
+		this._$panel2WrpList = null;
+		this._$panel3 = null;
+		this._$panel3Head = null;
+		this._$panel3WrpLoader = null;
+		this._$panel3WrpTabs = null;
+		this._$panel3WrpConfig = null;
+		this._$panel3_tab1 = null;
+		this._$panel3_tab2 = null;
+		this._$panel3_btnImportPackage = null;
+
+		this._$btnOpenImporter = null;
+
+		this._rowMetasMode = [];
+		this._importer = null;
+
+		// region Source selector
+		this._appSourceSelector = null;
+
+		this._$stgNone = null;
+		this._$stgUpload = null;
+		this._$stgUrl = null;
+		this._$stgSpecial = null;
+		// endregion
+
+		this._packageIndex = null;
+		this._pPackageIndex = null;
+		this._uiHooks = {};
+	}
+
+	_trackUiHook (prop, hook) { (this._uiHooks[prop] = this._uiHooks[prop] || []).push(hook); }
+	_resetUiHooks () {
+		Object.entries(this._uiHooks)
+			.forEach(([prop, hook]) => {
+				this._comp.removeHook(prop, hook);
+			});
+		this._uiHooks = {};
+	}
+
+	_pDoSaveState () {
+		return StorageUtil.pSet(this._getSelectedImporterStorageKey(), this.__comp.getSaveableState());
+	}
+
+	/** Check if this application is skippable, but not if the embedded source selector is skippable. */
+	isMaybeSkippable () {
+		// If the user can select a mode, this window cannot be skipped
+		if (!this._predefinedMode) return false;
+
+		// If we don't have an actor/table (or if this is not a temporary import), the user can choose e.g. folder
+		//   options, so this window cannot be skipped.
+		if (!this._actor && !this._table && !this._isTemp) return false;
+
+		return true;
+	}
+
+	/** Init the embedded source selector, and check if it is skippable. */
+	async pInitIsSubSkippable () {
+		await this._pInitImporter(this._getMode());
+		await this._pInitSourceSelector();
+
+		// Allow skips if the source selection is predefined
+		return this._appSourceSelector.isForceSelectAllSources();
+	}
+
+	activateListeners ($html) {
+		super.activateListeners($html);
+
+		this._bindTargetEntityDeletedHooks();
+
+		this._$window = $html;
+
+		if (!this._predefinedMode) this._$panel1 = $html.find(`[data-panel="1"]`);
+		else this._activateListeners_initPredefinedMode();
+		this._$panel2 = $html.find(`[data-panel="2"]`);
+		this._$panel3 = $html.find(`[data-panel="3"]`);
+
+		if (!this._predefinedMode) {
+			const status = this._activateListeners_fillPanel1(this._$panel1);
+
+			if (status === VeCt.SYM_UI_SKIP) {
+				ui.notifications.warn(`No available importers! You may need to un-hide some.`);
+
+				// Hack to cancel and close the render during rendering process
+				if (this.element) this.element.hideVe();
+				Hooks.once("renderChooseImporter", (app) => {
+					if (app.appId !== this.appId) return;
+					// Defer to allow the state to switch to `RENDERED`
+					MiscUtil.pDelay(1).then(() => this._pForceClose());
+					this._pForceClose();
+				});
+				return;
+			}
+		}
+
+		this._activateListeners_fillPanel2(this._$panel2);
+		this._activateListeners_fillPanel3(this._$panel3);
+
+		this._doSaveStateDebounced = MiscUtil.debounce(() => this._pDoSaveState(), 50);
+
+		StorageUtil.pGet(this._getSelectedImporterStorageKey())
+			.then(save => {
+				if (save) {
+					if (save.state) save.state.modeId = save.state.modeId || this._modes[0].id;
+					else save.state = {modeId: this._modes[0].id};
+					this.__comp.setStateFrom(save);
+				}
+
+				this._deferredHooks.forEach(hk => hk());
+				this._deferredHooks = [];
+
+				this._comp.addHookAll(this._doSaveStateDebounced);
+			});
+	}
+
+	_bindTargetEntityDeletedHooks () {
+		if (this._actor) {
+			Hooks.once("deleteActor", actor => {
+				if (actor.id !== this._actor.id) return;
+				this.close();
+				if (this._importer) this._importer.close();
+			});
+		}
+
+		if (this._table) {
+			Hooks.once("deleteTable", table => {
+				if (table.id !== this._table.id) return;
+				this.close();
+				if (this._importer) this._importer.close();
+			});
+		}
+	}
+
+	_activateListeners_initPredefinedMode () {
+		this._comp.addHook("modeId", this._activateListeners_pHkMode.bind(this));
+		this._deferredHooks.push(this._activateListeners_pHkMode.bind(this));
+	}
+
+	_activateListeners_fillPanel1 ($panel) {
+		const hiddenIds = Config.get("import", "hiddenImporterIds");
+
+		this._modes = ChooseImporter._MODES
+			.filter(({id}) => !hiddenIds[id])
+			.filter(mode => !mode.requires || ((mode.requires.actor === false ? !this._actor : true) && (mode.requires.table === false ? !this._table : true)));
+
+		if (!this._modes.length) return VeCt.SYM_UI_SKIP;
+
+		this._rowMetasMode = this._modes.map(mode => {
+			const $btn = $(`<button class="btn btn-sm btn-5et w-100">${mode.name}</button>`)
+				.click(() => this._comp.set("modeId", mode.id));
+
+			const $btnExternalArchive = mode.metaExternalArchive
+				? $(`<a class="btn btn-sm btn-5et imp-wiz__btn-package-archive no-underline" rel="noreferrer noopener" href="${mode.metaExternalArchive.url}">${mode.metaExternalArchive.text} <i class="fas fa-fw fa-external-link-alt"></i></a>`)
+				: null;
+
+			const $btnOther = mode.metaOther
+				? $(`<button class="btn btn-sm btn-5et pl-2 pr-1 imp-wiz__btn-package-archive h-100">${mode.metaOther.text}</button>`)
+					.click(() => mode.metaOther.pFn())
+				: null;
+
+			const $btnQuick = $(`<button class="btn btn-sm btn-5et pl-2 pr-1 imp-wiz__btn-quick h-100" title="Open Last-Used Importer"><i class="fas fa-fw fa-forward"></i></button>`)
+				.click(() => this._pDoQuickOpen(mode));
+
+			const $row = $$`<div class="w-100 ve-flex-v-center input-group imp-wiz__row-mode">
+				${$btn}
+				${$btnExternalArchive}
+				${$btnOther}
+				${$btnQuick}
+			</div>`;
+
+			return {
+				$btn,
+				$row,
+				modeId: mode.id,
+			};
+		});
+
+		this._comp.addHook("modeId", this._activateListeners_pHkMode.bind(this));
+		this._deferredHooks.push(this._activateListeners_pHkMode.bind(this));
+
+		$$($panel)`
 			<h4 class="imp-wiz__head-panel">1: Choose Importer</h4>
 
-			<div class="flex-col w-100 h-100 overflow-y-auto">
-				${this[_0x2fa451(0x279)][_0x2fa451(0x26e)](_0x562edc=>_0x562edc[_0x2fa451(0x201)])}
+			<div class="ve-flex-col w-100 h-100 overflow-y-auto overflow-x-hidden">
+				${this._rowMetasMode.map(it => it.$row)}
 			</div>
-		`;}[_0x5829f8(0x29d)](){const _0x462eab=_0x5829f8;if(this[_0x462eab(0x204)])return this[_0x462eab(0x204)];const _0x2fea5a=this['_comp'][_0x462eab(0x1ab)](_0x462eab(0x1d1));return this[_0x462eab(0x298)]['find'](_0x6a0200=>_0x6a0200['id']===_0x2fea5a)||this[_0x462eab(0x298)][0x0];}async[_0x5829f8(0x190)](){const _0x18f051=_0x5829f8;if(!this[_0x18f051(0x233)]||!this[_0x18f051(0x1a8)])return;await this[_0x18f051(0x2b3)]['pLock'](_0x18f051(0x1d1));try{const _0x3bf68d=this[_0x18f051(0x29d)]();this[_0x18f051(0x279)][_0x18f051(0x237)](_0x3d9cb5=>_0x3d9cb5[_0x18f051(0x1be)][_0x18f051(0x1f8)](_0x18f051(0x29a),_0x3d9cb5[_0x18f051(0x1d1)]===_0x3bf68d['id'])),this[_0x18f051(0x233)][_0x18f051(0x245)]((this[_0x18f051(0x204)]?0x1:0x2)+_0x18f051(0x2a8)),this[_0x18f051(0x1a8)][_0x18f051(0x245)]((this['_predefinedMode']?0x2:0x3)+':\x20'+(MiscUtil[_0x18f051(0x1ab)](this[_0x18f051(0x204)],'wizardTitlePanel3')||_0x18f051(0x1f9)));const _0x11007a=await UtilApplications[_0x18f051(0x196)](this[_0x18f051(0x258)]),_0x572b6a=await UtilApplications[_0x18f051(0x196)](this[_0x18f051(0x2be)]);try{await this['_pInitImporter'](_0x3bf68d),await this[_0x18f051(0x2b2)](),this[_0x18f051(0x233)][_0x18f051(0x245)]((this[_0x18f051(0x204)]?0x1:0x2)+':\x20'+(_0x3bf68d[_0x18f051(0x23c)]?_0x18f051(0x18d)+_0x3bf68d['singleName']+_0x18f051(0x261):'Choose\x20Source\x20for\x20'+_0x3bf68d['name'])),this[_0x18f051(0x1a8)]['text']((this['_predefinedMode']?0x2:0x3)+':\x20'+(_0x3bf68d[_0x18f051(0x23c)]?'Configure\x20and\x20Import\x20'+_0x3bf68d[_0x18f051(0x23c)]:_0x18f051(0x23d)+_0x3bf68d[_0x18f051(0x1cf)])),this[_0x18f051(0x1cd)]['toggleVe'](_0x3bf68d[_0x18f051(0x26b)]);if(!_0x3bf68d[_0x18f051(0x26b)])this['_comp']['set']('ixTabPanel3',0x0);}catch(_0x4ab8d9){ui[_0x18f051(0x1c8)][_0x18f051(0x187)]('Failed\x20to\x20load\x20importer!\x20'+VeCt[_0x18f051(0x1f0)]);throw _0x4ab8d9;}finally{if(_0x11007a)_0x11007a[_0x18f051(0x1af)]();if(_0x572b6a)_0x572b6a[_0x18f051(0x1af)]();}}finally{this[_0x18f051(0x2b3)]['unlock'](_0x18f051(0x1d1));}}async['_pInitImporter'](_0x3f394d){const _0x4bf31f=_0x5829f8;_0x3f394d=_0x3f394d||this[_0x4bf31f(0x29d)](),this['_importer']=_0x3f394d[_0x4bf31f(0x21d)]?new _0x3f394d[(_0x4bf31f(0x21d))]({'actor':this[_0x4bf31f(0x27a)]}):_0x3f394d[_0x4bf31f(0x2bb)],await this[_0x4bf31f(0x25e)][_0x4bf31f(0x297)]();}[_0x5829f8(0x25b)](_0x414b01){const _0x3e1503=_0x5829f8;this[_0x3e1503(0x233)]=$(_0x3e1503(0x18e)+(this[_0x3e1503(0x204)]?0x1:0x2)+_0x3e1503(0x1a1)),this[_0x3e1503(0x2c0)]=$('<div\x20class=\x22flex-col\x20w-100\x20h-100\x22></div>'),this['_$panel2WrpLoader']=$$`<div class="flex-col w-100 h-100 overflow-y-auto">
-			${this[_0x3e1503(0x2c0)]}
-		</div>`,$$(_0x414b01)`
-			${this[_0x3e1503(0x233)]}
-			${this['_$panel2WrpLoader']}
-		`;}[_0x5829f8(0x270)](_0x3ca01e){const _0x1ed9b3=_0x5829f8;this[_0x1ed9b3(0x1a8)]=$(_0x1ed9b3(0x18e)+(this[_0x1ed9b3(0x204)]?0x2:0x3)+':\x20Configure\x20and\x20Import</h4>'),this[_0x1ed9b3(0x1a0)]=$(_0x1ed9b3(0x18b)),this['_$panel3WrpLoader']=$$`<div class="flex-col w-100 h-100 overflow-y-auto">
-			${this[_0x1ed9b3(0x1a0)]}
-		</div>`,$$(_0x3ca01e)`
-			${this[_0x1ed9b3(0x1a8)]}
-			${this['_$panel3WrpLoader']}
-		`;}['_getSelectedImporterStorageKey'](){const _0x281c63=_0x5829f8,_0x315be3=this[_0x281c63(0x204)]?_0x281c63(0x1ed):'chooseMode',_0x582939=this[_0x281c63(0x27a)]?_0x281c63(0x1de):'directory';return'chooseImporter_state_'+[_0x315be3,_0x582939][_0x281c63(0x21b)]('_');}static[_0x5829f8(0x1ec)](){const _0x13f193=_0x5829f8;return MiscUtil[_0x13f193(0x1e0)](ChooseImporter['_DEFAULT_STATE']);}async[_0x5829f8(0x2b2)](){const _0x1bb68c=_0x5829f8;this[_0x1bb68c(0x1d9)](),this[_0x1bb68c(0x2c0)][_0x1bb68c(0x1b6)](),this['_$panel3WrpConfig'][_0x1bb68c(0x1b6)](),await this[_0x1bb68c(0x29e)](),await this['_pFillUi_pFillConfigUi']();}async[_0x5829f8(0x221)](){const _0x4dc0b7=_0x5829f8,_0x1043aa=await this['_importer']['pGetSources']();this['_appSourceSelector']=new AppSourceSelectorMulti({'sourcesToDisplay':_0x1043aa,'savedSelectionKey':this[_0x4dc0b7(0x263)][_0x4dc0b7(0x1e9)](this['_importer']),'filterNamespace':this[_0x4dc0b7(0x1db)](),'isRadio':this[_0x4dc0b7(0x25e)][_0x4dc0b7(0x1f4)]});}async['_pFillUi_pFillSourceUi'](){const _0x284d4a=_0x5829f8;await this['_pInitSourceSelector']();const {$stgNone:_0x42b6f8,$stgUpload:_0x2a20db,$stgUrl:_0x26615f,$stgSpecial:_0x24bdc6}=await this[_0x284d4a(0x1eb)][_0x284d4a(0x1e1)](this[_0x284d4a(0x2c0)],_0x37662e=>{const _0xc6307d=_0x284d4a,_0x2540ac=this[_0xc6307d(0x29d)]();if(!_0x2540ac['hasPackages']||!_0x37662e['length'])return this['_comp'][_0xc6307d(0x18a)](_0xc6307d(0x1e3),null);const _0x530226=_0x37662e[0x0];this[_0xc6307d(0x2b3)]['set']('packageSource',(_0x530226['userData']||{})[_0xc6307d(0x28f)]||null);});this['_$stgNone']=_0x42b6f8,this['_$stgUpload']=_0x2a20db,this[_0x284d4a(0x1b5)]=_0x26615f,this[_0x284d4a(0x249)]=_0x24bdc6;}async[_0x5829f8(0x2bc)](){const _0x47d8b7=_0x5829f8,_0x4f2edf=await this[_0x47d8b7(0x1a9)](),_0x539ecd=this[_0x47d8b7(0x268)]();this[_0x47d8b7(0x2aa)]=$$`<div class="mb-1">Import From:</div>
-			<div class="flex-col w-100 min-h-0 max-h-40 overflow-y-auto mb-1">
-				${this[_0x47d8b7(0x21a)]}
-				${this['_$stgUpload']}
-				${this['_$stgUrl']}
-				${this[_0x47d8b7(0x249)]}
+		`;
+	}
+
+	_getMode () {
+		if (this._predefinedMode) return this._predefinedMode;
+
+		const modeId = this._comp.get("modeId");
+		return this._modes.find(it => it.id === modeId) || this._modes[0];
+	}
+
+	async _activateListeners_pHkMode () {
+		if (!this._$panel2Head || !this._$panel3Head) return;
+
+		await this._comp.pLock("modeId");
+
+		try {
+			if (UtilApplications.isClosed(this)) return;
+
+			const mode = this._getMode();
+
+			this._rowMetasMode.forEach(meta => meta.$btn.toggleClass("btn--active", meta.modeId === mode.id));
+
+			this._$panel2Head.text(`${this._predefinedMode ? 1 : 2}: Choose Data Source`);
+			this._$panel3Head.text(`${this._predefinedMode ? 2 : 3}: ${MiscUtil.get(this._predefinedMode, "wizardTitlePanel3") || "Configure and Import"}`);
+			const $ovrLoading2 = await UtilApplications.$pGetAddAppLoadingOverlay(this._$panel2WrpLoader);
+			const $ovrLoading3 = await UtilApplications.$pGetAddAppLoadingOverlay(this._$panel3WrpLoader);
+			try {
+				if (UtilApplications.isClosed(this)) return;
+
+				await this._pInitImporter(mode);
+				if (UtilApplications.isClosed(this)) return;
+
+				if (!await this._pIsTableImportAvailable()) { await this._pForceClose(); return; }
+				if (UtilApplications.isClosed(this)) return;
+
+				await this._pFillUi();
+				if (UtilApplications.isClosed(this)) return;
+
+				this._$panel2Head.text(`${this._predefinedMode ? 1 : 2}: ${mode.singleName ? `Choose ${mode.singleName} Data Source` : `Choose Data Source for ${mode.name}`}`);
+				this._$panel3Head.text(`${this._predefinedMode ? 2 : 3}: ${mode.singleName ? `Configure and Import ${mode.singleName}` : `Configure and Import ${mode.name}`}`);
+
+				this._$panel3WrpTabs.toggleVe(mode.hasPackages);
+				if (!mode.hasPackages) this._comp.set("ixTabPanel3", 0);
+			} catch (e) {
+				ui.notifications.error(`Failed to load importer! ${VeCt.STR_SEE_CONSOLE}`);
+				throw e;
+			} finally {
+				if ($ovrLoading2) $ovrLoading2.remove();
+				if ($ovrLoading3) $ovrLoading3.remove();
+
+				if (this._$btnOpenImporter) this._$btnOpenImporter.focus();
+			}
+		} finally {
+			this._comp.unlock("modeId");
+		}
+	}
+
+	async _pIsTableImportAvailable () {
+		if (!this._table) return true; // Ignore these checks if we're not in "table" mode
+		if (this._importer.isFolderOnly) throw new Error(`Attempting to import non-compendium-friendly mode to table! This is a bug!`);
+
+		const packName = `${SharedConsts.MODULE_NAME_FAKE}-table-backing-${this._importer.constructor.FOLDER_TYPE.toLowerCase()}`;
+		const packKey = `world.${packName}`;
+
+		const existingCompendium = game.packs.get(packKey);
+		if (existingCompendium) {
+			this._importer.pack = existingCompendium;
+			return true;
+		}
+
+		if (!await InputUiUtil.pGetUserBoolean({title: "Create Backing Compendium?", htmlDescription: `In order to import ${this._importer.constructor.FOLDER_TYPE}s to a rollable table, a backing compendium must be created for ${this._importer.constructor.FOLDER_TYPE}s. Would you like to proceed?`})) {
+			return false;
+		}
+
+		try {
+			this._importer.pack = await CompendiumCollection.createCompendium({
+				type: this._importer.constructor.FOLDER_TYPE,
+				label: `Table-Backing ${this._importer.constructor.FOLDER_TYPE}s`,
+				name: packName,
+				package: "world",
+			});
+		} catch (e) {
+			console.error(...LGT, e);
+			return false;
+		}
+
+		return true;
+	}
+
+	async _pInitImporter (mode) {
+		mode = mode || this._getMode();
+		this._importer = mode.Importer ? new mode.Importer({actor: this._actor, table: this._table}) : mode.importerInstance;
+		await this._importer.pInit();
+	}
+
+	_activateListeners_fillPanel2 ($panel) {
+		this._$panel2Head = $(`<h4 class="imp-wiz__head-panel">${this._predefinedMode ? 1 : 2}: Choose Data Source</h4>`);
+
+		this._$panel2WrpList = $(`<div class="ve-flex-col w-100 h-100"></div>`);
+
+		this._$panel2WrpLoader = $$`<div class="ve-flex-col w-100 h-100 overflow-y-auto">
+			${this._$panel2WrpList}
+		</div>`;
+
+		$$($panel)`
+			${this._$panel2Head}
+			${this._$panel2WrpLoader}
+		`;
+	}
+
+	_activateListeners_fillPanel3 ($panel) {
+		this._$panel3Head = $(`<h4 class="imp-wiz__head-panel">${this._predefinedMode ? 2 : 3}: Configure and Import</h4>`);
+
+		this._$panel3WrpConfig = $(`<div class="ve-flex-col w-100 h-100 pb-3"></div>`); // Add padding to dodge the resize handle
+
+		this._$panel3WrpLoader = $$`<div class="ve-flex-col w-100 h-100 overflow-y-auto">
+			${this._$panel3WrpConfig}
+		</div>`;
+
+		$$($panel)`
+			${this._$panel3Head}
+			${this._$panel3WrpLoader}
+		`;
+	}
+
+	_getSelectedImporterStorageKey () {
+		const ptMode = this._predefinedMode ? "predefinedMode" : "chooseMode";
+		const ptType = this._actor ? "actor" : this._table ? "table" : "directory";
+		return `chooseImporter_state_${[ptMode, ptType].join("_")}`;
+	}
+
+	static _getDefaultState () {
+		return MiscUtil.copy(ChooseImporter._DEFAULT_STATE);
+	}
+
+	async _pFillUi () {
+		this._resetUiHooks();
+		this._$panel2WrpList.empty();
+		this._$panel3WrpConfig.empty();
+
+		await this._pFillUi_pFillSourceUi();
+		await this._pFillUi_pFillConfigUi();
+	}
+
+	async _pInitSourceSelector () {
+		const sourcesToDisplay = await this._importer.pGetSources();
+
+		this._appSourceSelector = new AppSourceSelectorMulti({
+			sourcesToDisplay,
+			savedSelectionKey: this.constructor._getSourceSelectionKey(this._importer),
+			filterNamespace: this._getFilterNamespace(),
+			isRadio: this._importer.isRadio,
+		});
+	}
+
+	async _pFillUi_pFillSourceUi () {
+		await this._pInitSourceSelector();
+
+		// Generate UI elements for use in our own UI
+		const {$stgNone, $stgUpload, $stgUrl, $stgSpecial} = await this._appSourceSelector.pGetElements(
+			this._$panel2WrpList,
+
+			/** Callback run each time the importer's source selection changes. */
+			(selSources) => {
+				const mode = this._getMode();
+				if (!mode.hasPackages || !selSources.length) return this._comp.set("packageSource", null);
+
+				// This assumes that any importer mode that has packages can only have a single source active at a time
+				//   (i.e. is a "radio button" list).
+				const selSource = selSources[0];
+				this._comp.set("packageSource", (selSource.userData || {}).source || null);
+			},
+		);
+		this._$stgNone = $stgNone;
+		this._$stgUpload = $stgUpload;
+		this._$stgUrl = $stgUrl;
+		this._$stgSpecial = $stgSpecial;
+	}
+
+	async _pFillUi_pFillConfigUi () {
+		const $wrpConfigSettings = await this._pFillUi_$pGetWrpConfigSettings();
+		if (!$wrpConfigSettings) return;
+		this._$btnOpenImporter = this._pFillUi_$getBtnOpenImporter();
+		const $btnOpenConfig = this._pFillUi_$getBtnOpenConfig();
+
+		this._$panel3_tab1 = $$`<div class="mb-1">Import From:</div>
+			<div class="ve-flex-col w-100 min-h-0 max-h-40 overflow-y-auto mb-1">
+				${this._$stgNone}
+				${this._$stgUpload}
+				${this._$stgUrl}
+				${this._$stgSpecial}
 			</div>
-			${_0x4f2edf}
-			${_0x539ecd}`;const _0x34e9f7=await this[_0x47d8b7(0x1b7)]();this['_$panel3_btnImportPackage']=this[_0x47d8b7(0x22e)]||$(_0x47d8b7(0x1cc)),this[_0x47d8b7(0x22c)]=$$`
-			${_0x34e9f7}
-			${this[_0x47d8b7(0x22e)]}`,this[_0x47d8b7(0x1cd)]=await this['_pFillUi_$pGetPanel3WrpTabs'](),$$(this['_$panel3WrpConfig'])`
-			${this['_$panel3WrpTabs']}
-			${this['_$panel3_tab1']}
-			${this[_0x47d8b7(0x22c)]}
-		`;}['_pFillUi_$pGetPanel3WrpTabs'](){const _0x2d64bd=_0x5829f8,_0x592157=$('<button\x20class=\x22btn\x20btn-default\x20w-50\x20btn-5et\x22>Actors/Items/Journal</button>')[_0x2d64bd(0x28c)](()=>this[_0x2d64bd(0x2b3)][_0x2d64bd(0x18a)](_0x2d64bd(0x24b),0x0)),_0x5d7514=$('<button\x20class=\x22btn\x20btn-default\x20w-50\x20btn-5et\x22>World/Module</button>')[_0x2d64bd(0x28c)](()=>this[_0x2d64bd(0x2b3)][_0x2d64bd(0x18a)](_0x2d64bd(0x24b),0x1)),_0x2e8a07=()=>{const _0xf4ab5d=_0x2d64bd,_0x3efa1d=Number(this[_0xf4ab5d(0x2b3)][_0xf4ab5d(0x1ab)](_0xf4ab5d(0x24b))||0x0);_0x592157[_0xf4ab5d(0x1f8)](_0xf4ab5d(0x1ef),_0x3efa1d===0x0),_0x5d7514[_0xf4ab5d(0x1f8)]('active',_0x3efa1d===0x1),this[_0xf4ab5d(0x2aa)]['toggleVe'](_0x3efa1d===0x0),this['_$panel3_tab2'][_0xf4ab5d(0x299)](_0x3efa1d===0x1);};return this['_comp'][_0x2d64bd(0x1f1)](_0x2d64bd(0x24b),_0x2e8a07),this[_0x2d64bd(0x186)](_0x2d64bd(0x24b),_0x2e8a07),_0x2e8a07(),$$`<div class="flex btn-group mb-2 w-100">${_0x592157}${_0x5d7514}</div>`;}async[_0x5829f8(0x1b7)](){const _0x462eb2=_0x5829f8,_0x270793=$('<div\x20class=\x22flex-col\x20h-100\x20w-100\x22></div>'),_0x31579d=await UtilApplications[_0x462eb2(0x196)](_0x270793);return this[_0x462eb2(0x1e2)]=this[_0x462eb2(0x1e2)]||(async()=>{const _0x5ba631=_0x462eb2;this[_0x5ba631(0x1bf)]=await ImportSpecialPackages[_0x5ba631(0x1e7)]();})(),this[_0x462eb2(0x1e2)][_0x462eb2(0x1c3)](()=>{const _0x4ee8b9=_0x462eb2;if(_0x31579d)_0x31579d['remove']();const _0x2b8b5b=()=>{const _0x1135c6=_0x47a0,_0x40b504=this['_comp'][_0x1135c6(0x1ab)](_0x1135c6(0x1e3))?this[_0x1135c6(0x2b3)]['get'](_0x1135c6(0x1e3))[_0x1135c6(0x19d)]():null,_0x4f8095=this[_0x1135c6(0x1bf)][_0x1135c6(0x202)](_0x3932e6=>(_0x3932e6[_0x1135c6(0x28f)]||'')[_0x1135c6(0x19d)]()===_0x40b504);if(_0x4f8095){const _0xa95d2a=!!_0x4f8095[_0x1135c6(0x291)],_0x596a5a=!!_0x4f8095['manifesturlWorld'],_0x243262=$(_0x1135c6(0x2bf)+(_0xa95d2a?'':_0x1135c6(0x1e5))+'\x20'+(_0xa95d2a?_0x1135c6(0x19e):'')+'>'),_0x453a5a=$(_0x1135c6(0x2bf)+(_0x596a5a?'':_0x1135c6(0x1ae))+'\x20'+(!_0xa95d2a&&_0x596a5a?_0x1135c6(0x19e):'')+'>');$$(_0x270793['empty']())`
+			${$wrpConfigSettings}
+			<div class="ve-flex-v-center mt-auto">${this._$btnOpenImporter}${$btnOpenConfig}</div>`;
+
+		const $wrpPackageImport = await this._pFillUi_$pGetWrpPackageImport();
+		this._$panel3_btnImportPackage = this._$panel3_btnImportPackage || $(`<button class="mt-auto btn btn-5et" disabled>Import Package</button>`);
+
+		this._$panel3_tab2 = $$`
+			${$wrpPackageImport}
+			${this._$panel3_btnImportPackage}`;
+
+		this._$panel3WrpTabs = await this._pFillUi_$pGetPanel3WrpTabs();
+
+		$$(this._$panel3WrpConfig)`
+			${this._$panel3WrpTabs}
+			${this._$panel3_tab1}
+			${this._$panel3_tab2}
+		`;
+	}
+
+	_pFillUi_$pGetPanel3WrpTabs () {
+		const $btnTab1 = $(`<button class="btn btn-default w-50 btn-5et">Actors/Items/Journal</button>`)
+			.click(() => this._comp.set("ixTabPanel3", 0));
+		const $btnTab2 = $(`<button class="btn btn-default w-50 btn-5et">World/Module</button>`)
+			.click(() => this._comp.set("ixTabPanel3", 1));
+		const hkActiveTab = () => {
+			const ixActiveTab = Number(this._comp.get("ixTabPanel3") || 0);
+			$btnTab1.toggleClass("active", ixActiveTab === 0);
+			$btnTab2.toggleClass("active", ixActiveTab === 1);
+			this._$panel3_tab1.toggleVe(ixActiveTab === 0);
+			this._$panel3_tab2.toggleVe(ixActiveTab === 1);
+		};
+		this._comp.addHook("ixTabPanel3", hkActiveTab);
+		this._trackUiHook("ixTabPanel3", hkActiveTab);
+		hkActiveTab();
+
+		return $$`<div class="ve-flex btn-group mb-2 w-100">${$btnTab1}${$btnTab2}</div>`;
+	}
+
+	/** Special, "Adventures"/"Books"-only section, which presents a package to import, if it exists. */
+	async _pFillUi_$pGetWrpPackageImport () {
+		const $out = $(`<div class="ve-flex-col h-100 w-100"></div>`);
+
+		const $ovrLoading = await UtilApplications.$pGetAddAppLoadingOverlay($out);
+
+		this._pPackageIndex = this._pPackageIndex || (async () => {
+			this._packageIndex = await ImportSpecialPackages.getMergedPackageIndex();
+		})();
+
+		this._pPackageIndex.then(() => {
+			if ($ovrLoading) $ovrLoading.remove();
+
+			const hkPackageSource = () => {
+				const packageSourceClean = this._comp.get("packageSource") ? this._comp.get("packageSource").toLowerCase() : null;
+				const availablePackage = (this._packageIndex?.packages || []).find(it => (it.source || "").toLowerCase() === packageSourceClean);
+
+				if (availablePackage) {
+					const hasModule = !!availablePackage.manifesturlModule;
+					const hasWorld = !!availablePackage.manifesturlWorld;
+
+					const $iptModule = $(`<input class="mr-1" type="radio" name="package-mode" ${hasModule ? "" : `disabled title="No module available."`} ${hasModule ? `checked` : ""}>`);
+					const $iptWorld = $(`<input class="mr-1" type="radio" name="package-mode" ${hasWorld ? "" : `disabled title="No world available."`} ${!hasModule && hasWorld ? `checked` : ""}>`);
+
+					$$($out.empty())`
 						<div class="mb-1">Import As:</div>
-						<label class="flex-v-center mb-1">
-							<div class="flex-v-center col-3">${_0x243262}<b class="mr-1">Module</b></div>
+						<label class="ve-flex-v-center mb-1">
+							<div class="ve-flex-v-center col-3">${$iptModule}<b class="mr-1">Module</b></div>
 							<div class="col-9">
 								A resource which can be used in this and other worlds. Usually includes a selection of compendiums.
 							</div>
 						</label>
-						<label class="flex-v-center">
-							<div class="flex-v-center col-3">${_0x453a5a}<b class="mr-1">World</b></div>
+						<label class="ve-flex-v-center">
+							<div class="ve-flex-v-center col-3">${$iptWorld}<b class="mr-1">World</b></div>
 							<div class="col-9">
 								A complete world, ready to be run. This is imported as a new, separate world; your current world will not be affected.
 							</div>
 						</label>
-					`,this['_$panel3_btnImportPackage'][_0x1135c6(0x2b8)]('disabled',![])[_0x1135c6(0x2b7)]('click')[_0x1135c6(0x28c)](async()=>{const _0x5571da=_0x1135c6,_0x2e32e2=_0x243262[_0x5571da(0x2b8)](_0x5571da(0x19e)),_0x2486ff=_0x453a5a[_0x5571da(0x2b8)](_0x5571da(0x19e));if(_0x2e32e2)await ImportSpecialPackages[_0x5571da(0x226)](_0x4f8095[_0x5571da(0x291)]);else{if(_0x2486ff)await ImportSpecialPackages[_0x5571da(0x1d6)](_0x4f8095[_0x5571da(0x280)]);else ui[_0x5571da(0x1c8)][_0x5571da(0x195)](_0x5571da(0x194));}});}else $$(_0x270793[_0x1135c6(0x1b6)]())`<div class="flex mb-1"><i>No world/module package found.</i></div>`,this[_0x1135c6(0x22e)]['prop'](_0x1135c6(0x244),!![])[_0x1135c6(0x2b7)](_0x1135c6(0x28c));};this['_comp'][_0x4ee8b9(0x1f1)](_0x4ee8b9(0x1e3),_0x2b8b5b),this['_trackUiHook'](_0x4ee8b9(0x1e3),_0x2b8b5b),_0x2b8b5b();})[_0x462eb2(0x20c)](_0x14058f=>{const _0x128729=_0x462eb2;_0x31579d[_0x128729(0x1af)](),_0x270793[_0x128729(0x26d)](_0x128729(0x191)),ui[_0x128729(0x1c8)][_0x128729(0x187)](_0x128729(0x2a5)+VeCt[_0x128729(0x1f0)]);throw _0x14058f;}),_0x270793;}async['_pFillUi_$pGetWrpConfigSettings'](){const _0x1d827a=_0x5829f8,_0x5de92e=ComponentUiUtil[_0x1d827a(0x23a)](this[_0x1d827a(0x203)],_0x1d827a(0x1c1)),_0x344180=$$`<div class="w-100 flex-col mb-1">
-			${!this[_0x1d827a(0x23b)]?$$`<label class="w-100 mb-1 split-v-center" title="If this Import Wizard window should be kept open after clicking &quot;Open Importer&quot;">
-				<div>Keep Window Open</div>${_0x5de92e}
-			</label>`:''}
-		</div>`;if(this['_actor']!=null||this['_isTemp'])return _0x344180;const _0x332360=$$`<div class="w-100 flex-col"></div>`,_0x6bd214=new FolderPathBuilder(this[_0x1d827a(0x25e)]);_0x6bd214[_0x1d827a(0x1b8)](_0x332360);if(this[_0x1d827a(0x25e)][_0x1d827a(0x19a)])return $$`<div class="flex-col w-100">
-				${_0x344180}
-				${_0x332360}
-			</div>`;const _0x5303e1=game['packs'][_0x1d827a(0x1c5)](_0x1dc1ae=>!_0x1dc1ae['locked']&&_0x1dc1ae[_0x1d827a(0x1ea)][_0x1d827a(0x29b)]===this[_0x1d827a(0x25e)][_0x1d827a(0x188)]);let _0x267f2a=await StorageUtil[_0x1d827a(0x1fd)](this[_0x1d827a(0x263)]['_getImportToPackKey'](this[_0x1d827a(0x25e)]))||![];const _0x4910ff=()=>{const _0x44152d=_0x1d827a,_0x521a4a=_0x21bb3f['val']()==null?_0x5303e1['length']?_0x5303e1[0x0][_0x44152d(0x1da)]:null:_0x21bb3f['val']();return game[_0x44152d(0x18c)][_0x44152d(0x202)](_0x14251f=>_0x14251f['collection']===_0x521a4a);},_0x2ce215=_0x2bdac2=>{const _0x5c2e5a=_0x1d827a;_0x267f2a=_0x2bdac2;const _0x567e1e=_0x4910ff();if(!_0x567e1e&&_0x2bdac2){_0x2ce215(![]),ui['notifications'][_0x5c2e5a(0x1b0)](_0x5c2e5a(0x189)+this['_importer']['folderType']+_0x5c2e5a(0x197));return;}this[_0x5c2e5a(0x25e)]['pack']=_0x567e1e,_0x411124[_0x5c2e5a(0x1f8)]('btn--active',!_0x267f2a),_0x4a08c4['toggleClass'](_0x5c2e5a(0x29a),_0x267f2a),_0x38d73b[_0x5c2e5a(0x299)](!_0x267f2a),_0x4f4ab5['toggleVe'](_0x267f2a),this['_importer'][_0x5c2e5a(0x275)]=_0x267f2a?_0x4910ff():null,StorageUtil[_0x5c2e5a(0x25f)](this[_0x5c2e5a(0x263)]['_getImportToPackKey'](this[_0x5c2e5a(0x25e)]),_0x267f2a)[_0x5c2e5a(0x1c3)](null),StorageUtil[_0x5c2e5a(0x25f)](this[_0x5c2e5a(0x263)][_0x5c2e5a(0x217)](this[_0x5c2e5a(0x25e)]),_0x21bb3f[_0x5c2e5a(0x212)]())[_0x5c2e5a(0x1c3)](null);},_0x411124=$(_0x1d827a(0x292)+(_0x267f2a?'':_0x1d827a(0x29a))+_0x1d827a(0x242))[_0x1d827a(0x28c)](()=>_0x2ce215(![])),_0x4a08c4=$('<button\x20class=\x22btn\x20btn-5et\x20imp-wiz__btn-tab-head\x20imp-wiz__btn-tab-head--right\x20w-50\x20mr-2\x20'+(_0x267f2a?'':'btn--active')+_0x1d827a(0x2a0))[_0x1d827a(0x28c)](()=>_0x2ce215(!![])),_0x21bb3f=$('<select\x20class=\x22block\x20ve-foundry-button\x20m-0\x22>\x0a\x09\x09\x09'+_0x5303e1['map'](_0x42dc3a=>'<option\x20value=\x22'+_0x42dc3a['collection']+'\x22>'+_0x42dc3a[_0x1d827a(0x1ea)][_0x1d827a(0x199)]+_0x1d827a(0x2ab))[_0x1d827a(0x21b)]('')+_0x1d827a(0x2b4))[_0x1d827a(0x2b5)](()=>{_0x2ce215(_0x267f2a);}),_0x9bddef=await StorageUtil['pGet'](this['constructor'][_0x1d827a(0x217)](this[_0x1d827a(0x25e)]));if(_0x267f2a&&_0x5303e1[_0x1d827a(0x277)](_0x33fd75=>_0x33fd75[_0x1d827a(0x1da)]===_0x9bddef))_0x21bb3f['val'](_0x9bddef);else{if(_0x5303e1[_0x1d827a(0x285)])_0x21bb3f['val'](_0x5303e1[0x0][_0x1d827a(0x1da)]);}const _0x38d73b=$$`<div class="w-100 h-100 flex-col imp-wiz__tab-config py-1">
-			${_0x332360}
-		</div>`,_0x4f4ab5=$$`<div class="w-100 h-100 flex-col imp-wiz__tab-config py-1">
-			<div class="mb-1">Compendium:</div>
-			${_0x21bb3f}
-		</div>`,_0x32387f=$$`<div class="flex-col w-100 min-h-0">
-			${_0x344180}
-			<div class="flex">${_0x411124}${_0x4a08c4}</div>
-			${_0x38d73b}
-			${_0x4f4ab5}
-		</div>`;return _0x2ce215(_0x267f2a),_0x32387f;}async[_0x5829f8(0x274)](_0x43824a){const _0x22e9d1=_0x5829f8,_0x1bd9c5=_0x43824a[_0x22e9d1(0x21d)]?new _0x43824a[(_0x22e9d1(0x21d))]({'actor':this[_0x22e9d1(0x27a)]}):_0x43824a[_0x22e9d1(0x2bb)];await _0x1bd9c5[_0x22e9d1(0x297)]();const _0x59354e=await _0x1bd9c5[_0x22e9d1(0x183)](),_0xc76015=_0x59354e[_0x22e9d1(0x202)](_0x43ae73=>_0x43ae73[_0x22e9d1(0x1b9)]);if(!_0xc76015)return ui[_0x22e9d1(0x1c8)]['error']('No\x20default\x20source\x20to\x20import!\x20This\x20is\x20a\x20bug.');await this[_0x22e9d1(0x222)]([_0xc76015],_0x1bd9c5,_0x43824a);}async[_0x5829f8(0x282)](){const _0x3bf6cc=_0x5829f8;await this[_0x3bf6cc(0x211)](this['_getMode']()),await this[_0x3bf6cc(0x221)]();const _0x5121b8=await this[_0x3bf6cc(0x1eb)]['pGetSelectedSources']();if(!_0x5121b8[_0x3bf6cc(0x285)])return ui[_0x3bf6cc(0x1c8)][_0x3bf6cc(0x187)]('No\x20source\x20selected!');await this[_0x3bf6cc(0x222)](_0x5121b8);}[_0x5829f8(0x268)](){const _0x352a07=_0x5829f8;return $(_0x352a07(0x200)+(MiscUtil[_0x352a07(0x1ab)](this[_0x352a07(0x204)],_0x352a07(0x2bd))||_0x352a07(0x2ba))+_0x352a07(0x2c3))[_0x352a07(0x28c)](async()=>{const _0x3015b3=_0x352a07,_0x103cb9=await this[_0x3015b3(0x1eb)][_0x3015b3(0x232)]();if(!_0x103cb9[_0x3015b3(0x285)])return ui['notifications'][_0x3015b3(0x187)]('No\x20source\x20selected!');await this[_0x3015b3(0x222)](_0x103cb9);});}async[_0x5829f8(0x222)](_0x15b8a7,_0xf9800e=null,_0x449886=null){const _0x3e6c51=_0x5829f8;_0xf9800e=_0xf9800e||this[_0x3e6c51(0x25e)],_0x449886=_0x449886||this[_0x3e6c51(0x29d)](),await this[_0x3e6c51(0x208)](_0xf9800e,_0x449886);const _0x334b3f=await UtilApplications[_0x3e6c51(0x196)](this[_0x3e6c51(0x216)]),_0x1ca2e0=[],_0x37fea4=[];_0xf9800e[_0x3e6c51(0x2ac)]=await this[_0x3e6c51(0x263)][_0x3e6c51(0x25c)](_0x15b8a7,_0xf9800e);try{for(const _0x3e8f6e of _0x15b8a7){if(_0x3e8f6e[_0x3e6c51(0x259)]){const _0x4d2e9a=await this[_0x3e6c51(0x1b2)](_0xf9800e,_0x3e8f6e);_0x1ca2e0['push'](..._0x4d2e9a[_0x3e6c51(0x229)]),_0x37fea4[_0x3e6c51(0x1fa)](null);}else{if(_0x3e8f6e['url']!=null){const _0x1b999a=await this['_pFillUi_handleOpenClick_pGetUrlMeta'](_0xf9800e,_0x3e8f6e);_0x1ca2e0[_0x3e6c51(0x1fa)](..._0x1b999a[_0x3e6c51(0x229)]),_0x37fea4[_0x3e6c51(0x1fa)](..._0x1b999a[_0x3e6c51(0x227)]);}else{const _0x343634=await this['_pFillUi_handleOpenClick_pGetSpecialMeta'](_0xf9800e,_0x3e8f6e);_0x1ca2e0[_0x3e6c51(0x1fa)](..._0x343634[_0x3e6c51(0x229)]),_0x37fea4[_0x3e6c51(0x1fa)](..._0x343634['cacheKeys']);}}}}catch(_0x13ae35){ui[_0x3e6c51(0x1c8)][_0x3e6c51(0x187)](_0x3e6c51(0x1e4)+VeCt[_0x3e6c51(0x1f0)]);throw _0x13ae35;}finally{if(_0x334b3f)_0x334b3f[_0x3e6c51(0x1af)]();}const _0x5d37e3=_0x1ca2e0['length']===0x1?_0x1ca2e0[0x0]:_0x1ca2e0['flat'](),_0x49a5dc=new Set(),_0x1a2ab5=_0xf9800e[_0x3e6c51(0x28a)]&&_0xf9800e[_0x3e6c51(0x1d8)]?_0x5d37e3[_0x3e6c51(0x1c5)](_0x3e4591=>{const _0x57ba1d=_0x3e6c51,_0x54a7d8=UrlUtil['URL_TO_HASH_BUILDER'][_0xf9800e[_0x57ba1d(0x1d8)]];if(!_0x54a7d8)return!![];const _0x5812db=_0x54a7d8(_0x3e4591);if(_0x49a5dc['has'](_0x5812db))return![];return _0x49a5dc[_0x57ba1d(0x1bc)](_0x5812db),!![];}):_0x5d37e3,_0x15f9ee=_0x37fea4[_0x3e6c51(0x26f)](null)?null:_0x37fea4[_0x3e6c51(0x21b)]('__');await this[_0x3e6c51(0x250)](_0xf9800e,_0x1a2ab5,_0x15f9ee);}async[_0x5829f8(0x208)](_0x471211,_0xb47874){const _0x5074bc=_0x5829f8;if(!_0x471211||!_0xb47874)return;try{const _0x553644=MiscUtil[_0x5074bc(0x1e0)](await StorageUtil[_0x5074bc(0x1fd)](ChooseImporter[_0x5074bc(0x18f)])||{});_0x553644[_0x471211[_0x5074bc(0x1ce)]]=_0xb47874['id'],await StorageUtil['pSet'](ChooseImporter[_0x5074bc(0x18f)],_0x553644);}catch(_0x3a0b36){console['error'](...LGT,_0x3a0b36);}}static async[_0x5829f8(0x25c)](_0x3fcb9f,_0x388040){return _0x388040['pGetChooseImporterUserDataForSources'](_0x3fcb9f);}async[_0x5829f8(0x1b2)](_0xbfc662,_0x5238e5){const _0x118519=_0x5829f8;return UtilDataSource[_0x118519(0x283)](this[_0x118519(0x1eb)],_0x5238e5,_0xbfc662[_0x118519(0x193)]);}async[_0x5829f8(0x2a4)](_0x4112d6,_0x539d62){const _0x53da7a=_0x5829f8;return UtilDataSource[_0x53da7a(0x224)](this['_appSourceSelector'],_0x539d62,_0x4112d6[_0x53da7a(0x193)]);}async[_0x5829f8(0x184)](_0x5b65e7,_0x55b2f4){const _0x5c35ce=_0x5829f8;return UtilDataSource['pGetSpecialOutput'](_0x55b2f4,_0x5b65e7[_0x5c35ce(0x193)]);}async[_0x5829f8(0x250)](_0x287b1b,_0x3a0317,_0x149714){const _0x4b8519=_0x5829f8;if(_0x3a0317==null||_0x3a0317 instanceof Array&&!_0x3a0317[_0x4b8519(0x285)])return;const _0x1d5e06=await this['_pGetUi_pCheckOpenCachedInstance'](_0x287b1b,{'fnCheckHit':_0x2cca40=>_0x2cca40[_0x4b8519(0x1ff)]&&_0x2cca40['cacheKey']===_0x149714&&_0x2cca40[_0x4b8519(0x243)]===!!this['_actor']});if(_0x1d5e06){if(this[_0x4b8519(0x23b)]||!this[_0x4b8519(0x2b3)]['get']('isRemainOpen'))this[_0x4b8519(0x1d0)]();return;}if(this[_0x4b8519(0x23b)]||!this[_0x4b8519(0x2b3)]['get'](_0x4b8519(0x1c1)))this[_0x4b8519(0x1d0)]();_0x287b1b[_0x4b8519(0x248)]=_0x3a0317,await _0x287b1b[_0x4b8519(0x1c4)](this['_importerPreRenderArgs']),_0x287b1b[_0x4b8519(0x26c)](!![]),this[_0x4b8519(0x260)](_0x287b1b,{'cacheKey':_0x149714,'hasActor':!!this[_0x4b8519(0x27a)]});}async[_0x5829f8(0x180)](_0xc8f29f,{fnCheckHit:_0x4b4262}){const _0x28cdba=_0x5829f8,_0x20da27=this[_0x28cdba(0x1c2)](_0xc8f29f),_0x10cf39=ChooseImporter[_0x28cdba(0x295)][_0x20da27];if(!_0x10cf39)return![];if(!_0x4b4262(_0x10cf39))return delete ChooseImporter[_0x28cdba(0x295)][_0x20da27],_0x10cf39['instance']['isClosable']=!![],_0x10cf39[_0x28cdba(0x264)][_0x28cdba(0x1d0)](),![];return await _0x10cf39[_0x28cdba(0x264)][_0x28cdba(0x231)](_0xc8f29f),await _0x10cf39[_0x28cdba(0x264)][_0x28cdba(0x1c4)](this[_0x28cdba(0x228)]),_0x10cf39['instance'][_0x28cdba(0x1b8)](!![]),_0x10cf39[_0x28cdba(0x264)][_0x28cdba(0x24f)](),UtilApplications[_0x28cdba(0x1aa)](_0x10cf39[_0x28cdba(0x264)]),!![];}[_0x5829f8(0x260)](_0x3449b1,_0x4f1def){const _0x480f40=_0x5829f8,_0x7b4bbc=this[_0x480f40(0x1c2)](_0x3449b1);if(_0x3449b1[_0x480f40(0x1a5)]||_0x4f1def[_0x480f40(0x1ff)]==null)return;_0x3449b1[_0x480f40(0x28d)]=![],ChooseImporter['_INSTANCE_CACHE'][_0x7b4bbc]={..._0x4f1def,'instance':_0x3449b1};}static['_getSourceSelectionKey'](_0x426b7d){const _0x241c71=_0x5829f8;return _0x241c71(0x252)+(_0x426b7d['namespace']||_0x426b7d[_0x241c71(0x193)][_0x241c71(0x21b)]('_'));}static[_0x5829f8(0x1bb)](_0x2e52ab){const _0x5fc169=_0x5829f8;return _0x5fc169(0x2c1)+(_0x2e52ab[_0x5fc169(0x1a7)]||_0x2e52ab[_0x5fc169(0x193)][_0x5fc169(0x21b)]('_'));}static[_0x5829f8(0x217)](_0x1950e0){const _0x40c410=_0x5829f8;return _0x40c410(0x28e)+(_0x1950e0[_0x40c410(0x1a7)]||_0x1950e0[_0x40c410(0x193)]['join']('_'));}[_0x5829f8(0x1db)](){const _0xf09b8d=_0x5829f8;return _0xf09b8d(0x251);}[_0x5829f8(0x1c2)](_0x467253){const _0x476d8e=_0x5829f8,_0x473820=this[_0x476d8e(0x263)][_0x476d8e(0x1e9)](_0x467253);return[_0x473820,this['_namespace']]['join']('_');}async[_0x5829f8(0x1d0)](..._0x5e48d3){const _0x1a0a3f=_0x5829f8;if(this[_0x1a0a3f(0x1eb)])this[_0x1a0a3f(0x1eb)][_0x1a0a3f(0x23f)]();await super[_0x1a0a3f(0x1d0)](..._0x5e48d3);if(this[_0x1a0a3f(0x1eb)])this[_0x1a0a3f(0x1eb)][_0x1a0a3f(0x2a2)]();}}ChooseImporter[_0x5829f8(0x1d3)]={'modeId':_0x5829f8(0x1b1),'isRemainOpen':!![],'ixTabPanel3':0x0,'packageSource':null},ChooseImporter[_0x5829f8(0x18f)]='choose_importer_last_used_mode',ChooseImporter[_0x5829f8(0x1fb)]='actors',ChooseImporter[_0x5829f8(0x238)]=_0x5829f8(0x27c),ChooseImporter[_0x5829f8(0x210)]=_0x5829f8(0x1d2),ChooseImporter[_0x5829f8(0x225)]=_0x5829f8(0x2a9),ChooseImporter[_0x5829f8(0x19c)]='creatures',ChooseImporter[_0x5829f8(0x272)]='items',ChooseImporter[_0x5829f8(0x273)]=_0x5829f8(0x1b1),ChooseImporter[_0x5829f8(0x278)]=_0x5829f8(0x2a9),ChooseImporter[_0x5829f8(0x1c6)]=[{'id':ChooseImporter[_0x5829f8(0x273)],'name':'Adventures','singleName':_0x5829f8(0x1f3),'Importer':ImportListAdventure,'fnCheckRequirements':_0x15c90d=>_0x15c90d==null,'metaOther':{'text':_0x5829f8(0x29c),'pFn':async()=>{const _0x86e22e=_0x5829f8,_0x2480b0=new ImportSpecialPackages();await _0x2480b0[_0x86e22e(0x297)](),_0x2480b0[_0x86e22e(0x1b8)](!![]);}},'hasPackages':!![]},{'id':_0x5829f8(0x230),'name':_0x5829f8(0x185),'Importer':ImportListBackground,'hasDefaultSource':!![]},{'id':'books','name':_0x5829f8(0x281),'singleName':_0x5829f8(0x1c0),'Importer':ImportListBook,'fnCheckRequirements':_0x4bb3b4=>_0x4bb3b4==null,'hasPackages':!![]},{'id':_0x5829f8(0x19b),'name':_0x5829f8(0x24c),'Importer':ImportListClass,'hasDefaultSource':!![]},{'id':_0x5829f8(0x2a1),'name':'Conditions\x20&\x20Diseases','Importer':ImportListConditionDisease,'hasDefaultSource':!![]},{'id':ChooseImporter[_0x5829f8(0x19c)],'name':_0x5829f8(0x1dc),'Importer':ImportListCreature,'fnCheckRequirements':_0x28a689=>_0x28a689==null,'hasDefaultSource':!![]},{'id':'feats','name':_0x5829f8(0x1d5),'Importer':ImportListFeat,'hasDefaultSource':!![]},{'id':ChooseImporter['_MODE_ID_ITEMS'],'name':'Items','Importer':ImportListItem,'hasDefaultSource':!![]},{'id':_0x5829f8(0x2b0),'name':_0x5829f8(0x27f),'Importer':ImportListVariantRule,'fnCheckRequirements':_0x1959cb=>_0x1959cb==null,'hasDefaultSource':!![]},{'id':'other-options-and-features','name':_0x5829f8(0x20d),'Importer':ImportListOptionalFeature,'hasDefaultSource':!![]},{'id':'psionics','name':_0x5829f8(0x206),'Importer':ImportListPsionic,'hasDefaultSource':!![]},{'id':'races-and-subraces','name':'Races\x20&\x20Subraces','Importer':ImportListRace,'hasDefaultSource':!![]},{'id':_0x5829f8(0x27d),'name':_0x5829f8(0x213),'Importer':ImportListSpell,'hasDefaultSource':!![]},{'id':_0x5829f8(0x1fe),'name':_0x5829f8(0x1dd),'Importer':ImportListReward,'hasDefaultSource':!![]},{'id':ChooseImporter['_MODE_ID_TABLES'],'name':'Tables','Importer':ImportListRollableTable,'fnCheckRequirements':_0x5a24f7=>_0x5a24f7==null,'hasDefaultSource':!![]},{'id':_0x5829f8(0x1f6),'name':'Vehicles','Importer':ImportListVehicle,'fnCheckRequirements':_0x3f8bd4=>_0x3f8bd4==null,'hasDefaultSource':!![]},{'id':_0x5829f8(0x290),'name':_0x5829f8(0x2b1),'Importer':ImportListVehicleUpgrade,'hasDefaultSource':!![]},{'id':_0x5829f8(0x234),'name':'Objects','Importer':ImportListObject,'fnCheckRequirements':_0x5a7f62=>_0x5a7f62==null,'hasDefaultSource':!![]}],ChooseImporter[_0x5829f8(0x295)]={};export{ChooseImporter};
+					`;
+
+					this._$panel3_btnImportPackage
+						.prop("disabled", false)
+						.off("click")
+						.click(async () => {
+							const isModule = $iptModule.prop("checked");
+							const isWorld = $iptWorld.prop("checked");
+
+							if (isModule) await ImportSpecialPackages.pImportManifesturlModule(availablePackage.manifesturlModule);
+							else if (isWorld) await ImportSpecialPackages.pImportManifesturlWorld(availablePackage.manifesturlWorld);
+							else ui.notifications.warn(`Please select an import mode first!`);
+						});
+				} else {
+					if (Config.get("importAdventure", "isUseLegacyImporter")) {
+						$$($out.empty())`<div class="ve-flex-col mb-1">
+							<p><i>No world/module package available.</i></p>
+						</div>`;
+					} else {
+						$$($out.empty())`<div class="ve-flex-col mb-1">
+							${ImportSpecialPackages.getNonLegacyNoteHtml()}
+							<hr class="hr-2">
+							<p><i class="ve-muted">No world/module package available.</i></p>
+						</div>`;
+						ImportSpecialPackages.bindNonLegacyNoteHandlers($out);
+					}
+
+					this._$panel3_btnImportPackage
+						.prop("disabled", true)
+						.off("click");
+				}
+			};
+			this._comp.addHook("packageSource", hkPackageSource);
+			this._trackUiHook("packageSource", hkPackageSource);
+			hkPackageSource();
+		}).catch(e => {
+			$ovrLoading.remove();
+			$out.append(`<div class="bold veapp__msg-error">Failed to load!</div>`);
+			ui.notifications.error(`Failed to load package (worlds/modules) index! The package importer may not function correctly. ${VeCt.STR_SEE_CONSOLE}`);
+			throw e;
+		});
+
+		return $out;
+	}
+
+	async _pFillUi_$pGetWrpConfigSettings () {
+		const $cbKeepOpen = ComponentUiUtil.$getCbBool(this.__comp, "isRemainOpen");
+
+		const $wrpSharedConfig = $$`<div class="w-100 ve-flex-col mb-1">
+			${!this._isAlwaysCloseWindow ? $$`<label class="w-100 mb-1 split-v-center" title="If this Import Wizard window should be kept open after clicking &quot;Open Importer&quot;">
+				<div>Keep Window Open</div>${$cbKeepOpen}
+			</label>` : ""}
+		</div>`;
+
+		if (this._actor != null || this._isTemp) {
+			this._importer.pack = null;
+			return $wrpSharedConfig;
+		}
+
+		if (this._table != null) {
+			// The importer's `.pack` is set by an earlier step.
+			return $wrpSharedConfig;
+		}
+
+		const $wrpEditFolderPath = $$`<div class="w-100 ve-flex-col"></div>`;
+		const pathBuilder = new FolderPathBuilder({fpApp: this._importer, folderType: this._importer.constructor.FOLDER_TYPE});
+		pathBuilder.render($wrpEditFolderPath);
+
+		if (this._importer.isFolderOnly) {
+			return $$`<div class="ve-flex-col w-100">
+				${$wrpSharedConfig}
+				${$wrpEditFolderPath}
+			</div>`;
+		}
+
+		const availPacks = UtilCompendium.getAvailablePacks({folderType: this._importer.constructor.FOLDER_TYPE});
+
+		let isImportToCompendium = await StorageUtil.pGet(this.constructor._getImportToPackKey(this._importer)) || false;
+
+		const getSelectedCompendium = () => {
+			const toFind = $selCompendium.val() == null ? availPacks.length ? availPacks[0].collection : null : $selCompendium.val();
+			return UtilCompendium.getPackByCollection({collection: toFind});
+		};
+
+		const setCompendiumImport = (isCompendium) => {
+			isImportToCompendium = isCompendium;
+
+			const pack = getSelectedCompendium();
+			if (!pack && isCompendium) {
+				setCompendiumImport(false);
+				ui.notifications.warn(`No unlocked/compatible compendiums found for type "${this._importer.constructor.FOLDER_TYPE}." You need to create one first! (If you have created one already, you may need to re-open the Wizard.)`);
+				return;
+			}
+
+			$btnImportFolder.toggleClass("btn--active", !isImportToCompendium);
+			$btnImportCompendium.toggleClass("btn--active", isImportToCompendium);
+
+			$tabImportFolder.toggleVe(!isImportToCompendium);
+			$tabImportCompendium.toggleVe(isImportToCompendium);
+
+			this._importer.pack = isImportToCompendium ? getSelectedCompendium() : null;
+
+			StorageUtil.pSet(this.constructor._getImportToPackKey(this._importer), isImportToCompendium).then(null);
+			StorageUtil.pSet(this.constructor._getPackSelectionKey(this._importer), $selCompendium.val()).then(null);
+		};
+
+		const $btnImportFolder = $(`<button class="btn btn-5et imp-wiz__btn-tab-head imp-wiz__btn-tab-head--left w-50 ml-2 ${isImportToCompendium ? "" : "btn--active"}">Import to Folder</button>`)
+			.click(() => setCompendiumImport(false));
+
+		const $btnImportCompendium = $(`<button class="btn btn-5et imp-wiz__btn-tab-head imp-wiz__btn-tab-head--right w-50 mr-2 ${isImportToCompendium ? "" : "btn--active"}">Import to Compendium</button>`)
+			.click(() => setCompendiumImport(true));
+
+		const $selCompendium = UtilCompendium.$getSelCompendium({availablePacks: availPacks})
+			.change(() => {
+				setCompendiumImport(isImportToCompendium);
+			});
+
+		const savedCollectionId = await StorageUtil.pGet(this.constructor._getPackSelectionKey(this._importer));
+		if (isImportToCompendium && availPacks.some(it => it.collection === savedCollectionId)) $selCompendium.val(savedCollectionId);
+		else if (availPacks.length) $selCompendium.val(availPacks[0].collection);
+
+		const $tabImportFolder = $$`<div class="w-100 h-100 ve-flex-col imp-wiz__tab-config py-1">
+			${$wrpEditFolderPath}
+		</div>`;
+
+		const $tabImportCompendium = $$`<div class="w-100 h-100 ve-flex-col imp-wiz__tab-config py-1">
+			<div class="mb-1">Compendium <span class="ve-muted ve-small">(<span class="code">${this._importer.constructor.FOLDER_TYPE}</span>)</span>:</div>
+			${$selCompendium}
+		</div>`;
+
+		const $wrpConfig = $$`<div class="ve-flex-col w-100 min-h-0">
+			${$wrpSharedConfig}
+			<div class="ve-flex">${$btnImportFolder}${$btnImportCompendium}</div>
+			${$tabImportFolder}
+			${$tabImportCompendium}
+		</div>`;
+
+		setCompendiumImport(isImportToCompendium);
+
+		return $wrpConfig;
+	}
+
+	async _pDoQuickOpen (mode) {
+		const importer = mode.Importer ? new mode.Importer({actor: this._actor, table: this._table}) : mode.importerInstance;
+		await importer.pInit();
+
+		await this._pInitImporter(mode);
+		await this._pInitSourceSelector();
+		const sources = await this._appSourceSelector.pGetSelectedSources();
+		if (!sources.length) return ui.notifications.error(`No source(s) selected!`);
+		await this._pHandleOpenImporter(sources, {importer, mode});
+	}
+
+	async pDoQuickOpenUsingExistingSourceSelection ({isSilent = false, isBackground = false} = {}) {
+		await this._pInitImporter(this._getMode());
+		await this._pInitSourceSelector();
+		const sources = await this._appSourceSelector.pGetSelectedSources();
+		if (!isSilent && !sources.length) return ui.notifications.error(`No source(s) selected!`);
+		await this._pHandleOpenImporter(sources, {isSilent, isBackground});
+	}
+
+	_pFillUi_$getBtnOpenImporter () {
+		return $(`<button class="btn btn-5et w-100 mr-2">${this._predefinedMode?.wizardTitleButtonOpenImporter || "Open Importer"}</button>`)
+			.click(async () => {
+				const sources = await this._appSourceSelector.pGetSelectedSources();
+				if (!sources.length) return ui.notifications.error(`No source selected!`);
+				await this._pHandleOpenImporter(sources);
+			});
+	}
+
+	_pFillUi_$getBtnOpenConfig () {
+		return $(`<button class="btn btn-5et" title="Open ${Config.get("ui", "isStreamerMode") ? "" : "Plutonium "}Config for This Importer"><span class="fas fa-fw fa-cogs"></span></button>`)
+			.click(evt => Config.pHandleButtonClick(evt, this._importer.configGroup));
+	}
+
+	/**
+	 * @param sources
+	 * @param importer The importer to use; pass this in so it can be set distinct from the main importer mode (e.g. for
+	 * opening "quick" importers)
+	 * @param mode
+	 * @param isSilent
+	 * @param isBackground
+	 */
+	async _pHandleOpenImporter (sources, {importer = null, mode = null, isSilent = false, isBackground = false} = {}) {
+		importer = importer || this._importer;
+		mode = mode || this._getMode();
+
+		await this._pHandleOpenImporter_pSaveLastUsed(importer, mode);
+
+		const {dedupedAllContentFlat, cacheKeys, userData} = await this._pHandleOpenImporter_pGetAllContent({importer, sources, isBackground});
+		importer.userData = userData;
+
+		if (
+			!isSilent
+			&& ((dedupedAllContentFlat instanceof Array && !dedupedAllContentFlat.length)
+				|| (!Object.values(dedupedAllContentFlat || {}).length))
+		) {
+			ui.notifications.warn(`No importable content found in the selected source${sources.length === 1 ? "" : "s"}!`);
+			return;
+		}
+
+		// If any cache key is null, make the entire thing null
+		const cacheKey = cacheKeys.includes(null) ? null : cacheKeys.join("__");
+		await this._pFillUi_handleOpenClick_pOpen(importer, dedupedAllContentFlat, cacheKey);
+	}
+
+	async _pHandleOpenImporter_pGetAllContent ({importer, sources, isBackground}) {
+		const $ovrLoading = await UtilApplications.$pGetAddAppLoadingOverlay(this._$window);
+
+		try {
+			// eslint-disable-next-line no-return-await
+			return await importer.pGetAllContent({
+				sources,
+				isBackground,
+				uploadedFiles: this._appSourceSelector.uploadedFiles,
+				customUrls: this._appSourceSelector.getCustomUrls(),
+			});
+		} catch (e) {
+			ui.notifications.error(`Failed to load importer! ${VeCt.STR_SEE_CONSOLE}`);
+			throw e;
+		} finally {
+			if ($ovrLoading) $ovrLoading.remove();
+		}
+	}
+
+	async _pHandleOpenImporter_pSaveLastUsed (importer, mode) {
+		if (!importer || !mode) return;
+		// Avoid crashing the import if this fails
+		try {
+			const toSave = MiscUtil.copy((await StorageUtil.pGet(ChooseImporter._STORAGE_KEY_LAST_USED_MODE)) || {});
+			toSave[importer.gameProp] = mode.id;
+			await StorageUtil.pSet(ChooseImporter._STORAGE_KEY_LAST_USED_MODE, toSave);
+		} catch (e) {
+			console.error(...LGT, e);
+		}
+	}
+
+	async _pFillUi_handleOpenClick_pOpen (importer, dedupedAllContentFlat, cacheKey) {
+		if (dedupedAllContentFlat == null || (dedupedAllContentFlat instanceof Array && !dedupedAllContentFlat.length)) return;
+
+		const isOpenedFromCache = await this._pGetUi_pCheckOpenCachedInstance(importer, {fnCheckHit: cached => cached.cacheKey && cached.cacheKey === cacheKey && cached.hasActor === !!this._actor && cached.hasTable === !!this._table});
+		if (isOpenedFromCache) {
+			if (this._isAlwaysCloseWindow || !this._comp.get("isRemainOpen")) this.close();
+			return;
+		}
+
+		if (this._isAlwaysCloseWindow || !this._comp.get("isRemainOpen")) this.close();
+
+		await importer.pSetContent(dedupedAllContentFlat);
+
+		await importer.pPreRender(this._importerPreRenderArgs);
+		// As a single importer instance is used per category, we ensure it is not hidden (after e.g. being "closed")
+		const pRender = importer.showAndRender(true);
+
+		this._pGetUi_cacheInstance(importer, {cacheKey: cacheKey, hasActor: !!this._actor, hasTable: !!this._table});
+
+		await pRender;
+		if (Config.get("ui", "isEnableSubPopouts") && PopoutSheet.isPoppedOut(this)) {
+			PopoutSheet.doPopout(importer);
+		}
+	}
+
+	async _pGetUi_pCheckOpenCachedInstance (importer, {fnCheckHit}) {
+		const instanceCacheKey = this._getInstanceCacheKey(importer);
+		const cachedInstanceMeta = ChooseImporter._INSTANCE_CACHE[instanceCacheKey];
+
+		if (!cachedInstanceMeta) return false;
+
+		// If the instance in the cache did not match, empty the cache and close the instance
+		if (!fnCheckHit(cachedInstanceMeta)) {
+			this.constructor._uncacheInstance(instanceCacheKey);
+			return false;
+		}
+
+		// Sync our state to the old instance
+		await cachedInstanceMeta.instance.pSyncStateFrom(importer);
+
+		await cachedInstanceMeta.instance.pPreRender(this._importerPreRenderArgs);
+		cachedInstanceMeta.instance.render(true);
+		cachedInstanceMeta.instance.maximize();
+		UtilApplications.bringToFront(cachedInstanceMeta.instance);
+
+		return true;
+	}
+
+	_pGetUi_cacheInstance (importer, instanceMeta) {
+		const instanceCacheKey = this._getInstanceCacheKey(importer);
+
+		if (importer.isNonCacheableInstance || instanceMeta.cacheKey == null) return;
+
+		importer.isClosable = false;
+		ChooseImporter._INSTANCE_CACHE[instanceCacheKey] = {
+			...instanceMeta,
+			instance: importer,
+		};
+	}
+
+	static _uncacheInstance (instanceCacheKey) {
+		const cachedInstanceMeta = ChooseImporter._INSTANCE_CACHE[instanceCacheKey];
+		delete ChooseImporter._INSTANCE_CACHE[instanceCacheKey];
+		cachedInstanceMeta.instance.isClosable = true;
+		cachedInstanceMeta.instance.close();
+	}
+
+	static _getSourceSelectionKey (importer) { return `ChooseImporter_source_${importer.namespace || importer.props.join("_")}`; }
+	static _getImportToPackKey (importer) { return `ChooseImporter_is_pack_${importer.namespace || importer.props.join("_")}`; }
+	static _getPackSelectionKey (importer) { return `ChooseImporter_pack_${importer.namespace || importer.props.join("_")}`; }
+
+	// Use the same generalised filters across all importers
+	_getFilterNamespace () { return `ChooseImporter_source_filter`; }
+
+	_getInstanceCacheKey (importer) {
+		const sourceKey = this.constructor._getSourceSelectionKey(importer);
+		return [sourceKey, this._namespace].join("_");
+	}
+
+	async close (...args) {
+		if (this._appSourceSelector) this._appSourceSelector.handlePreClose();
+		await super.close(...args);
+		if (this._appSourceSelector) this._appSourceSelector.handlePostClose();
+	}
+
+	async _pForceClose () {
+		this._isClosable = true;
+		await this.close();
+	}
+}
+ChooseImporter._DEFAULT_STATE = {
+	modeId: "adventures",
+	isRemainOpen: true,
+	ixTabPanel3: 0,
+	packageSource: null,
+};
+
+ChooseImporter._STORAGE_KEY_LAST_USED_MODE = "choose_importer_last_used_mode";
+
+ChooseImporter.Mode = class {
+	constructor (
+		{
+			Importer,
+			hasDefaultSource,
+			singleName,
+			requires,
+			metaExternalArchive,
+			metaOther,
+			hasPackages,
+			id,
+			name,
+			isNotAllable,
+
+			importerInstance,
+			wizardTitleWindow,
+			wizardTitlePanel3,
+			wizardTitleButtonOpenImporter,
+		},
+	) {
+		this.Importer = Importer;
+		this.hasDefaultSource = hasDefaultSource;
+		this.singleName = singleName;
+		this.requires = requires;
+		this.metaExternalArchive = metaExternalArchive;
+		this.metaOther = metaOther;
+		this.hasPackages = hasPackages;
+		this._id = id;
+		this._name = name;
+		this.isNotAllable = !!isNotAllable;
+
+		this.importerInstance = importerInstance;
+		this.wizardTitleWindow = wizardTitleWindow;
+		this.wizardTitlePanel3 = wizardTitlePanel3;
+		this.wizardTitleButtonOpenImporter = wizardTitleButtonOpenImporter;
+	}
+
+	get id () { return this._id ?? this.Importer.ID; }
+	get name () { return this._name ?? this.Importer.DISPLAY_NAME_TYPE_PLURAL; }
+};
+
+ChooseImporter._MODES = [
+	new ChooseImporter.Mode({
+		Importer: ImportListAction,
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		singleName: "Adventure",
+		Importer: ImportListAdventure,
+		requires: {
+			actor: false,
+			table: false,
+		},
+		/* Legacy option, retained here as a reference */
+		// metaExternalArchive: {
+		// 	text: "Worlds",
+		// 	url: "https://thetrove.net/Resources/Programs/Plutonium/index.html"
+		// },
+		metaOther: {
+			text: "Packages",
+			pFn: async () => {
+				const importSpecialPackages = new ImportSpecialPackages();
+				await importSpecialPackages.pInit();
+				return importSpecialPackages.render(true);
+			},
+		},
+		hasPackages: true,
+		isNotAllable: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListBackground,
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListBackgroundFeature,
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		singleName: "Book",
+		Importer: ImportListBook,
+		requires: {
+			actor: false,
+			table: false,
+		},
+		hasPackages: true,
+		isNotAllable: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListCharCreationOption,
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListClass,
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListClassFeature,
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListConditionDisease,
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListCreature,
+		requires: {
+			actor: false,
+		},
+		hasDefaultSource: true,
+	}),
+	// region TODO(v10)
+	// new ChooseImporter.Mode({
+	// 	Importer: ImportListCreatureFeature,
+	// 	hasDefaultSource: true,
+	// }),
+	// endregion
+	new ChooseImporter.Mode({
+		Importer: ImportListCultBoon,
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListDeity,
+		requires: {
+			actor: false,
+		},
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListFeat,
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListHazard,
+		requires: {
+			actor: false,
+		},
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListItem,
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListLanguage,
+		requires: {
+			actor: false,
+		},
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListMap,
+		requires: {
+			actor: false,
+		},
+		isNotAllable: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListObject,
+		requires: {
+			actor: false,
+		},
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListVariantRule,
+		requires: {
+			actor: false,
+		},
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListOptionalFeature,
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListPsionic,
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListRace,
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListRaceFeature,
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListRecipe,
+		requires: {
+			actor: false,
+		},
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListSpell,
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListReward,
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListRollableTable,
+		requires: {
+			actor: false,
+		},
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListTrap,
+		requires: {
+			actor: false,
+		},
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListVehicle,
+		requires: {
+			actor: false,
+		},
+		hasDefaultSource: true,
+	}),
+	new ChooseImporter.Mode({
+		Importer: ImportListVehicleUpgrade,
+		hasDefaultSource: true,
+	}),
+];
+ChooseImporter._INSTANCE_CACHE = {};
+
+export {ChooseImporter};

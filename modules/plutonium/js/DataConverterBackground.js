@@ -1,1 +1,141 @@
-const _0x4df2=['5506hPThiw','</div>','getBackgroundItem','permission','MODULE_NAME','copy','foundryBackgroundFeature','getSourceWithPagePart','<div>','PG_BACKGROUNDS','getCleanEntityName','getFauxBackgroundFeature','2bMCjuG','pGeBackgroundSideData','577GvNJZP','backgroundSource','pGetAdditionalData_','pGetBackgroundFeatureItem','3749999OPnQQZ','356989lZOuqm','backgroundName','name','2dqVmCl','1nlArpU','/media/icon/mighty-force.svg','855943ZJMLFQ','importBackground','10yCYBKx','/media/icon/farmer.svg','filterValues','_pGetFeatureAdditionalData','isImportDescription','setFirstSection','modules/','1406122DIhmcJ','getNameWithSourcePart','feat','1069660UbIitA','player','isAddPermission','getCleanOriginalData','1191upSNdT','entries','backgroundFeature','get','source','URL_TO_HASH_BUILDER'];const _0x2363=function(_0x55d5d0,_0x427b62){_0x55d5d0=_0x55d5d0-0x1ab;let _0x4df23e=_0x4df2[_0x55d5d0];return _0x4df23e;};const _0x8d757f=_0x2363;(function(_0x3fd5bc,_0x175839){const _0x3b3f57=_0x2363;while(!![]){try{const _0x1cd4c1=parseInt(_0x3b3f57(0x1b3))*-parseInt(_0x3b3f57(0x1ce))+-parseInt(_0x3b3f57(0x1c9))*parseInt(_0x3b3f57(0x1cc))+-parseInt(_0x3b3f57(0x1d8))+-parseInt(_0x3b3f57(0x1ca))*-parseInt(_0x3b3f57(0x1d5))+parseInt(_0x3b3f57(0x1c1))*-parseInt(_0x3b3f57(0x1ad))+parseInt(_0x3b3f57(0x1bf))*-parseInt(_0x3b3f57(0x1c6))+parseInt(_0x3b3f57(0x1c5));if(_0x1cd4c1===_0x175839)break;else _0x3fd5bc['push'](_0x3fd5bc['shift']());}catch(_0x2aea93){_0x3fd5bc['push'](_0x3fd5bc['shift']());}}}(_0x4df2,0xe033a));import{UtilApplications}from'./UtilApplications.js';import{SharedConsts}from'../shared/SharedConsts.js';import{Config}from'./Config.js';import{DataConverter}from'./DataConverter.js';import{Vetools}from'./Vetools.js';class DataConverterBackground{static[_0x8d757f(0x1b5)](_0x23ef93,_0x528e14){const _0x1eaefb=_0x8d757f;_0x528e14=_0x528e14||{};const _0x386ebe=DataConverter[_0x1eaefb(0x1ac)](_0x23ef93),_0x16d727={'name':UtilApplications[_0x1eaefb(0x1bd)](DataConverter[_0x1eaefb(0x1d6)](_0x23ef93)),'type':_0x1eaefb(0x1d7),'data':{'description':{'value':Config[_0x1eaefb(0x1b0)](_0x1eaefb(0x1cd),_0x1eaefb(0x1d2))?_0x1eaefb(0x1bb)+Renderer[_0x1eaefb(0x1b0)]()[_0x1eaefb(0x1d3)](!![])['render']({'type':_0x1eaefb(0x1ae),'entries':_0x23ef93[_0x1eaefb(0x1ae)]})+_0x1eaefb(0x1b4):'','chat':'','unidentified':''},'source':DataConverter[_0x1eaefb(0x1ba)](_0x23ef93),'damage':{'parts':[]},'activation':{'type':'','cost':0x0,'condition':''},'duration':{'value':null,'units':''},'target':{'value':null,'units':'','type':''},'range':{'value':null,'long':null,'units':''},'uses':{'value':0x0,'max':0x0,'per':null},'ability':null,'actionType':'','attackBonus':0x0,'chatFlavor':'','critical':null,'formula':'','save':{'ability':'','dc':null},'requirements':'','recharge':{'value':null,'charged':![]},'consume':{'type':'','target':'','amount':null}},'flags':{[SharedConsts['MODULE_NAME_FAKE']]:{'page':UrlUtil[_0x1eaefb(0x1bc)],'source':_0x23ef93['source'],'hash':UrlUtil[_0x1eaefb(0x1b2)][UrlUtil[_0x1eaefb(0x1bc)]](_0x23ef93),'data':{'background':_0x386ebe},'filterValues':_0x528e14[_0x1eaefb(0x1d0)]}},'effects':[],'img':'modules/'+SharedConsts[_0x1eaefb(0x1b7)]+_0x1eaefb(0x1cf)};if(_0x528e14[_0x1eaefb(0x1ab)])_0x16d727[_0x1eaefb(0x1b6)]={'default':Config['get'](_0x1eaefb(0x1cd),'permissions')};return _0x16d727;}static async[_0x8d757f(0x1c4)](_0x110814,_0x251397,_0x19782e,_0x54ca42){const _0x4b49e2=_0x8d757f,_0x5ee644=this[_0x4b49e2(0x1be)](_0x110814,_0x251397);return DataConverter['getItemActorPassive'](_0x251397,{'mode':_0x4b49e2(0x1d9),'img':_0x4b49e2(0x1d4)+SharedConsts['MODULE_NAME']+_0x4b49e2(0x1cb),'fvttType':_0x4b49e2(0x1d7),'source':_0x110814['source'],'actor':_0x19782e,'additionalData':await this[_0x4b49e2(0x1d1)](_0x5ee644)});}static[_0x8d757f(0x1be)](_0x7eb2a4,_0x1cae3f){const _0x23fa62=_0x8d757f;return{'source':_0x7eb2a4['source'],'backgroundName':_0x7eb2a4[_0x23fa62(0x1c8)],'backgroundSource':_0x7eb2a4['source'],'srd':_0x7eb2a4['srd']||_0x7eb2a4['_baseSrd'],...MiscUtil[_0x23fa62(0x1b8)](_0x1cae3f)};}static async[_0x8d757f(0x1d1)](_0x2ebba7){const _0x4cab60=_0x8d757f;return DataConverter[_0x4cab60(0x1c3)](_0x2ebba7,{'propBrew':_0x4cab60(0x1b9),'fnLoadJson':Vetools[_0x4cab60(0x1c0)],'propJson':_0x4cab60(0x1af),'fnMatch':(_0x130aef,_0x1d0224)=>_0x1d0224['name']===_0x130aef[_0x4cab60(0x1c8)]&&_0x1d0224[_0x4cab60(0x1b1)]===_0x130aef[_0x4cab60(0x1b1)]&&_0x1d0224[_0x4cab60(0x1c7)]===_0x130aef[_0x4cab60(0x1c7)]&&_0x1d0224['backgroundSource']===_0x130aef[_0x4cab60(0x1c2)]});}}export{DataConverterBackground};
+import {UtilApplications} from "./UtilApplications.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {Config} from "./Config.js";
+import {DataConverter} from "./DataConverter.js";
+import {Vetools} from "./Vetools.js";
+import {UtilDataConverter} from "./UtilDataConverter.js";
+
+class DataConverterBackground extends DataConverter {
+	static _SIDE_LOAD_OPTS = {
+		propBrew: "foundryBackground",
+		fnLoadJson: async () => this._pGetPreloadSideData(),
+		propJson: "background",
+	};
+
+	static _IMG_FALLBACK = `modules/${SharedConsts.MODULE_NAME}/media/icon/farmer.svg`;
+
+	static _getCompendiumAliases (ent) {
+		if (!ent.name) return [];
+		// (Implement as required)
+		return [];
+	}
+
+	/**
+	 * Note: there is no "get from SRD," as the single SRD background (as of 2022-04-28) has no data we are
+	 * interested in.
+	 * @param bg
+	 * @param [opts] Options object.
+	 * @param [opts.isAddPermission]
+	 * @param [opts.defaultPermission]
+	 * @param [opts.filterValues] Pre-baked filter values to be re-used when importing this from the item.
+	 * @param [opts.fluff]
+	 * @param [opts.actor]
+	 * @param [opts.isActorItem]
+	 */
+	static async pGetBackgroundItem (bg, opts) {
+		opts = opts || {};
+		if (opts.actor) opts.isActorItem = true;
+
+		const fluff = opts.fluff || await Renderer.background.pGetFluff(bg);
+
+		const description = Config.get("importBackground", "isImportDescription")
+			? await UtilDataConverter.pGetWithDescriptionPlugins(() => {
+				const rendered = [
+					fluff?.entries?.length ? Renderer.get().setFirstSection(true).render({type: "entries", entries: fluff?.entries}) : "",
+					Renderer.get().setFirstSection(true).render({type: "entries", entries: bg.entries}),
+				].filter(Boolean);
+				return `<div>${rendered.join("<hr>")}</div>`;
+			})
+			: "";
+
+		const img = await this._pGetSaveImagePath(bg, {propCompendium: "background", fluff});
+
+		const additionalData = await this._pGetDataSideLoaded(bg);
+		const additionalFlags = await this._pGetFlagsSideLoaded(bg);
+		const additionalAdvancement = await this._pGetAdvancementSideLoaded(bg);
+
+		const effects = await this._pGetEffectsSideLoaded({ent: bg, img});
+		DataConverter.mutEffectsDisabledTransfer(effects, "importBackground");
+
+		const out = {
+			name: UtilApplications.getCleanEntityName(UtilDataConverter.getNameWithSourcePart(bg)),
+			type: "background",
+			data: {
+				description: {value: description, chat: "", unidentified: ""},
+				source: UtilDataConverter.getSourceWithPagePart(bg),
+
+				// region unused
+				damage: {parts: []},
+				activation: {type: "", cost: 0, condition: ""},
+				duration: {value: null, units: ""},
+				target: {value: null, units: "", type: ""},
+				range: {value: null, long: null, units: ""},
+				uses: {value: 0, max: 0, per: null},
+				ability: null,
+				actionType: "",
+				attackBonus: null,
+				chatFlavor: "",
+				critical: {threshold: null, damage: ""},
+				formula: "",
+				save: {ability: "", dc: null},
+				requirements: "",
+				recharge: {value: null, charged: false},
+				consume: {type: "", target: "", amount: null},
+				// endregion
+
+				advancement: [
+					...(additionalAdvancement || []),
+				],
+
+				...additionalData,
+			},
+			flags: {
+				...this._getBackgroundFlags(bg, opts),
+				...additionalFlags,
+			},
+			effects,
+			img,
+		};
+
+		if (opts.defaultPermission != null) out.permission = {default: opts.defaultPermission};
+		else if (opts.isAddPermission) out.permission = {default: Config.get("importBackground", "permissions")};
+
+		return out;
+	}
+
+	static _getBackgroundFlags (bg, opts) {
+		const out = {
+			[SharedConsts.MODULE_NAME_FAKE]: {
+				page: UrlUtil.PG_BACKGROUNDS,
+				source: bg.source,
+				hash: UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BACKGROUNDS](bg),
+				propDroppable: "background",
+				filterValues: opts.filterValues,
+			},
+		};
+
+		if (opts.isActorItem) out[SharedConsts.MODULE_NAME_FAKE].isDirectImport = true;
+
+		return out;
+	}
+
+	static async _pGetPreloadSideData () {
+		if (!this._SIDE_DATA) this._SIDE_DATA = await Vetools.pGeBackgroundSideData();
+		return this._SIDE_DATA;
+	}
+
+	static getBackgroundStub () {
+		return MiscUtil.copy(DataConverterBackground.STUB_BACKGROUND);
+	}
+}
+
+// region Fake data used in place of missing records when levelling up
+//   (i.e. if the same set of sources have not been selected when re-opening the Charactermancer)
+DataConverterBackground.STUB_BACKGROUND = {
+	name: "Unknown Background",
+	source: SRC_PHB,
+	_isStub: true,
+};
+// endregion
+
+export {DataConverterBackground};

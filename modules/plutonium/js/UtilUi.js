@@ -1,10 +1,144 @@
-const _0x4aa8=['498609rdjWWo','each','user','settings','$getDirButton','find','click','#compendium','get','22geMkaW','button[data-action=\x22configure\x22]','plutonium.configUpdate','<div\x20class=\x22w-100\x22></div>','renderRollTableDirectory','dir__btn-header','isAddOpenMainMenuButtonToSettings','_doRenderSettings_handleConfigFixEscapeKey','.ui__btn-open-menu','render','insertAfter','menu','insertBefore','init','.game-system','role','4232899EPIwlb','1bskSzK','570772cBAKhe','_handleConfigUpdate','Plutonium\x20','renderCompendiumDirectory','$getDirButtonQuick','pHandleButtonClick','<button\x20class=\x22ui__btn-open-menu\x22><i\x20class=\x22fas\x20fa-bars\x22></i>\x20Open\x20Game\x20Menu</button>','63797FWQkXH','length','3zqLnrQ','filter','renderSettings','import','isStreamerMode','3173PFazPz','1JYfSjS','trim','.dir__wrp-header','</button>','110883jmXgnO','.compendium-footer','element','css','addClass','_doRenderSettings_addPlayerConfigButton','1103926phvPdJ','renderItemDirectory','.action-buttons','dir__btn-header\x20dir__control-header--alt','501qxwtGS','isGM','MODULE_NAME','.ui__wrp-player-settings','.cfg__btn-open-alt','.header-actions','renderJournalDirectory','9ChTMnh','_doRenderSettings_handleConfigHidePlutoniumDirectoryButtons','appendTo','span','_init_addDirectoryWrapper','slideDown','text','renderActorDirectory','minimumRole','remove'];const _0x83ec=function(_0x41fd4c,_0x1ee0e3){_0x41fd4c=_0x41fd4c-0x11b;let _0x4aa86d=_0x4aa8[_0x41fd4c];return _0x4aa86d;};const _0x2895dc=_0x83ec;(function(_0x432a9a,_0x50010e){const _0x67aaad=_0x83ec;while(!![]){try{const _0x3c4f13=parseInt(_0x67aaad(0x153))*-parseInt(_0x67aaad(0x139))+-parseInt(_0x67aaad(0x149))*-parseInt(_0x67aaad(0x11f))+-parseInt(_0x67aaad(0x128))*-parseInt(_0x67aaad(0x141))+parseInt(_0x67aaad(0x143))*parseInt(_0x67aaad(0x13a))+parseInt(_0x67aaad(0x157))*parseInt(_0x67aaad(0x148))+-parseInt(_0x67aaad(0x15e))*-parseInt(_0x67aaad(0x14d))+-parseInt(_0x67aaad(0x138));if(_0x3c4f13===_0x50010e)break;else _0x432a9a['push'](_0x432a9a['shift']());}catch(_0x39e572){_0x432a9a['push'](_0x432a9a['shift']());}}}(_0x4aa8,0xd33e6));import{Config}from'./Config.js';import{ChooseImporter}from'./ChooseImporter.js';import{MenuCollectionTools}from'./MenuCollectionTools.js';import{SharedConsts}from'../shared/SharedConsts.js';class UtilUi{static[_0x2895dc(0x135)](){const _0x33af7a=_0x2895dc;game[_0x33af7a(0x121)]['isGM']&&(UtilUi[_0x33af7a(0x162)](_0x33af7a(0x11c)),UtilUi[_0x33af7a(0x162)](_0x33af7a(0x154)),UtilUi[_0x33af7a(0x162)](_0x33af7a(0x15d)),UtilUi[_0x33af7a(0x162)](_0x33af7a(0x12c))),UtilUi['_init_addCompendiumObfuscation'](),Hooks['on'](_0x33af7a(0x12a),()=>this[_0x33af7a(0x13b)]());}static['_init_addCompendiumObfuscation'](){const _0x24eef3=_0x2895dc,_0x3d0dae='('+SharedConsts[_0x24eef3(0x159)]+')';Hooks['on'](_0x24eef3(0x13d),()=>{const _0x2c24d4=_0x24eef3;if(!Config[_0x2c24d4(0x127)]('ui',_0x2c24d4(0x147)))return;$(_0x2c24d4(0x126))[_0x2c24d4(0x124)](_0x2c24d4(0x14e))[_0x2c24d4(0x120)]((_0x49ae8b,_0xf0abd)=>{const _0x3890e5=_0x2c24d4;$(_0xf0abd)['find'](_0x3890e5(0x161))[_0x3890e5(0x144)]((_0x514a41,_0x8e18f3)=>$(_0x8e18f3)[_0x3890e5(0x11b)]()[_0x3890e5(0x14a)]()===_0x3d0dae)[_0x3890e5(0x11b)]('\x20(Expanded\x20SRD)');});}),ui['compendium']['render']();}static['_init_addDirectoryWrapper'](_0x2f4ec8){const _0x35ad3f=_0x2895dc,_0x19911d=Config['get'](_0x35ad3f(0x146),_0x35ad3f(0x11d)),_0x576ee4=game['user'][_0x35ad3f(0x137)]>=_0x19911d;Hooks['on'](_0x2f4ec8,(_0x4a2926,_0xe517d1)=>{const _0x26adad=_0x35ad3f;_0xe517d1[_0x26adad(0x124)](_0x26adad(0x14b))[_0x26adad(0x11e)]();const _0x9c93c6=ChooseImporter[_0x26adad(0x123)](_0x2f4ec8),_0x4ad20b=ChooseImporter[_0x26adad(0x13e)](_0x2f4ec8),_0x170167=_0x576ee4?$$`<div class="btn-group flex-v-center mr-1 w-100">
-				${_0x9c93c6?_0x9c93c6[_0x26adad(0x151)](_0x26adad(0x12d)):null}
-				${_0x4ad20b?_0x4ad20b[_0x26adad(0x151)](_0x26adad(0x12d)):null}
-			</div>`:_0x26adad(0x12b);$$`<div class="flex-col dir__wrp-header w-100 no-shrink min-w-100 dir__control-header">
-					<div class="flex w-100">
-						${_0x170167}
-						${MenuCollectionTools[_0x26adad(0x123)](_0x2f4ec8)[_0x26adad(0x151)](_0x26adad(0x12d))}
-						${Config['$getDirButton']()[_0x26adad(0x151)]('dir__btn-header')}
+import {Config} from "./Config.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {UtilHooks} from "./UtilHooks.js";
+
+class UtilUi {
+	static async pInit () {
+		if (game.user.isGM) {
+			await UtilUi._init_pAddDirectoryWrapper("renderSceneDirectory");
+			await UtilUi._init_pAddDirectoryWrapper("renderActorDirectory");
+			await UtilUi._init_pAddDirectoryWrapper("renderItemDirectory");
+			await UtilUi._init_pAddDirectoryWrapper("renderJournalDirectory");
+			await UtilUi._init_pAddDirectoryWrapper("renderRollTableDirectory");
+			await UtilUi._init_pAddDirectoryWrapper("renderCardsDirectory");
+			await UtilUi._init_pAddDirectoryWrapper("renderMacroDirectory");
+			await UtilUi._init_pAddDirectoryWrapper("renderCompendiumDirectory");
+		}
+		UtilUi._init_addCompendiumObfuscation();
+
+		UtilHooks.on(UtilHooks.HK_CONFIG_UPDATE, () => this._handleConfigUpdate());
+		this._handleConfigUpdate();
+	}
+
+	static _init_addCompendiumObfuscation () {
+		const searchTerm = `(${SharedConsts.MODULE_NAME})`;
+
+		Hooks.on("renderCompendiumDirectory", () => {
+			if (!Config.get("ui", "isStreamerMode")) return;
+
+			$(`#compendium`).find(`.compendium-footer`).each((i, e) => {
+				$(e).find(`span`).filter((i2, e2) => $(e2).text().trim() === searchTerm).text(` (Expanded SRD)`);
+			});
+		});
+
+		ui.compendium.render();
+	}
+
+	/**
+	 * Add a wrapper to the bottom of the directory panes to house Plutonium buttons.
+	 */
+	static async _init_pAddDirectoryWrapper (hookName) {
+		const minRole = Config.get("import", "minimumRole");
+
+		const {ChooseImporter} = await import("./ChooseImporter.js");
+		const isAddImportButton = game.user.role >= minRole && ChooseImporter.isImportableFvttEntityHook(hookName);
+
+		Hooks.on(hookName, async (app, $html) => {
+			$html.find(`.dir__wrp-header`).remove();
+
+			const {MenuCollectionTools} = await import("./MenuCollectionTools.js");
+
+			const $btnImport = ChooseImporter.$getDirButton(hookName);
+			const $btnQuick = ChooseImporter.$getDirButtonQuick(hookName);
+
+			const $ptBtnsImport = isAddImportButton ? $$`<div class="btn-group ve-flex-v-center mr-1 w-100">
+				${$btnImport ? $btnImport.addClass(`dir__btn-header`) : null}
+				${$btnQuick ? $btnQuick.addClass(`dir__btn-header`) : null}
+			</div>` : `<div class="w-100"></div>`;
+
+			const $wrp = $$`<div class="ve-flex-col dir__wrp-header w-100 no-shrink min-w-100 dir__control-header ${this._init_isRequireExtraSpacingFvttEntityType(hookName) ? "pb-1" : ""}">
+					<div class="ve-flex w-100">
+						${$ptBtnsImport}
+						${MenuCollectionTools.$getDirButton(hookName).addClass(`dir__btn-header`)}
+						${Config.$getDirButton().addClass(`dir__btn-header`)}
 					</div>
-				</div>`['insertAfter'](_0xe517d1[_0x26adad(0x124)](_0x26adad(0x15c))),MenuCollectionTools[_0x26adad(0x123)](_0x2f4ec8)[_0x26adad(0x151)](_0x26adad(0x156))[_0x26adad(0x150)]({'maxWidth':0x1c})[_0x26adad(0x160)](_0xe517d1[_0x26adad(0x124)](_0x26adad(0x155)));}),Hooks['on'](_0x35ad3f(0x145),(_0x477da9,_0x3a3d5a)=>{const _0x5271be=_0x35ad3f;this[_0x5271be(0x12f)](_0x477da9,_0x3a3d5a),this['_doRenderSettings_handleConfigHidePlutoniumDirectoryButtons'](_0x477da9,_0x3a3d5a),this[_0x5271be(0x152)](_0x477da9,_0x3a3d5a);});}static[_0x2895dc(0x13b)](){const _0x55562d=_0x2895dc;if(!ui[_0x55562d(0x122)]||!ui['settings'][_0x55562d(0x14f)])return;this[_0x55562d(0x12f)](ui[_0x55562d(0x122)],ui[_0x55562d(0x122)][_0x55562d(0x14f)]);}static[_0x2895dc(0x12f)](_0x4809ed,_0xc3f73d){const _0x5b92d2=_0x2895dc;if(!Config[_0x5b92d2(0x127)]('ui','isFixEscapeKey')||!Config['get']('ui',_0x5b92d2(0x12e)))return _0xc3f73d[_0x5b92d2(0x124)](_0x5b92d2(0x130))[_0x5b92d2(0x11e)]();if(_0xc3f73d[_0x5b92d2(0x124)](_0x5b92d2(0x130))['length'])return;$(_0x5b92d2(0x140))['click'](()=>{const _0x51ad7e=_0x5b92d2,_0x214659=ui[_0x51ad7e(0x133)]['element'];if(!_0x214659[_0x51ad7e(0x142)])ui['menu'][_0x51ad7e(0x131)](!![]);else _0x214659[_0x51ad7e(0x163)](0x96);})[_0x5b92d2(0x134)](_0xc3f73d[_0x5b92d2(0x124)](_0x5b92d2(0x129)));}static[_0x2895dc(0x15f)](_0x298208,_0x29daa1){const _0x1f5bd1=_0x2895dc;if(!Config[_0x1f5bd1(0x127)]('ui','isHidePlutoniumDirectoryButtons'))return _0x29daa1[_0x1f5bd1(0x124)](_0x1f5bd1(0x15b))[_0x1f5bd1(0x11e)]();if(_0x29daa1[_0x1f5bd1(0x124)](_0x1f5bd1(0x15b))['length'])return;Config[_0x1f5bd1(0x123)]({'isGameSettingsButton':!![]})[_0x1f5bd1(0x132)](_0x29daa1['find'](_0x1f5bd1(0x129)));}static[_0x2895dc(0x152)](_0x219b12,_0x740b44){const _0x2acf33=_0x2895dc;if(game[_0x2acf33(0x121)][_0x2acf33(0x158)])return;if(_0x740b44[_0x2acf33(0x124)](_0x2acf33(0x15a))[_0x2acf33(0x142)])return;const _0x22de1b=$('<button><i\x20class=\x22fas\x20fa-cogs\x22></i>\x20Configure\x20'+(Config[_0x2acf33(0x127)]('ui','isStreamerMode')?'SRD\x20Module':_0x2acf33(0x13c))+_0x2acf33(0x14c))[_0x2acf33(0x125)](_0x597776=>Config[_0x2acf33(0x13f)](_0x597776));$$`<div class="ui__wrp-player-settings">${_0x22de1b}</div>`[_0x2acf33(0x132)](_0x740b44[_0x2acf33(0x124)](_0x2acf33(0x136)));}}export{UtilUi};
+				</div>`;
+
+			// Ensure we only add the button once; since modules (such as `giffyglyphs-5e-monster-maker`) add another row
+			const $insertAfterTarget = $html.find(`.header-actions`);
+			if ($insertAfterTarget.length) $wrp.insertAfter($insertAfterTarget[0]);
+
+			MenuCollectionTools.$getDirButton(hookName)
+				.addClass(`dir__btn-header dir__control-header--alt`)
+				.css({maxWidth: 28})
+				.appendTo($html.find(`.header-actions.action-buttons`));
+		});
+	}
+
+	static _init_isRequireExtraSpacingFvttEntityType (hookName) {
+		return ["renderMacroDirectory", "renderCompendiumDirectory", "renderCardsDirectory"].includes(hookName);
+	}
+
+	static _handleConfigUpdate () {
+		if (!ui.settings || !ui.settings.element) return;
+
+		this._doRenderSettings_handleConfigFixEscapeKey(ui.settings, ui.settings.element);
+		this._doRenderSettings_handleConfigHidePlutoniumDirectoryButtons(ui.settings, ui.settings.element);
+		this._doRenderSettings_addPlayerConfigButton(ui.settings, ui.settings.element);
+	}
+
+	static _doRenderSettings_handleConfigFixEscapeKey (app, $html) {
+		if (!Config.get("ui", "isFixEscapeKey") || !Config.get("ui", "isAddOpenMainMenuButtonToSettings")) {
+			return $html.find(`.ui__btn-open-menu`).remove();
+		}
+
+		if ($html.find(`.ui__btn-open-menu`).length) return;
+
+		$(`<button class="ui__btn-open-menu"><i class="fas fa-fw fa-bars"></i> Open Game Menu</button>`)
+			.click(() => {
+				if (this.isGameMenuOpen()) {
+					ui.menu.toggle();
+					return;
+				}
+
+				const menu = ui.menu.element;
+				if (!menu.length) ui.menu.render(true);
+				else menu.slideDown(150);
+			})
+			.insertBefore($html.find(`button[data-action="configure"]`));
+	}
+
+	static _doRenderSettings_handleConfigHidePlutoniumDirectoryButtons (app, $html) {
+		if (!Config.get("ui", "isHidePlutoniumDirectoryButtons")) {
+			return $html.find(`.cfg__btn-open-alt`).remove();
+		}
+
+		if ($html.find(`.cfg__btn-open-alt`).length) return;
+
+		Config.$getDirButton({isGameSettingsButton: true})
+			.insertAfter($html.find(`button[data-action="configure"]`));
+	}
+
+	static _doRenderSettings_addPlayerConfigButton (app, $html) {
+		if (game.user.isGM) return;
+
+		if ($html.find(`.ui__wrp-player-settings`).length) return;
+
+		const $btnOpenPlayerConfig = $(`<button><i class="fas fa-fw fa-cogs"></i> Configure ${Config.get("ui", "isStreamerMode") ? "SRD Module" : "Plutonium "}</button>`)
+			.click(evt => Config.pHandleButtonClick(evt));
+
+		$$`<div class="ui__wrp-player-settings">${$btnOpenPlayerConfig}</div>`.insertAfter($html.find(`.game-system`));
+	}
+
+	static getModuleFaIcon () {
+		return Config.get("ui", "isStreamerMode")
+			? `<i class="fab fa-fw fa-d-and-d"></i>`
+			: `<i class="fas fa-fw fa-atom"></i>`;
+	}
+
+	static isGameMenuOpen () {
+		return ui.menu.element && ui.menu.element?.[0]?.style?.display === "";
+	}
+}
+
+export {UtilUi};

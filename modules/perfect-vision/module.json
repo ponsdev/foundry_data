@@ -1,17 +1,27 @@
 {
   "name": "perfect-vision",
   "title": "Perfect Vision",
-  "description": "Darkvision rules and other vision-related improvements.",
+  "description": "Darkvision and other lighting/vision improvements.",
   "author": "dev7355608",
-  "version": "1.8.12",
-  "minimumCoreVersion": "0.7.8",
-  "compatibleCoreVersion": "0.8.4",
+  "version": "3.9.13",
+  "minimumCoreVersion": "9.245",
+  "compatibleCoreVersion": "9",
+  "scripts": [
+    "libs/clipper.js",
+    "libs/tess2.js",
+    "libs/vlq.js"
+  ],
   "esmodules": [
     "scripts/index.js"
   ],
+  "dependencies": [
+    {
+      "name": "lib-wrapper"
+    }
+  ],
   "url": "https://github.com/dev7355608/perfect-vision",
   "manifest": "https://raw.githubusercontent.com/dev7355608/perfect-vision/main/module.json",
-  "download": "https://github.com/dev7355608/perfect-vision/archive/v1.8.12.zip",
+  "download": "https://github.com/dev7355608/perfect-vision/archive/v3.9.13.zip",
   "bugs": "https://github.com/dev7355608/perfect-vision/issues",
   "readme": "https://raw.githubusercontent.com/dev7355608/perfect-vision/main/README.md"
 }

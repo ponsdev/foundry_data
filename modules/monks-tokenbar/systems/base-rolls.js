@@ -5,17 +5,10 @@ import { AssignXPApp } from "../apps/assignxp.js";
 
 export class BaseRolls {
     constructor() {
-        this._config = (game.system.id == "tormenta20" ? CONFIG.T20 : CONFIG[game.system.id.toUpperCase()]);
+        this._config = CONFIG[game.system.id.toUpperCase()];
         this._requestoptions = [{
             id: "dice", text: "Dice", cssclass: "dice-group", groups: { "1d2": "1d2", "1d4": "1d4", "1d6": "1d6", "1d8": "1d8", "1d10": "1d10", "1d12": "1d12", "1d20": "1d20", "1d100": "1d100" }
         }];
-
-        this._defaultSetting = {
-            stat1 : "attributes.ac.value",
-            stat2 : "",
-            icon1 : "fa-shield-alt",
-            icon2 : "fa-eye"
-        }
     }
 
     get _supportedSystem() {
@@ -37,8 +30,36 @@ export class BaseRolls {
         return this._config;
     }
 
+    get showRoll() {
+        return true;
+    }
+
+    get useDegrees() {
+        return false;
+    }
+
+    rollSuccess(roll, dc) {
+        return roll.total >= dc;
+    }
+
     get showXP() {
         return true;
+    }
+
+    getXP (actor) {
+        return { value: 0, max: 0 };
+    }
+
+    getLevel(actor) {
+        return actor.data.data.details?.level?.value || actor.data.data.details?.level || 0;
+    }
+
+    get dcLabel() {
+        return "MonksTokenBar.SavingDC";
+    }
+
+    get defaultStats() {
+        return [];
     }
 
     getButtons() {
@@ -119,11 +140,23 @@ export class BaseRolls {
         return null;
     }
 
+    get canGrab() {
+        return false;
+    }
+
+    dynamicRequest(tokens) {
+        return [];
+    }
+
     roll({ id }, callback, e) {
         return { id: id, error: true, msg: i18n("MonksTokenBar.ActorNoRollFunction") };
     }
 
     async assignXP(msgactor) {
+
+    }
+
+    parseKeys(e, keys) {
 
     }
 }

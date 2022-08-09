@@ -1,13 +1,12 @@
 /**
  * An application class which provides advanced configuration for special character flags which modify an Actor
- * @implements {BaseEntitySheet}
+ * @implements {DocumentSheet}
  */
-export default class ActorSheetFlags extends BaseEntitySheet {
+export default class ActorSheetFlags extends DocumentSheet {
   static get defaultOptions() {
-    const options = super.defaultOptions;
-    return mergeObject(options, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       id: "actor-flags",
-	    classes: ["dnd5e"],
+      classes: ["dnd5e"],
       template: "systems/dnd5e/templates/apps/actor-flags.html",
       width: 500,
       closeOnSubmit: true
@@ -18,7 +17,7 @@ export default class ActorSheetFlags extends BaseEntitySheet {
 
   /** @override */
   get title() {
-    return `${game.i18n.localize('DND5E.FlagsTitle')}: ${this.object.name}`;
+    return `${game.i18n.localize("DND5E.FlagsTitle")}: ${this.object.name}`;
   }
 
   /* -------------------------------------------- */
@@ -27,6 +26,7 @@ export default class ActorSheetFlags extends BaseEntitySheet {
   getData() {
     const data = {};
     data.actor = this.object;
+    data.classes = this._getClasses();
     data.flags = this._getFlags();
     data.bonuses = this._getBonuses();
     return data;
@@ -35,19 +35,35 @@ export default class ActorSheetFlags extends BaseEntitySheet {
   /* -------------------------------------------- */
 
   /**
+   * Prepare an object of sorted classes.
+   * @returns {object}
+   * @private
+   */
+  _getClasses() {
+    const classes = this.object.items.filter(i => i.type === "class");
+    return classes.sort((a, b) => a.name.localeCompare(b.name)).reduce((obj, i) => {
+      obj[i.id] = i.name;
+      return obj;
+    }, {});
+  }
+
+  /* -------------------------------------------- */
+
+  /**
    * Prepare an object of flags data which groups flags by section
    * Add some additional data for rendering
-   * @return {object}
+   * @returns {object}
+   * @private
    */
   _getFlags() {
     const flags = {};
-    const baseData = this.entity._data;
+    const baseData = this.document.toJSON();
     for ( let [k, v] of Object.entries(CONFIG.DND5E.characterFlags) ) {
       if ( !flags.hasOwnProperty(v.section) ) flags[v.section] = {};
-      let flag = duplicate(v);
+      let flag = foundry.utils.deepClone(v);
       flag.type = v.type.name;
       flag.isCheckbox = v.type === Boolean;
-      flag.isSelect = v.hasOwnProperty('choices');
+      flag.isSelect = v.hasOwnProperty("choices");
       flag.value = getProperty(baseData.flags, `dnd5e.${k}`);
       flags[v.section][`flags.dnd5e.${k}`] = flag;
     }
@@ -58,7 +74,7 @@ export default class ActorSheetFlags extends BaseEntitySheet {
 
   /**
    * Get the bonuses fields and their localization strings
-   * @return {Array<object>}
+   * @returns {Array<object>}
    * @private
    */
   _getBonuses() {
@@ -77,7 +93,7 @@ export default class ActorSheetFlags extends BaseEntitySheet {
       {name: "data.bonuses.spell.dc", label: "DND5E.BonusSpellDC"}
     ];
     for ( let b of bonuses ) {
-      b.value = getProperty(this.object._data, b.name) || "";
+      b.value = getProperty(this.object.data._source, b.name) || "";
     }
     return bonuses;
   }
@@ -90,13 +106,11 @@ export default class ActorSheetFlags extends BaseEntitySheet {
     let updateData = expandObject(formData);
 
     // Unset any flags which are "false"
-    let unset = false;
     const flags = updateData.flags.dnd5e;
     for ( let [k, v] of Object.entries(flags) ) {
       if ( [undefined, null, "", false, 0].includes(v) ) {
         delete flags[k];
-        if ( hasProperty(actor._data.flags, `dnd5e.${k}`) ) {
-          unset = true;
+        if ( hasProperty(actor.data._source.flags, `dnd5e.${k}`) ) {
           flags[`-=${k}`] = null;
         }
       }

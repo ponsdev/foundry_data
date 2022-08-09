@@ -1,10 +1,405 @@
-const _0x5631=['getFolderPathMeta','693414YADvNe','157StTMjz','$row','136353dVTZoW','$getDragPad2','_parent','render','toggleClass','removeRow','_getDefaultState','<div\x20class=\x22flex-v-center\x20w-100\x20my-1\x22><i>(Directory\x20root)</i></div>','copy','keys','__state','empty','swapRowPositions','_render_updateParentPath','_lock','type','_childComps','_state','appendTo','notifications','pSetFolderPathSpec','_render_addRow','1111265veFpuF','_swapRowPositions','label','$getChildren','click','getPod','isFreeText','push','ve-hidden','_DEFAULT_STATE','detach','pLock','assign','text','<button\x20class=\x22btn\x20btn-danger\x20btn-xs\x22><span\x20class=\x22fas\x20fa-trash\x22></span></button>','1251163DWkInN','_$row','length','getStateFromString','_render_checkAddEmptyMessage','_addHookAll','5177NQMgUk','$getIptStr','_$wrpRows','<button\x20title=\x22Add\x20Path\x20Part\x22\x20class=\x22btn\x20btn-5et\x20btn-xs\x22><span\x20class=\x22fas\x20fa-plus\x22></span></button>','Foundry\x20currently\x20supports\x20a\x20maximum\x20of\x20three\x20levels\x20of\x20directory\x20nesting.\x20T-too\x20deep!','unlock','_initialFolderPathSpec','67QbNXhV','remove','append','523446Qdktuo','bind','indexOf','_folderMeta','$getBtnBool','map','1263WUAErY','attr','folderPathSpec','ascSortLower','state','forEach','warn'];const _0x53b9=function(_0x2883de,_0x27ae02){_0x2883de=_0x2883de-0xc2;let _0x563145=_0x5631[_0x2883de];return _0x563145;};const _0x21fe26=_0x53b9;(function(_0x7ffe9,_0x1dc6b7){const _0x125e16=_0x53b9;while(!![]){try{const _0x1e97b1=parseInt(_0x125e16(0xed))*-parseInt(_0x125e16(0xe4))+parseInt(_0x125e16(0x105))+-parseInt(_0x125e16(0xdb))*parseInt(_0x125e16(0xd4))+parseInt(_0x125e16(0xef))+parseInt(_0x125e16(0xde))+parseInt(_0x125e16(0xec))+-parseInt(_0x125e16(0xce));if(_0x1e97b1===_0x1dc6b7)break;else _0x7ffe9['push'](_0x7ffe9['shift']());}catch(_0x48fa13){_0x7ffe9['push'](_0x7ffe9['shift']());}}}(_0x5631,0xa3205));class FolderPathBuilder extends BaseComponent{constructor(_0x1f9fe5){const _0x4d4e36=_0x53b9;super(),this['_importList']=_0x1f9fe5,this[_0x4d4e36(0xda)]=MiscUtil['copy'](_0x1f9fe5[_0x4d4e36(0xe6)]),this[_0x4d4e36(0xfd)]=new VeLock(),this['_childComps']=[],this[_0x4d4e36(0xd6)]=null;}[_0x21fe26(0xf2)](_0x31845c){const _0x459e0e=_0x21fe26;_0x31845c[_0x459e0e(0xfa)]();const _0x1019e2=this[_0x459e0e(0xc4)]();this['_$wrpRows']=$$`<div class="flex-col w-100 h-100 overflow-y-auto relative"></div>`,this[_0x459e0e(0xff)][_0x459e0e(0xe9)](_0x2962cd=>_0x2962cd[_0x459e0e(0xf2)](this[_0x459e0e(0xd6)],_0x1019e2)),this[_0x459e0e(0xd2)]();const _0x305042=$(_0x459e0e(0xd7))[_0x459e0e(0xc3)](()=>{const _0x1b729e=_0x459e0e;if(this[_0x1b729e(0xff)][_0x1b729e(0xd0)]>=0x3)return ui[_0x1b729e(0x102)][_0x1b729e(0xea)](_0x1b729e(0xd8));this[_0x1b729e(0x104)](_0x1019e2);});this[_0x459e0e(0xda)][_0x459e0e(0xe9)](_0x3577b2=>this[_0x459e0e(0x104)](_0x1019e2,_0x3577b2)),$$(_0x31845c)`
-			<div class="w-100 split-v-center mb-1"><div>Folder Path:</div>${_0x305042}</div>
-			${this[_0x459e0e(0xd6)]}
-		`;}async['_render_updateParentPath'](){const _0x1ec936=_0x21fe26;await this['_lock'][_0x1ec936(0xca)](),await this['_importList'][_0x1ec936(0x103)](this[_0x1ec936(0xff)][_0x1ec936(0xe3)](_0x165025=>MiscUtil[_0x1ec936(0xf7)](_0x165025[_0x1ec936(0x100)]))),this[_0x1ec936(0xfd)][_0x1ec936(0xd9)]();}[_0x21fe26(0x104)](_0x1f6052,_0x576b68){const _0x451f16=_0x21fe26,_0x119e7d=this['_importList'][_0x451f16(0xeb)](),_0x32279c=new FolderPathBuilderRow(_0x119e7d);if(_0x576b68)Object[_0x451f16(0xcb)](_0x32279c[_0x451f16(0xf9)],_0x576b68);_0x32279c[_0x451f16(0xd3)](_0x451f16(0xe8),()=>this[_0x451f16(0xfc)]());if(!this[_0x451f16(0xff)]['length'])this[_0x451f16(0xd6)]['empty']();this['_childComps'][_0x451f16(0xc6)](_0x32279c),_0x32279c['render'](this['_$wrpRows'],_0x1f6052),this[_0x451f16(0xfc)]();}[_0x21fe26(0x106)](_0x315c53,_0x3e771a){const _0xbb334b=_0x21fe26,_0x6be536=this[_0xbb334b(0xff)][_0x315c53];this[_0xbb334b(0xff)][_0x315c53]=this[_0xbb334b(0xff)][_0x3e771a],this[_0xbb334b(0xff)][_0x3e771a]=_0x6be536,this['_childComps']['forEach'](_0x3b0184=>_0x3b0184[_0xbb334b(0xee)][_0xbb334b(0xc9)]()['appendTo'](this[_0xbb334b(0xd6)])),this[_0xbb334b(0xfc)]();}['_removeRow'](_0x26420d){const _0x20affb=_0x21fe26,_0x248ba1=this[_0x20affb(0xff)][_0x20affb(0xe0)](_0x26420d);~_0x248ba1&&(this[_0x20affb(0xff)]['splice'](_0x248ba1,0x1),_0x26420d['$row'][_0x20affb(0xdc)](),this[_0x20affb(0xfc)]()),this[_0x20affb(0xd2)]();}['_render_checkAddEmptyMessage'](){const _0x1667be=_0x21fe26;if(!this[_0x1667be(0xff)][_0x1667be(0xd0)])this[_0x1667be(0xd6)][_0x1667be(0xdd)](_0x1667be(0xf6));}[_0x21fe26(0xc4)](){const _0x1cd754=_0x21fe26,_0x4fc9e5=super['getPod']();return _0x4fc9e5[_0x1cd754(0xfb)]=this['_swapRowPositions'][_0x1cd754(0xdf)](this),_0x4fc9e5[_0x1cd754(0xf4)]=this['_removeRow']['bind'](this),_0x4fc9e5[_0x1cd754(0xc2)]=()=>this[_0x1cd754(0xff)]['map'](_0x53ee5f=>_0x53ee5f[_0x1cd754(0xee)]),_0x4fc9e5;}}class FolderPathBuilderRow extends BaseComponent{constructor(_0x66b2bf){const _0x2ab6ac=_0x21fe26;super(_0x66b2bf),this[_0x2ab6ac(0xe1)]=_0x66b2bf,this['_$row']=null;}get[_0x21fe26(0xee)](){return this['_$row'];}[_0x21fe26(0xf2)](_0x5b88ec,_0x42b58f){const _0x34f3f7=_0x21fe26;this[_0x34f3f7(0xf1)]=_0x42b58f;const _0x42e693=ComponentUiUtil[_0x34f3f7(0xe2)](this,_0x34f3f7(0xc5),{'$ele':$('<button\x20class=\x22btn\x20btn-xs\x20mr-1\x22>Custom</button>')}),_0x49a83f=ComponentUiUtil[_0x34f3f7(0xd5)](this,_0x34f3f7(0xcc))[_0x34f3f7(0xe5)](_0x34f3f7(0xfe),'text'),_0x47a774=$$`<div class="flex mr-1 w-100">${_0x49a83f}</div>`,_0x5e26a2=Object[_0x34f3f7(0xf8)](this['_folderMeta'])['sort']((_0x2b5e24,_0x7c7fa8)=>SortUtil[_0x34f3f7(0xe7)](this[_0x34f3f7(0xe1)][_0x2b5e24][_0x34f3f7(0x107)],this[_0x34f3f7(0xe1)][_0x7c7fa8]['label'])),_0x25f106=ComponentUiUtil['$getSelEnum'](this,'selectedProp',{'values':_0x5e26a2,'isAllowNull':!![],'fnDisplay':_0x1f028c=>this[_0x34f3f7(0xe1)][_0x1f028c][_0x34f3f7(0x107)]}),_0x5bd7c6=$$`<div class="flex mr-1 w-100">${_0x25f106}</div>`,_0x18e5e7=()=>{const _0x357784=_0x34f3f7;_0x47a774[_0x357784(0xf3)](_0x357784(0xc7),!this[_0x357784(0x100)][_0x357784(0xc5)]),_0x5bd7c6[_0x357784(0xf3)]('ve-hidden',this[_0x357784(0x100)][_0x357784(0xc5)]);};_0x18e5e7(),this['_addHookBase'](_0x34f3f7(0xc5),_0x18e5e7);const _0x45d1fe=$(_0x34f3f7(0xcd))['click'](()=>{const _0x23fc99=_0x34f3f7,{removeRow:_0x2f04cf}=this[_0x23fc99(0xf1)];_0x2f04cf(this);});this[_0x34f3f7(0xcf)]=$$`<div class="flex-v-center w-100 my-1">
-			${_0x42e693}
-			${_0x47a774}
-			${_0x5bd7c6}
-			${DragReorderUiUtil[_0x34f3f7(0xf0)](()=>this[_0x34f3f7(0xcf)],_0x5b88ec,this[_0x34f3f7(0xf1)])}
-			${_0x45d1fe}
-		</div>`[_0x34f3f7(0x101)](_0x5b88ec);}[_0x21fe26(0xf5)](){const _0x360c0b=_0x21fe26;return{...FolderPathBuilderRow[_0x360c0b(0xc8)]};}static[_0x21fe26(0xd1)](_0x2a0968){const _0x2e4555=_0x21fe26,_0x1d6bd3=new FolderPathBuilderRow();return _0x1d6bd3[_0x2e4555(0xf9)][_0x2e4555(0xcc)]=_0x2a0968,_0x1d6bd3[_0x2e4555(0xf9)];}}FolderPathBuilderRow[_0x21fe26(0xc8)]={'isFreeText':!![],'text':'','selectedProp':null};export{FolderPathBuilder,FolderPathBuilderRow};
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {GameStorage} from "./GameStorage.js";
+import {UtilFolders} from "./UtilFolders.js";
+import {UtilApplications} from "./UtilApplications.js";
+
+class _FolderInfo {
+	constructor (
+		{
+			displayName,
+			folder,
+		},
+	) {
+		this.displayName = displayName;
+		this.folder = folder;
+	}
+}
+
+class UtilFolderPathBuilder {
+	static _SEL_EXISTING_BASE_OPTION = `<option value="-1" selected>Select Existing...</option>`;
+
+	static $getSelExistingFolder (
+		{
+			folderType,
+			fnOnAccept,
+		},
+	) {
+		let folderMetas;
+		const $selExisting = $(`<select class="w-80p input-xs form-control italic mr-1" title="Select Existing Folder Path">
+			${this._SEL_EXISTING_BASE_OPTION}
+		</select>`)
+			.click(() => {
+				folderMetas = game.folders.contents
+					.filter(it => it.data.type === folderType)
+					.map(folder => {
+						const path = UtilApplications.getFolderPath(folder, {isAddTrailingSlash: true});
+						return new _FolderInfo({
+							displayName: `${path || ""}${folder.name}`,
+							folder,
+						});
+					})
+					.sort((a, b) => SortUtil.ascSortLower(a.displayName, b.displayName));
+
+				$selExisting
+					.removeClass("italic")
+					.html(
+						this._SEL_EXISTING_BASE_OPTION
+						+ folderMetas
+							.map((it, ix) => `<option value="${ix}">${it.displayName}</option>`)
+							.join(""),
+					);
+			})
+			.change(() => {
+				const meta = folderMetas[$selExisting.val()];
+				fnOnAccept(meta);
+				$selExisting.val("-1").addClass("italic");
+			})
+			.blur(() => {
+				$selExisting.val("-1").addClass("italic");
+			});
+
+		return $selExisting;
+	}
+}
+
+/**
+ * @mixin
+ */
+function MixinFolderPathBuilder (Cls) {
+	class MixedFolderPathBuilder extends Cls {
+		// region To be implemented
+		_getFullFolderPathSpecKey () { throw new Error("Unimplemented!"); }
+		getFolderPathMeta () { throw new Error("Unimplemented!"); }
+		// endregion
+
+		constructor (...args) {
+			super(...args);
+			this._folderPathSpec = [];
+			this._defaultFolderPath = [];
+			this._mxFolderPathBuilder_textOnlyMode = false;
+		}
+
+		get folderPathSpec () { return this._folderPathSpec; }
+
+		async _pInit_folderPathSpec () {
+			this._folderPathSpec = MiscUtil.get((await GameStorage.pGetClient(this._getFullFolderPathSpecKey())), "path");
+			if (this._folderPathSpec == null) {
+				const folderPathMeta = this.getFolderPathMeta();
+				const defaultSpec = (this._defaultFolderPath || [])
+					.map(it => (this._mxFolderPathBuilder_textOnlyMode ? FolderPathBuilderRowTextOnly : FolderPathBuilderRow).getStateFromDefault_(it, {folderPathMeta}));
+				await this.pSetFolderPathSpec(defaultSpec);
+			}
+		}
+
+		async pSetFolderPathSpec (folderPathSpec) {
+			this._folderPathSpec = folderPathSpec;
+			return GameStorage.pSetClient(this._getFullFolderPathSpecKey(), {path: this._folderPathSpec});
+		}
+
+		async pHandleEditFolderPathClick () {
+			await this._pInit_folderPathSpec();
+			const builderApp = new FolderPathBuilderApp({fpApp: this, folderType: this.constructor.FOLDER_TYPE});
+			builderApp.render(true);
+		}
+
+		async _pGetCreateFoldersGetIdFromObject ({folderType, obj, sorting = "a"}) {
+			if (!this._folderPathSpec.length || !folderType) return null;
+
+			const pathStrings = this._getFolderPathStrings({obj});
+
+			return UtilFolders.pCreateFoldersGetId({folderType, folderNames: pathStrings, sorting});
+		}
+
+		static async pGetCreateFoldersGetIdFromPathStrings ({folderType, pathStrings, sorting = "a"}) {
+			return UtilFolders.pCreateFoldersGetId({folderType, folderNames: pathStrings, sorting});
+		}
+
+		_getFolderPathStrings ({obj}) {
+			return FolderPathBuilder.getFolderPathStrings({obj, folderPathSpec: this._folderPathSpec, folderPathMeta: this.getFolderPathMeta()});
+		}
+	}
+	return MixedFolderPathBuilder;
+}
+
+class FolderPathBuilder extends BaseComponent {
+	constructor ({fpApp = null, defaultFolderPathSpec = null, fnOnRowKeydown = null, folderType}) {
+		super();
+		this._fpApp = fpApp;
+		this._ClsRow = fpApp ? FolderPathBuilderRow : FolderPathBuilderRowTextOnly;
+		this._initialFolderPathSpec = FolderPathBuilder._getInitialFolderPathSpec({fpApp, ClsRow: this._ClsRow, defaultFolderPathSpec, fnOnRowKeydown});
+		this._fnOnRowKeydown = fnOnRowKeydown;
+		this._folderType = folderType;
+
+		this._lock = new VeLock();
+		this._childComps = [];
+		this._$wrpRows = null;
+	}
+
+	static _getInitialFolderPathSpec ({fpApp, defaultFolderPathSpec, ClsRow, fnOnRowKeydown}) {
+		if (defaultFolderPathSpec) {
+			return defaultFolderPathSpec
+				.map(it => ClsRow.getStateFromDefault_(it, {fnOnKeydown: fnOnRowKeydown}));
+		}
+
+		return fpApp ? MiscUtil.copy(fpApp.folderPathSpec) : [];
+	}
+
+	render ($parent) {
+		$parent.empty();
+
+		const pod = this.getPod();
+
+		this._$wrpRows = $$`<div class="ve-flex-col w-100 h-100 overflow-y-auto relative"></div>`;
+		this._childComps.forEach(it => it.render(this._$wrpRows, pod));
+		this._render_checkAddEmptyMessage();
+
+		const $selExisting = UtilFolderPathBuilder.$getSelExistingFolder({
+			folderType: this._folderType,
+			fnOnAccept: folderInfo => {
+				if (!folderInfo) return;
+				const folders = [
+					...UtilApplications.getFolderPathFolders(folderInfo.folder),
+					folderInfo.folder,
+				];
+
+				this._removeAllRows();
+
+				folders.forEach(fld => {
+					this._render_addRow(pod, FolderPathBuilderRow.getStateFromFolder_(fld));
+				});
+			},
+		});
+
+		const $btnAdd = $(`<button class="btn btn-5et btn-xs"><span class="fas fa-fw fa-folder-plus"></span> Add Path Part</button>`)
+			.click(() => {
+				const maxDepth = CONST.FOLDER_MAX_DEPTH__ORIGINAL ?? CONST.FOLDER_MAX_DEPTH;
+				if (this._childComps.length >= maxDepth) return ui.notifications.warn(`Foundry currently supports a maximum of ${Parser.numberToText(maxDepth)} levels of directory nesting. T-too deep!`);
+				this._render_addRow(pod);
+			});
+
+		this._initialFolderPathSpec.forEach(state => this._render_addRow(pod, state));
+
+		$$($parent)`
+			<div class="w-100 split-v-center mb-1">
+				<div>Folder Path:</div>
+				<div class="ipt-group ve-flex-vh-center">
+					${$selExisting}
+					${$btnAdd}
+				</div>
+			</div>
+			${this._$wrpRows}
+		`;
+	}
+
+	_getFolderPathSpec () { return this._childComps.map(it => MiscUtil.copy(it._state)); }
+
+	static getFolderPathStrings ({obj = null, folderPathSpec = null, folderPathMeta = null} = {}) {
+		return folderPathSpec
+			.filter(it => it.isFreeText ? it.text && it.text.trim() : it.selectedProp)
+			.map(it => it.isFreeText ? it.text : folderPathMeta[it.selectedProp].getter(obj));
+	}
+
+	getFolderPathStrings ({obj = null, folderPathSpec = null, folderPathMeta = null} = {}) {
+		folderPathSpec = folderPathSpec || this._getFolderPathSpec();
+		folderPathMeta = folderPathMeta || (this._fpApp ? this._fpApp.getFolderPathMeta() : null);
+		return this.constructor.getFolderPathStrings({obj, folderPathSpec, folderPathMeta});
+	}
+
+	async _render_updateParentPath () {
+		if (!this._fpApp) return;
+
+		await (this._lock.pLock());
+		await this._fpApp.pSetFolderPathSpec(this._getFolderPathSpec());
+		this._lock.unlock();
+	}
+
+	_render_addRow (pod, state) {
+		const folderMeta = this._fpApp ? this._fpApp.getFolderPathMeta() : {};
+		const comp = new this._ClsRow(folderMeta, {fnOnKeydown: this._fnOnRowKeydown, folderType: this._folderType});
+		if (state) Object.assign(comp.__state, state);
+
+		comp._addHookAll("state", () => this._render_updateParentPath());
+
+		if (!this._childComps.length) this._$wrpRows.empty();
+
+		this._childComps.push(comp);
+		comp.render(this._$wrpRows, pod);
+		this._render_updateParentPath();
+	}
+
+	_swapRowPositions (ixA, ixB) {
+		const a = this._childComps[ixA];
+		this._childComps[ixA] = this._childComps[ixB];
+		this._childComps[ixB] = a;
+
+		this._childComps.forEach(it => it.$row.detach().appendTo(this._$wrpRows));
+		this._render_updateParentPath();
+	}
+
+	_removeRow (comp) {
+		const ix = this._childComps.indexOf(comp);
+		if (~ix) {
+			this._childComps.splice(ix, 1);
+			comp.$row.remove();
+			this._render_updateParentPath();
+		}
+
+		this._render_checkAddEmptyMessage();
+	}
+
+	_removeAllRows () {
+		this._childComps.splice(0, this._childComps.length);
+		this._render_updateParentPath();
+		this._render_checkAddEmptyMessage();
+	}
+
+	_render_checkAddEmptyMessage () {
+		if (!this._childComps.length) this._$wrpRows.append(`<div class="ve-flex-v-center w-100 my-1"><i>(Directory root)</i></div>`);
+	}
+
+	getPod () {
+		const pod = super.getPod();
+		pod.swapRowPositions = this._swapRowPositions.bind(this);
+		pod.removeRow = this._removeRow.bind(this);
+		pod.$getChildren = () => this._childComps.map(it => it.$row);
+		return pod;
+	}
+}
+
+class FolderPathBuilderRowTextOnly extends BaseComponent {
+	constructor (folderMeta, {fnOnKeydown, folderType} = {}) {
+		super();
+		this._folderMeta = folderMeta;
+		this._$row = null;
+		this._fnOnKeydown = fnOnKeydown;
+	}
+
+	get $row () { return this._$row; }
+
+	render ($parent, parent) {
+		this._parent = parent;
+
+		const $iptName = ComponentUiUtil.$getIptStr(this, "text").attr("type", "text").addClass("mr-2");
+		if (this._fnOnKeydown) $iptName.keydown(evt => this._fnOnKeydown(evt));
+
+		const $btnRemove = $(`<button class="btn btn-danger btn-xs"><span class="fas fa-fw fa-trash"></span></button>`)
+			.click(() => {
+				const {removeRow} = this._parent;
+				removeRow(this);
+			});
+
+		this._$row = $$`<div class="ve-flex-v-center w-100 my-1 imp-folder__row">
+			${$iptName}
+			${DragReorderUiUtil.$getDragPad2(() => this._$row, $parent, this._parent)}
+			${$btnRemove}
+		</div>`.appendTo($parent);
+	}
+
+	_getDefaultState () { return {...FolderPathBuilderRowTextOnly._DEFAULT_STATE}; }
+
+	static getStateFromDefault_ (val, {...rest} = {}) {
+		const comp = new FolderPathBuilderRowTextOnly({...rest});
+		comp.__state.text = val;
+		return comp.__state;
+	}
+}
+FolderPathBuilderRowTextOnly._DEFAULT_STATE = {
+	text: "",
+	isFreeText: true,
+};
+
+class FolderPathBuilderRow extends FolderPathBuilderRowTextOnly {
+	render ($parent, parent) {
+		this._parent = parent;
+
+		const $btnToggleFreeText = ComponentUiUtil.$getBtnBool(this, "isFreeText", {$ele: $(`<button class="btn btn-xs mr-1 imp-folder__btn-mode">Custom</button>`)});
+
+		const $iptName = ComponentUiUtil.$getIptStr(this, "text").attr("type", "text");
+		if (this._fnOnKeydown) $iptName.keydown(evt => this._fnOnKeydown(evt));
+		const $wrpFreeText = $$`<div class="ve-flex mr-1 w-100">${$iptName}</div>`;
+
+		const folderMetaKeys = Object.keys(this._folderMeta)
+			.sort((a, b) => SortUtil.ascSortLower(this._folderMeta[a].label, this._folderMeta[b].label));
+		const $selProp = ComponentUiUtil.$getSelEnum(
+			this,
+			"selectedProp",
+			{
+				values: folderMetaKeys,
+				isAllowNull: true,
+				fnDisplay: (k) => this._folderMeta[k].label,
+			},
+		);
+		const $wrpSelProp = $$`<div class="ve-flex mr-1 w-100">${$selProp}</div>`;
+
+		const hookFreeText = () => {
+			$wrpFreeText.toggleClass("ve-hidden", !this._state.isFreeText);
+			$wrpSelProp.toggleClass("ve-hidden", this._state.isFreeText);
+		};
+		hookFreeText();
+		this._addHookBase("isFreeText", hookFreeText);
+
+		const $btnRemove = $(`<button class="btn btn-danger btn-xs"><span class="fas fa-fw fa-trash"></span></button>`)
+			.click(() => {
+				const {removeRow} = this._parent;
+				removeRow(this);
+			});
+
+		this._$row = $$`<div class="ve-flex-v-center w-100 my-1 imp-folder__row">
+			${$btnToggleFreeText}
+			${$wrpFreeText}
+			${$wrpSelProp}
+			${DragReorderUiUtil.$getDragPad2(() => this._$row, $parent, this._parent)}
+			${$btnRemove}
+		</div>`.appendTo($parent);
+	}
+
+	_getDefaultState () { return {...FolderPathBuilderRow._DEFAULT_STATE}; }
+
+	static getStateFromDefault_ (val, {folderPathMeta, ...rest} = {}) {
+		const comp = new FolderPathBuilderRow({...rest});
+		if (val?.metaKey) {
+			if (!folderPathMeta?.[val.metaKey]) throw new Error(`Folder path meta key "${val.metaKey}" was not found in the available values!`);
+			comp.__state.isFreeText = false;
+			comp.__state.selectedProp = val.metaKey;
+		} else {
+			comp.__state.text = val;
+		}
+		return comp.__state;
+	}
+
+	static getStateFromFolder_ (fld) {
+		return {
+			...FolderPathBuilderRow._DEFAULT_STATE,
+			text: fld.name,
+			isFreeText: true,
+		};
+	}
+}
+FolderPathBuilderRow._DEFAULT_STATE = {
+	isFreeText: true,
+	text: "",
+	selectedProp: null,
+};
+
+/**
+ * A window-based wrapper around the full component.
+ */
+class FolderPathBuilderApp extends Application {
+	constructor ({fpApp, folderType}) {
+		super({
+			width: 480,
+			height: 480,
+			title: "Edit Folder Path",
+			template: `${SharedConsts.MODULE_LOCATION}/template/FolderPathBuilder.hbs`,
+			resizable: true,
+		});
+		this._comp = new FolderPathBuilder({fpApp, folderType});
+	}
+
+	activateListeners ($html) {
+		super.activateListeners($html);
+		this._comp.render($html);
+	}
+}
+
+export {MixinFolderPathBuilder, FolderPathBuilder};

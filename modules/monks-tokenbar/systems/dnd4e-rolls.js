@@ -5,6 +5,8 @@ export class DnD4eRolls extends BaseRolls {
     constructor() {
         super();
 
+        this._config = CONFIG.DND4EBETA || CONFIG.DND4E;
+
         let savingThrow = duplicate(this.config.def);
         delete savingThrow.ac;
 
@@ -14,10 +16,11 @@ export class DnD4eRolls extends BaseRolls {
             { id: "skill", text: i18n("MonksTokenBar.Skill"), groups: this.config.skills }
         ].concat(this._requestoptions);
 
+        /*
         this._defaultSetting = mergeObject(this._defaultSetting, {
             stat1: "defences.ac.value",
             stat2: "skills.prc.total"
-        });
+        });*/
     }
 
     get _supportedSystem() {
@@ -34,12 +37,21 @@ export class DnD4eRolls extends BaseRolls {
         });
     }
 
+    /*
     get showXP() {
         return !game.settings.get('dnd4eBeta', 'disableExperienceTracking');
+    }*/
+
+    getXP(actor) {
+        return actor.data.data.details.exp;
+    }
+
+    get defaultStats() {
+        return [{ stat: "defences.ac.value", icon: "fa-shield-alt" }, { stat: "skills.prc.total", icon: "fa-eye" }];
     }
 
     defaultRequest(app) {
-        let allPlayers = (app.tokens.filter(t => t.actor?.hasPlayerOwner).length == app.tokens.length);
+        let allPlayers = (app.entries.filter(t => t.token.actor?.hasPlayerOwner).length == app.entries.length);
         return (allPlayers ? 'skill:prc' : null);
     }
 
@@ -47,9 +59,9 @@ export class DnD4eRolls extends BaseRolls {
         return 'ability:str';
     }
 
-    roll({id, actor, request, requesttype, fastForward = false }, callback, e) {
+    roll({ id, actor, request, rollMode, requesttype, fastForward = false }, callback, e) {
         let rollfn = null;
-        let options = { fastForward: fastForward, chatMessage: false, fromMars5eChatCard: true, event: e };
+        let options = { rollMode: rollMode, fastForward: fastForward, chatMessage: false, fromMars5eChatCard: true, event: e };
         let context = actor;
         if (requesttype == 'ability') {
             rollfn = actor.rollAbility
@@ -74,7 +86,7 @@ export class DnD4eRolls extends BaseRolls {
     async assignXP(msgactor) {
         let actor = game.actors.get(msgactor.id);
         await actor.update({
-            "data.details.exp": actor.data.data.details.exp + msgactor.xp
+            "data.details.exp": parseInt(actor.data.data.details.exp) + parseInt(msgactor.xp)
         });
     }
 }

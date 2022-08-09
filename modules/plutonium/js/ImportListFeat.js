@@ -1,1 +1,211 @@
-const _0x44bd=['sourceJsonToColor','_pImportEntry_pFillSkills','DataSourceFile','flags','_page','pFillActorAbilityData','sourceShort','push','Importing\x20feat\x20\x22','link','with','SYM_UI_SKIP','armorProficiencies','pFillActorArmorProfData','pGetFeatItemEffects','ascSort','languages','162083rQSoCY','_slAbility','Ability','mix','_pImportEntry_pFillTraits','SOURCE_TYP_BREW','update','render','source','pFillActorWeaponProfData','feat','Feats','Observant','849521NCjjJL','_pImportEntry_pFillAbilities','_pImportEntry_pImportToActor','absorbFnBindListeners','Elven\x20Accuracy','traits','4wDkqMd','pFillActorSkillData','SRD','_list','absorbFnGetData','items','languageProficiencies','_activateListeners_absorbListItems','Select','DataSourceUrl','TASK_EXIT_COMPLETE_DATA_ONLY','_slPrereq','PG_FEATS','DATA_URL_FEATS','Item','map','name','SOURCE_TYP_OFFICIAL_ALL','chosenAbilityScoreIncrease','pGetSources','ability','data','_content','isStreamerMode','keys','Select\x20Feat','Alert','init','_pImportEntry_pHandleAdditionalSpells','pImportEntry','armorProf','mutateForFilters','sourceJsonToFull','length','_initCreateSheetItemHook','\x22\x20(from\x20\x22','200008FcWnyE','33LGmeKC','392837AjMlvS','get','ImportEntryOpts','getTotalClassLevels','_isPreviewable','isCharactermancer','82LGSTNO','_pImportEntry_pImportToActor_fillFlags','URL_TO_HASH_BUILDER','5etools','pGetFeatItem','sourceJsonToAbv','pAddActorEffects','Name','text-center','Prerequisite','prerequisite','1POiJGA','_pImportEntry_pImportToDirectoryGeneric_pGetImportableData','pAddActorItems','isToken','entity','20752ZivEND','sort','skillProficiencies','toolProficiencies','entries','_pageFilter','_titleButtonRun','162543oKuEkK','isDataOnly','skills','_isRadio','_actor','603934gzTqSO','elvenAccuracy','isCancelled','Custom\x20URL','TASK_EXIT_CANCELLED','toolProf','constructor','pApplyFormDataToActor','Import\x20Feats','absorbFnBindListenersRadio','isTemp','feats','pGetUserInput','Source','sourceClassName','sheet'];const _0x446f=function(_0x32c7f7,_0x1f3218){_0x32c7f7=_0x32c7f7-0x11e;let _0x44bdaa=_0x44bd[_0x32c7f7];return _0x44bdaa;};const _0x32c33f=_0x446f;(function(_0x2adbf7,_0x3c60f5){const _0x4c70ff=_0x446f;while(!![]){try{const _0x2aeafd=-parseInt(_0x4c70ff(0x166))*parseInt(_0x4c70ff(0x127))+-parseInt(_0x4c70ff(0x138))+parseInt(_0x4c70ff(0x133))+parseInt(_0x4c70ff(0x16c))*-parseInt(_0x4c70ff(0x192))+parseInt(_0x4c70ff(0x12c))*-parseInt(_0x4c70ff(0x198))+parseInt(_0x4c70ff(0x190))+-parseInt(_0x4c70ff(0x159))*-parseInt(_0x4c70ff(0x191));if(_0x2aeafd===_0x3c60f5)break;else _0x2adbf7['push'](_0x2adbf7['shift']());}catch(_0x5eb843){_0x2adbf7['push'](_0x2adbf7['shift']());}}}(_0x44bd,0xf06f7));import{MixinUserChooseImporter}from'./ImportList.js';import{Vetools}from'./Vetools.js';import{LGT}from'./Util.js';import{DataConverterFeat}from'./DataConverterFeat.js';import{Config}from'./Config.js';import{UtilList2}from'./UtilList2.js';import{UtilApplications}from'./UtilApplications.js';import{UtilActors}from'./UtilActors.js';import{DataConverterSpell}from'./DataConverterSpell.js';import{Charactermancer_AbilityScoreSelect}from'./UtilCharactermancer.js';import{Charactermancer_AdditionalSpellsSelect}from'./UtilCharactermancerAdditionalSpells.js';import{Consts}from'./Consts.js';import{UtilDataSource}from'./UtilDataSource.js';import{DataConverter}from'./DataConverter.js';import{ImportListCharacter}from'./ImportListCharacter.js';class ImportListFeat extends ImportListCharacter{static[_0x32c33f(0x187)](){const _0x2c2a16=_0x32c33f;this[_0x2c2a16(0x18e)]({'prop':_0x2c2a16(0x163),'importerName':'Feat'});}constructor(_0x11acaf,_0x54759a,_0x1f2c11){const _0x23411e=_0x32c33f;_0x54759a=_0x54759a||{},_0x1f2c11=_0x1f2c11||{},super({'title':_0x23411e(0x140),..._0x54759a},_0x11acaf,{'props':['feat'],'titleSearch':_0x23411e(0x143),'sidebarTab':_0x23411e(0x171),'gameProp':_0x23411e(0x171),'defaultFolderPath':[_0x23411e(0x164)],'folderType':_0x23411e(0x17a),'pageFilter':new PageFilterFeats(),'page':UrlUtil[_0x23411e(0x178)],'isPreviewable':!![],'isDedupable':!![],..._0x1f2c11});}async[_0x32c33f(0x17f)](){const _0x35f35f=_0x32c33f;return[new UtilDataSource[(_0x35f35f(0x175))](Config[_0x35f35f(0x193)]('ui',_0x35f35f(0x183))?_0x35f35f(0x16e):_0x35f35f(0x11f),Vetools[_0x35f35f(0x179)],{'filterTypes':[UtilDataSource[_0x35f35f(0x17d)]],'isDefault':!![]}),new UtilDataSource['DataSourceUrl'](_0x35f35f(0x13b),'',{'filterTypes':[UtilDataSource['SOURCE_TYP_CUSTOM']]}),new UtilDataSource[(_0x35f35f(0x14a))]('Upload\x20File',{'filterTypes':[UtilDataSource['SOURCE_TYP_CUSTOM']]}),...(await Vetools['pGetHomebrewSources'](_0x35f35f(0x163)))['map'](({name:_0x280c1,url:_0x217a78})=>new UtilDataSource['DataSourceUrl'](_0x280c1,_0x217a78,{'filterTypes':[UtilDataSource[_0x35f35f(0x15e)]]}))];}['getData'](){const _0x4921c8=_0x32c33f;return{'isRadio':this[_0x4921c8(0x136)],'isPreviewable':this[_0x4921c8(0x196)],'titleButtonRun':this[_0x4921c8(0x132)],'titleSearch':this['_titleSearch'],'cols':[{'name':_0x4921c8(0x123),'width':0x4,'field':_0x4921c8(0x17c)},{'name':_0x4921c8(0x15b),'width':0x3,'field':_0x4921c8(0x180)},{'name':_0x4921c8(0x125),'width':0x3,'field':_0x4921c8(0x126)},{'name':_0x4921c8(0x145),'width':0x1,'field':'source','titleProp':'sourceLong','displayProp':_0x4921c8(0x14e),'classNameProp':_0x4921c8(0x146),'rowClassName':_0x4921c8(0x124)}],'rows':this[_0x4921c8(0x182)][_0x4921c8(0x17b)]((_0x2c6b66,_0x51bc70)=>{const _0x878c9d=_0x4921c8;return this[_0x878c9d(0x131)][_0x878c9d(0x13e)][_0x878c9d(0x18b)](_0x2c6b66),{'name':_0x2c6b66[_0x878c9d(0x17c)],'ability':_0x2c6b66['_slAbility'],'prerequisite':_0x2c6b66['_slPrereq'],'source':_0x2c6b66['source'],'sourceShort':Parser[_0x878c9d(0x121)](_0x2c6b66[_0x878c9d(0x161)]),'sourceLong':Parser[_0x878c9d(0x18c)](_0x2c6b66['source']),'sourceClassName':Parser[_0x878c9d(0x148)](_0x2c6b66[_0x878c9d(0x161)]),'ix':_0x51bc70};})};}[_0x32c33f(0x173)](){const _0x58b5c4=_0x32c33f;this[_0x58b5c4(0x16f)]['doAbsorbItems'](this[_0x58b5c4(0x182)],{'fnGetName':_0x44fdf3=>_0x44fdf3[_0x58b5c4(0x17c)],'fnGetValues':_0x93aa99=>({'source':_0x93aa99[_0x58b5c4(0x161)],'ability':_0x93aa99[_0x58b5c4(0x15a)],'prerequisite':_0x93aa99[_0x58b5c4(0x177)],'hash':UrlUtil[_0x58b5c4(0x11e)][this[_0x58b5c4(0x14c)]](_0x93aa99)}),'fnGetData':UtilList2[_0x58b5c4(0x170)],'fnBindListeners':_0x2e925a=>this[_0x58b5c4(0x136)]?UtilList2[_0x58b5c4(0x141)](this[_0x58b5c4(0x16f)],_0x2e925a):UtilList2[_0x58b5c4(0x169)](this[_0x58b5c4(0x16f)],_0x2e925a)});}async[_0x32c33f(0x189)](_0x38da62,_0x2e59a0){const _0x144064=_0x32c33f;_0x2e59a0=_0x2e59a0||{},console['log'](...LGT,_0x144064(0x150)+_0x38da62[_0x144064(0x17c)]+_0x144064(0x18f)+Parser[_0x144064(0x121)](_0x38da62[_0x144064(0x161)])+'\x22)');if(_0x2e59a0[_0x144064(0x134)])return{'imported':DataConverterFeat[_0x144064(0x120)](_0x38da62),'status':UtilApplications[_0x144064(0x176)]};if(_0x2e59a0[_0x144064(0x142)])return this['_pImportEntry_pImportToDirectoryGeneric'](_0x38da62,_0x2e59a0);else{if(this[_0x144064(0x137)])return this[_0x144064(0x168)](_0x38da62,_0x2e59a0);else return this['_pImportEntry_pImportToDirectoryGeneric'](_0x38da62,_0x2e59a0);}}async[_0x32c33f(0x168)](_0x5e3d50,_0x43d4a7){const _0x3decca=_0x32c33f,_0x2f4d1c={'data':{}},_0x5c1e1b=new ImportListFeat[(_0x3decca(0x194))]({'chosenAbilityScoreIncrease':_0x5e3d50['_foundryChosenAbilityScoreIncrease'],'isCharactermancer':!!_0x43d4a7[_0x3decca(0x197)]});await this[_0x3decca(0x199)](_0x5e3d50,_0x2f4d1c,_0x43d4a7),await this[_0x3decca(0x167)](_0x5e3d50,_0x2f4d1c,_0x5c1e1b);if(_0x5c1e1b['isCancelled'])return{'status':UtilApplications['TASK_EXIT_CANCELLED']};await this[_0x3decca(0x149)](_0x5e3d50,_0x2f4d1c[_0x3decca(0x181)],_0x5c1e1b);if(_0x5c1e1b[_0x3decca(0x13a)])return{'status':UtilApplications[_0x3decca(0x13c)]};await this[_0x3decca(0x15d)](_0x5e3d50,_0x2f4d1c[_0x3decca(0x181)],_0x5c1e1b);if(_0x5c1e1b['isCancelled'])return{'status':UtilApplications['TASK_EXIT_CANCELLED']};await this['_pImportEntry_pFillItems'](_0x5e3d50,_0x2f4d1c,_0x5c1e1b);if(_0x5c1e1b[_0x3decca(0x13a)])return{'status':UtilApplications[_0x3decca(0x13c)]};if(Object['keys'](_0x2f4d1c[_0x3decca(0x181)])[_0x3decca(0x18d)])await this['_actor'][_0x3decca(0x15f)](_0x2f4d1c);if(this[_0x3decca(0x137)][_0x3decca(0x12a)])this[_0x3decca(0x137)][_0x3decca(0x147)][_0x3decca(0x160)]();return{'imported':{'name':_0x5e3d50[_0x3decca(0x17c)],'actor':this[_0x3decca(0x137)]},'status':UtilApplications['TASK_EXIT_COMPLETE']};}['_pImportEntry_pImportToActor_fillFlags'](_0x52adb1,_0x2663af,_0x290fcc){const _0x2d6250=_0x32c33f,_0x4fe13f={},_0x4730d5={};if(_0x52adb1['name']===_0x2d6250(0x165)&&_0x52adb1['source']===SRC_PHB)_0x4730d5['observantFeat']=!![];if(_0x52adb1[_0x2d6250(0x17c)]===_0x2d6250(0x186)&&_0x52adb1[_0x2d6250(0x161)]===SRC_PHB)_0x4730d5['initiativeAlert']=!![];if(_0x52adb1['name']===_0x2d6250(0x16a)&&_0x52adb1[_0x2d6250(0x161)]===SRC_XGE)_0x4730d5[_0x2d6250(0x139)]=!![];if(Object[_0x2d6250(0x184)](_0x4730d5)[_0x2d6250(0x18d)])_0x4fe13f['dnd5e']=_0x4730d5;if(Object[_0x2d6250(0x184)](_0x4fe13f)['length'])_0x2663af[_0x2d6250(0x14b)]=_0x4fe13f;}async[_0x32c33f(0x167)](_0x40d5e1,_0x34848c,_0x217103){const _0x213806=_0x32c33f,_0x54d120=await Charactermancer_AbilityScoreSelect[_0x213806(0x14d)](this[_0x213806(0x137)],_0x40d5e1[_0x213806(0x180)],_0x34848c,_0x217103);if(_0x217103['isCancelled'])return;if(_0x54d120==null)return;_0x217103[_0x213806(0x17e)]=_0x54d120[_0x213806(0x181)];}async[_0x32c33f(0x149)](_0x5ef787,_0x1b7750,_0x2acbc2){const _0x7d70da=_0x32c33f;await DataConverter[_0x7d70da(0x16d)](MiscUtil['get'](this['_actor'],_0x7d70da(0x181),_0x7d70da(0x181),_0x7d70da(0x135)),_0x5ef787[_0x7d70da(0x12e)],_0x1b7750,_0x2acbc2);}async['_pImportEntry_pFillTraits'](_0x174bb2,_0x1a5b12,_0x1d8b04){const _0x502473=_0x32c33f;_0x1a5b12[_0x502473(0x16b)]={},await DataConverter['pFillActorLanguageData'](MiscUtil['get'](this['_actor'],_0x502473(0x181),'data','traits',_0x502473(0x158)),_0x174bb2[_0x502473(0x172)],_0x1a5b12,_0x1d8b04);if(_0x1d8b04['isCancelled'])return;await DataConverter['pFillActorToolProfData'](MiscUtil[_0x502473(0x193)](this[_0x502473(0x137)],'data',_0x502473(0x181),_0x502473(0x16b),_0x502473(0x13d)),_0x174bb2[_0x502473(0x12f)],_0x1a5b12,_0x1d8b04);if(_0x1d8b04['isCancelled'])return;await DataConverter[_0x502473(0x155)](MiscUtil[_0x502473(0x193)](this[_0x502473(0x137)],_0x502473(0x181),'data',_0x502473(0x16b),_0x502473(0x18a)),_0x174bb2[_0x502473(0x154)],_0x1a5b12,_0x1d8b04);if(_0x1d8b04[_0x502473(0x13a)])return;await DataConverter[_0x502473(0x162)](MiscUtil[_0x502473(0x193)](this[_0x502473(0x137)],_0x502473(0x181),_0x502473(0x181),_0x502473(0x16b),'weaponProf'),_0x174bb2['weaponProficiencies'],_0x1a5b12,_0x1d8b04);}async['_pImportEntry_pFillItems'](_0x43f8ca,_0x2f51da,_0x22d71d){const _0x437e4e=_0x32c33f,_0x180088={};await this['_pImportEntry_pHandleAdditionalSpells'](_0x43f8ca,_0x2f51da,_0x22d71d,_0x180088);if(_0x22d71d[_0x437e4e(0x13a)])return;const _0x3c5213=DataConverterSpell['doHookSpellLinkRender']['bind'](null,this[_0x437e4e(0x137)]['id'],_0x180088),_0x51f772=await Renderer[_0x437e4e(0x193)]()['pWithPlugin']({'entryType':_0x437e4e(0x151),'pluginType':'*','fnPlugin':_0x3c5213,'pFn':async()=>{const _0x14260f=_0x437e4e,_0x1121a2=await DataConverterFeat[_0x14260f(0x120)](_0x43f8ca);return _0x22d71d[_0x14260f(0x171)][_0x14260f(0x14f)](_0x1121a2),_0x1121a2;}}),_0x509283=await UtilActors[_0x437e4e(0x129)](this['_actor'],_0x22d71d[_0x437e4e(0x171)]),_0x15f564=[];if(await DataConverterFeat['pHasFeatSideLoadedEffects'](this[_0x437e4e(0x137)],_0x43f8ca)){const _0x387427=DataConverter['getImportedEmbed'](_0x509283,_0x51f772);if(_0x387427)_0x15f564[_0x437e4e(0x14f)](...await DataConverterFeat[_0x437e4e(0x156)](this[_0x437e4e(0x137)],_0x43f8ca,_0x387427[_0x437e4e(0x12b)],{'import':{'chosenAbilityScoreIncrease':_0x22d71d['chosenAbilityScoreIncrease']}}));}await UtilActors[_0x437e4e(0x122)](this['_actor'],_0x15f564);}async[_0x32c33f(0x188)](_0xe56a8c,_0x16e66a,_0x4cbfe2,_0x26b78b){const _0x48ae18=_0x32c33f,_0x14442f=Object[_0x48ae18(0x130)](_0x4cbfe2[_0x48ae18(0x17e)]||{})[_0x48ae18(0x12d)](([,_0x3507ba],[,_0xe843d4])=>SortUtil[_0x48ae18(0x157)](_0xe843d4,_0x3507ba)),_0x33bf66=_0x14442f?.[0x0]?.[0x0]||null,_0xdcaf74=await Charactermancer_AdditionalSpellsSelect[_0x48ae18(0x144)]({'additionalSpells':_0xe56a8c['additionalSpells'],'sourceHintText':_0xe56a8c[_0x48ae18(0x17c)],'curLevel':0x0,'targetLevel':Consts['CHAR_MAX_LEVEL'],'spellLevelLow':0x0,'spellLevelHigh':0x9});if(_0xdcaf74==null)return _0x4cbfe2[_0x48ae18(0x13a)]=!![];if(_0xdcaf74===VeCt[_0x48ae18(0x153)])return;const _0x466c2b=UtilActors[_0x48ae18(0x195)](this[_0x48ae18(0x137)]);await Charactermancer_AdditionalSpellsSelect[_0x48ae18(0x13f)](this['_actor'],_0xdcaf74,{'casterLevel':_0x466c2b,'parentAbilityAbv':_0x33bf66,'hashToIdMap':_0x26b78b});}[_0x32c33f(0x128)](_0x4f60da,_0x247eff){const _0x12c74a=_0x32c33f;return DataConverterFeat[_0x12c74a(0x120)](_0x4f60da,_0x247eff);}}ImportListFeat[_0x32c33f(0x194)]=class extends ImportListCharacter[_0x32c33f(0x194)]{constructor(_0x3ff489){const _0x3a6a63=_0x32c33f;_0x3ff489=_0x3ff489||{},super(_0x3ff489),this[_0x3a6a63(0x17e)]=_0x3ff489['chosenAbilityScoreIncrease'];}},ImportListFeat['UserChoose']=class extends MiscUtil[_0x32c33f(0x15c)](ImportListFeat)[_0x32c33f(0x152)](MixinUserChooseImporter){constructor(_0x48f262){const _0x3f11ba=_0x32c33f;super(_0x48f262,{'title':_0x3f11ba(0x185)},{'titleButtonRun':_0x3f11ba(0x174)});}};export{ImportListFeat};
+import {MixinUserChooseImporter} from "./ImportList.js";
+import {Vetools} from "./Vetools.js";
+import {DataConverterFeat} from "./DataConverterFeat.js";
+import {Config} from "./Config.js";
+import {UtilList2} from "./UtilList2.js";
+import {UtilDataSource} from "./UtilDataSource.js";
+import {ImportListFeature} from "./ImportListFeature.js";
+
+class ImportListFeat extends ImportListFeature {
+	static get ID () { return "feats"; }
+	static get DISPLAY_NAME_TYPE_PLURAL () { return "Feats"; }
+
+	static _ = this.registerImpl(this);
+
+	// region External
+	static init () {
+		this._initCreateSheetItemHook({
+			prop: "feat",
+			importerName: "Feat",
+		});
+	}
+	// endregion
+
+	constructor (externalData, applicationOptsOverride, subclassOptsOverride) {
+		applicationOptsOverride = applicationOptsOverride || {};
+		subclassOptsOverride = subclassOptsOverride || {};
+		super(
+			{
+				title: "Import Feats",
+				...applicationOptsOverride,
+			},
+			externalData,
+			{
+				props: ["feat"],
+				dirsHomebrew: ["feat"],
+				titleSearch: "feats",
+				sidebarTab: "items",
+				gameProp: "items",
+				defaultFolderPath: ["Feats"],
+				pageFilter: new PageFilterFeats(),
+				page: UrlUtil.PG_FEATS,
+				isPreviewable: true,
+				isDedupable: true,
+				configGroup: "importFeat",
+				...subclassOptsOverride,
+			},
+			{
+				titleLog: "feat",
+			},
+		);
+	}
+
+	async _pGetSources () {
+		const argsShared = {pPostLoad: loadedData => this.constructor._pPostLoad_addFauxOptionalfeatures(loadedData)};
+		return [
+			new UtilDataSource.DataSourceUrl(
+				Config.get("ui", "isStreamerMode") ? "SRD" : "5etools",
+				Vetools.DATA_URL_FEATS,
+				{
+					...argsShared,
+					filterTypes: [UtilDataSource.SOURCE_TYP_OFFICIAL_ALL],
+					isDefault: true,
+				},
+			),
+			new UtilDataSource.DataSourceUrl(
+				"Custom URL",
+				"",
+				{
+					...argsShared,
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			new UtilDataSource.DataSourceFile(
+				"Upload File",
+				{
+					...argsShared,
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			...(await this._pGetSourcesHomebrew({...argsShared})),
+		];
+	}
+
+	getData () {
+		return {
+			...super.getData(),
+			cols: [
+				{
+					name: "Name",
+					width: 4,
+					field: "name",
+				},
+				{
+					name: "Ability",
+					width: 3,
+					field: "ability",
+				},
+				{
+					name: "Prerequisite",
+					width: 3,
+					field: "prerequisite",
+				},
+				{
+					name: "Source",
+					width: 1,
+					field: "source",
+					titleProp: "sourceLong",
+					displayProp: "sourceShort",
+					classNameProp: "sourceClassName",
+					styleProp: "sourceStyle",
+					rowClassName: "text-center",
+				},
+			],
+			rows: this._content.map((it, ix) => {
+				this._pageFilter.constructor.mutateForFilters(it);
+
+				return {
+					name: it.name,
+					ability: it._slAbility,
+					prerequisite: it._slPrereq,
+					source: it.source,
+					sourceShort: Parser.sourceJsonToAbv(it.source),
+					sourceLong: Parser.sourceJsonToFull(it.source),
+					sourceClassName: Parser.sourceJsonToColor(it.source),
+					sourceStyle: BrewUtil2.sourceJsonToStylePart(it.source),
+					ix,
+				};
+			}),
+		};
+	}
+
+	_renderInner_absorbListItems () {
+		this._list.doAbsorbItems(
+			this._content,
+			{
+				fnGetName: it => it.name,
+				// values used for sorting/search
+				fnGetValues: it => ({
+					source: it.source,
+					ability: it._slAbility,
+					prerequisite: it._slPrereq,
+					hash: UrlUtil.URL_TO_HASH_BUILDER[this._page](it),
+				}),
+				fnGetData: UtilList2.absorbFnGetData,
+				fnBindListeners: it => this._isRadio
+					? UtilList2.absorbFnBindListenersRadio(this._list, it)
+					: UtilList2.absorbFnBindListeners(this._list, it),
+			},
+		);
+	}
+
+	static async _pGetEntityItem (actor, feat) { return DataConverterFeat.pGetFeatItem(feat, {isActorItem: !!actor}); }
+
+	static async _pGetSideData (actor, feature) {
+		return DataConverterFeat.pGetSideLoadedMatch(feature);
+	}
+
+	static async _pHasSideLoadedEffects (actor, feat) { return DataConverterFeat.pHasFeatSideLoadedEffects(actor, feat); }
+
+	static async _pGetItemEffects (actor, feat, importedEmbed, dataBuilderOpts) {
+		return DataConverterFeat.pGetFeatItemEffects(
+			actor,
+			feat,
+			importedEmbed,
+			{
+				additionalData: {
+					import: {chosenAbilityScoreIncrease: dataBuilderOpts.chosenAbilityScoreIncrease},
+				},
+			},
+		);
+	}
+
+	_doPopulateFlags ({feature: feat, actor, importOpts, flags, flagsDnd5e}) {
+		// (Note that these are now instead handled, generally, by active effects)
+	}
+
+	async _pMutActorUpdateFeature (feature, actUpdate, dataBuilderOpts) {
+		await DataConverterFeat.pMutActorUpdateFeat(this._actor, actUpdate, feature, dataBuilderOpts);
+	}
+
+	_pImportEntry_pImportToDirectoryGeneric_pGetImportableData (it, getItemOpts) {
+		return DataConverterFeat.pGetFeatItem(it, getItemOpts);
+	}
+
+	static async _pGetDereferencedFeatureItem (feature) {
+		return DataConverterFeat.pGetDereferencedFeatFeatureItem(feature);
+	}
+
+	static async _pGetInitFeatureLoadeds (feature, {actor} = {}) {
+		return DataConverterFeat.pGetInitFeatFeatureLoadeds(feature, {actor});
+	}
+}
+
+/**
+ * @mixes MixinUserChooseImporter
+ */
+ImportListFeat.UserChoose = class extends MixinUserChooseImporter(ImportListFeat) {
+	constructor (externalData) {
+		super(
+			externalData,
+			{
+				title: "Select Feat",
+			},
+			{
+				titleButtonRun: "Select",
+			},
+		);
+	}
+};
+
+export {ImportListFeat};

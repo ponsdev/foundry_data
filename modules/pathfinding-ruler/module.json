@@ -2,10 +2,18 @@
   "name": "pathfinding-ruler",
   "title": "Pathfinding Ruler",
   "description": "A module to automate routing of measurement ruler around walls.",
-  "url": "https://github.com/mothringer/foundry-vtt-pathfinding-ruler",
-  "download": "https://github.com/mothringer/foundry-vtt-pathfinding-ruler/archive/0.7.zip",
-  "manifest": "https://raw.githubusercontent.com/mothringer/foundry-vtt-pathfinding-ruler/main/module.json",
   "author": "Mothringer [Mothringer#0156]",
+  "authors": [],
+  "url": "https://github.com/mothringer/foundry-vtt-pathfinding-ruler",
+  "flags": {},
+  "version": "0.7",
+  "minimumCoreVersion": "0.8.7",
+  "compatibleCoreVersion": "0.8.7",
+  "scripts": [
+    "./scripts/main.js"
+  ],
+  "esmodules": [],
+  "styles": [],
   "languages": [
     {
       "lang": "en",
@@ -13,8 +21,13 @@
       "path": "lang/en.json"
     }
   ],
-  "scripts": ["./scripts/main.js"],
-  "version": "0.7",
-  "minimumCoreVersion": "0.7.5",
-  "compatibleCoreVersion": "0.7.5"
+  "packs": [],
+  "system": [],
+  "dependencies": [],
+  "socket": false,
+  "manifest": "https://raw.githubusercontent.com/mothringer/foundry-vtt-pathfinding-ruler/main/module.json",
+  "download": "https://github.com/mothringer/foundry-vtt-pathfinding-ruler/archive/0.8.zip",
+  "protected": false,
+  "coreTranslation": false,
+  "library": false
 }

@@ -20,10 +20,13 @@
 	"TIDY5E.Exhaustion4": "Hit point maximum halved",
 	"TIDY5E.Exhaustion5": "Speed reduced to 0",
 	"TIDY5E.Exhaustion6": "Death",
+	
+	"TIDY5E.AbbrInitiative": "Ini",
 
 	"TIDY5E.RestHint": "Take A Rest",
 	"TIDY5E.RestS": "Short Rest",
 	"TIDY5E.RestL": "Long Rest",
+	"TIDY5E.HitDiceRollAverage": "Right Click: Average",
 
 	"TIDY5E.Journal": "Journal",
 
@@ -75,12 +78,6 @@
 	"TIDY5E.Abilities" : "Abilities",
 
 	"TIDY5E.Environment" : "Environment",
-
-	"TIDY5E.CurrencyAbbrCP" : "CP",
-	"TIDY5E.CurrencyAbbrSP" : "SP",
-	"TIDY5E.CurrencyAbbrGP" : "GP",
-	"TIDY5E.CurrencyAbbrEP" : "EP",
-	"TIDY5E.CurrencyAbbrPP" : "PP",
 	
 	"TIDY5E.SearchItem" : "search item",
 	"TIDY5E.SearchSpell" : "search spell",
@@ -178,13 +175,17 @@
 	},
 	"TIDY5E.Settings.TraitLabels" : {
 		"name" : "Show Trait Labels.",
-		"hint" : "By default only icons are shown for traits. Enable to display labels as well."
+		"hint" : "Disable to only show icons for PC/NPC traits."
 	},
 
 
 	"TIDY5E.Settings.PlayerName" : {
 		"name" : "Show player name.",
 		"hint" : "Enable to show a field for the player name below the character's name."
+	},
+	"TIDY5E.Settings.JournalTab" : {
+		"name" : "Hide character journal.",
+		"hint" : "Enable to hide the journal tab."
 	},
 	"TIDY5E.Settings.ClassList" : {
 		"name" : "Hide character class list.",
@@ -221,6 +222,10 @@
 	"TIDY5E.Settings.TraitsMovedBelowResource" : {
 		"name" : "Move traits below resources.",
 		"hint" : "Enable to move traits from the left side below resources."
+	},
+	"TIDY5E.Settings.AmmoEquippedOnly" : {
+		"name" : "Only show equipped ammunition.",
+		"hint" : "Enable to only show currently equipped ammunition in Weapon ammo selector."
 	},
 
 
@@ -315,5 +320,27 @@
 		"unlinked": "Highlight unlinked tokens",
 		"linked": "Highlight linked tokens",
 		"both": "Highlight linked and unlinked tokens"
+	},
+	"TIDY5E.Settings.DefaultActionsTab" : {
+		"name" : "Default Tab when opening a sheet for the first time.",
+		"hint" : "Chose between 'Actions' and 'Attributes'.",
+		"default": "Actions",
+		"attributes": "Attributes"
+	},
+	"TIDY5E.Settings.HiddenDeathSaves" : {
+		"name" : "Hide Death Saves from Players.",
+		"hint" : "Enable to make Death Saves and Death Save Results only visible to the GM"
+	},
+	"TIDY5E.Settings.npsSheetWidth" : {
+		"name" : "Default NPC sheet width.",
+		"hint" : "The width of the NPC sheet in pixels, requires a refresh to take effect (default 740)."
+	},
+	"TIDY5E.Settings.playerSheetWidth" : {
+		"name" : "Default player sheet width.",
+		"hint" : "The width of the player sheet in pixels, requires a refresh to take effect (default 740)."
+	},
+	"TIDY5E.Settings.vehicleSheetWidth" : {
+		"name" : "Default vehicle sheet width.",
+		"hint" : "The width of the vehicle sheet in pixels, requires a refresh to take effect (default 740)."
 	}
 }

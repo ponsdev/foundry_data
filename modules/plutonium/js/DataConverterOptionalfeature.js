@@ -1,1 +1,248 @@
-const _0xc0b1=['\x0a\x09\x09\x09','effects','foundryOptionalfeature','importOptionalFeature','1115557WhHQWM','URL_TO_HASH_BUILDER','1kqjVZb','entries','permission','getSrdCompendiumEntity','pGetAdditionalData_','render','470092dkLjmh','pGetCompendiumImage','<p><i>','requirements','modules/','_foundryData','118410KJfqno','getSourceWithPagePart','optionalfeature','getNameWithSourcePart','some','feat','data','isAddPermission','_pGetImagePath','_getDescriptionValue','<div>\x0a\x09\x09\x09','Fighting\x20Style:\x20','MODULE_NAME_FAKE','getCleanEntityName','pGetOptionalFeatureItemEffects','</i></p>','find','/media/icon/skills.svg','name','pGetOptionalFeatureItem','_pGetAdditionalData','794736XGniev','get','_getSrdAliases','94963nAsnOt','length','Invocation:\x20','isImportDescription','set','copy','_pIsInSrd','pGetOptionalFeatureSideData','_getOptionalFeatureFlags','959773jlOKvC','FS:F','filterValues','featureType','pGetAdditionalEffectsRaw_','source','srd','push','MODULE_NAME','mutActorUpdate','FS:P','type','3918073YJpiun','1foXsxm','prerequisite','_pGetOptionalFeatureItem_other','setFirstSection','FS:B','PG_OPT_FEATURES','_pGetSideData','getExpandedEffects','permissions','_pGetOptionalFeatureItem_fromSrd','isActorItem','_FEATURE_TYPES','pHasOptionalFeatureSideLoadedEffects'];const _0x3c91=function(_0x222ac8,_0x26083d){_0x222ac8=_0x222ac8-0x91;let _0xc0b1ec=_0xc0b1[_0x222ac8];return _0xc0b1ec;};const _0x164883=_0x3c91;(function(_0x3dc826,_0x5e6505){const _0x5d6c31=_0x3c91;while(!![]){try{const _0x5908d2=parseInt(_0x5d6c31(0xbf))+-parseInt(_0x5d6c31(0xc8))*parseInt(_0x5d6c31(0x9b))+-parseInt(_0x5d6c31(0xa1))+-parseInt(_0x5d6c31(0xbc))+-parseInt(_0x5d6c31(0x99))+-parseInt(_0x5d6c31(0xd5))*-parseInt(_0x5d6c31(0xa7))+parseInt(_0x5d6c31(0xd4));if(_0x5908d2===_0x5e6505)break;else _0x3dc826['push'](_0x3dc826['shift']());}catch(_0x2375a7){_0x3dc826['push'](_0x3dc826['shift']());}}}(_0xc0b1,0xc12f8));import{UtilApplications}from'./UtilApplications.js';import{SharedConsts}from'../shared/SharedConsts.js';import{Config}from'./Config.js';import{DataConverter}from'./DataConverter.js';import{Vetools}from'./Vetools.js';import{UtilCompendium}from'./UtilCompendium.js';import{UtilActiveEffects}from'./UtilActiveEffects.js';class DataConverterOptionalfeature{static async[_0x164883(0xba)](_0x4a1e0a,_0x10db7d){const _0x2ade55=_0x164883;_0x10db7d=_0x10db7d||{};let _0x56ac84;return await this[_0x2ade55(0xc5)](_0x4a1e0a,_0x10db7d)?_0x56ac84=this[_0x2ade55(0x91)](_0x4a1e0a,_0x10db7d):_0x56ac84=this[_0x2ade55(0xd7)](_0x4a1e0a,_0x10db7d),_0x56ac84;}static async['_pIsInSrd'](_0x4209a6){const _0x120c7e=_0x164883,_0x3b8b3d=await UtilCompendium[_0x120c7e(0x9e)](_0x120c7e(0xa9),_0x4209a6,{'fnGetAliases':this[_0x120c7e(0xbe)]});return!!_0x3b8b3d;}static async[_0x164883(0x91)](_0x2a0d19,_0x583a38){const _0x5e6b29=_0x164883,_0x1693fd=await UtilCompendium[_0x5e6b29(0x9e)](_0x5e6b29(0xa9),_0x2a0d19,{'fnGetAliases':this[_0x5e6b29(0xbe)]}),_0x9f7d7e=this[_0x5e6b29(0xb0)](_0x2a0d19),_0xf22d75=await this[_0x5e6b29(0xbb)](_0x2a0d19),_0x42ca99={'name':UtilApplications[_0x5e6b29(0xb4)](DataConverter[_0x5e6b29(0xaa)](_0x2a0d19,{'isActorItem':_0x583a38[_0x5e6b29(0x92)]})),'type':_0x1693fd[_0x5e6b29(0xd3)],'data':{..._0x1693fd[_0x5e6b29(0xad)],'source':DataConverter[_0x5e6b29(0xa8)](_0x2a0d19),'description':{'value':_0x9f7d7e,'chat':'','unidentified':''},..._0xf22d75},'permission':{'default':0x0},'img':await this[_0x5e6b29(0xaf)](_0x2a0d19),'flags':this[_0x5e6b29(0xc7)](_0x2a0d19,_0x583a38),'effects':MiscUtil[_0x5e6b29(0xc4)](_0x1693fd[_0x5e6b29(0x96)]||[])};if(_0x583a38['isAddPermission'])_0x42ca99[_0x5e6b29(0x9d)]={'default':Config[_0x5e6b29(0xbd)](_0x5e6b29(0x98),_0x5e6b29(0xdd))};return _0x42ca99;}static async[_0x164883(0xd7)](_0x4a4e6f,_0x3f58d0){const _0x43989f=_0x164883,_0x4e3ae9=this['_getDescriptionValue'](_0x4a4e6f),_0x28e1a4=_0x4a4e6f[_0x43989f(0xa6)]||{},_0x1c75f5=await this['_pGetAdditionalData'](_0x4a4e6f),_0x507b2d={'name':UtilApplications[_0x43989f(0xb4)](DataConverter[_0x43989f(0xaa)](_0x4a4e6f,{'isActorItem':_0x3f58d0[_0x43989f(0x92)]})),'data':{'source':DataConverter[_0x43989f(0xa8)](_0x4a4e6f),'description':{'value':_0x4e3ae9,'chat':'','unidentified':''},'activation':{'type':'','cost':0x0,'condition':''},'duration':{'value':0x0,'units':''},'target':{'value':0x0,'units':'','type':''},'range':{'value':0x0,'long':0x0,'units':null},'uses':{'value':0x0,'max':0x0,'per':''},'ability':'','actionType':'','attackBonus':0x0,'chatFlavor':'','critical':null,'damage':{'parts':[],'versatile':''},'formula':'','save':{'ability':'','dc':null},'requirements':_0x28e1a4[_0x43989f(0xa4)]||'','recharge':{'value':0x0,'charged':!![]},..._0x1c75f5},'permission':{'default':0x0},'type':_0x43989f(0xac),'img':await this[_0x43989f(0xaf)](_0x4a4e6f),'flags':this['_getOptionalFeatureFlags'](_0x4a4e6f,_0x3f58d0),'effects':[]};if(_0x3f58d0[_0x43989f(0xae)])_0x507b2d['permission']={'default':Config[_0x43989f(0xbd)](_0x43989f(0x98),_0x43989f(0xdd))};return _0x507b2d;}static['_getDescriptionValue'](_0x24e549){const _0x5d8048=_0x164883;if(!Config[_0x5d8048(0xbd)](_0x5d8048(0x98),_0x5d8048(0xc2)))return'';const _0x560f77=Renderer['utils']['getPrerequisiteText'](_0x24e549[_0x5d8048(0xd6)]);return _0x5d8048(0xb1)+(_0x560f77?_0x5d8048(0xa3)+_0x560f77+_0x5d8048(0xb6):'')+_0x5d8048(0x95)+Renderer[_0x5d8048(0xbd)]()[_0x5d8048(0xd8)](!![])[_0x5d8048(0xa0)]({'entries':_0x24e549[_0x5d8048(0x9c)]},0x2)+'\x0a\x09\x09</div>';}static[_0x164883(0xc7)](_0x49ea38,_0x3f88ff){const _0x127541=_0x164883;_0x3f88ff=_0x3f88ff||{};const _0x446744={[SharedConsts[_0x127541(0xb3)]]:{'page':UrlUtil['PG_OPT_FEATURES'],'source':_0x49ea38[_0x127541(0xcd)],'hash':UrlUtil[_0x127541(0x9a)][UrlUtil[_0x127541(0xda)]](_0x49ea38)}};return _0x3f88ff['isAddDataFlags']&&(_0x446744[SharedConsts[_0x127541(0xb3)]][_0x127541(0xad)]={'feat':MiscUtil['copy'](_0x49ea38)},_0x446744[SharedConsts[_0x127541(0xb3)]][_0x127541(0xca)]=_0x3f88ff[_0x127541(0xca)]),_0x446744;}static async['pMutActorUpdateOptionalFeature'](_0x38db0e,_0x2e4b2e,_0x505138,_0x46941f){const _0x1212c5=_0x164883,_0x12e0f7=await this[_0x1212c5(0xdb)](_0x505138);DataConverter[_0x1212c5(0xd1)](_0x38db0e,_0x2e4b2e,_0x505138,{'sideData':_0x12e0f7});}static async[_0x164883(0xaf)](_0x238245){const _0x56d9c6=_0x164883,_0x5cee74=await UtilCompendium[_0x56d9c6(0xa2)](_0x56d9c6(0xa9),_0x238245,{'fnGetAliases':this['_getSrdAliases']});if(_0x5cee74)return _0x5cee74;return _0x56d9c6(0xa5)+SharedConsts[_0x56d9c6(0xd0)]+_0x56d9c6(0xb8);}static async[_0x164883(0xdb)](_0x21d39c){const _0x5d7eae=_0x164883;let _0xc18866=(MiscUtil['get'](BrewUtil,'homebrew',_0x5d7eae(0x97))||[])[_0x5d7eae(0xb7)](_0xa43266=>_0xa43266[_0x5d7eae(0xb9)]===_0x21d39c['name']&&_0xa43266[_0x5d7eae(0xcd)]===_0x21d39c['source']);if(!_0xc18866){const _0x2a5018=await Vetools[_0x5d7eae(0xc6)]();_0xc18866=_0x2a5018[_0x5d7eae(0xa9)][_0x5d7eae(0xb7)](_0x3bea09=>_0x3bea09[_0x5d7eae(0xb9)]===_0x21d39c[_0x5d7eae(0xb9)]&&_0x3bea09[_0x5d7eae(0xcd)]===_0x21d39c['source']);}return _0xc18866;}static async[_0x164883(0xbb)](_0x3283f5){const _0x12d54f=_0x164883;return DataConverter[_0x12d54f(0x9f)](_0x3283f5,{'propBrew':'foundryOptionalfeature','fnLoadJson':Vetools[_0x12d54f(0xc6)],'propJson':_0x12d54f(0xa9)});}static async[_0x164883(0x94)](_0x43f0b9,_0x372d5d){const _0x6d9e98=_0x164883;return(await DataConverter[_0x6d9e98(0xcc)](_0x372d5d,{'propBrew':_0x6d9e98(0x97),'fnLoadJson':Vetools['pGetOptionalFeatureSideData'],'propJson':'optionalfeature'}))?.[_0x6d9e98(0xc0)]>0x0;}static async[_0x164883(0xb5)](_0x103d66,_0x27f277,_0x3ba93a,_0x163ac3){const _0x22818a=_0x164883,_0x35f4e7=await DataConverter[_0x22818a(0xcc)](_0x27f277,{'propBrew':_0x22818a(0x97),'fnLoadJson':Vetools[_0x22818a(0xc6)],'propJson':_0x22818a(0xa9)});return UtilActiveEffects[_0x22818a(0xdc)](_0x103d66,_0x3ba93a,_0x35f4e7||[],{'parentName':_0x27f277[_0x22818a(0xb9)],'additionalData':_0x163ac3});}static[_0x164883(0xbe)](_0x184ae8){const _0x3cc6d3=_0x164883;if(!_0x184ae8['name']||!_0x184ae8[_0x3cc6d3(0xce)])return[];const _0x215a8d=[];for(const [_0x105237,_0x13d0a3]of DataConverterOptionalfeature['_FEATURE_TYPES'][_0x3cc6d3(0x9c)]()){if(_0x184ae8[_0x3cc6d3(0xcb)][_0x3cc6d3(0xab)](_0x14f9b8=>_0x105237['has'](_0x14f9b8)))_0x215a8d[_0x3cc6d3(0xcf)](_0x13d0a3(_0x184ae8));}return _0x215a8d;}}DataConverterOptionalfeature['_FEATURE_TYPES']=new Map(),DataConverterOptionalfeature[_0x164883(0x93)]['set'](new Set(['EI']),_0x2816ea=>_0x164883(0xc1)+_0x2816ea[_0x164883(0xb9)]),DataConverterOptionalfeature[_0x164883(0x93)]['set'](new Set(['MM']),_0x1a9155=>'Metamagic:\x20'+_0x1a9155['name']),DataConverterOptionalfeature[_0x164883(0x93)][_0x164883(0xc3)](new Set([_0x164883(0xc9),_0x164883(0xd9),_0x164883(0xd2),'FS:R']),_0x2c65b0=>_0x164883(0xb2)+_0x2c65b0[_0x164883(0xb9)]);export{DataConverterOptionalfeature};
+import {UtilApplications} from "./UtilApplications.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {Config} from "./Config.js";
+import {Vetools} from "./Vetools.js";
+import {UtilCompendium} from "./UtilCompendium.js";
+import {UtilActiveEffects} from "./UtilActiveEffects.js";
+import {DataConverterFeature} from "./DataConverterFeature.js";
+import {PageFilterClassesFoundry} from "./UtilCharactermancerClass.js";
+import {UtilDataConverter} from "./UtilDataConverter.js";
+import {DataConverter} from "./DataConverter.js";
+import {Charactermancer_Feature_Util} from "./UtilCharactermancerFeature.js";
+
+class DataConverterOptionalfeature extends DataConverterFeature {
+	static _SIDE_LOAD_OPTS = {
+		propBrew: "foundryOptionalfeature",
+		fnLoadJson: async () => this._pGetPreloadSideData(),
+		propJson: "optionalfeature",
+	};
+
+	static _IMG_FALLBACK = `modules/${SharedConsts.MODULE_NAME}/media/icon/skills.svg`;
+
+	static init () {
+		PageFilterClassesFoundry.setImplSideData("optionalfeature", this);
+	}
+
+	static async pGetDereferencedOptionalFeatureFeatureItem (feature) {
+		// Bypass the loader, since we don't expect refs in optional features (yet)
+		if (feature.entries) return MiscUtil.copy(feature);
+
+		const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_OPT_FEATURES](feature);
+		return Renderer.hover.pCacheAndGet(UrlUtil.PG_OPT_FEATURES, feature.source, hash, {isCopy: true});
+	}
+
+	static async pGetInitOptionalFeatureFeatureLoadeds (feature, {actor = null} = {}) {
+		const uid = DataUtil.proxy.getUid("optionalfeature", feature, {isMaintainCase: true});
+		const asFeatRef = {optionalfeature: uid};
+		// Note that passing `raw` here is required, as we will have already modified the optionalfeature data in order to add
+		//   "optionalfeatureProgression" entries.
+		await PageFilterClassesFoundry.pInitOptionalFeatureLoadeds({optionalfeature: asFeatRef, raw: feature, actor});
+		return asFeatRef;
+	}
+
+	/**
+	 * @param optFeature
+	 * @param [opts] Options object.
+	 * @param [opts.isAddPermission]
+	 * @param [opts.defaultPermission]
+	 * @param [opts.isActorItem]
+	 * @param [opts.actor]
+	 */
+	static async pGetOptionalFeatureItem (optFeature, opts) {
+		opts = opts || {};
+		if (opts.actor) opts.isActorItem = true;
+
+		const cpyOptFeature = Charactermancer_Feature_Util.getCleanedFeature_tmpOptionalfeatureList(optFeature);
+
+		let pOut;
+		if (await this._pIsInSrd(cpyOptFeature, opts)) {
+			pOut = this._pGetOptionalFeatureItem_fromSrd(cpyOptFeature, opts);
+		} else {
+			pOut = this._pGetOptionalFeatureItem_other(cpyOptFeature, opts);
+		}
+		return pOut;
+	}
+
+	static async _pIsInSrd (optFeature) {
+		const srdData = await UtilCompendium.getSrdCompendiumEntity("optionalfeature", optFeature, {fnGetAliases: this._getCompendiumAliases});
+		return !!srdData;
+	}
+
+	static async _pGetOptionalFeatureItem_fromSrd (optFeature, opts) {
+		const srdData = await UtilCompendium.getSrdCompendiumEntity("optionalfeature", optFeature, {fnGetAliases: this._getCompendiumAliases});
+
+		const descriptionValue = await this._pGetDescriptionValue(optFeature);
+		const dataConsume = this._getData_getConsume({ent: optFeature, actor: opts.actor});
+
+		// Ensure the resource consumption section is displayed, if required
+		const activationType = dataConsume?.type && !srdData.data?.activation?.type ? "special" : srdData.data?.activation?.type;
+
+		const additionalData = await this._pGetDataSideLoaded(optFeature);
+		const additionalFlags = await this._pGetFlagsSideLoaded(optFeature);
+
+		const effects = [
+			...MiscUtil.copy(srdData.effects || []),
+			// For actor items, let the importer create the effects, so we can pass in additional flow data/etc.
+			...opts.isActorItem ? [] : (await this._pGetEffectsSideLoaded({ent: optFeature, img: srdData.img}) || []),
+		];
+		DataConverter.mutEffectsDisabledTransfer(effects, "importOptionalFeature");
+
+		const out = {
+			name: UtilApplications.getCleanEntityName(UtilDataConverter.getNameWithSourcePart(optFeature, {isActorItem: opts.isActorItem})),
+			type: srdData.type,
+			data: {
+				...srdData.data,
+
+				activation: {type: activationType},
+
+				source: UtilDataConverter.getSourceWithPagePart(optFeature),
+				description: {value: descriptionValue, chat: "", unidentified: ""},
+				requirements: this._getRequirementsString(optFeature),
+				consume: dataConsume,
+
+				...additionalData,
+			},
+			permission: {default: 0},
+			img: await this._pGetSaveImagePath(optFeature, {propCompendium: "optionalfeature"}),
+			flags: {
+				...this._getOptionalFeatureFlags(optFeature, opts),
+				...additionalFlags,
+			},
+			effects,
+		};
+
+		if (opts.defaultPermission != null) out.permission = {default: opts.defaultPermission};
+		else if (opts.isAddPermission) out.permission = {default: Config.get("importOptionalFeature", "permissions")};
+
+		return out;
+	}
+
+	static async _pGetOptionalFeatureItem_other (optFeature, opts) {
+		const descriptionValue = await this._pGetDescriptionValue(optFeature);
+		const dataConsume = this._getData_getConsume({ent: optFeature, actor: opts.actor});
+
+		const img = await this._pGetSaveImagePath(optFeature, {propCompendium: "optionalfeature"});
+
+		const additionalData = await this._pGetDataSideLoaded(optFeature);
+		const additionalFlags = await this._pGetFlagsSideLoaded(optFeature);
+
+		// For actor items, let the importer create the effects, so we can pass in additional flow data/etc.
+		const effects = opts.isActorItem ? [] : await this._pGetEffectsSideLoaded({ent: optFeature, img});
+		DataConverter.mutEffectsDisabledTransfer(effects, "importOptionalFeature");
+
+		const out = {
+			name: UtilApplications.getCleanEntityName(UtilDataConverter.getNameWithSourcePart(optFeature, {isActorItem: opts.isActorItem})),
+			data: {
+				source: UtilDataConverter.getSourceWithPagePart(optFeature),
+				description: {value: descriptionValue, chat: "", unidentified: ""},
+
+				activation: {type: dataConsume?.type ? "special" : "", cost: null, condition: ""},
+				duration: {value: 0, units: ""},
+				target: {value: 0, units: "", type: ""},
+				range: {value: 0, long: 0, units: null},
+				uses: {value: 0, max: 0, per: ""},
+				ability: "",
+				actionType: "",
+				attackBonus: null,
+				chatFlavor: "",
+				critical: {threshold: null, damage: ""},
+				damage: {parts: [], versatile: ""},
+				formula: "",
+				save: {ability: "", dc: null},
+				requirements: this._getRequirementsString(optFeature),
+				consume: dataConsume,
+				recharge: {value: 0, charged: true},
+
+				...additionalData,
+			},
+			permission: {default: 0},
+			type: "feat",
+			img,
+			flags: {
+				...this._getOptionalFeatureFlags(optFeature, opts),
+				...additionalFlags,
+			},
+			// For actor items, let the importer create the effects, so we can pass in additional flow data/etc.
+			effects,
+		};
+
+		if (opts.defaultPermission != null) out.permission = {default: opts.defaultPermission};
+		else if (opts.isAddPermission) out.permission = {default: Config.get("importOptionalFeature", "permissions")};
+
+		return out;
+	}
+
+	static _pGetDescriptionValue (optFeature) {
+		if (!Config.get("importOptionalFeature", "isImportDescription")) return "";
+
+		return UtilDataConverter.pGetWithDescriptionPlugins(() => {
+			const prerequisite = Renderer.utils.getPrerequisiteHtml(optFeature.prerequisite);
+			return `<div>
+				${prerequisite ? `<p><i>${prerequisite}</i></p>` : ""}
+				${Renderer.get().setFirstSection(true).render({entries: optFeature.entries}, 2)}
+			</div>`;
+		});
+	}
+
+	static _getRequirementsString (optFeature) {
+		return optFeature._foundryData?.requirements // This is passed in by the class importer
+			|| Renderer.utils.getPrerequisiteHtml(optFeature.prerequisite, {isTextOnly: true, isSkipPrefix: true});
+	}
+
+	static _getOptionalFeatureFlags (optFeature, opts) {
+		opts = opts || {};
+
+		const out = {
+			[SharedConsts.MODULE_NAME_FAKE]: {
+				page: UrlUtil.PG_OPT_FEATURES,
+				source: optFeature.source,
+				hash: UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_OPT_FEATURES](optFeature),
+			},
+		};
+
+		if (opts.isAddDataFlags) {
+			out[SharedConsts.MODULE_NAME_FAKE].propDroppable = "optionalfeature";
+			out[SharedConsts.MODULE_NAME_FAKE].filterValues = opts.filterValues;
+		}
+
+		return out;
+	}
+
+	static async pMutActorUpdateOptionalFeature (actor, actorUpdate, optFeature, dataBuilderOpts) {
+		const sideData = await this.pGetSideLoadedMatch(optFeature);
+		this.mutActorUpdate(actor, actorUpdate, optFeature, {sideData});
+	}
+
+	static async _pGetPreloadSideData () {
+		if (!this._SIDE_DATA) this._SIDE_DATA = await Vetools.pGetOptionalFeatureSideData();
+		return this._SIDE_DATA;
+	}
+
+	static async pHasOptionalFeatureSideLoadedEffects (actor, optFeature) {
+		return (await this._pGetEffectsRawSideLoaded_(optFeature, this._SIDE_LOAD_OPTS))?.length > 0;
+	}
+
+	static async pGetOptionalFeatureItemEffects (actor, optFeature, sheetItem, {additionalData, img} = {}) {
+		const effectsRaw = await this._pGetEffectsRawSideLoaded_(optFeature, this._SIDE_LOAD_OPTS);
+		return UtilActiveEffects.getExpandedEffects(effectsRaw || [], {actor, sheetItem, parentName: optFeature.name, additionalData, img});
+	}
+
+	static _getCompendiumAliases (entity) {
+		if (!entity.name || !entity.srd) return [];
+
+		const out = [];
+
+		for (const [featureTypeSet, fnGetName] of DataConverterOptionalfeature._FEATURE_TYPES.entries()) {
+			if (entity.featureType.some(it => featureTypeSet.has(it))) out.push(fnGetName(entity));
+		}
+
+		return out;
+	}
+}
+
+DataConverterOptionalfeature._FEATURE_TYPES = new Map();
+DataConverterOptionalfeature._FEATURE_TYPES.set(new Set(["EI"]), entity => `Invocation: ${entity.name}`);
+DataConverterOptionalfeature._FEATURE_TYPES.set(new Set(["MM"]), entity => `Metamagic: ${entity.name}`);
+DataConverterOptionalfeature._FEATURE_TYPES.set(new Set(["FS:F", "FS:B", "FS:P", "FS:R"]), entity => `Fighting Style: ${entity.name}`);
+
+export {DataConverterOptionalfeature};

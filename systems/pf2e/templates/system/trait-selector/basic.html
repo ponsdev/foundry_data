@@ -1,4 +1,4 @@
-<form class="window flexcol" autocomplete="off" onsubmit="event.preventDefault();">
+<form class="window flexcol" autocomplete="off" onsubmit="event.preventDefault();" {{#if flat}}data-flat="{{flat}}"{{/if}}>
     <header class="trait-header flexrow">
         <div class="header-search">
             <i class="fas fa-search"></i>
@@ -8,10 +8,10 @@
     <ol class="trait-list">
         {{#each choices as |choice key|}}
         <li class="trait-item">
-            <div class="form-group form-fields">
-                <input type="checkbox" name="{{key}}" data-dtype="Boolean" {{checked choice.selected}}>
-                <label class="trait-label" style="margin-left: 5px; margin-right: 5px;">{{choice.label}}</label>
-            </div>
+            <label class="trait-selection-label">
+                <input type="checkbox" name="{{key}}" {{checked choice.selected}} {{disabled choice.disabled}} />
+                <span class="trait-label">{{choice.label}}</span>
+            </label>
         </li>
         {{/each}}
     </ol>

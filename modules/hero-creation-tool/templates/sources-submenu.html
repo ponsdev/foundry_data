@@ -1,0 +1,23 @@
+<form class="flexcol">
+    <header class="flexcol hct-submenu-header">
+        <button type="submit" name="submit" class="hct-cursor-pointer">
+            {{localize 'HCT.Setting.Sources.Save'}}
+        </button>
+        <hr class="hct-m-md">
+    </header>
+    <div class="flexcol hct-submenu-content">
+        {{#each source}}
+        <details class="flexcol">
+            <summary class="hct-cursor-pointer hct-pb-sm">{{label}}&nbsp&nbsp</summary>
+            {{#each compendia}}
+            <div class="flexrow hct-items-center hct-pb-sm">
+                <input type="checkbox" name="{{@../key}}" value="{{collection}}" id="{{@../key}}_{{collection}}"
+                    {{checkedIf checked}}>
+                <label for="{{@../key}}_{{collection}}">{{label}}</label>
+                <br>
+            </div>
+            {{/each}}
+        </details>
+        {{/each}}
+    </div>
+</form>

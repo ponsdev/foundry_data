@@ -1,3 +1,427 @@
+## Version 1.0.67
+
+Fixed blind rolls being shown when using Dice So Nice.
+
+Fixed issue when hover over was showing the results even though they were supposed to be hidden.
+
+Added the option to drag and drop stats.
+
+Fixed issue with finding tokens when passing null to request roll.
+
+Added the option to set the resolution of the token bar images.
+
+Fixed inspiration positioning when using vertical orientation.
+
+Restricted the keys used to open a request roll.
+
+Fixed issue when using Active Tiles to request a contested roll.
+
+## Version 1.0.66
+
+Fixed an issue with Contested Roll trying to find a winner when not all rolls were received.
+
+Fixed an issue where editing stats was crashign in PF2E.
+
+Fixed an issue in lootables where it wasn't getting the correct value for currency
+
+Added the option to pass in the name property to the Request Roll macro and have it replace the name of the roll being rolled.
+
+Switched the request roll keyboard shortcut from using Shift to Alt Shift
+
+Fixed issue with tokenbar trying to find tokens when no tokens were passed to it.
+
+Changed the Active Tiles action to clarify Global Movement rather than just Movement.
+
+Changed the contested roll chat message to display the buttons the same way the requested roll does.
+
+## Version 1.0.65
+
+Fixed an issue with the chat card buttons displaying strangely
+
+Fixed an issue with the sounds still playing when the GM has turned them off for self rolls
+
+Fixed an issue with lootables when currency is involved.
+
+## Version 1.0.64
+
+Added checks for saving throw and contested roll request to make sure the roll mode is valid
+
+Added code to use silent and fastForward when requesting a Contested Roll, thank you thatlonelybugbear
+
+Added the contested roll to the actions that can be called using Active Tiles.
+
+Added the option to not play sounds when it's just the GM rolling
+
+Added Item Piles support for TokenBar
+
+Fixed some issue when converting to lootables
+
+Added the option to show the DC to layers when requesting a saving throw
+
+Saving a requested roll to a macro will now use Token names, so if the token is destroyed, or if you're on a diferent scene you can still use the macro.
+
+Added the option to use degrees of success, thank you rlach
+
+Added a little bit of clarity as to how tokenbar is selecting tokens.  So you can turn on debugging now and see whay tokens are getting included and excluded.
+
+Fixed whisper to from the tokenbar for layers that have a space in their name.
+
+Fixed issue where double-clicking a token on the tokenbar was also registering as a single click.  I just found it a bit annoying.
+
+Added the option to change what actions are performed when double clicking the token on the tokenbar.
+
+Added key bindings so you can request a roll by pressing Alt-R and a GM only Roll by pressing Shift-R.
+
+Fixed an issue where the tokenbar would disappear when you changed scenes.
+
+Fixed an issue when trying to grab a saving throw chat message.
+
+## Version 1.0.63
+
+Fixed issue where Lootable currency was being added as a string rather than as numbers.
+
+Fixed issue where a null value in the currency field was causing lootables to ignore that it was there.
+
+Fixed issue with the name change of DnD4e Beta.
+
+Fixed issue with removing second token in contested roll.
+
+Updated integration with Active Tiles.
+
+## Version 1.0.62
+
+Fixed an issue with macros generated not gettign the correct roll mode when calling a requested roll.
+
+Added Save to Macro for contested rolls.
+
+Fixed an issue when determining if there are previous loot entity when creating the new Loot Entity name.
+
+Fixed up the action text when converting so that it accurately reflects what's happened.
+
+Added the option to open the loot entity once the items have been looted.
+
+Fixed an issue where adding a token to a saving throw was failing.
+
+## Version 1.0.61
+
+Fixed issues with converting lootables from combat.
+
+Fixed issues with reverting lootables.
+
+## Version 1.0.60
+
+Fixed issue with additional keys not being passed through properly
+
+Updated Lootables so you can now specify how much coin each actor is providing, as well as which items are being included in looting.
+It will now also use Enhanced Journals to create a lootable entity.
+
+Added the option to save a Request to a macro.
+
+Reordered the settings menu.
+
+Fixed issues with assigning XP in multiple systems
+
+## Version 1.0.59
+
+Fixed issues with using Ctrl or Alt to add Advantage or Disadvantage to a roll.
+
+Fixed issues with editing custom stats
+
+Fixed issues with Lootables not changing to Loot Sheet properly.
+
+Fixed an issue when a scene has no Tokens attached to it, or if there's no scene added.
+
+Wrapper Scene.prototype.view properly.
+
+Added option to specify Advantage and Disadvantage with the API when requesting rolls.
+
+Added Current Tokens to the options when selecting an entity for requesting a roll.
+
+Added the Resume anchor when deciding what to do with tokens that passed or failed, once those are dealt with you can now resume actions with all tokens.
+
+## Version 1.0.58
+
+Fixed issue with vertical alignment and no tokens.  The tokenbar shrunk improperly.
+
+Added a line between Target Token and Free Movement in the context menu when clicking on a token.
+
+Fixed an issue that was preventing the module from stopping tokens from moving.
+
+Changed the Active Tiles integration so that you can select global movement rather than leaving the entity blank to indicate a global change.
+
+Updated the code with Active Tiles upgrades
+
+Changed the default of allow movement after turn to false.
+
+Fixed up issue with PF2E rolls.
+
+## Version 1.0.57
+
+Fixed an issue with combat turns in v9.  Refrences to the token involved have changed.
+
+Clarified what's happening if you try and convert lootables but no loot sheet is selected.
+
+## Version 1.0.56
+
+When the saving throw request is closed, informing Active Tiles that the state information is no longer needed.
+
+Moved the token indicators higher in the z-order so they appear above the bars.
+
+Added the option to change the global movement state if no entity is selected.
+
+Added flavor text to the request roll via Active Tiles.
+
+## Version 1.0.55
+
+Added option to return the chat message created when prompting to assign xp
+
+Converted contected roll to use an array of tokens like saving throw does, to maintain some consistency
+
+Recentered the contested roll dialog.
+
+Fixed issue with contested rolls not working from the API, thank you p4535992 and thatlonelybugbear
+
+Added option to specify if individual tokens can be fast forwarded or if they have advantage or disadvatage, in both contested and requested rolls.  This means there's a new way to request these rolls, instead of an array of strings or token ids you can now specify an array of objects.  So `game.MonksTokenBar.requestRoll([{token:"Thoramir", altKey: true},"John Locke", {token:"Toadvine", fastForward:true}], {request:'perception',dc:15, silent:true, fastForward:false, flavor:'Testing flavor'})` is now possible, to give advantage to Thoramir and to auto roll Toadvine.
+
+Added option for flavor text with contested and requested rolls, thank you thatlonelybugbear
+
+Changed how the sounds are played so only the relevant players will hear it.
+
+Added the option to request the roll with all the dice being rolled.
+
+Fixed an issue with contested rolls and who gets to see who passed and who failed.
+
+Added option to grab rolls with contested rolls.
+
+I've also reduce the restrictions when grabbing rolls, so you can now grab any roll and use that in contested or requested rolls.  So this is a bit of a beware, it will grab any roll message you click on.  But it also means that you can grab unrelated rolls if your character wants to roll althletics instead of acrobatics for example.
+
+You can now edit the stats for individual tokens.
+
+Added option to change the width of the tokens being displayed on the token bar.
+
+Stats can now use handlebar notation
+
+Stats can also have text in quotes
+
+Updates tp Spanish and Catalan languages, thank you jvir
+
+Updates to Japanese translation, thank you BrotherSharper
+
+## Version 1.0.54
+
+Fixed issues with Loot sheet not opening due to currency issues.
+
+Fixed issues with lootables not syncing up with players
+
+Added option to select what loot sheet is used.  So you can now use either Loot Sheet or Merchant Sheet
+
+Updated code so that request rolls from Active Tiles can now be delayed until all players have rolled.
+
+Fixed spelling mistake in API that was preventing Contested Roll from being fast forwarded.
+
+Added filter for Active Tiles so you can do one thing with failed tokens, and another with successful ones.
+
+## Version 1.0.53
+
+Changed saving throws to pass information about which tokens passed and failed.
+
+Changed saving throws to continue on [Always, Any Failed, Any Succeeded]
+
+Changed saving throws to set current tokens to those that failed or succeeded.
+
+Started work on integration with CoC7.
+
+## Version 1.0.52
+
+Moved checking for levels and getting xp to the system modules.  Should make assigning xp a little more flexible.
+
+Allowed contested roll to roll all.
+
+Added the option to select multiple tokens using the Shift key when clicking on either the tokens on the token bar, or tokens in the chat message.  Thank-you happy-cujo
+
+Added buttons to the chat message to select either all related tokens, tokens that passed the saving throw, or those that failed the saving throw.  Thank-you happy-cujo
+
+Fixed issue where contested roll wasn't updating the final result.
+
+Moved the gold formula to the settings so that GMs can set their own way of calculating gold.
+
+Changed the saving throw select dialog to alter height according to what's displayed.
+
+Optimized the token bar a little bit.  
+Thumbnails are stored between scenes so that it doesn't have to compress the characters image each time.
+Moved the needed hooks into the initialization function, so if the tokenbar is disabled, they're not loaded.
+Updated the function that renders the tokenbar  and optimized that code that collects the token data.
+
+Fixed an issue where switching scenes rapidly would cause the tokens to disappear.  That was a weird one.
+
+Allow players to see tokens from characters they have observe permissions on.
+
+Added the option to show the tokenbar vertically.
+
+Added option to disable panning when clicking on tokens on the tokenbar. Thank you surged20
+
+Added the option to pass keypress data into the API function.  This will allow calling functions to set Advantage and Disadvantage when rolling all.
+
+Added the option to capture saving throws.  So if a chat card allows you to roll a saving throw you can have it create a Saving Throw roll through Tokenbar instead.
+
+Fixed issue where the results of a saving throw weren't being passed to Active Tiles properly.
+
+Updated Tormenta20 code.  Thank you VHPaiva.
+
+## Version 1.0.51
+
+Fix to pass data back to Active Tiles instead of just true/false
+
+## Version 1.0.50
+
+Fix to make it work with updated Active Tile code.
+
+## Version 1.0.49
+
+Minor fix with the Active Tiles update.  Missed a spot where I didn't convert to the Token from TokenDocument.
+
+## Version 1.0.48
+
+Fixed the fix of an issue with lootable.  Turns out that it was workign properly, but that I was loading the tokens inproperly when manually converting to lootable.
+
+Fixed an issue with resource bars showing up on an update even if they're not supposed to.
+
+Switched use of entities to contents.
+
+Fixed an issue where resource bars weren't aligning properly when more than two attributes were added.
+
+Added the appropriate reference to Catalan and Spanis translations.
+
+Updated the interface with Active Tiles to use the correct information being passed.
+
+## Version 1.0.47 edit
+
+Sorry I keep missing contributions.  Thank you to jvir and Montver for Spanish translations
+
+And thank you to touge as always for the Japanese updates
+
+## Version 1.0.47
+
+Tokenbar will no longer play the request roll sound when roll mode is set to self roll.
+
+Fixed issue with tokens not showing on Old School Essentials
+
+Changed name from Ability to Attribute in SWADE
+
+## Version 1.0.46 edit
+
+Completely forgot to thank supervj for their work on fixing issues with SW5e compatibility!
+
+## Version 1.0.46
+
+Fixing issue with Assigning XP dialog getting NaN for xp to distribute.
+
+Added the option to customise the number of stats being displayed.
+
+When using the requestRoll API you can now call using English names instead of codes.  So calling with "perception" with translate to "skill:prc".
+
+Requesting a roll will now default to the current tokens on the Tokenbar instead of all player controlled.
+
+Moved dynamic items being added to the request roll dialog to the system object
+
+Tokenbar attributes that are an object will default to trying to find the .value of the object.
+
+Fixed issue with using fastForward and requestRoll from the API causing an error.
+
+used libWrapper to encapsulate canDrag override.  This should stop the message getting flagged from DF-QOL.
+
+Added skills to SWADE, so they'll now appear when requesting a Roll.
+
+## Version 1.0.45
+
+Fixing issues with finding the proper tokens for the Tokenbar.
+
+## Version 1.0.44
+
+Allow saving throw to return a value if the request passes or fails.  This is for integration with Monk's Active Tiles.
+
+Added option to stop remaining actions if the saving throw passes of fails.
+
+Updated display name for action to better describe what the request is regarding.
+
+Fixed an issue with the API when requesting a saving throw.
+
+Adding SWADE support.
+
+Added option to bypass chat messages in PF1.
+
+Fixed issues with rolls in PF2.
+
+Updated support for SFRPG to bypass chat messages.
+
+Fixed an issue with distributing XP by levels.
+
+Addedd option to select or deselect tokens from the token bar.
+
+Changed how the saving throws display the dice value... which I'm nervous about 'cause it could go wrong.
+
+## Version 1.0.43
+
+Fixed some minor issues with Active Token Trigger support
+
+Added option to bypass the dialog and roll silently.
+
+## Version 1.0.42
+
+Added support for Monk's Active Token Triggers
+
+Added support for the API function to change movement status using token name
+
+Fixed lootables issue
+
+Fixed issue setting individual token movement
+
+Added option to allow previous token in combat to continue moving to "clean up" while the turn moves on.
+
+Added option to show a movement button on the Combat Tracker, so you can easily give a player movement when it's not their turn.
+
+## Version 1.0.41
+
+Fixing issues with lootables not removing the items properly.
+
+Added alpha to tokens that are lootable
+
+Added notification if requesting a roll and you press the Add+ button and now tokens have been selected
+
+fixed an issue in the code where I referred to a token id instead of a document id
+
+## Version 1.0.40
+Fixing issue with lootables calculating gold
+
+Fixing issue with lootables finding correct combatants
+
+Fixing issue with assigning xp dialog
+
+Fixing issue with xp going to Wildshape form
+
+## Version 1.0.38
+Updated the code to switch from using game.world.system to game.system.id because game.world.system no longer works with 0.8.x
+
+Added uuid and request options to the chat message created by tokenbar
+
+Fixed issues with lootables
+
+Fixed issue with Initiative calls not working
+
+Removing the chat messages when rolling for initiative
+
+Updated PF2E so that request messages aren't shown.
+
+## Version 1.0.37
+Added support so that options used to request the saving throw are added to the chat message
+
+Added token uuid to the chat message
+
+Updated the saving throw API to use strings of token names, making it easier to request a roll in a macro.  A little more accessible if you don't know how to code.
+
+## Version 1.0.36
+Support for 0.8.x
+
 ## Version 1.0.35
 Fixing assign XP issue where actors wern't being assigned XP correctly
 

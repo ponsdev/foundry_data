@@ -1,10 +1,50 @@
 {
-  "party-overview.EnablePlayerAccess.Name": "Grant Players access to the overview?",
-  "party-overview.EnablePlayerAccess.Hint": "Allows or disallows players to access the Party window to see the stats every player on the current scene, too",
-  "party-overview.EnableTooltip.Name": "Enable tooltips?",
-  "party-overview.EnableTooltip.Hint": "Enables or disables tooltips when hovering over tokens",
-  "party-overview.EnablePlayerAccessTooltip.Name": "Enable tooltips for players?",
-  "party-overview.EnablePlayerAccessTooltip.Hint": "Enables or disables tooltips for players, but only for tokens they own.",
-  "party-overview.TooltipFontSizeInPixels.Name": "Set the font size for tooltips in pixels.",
-  "party-overview.TooltipFontSizeInPixels.Hint": "Default: 14"
+	"party-overview": {
+		"EnablePlayerAccess": {
+			"Name": "Grant Players access to the overview?",
+			"Hint": "Allow players to access the Party window."
+		},
+		"SystemProvider": {
+			"Name": "System Provider",
+			"choices": {
+				"module": "Module {name}",
+				"native": "Generic",
+				"system": "System {name}"
+			}
+		},
+		"filter": {
+			"0": "All (Scene, Unfiltered)",
+			"1": "All (Scene)",
+			"2": "Hidden (Scene)",
+			"3": "All Owned",
+			"4": "All Selected"
+		},
+		"keybinds": {
+			"open": {
+				"name": "Open Party Overview",
+				"hint": "Opens the Party Overview window."
+			},
+			"close": {
+				"name": "Close Party Overview",
+				"hint": "Closes the Party Overview window."
+			},
+			"toggle": {
+				"name": "Toggle Party Overview",
+				"hint": "Opens or closes the Party Overview window."
+			}
+		},
+		"GENERAL": "General",
+		"LIMIT": "Limit",
+		"NAME": "Name",
+		"SKILLS": "Skills",
+		"PROFICIENCIES": "Proficiencies",
+		"TOTAL": "Total",
+		"WEALTH": "Wealth",
+		"EXPERIENCE": "Experience",
+		"XP": "XP",
+
+		"DND5E": {
+			"Traits": "Traits"
+		}
+	}
 }

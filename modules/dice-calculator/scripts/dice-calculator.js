@@ -119,34 +119,9 @@ function dcRollDice(actor = false) {
 }
 
 /**
- * Parse inline rolls.
- */
-Hooks.on('preCreateChatMessage', (message_class, data) => {
-  if (!isNewerVersion(game.data.version, '0.5.1')) {
-    if (!game.settings.get('dice-calculator', 'enableInlineRolls') ||
-      data.content === undefined || data.content.length === 0 || typeof data.content !== 'string') {
-      return;
-    }
-    if (data.content.includes('[[')) {
-      data.content = dcParseInlineRolls(data.content);
-    }
-  }
-});
-
-/**
  * Define settings.
  */
 Hooks.on('init', () => {
-  // Hide the dice tray.
-  game.settings.register('dice-calculator', 'enableDiceTray', {
-    name: game.i18n.localize("DICE_TRAY.settings.enableDiceTray.name"),
-    hint: game.i18n.localize("DICE_TRAY.settings.enableDiceTray.hint"),
-    scope: 'world',
-    config: true,
-    default: true,
-    type: Boolean,
-  });
-
   // Hide the dice calculator.
   game.settings.register('dice-calculator', 'enableDiceCalculator', {
     name: game.i18n.localize("DICE_TRAY.settings.enableDiceCalculator.name"),
@@ -157,8 +132,50 @@ Hooks.on('init', () => {
     type: Boolean,
   });
 
+  // Hide the dice tray.
+  game.settings.register('dice-calculator', 'enableDiceTray', {
+    name: game.i18n.localize("DICE_TRAY.settings.enableDiceTray.name"),
+    hint: game.i18n.localize("DICE_TRAY.settings.enableDiceTray.hint"),
+    scope: 'world',
+    config: true,
+    default: true,
+    type: Boolean,
+  });
+
+  // Override system.
+  game.settings.register('dice-calculator', 'systemOverride', {
+    name: game.i18n.localize("DICE_TRAY.settings.systemOverride.name"),
+    hint: game.i18n.localize("DICE_TRAY.settings.systemOverride.hint"),
+    scope: 'world',
+    config: true,
+    default: 'none',
+    type: String,
+    choices: {
+      none: game.i18n.localize('DICE_TRAY.SETTINGS.systemOverride.none'),
+      generic: game.i18n.localize('DICE_TRAY.SETTINGS.systemOverride.generic'),
+      swade: game.i18n.localize('DICE_TRAY.SETTINGS.systemOverride.swade'),
+      fatex: game.i18n.localize('DICE_TRAY.SETTINGS.systemOverride.fatex'),
+      ModularFate: game.i18n.localize('DICE_TRAY.SETTINGS.systemOverride.ModularFate'),
+      'fate-core-official': game.i18n.localize('DICE_TRAY.SETTINGS.systemOverride.fate-core-official'),
+      dnd5e: game.i18n.localize('DICE_TRAY.SETTINGS.systemOverride.dnd5e'),
+      pf2e: game.i18n.localize('DICE_TRAY.SETTINGS.systemOverride.pf2e'),
+      dcc: game.i18n.localize('DICE_TRAY.SETTINGS.systemOverride.dcc'),
+    },
+    onChange: () => window.location.reload()
+  });
+
+  // Enable pips on the d6.
+  game.settings.register('dice-calculator', 'enableD6Pips', {
+    name: game.i18n.localize("DICE_TRAY.settings.enableD6Pips.name"),
+    hint: game.i18n.localize("DICE_TRAY.settings.enableD6Pips.hint"),
+    scope: 'world',
+    config: true,
+    default: false,
+    type: Boolean,
+  });
+
   // Show the d20 and d100
-  if (game.system.id == 'swade') {
+  if (game.system.id == 'swade' || game.settings.get('dice-calculator', 'systemOverride') == 'swade') {
     game.settings.register('dice-calculator', 'enableExtraDiceInSwade', {
       name: game.i18n.localize("DICE_TRAY.settings.enableExtraDiceInSwade.name"),
       hint: game.i18n.localize("DICE_TRAY.settings.enableExtraDiceInSwade.hint"),
@@ -167,30 +184,6 @@ Hooks.on('init', () => {
       default: false,
       type: Boolean,
     });
-  }
-
-  // For older versions of Foundry, add support for inline dice rolls.
-  if (!isNewerVersion(game.data.version, '0.5.1')) {
-    game.settings.register('dice-calculator', 'enableInlineRolls', {
-      name: game.i18n.localize("DICE_TRAY.settings.enableInlineRolls.name"),
-      hint: game.i18n.localize("DICE_TRAY.settings.enableInlineRolls.hint"),
-      scope: 'world',
-      config: true,
-      default: false,
-      type: Boolean,
-    });
-  }
-  // Handle abbreviations for newer versions of Foundry that include dice rolls.
-  else {
-    const original = Actor.prototype.getRollData;
-    Actor.prototype.getRollData = function() {
-      const data = original.call(this);
-      if (data.attr === undefined) {
-        data.attr = data.attributes;
-        data.abil = data.abilities;
-      }
-      return data;
-    };
   }
 });
 
@@ -201,32 +194,6 @@ Hooks.on('ready', () => {
 
   $(diceIconSelector).addClass('dice-calculator-toggle');
 
-  // For older versions of Foundry, add support for inline dice rolls.
-  if (!isNewerVersion(game.data.version, '0.5.1')) {
-    game.settings.register('dice-calculator', 'enableInlineRolls', {
-      name: game.i18n.localize("DICE_TRAY.settings.enableInlineRolls.name"),
-      hint: game.i18n.localize("DICE_TRAY.settings.enableInlineRolls.hint"),
-      scope: 'world',
-      config: true,
-      default: false,
-      type: Boolean,
-    });
-  }
-  // Handle abbreviations for newer versions of Foundry that include dice rolls.
-  else {
-    const original = Actor.prototype.getRollData;
-    Actor.prototype.getRollData = function() {
-      const data = original.call(this);
-      if (data.attr === undefined) {
-        data.attr = data.attributes;
-        data.abil = data.abilities;
-      }
-      return data;
-    };
-  }
-});
-
-Hooks.on('ready', () => {
   // Render a modal on click.
   $(document).on('click', diceIconSelector, ev => {
     ev.preventDefault();
@@ -247,7 +214,7 @@ Hooks.on('ready', () => {
 
       let abilities = false;
       let attributes = false;
-      let customButtons = false;
+      let customButtons = [];
 
       var whitelist = {};
       whitelist[game.system.data.name] = {
@@ -335,6 +302,21 @@ Hooks.on('ready', () => {
               }
             }
           }
+        };
+        whitelist.dcc = {
+          flags: {
+            adv: false
+          },
+          abilities: [
+            'str',
+            'agl',
+            'sta',
+            'per',
+            'int',
+            'lck'
+          ],
+          attributes: [],
+          custom: {}
         };
 
         // Let systems or other modules modify the buttons whitelist.
@@ -444,6 +426,48 @@ Hooks.on('ready', () => {
             }
           }
         }
+      }
+
+      // Add funky dice buttons
+      if (game.system.data.name === 'dcc') {
+        const funkyDice = [
+          {
+            "label": "d3",
+            "name": "d3",
+            "formula": "1d3"
+          },
+          {
+            "label": "d5",
+            "name": "d5",
+            "formula": "1d5"
+          },
+          {
+            "label": "d7",
+            "name": "d7",
+            "formula": "1d7"
+          },
+          {
+            "label": "d14",
+            "name": "d14",
+            "formula": "1d14"
+          },
+          {
+            "label": "d16",
+            "name": "d16",
+            "formula": "1d16"
+          },
+          {
+            "label": "d24",
+            "name": "d24",
+            "formula": "1d24"
+          },
+          {
+            "label": "d30",
+            "name": "d30",
+            "formula": "1d30"
+          }
+        ];
+        customButtons = funkyDice.concat(customButtons);
       }
 
       // Build the template.

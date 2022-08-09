@@ -182,7 +182,13 @@ export class CalendarForm extends FormApplication {
       ).value;
     }
 
+    savedData.hours = newDT.hours;
+    savedData.minutes = newDT.minutes;
+    savedData.seconds = newDT.seconds;
+
     savedData.numDayOfTheWeek = Number(weekdayTarget);
+    game.Gametime.setTime({hours: savedData.hours, minutes: savedData.minutes, seconds: savedData.seconds});
+
     savedData.setTimeDisp();
     savedData.genAbbrev();
     let returnData = {
@@ -302,7 +308,7 @@ export class CalendarForm extends FormApplication {
       document.execCommand('copy');
       document.body.removeChild(el);
       console.log('calendar-weather | Calendar data copied')
-      ui.notifications.info(game.i18n.localize("CWEXPORT.copied"));
+      ui.notifications.info(game.i18n.localize("cw.export.copied"));
     })
 
     html.find(importBtn).click(ev => {
@@ -314,7 +320,7 @@ export class CalendarForm extends FormApplication {
           data: {
             icon: '<i class="fas fa-upload"></i>',
             label: "Import Calendar Data",
-            callback: async () => {     
+            callback: async () => {
               let data = document.getElementById("uploadedData").value
               try {
                 data = JSON.parse(data)
@@ -337,14 +343,14 @@ export class CalendarForm extends FormApplication {
                 cwdtData.dt.moons = data.moons;
                 cwdtData.dt.genDateWordy();
                 this.close();
-                ui.notifications.info(game.i18n.localize("CWIMPORT.success"));
+                ui.notifications.info(game.i18n.localize("cw.import.success"));
               } catch (err) {
-                ui.notifications.error(`${game.i18n.localize("CWIMPORT.failure")} ${err}`);
+                ui.notifications.error(`${game.i18n.localize("cw.import.failure")} ${err}`);
               }
             }
           },
           close: {
-            icon: '<i class="fas fa-times"></i>', 
+            icon: '<i class="fas fa-times"></i>',
             label: "Cancel",
           }
         }

@@ -1,6 +1,9 @@
 import { MountManager } from "./mountManager.js";
-import { getCanvas, Settings } from "./settings.js";
-import { findTokenById, Flags, FlagScope } from "./utils.js";
+import { SettingsForm } from "./settings-form.js";
+import { findTokenById, MountUpFlags } from "./utils.js";
+import CONSTANTS from "./constants.js";
+import { info, isStringEquals, warn } from "./lib/lib.js";
+import API from "./api.js";
 /**
  * Functinality class for managing the token HUD
  */
@@ -13,26 +16,32 @@ export class MountHud {
      * @param {Object} hudToken - The HUD Data
      */
     static async renderMountHud(app, html, hudToken) {
-        let mount = getCanvas().tokens.controlled.find(t => t.id == hudToken._id);
+        if (!hudToken._id) {
+            info(`No HUD token is present`);
+            return;
+        }
+        const mountOrRider = canvas.tokens?.controlled.find((t) => t.id === hudToken._id);
+        // const t = <UserTargets>getGame().user?.targets[0];
         // if only one token is selected
-        if (getCanvas().tokens.controlled.length == 1) {
+        if (canvas.tokens?.controlled.length === 1) {
             // if the selected token is a mount
-            if (MountManager.isaMount(getCanvas().tokens.controlled[0].id)) {
+            if (MountManager.isaMount(mountOrRider.id)) {
                 this.addRemoveRidersButton(html, hudToken);
             }
-            if (MountManager.isaRider(getCanvas().tokens.controlled[0].id)) {
+            else if (MountManager.isaRider(mountOrRider.id)) {
                 this.addDismountButton(html, hudToken);
             }
+            this.addCleanupButton(html, hudToken);
         }
-        else {
+        else if (canvas.tokens?.controlled.length > 1) {
             //ui.notifications.warn(`${MODULE_NAME}! : You must be sure to select only the token mount`);
             this.addMountButton(html, hudToken);
         }
-        // if (getCanvas().tokens.controlled.length == 1 && MountManager.isaMount(mount.id)) {
+        // if (canvas.tokens.controlled.length == 1 && MountManager.isaMount(mount.id)) {
         //     this.addButton(html, hudToken, true);
-        // } else if (getCanvas().tokens.controlled.length >= 2) {
+        // } else if (canvas.tokens.controlled.length >= 2) {
         //     this.addMountButton(html, hudToken);
-        //     // let rider = getCanvas().tokens.controlled.find(t => t.id != mount.id);
+        //     // let rider = canvas.tokens.controlled.find(t => t.id != mount.id);
         //     // if (MountManager.isRidersMount(rider.id, mount.id)) {
         //     //     this.addButton(html, data, true);
         //     // }
@@ -46,31 +55,102 @@ export class MountHud {
         // }
     }
     static addMountButton(html, hudToken) {
-        let tokenNames = getCanvas().tokens.controlled.filter(token => token.id != hudToken._id).map(token => { return `'${token.name}'`; });
+        if (!hudToken._id) {
+            info(`No HUD token is present`);
+            return;
+        }
+        const tokenNames = canvas.tokens?.controlled
+            .filter((token) => token.id !== hudToken._id)
+            .map((token) => {
+            return `'${token.name}'`;
+        });
         const button = this.buildButton(html, `Mount ${tokenNames.join(', ').replace(/, ([^,]*)$/, ' and $1')} on to ${hudToken.name}`);
-        button.find('i').on("click", async (ev) => {
+        button.find('i').on('click', async (ev) => {
             MountManager.mountUpHud(hudToken);
         });
+        // button.find('i').on('contextmenu', async (ev) => {
+        //   API.cleanUpTokenDialog(hudToken);
+        // });
     }
     static addDismountButton(html, hudToken) {
+        if (!hudToken._id) {
+            info(`No HUD token is present`);
+            return;
+        }
         const rider = findTokenById(hudToken._id);
-        let button = this.buildButton(html, `Dismount ${hudToken.name} from ${findTokenById(rider.getFlag(FlagScope, Flags.Mount)).name}`);
+        if (!rider) {
+            warn(`No rider with reference '${hudToken._id}' is been found`, true);
+            return;
+        }
+        const mountId = rider.actor?.getFlag(CONSTANTS.MODULE_NAME, MountUpFlags.Mount) ||
+            // TODO to remove
+            rider.document.getFlag(CONSTANTS.MODULE_NAME, MountUpFlags.Mount);
+        const mount = findTokenById(mountId);
+        if (!mount) {
+            warn(`No mount with reference '${mountId}' is been found`, true);
+            return;
+        }
+        let button = this.buildButton(html, `Dismount ${hudToken.name} from ${mount.name}`);
         button = this.addSlash(button);
-        button.find('i').on("click", async (ev) => {
+        button.find('i').on('click', async (ev) => {
             MountManager.dismount(hudToken);
         });
+        // button.find('i').on('contextmenu', async (ev) => {
+        // // THIS IS A SPECIAL CASE OR HUD TOKEN OBJECT
+        // const token = <Token>canvas.tokens?.placeables.find((t:Token) =>{
+        //   return isStringEquals(hudToken._id,t.id);
+        // });
+        // if (token && getProperty(token.document, `data.flags.${CONSTANTS.MODULE_NAME}`)) {
+        //   API.cleanUpTokenDialog(token);
+        // }
+        // });
+    }
+    static addCleanupButton(html, hudToken) {
+        if (!hudToken._id) {
+            info(`No HUD token is present`);
+            return;
+        }
+        // THIS IS A SPECIAL CASE OR HUD TOKEN OBJECT
+        const token = canvas.tokens?.placeables.find((t) => {
+            return isStringEquals(hudToken._id, t.id);
+        });
+        // if (
+        //   token &&
+        //   getProperty(<Actor>token.actor, `data.flags.${CONSTANTS.MODULE_NAME}`) &&
+        //   Object.keys(getProperty(<Actor>token.actor, `data.flags.${CONSTANTS.MODULE_NAME}`)).length > 0
+        // ) {
+        if (token && game.user?.isGM) {
+            let button = this.buildButton(html, `Clean up munt up flags from ${hudToken.name}`, `fa-horse`);
+            button = this.addSlashForFLags(button);
+            button.find('i').on('click', async (ev) => {
+                API.cleanUpTokenDialog(token);
+            });
+            // button.find('i').on('contextmenu', async (ev) => {
+            //   API.cleanUpToken(hudToken);
+            // });
+        }
     }
     static addRemoveRidersButton(html, hudToken) {
+        if (!hudToken._id) {
+            info(`No HUD token is present`);
+            return;
+        }
         let button = this.buildButton(html, `Remove all riders from ${hudToken.name}`);
         button = this.addSlash(button);
-        button.find('i').on("click", async (ev) => {
+        button.find('i').on('click', async (ev) => {
             MountManager.removeAllRiders(hudToken);
         });
+        // button.find('i').on('contextmenu', async (ev) => {
+        //   API.cleanUpToken(hudToken);
+        // });
     }
-    static buildButton(html, tooltip) {
-        let button = $(`<div class="control-icon mount-up" title="${tooltip}"><i class="fas ${Settings.getIconClass()}"></i></div>`);
-        let col = html.find(Settings.getHudColumnClass());
-        if (Settings.getHudTopBottomClass() == 'top') {
+    static buildButton(html, tooltip, iconClass = undefined) {
+        if (!iconClass) {
+            iconClass = SettingsForm.getIconClass();
+        }
+        const button = $(`<div class="control-icon mount-up" title="${tooltip}"><i class="fas ${iconClass}"></i></div>`);
+        const col = html.find(SettingsForm.getHudColumnClass());
+        if (SettingsForm.getHudTopBottomClass() === 'top') {
             col.prepend(button);
         }
         else {
@@ -78,42 +158,55 @@ export class MountHud {
         }
         return button;
     }
-    /**
+    /*
      * Adds the mount button to the HUD HTML
      * @param {object} html - The HTML
      * @param {object} data - The data
      * @param {boolean} hasSlash - If true, the slash will be placed over the mount icon
-     */
+     *
     static async addButton(html, data, hasSlash = false) {
-        let button = $(`<div class="control-icon mount-up"><i class="fas ${Settings.getIconClass()}"></i></div>`);
+      const button = $(`<div class="control-icon mount-up"><i class="fas ${SettingsForm.getIconClass()}"></i></div>`);
+  
+      if (hasSlash) {
+        this.addSlash(button);
+      }
+  
+      const col = html.find(SettingsForm.getHudColumnClass());
+      if (SettingsForm.getHudTopBottomClass() == 'top') {
+        col.prepend(button);
+      } else {
+        col.append(button);
+      }
+  
+      button.find('i').on('click', async (ev) => {
+        await MountManager.mountUpHud(data);
         if (hasSlash) {
-            this.addSlash(button);
+          this.removeSlash(button);
+        } else {
+          this.addSlash(button);
         }
-        let col = html.find(Settings.getHudColumnClass());
-        if (Settings.getHudTopBottomClass() == 'top') {
-            col.prepend(button);
-        }
-        else {
-            col.append(button);
-        }
-        button.find('i').on("click", async (ev) => {
-            if (MountManager.mountUpHud(data)) {
-                if (hasSlash) {
-                    this.removeSlash(button);
-                }
-                else {
-                    this.addSlash(button);
-                }
-            }
-        });
+      });
     }
+    */
     /**
      * Adds a slash icon on top of the horse icon to signify "dismount"
      * @param {Object} button - The HUD button to add a slash on top of
      */
     static addSlash(button) {
-        let slash = $(`<i class="fas fa-slash" style="position: absolute; color: tomato"></i>`);
-        button.addClass("fa-stack");
+        const slash = $(`<i class="fas fa-slash" style="position: absolute; color: tomato"></i>`);
+        button.addClass('fa-stack');
+        button.find('i').addClass('fa-stack-1x');
+        slash.addClass('fa-stack-1x');
+        button.append(slash);
+        return button;
+    }
+    /**
+     * Adds a slash icon on top of the horse icon to signify "dismount"
+     * @param {Object} button - The HUD button to add a slash on top of
+     */
+    static addSlashForFLags(button) {
+        const slash = $(`<i class="fas fa-slash" style="position: absolute; color: aquamarine"></i>`);
+        button.addClass('fa-stack');
         button.find('i').addClass('fa-stack-1x');
         slash.addClass('fa-stack-1x');
         button.append(slash);
@@ -124,7 +217,7 @@ export class MountHud {
      * @param {Object} button - The mount up button
      */
     static removeSlash(button) {
-        let slash = button.find('i')[1];
+        const slash = button.find('i')[1];
         slash.remove();
     }
 }

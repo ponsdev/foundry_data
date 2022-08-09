@@ -10,30 +10,33 @@ A companion browser extension, "Rivet," is available on the [Chrome](https://chr
 
 ### Server-Side Modding
 
-_**Note: Local/dedicated installs only!** You cannot use this with hosting services such as Forge. Turn back now._
+_**Note: Local/dedicated installs only!** You cannot use this with hosting services, such as Forge. Turn back now._
 
 Plutonium comes with a server-side mod to enable mass-downloading via the built-in Art Browser. To install this:
 
-- Find Foundry's `main.js` file in:
+- Find Foundry's `main.mjs` file in:
    - If you installed "for current user only" on Windows: `%appdata%/../Local/Programs/FoundryVTT/resources/app`
    - If you installed "for all users" on Windows: `Program Files/FoundryVTT/resources/app`
-- Edit the file, changing the final line from:
+- Edit the file, changing this:
 ```js
-require("init")(process.argv, global.paths, startupMessages);
+init.default({
+	args: process.argv,
+	root: root,
+	messages: startupMessages,
+	debug: isDebug
+});
 ```
 
 to
 
 ```js
-// Foundry 0.6.x
-require("init")(process.argv, global.paths, initLogging)
-	.then(() => require("plutonium-backend.js").init());
-
-// ===========================================================
-
-// Foundry 0.7.x
-require("init")(process.argv, global.paths, startupMessages)
-	.then(() => require("plutonium-backend.js").init());
+await init.default({
+	args: process.argv,
+	root: root,
+	messages: startupMessages,
+	debug: isDebug
+});
+(await import("./plutonium-backend.mjs")).Plutonium.init();
 ```
-- Copy the `plutonium-backend.js` file from `server/<your Foundry version>/` to the folder containing `main.js`
+- Copy the `plutonium-backend.mjs` file from `server/<foundry version>/` to the folder containing `main.mjs`
 - Launch Foundry, and pray that nothing explodes. If everything is working, the in-game Foundry logo (in the top-left of the screen) will show the running Plutonium backend version.

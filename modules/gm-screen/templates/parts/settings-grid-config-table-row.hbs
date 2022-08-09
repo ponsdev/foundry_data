@@ -1,4 +1,9 @@
-<tr>
+<tr draggable="true">
+  <td>
+    <button type="button" class="reorder-row gm-screen-icon-button">
+      <i class="fa fa-grip-lines"></i>
+    </button>
+  </td>
   <td>
     <input type="text" name="grids.{{gridId}}.name" value="{{grid.name}}" data-dtype="String">
   </td>
@@ -16,7 +21,7 @@
   <td class="textCenter">
     <input type="string" name="grids.{{gridId}}.id" value="{{gridId}}" data-dtype="String" class="hidden">
 
-    <button type="button" title="{{localize 'Delete'}}" class='delete-row'>
+    <button type="button" title="{{localize 'Delete'}}" class='delete-row gm-screen-icon-button'>
       <i class="fa fa-trash"></i>
     </button>
   </td>

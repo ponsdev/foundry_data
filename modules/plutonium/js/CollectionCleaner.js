@@ -1,1 +1,60 @@
-const _0x3f1f=['609393oeqhaD','teardown','getMaxWindowHeight','find','51947OMNsgG','_activateListeners_initBtnReset','activateListeners','close','_mapEntitiesToRows','_pageFilter','[name=\x22cb-prune-auto\x22]','939323KYyhiw','_$btnReset','[name=\x22btn-run\x22]','152AUEdah','5002cUpwIJ','_activateListeners_initBtnPrune','_rows','getData','10ecuoRB','click','534501cKifJT','_collectionName','237604pDBuEY','888817NahRxx','_activateListeners_initBtnRun','/template/CollectionCleaner.handlebars','_pDoDelete','Directory\x20Cleaner','_list'];const _0x5eda=function(_0x588104,_0x23a1f1){_0x588104=_0x588104-0x99;let _0x3f1fad=_0x3f1f[_0x588104];return _0x3f1fad;};const _0x4e0069=_0x5eda;(function(_0xeb0f24,_0x16abab){const _0x3af278=_0x5eda;while(!![]){try{const _0x3a2082=-parseInt(_0x3af278(0xaf))+parseInt(_0x3af278(0xa8))*-parseInt(_0x3af278(0xa9))+parseInt(_0x3af278(0xb2))+parseInt(_0x3af278(0x9e))+-parseInt(_0x3af278(0xa5))+-parseInt(_0x3af278(0x9a))+parseInt(_0x3af278(0xad))*parseInt(_0x3af278(0xb1));if(_0x3a2082===_0x16abab)break;else _0xeb0f24['push'](_0xeb0f24['shift']());}catch(_0x108f4f){_0xeb0f24['push'](_0xeb0f24['shift']());}}}(_0x3f1f,0x738c3));import{SharedConsts}from'../shared/SharedConsts.js';import{Util}from'./Util.js';import{BaseCollectionTool}from'./BaseCollectionTool.js';import{AppFilterBasic}from'./FilterApplications.js';class CollectionCleaner extends BaseCollectionTool{constructor(_0xd9a4f1){const _0x20e3cb=_0x5eda;super({'title':_0x20e3cb(0xb6),'template':SharedConsts['MODULE_LOCATION']+_0x20e3cb(0xb4),'height':Util[_0x20e3cb(0x9c)](),'width':0x280,'resizable':!![]},_0xd9a4f1),this[_0x20e3cb(0xa3)]=new AppFilterBasic(),this[_0x20e3cb(0x99)]=null,this[_0x20e3cb(0xa6)]=null;}[_0x4e0069(0xa0)](_0x25bda3){const _0x4ec1ee=_0x4e0069;super[_0x4ec1ee(0xa0)](_0x25bda3),this[_0x4ec1ee(0xb3)](_0x25bda3),this[_0x4ec1ee(0xaa)](_0x25bda3),this[_0x4ec1ee(0x9f)](_0x25bda3),this['_activateListeners_pInitListAndFilters'](_0x25bda3);}['_activateListeners_initBtnRun'](_0x569995){const _0x11984b=_0x4e0069,_0x246c76=_0x569995[_0x11984b(0x9d)](_0x11984b(0xa4));_0x569995[_0x11984b(0x9d)](_0x11984b(0xa7))[_0x11984b(0xae)](()=>this[_0x11984b(0xb5)](_0x246c76));}['getData'](){const _0x37303b=_0x4e0069;return this['_rows']=this[_0x37303b(0xab)]=this[_0x37303b(0xa2)](),{...super[_0x37303b(0xac)](),'titleSearch':this[_0x37303b(0xb0)]+'s','rows':this['_rows']};}[_0x4e0069(0xa1)](..._0x19e110){const _0x4ca27d=_0x4e0069;return this['_pageFilter'][_0x4ca27d(0x9b)](),super[_0x4ca27d(0xa1)](..._0x19e110);}}export{CollectionCleaner};
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {Util} from "./Util.js";
+import {BaseCollectionTool} from "./BaseCollectionTool.js";
+import {AppFilterBasic} from "./FilterApplications.js";
+
+class CollectionCleaner extends BaseCollectionTool {
+	constructor (collectionName) {
+		super(
+			{
+				title: "Directory Cleaner",
+				template: `${SharedConsts.MODULE_LOCATION}/template/CollectionCleaner.hbs`,
+				height: Util.getMaxWindowHeight(),
+				width: 640,
+				resizable: true,
+			},
+			collectionName,
+		);
+
+		// Local fields
+		this._pageFilter = new AppFilterBasic();
+
+		this._list = null;
+		this._$btnReset = null;
+	}
+
+	activateListeners ($html) {
+		super.activateListeners($html);
+
+		this._activateListeners_initBtnRun($html);
+		this._activateListeners_initBtnPrune($html);
+		this._activateListeners_initBtnReset($html);
+		this._activateListeners_pInitListAndFilters($html);
+	}
+
+	_activateListeners_initBtnRun ($html) {
+		const $cbPruneAuto = $html.find(`[name="cb-prune-auto"]`);
+		$html.find(`[name="btn-run"]`).click(() => this._pDoDelete($cbPruneAuto));
+	}
+
+	/**
+	 * Used by template engine.
+	 */
+	getData () {
+		this._rows = this._rows = this._mapEntitiesToRows();
+
+		return {
+			...super.getData(),
+			titleSearch: `${this._collectionName}s`,
+			rows: this._rows,
+			isPrunable: this._folderType != null,
+		};
+	}
+
+	close (...args) {
+		this._pageFilter.teardown();
+		return super.close(...args);
+	}
+}
+
+export {CollectionCleaner};

@@ -1,38 +1,104 @@
-(() => { })();
+Hooks.once('init', async () => {
+    const usingTheForge = typeof ForgeVTT != "undefined" && ForgeVTT.usingTheForge;
+
+    game.settings.register("dragupload", "fileUploadSource", {
+        name: "The path files should be uploaded to",
+        scope: "world",
+        config: !usingTheForge,
+        type: String,
+        default: usingTheForge ? "forgevtt" : "data",
+        choices: {
+          "data": game.i18n.localize("FILES.SourceUser"),
+          "s3": game.i18n.localize("FILES.SourceS3"),
+        },
+        onChange: async () => { await initializeDragUpload(); }
+    });
+
+    game.settings.register("dragupload", "fileUploadFolder", {
+        name: "The path files should be uploaded to",
+        hint: "Should look like 'dragupload/uploaded'",
+        scope: "world",
+        config: true,
+        type: String,
+        default: "dragupload/uploaded",
+        onChange: async () => { await initializeDragUpload(); }
+    });
+
+    try {
+        const buckets = await FilePicker.browse("s3", "");
+        let bucketChoices = {};
+        for ( let bucket of buckets.dirs ) {
+            bucketChoices[bucket] = bucket;
+        }
+        game.settings.register("dragupload", "fileUploadBucket", {
+            name: "If using S3, what S3 bucket should be used",
+            scope: "world",
+            config: !usingTheForge,
+            type: String,
+            default: usingTheForge ? "" : (FilePicker.S3_BUCKETS?.length > 0 ? FilePicker.S3_BUCKETS[0] : ""),
+            choices: bucketChoices,
+            onChange: async () => {
+                await initializeDragUpload();
+            }
+        });
+    }
+    catch {}
+});
 
 Hooks.once('ready', async function() {
+    // Setup variables and folders
+    await initializeDragUpload();
 
-    if (game.user.isGM) {
-        await createFoldersIfMissing();
-    }   
-
+    // Enable binding
     new DragDrop({ 
         callbacks: { 
             drop: handleDrop
         } 
     })
-    .bind($("#board")[0]);
+    .bind(document.getElementById("board"));
 });
 
-async function createFoldersIfMissing() {
-    await createFolderIfMissing(".", "dragupload");
-    await createFolderIfMissing("dragupload", "dragupload/uploaded");
-    await createFolderIfMissing("dragupload/uploaded", "dragupload/uploaded/tokens");
-    await createFolderIfMissing("dragupload/uploaded", "dragupload/uploaded/tiles");
-    await createFolderIfMissing("dragupload/uploaded", "dragupload/uploaded/ambient");
-    await createFolderIfMissing("dragupload/uploaded", "dragupload/uploaded/journals");
+async function initializeDragUpload() {
+    if (game.user.isGM || game.user.hasPermission(CONST.USER_PERMISSIONS.FILES_UPLOAD)) {
+        await createFoldersIfMissing();
+    }
+
+    //const targetBucket = game.settings.get("dragupload", "fileUploadBucket");
+    let folderParts = [];
+    const targetFolder = game.settings.get("dragupload", "fileUploadFolder");
+    folderParts = folderParts.concat(targetFolder.split("/")).filter(x => x!== "");
+
+    window.dragUpload = {};
+    window.dragUpload.targetFolder = folderParts.join("/");
 }
 
-async function createFolderIfMissing(target, folderPath) {
-    var source = "data";
-    if (typeof ForgeVTT != "undefined" && ForgeVTT.usingTheForge) {
-        source = "forgevtt";
+async function createFoldersIfMissing() {
+    const targetLocation = game.settings.get("dragupload", "fileUploadFolder");
+    const targetLocationFolders = targetLocation.split("/").filter(x => x !== "");
+    let pathParts = [];
+    for ( const folder of targetLocationFolders ) {
+        pathParts.push(folder);
+        await createFolderIfMissing(pathParts.join("/"));
     }
-    var base = await FilePicker.browse(source, folderPath);
-    console.log(base.target);
-    if (base.target == target)
+    await createFolderIfMissing(pathParts.concat("tokens").join("/"));
+    await createFolderIfMissing(pathParts.concat("tiles").join("/"));
+    await createFolderIfMissing(pathParts.concat("ambient").join("/"));
+    await createFolderIfMissing(pathParts.concat("journals").join("/"));
+}
+
+async function createFolderIfMissing(folderPath) {
+    const source = game.settings.get("dragupload", "fileUploadSource");
+    try
     {
-        await FilePicker.createDirectory(source, folderPath);
+        let result = await FilePicker.browse(source, folderPath);
+        if ( !result.dir.includes(folderPath) ) await FilePicker.createDirectory(source, folderPath, source === "s3" ? { bucket: game.settings.get("dragupload", "fileUploadBucket") } : {});
+    }
+    catch (error)
+    {
+        try {
+            await FilePicker.createDirectory(source, folderPath, source === "s3" ? {bucket: game.settings.get("dragupload", "fileUploadBucket")} : {});
+        }
+        catch {}
     }
 }
 
@@ -45,7 +111,7 @@ async function handleDrop(event) {
     event.preventDefault();
     console.log(event);
 
-    var files = event.dataTransfer.files;
+    const files = event.dataTransfer.files;
     console.log(files);
 
     let file
@@ -68,7 +134,10 @@ async function handleDrop(event) {
             return
         }
         const extension = filename.substr(filename.lastIndexOf(".") + 1)
-        const validExtensions = IMAGE_FILE_EXTENSIONS.concat(VIDEO_FILE_EXTENSIONS).concat(AUDIO_FILE_EXTENSIONS)
+        const validExtensions =
+          Object.keys(CONST.IMAGE_FILE_EXTENSIONS)
+          .concat(Object.keys(CONST.VIDEO_FILE_EXTENSIONS))
+          .concat(Object.keys(CONST.AUDIO_FILE_EXTENSIONS));
         if (!validExtensions.includes(extension)) {
             console.log("DragUpload | Dragged file with bad extension:", url);
             // Let Foundry handle the event instead
@@ -93,15 +162,18 @@ async function handleDrop(event) {
     }
     console.log(file);
 
-    if (AUDIO_FILE_EXTENSIONS.filter(x => x != "webm" && file.name.endsWith(x)).length > 0) {
+    if (Object.keys(CONST.AUDIO_FILE_EXTENSIONS).filter(x => x != "webm" && file.name.endsWith(x)).length > 0) {
         await HandleAudioFile(event, file);
         return;
     }
 
-    var layer = canvas.activeLayer.name;
+    const layer = canvas.activeLayer.name;
 
-    if (layer == "TileLayer") {
-        await CreateTile(event, file);
+    if (layer == "BackgroundLayer") {
+        await CreateTile(event, file, false);
+    }
+    else if (layer == "ForegroundLayer") {
+        await CreateTile(event, file, true);
     }
     else if (layer == "TokenLayer") {
         await CreateActor(event, file);
@@ -121,18 +193,15 @@ async function HandleAudioFile(event, file) {
 }
 
 async function CreateAmbientAudio(event, file) {
-    var source = "data";
-    if (typeof ForgeVTT != "undefined" && ForgeVTT.usingTheForge) {
-        source = "forgevtt";
-    }
-    let response
+    const source = game.settings.get("dragupload", "fileUploadSource");
+    let response;
     if (file.isExternalUrl) {
         response = {path: file.url}
     } else {
-        response = await FilePicker.upload(source, "dragupload/uploaded/ambient", file, {});
+        response = await FilePicker.upload(source, window.dragUpload.targetFolder + "/ambient", file, source === "s3" ? {bucket: game.settings.get("dragupload", "fileUploadBucket")} : {});
     }
 
-    var data = {
+    const data = {
         t: "l",
         path: response.path,
         radius: 10,
@@ -143,98 +212,95 @@ async function CreateAmbientAudio(event, file) {
 
     convertXYtoCanvas(data, event);
 
-    canvas.layers[10].activate();
-    AmbientSound.create(data);
+    canvas.sounds.activate();
+    await canvas.scene.createEmbeddedDocuments("AmbientSound", [data]);
 }
 
-async function CreateTile(event, file) {
-    var source = "data";
-    if (typeof ForgeVTT != "undefined" && ForgeVTT.usingTheForge) {
-        source = "forgevtt";
-    }
+async function CreateTile(event, file, overhead) {
+    const source = game.settings.get("dragupload", "fileUploadSource");
     let response
     if (file.isExternalUrl) {
         response = {path: file.url}
     } else {
-        response = await FilePicker.upload(source, "dragupload/uploaded/tiles", file, {});
+        response = await FilePicker.upload(source, window.dragUpload.targetFolder + "/tiles", file, source === "s3" ? {bucket: game.settings.get("dragupload", "fileUploadBucket")} : {});
     }
     console.log(response);
 
-    var data = CreateImgData(event, response);
+    const data = CreateImgData(event, response);
 
     const tex = await loadTexture(data.img);
     const ratio = canvas.dimensions.size / (data.tileSize || canvas.dimensions.size);
     data.width = tex.baseTexture.width * ratio;
     data.height = tex.baseTexture.height * ratio;
+    data.overhead = overhead;
 
     // Optionally snap to grid
     data.x = data.x - (data.width / 2);
     data.y = data.y - (data.height / 2);
-    if ( !event.shiftKey ) mergeObject(data, canvas.grid.getSnappedPosition(data.x, data.y, 1));
+    if ( !event.shiftKey ) foundry.utils.mergeObject(data, canvas.grid.getSnappedPosition(data.x, data.y, 1));
 
     // Create the tile as hidden if the ALT key is pressed
     if ( event.altKey ) data.hidden = true;
 
     // Activate Tile layer (if not already active)
-    canvas.layers[1].activate();
-    Tile.create(data);
+    if (overhead) {
+        canvas.foreground.activate();
+    }
+    else {
+        canvas.background.activate();
+    }
+    return canvas.scene.createEmbeddedDocuments('Tile', [data], {});
 }
 
 async function CreateJournalPin(event, file) {
-    var source = "data";
-    if (typeof ForgeVTT != "undefined" && ForgeVTT.usingTheForge) {
-        source = "forgevtt";
-    }
+    const source = game.settings.get("dragupload", "fileUploadSource");
     let response
     if (file.isExternalUrl) {
         response = {path: file.url}
     } else {
-        response = await FilePicker.upload(source, "dragupload/uploaded/journals", file, {});
+        response = await FilePicker.upload(source, window.dragUpload.targetFolder + "/journals", file, source === "s3" ? {bucket: game.settings.get("dragupload", "fileUploadBucket")} : {});
     }
     console.log(response);
 
-    var data = {
+    const data = {
         name: file.name,
         img: response.path
     };
 
-    var journal = await JournalEntry.create(data);
+    const journal = await JournalEntry.create(data);
     console.log(journal);
 
-    var pinData = {
+    const pinData = {
         entryId: journal.id,
         icon: "icons/svg/book.svg",
         iconSize: 40,
         text: "",
         fontSize: 48,
         textAnchor: CONST.TEXT_ANCHOR_POINTS.CENTER
-      };
+    };
 
     convertXYtoCanvas(pinData, event);
 
     // Activate Notes layer (if not already active)
-    canvas.layers[6].activate();
-    Note.create(pinData);
+    canvas.notes.activate();
+    return canvas.scene.createEmbeddedDocuments('Note', [pinData], {});
 }
 
 async function CreateActor(event, file) {
-    var source = "data";
-    if (typeof ForgeVTT != "undefined" && ForgeVTT.usingTheForge) {
-        source = "forgevtt";
-    }
+    const source = game.settings.get("dragupload", "fileUploadSource");
     let response
     if (file.isExternalUrl) {
         response = {path: file.url}
     } else {
-        response = await FilePicker.upload(source, "dragupload/uploaded/tokens", file, {});
+        response = await FilePicker.upload(source, window.dragUpload.targetFolder + "/tokens", file, source === "s3" ? {bucket: game.settings.get("dragupload", "fileUploadBucket")} : {});
     }
     console.log(response);
 
-    var data = CreateImgData(event, response);
+    const data = CreateImgData(event, response);
     data.name = file.name;
-    var tokenData = CreateImgData(event, response);
+    const tokenData = CreateImgData(event, response);
 
-    if (IMAGE_FILE_EXTENSIONS.filter(x => file.name.endsWith(x)).length == 0) {
+    if (Object.keys(CONST.IMAGE_FILE_EXTENSIONS).filter(x => file.name.endsWith(x)).length == 0) {
         data.img = "";
     }
 
@@ -243,8 +309,8 @@ async function CreateActor(event, file) {
         return ui.notifications.warn(`You do not have permission to create new Tokens!`);
       }
 
-      var types =  Object.keys(CONFIG.Actor.sheetClasses);
-      types.push("actorless")
+    const types = Object.keys(CONFIG.Actor.sheetClasses);
+    types.push("actorless")
 
       if (types.length > 1) {
         let d = new Dialog({
@@ -288,7 +354,7 @@ async function CreateActorWithType(event, data, tokenImageData, type) {
         type: createdType,
         img: data.img
     });
-    const actorData = duplicate(actor.data);
+    const actorData = foundry.utils.duplicate(actor.data);
 
     // Prepare Token data specific to this placement
     const td = actor.data.token;
@@ -298,7 +364,7 @@ async function CreateActorWithType(event, data, tokenImageData, type) {
 
     // Snap the dropped position and validate that it is in-bounds
     let tokenData = { x: data.x, y: data.y, hidden: event.altKey, img: tokenImageData.img };
-    if ( !event.shiftKey ) mergeObject(tokenData, canvas.grid.getSnappedPosition(data.x, data.y, 1));
+    if ( !event.shiftKey ) foundry.utils.mergeObject(tokenData, canvas.grid.getSnappedPosition(data.x, data.y, 1));
     if ( !canvas.grid.hitArea.contains(tokenData.x, tokenData.y) ) return false;
 
     // Get the Token image
@@ -310,20 +376,22 @@ async function CreateActorWithType(event, data, tokenImageData, type) {
     }
 
     // Merge Token data with the default for the Actor
-    tokenData = mergeObject(actorData.token, tokenData, {inplace: true});
+    tokenData = foundry.utils.mergeObject(actorData.token, tokenData, {inplace: true});
+    tokenData.actorId = actor.data._id;
+    tokenData.actorLink = true;
 
     // Submit the Token creation request and activate the Tokens layer (if not already active)
-    canvas.layers[7].activate();
-    Token.create(tokenData);
+    canvas.getLayerByEmbeddedName("Token").activate();
+    await canvas.scene.createEmbeddedDocuments('Token', [tokenData], {});
 
     // delete actor if it's actorless
     if (type === "actorless") {
-        Actor.delete(actor.id)
+        actor.delete();
     }
 }
 
 function CreateImgData(event, response) {
-    var data = { 
+    const data = {
         img: response.path
     };
 

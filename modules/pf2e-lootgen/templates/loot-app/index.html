@@ -1,0 +1,17 @@
+<form class="pf2e-lootgen loot-app" autocomplete="off">
+    <div class="sheet-header">
+        {{#if owner}}
+            <h1 class="charname">
+                <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize "PF2E.loot.LootNamePlaceholder"}}" />
+            </h1>
+        {{else}}
+            <h1 class="charname">{{actor.name}}</h1>
+        {{/if}}
+        <div class="traits-bar">
+            <span class="trait">{{data.lootSheetType}}</span>
+        </div>
+    </div>
+
+    {{> modules/pf2e-lootgen/templates/loot-app/sidebar.html }}
+    {{> modules/pf2e-lootgen/templates/loot-app/inventory.html }}
+</form>

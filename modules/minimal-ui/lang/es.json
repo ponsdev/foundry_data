@@ -4,7 +4,10 @@
 
   "MinimalUI.SettingsAlwaysVisible": "Siempre visible",
   "MinimalUI.SettingsStartVisible": "Iniciar Visible",
+  "MinimalUI.SettingsPartiallyVisible": "Parcialmente Visible",
   "MinimalUI.SettingsAutoHide": "Auto-ocultar",
+  "MinimalUI.SettingsAutoHidePlus": "Auto-ocultar Plus",
+  "MinimalUI.SettingsClickToggle": "Alternan con Click",
   "MinimalUI.SettingsCollapsed": "Iniciar plegado",
   "MinimalUI.SettingsOnlyGM": "Visible solo al DM",
   "MinimalUI.SettingsHide": "Ocultar por completo",
@@ -26,35 +29,17 @@
   "MinimalUI.LogoImageName": "Imagen del logo de Foundry",
   "MinimalUI.LogoImageHint": "La imagen debe tener un tamaño de 100x50 píxeles",
 
-  "MinimalUI.HidePlayerCameraName": "Ocultar cámaras de jugadores",
-  "MinimalUI.HidePlayerCameraHint": "Para las cámaras y el audio de los jugadores, si solo se quiere mostrar los GMs",
-  "MinimalUI.HidePlayerCameraSetting": "Ocultar cámara/audio de los jugadores",
-
-  "MinimalUI.ControlsBehaviourName": "Comportamiento de controles de la izquierda",
-  "MinimalUI.ControlsBehaviourHint": "Escoger si el panel izquierdo debe ser siempre visible o auto-ocultarse",
   "MinimalUI.ControlsSizeName": "Tamaño de controles de la izquierda",
   "MinimalUI.ControlsSizeHint": "Mostrar el tamaño del panel lateral",
-  "MinimalUI.ControlsStyleName": "Estilo del menú de controles de la izquierda",
-  "MinimalUI.ControlsStyleHint": "Escoger si se quiere expandir a la derecha o mantener los botones en una única columna",
-  "MinimalUI.ControlsStyleExpandRight": "Controles de la derecha",
-  "MinimalUI.ControlsStyleSingleColumn": "Columna única",
-  "MinimalUI.ControlsPositionName": "Posición de controles de la izquierda",
-  "MinimalUI.ControlsPositionHint": "Escoger la posición que prefiere que tenga el panel lateral. Se ignorará si se usa el estilo 'Columna única'",
-  "MinimalUI.ControlsPositionTopLeft": "Arriba izquierda",
-  "MinimalUI.ControlsPositionUpperLeft": "Centrado superior izquierdo",
-  "MinimalUI.ControlsPositionLowerLeft": "Centrado inferior izquierdo",
-  "MinimalUI.ControlsPositionBottomLeft": "Abajo izquierda",
-  "MinimalUI.ControlsPinSidebar": "Controles de chincheta",
+  "MinimalUI.ControlsSubHideName": "Estilo de botones secundarios de controles de la izquierda",
+  "MinimalUI.ControlsSubHideHint": "Solo muestra los botones de la segunda columna al pasar el mouse",
 
   "MinimalUI.HotbarStyleName": "Barra de macros",
   "MinimalUI.HotbarStyleHint": "Personaliza la UI de la barra de accesos directos. Se ignorará el auto-ocultar cuando se use el módulo 'Custom Hotbar'",
-  "MinimalUI.HotbarSizeName": "Tamaño de cada hueco de la barra de macros",
-  "MinimalUI.HotbarSizeHint": "Personaliza los huecos y su tamaño de la barra de macros",
-  "MinimalUI.HotbarSlots3": "3 Huecos",
-  "MinimalUI.HotbarSlots6": "6 Huecos",
-  "MinimalUI.HotbarSlots10": "10 Huecos",
   "MinimalUI.HotbarPositionName": "Posición de la barra de macros",
   "MinimalUI.HotbarPositionHint": "Posición horizontal de la barra de macros",
+  "MinimalUI.HotbarPositionMaxLeft": "A la izquierda (Por defecto en Foundry)",
+  "MinimalUI.HotbarPositionExtremeLeft": "Extremo a la izquierda",
   "MinimalUI.HotbarPositionCenterLeft": "Centrado a la izquierda",
   "MinimalUI.HotbarPositionCenter": "Centrado",
   "MinimalUI.HotbarPositionCenterRight": "Centrado a la derecha",
@@ -71,7 +56,12 @@
   "MinimalUI.PlayersBehaviourHint": "Personalizar UI para la lista de jugadores",
   "MinimalUI.PlayersSizeName": "Tamaño de Lista de Jugadores",
   "MinimalUI.PlayersSizeHint": "Elige entre tamaño pequeño o el estándar de Foundry",
-  
+
+  "MinimalUI.PlayersShowPingName" : "Comportamiento de Ping Logger con Minimal UI",
+  "MinimalUI.PlayersShowPingHint" : "Mostrar el Ping independientemente de si la lista de jugadores se auto-esconde",
+  "MinimalUI.PlayersShowPing"  : "Mostrar",
+  "MinimalUI.PlayersHidePing"  : "Esconder",
+
   "MinimalUI.SidebarStyleName": "Comportamiento del panel lateral derecho",
   "MinimalUI.SidebarStyleHint": "Si se debe colapsar o no el panel lateral derecho",
 
@@ -81,9 +71,13 @@
   "MinimalUI.ShadowColorHint": "Color de las sombras al rededor de paneles y botones",
   "MinimalUI.ShadowStrengthName": "Fuerza sombreado",
   "MinimalUI.ShadowStrengthHint": "Grado de sombreado y oscuridad de los bordes. Por defecto: 5",
+  "MinimalUI.TransparencyPercentageName": "Porcentaje de Opacidad",
+  "MinimalUI.TransparencyPercentageHint": "Grado de opacidad de los components previo al paso del raton? Por defecto: 75",
   "MinimalUI.ColorPicker": "Escoger color",
 
-  "MinimalUI.DynamicUIName": "Modo dinámico MINIMAL UI",
-  "MinimalUI.DynamicUIHint": "Oculta automáticamente los elementos de la UI tras 60 segundos de inactividad cuando se está controlando algún icono o navegando entre escenas"
+  "MinimalUI.NoCameraBehaviorName": "Comportamiento de Camaras apagadas",
+  "MinimalUI.NoCameraBehaviorHint": "¿Qué hacer con los jugadores con las cámaras apagadas? Nota: El mod oculto no permite activar y desactivar la cámara. Una vez desactivada, no podrás volver a activar la cámara a menos que cambies a un modo diferente. Utiliza el modo predeterminado o reducido para alternar.",
+  "MinimalUI.NoCameraBehaviorReduced": "Reducido",
+  "MinimalUI.NoCameraBehaviorHidden": "Oculto"
 
 }

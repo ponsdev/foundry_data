@@ -7,4 +7,5 @@ COMBAT_ENHANCEMENTS.setting.enableHpField.description: Enable an editable HP fie
 COMBAT_ENHANCEMENTS.setting.enableHpRadial.label: Enable HP radial bar
 COMBAT_ENHANCEMENTS.setting.enableHpRadial.description: Enables a radial progress bar for HP on the actor portraits in the combat tracker. Visibility is determined by the Bar 1 visibility settings on tokens (GMs can alway see bars if they're enabled here).
 COMBAT_ENHANCEMENTS.setting.removeTargets.label: Enable target removal every turn
-COMBAT_ENHANCEMENTS.setting.removeTargets.description: Enables target removal at the end of each turn. This is done by pressing the 'Next Button' on the combat tracker.
+COMBAT_ENHANCEMENTS.setting.removeTargets.description: Enables target removal at the end of each turn. This is done by pressing the button 'Next Turn' on the combat tracker.
+COMBAT_ENHANCEMENTS.hp.label: HP

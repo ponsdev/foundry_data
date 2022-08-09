@@ -1,1 +1,162 @@
-const _0x3faa=['403MsanXr','pGetClient','897450yaHBit','885536SKHsgE','726469KjJCmj','client','109131LUWqfP','_register','plutonium_client','plutonium_world','_registerClient','_registerWorld','set','pGetWorld','world','register','get','161DuVIDP','_STORE_KEY_CLIENT','_STORE_KEY_WORLD','338627JrpNDw','6GZsreP','1914vFIukB','plutonium','1EQmEpH','pSetWorld','settings','2048KgvkVp','SETTINGS_KEY'];const _0x4410=function(_0x2caee1,_0x71eff1){_0x2caee1=_0x2caee1-0x1a4;let _0x3faa21=_0x3faa[_0x2caee1];return _0x3faa21;};const _0x3964a2=_0x4410;(function(_0x15134c,_0x3d0daf){const _0x480b11=_0x4410;while(!![]){try{const _0x2a00b6=parseInt(_0x480b11(0x1b9))*-parseInt(_0x480b11(0x1b4))+-parseInt(_0x480b11(0x1a7))*-parseInt(_0x480b11(0x1bb))+-parseInt(_0x480b11(0x1c0))*-parseInt(_0x480b11(0x1be))+parseInt(_0x480b11(0x1b7))+-parseInt(_0x480b11(0x1a6))+-parseInt(_0x480b11(0x1a5))+-parseInt(_0x480b11(0x1b8))*-parseInt(_0x480b11(0x1a9));if(_0x2a00b6===_0x3d0daf)break;else _0x15134c['push'](_0x15134c['shift']());}catch(_0x33bcd7){_0x15134c['push'](_0x15134c['shift']());}}}(_0x3faa,0x6edc6));class GameStorage{static['_registerClient'](_0x3c83f6){const _0x58e27a=_0x4410;return this[_0x58e27a(0x1aa)](_0x3c83f6,_0x58e27a(0x1a8));}static[_0x3964a2(0x1ae)](_0x2bdd25){const _0x526657=_0x3964a2;return this[_0x526657(0x1aa)](_0x2bdd25,'world');}static[_0x3964a2(0x1aa)](_0x465fa5,_0xe69a0a){const _0x116d74=_0x3964a2,_0x5af517=_0xe69a0a===_0x116d74(0x1b1)?GameStorage[_0x116d74(0x1b6)]:GameStorage[_0x116d74(0x1b5)];return _0x465fa5=_0x5af517+'_'+_0x465fa5,game[_0x116d74(0x1bd)][_0x116d74(0x1b2)](GameStorage[_0x116d74(0x1bf)],_0x465fa5,{'name':_0x465fa5,'hint':_0x465fa5,'scope':_0xe69a0a,'config':![],'default':{},'type':Object}),_0x465fa5;}static async[_0x3964a2(0x1a4)](_0x3e77b9){const _0x47c118=_0x3964a2,_0x5d2a98=this[_0x47c118(0x1ad)](_0x3e77b9);return(game[_0x47c118(0x1bd)][_0x47c118(0x1b3)](GameStorage[_0x47c118(0x1bf)],_0x5d2a98)||{})['_'];}static async['pSetClient'](_0x26b349,_0x268143){const _0x57d94b=_0x3964a2,_0x4a9e43=this['_registerClient'](_0x26b349);await game[_0x57d94b(0x1bd)]['set'](GameStorage['SETTINGS_KEY'],_0x4a9e43,{'_':_0x268143});}static async[_0x3964a2(0x1b0)](_0x273449){const _0x4f31bf=_0x3964a2,_0x5a062a=this[_0x4f31bf(0x1ae)](_0x273449);return(game[_0x4f31bf(0x1bd)][_0x4f31bf(0x1b3)](GameStorage[_0x4f31bf(0x1bf)],_0x5a062a)||{})['_'];}static async[_0x3964a2(0x1bc)](_0x355f60,_0x16ec16){const _0x405489=_0x3964a2,_0x35309c=this[_0x405489(0x1ae)](_0x355f60);await game[_0x405489(0x1bd)][_0x405489(0x1af)](GameStorage['SETTINGS_KEY'],_0x35309c,{'_':_0x16ec16});}}GameStorage['SETTINGS_KEY']=_0x3964a2(0x1ba),GameStorage[_0x3964a2(0x1b5)]=_0x3964a2(0x1ab),GameStorage[_0x3964a2(0x1b6)]=_0x3964a2(0x1ac);export{GameStorage};
+import {UtilGameSettings} from "./UtilGameSettings.js";
+import {UtilLibWrapper} from "./PatcherLibWrapper.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+
+class GameStorage {
+	static _gameStorageValueOverrides = {};
+
+	static _STORE_KEY_CLIENT = "plutonium_client";
+	static _STORE_KEY_WORLD = "plutonium_world";
+
+	static _STORAGE_KEY_RELOADER = "reloader";
+
+	static init () {
+		UtilLibWrapper.addPatch(
+			"game.settings.get",
+			this._lw_game_settings_get,
+			UtilLibWrapper.LIBWRAPPER_MODE_WRAPPER,
+		);
+
+		game.settings.register(
+			SharedConsts.MODULE_NAME,
+			this._STORAGE_KEY_RELOADER,
+			{
+				name: "-",
+				scope: "world",
+				config: false,
+				default: 0,
+				type: Number,
+				onChange: () => setTimeout(() => window.location.reload(), 100),
+			},
+		);
+	}
+
+	static _lw_game_settings_get (fn, ...args) {
+		const out = fn(...args);
+		const [namespace, key] = args;
+
+		const override = GameStorage._gameStorageValueOverrides?.[namespace]?.[key];
+		if (override === undefined) return out;
+
+		return override;
+	}
+
+	/** Force all connected clients to reload. */
+	static async pDoReload () {
+		if (!game.user.isGM) return window.location.reload();
+
+		const curr = game.settings.get(SharedConsts.MODULE_NAME, this._STORAGE_KEY_RELOADER);
+		await game.settings.set(SharedConsts.MODULE_NAME, this._STORAGE_KEY_RELOADER, curr + 1);
+	}
+
+	static setOverride (namespace, key, val) { MiscUtil.set(this._gameStorageValueOverrides, namespace, key, val); }
+	static unsetOverride (namespace, key) { MiscUtil.deleteObjectPath(this._gameStorageValueOverrides, namespace, key); }
+
+	static _registerClient (key) {
+		return this._register(key, {type: "client"});
+	}
+
+	static _registerWorld (key) {
+		return this._register(key, {type: "world"});
+	}
+
+	static _register (key, {type = "client"} = {}) {
+		const keyPrefix = type === "world" ? GameStorage._STORE_KEY_WORLD : GameStorage._STORE_KEY_CLIENT;
+		const keyProc = `${keyPrefix}_${key}`;
+		game.settings.register(
+			SharedConsts.MODULE_NAME,
+			keyProc,
+			{
+				name: keyProc,
+				hint: keyProc,
+				scope: type,
+				config: false,
+				default: {},
+				type: Object,
+				onChange: () => this._RELOAD_REQUIRED[key] ? window.location.reload() : null,
+			},
+		);
+		return keyProc;
+	}
+
+	// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	static _RELOAD_REQUIRED = {};
+
+	/**
+	 * Note: this should be called on every client, as when the setting is not registered for e.g. a user, errors will
+	 *   be thrown when another user updates the value.
+	 */
+	static setReloadRequiredWorld (key, val = true) {
+		this._registerWorld(key);
+		this._RELOAD_REQUIRED[key] = !!val;
+	}
+
+	// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	static registerClient (key) { this._registerClient(key); }
+
+	static getClient (key) {
+		const fullKey = this._registerClient(key);
+		return (UtilGameSettings.getSafe(SharedConsts.MODULE_NAME, fullKey) || {})._;
+	}
+
+	static async pGetClient (key) {
+		return this.getClient(key);
+	}
+
+	static async pSetClient (key, value) {
+		const fullKey = this._registerClient(key);
+		await game.settings.set(SharedConsts.MODULE_NAME, fullKey, {_: value});
+	}
+
+	static async pRemoveClient (key) {
+		return this.pSetClient(key, undefined);
+	}
+
+	// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	static registerWorld (key) { this._registerWorld(key); }
+
+	static getWorld (key) {
+		const fullKey = this._registerWorld(key);
+		return (UtilGameSettings.getSafe(SharedConsts.MODULE_NAME, fullKey) || {})._;
+	}
+
+	static async pGetWorld (key) {
+		return this.getWorld(key);
+	}
+
+	static async pSetWorld (key, value) {
+		const fullKey = this._registerWorld(key);
+		await game.settings.set(SharedConsts.MODULE_NAME, fullKey, {_: value});
+	}
+
+	static async pRemoveWorld (key) {
+		return this.pSetWorld(key, undefined);
+	}
+
+	// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	static getClientThenWorld (key) {
+		const outClient = this.getClient(key);
+		if (outClient !== undefined) return outClient;
+		return this.getWorld(key);
+	}
+
+	static async pGetClientThenWorld (key) {
+		return this.getClientThenWorld(key);
+	}
+
+	static async pSetWorldThenClient (key, value) {
+		if (game.user.isGM) return this.pSetWorld(key, value);
+
+		// Avoid "clobbering" world-level retrieval as a client
+		const existing = await this.pGetClientThenWorld(key);
+		if (CollectionUtil.deepEquals(value, existing)) return;
+
+		return this.pSetClient(key, value);
+	}
+}
+
+export {GameStorage};

@@ -1,0 +1,17 @@
+<div class="info-group">
+    <span class="level">
+        {{#if (gteq level (default minLevelToDisplay 1))}}
+            <i class="fas fa-level-up-alt"></i>{{level}}
+        {{/if}}
+    </span>
+    <span class="value">
+        {{#if (gteq price.basePrice (default minPriceToDisplay 1)) }}
+            {{#if (defined price.displayPrice)}}
+                {{price.displayPrice}}
+            {{else}}
+                {{numeric-commas price.basePrice}}gp
+            {{/if}}
+            <i class="fas fa-coins"></i>
+        {{/if}}
+    </span>
+</div>

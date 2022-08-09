@@ -1,12 +1,13 @@
 {
-	"TIDY5E.PlayerName": "Player Name",
-	"TIDY5E.Gender" : "Gender",
-	"TIDY5E.Age" : "Age",
-	"TIDY5E.Weight" : "Weight",
-	"TIDY5E.Height" : "Height",
-	"TIDY5E.Eyes" : "Eyes",
-	"TIDY5E.Skin" : "Skin",
-	"TIDY5E.Hair" : "Hair",
+  "Localization Provided By": "Brother Sharp",
+	"TIDY5E.PlayerName": "プレイヤー名",
+	"TIDY5E.Gender" : "性別",
+	"TIDY5E.Age" : "年齢",
+	"TIDY5E.Weight" : "体重",
+	"TIDY5E.Height" : "身長",
+	"TIDY5E.Eyes" : "眼",
+	"TIDY5E.Skin" : "肌",
+	"TIDY5E.Hair" : "髪",
 	"TIDY5E.Subclass": "サブクラス",
 	"TIDY5E.EditActorImage": "左クリック: 画像変更",
 	"TIDY5E.ShowActorImage": "右クリック: 画像表示",
@@ -20,10 +21,13 @@
 	"TIDY5E.Exhaustion4": "最大ＨＰ半減",
 	"TIDY5E.Exhaustion5": "移動速度０",
 	"TIDY5E.Exhaustion6": "死亡",
+	
+	"TIDY5E.AbbrInitiative": "ｲﾆｼ",
 
-	"TIDY5E.RestHint": "休憩する",
+	"TIDY5E.RestHint": "休憩",
 	"TIDY5E.RestS": "小休憩",
 	"TIDY5E.RestL": "大休憩",
+	"TIDY5E.HitDiceRollAverage": "右クリック：平均",
 
 	"TIDY5E.Journal": "記録",
 
@@ -40,22 +44,22 @@
 	"TIDY5E.DisableEdit": "編集の無効化",
 	"TIDY5E.EditHint": "編集ロックとロック解除の表示を切替します",
 	
-	"TIDY5E.Equip": "アイテム装備",
-	"TIDY5E.Unequip": "アイテム装備解除",
-	"TIDY5E.Attune": "アイテム同調",
-	"TIDY5E.Deattune": "同調破棄",
+	"TIDY5E.Equip": "装備",
+	"TIDY5E.Unequip": "装備解除",
+	"TIDY5E.Attune": "同調",
+	"TIDY5E.Deattune": "同調解除",
 	"TIDY5E.Prepare": "呪文準備",
 	"TIDY5E.Unprepare": "準備解除",
 
-	"TIDY5E.EmptySection": "この項目は空です。シートロックを解除して編集してください。",
+	"TIDY5E.EmptySection": "シートがロックされているため新規作成ができません。シートロックを解除して編集してください。",
 	"TIDY5E.GmOnlyEdit": "この項目を編集できるのはGMだけです。",
 
-	"TIDY5E.AttunementWarning": "同調の警告：{number} を超えるアイテムに同調することはできません。",
+	"TIDY5E.AttunementWarning": "警告：同調が最大数である{number}に達しています。",
 	"TIDY5E.AttunementItems": "同調アイテム",
 	"TIDY5E.AttunementMax": "同調上限",
 
-	"TIDY5E.GridLayout": "ｸﾞﾘｯﾄﾞ･ﾚｲｱｳﾄ",
-	"TIDY5E.ListLayout": "ﾘｽﾄ･ﾚｲｱｳﾄ",
+	"TIDY5E.GridLayout": "グリッド",
+	"TIDY5E.ListLayout": "リスト",
 
 	"TIDY5E.Encumbrance": "荷重",
 
@@ -64,9 +68,6 @@
 	"TIDY5E.AddFav": "お気に入り追加",
 	"TIDY5E.isFav": "お気に入り",
 	"TIDY5E.RemoveFav": "お気に入りから削除",
-	
-	"TIDY5E.ItemCardsKeyHint" : "hold Key to interact with card.",
-	"TIDY5E.ItemCardsMouseHint" : "middle mouse to view/edit item.",
 
 	"TIDY5E.ToggleInfo": "詳細表示",
 
@@ -79,17 +80,14 @@
 
 	"TIDY5E.Environment" : "環境",
 
-	"TIDY5E.CurrencyAbbrCP" : "CP",
-	"TIDY5E.CurrencyAbbrSP" : "SP",
-	"TIDY5E.CurrencyAbbrGP" : "GP",
-	"TIDY5E.CurrencyAbbrEP" : "EP",
-	"TIDY5E.CurrencyAbbrPP" : "PP",
-
 	"TIDY5E.SearchItem" : "アイテム検索",
 	"TIDY5E.SearchSpell" : "呪文検索",
 	"TIDY5E.SearchFeat" : "特徴検索",
 	"TIDY5E.SearchClear" : "検索クリア",
-	"TIDY5E.SearchHint" : "検索したい文字を入力してください。",
+	"TIDY5E.SearchHint" : "検索……",
+
+	"TIDY5E.ItemCardsKeyHint" : "キーを押したままカードを操作",
+	"TIDY5E.ItemCardsMouseHint" : "マウスホイールボタン（中央）で、アイテムを表示/編集",
 
 	"TIDY5E.AbbrMod" : "修正",
 	"TIDY5E.AbbrSavingThrow" : "セーヴ",
@@ -99,42 +97,67 @@
 	"TIDY5E.Components" : "構成要素",
 	"TIDY5E.SpellSchool" : "呪文の系統",
 
-	"TIDY5E.TokenLinked" : "アクターとリンクするトークン",
-	"TIDY5E.TokenUnlinked" : "アクターと未リンクのトークン",
+	"TIDY5E.TokenLinked" : "リンク中のトークン",
+	"TIDY5E.TokenUnlinked" : "未リンクのトークン",
 	
-	"TIDY5E.ItemDetailsHeadline" : "用途 / 来歴",
+	"TIDY5E.ItemDetailsHeadline" : "解説・背景",
 
 	"TIDY5E.Settings.GlobalLabel" : "全体",
-	"TIDY5E.Settings.DebugLabel" : "ﾃﾞﾊﾞｯｸﾞ",
-	"TIDY5E.Settings.UserLabel" : "ﾕｰｻﾞｰ",
+	"TIDY5E.Settings.DebugLabel" : "デバッグ",
+	"TIDY5E.Settings.UserLabel" : "ユーザー",
 	"TIDY5E.Settings.PcLabel" : "PC",
 	"TIDY5E.Settings.NpcLabel" : "NPC",
 	"TIDY5E.Settings.VehicleLabel" : "乗り物",
 
 	"TIDY5E.Settings.SheetMenu" : {
-		"label" : "シート設定"
+		"label" : "シート設定",
+		"title" : "Tidy5eシート設定"
 	},
-
+	"TIDY5E.Settings.TabPlayers" : {
+		"tabLabel" : "プレイヤー",
+		"header" : "プレイヤーキャラクターシート"
+	},
+	"TIDY5E.Settings.TabNPCsVehicles" : {
+		"tabLabel" : "NPC/乗物",
+		"header" : "NPC/乗物シート",
+		"labelNPCs" : "NPC",
+		"labelVehicles" : "乗物"
+	},
+	"TIDY5E.Settings.TabGM" : {
+		"tabLabel" : "GMオプション",
+		"header" : "GMｼｰﾄ･ｵﾌﾟｼｮﾝ"
+	},
+	"TIDY5E.Settings.TabModules" : {
+		"tabLabel" : "モジュール",
+		"header" : "モジュール･オプション",
+		"labelActionsFavorites" : "アクター･アクション/お気に入り",
+		"labelMidiQoL" : "Midi Qol"
+	},
+	"TIDY5E.Settings.TabInfo" : {
+		"tabLabel" : "情報",
+		"header" : "情報"
+	},
 	"TIDY5E.Settings.ItemCardsForAllItems" : {
-		"name" : "すべてのｼｰﾄで、ｱｲﾃﾑ情報ｶｰﾄﾞ表示機能を使用",
-		"hint" : "すべてのシートでアイテム情報カードの表示が必要ない場合は無効にします。(再読み込みが必要)"
+		"name" : "アイテム情報のカードをすべてのシートで表示するすべてのｼｰﾄでアイテム情報カード表示機能を使用",
+		"hint" : "アイテム情報をすべてのシートで表示する必要が無い場合は無効にしくてださい。(再読み込みが発生します)"
 	},
 	"TIDY5E.Settings.ItemCardsForNpcs" : {
-		"name" : "NPC/乗物のｱｲﾃﾑ情報ｶｰﾄﾞを表示",
-		"hint" : "NPC/乗物用のシートでアイテム情報カードが必要ない場合は無効にします。(再読み込みが必要)"
+		"name" : "NPC/乗物のアイテム情報カードを表示",
+		"hint" : "NPC/乗物用のシートでアイテム情報カードが表示する必要が無い場合は無効にしてください。(再読み込みが発生します)"
 	},
 	"TIDY5E.Settings.ItemCardsAreFloating" : {
-		"name" : "ｱｲﾃﾑ情報ｶｰﾄﾞをｶｰｿﾙ横に表示",
-		"hint" : "アイテム情報カードをシートから切り離して、カーソルの横に浮かせることができます。遅延して使用するのが最適です。シートが飛び出すときにも便利です。(再読み込みが必要)"
+		"name" : "アイテム情報カードをカーソル横に表示",
+		"hint" : "アイテム情報カードがカーソルの横に出現します。シートをオップアウト時に使用するのをお勧めします。遅延を設定しておくと便利です。(再読み込みが発生します)"
 	},
 	"TIDY5E.Settings.ItemCardsDelay" : {
-		"name" : "ｱｲﾃﾑ情報ｶｰﾄﾞの表示遅延",
-		"hint" : "アイテムにカーソルを合わせたときに、ミリ秒単位の値でアイテムカードの表示を遅らせます（0=遅延なし､300=デフォルト）。(再読み込みが必要)"
+		"name" : "アイテム情報カードの表示遅延",
+		"hint" : "ミリ秒単位で指定した時間後にアイテムにカーソルを合わせたところに情報が出現します。（0:遅延なし、300:デフォルト）(再読み込みが発生します)"
 	},
 	"TIDY5E.Settings.ItemCardsFixKey" : {
-		"name" : "ｱｲﾃﾑ情報ｶｰﾄﾞ操作キーを指定",
-		"hint" : "アイテムカードの操作に使用するキー（例：x）を入力します。ファンクションキー（Ctrl、Altなど）以外の任意のキーにすることができます。(再読み込みが必要)"
+		"name" : "アイテム情報カード操作キー",
+		"hint" : "アイテムカードの操作に使用するキー（例：x）を入力します。ファンクションキー（Ctrl、Altなど）以外の任意のキーにすることができます。(再読み込みが発生します)"
 	},
+
 
 	"TIDY5E.Settings.SheetTheme" : {
 		"name" : "Tidy5eカラーテーマ",
@@ -144,11 +167,11 @@
 	},
 
 	"TIDY5E.Settings.ClassicControls" : {
-		"name" : "一覧表示で従来のｱｲﾃﾑｺﾝﾄﾛｰﾙを使用",
-		"hint" : "常にアイテムコントロールを表示し、右クリックメニューを無効にします。一覧表示でPCのアイテム/呪文インベントリにのみ適用されます。"
+		"name" : "一覧表示で従来のアイテム操作を使用",
+		"hint" : "常にアイテム操作を表示し、右クリックメニューを無効にします。一覧表示でPCのアイテム/呪文インベントリにのみ適用されます。"
 	},
 	"TIDY5E.Settings.RollButtonsToCard" : {
-		"name" : "ｱｲﾃﾑ情報ｶｰﾄﾞに、midiQol アイテムボタンを表示",
+		"name" : "アイテム情報カードに、midiQolのアイテムボタンを表示",
 		"hint" : "デフォルトでは、ロールボタンにはアイテムの説明が表示されます。それらをアイテムを情報カードに移動できるようにします。すべてのレイアウトモードで動作します。"
 	},
 	"TIDY5E.Settings.TraitLabels" : {
@@ -157,16 +180,24 @@
 	},
 
 
+	"TIDY5E.Settings.PlayerName" : {
+		"name" : "プレイヤー名の表示",
+		"hint" : "キャラクターの名前の下に、プレイヤー名を表示します。"
+	},
+	"TIDY5E.Settings.JournalTab" : {
+		"name" : "シートの記録タブを非表示",
+		"hint" : "シート上の記録タブを非表示にする場合に有効にします。"
+	},
 	"TIDY5E.Settings.ClassList" : {
 		"name" : "クラス一覧を非表示",
 		"hint" : "キャラクター名の下のクラスリストを非表示にする場合に有効にします。"
 	},
 	"TIDY5E.Settings.InspirationAnimation" : {
-		"name" : "ｲﾝｽﾋﾟﾚｰｼｮﾝ アニメ",
+		"name" : "インスピレーションアニメ",
 		"hint" : "インスピレーションアイコンのアニメーションを無効化します。"
 	},
 	"TIDY5E.Settings.HideIfZero" : {
-		"name" : "消耗とｲﾝｽﾋﾟﾚｰｼｮﾝが0の時､表示を隠す",
+		"name" : "消耗とインスピレーションが0の時､表示を隠す",
 		"hint" : "0の場合、消耗とインスピレーションは表示されなくなります。マウスカーソルを合わせたときだけ表示されます。"
 	},
 	"TIDY5E.Settings.InspirationOnHover" : {
@@ -192,6 +223,10 @@
 	"TIDY5E.Settings.TraitsMovedBelowResource" : {
 		"name" : "特徴をﾘｿｰｽの下に移動",
 		"hint" : "特徴を、技能の下 (左段)から、リソース下 (右段)に移動する場合に有効にします。"
+	},
+	"TIDY5E.Settings.AmmoEquippedOnly" : {
+		"name" : "装備済の矢弾のみ表示",
+		"hint" : "武器ごとに現在装備されている矢弾のみ表示するようにします。"
 	},
 
 
@@ -247,7 +282,7 @@
 		"hint" : "アイテム数量を常に表示にします。"
 	},
 	"TIDY5E.Settings.InspirationDisabled" : {
-		"name" : "ｲﾝｽﾋﾟﾚｰｼｮﾝ表示の無効化",
+		"name" : "インスピレーション表示の無効化",
 		"hint" : "キャンペーンでインスピレーションを使用しない場合､完全に無効化することができます。"
 	},
 	"TIDY5E.Settings.ExhaustionEffects" : {
@@ -286,5 +321,28 @@
 		"unlinked": "関連付けされてないシートを強調表示",
 		"linked": "関連付けされたトークンを強調表示",
 		"both": "トークンを全て強調表示"
-	}
+	},
+	"TIDY5E.Settings.DefaultActionsTab" : {
+		"name" : "初めてシートを開くときのデフォルトタブ",
+		"hint" : "「アクション」または「能力値」を選択します。",
+		"default": "アクション",
+		"attributes": "能力値"
+	},
+	"TIDY5E.Settings.HiddenDeathSaves" : {
+		"name" : "PLから死亡セーヴを隠す",
+		"hint" : "有効化することで死亡セーヴの結果をGMのみ表示します。"
+	},
+	"TIDY5E.Settings.npsSheetWidth" : {
+		"name" : "デフォルトNPCシート幅",
+		"hint" : "NPCシートの長さ（ピクセル単位）。再起動が必要です。"
+	},
+	"TIDY5E.Settings.playerSheetWidth" : {
+		"name" : "デフォルトPCシート幅",
+		"hint" : "PCシートの長さ（ピクセル単位）。再起動が必要です。"
+	},
+	"TIDY5E.Settings.vehicleSheetWidth" : {
+		"name" : "乗り物シート幅",
+		"hint" : "乗り物シートの長さ（ピクセル単位）。再起動が必要です。"
+	},
+	"Save Changes" : "保存"
 }

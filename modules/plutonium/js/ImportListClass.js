@@ -1,36 +1,2883 @@
-const _0x5d95=['<div\x20class=\x22text-center\x22\x20title=\x22Remaining\x22></div>','pAddActorEffects','sourceJsonToAbv','checked','pGetClassSubclassItemEffects','_getActorUpdate','section','page','\x20Levels\x20To','UPGRADE','_reject','ClassSubclassRequiresEffects','OwnedItem','effect','optionalfeature','MODE_MULTICLASS','subRows','SYM_UI_SKIP','TASK_EXIT_COMPLETE_UPDATE_OVERWRITE','Please\x20enter\x20a\x20combination\x20of\x20ability\x20score\x20changes\x20which\x20adds\x20up\x20to\x20two!','currency','581PxDqky','_pImportClass_pGetProficiencyImportMode','getAbilityModNumber','classAbilityScoreIncrease','title','dex','getCleanEntityName','spacer','languages','_pImportEntry_getApproxPreviousMaxLevel','notifications','_pImportEntry_pDoUpdateCharacter_pPopulateProficienciesFrom','set','getPriority','_pImportSubclass_pImportToActor','pGetClasses','_pGetUserClassItem','hpIncreaseMode','str','getNameWithSourcePart','getCasterProgressionMeta','_pImportEntry_pHandleFeatures','pGetWithCache','ImportEntryOpts','sheet','DATA_URL_OPTIONALFEATURES','_$bntFilter','intBonus','form-control--error','activateListeners','max','itemData','forEach','_foundryAllFeatures','DataSourceUrl','SRD','initBtnSortHandlers','_pPostLoad','sourceJsonToColor','getActorSpell','647044gYVwCe','classFeature','Upload\x20File','571138cYgbRg','postItemActorUpdate','_foundryConInitial','LoadedRequiresEffects','pGetRenderedClassTable','createEmbeddedEntity','then','copy','\x20+\x20','_ancestorSubclassName','active','_pImportSubclass_pImportToItems','doApplyFilterToFeatureEntries','Open\x20List','subclasses','getMaxCasterProgression','Import\x20Levels\x201-','__state','_importOpts','toggleClass','SOURCE_TYP_BREW','description','Unknown\x20proficiency\x20import\x20mode\x20\x22','flags','prof','_render_feat','sourceJsonToFull','_pImportEntry_pDoUpdateCharacter_pPopulateLevelOneProficienciesAndEquipment','_AE_LABEL_BASE_AC','classSubclassRequiresEffects','int','_$btnRun','pPostLoad','pFillActorSkillData','Yes','fnBindListeners','list-multi-selected','actorUpdate','_activateListeners_pInitFilteredList','sort','levels','_pImportEntry_pDoUpdateExistingPackEntity','con','subclassFeatures','<button\x20class=\x22btn\x20btn-primary\x20btn-5et\x22>Confirm</button>','_pImportClass_pImportToItems','Unhandled\x20Hit\x20Points\x20increase\x20mode\x20\x22','subclassFeature','preparedSpells','ixSub','pact','getActorSpellItemOpts','MODULE_NAME','pInitFilterBox','flat','reduce','pGetClassSubclassFeatureItemEffects','_getDuplicateMeta','roll','pRunTasks','prop','push','floor','<button\x20class=\x22btn\x20btn-default\x20w-50\x20btn-5et\x22>Ability\x20Score\x20Improvement</button>','faces','type','Imported\x20\x22','MODE_PRIMARY','isDataEntered','chosenProficiencies','data','MODE_TAKE_AVERAGE','_fMisc','activateSidebarTab','<button\x20class=\x22btn\x20btn-default\x20w-50\x20btn-5et\x22>Feat</button>','<div\x20class=\x22col-2\x20text-center\x22></div>','_getFilterNamespace','pInit','folder','MODULE_LOCATION','UserChoose','<button\x20class=\x22btn\x20btn-default\x20mr-3\x22>Skip</button>','strBonus','number','languageProficiencies','Please\x20select\x20something\x20to\x20import!','_doMergeExistingSkillData','<button\x20class=\x22btn\x20btn-default\x20btn-5et\x20w-100\x20mr-2\x22>Choose\x20Feat</button>','isTemp','pGetUserBoolean','RequiresEffects','pGetHomebrewSources',').\x20Would\x20you\x20like\x20to\x20import\x20level','isCancelled','Custom\x20URL','constructor','pHasClassSubclassSideLoadedEffects','Select\x20Source','getExistingProficienciesFvttSavingThrows','getSourceWithPagePart','conBonus','_pGetSelectedLevelIndices','_pImportEntry_pFillItemArrayFeatures','pGetOptionalFeatureItem','isSkip','trim','spellcastingAbility','class','insert','find','entity','Feats','numLevels','907836PXvbKd','level','optionalfeaturesRequiresEffects','MODE_NONE','/template/ImportListClassAbilityScoreIncrease.handlebars','</h3>','log','_titleButtonRun','total','error','proficiency','_$wrpList','1033djHHbe','\x20SUBCLASS\x20','_render_ability','slice','_pAddLoadedFeature_pDddLinkedActiveEffects_classSubclassFeature','isStreamerMode','\x22\x20(from\x20\x22','Configure\x20and\x20Open\x20List','_pDoResolve','_foundrySelectedLevelIndices','_$iptSearch','pWithPlugin','addEventListener','_id','_cntStartingSkillChoices','empty','pImportSubclass','getGenericEffect','Classes','isIncludesLevelOne','_addHookBase','bind','name','existingClassItem','_getDefaultState','Task','957426uLEUas','tglSel','catch','entries','MODE_DO_NOT_INCREASE','_pHandleAbilityScoreIncrease','feat','toMessage','get','close','targetLevel','isRadio','label','pGetUserEnum','_titleSearch','pGetSources','ability','add','casterProgression','toolProf','getImportableFeatures','weaponProf','_pValidateUserLevelIndices','dexBonus','65222uynujO','pCacheAndGet','_state','Bonus','dataType','_pack','$getIptNumber','warn','mode','pHasOptionalFeatureSideLoadedEffects','change','\x20SOURCE\x20','spells','importClass','_pImportPreparedCasterSpells','pFillActorLanguageData','_pImportClass_pGetHpImportMode','EVNT_VALCHANGE','sortName','actor','isHpAvailable','addFauxOptionalFeatureFeatures','render','_foundryStartingProficiencyMode','pGetUserChoice','(Unnamed\x20subclass)','_pImportEntry_pFillItemArrayAdditionalSpells','feats-classAbilityScoreIncrease','getCurrentAbilityScores','filterBox','_getExistingClassItems','Import\x20Class?','min','_foundryIsSkipImportPreparedSpells','_foundryConFinal','text','requiresEffects','isStubClass','absorbFnGetData','source','veapp__msg-error','_pImportEntry_pGetCurLevelFillClassData','traits','wisBonus','getImportedEmbed','ACTIVE_EFFECT_MODES','sourceLong','click','isAddBaseAcActiveEffect','pGetUserInput','/template/ImportListClass.handlebars','_pAddLoadedFeature','pGetClassSubclassFeatureItem','toLowerCase','create','_pApplyAllAdditionalSpellsToActor','split','setFirstSection','doAbsorbItems','toDisplay','pImportEquipmentItemEntries','pGetOptionalFeatureItemEffects','modules/','_pImportEntry_setActorFlags','_getFeatData','classSourceLong','TASK_EXIT_CANCELLED','_pImportEntry_pFinalise','isToken','icons/environment/people/commoner.webp','pGetClassItem','addToFilters','firstElementChild','_resolve','_pImportEntry_pDoUpdateCharacter_pPopulateMulticlassProficiencies','1161167DCivpi','isStubSubclass','absorbFnBindListeners','className','2XwguGk','1jPTkyZ','_gameProp','<input\x20type=\x22text\x22\x20class=\x22text-center\x22\x20placeholder=\x220\x22>','_content','Ability\x20Score\x20Improvement—Level\x20','proficiencyImportMode','getFilteredFeatures','_pageFilter','ele','_pImportEntry_pDoUpdateExistingDirectoryEntity','value','remove','_list','pHasClassSubclassFeatureSideLoadedEffects','Remaining:\x20','pWaitForUserInput','<div></div>','curLevel','_isDataEntered','_handleFilterChange','_pUserInput','class_subclass','<button\x20class=\x22btn\x20btn-default\x20btn-5et\x22>Skip</button>','startingProficiencies','_actor','AbilityScoreIncrease','_cachedData','filterValues','pGetClassSubclassFeatureAdditionalEntities','<div\x20class=\x22flex-col\x20w-100\x20h-100\x22></div>','doHookSpellLinkRender','CASTER_TYPE_TO_PROGRESSION','HP\x20Increase','getPreparableSpells','details','Populate\x20Spellbook','pGetSpellItem','conFinal','items','armorProf','getAllFeatures','pAddActorItems','wis','ExistingFeatureChecker','skills','_cntStartingSkillChoicesMutliclass','$row','1AbTwir','_doMergeExistingOtherProficiencyData','_$wrpBtnsSort','html','conInitial','assign','length','OptionalfeatureRequiresEffects','subclass','cha','contains','mutateForFilters','_pAddLoadedFeature_pDddLinkedActiveEffects_optionalfeature','keys','itemsToUpdate','<p>Do\x20you\x20want\x20to\x20populate\x20the\x20spellbook\x20for\x20this\x20class\x20(for\x20class\x20level','/media/icon/laurels.svg','formDataEquipment','DataSourceSpecial','getCasterProgression','values','additionalSpells','origin','isCharactermancer','trimObject','Unhandled\x20sub-feature\x20type\x20\x22','isClassImport','_fnClose','Import\x20Only\x20Subclass','spellHashToItemIdMap','PG_FEATS','spellLevelLow','classList','features','LEVEL_XP_REQUIRED','classFeatures','cbSel','rows','applyFormDataToActorUpdate','toUpperCase','subclassName','sortDir','content','update','full','spell','You\x20have\x20selected\x20a\x20subclass\x20to\x20import,\x20but\x20have\x20no\x20class\x20levels.\x20Would\x20you\x20like\x20to\x20import\x20the\x20class\x20too?','getTotalClassLevels','featData','getFeaturesGroupedByOptionsSet','_getClassFlags','MODULE_NAME_FAKE','fluff','Import\x20Classes','ascSortLower','Base/Unarmored\x20AC','_pImportEntry_handleConDifference','pct','numLevelsPrev','Select\x20Existing\x20Feature...','loaded','_pImportEntry_pFillItemArrayPredefinedFeatures','pSerialAwaitMap','toggleVe','TASK_EXIT_COMPLETE','getValues','pImportClass','multiclassing','Import\x20Class\x20and\x20Subclass','fnGetData','pGetAllSpells','data.attributes.ac.value','isOverwrite','getAbilityModifier','pMutActorUpdateOptionalFeature','loadedsRequiresEffects','attributes','map','getMappedCasterType','importEntity','getDataHitDice','_pImportEntry_pDoUpdateCharacter_pPopulateEquipment','ticker','SOURCE_TYP_CUSTOM','custom','_comp','dnd5e','effects','MODE_ROLL','TASK_EXIT_SKIPPED_DUPLICATE','filter','getOrSet','_pImportEntry_pDoUpdateCharacter','hover','cls'];const _0xf71e=function(_0x161961,_0x2f505e){_0x161961=_0x161961-0x1ee;let _0x5d9589=_0x5d95[_0x161961];return _0x5d9589;};const _0x98c2a9=_0xf71e;(function(_0x13b596,_0x5f019e){const _0x5edd43=_0xf71e;while(!![]){try{const _0x216ff3=parseInt(_0x5edd43(0x254))*-parseInt(_0x5edd43(0x2f3))+parseInt(_0x5edd43(0x38a))+-parseInt(_0x5edd43(0x225))*-parseInt(_0x5edd43(0x220))+parseInt(_0x5edd43(0x3a2))+parseInt(_0x5edd43(0x364))+parseInt(_0x5edd43(0x370))*-parseInt(_0x5edd43(0x2c8))+-parseInt(_0x5edd43(0x224))*parseInt(_0x5edd43(0x2f0));if(_0x216ff3===_0x5f019e)break;else _0x13b596['push'](_0x13b596['shift']());}catch(_0x4bc4d8){_0x13b596['push'](_0x13b596['shift']());}}}(_0x5d95,0x98e4c));import{Vetools}from'./Vetools.js';import{LGT,Util}from'./Util.js';import{DataConverter}from'./DataConverter.js';import{DataConverterSpell}from'./DataConverterSpell.js';import{DataConverterClass}from'./DataConverterClass.js';import{UtilActors}from'./UtilActors.js';import{UtilApplications}from'./UtilApplications.js';import{SharedConsts}from'../shared/SharedConsts.js';import{Config}from'./Config.js';import{UtilList2}from'./UtilList2.js';import{DataConverterOptionalfeature}from'./DataConverterOptionalfeature.js';import{ImportListFeat}from'./ImportListFeat.js';import{ImportListCharacter}from'./ImportListCharacter.js';import{Charactermancer_Class_FeatureOptionsSelect,Charactermancer_Class_HpIncreaseModeSelect,Charactermancer_Class_LevelSelect,Charactermancer_Class_ProficiencyImportModeSelect,Charactermancer_Class_StartingProficiencies,Charactermancer_Class_Util,PageFilterClassesFoundry}from'./UtilCharactermancerClass.js';import{Charactermancer_StartingEquipment}from'./UtilCharactermancerEquipment.js';import{Charactermancer_AdditionalSpellsSelect}from'./UtilCharactermancerAdditionalSpells.js';import{UtilDataSource}from'./UtilDataSource.js';import{UtilActiveEffects}from'./UtilActiveEffects.js';import{Charactermancer_Util}from'./UtilCharactermancer.js';import{UtilCompendium}from'./UtilCompendium.js';class ImportListClass extends ImportListCharacter{static['init'](){Hooks['on']('preCreateOwnedItem',(_0x31df42,_0x4f583f)=>{const _0x5c96f1=_0xf71e,_0x3771d7=_0x4f583f[_0x5c96f1(0x30a)]?.[SharedConsts['MODULE_NAME_FAKE']]||_0x4f583f['flags']?.[SharedConsts['MODULE_NAME']];if(!_0x3771d7||!_0x3771d7?.[_0x5c96f1(0x339)]?.[_0x5c96f1(0x35e)])return;const _0x164064=_0x3771d7[_0x5c96f1(0x339)][_0x5c96f1(0x35e)],_0x567066=_0x3771d7['data']['subclass'];return(async()=>{const _0x2101cc=_0x5c96f1,_0x1e3b2a=new ImportListClass({'actor':_0x31df42});await _0x1e3b2a[_0x2101cc(0x340)](),_0x567066?await _0x1e3b2a['pImportSubclass'](_0x164064,_0x567066,{'filterValues':_0x3771d7[_0x2101cc(0x240)]}):await _0x1e3b2a['pImportClass'](_0x164064,{'filterValues':_0x3771d7[_0x2101cc(0x240)]});})()[_0x5c96f1(0x2f9)](()=>ui[_0x5c96f1(0x2d2)]['info'](_0x5c96f1(0x335)+_0x164064[_0x5c96f1(0x386)]+'\x22'+(_0x567066?'\x20('+_0x567066['name']+')':'')+'\x20via\x20Class\x20Importer'))[_0x5c96f1(0x38c)](_0x2a5339=>{const _0x466d55=_0x5c96f1;ui['notifications'][_0x466d55(0x36d)]('Failed\x20to\x20import\x20\x22'+_0x164064[_0x466d55(0x386)]+'\x22'+(_0x567066?'\x20('+_0x567066[_0x466d55(0x386)]+')':'')+'!\x20'+VeCt['STR_SEE_CONSOLE']);throw _0x2a5339;}),![];});}constructor(_0x31277d){const _0x535f7a=_0xf71e;_0x31277d=_0x31277d||{},super({'title':_0x535f7a(0x289),'template':SharedConsts[_0x535f7a(0x342)]+_0x535f7a(0x207),'height':Util['getMaxWindowHeight'](),'resizable':!![]},_0x31277d,{'namespace':_0x535f7a(0x23a),'defaultFolderPath':[_0x535f7a(0x382)],'folderType':'Item','sidebarTab':'items','gameProp':_0x535f7a(0x24b),'pageFilter':new PageFilterClassesFoundry(),'isDedupable':!![]}),this[_0x535f7a(0x23f)]=null;}set[_0x98c2a9(0x27e)](_0x81e053){super['content']=_0x81e053,this['_cachedData']=null;}static async[_0x98c2a9(0x2ed)](_0x470870){const _0x3d0ef4=_0x98c2a9,_0x2aec80=await PageFilterClassesFoundry[_0x3d0ef4(0x313)](_0x470870),_0xc5207b=await Vetools[_0x3d0ef4(0x2de)](Vetools[_0x3d0ef4(0x2e1)]);return Charactermancer_Class_Util[_0x3d0ef4(0x3b7)](_0x2aec80,_0xc5207b[_0x3d0ef4(0x2c1)]),_0x2aec80;}async[_0x98c2a9(0x399)](){const _0x16f42d=_0x98c2a9;return[new UtilDataSource[(_0x16f42d(0x266))](Config[_0x16f42d(0x392)]('ui',_0x16f42d(0x375))?_0x16f42d(0x2eb):'5etools',Vetools[_0x16f42d(0x2d7)],{'cacheKey':'5etools-classes','pPostLoad':this['constructor']['_pPostLoad'][_0x16f42d(0x385)](this['constructor']),'filterTypes':[UtilDataSource['SOURCE_TYP_OFFICIAL_ALL']],'isDefault':!![]}),new UtilDataSource[(_0x16f42d(0x2ea))](_0x16f42d(0x351),'',{'pPostLoad':this[_0x16f42d(0x352)][_0x16f42d(0x2ed)][_0x16f42d(0x385)](this[_0x16f42d(0x352)]),'filterTypes':[UtilDataSource[_0x16f42d(0x2a7)]]}),new UtilDataSource['DataSourceFile'](_0x16f42d(0x2f2),{'pPostLoad':this[_0x16f42d(0x352)][_0x16f42d(0x2ed)]['bind'](this['constructor']),'filterTypes':[UtilDataSource[_0x16f42d(0x2a7)]]}),...(await Vetools[_0x16f42d(0x34e)](_0x16f42d(0x35e),_0x16f42d(0x25c)))[_0x16f42d(0x2a1)](({name:_0x3fa43a,url:_0x401925})=>new UtilDataSource[(_0x16f42d(0x2ea))](_0x3fa43a,_0x401925,{'pPostLoad':this[_0x16f42d(0x352)][_0x16f42d(0x2ed)][_0x16f42d(0x385)](this[_0x16f42d(0x352)]),'filterTypes':[UtilDataSource[_0x16f42d(0x307)]]}))];}['getData'](){const _0x80ca7d=_0x98c2a9;if(this[_0x80ca7d(0x23f)]&&this[_0x80ca7d(0x23f)]['isRadio']!==!!this[_0x80ca7d(0x23d)])this[_0x80ca7d(0x23f)]=null;this['_cachedData']=this[_0x80ca7d(0x23f)]||{'titleButtonRun':this[_0x80ca7d(0x36b)],'titleSearch':this[_0x80ca7d(0x398)],'rows':this[_0x80ca7d(0x228)][_0x80ca7d(0x31a)]((_0x5304c2,_0x369ecd)=>SortUtil[_0x80ca7d(0x28a)](_0x5304c2[_0x80ca7d(0x386)],_0x369ecd[_0x80ca7d(0x386)])||SortUtil[_0x80ca7d(0x28a)](Parser[_0x80ca7d(0x30d)](_0x5304c2[_0x80ca7d(0x1fc)]||SRC_PHB),Parser['sourceJsonToFull'](_0x369ecd[_0x80ca7d(0x1fc)]||SRC_PHB)))[_0x80ca7d(0x2a1)]((_0x44bd18,_0x1bacf1)=>{const _0x39df05=_0x80ca7d;return this[_0x39df05(0x22c)][_0x39df05(0x352)][_0x39df05(0x25f)](_0x44bd18),{'name':_0x44bd18[_0x39df05(0x386)],'source':_0x44bd18['source'],'sourceShort':Parser[_0x39df05(0x2b5)](_0x44bd18['source']),'sourceLong':Parser['sourceJsonToFull'](_0x44bd18[_0x39df05(0x1fc)]),'sourceClassName':Parser[_0x39df05(0x2ee)](_0x44bd18[_0x39df05(0x1fc)]),'ix':_0x1bacf1,'disabled':!_0x44bd18['classFeatures'],'subRows':(_0x44bd18[_0x39df05(0x301)]||[])['map']((_0x5e9a75,_0x330b65)=>({'name':_0x5e9a75[_0x39df05(0x386)],'source':_0x5e9a75[_0x39df05(0x1fc)]||_0x44bd18[_0x39df05(0x1fc)],'sourceShort':Parser[_0x39df05(0x2b5)](_0x5e9a75[_0x39df05(0x1fc)]||_0x44bd18[_0x39df05(0x1fc)]),'sourceLong':Parser[_0x39df05(0x30d)](_0x5e9a75[_0x39df05(0x1fc)]||_0x44bd18[_0x39df05(0x1fc)]),'sourceClassName':Parser[_0x39df05(0x2ee)](_0x5e9a75['source']||_0x44bd18['source']),'ixSub':_0x330b65}))};})};if(this['_actor'])this[_0x80ca7d(0x23f)][_0x80ca7d(0x395)]=!![];return this[_0x80ca7d(0x23f)];}['_activateListeners_initRunButton'](){const _0x70c78e=_0x98c2a9;this[_0x70c78e(0x312)][_0x70c78e(0x204)](async()=>{const _0x4c287d=_0x70c78e;if(!this[_0x4c287d(0x231)])return;const _0x5ee8a4=this[_0x4c287d(0x23d)]?this[_0x4c287d(0x231)][_0x4c287d(0x24b)][_0x4c287d(0x2ae)](_0x15bc13=>_0x15bc13[_0x4c287d(0x339)]['tglSel']&&_0x15bc13['data'][_0x4c287d(0x38b)][_0x4c287d(0x274)][_0x4c287d(0x25e)](_0x4c287d(0x2fd)))['map'](_0x56b8cc=>({'ix':_0x56b8cc[_0x4c287d(0x268)]['ix'],'ixSub':_0x56b8cc[_0x4c287d(0x268)][_0x4c287d(0x324)]})):this[_0x4c287d(0x231)]['items'][_0x4c287d(0x2ae)](_0x322752=>_0x322752[_0x4c287d(0x339)][_0x4c287d(0x278)][_0x4c287d(0x2b6)])[_0x4c287d(0x2a1)](_0x51c1ad=>({'ix':_0x51c1ad[_0x4c287d(0x268)]['ix'],'ixSub':_0x51c1ad[_0x4c287d(0x268)][_0x4c287d(0x324)]}));if(!_0x5ee8a4['length'])return ui[_0x4c287d(0x2d2)][_0x4c287d(0x3a9)](_0x4c287d(0x348));this[_0x4c287d(0x393)](),this[_0x4c287d(0x33c)]();const _0x16ffb1=_0x5ee8a4['map'](({ix:_0x388287,ixSub:_0x18a4f1})=>{const _0x68ed37=_0x4c287d,_0x32e7d5=MiscUtil[_0x68ed37(0x2fa)](this['_content'][_0x388287]);return{'ix':_0x388287,'cls':_0x32e7d5,'ixSub':_0x18a4f1,'sc':_0x18a4f1!=null?_0x32e7d5[_0x68ed37(0x301)][_0x18a4f1]:null};});_0x16ffb1[_0x4c287d(0x2ae)](_0x48ce3e=>!_0x48ce3e['sc'])[_0x4c287d(0x2e8)](_0x437773=>_0x437773['cls']['subclasses']=[]),_0x16ffb1['sort']((_0x259c8,_0x13b10f)=>!!_0x259c8['sc']-!!_0x13b10f['sc']);const _0x3f79ba=[],_0xd04660=[];_0x16ffb1[_0x4c287d(0x2e8)](_0x430676=>{const _0x54e899=_0x4c287d;if(_0x430676['sc']){const _0x583631=_0x3f79ba[_0x54e899(0x360)](_0x1d168f=>_0x1d168f[_0x54e899(0x386)][_0x54e899(0x20a)]()===_0x430676['sc']['className'][_0x54e899(0x20a)]()&&_0x1d168f['source']['toLowerCase']()===_0x430676['sc']['classSource'][_0x54e899(0x20a)]());if(_0x583631)_0x583631[_0x54e899(0x301)][_0x54e899(0x330)](_0x430676['sc']);else _0xd04660[_0x54e899(0x330)]({'cls':_0x430676[_0x54e899(0x2b2)],'sc':_0x430676['sc']});}else _0x3f79ba['push'](_0x430676['cls']);});const _0x5ef713=[..._0x3f79ba[_0x4c287d(0x2a1)](_0x19b342=>{const _0x54f742=_0x4c287d;return new Util[(_0x54f742(0x389))](_0x19b342[_0x54f742(0x386)]+'\x20('+Parser[_0x54f742(0x2b5)](_0x19b342[_0x54f742(0x1fc)])+')',()=>this['pImportClass'](_0x19b342));}),..._0xd04660[_0x4c287d(0x2a1)](({cls:_0x4994a5,sc:_0xffd3a9})=>{const _0x222eca=_0x4c287d;return new Util[(_0x222eca(0x389))](_0xffd3a9[_0x222eca(0x386)]+'\x20('+Parser[_0x222eca(0x2b5)](_0xffd3a9[_0x222eca(0x1fc)])+')',()=>this[_0x222eca(0x380)](_0x4994a5,_0xffd3a9));})];await UtilApplications[_0x4c287d(0x32e)](_0x5ef713);if(!this[_0x4c287d(0x23d)])game[this[_0x4c287d(0x226)]][_0x4c287d(0x3b8)]();this['_$cbAll'][_0x4c287d(0x32f)](_0x4c287d(0x2b6),![])[_0x4c287d(0x3ac)]();});}[_0x98c2a9(0x319)](){const _0x32b045=_0x98c2a9;this[_0x32b045(0x231)]=new List({'$iptSearch':this['_$iptSearch'],'$wrpList':this[_0x32b045(0x36f)],'fnSort':(_0x160043,_0x157caf,_0x2ec001)=>{const _0x2ec47a=_0x32b045;if(_0x2ec001[_0x2ec47a(0x27d)]==='desc'&&_0x160043[_0x2ec47a(0x268)]['ix']===_0x157caf['values']['ix']&&(_0x160043['values'][_0x2ec47a(0x324)]!=null||_0x157caf[_0x2ec47a(0x268)]['ixSub']!=null))return _0x160043['values'][_0x2ec47a(0x324)]!=null?-0x1:0x1;return SortUtil[_0x2ec47a(0x28a)](_0x160043[_0x2ec47a(0x268)][_0x2ec47a(0x3b4)],_0x157caf[_0x2ec47a(0x268)]['sortName']);}}),SortUtil[_0x32b045(0x2ec)](this[_0x32b045(0x256)],this[_0x32b045(0x231)]);const _0x40fdcd=this[_0x32b045(0x23f)][_0x32b045(0x279)][_0x32b045(0x2a1)](_0x287a13=>{const _0x3030a0=_0x32b045,_0x3159ee={..._0x287a13};delete _0x3159ee[_0x3030a0(0x2c3)];const _0x2482e1=_0x287a13[_0x3030a0(0x2c3)][_0x3030a0(0x2a1)](_0x25c5f2=>({..._0x25c5f2,'ix':_0x287a13['ix'],'className':_0x287a13['name'],'classSourceLong':_0x287a13['sourceLong'],'classSourceClassName':_0x287a13['sourceClassName']}));return[_0x3159ee,..._0x2482e1];})[_0x32b045(0x329)]();return this['_pageFilter'][_0x32b045(0x328)]({'$iptSearch':this[_0x32b045(0x37a)],'$btnReset':this['_$btnReset'],'$btnOpen':this[_0x32b045(0x2e2)],'$btnToggleSummaryHidden':this['_$btnToggleSummary'],'$wrpMiniPills':this['_$wrpMiniPills'],'namespace':this[_0x32b045(0x33f)]()})[_0x32b045(0x2f9)](()=>{const _0x828897=_0x32b045;this['_content'][_0x828897(0x2e8)](_0x3b550c=>this[_0x828897(0x22c)][_0x828897(0x21c)](_0x3b550c));const _0x5d9ca3={'fnGetName':_0x5552a0=>_0x5552a0[_0x828897(0x386)],'fnGetValues':_0x31dec5=>{const _0x1d1713=_0x828897;return _0x31dec5[_0x1d1713(0x324)]!=null?{'ix':_0x31dec5['ix'],'ixSub':_0x31dec5[_0x1d1713(0x324)],'sortName':_0x31dec5[_0x1d1713(0x223)]+_0x1d1713(0x3ad)+_0x31dec5[_0x1d1713(0x216)]+_0x1d1713(0x371)+_0x31dec5[_0x1d1713(0x386)]+'\x20SOURCE\x20'+_0x31dec5[_0x1d1713(0x203)],'source':_0x31dec5[_0x1d1713(0x1fc)]}:{'ix':_0x31dec5['ix'],'sortName':_0x31dec5['name']+_0x1d1713(0x3ad)+_0x31dec5[_0x1d1713(0x203)]};}};this[_0x828897(0x23d)]?(_0x5d9ca3['fnGetData']=_0x3b8506=>({'tglSel':_0x3b8506['ele'][_0x828897(0x21d)][_0x828897(0x21d)]}),_0x5d9ca3[_0x828897(0x316)]=_0x398931=>{const _0xc04fcf=_0x828897;_0x398931[_0xc04fcf(0x22d)][_0xc04fcf(0x37c)]('click',()=>{const _0x6dbde9=_0xc04fcf,_0x36f9cf=_0x398931[_0x6dbde9(0x268)][_0x6dbde9(0x324)]!=null,_0x359658=_0x36f9cf?this[_0x6dbde9(0x231)][_0x6dbde9(0x24b)][_0x6dbde9(0x360)](_0xb051c7=>_0xb051c7[_0x6dbde9(0x268)]['ix']===_0x398931[_0x6dbde9(0x268)]['ix']&&_0xb051c7['values']['ixSub']==null):null,_0x808498=this[_0x6dbde9(0x231)][_0x6dbde9(0x24b)][_0x6dbde9(0x2ae)](_0x5814ea=>_0x5814ea[_0x6dbde9(0x339)][_0x6dbde9(0x38b)][_0x6dbde9(0x274)][_0x6dbde9(0x25e)](_0x6dbde9(0x2fd)));if(!_0x808498[_0x6dbde9(0x25a)]){_0x398931[_0x6dbde9(0x339)][_0x6dbde9(0x38b)][_0x6dbde9(0x274)][_0x6dbde9(0x39b)](_0x6dbde9(0x2fd)),_0x398931['ele'][_0x6dbde9(0x274)][_0x6dbde9(0x39b)](_0x6dbde9(0x317));_0x36f9cf&&(_0x359658[_0x6dbde9(0x339)]['tglSel'][_0x6dbde9(0x274)][_0x6dbde9(0x39b)](_0x6dbde9(0x2fd)),_0x359658[_0x6dbde9(0x22d)][_0x6dbde9(0x274)][_0x6dbde9(0x39b)](_0x6dbde9(0x317)));return;}if(_0x398931[_0x6dbde9(0x339)][_0x6dbde9(0x38b)]['classList'][_0x6dbde9(0x25e)]('active')){_0x398931[_0x6dbde9(0x339)][_0x6dbde9(0x38b)][_0x6dbde9(0x274)][_0x6dbde9(0x230)]('active'),_0x398931[_0x6dbde9(0x22d)][_0x6dbde9(0x274)]['remove']('list-multi-selected');_0x36f9cf?(_0x359658[_0x6dbde9(0x339)][_0x6dbde9(0x38b)][_0x6dbde9(0x274)]['remove']('active'),_0x359658[_0x6dbde9(0x22d)][_0x6dbde9(0x274)]['remove']('list-multi-selected')):_0x808498[_0x6dbde9(0x2e8)](_0x3d039d=>{const _0x27fdd4=_0x6dbde9;_0x3d039d[_0x27fdd4(0x339)]['tglSel'][_0x27fdd4(0x274)][_0x27fdd4(0x230)](_0x27fdd4(0x2fd)),_0x3d039d[_0x27fdd4(0x22d)][_0x27fdd4(0x274)]['remove']('list-multi-selected');});return;}_0x808498[_0x6dbde9(0x2e8)](_0x1fc197=>{const _0x3034e6=_0x6dbde9;_0x1fc197['data'][_0x3034e6(0x38b)]['classList'][_0x3034e6(0x230)](_0x3034e6(0x2fd)),_0x1fc197[_0x3034e6(0x22d)][_0x3034e6(0x274)][_0x3034e6(0x230)](_0x3034e6(0x317));}),_0x398931['data']['tglSel'][_0x6dbde9(0x274)][_0x6dbde9(0x39b)](_0x6dbde9(0x2fd)),_0x398931['ele'][_0x6dbde9(0x274)][_0x6dbde9(0x39b)](_0x6dbde9(0x317)),_0x36f9cf&&(_0x359658[_0x6dbde9(0x339)]['tglSel'][_0x6dbde9(0x274)][_0x6dbde9(0x39b)](_0x6dbde9(0x2fd)),_0x359658[_0x6dbde9(0x22d)][_0x6dbde9(0x274)][_0x6dbde9(0x39b)]('list-multi-selected'));});}):(_0x5d9ca3[_0x828897(0x299)]=UtilList2[_0x828897(0x1fb)],_0x5d9ca3[_0x828897(0x316)]=_0x3d0fb6=>UtilList2[_0x828897(0x222)](this[_0x828897(0x231)],_0x3d0fb6)),this['_list'][_0x828897(0x20f)](_0x40fdcd,_0x5d9ca3),this['_list']['init'](),this['_pageFilter'][_0x828897(0x1f2)][_0x828897(0x3b8)](),this['_pageFilter']['filterBox']['on'](FilterBox[_0x828897(0x3b3)],this[_0x828897(0x238)][_0x828897(0x385)](this)),this[_0x828897(0x238)]();});}['_handleFilterChange'](){const _0x314532=_0x98c2a9,_0x52ed5c=this[_0x314532(0x22c)]['filterBox'][_0x314532(0x295)]();this[_0x314532(0x231)][_0x314532(0x2ae)](_0x291bae=>{const _0x35208c=_0x314532,_0x490b39=this['_content'][_0x291bae[_0x35208c(0x268)]['ix']];if(_0x291bae[_0x35208c(0x268)][_0x35208c(0x324)]!=null){const _0x378071=_0x490b39['subclasses'][_0x291bae['values'][_0x35208c(0x324)]];return this[_0x35208c(0x22c)][_0x35208c(0x210)](_0x52ed5c,_0x490b39)&&this[_0x35208c(0x22c)][_0x35208c(0x1f2)][_0x35208c(0x210)](_0x52ed5c,_0x378071[_0x35208c(0x1fc)],_0x378071[_0x35208c(0x33b)]);}else return this['_pageFilter'][_0x35208c(0x210)](_0x52ed5c,_0x490b39);});}async[_0x98c2a9(0x296)](_0x316a2e,_0x5ee90f){const _0x2424fd=_0x98c2a9;_0x5ee90f=_0x5ee90f||{},console[_0x2424fd(0x36a)](...LGT,'Importing\x20class\x20\x22'+_0x316a2e[_0x2424fd(0x386)]+_0x2424fd(0x376)+Parser['sourceJsonToAbv'](_0x316a2e[_0x2424fd(0x1fc)])+'\x22)');if(DataConverterClass[_0x2424fd(0x1fa)](_0x316a2e))return{'imported':[],'status':UtilApplications['TASK_EXIT_COMPLETE']};if(_0x5ee90f[_0x2424fd(0x34b)])return this[_0x2424fd(0x320)](_0x316a2e,_0x5ee90f);else{if(this[_0x2424fd(0x23d)])return this['_pImportClass_pImportToActor'](_0x316a2e,_0x5ee90f);else return this[_0x2424fd(0x320)](_0x316a2e,_0x5ee90f);}}async['_pImportClass_pImportToActor'](_0x3cc120,_0x28c5cd){const _0x4d751b=_0x98c2a9;MiscUtil[_0x4d751b(0x2af)](CONFIG['DND5E'],_0x4d751b(0x277),_0x3cc120[_0x4d751b(0x386)]['toLowerCase']()[_0x4d751b(0x35c)](),{'features':{},'subclasses':{}});const _0x9024aa=new ImportListClass[(_0x4d751b(0x2df))]({'isClassImport':!![],'isCharactermancer':_0x28c5cd['isCharactermancer']});let _0x548988;!_0x3cc120[_0x4d751b(0x2e9)]&&(_0x548988=Charactermancer_Class_Util[_0x4d751b(0x24d)](_0x3cc120),_0x548988=Charactermancer_Class_Util[_0x4d751b(0x22b)](_0x548988,this['_pageFilter'],_0x28c5cd[_0x4d751b(0x240)]||this[_0x4d751b(0x22c)][_0x4d751b(0x1f2)][_0x4d751b(0x295)]()));const _0xa3614a=await this[_0x4d751b(0x358)](_0x3cc120,_0x548988,_0x9024aa,!![]);if(_0x9024aa['isCancelled'])return{'status':UtilApplications[_0x4d751b(0x217)]};await this[_0x4d751b(0x3a0)](_0xa3614a,_0x9024aa);if(_0x9024aa[_0x4d751b(0x350)])return{'status':UtilApplications['TASK_EXIT_CANCELLED']};_0x9024aa[_0x4d751b(0x394)]=Math['max'](..._0xa3614a)+0x1,_0x9024aa[_0x4d751b(0x363)]=_0x9024aa['targetLevel']-Math[_0x4d751b(0x1f5)](..._0xa3614a),_0x9024aa[_0x4d751b(0x28e)]=UtilActors[_0x4d751b(0x283)](this['_actor']),_0x9024aa['isIncludesLevelOne']=_0xa3614a['includes'](0x0),_0x9024aa['spellcastingAbility']=_0x3cc120[_0x4d751b(0x35d)],_0x9024aa[_0x4d751b(0x22a)]=await this[_0x4d751b(0x2c9)](_0x3cc120,_0x9024aa);if(_0x9024aa['isCancelled'])return{'status':UtilApplications[_0x4d751b(0x217)]};_0x9024aa[_0x4d751b(0x2d9)]=await this[_0x4d751b(0x3b2)](_0x3cc120,_0x9024aa);if(_0x9024aa['isCancelled'])return{'status':UtilApplications[_0x4d751b(0x217)]};const _0x4d3733=_0x3cc120['subclasses']?_0x3cc120[_0x4d751b(0x301)][0x0]:null,_0x573874=(_0x3cc120[_0x4d751b(0x301)]||[])['filter'](_0x424454=>_0x424454[_0x4d751b(0x35d)]||_0x424454['casterProgression']),_0x4aae26=_0x573874[0x0]||_0x4d3733,_0x51e435={'data':{}},_0x270914=await this[_0x4d751b(0x1fe)](_0x51e435,_0x3cc120,_0x4aae26,_0x9024aa);if(_0x9024aa[_0x4d751b(0x350)])return{'status':UtilApplications['TASK_EXIT_CANCELLED']};const {curLevel:_0x13dffb,existingClassItem:_0x1c0baf}=_0x270914;this['_pImportEntry_setActorFlags'](_0x51e435,_0x3cc120,_0x3cc120['subclasses'],_0x13dffb,_0x9024aa),await this['_pImportEntry_pDoUpdateCharacter'](_0x51e435,_0x3cc120,_0x4aae26,_0x13dffb,_0x1c0baf,_0x9024aa);if(_0x9024aa[_0x4d751b(0x350)])return{'status':UtilApplications[_0x4d751b(0x217)]};if(_0x3cc120[_0x4d751b(0x323)])await this[_0x4d751b(0x3b0)](_0x3cc120,null,_0x13dffb,_0x9024aa);await this[_0x4d751b(0x1ef)](_0x3cc120,_0x3cc120['subclasses'],_0x13dffb,_0x9024aa);if(_0x9024aa[_0x4d751b(0x350)])return{'status':UtilApplications[_0x4d751b(0x217)]};await this[_0x4d751b(0x2dd)](_0x3cc120,_0x548988,_0xa3614a,_0x28c5cd,_0x9024aa);if(_0x9024aa[_0x4d751b(0x350)])return{'status':UtilApplications['TASK_EXIT_CANCELLED']};await this[_0x4d751b(0x218)](_0x9024aa);if(this[_0x4d751b(0x23d)][_0x4d751b(0x219)])this['_actor'][_0x4d751b(0x2e0)][_0x4d751b(0x3b8)]();return{'status':UtilApplications[_0x4d751b(0x294)]};}async['_pGetSelectedLevelIndices'](_0xe13fed,_0x58ca81,_0x53ed22,_0x2a51e0){const _0x5bd708=_0x98c2a9;if(_0xe13fed['_foundrySelectedLevelIndices'])return _0xe13fed[_0x5bd708(0x379)];const _0x1e5a53=await Charactermancer_Class_LevelSelect[_0x5bd708(0x206)]({'features':_0x58ca81,'isSubclass':_0x2a51e0,'maxPreviousLevel':this[_0x5bd708(0x2d1)](_0xe13fed)});if(_0x1e5a53==null)return _0x53ed22[_0x5bd708(0x350)]=!![];return _0x1e5a53[_0x5bd708(0x339)];}['_pImportEntry_getApproxPreviousMaxLevel'](_0x14f2f6){const _0x583bd0=_0x98c2a9,_0x2dc0b1=this[_0x583bd0(0x1f3)](_0x14f2f6);if(!_0x2dc0b1['length'])return 0x0;return Math[_0x583bd0(0x2e6)](..._0x2dc0b1[_0x583bd0(0x2a1)](_0x219e6a=>MiscUtil[_0x583bd0(0x392)](_0x219e6a,_0x583bd0(0x339),_0x583bd0(0x31b))||0x0));}['_pImportEntry_setActorFlags'](_0x568ce,_0x2640a2,_0x14623e,_0x3e0db0,_0x3df359){const _0x2fa222=_0x98c2a9,_0x562b99={'dnd5e':{}};if(Object[_0x2fa222(0x261)](_0x562b99[_0x2fa222(0x2aa)])[_0x2fa222(0x25a)])_0x568ce['flags']=_0x562b99;}async[_0x98c2a9(0x2c9)](_0x478e58,_0x2f01fe){const _0x1a1480=_0x98c2a9,_0x30a092=MiscUtil[_0x1a1480(0x392)](this[_0x1a1480(0x23d)],_0x1a1480(0x339),_0x1a1480(0x24b))||[],_0x4835ce=_0x30a092[_0x1a1480(0x2ae)](_0x25206e=>_0x25206e['type']===_0x1a1480(0x35e));if(!_0x2f01fe[_0x1a1480(0x26e)]||!_0x2f01fe[_0x1a1480(0x383)]||!_0x4835ce[_0x1a1480(0x25a)])return Charactermancer_Class_ProficiencyImportModeSelect[_0x1a1480(0x336)];if(_0x478e58[_0x1a1480(0x3b9)]!=null)return _0x478e58[_0x1a1480(0x3b9)];const _0x4aee36=await Charactermancer_Class_ProficiencyImportModeSelect[_0x1a1480(0x206)]();if(_0x4aee36==null)_0x2f01fe[_0x1a1480(0x350)]=!![];return _0x4aee36[_0x1a1480(0x339)];}async['_pImportClass_pGetHpImportMode'](_0x4e0a2b,_0x50e338){const _0x23a5dd=_0x98c2a9;if(!Charactermancer_Class_HpIncreaseModeSelect[_0x23a5dd(0x3b6)](_0x4e0a2b))return Charactermancer_Class_HpIncreaseModeSelect['MODE_DO_NOT_INCREASE'];if(_0x4e0a2b['_foundryHpIncreaseMode']!=null)return _0x4e0a2b['_foundryHpIncreaseMode'];const _0x4934c9=await Charactermancer_Class_HpIncreaseModeSelect[_0x23a5dd(0x206)]();if(_0x4934c9==null)_0x50e338[_0x23a5dd(0x350)]=!![];if(_0x4934c9===VeCt[_0x23a5dd(0x2c4)])return Charactermancer_Class_HpIncreaseModeSelect[_0x23a5dd(0x38e)];return _0x4934c9['data'];}async[_0x98c2a9(0x320)](_0x16b727,_0x40d317){const _0x37415c=_0x98c2a9,_0xd6b8ab=this[_0x37415c(0x32c)]({'entity':_0x16b727});if(_0xd6b8ab[_0x37415c(0x35b)])return UtilApplications[_0x37415c(0x2ad)];const _0x4bad1d=await DataConverterClass[_0x37415c(0x21b)](_0x16b727,{'isAddPermission':!![],'filterValues':this['_pageFilter'][_0x37415c(0x1f2)]['getValues']()});if(_0x40d317[_0x37415c(0x34b)]){const _0x19c23a=await Item[_0x37415c(0x20b)](_0x4bad1d,{'renderSheet':!![],'temporary':!![]}),_0x58c7c5=await(_0x16b727['subclasses']||[])[_0x37415c(0x292)](_0x4e7ee9=>this[_0x37415c(0x2fe)](_0x16b727,_0x4e7ee9,_0x40d317));return{'imported':[_0x19c23a,..._0x58c7c5],'status':UtilApplications[_0x37415c(0x294)]};}else{if(this[_0x37415c(0x3a7)]){if(_0xd6b8ab[_0x37415c(0x29c)]){const _0x1e334e=await this[_0x37415c(0x31c)](_0xd6b8ab,_0x4bad1d),_0x3b8761=await(_0x16b727[_0x37415c(0x301)]||[])[_0x37415c(0x292)](_0x2ba3ff=>this[_0x37415c(0x2fe)](_0x16b727,_0x2ba3ff,_0x40d317));return{'imported':[_0x1e334e,..._0x3b8761],'status':UtilApplications[_0x37415c(0x2c5)]};}const _0x2f3d34=new Item(_0x4bad1d);await this[_0x37415c(0x3a7)][_0x37415c(0x2a3)](_0x2f3d34);const _0x5b4461=await(_0x16b727['subclasses']||[])[_0x37415c(0x292)](_0x19a4c6=>this[_0x37415c(0x2fe)](_0x16b727,_0x19a4c6,_0x40d317));return{'imported':[_0x2f3d34,..._0x5b4461],'status':UtilApplications[_0x37415c(0x294)]};}else{if(_0xd6b8ab[_0x37415c(0x29c)]){const _0x3ae248=await this[_0x37415c(0x22e)](_0xd6b8ab,_0x4bad1d),_0x3559d6=await(_0x16b727[_0x37415c(0x301)]||[])[_0x37415c(0x292)](_0x18fe84=>this[_0x37415c(0x2fe)](_0x16b727,_0x18fe84,_0x40d317));return{'imported':[_0x3ae248,..._0x3559d6],'status':UtilApplications[_0x37415c(0x2c5)]};}const _0x1b2fda=await this['_pImportEntry_pGetFolderId'](_0x16b727);if(_0x1b2fda)_0x4bad1d['folder']=_0x1b2fda;const _0xd89e10=await Item[_0x37415c(0x20b)](_0x4bad1d,{'renderSheet':![],'temporary':![]});await game[_0x37415c(0x24b)][_0x37415c(0x35f)](_0xd89e10);const _0x108443=await(_0x16b727[_0x37415c(0x301)]||[])[_0x37415c(0x292)](_0x222d31=>this[_0x37415c(0x2fe)](_0x16b727,_0x222d31,_0x40d317,{'folderId':_0x1b2fda}));return{'imported':[_0xd89e10,..._0x108443],'status':UtilApplications[_0x37415c(0x294)]};}}}async[_0x98c2a9(0x380)](_0x2919fb,_0x5940,_0x220a4e){const _0x476c5e=_0x98c2a9;_0x220a4e=_0x220a4e||{},console[_0x476c5e(0x36a)](...LGT,'Importing\x20subclass\x20\x22'+_0x5940[_0x476c5e(0x386)]+_0x476c5e(0x376)+Parser['sourceJsonToAbv'](_0x5940[_0x476c5e(0x1fc)])+'\x22)');if(DataConverterClass[_0x476c5e(0x1fa)](_0x2919fb))return{'imported':[],'status':UtilApplications[_0x476c5e(0x294)]};if(DataConverterClass[_0x476c5e(0x221)](_0x5940))return{'imported':[],'status':UtilApplications['TASK_EXIT_COMPLETE']};if(_0x220a4e[_0x476c5e(0x34b)])return this[_0x476c5e(0x2fe)](_0x2919fb,_0x5940,_0x220a4e);else{if(this['_actor'])return this[_0x476c5e(0x2d6)](_0x2919fb,_0x5940,_0x220a4e);else return this[_0x476c5e(0x2fe)](_0x2919fb,_0x5940,_0x220a4e);}}async[_0x98c2a9(0x2d6)](_0x14c52e,_0x10b503,_0x30156f){const _0x1808e3=_0x98c2a9,_0x12e7a9=new ImportListClass[(_0x1808e3(0x2df))]({'isClassImport':![],'isCharactermancer':_0x30156f[_0x1808e3(0x26b)]}),_0x41ffbc=(MiscUtil[_0x1808e3(0x392)](this[_0x1808e3(0x23d)],_0x1808e3(0x339),_0x1808e3(0x24b))||[])['filter'](_0x27880e=>_0x27880e[_0x1808e3(0x334)]==='class');if(!_0x41ffbc['length']){const _0x1a6c2a=await InputUiUtil[_0x1808e3(0x34c)]({'title':_0x1808e3(0x1f4),'htmlDescription':_0x1808e3(0x282),'textYes':_0x1808e3(0x298),'textNo':_0x1808e3(0x270)});if(_0x1a6c2a==null)return _0x12e7a9[_0x1808e3(0x350)]=!![],{'status':UtilApplications[_0x1808e3(0x217)]};if(_0x1a6c2a===!![]){const _0x2ba922=MiscUtil[_0x1808e3(0x2fa)](_0x14c52e);return _0x2ba922[_0x1808e3(0x301)]=[_0x10b503],this['pImportClass'](_0x2ba922,_0x30156f);}}let _0x5ea5c5=MiscUtil[_0x1808e3(0x2fa)](_0x10b503[_0x1808e3(0x31e)]);_0x5ea5c5=Charactermancer_Class_Util['getFilteredFeatures'](_0x5ea5c5,this[_0x1808e3(0x22c)],_0x30156f['filterValues']||this[_0x1808e3(0x22c)]['filterBox'][_0x1808e3(0x295)]());const _0x24ada0=await this['_pGetSelectedLevelIndices'](_0x14c52e,_0x5ea5c5,_0x12e7a9,!![]);if(_0x12e7a9[_0x1808e3(0x350)])return{'status':UtilApplications['TASK_EXIT_CANCELLED']};await this[_0x1808e3(0x3a0)](_0x24ada0,_0x12e7a9);if(_0x12e7a9[_0x1808e3(0x350)])return{'status':UtilApplications['TASK_EXIT_CANCELLED']};_0x12e7a9[_0x1808e3(0x394)]=Math['max'](..._0x24ada0)+0x1,_0x12e7a9[_0x1808e3(0x363)]=_0x12e7a9['targetLevel']-Math[_0x1808e3(0x1f5)](..._0x24ada0),_0x12e7a9[_0x1808e3(0x28e)]=UtilActors['getTotalClassLevels'](this['_actor']),_0x12e7a9['isIncludesLevelOne']=![],_0x12e7a9['spellcastingAbility']=_0x10b503[_0x1808e3(0x35d)]||_0x14c52e[_0x1808e3(0x35d)],_0x12e7a9[_0x1808e3(0x22a)]=await this[_0x1808e3(0x2c9)](_0x14c52e,_0x12e7a9);if(_0x12e7a9[_0x1808e3(0x350)])return{'status':UtilApplications[_0x1808e3(0x217)]};const _0x14ef8b={'data':{}},_0x38fe2a=await this[_0x1808e3(0x1fe)](_0x14ef8b,_0x14c52e,_0x10b503,_0x12e7a9);if(_0x12e7a9[_0x1808e3(0x350)])return{'status':UtilApplications[_0x1808e3(0x217)]};const {curLevel:_0x451fbd,existingClassItem:_0x271054}=_0x38fe2a;this[_0x1808e3(0x214)](_0x14ef8b,_0x14c52e,[_0x10b503],_0x451fbd,_0x12e7a9),await this[_0x1808e3(0x2b0)](_0x14ef8b,_0x14c52e,_0x10b503,_0x451fbd,_0x271054,_0x12e7a9);if(_0x12e7a9[_0x1808e3(0x350)])return{'status':UtilApplications[_0x1808e3(0x217)]};if(_0x14c52e[_0x1808e3(0x323)])await this[_0x1808e3(0x3b0)](_0x14c52e,_0x10b503,_0x451fbd,_0x12e7a9);await this[_0x1808e3(0x1ef)](_0x14c52e,[_0x10b503],_0x451fbd,_0x12e7a9);if(_0x12e7a9[_0x1808e3(0x350)])return{'status':UtilApplications[_0x1808e3(0x217)]};await this[_0x1808e3(0x2dd)](_0x14c52e,_0x5ea5c5,_0x24ada0,_0x30156f,_0x12e7a9);if(_0x12e7a9['isCancelled'])return{'status':UtilApplications['TASK_EXIT_CANCELLED']};await this[_0x1808e3(0x218)](_0x12e7a9);if(this[_0x1808e3(0x23d)][_0x1808e3(0x219)])this[_0x1808e3(0x23d)]['sheet'][_0x1808e3(0x3b8)]();return{'status':UtilApplications['TASK_EXIT_COMPLETE']};}async[_0x98c2a9(0x2fe)](_0xbcf8ec,_0x2b2161,_0xda0c7a,_0x18810f){const _0x4e56fe=_0x98c2a9;_0x18810f=_0x18810f||{};const _0x1c4af0=await DataConverterClass['pGetSubclassItem'](_0xbcf8ec,_0x2b2161,{'isAddPermission':!![],'filterValues':this[_0x4e56fe(0x22c)]['filterBox']['getValues']()}),_0x1c6027=this['_getDuplicateMeta']({'name':_0x1c4af0[_0x4e56fe(0x386)],'source':_0x1c4af0[_0x4e56fe(0x339)][_0x4e56fe(0x1fc)]});if(_0x1c6027[_0x4e56fe(0x35b)])return{'status':UtilApplications['TASK_EXIT_SKIPPED_DUPLICATE']};if(_0xda0c7a[_0x4e56fe(0x34b)]){const _0x2f81b2=Item['create'](_0x1c4af0,{'renderSheet':!![],'temporary':!![]});return{'imported':_0x2f81b2,'status':UtilApplications[_0x4e56fe(0x294)]};}else{if(this['_pack']){if(_0x1c6027[_0x4e56fe(0x29c)])return this['_pImportEntry_pDoUpdateExistingPackEntity'](_0x1c6027,_0x1c4af0);const _0x164dfe=new Item(_0x1c4af0);return await this['_pack'][_0x4e56fe(0x2a3)](_0x164dfe),{'imported':_0x164dfe,'status':UtilApplications[_0x4e56fe(0x294)]};}else{if(_0x1c6027['isOverwrite'])return this['_pImportEntry_pDoUpdateExistingDirectoryEntity'](_0x1c6027,_0x1c4af0);const _0x251653=_0x18810f['folderId']||await this['_pImportEntry_pGetFolderId'](_0x2b2161);if(_0x251653)_0x1c4af0[_0x4e56fe(0x341)]=_0x251653;const _0x4e793b=await Item[_0x4e56fe(0x20b)](_0x1c4af0,{'renderSheet':![],'temporary':![]});return await game[_0x4e56fe(0x24b)][_0x4e56fe(0x35f)](_0x4e793b),{'imported':_0x4e793b,'status':UtilApplications[_0x4e56fe(0x294)]};}}}async[_0x98c2a9(0x2b0)](_0xbe1a98,_0x36a7e5,_0x4f879c,_0x49f600,_0x4f1d4a,_0x1a1d44){const _0x587fac=_0x98c2a9,_0x447cf5=MiscUtil[_0x587fac(0x392)](this[_0x587fac(0x23d)],_0x587fac(0x339),_0x587fac(0x24b))||[],_0x1514c4=_0x447cf5[_0x587fac(0x2ae)](_0x51dd4d=>_0x51dd4d[_0x587fac(0x334)]===_0x587fac(0x35e)),_0x35683e=_0x1514c4[_0x587fac(0x2ae)](_0x4b05d3=>_0x4b05d3!==_0x4f1d4a),_0x51f7ba=_0x35683e[_0x587fac(0x2a1)](_0xd87f1a=>MiscUtil[_0x587fac(0x392)](_0xd87f1a,_0x587fac(0x339),'levels')||0x0)[_0x587fac(0x32a)]((_0x246a75,_0x2d54ea)=>_0x246a75+_0x2d54ea,0x0)+(_0x1a1d44['targetLevel']||0x0);if(_0x51f7ba>0x0){const _0x1c7f9f=(_0xbe1a98[_0x587fac(0x339)][_0x587fac(0x247)]=_0xbe1a98[_0x587fac(0x339)][_0x587fac(0x247)]||{})['xp']=_0xbe1a98[_0x587fac(0x339)][_0x587fac(0x247)]['xp']||{},_0x5c663f=MiscUtil['get'](this[_0x587fac(0x23d)],'data',_0x587fac(0x339),_0x587fac(0x247),'xp',_0x587fac(0x22f))||0x0,_0x22c83d=Parser[_0x587fac(0x276)][_0x51f7ba-0x1],_0x4ac43c=Parser['LEVEL_XP_REQUIRED'][Math['min'](_0x51f7ba,0x13)];_0x5c663f<_0x22c83d?(_0x1c7f9f[_0x587fac(0x28d)]=0x0,_0x1c7f9f['value']=_0x22c83d):_0x1c7f9f[_0x587fac(0x28d)]=_0x5c663f/_0x4ac43c*0x64,_0x1c7f9f[_0x587fac(0x2e6)]=_0x4ac43c;}const _0x3fb2d3=MiscUtil[_0x587fac(0x392)](this[_0x587fac(0x23d)],'data',_0x587fac(0x339),_0x587fac(0x2a0),_0x587fac(0x30b)),_0x579456=Math[_0x587fac(0x331)]((_0x1a1d44[_0x587fac(0x394)]-0x1)/0x4)+0x2;if(_0x3fb2d3<_0x579456)(_0xbe1a98[_0x587fac(0x339)]['attributes']=_0xbe1a98[_0x587fac(0x339)][_0x587fac(0x2a0)]||{})[_0x587fac(0x30b)]=_0x579456;const {casterProgression:_0x4ae610,spellAbility:_0x4b45c6,totalSpellcastingLevels:_0x3c5d75,maxPactCasterLevel:_0x2e32ce}=Charactermancer_Class_Util[_0x587fac(0x267)](_0x36a7e5,_0x4f879c,{'targetLevel':_0x1a1d44['targetLevel'],'otherExistingClassItems':_0x35683e});if(_0x3c5d75||_0x4ae610===_0x587fac(0x325)){let _0x369f6d=![];_0xbe1a98[_0x587fac(0x339)][_0x587fac(0x3ae)]=_0xbe1a98[_0x587fac(0x339)][_0x587fac(0x3ae)]||{};const _0x47b6ad=MiscUtil['getOrSet'](_0x1a1d44[_0x587fac(0x2f4)],_0x587fac(0x339),_0x587fac(0x3ae),{});if(_0x3c5d75){const _0x33e59d=UtilActors[_0x587fac(0x244)][_0x587fac(0x280)],_0x272fc3=_0x33e59d[_0x3c5d75-0x1]||_0x33e59d['last']();_0x272fc3['forEach']((_0x2be9e3,_0x4e7405)=>{const _0x5ebbb3=_0x587fac;if(_0x2be9e3===0x0)return;const _0x5daa71=_0x5ebbb3(0x281)+(_0x4e7405+0x1),_0x2a10a6=MiscUtil[_0x5ebbb3(0x392)](this[_0x5ebbb3(0x23d)],'data',_0x5ebbb3(0x339),_0x5ebbb3(0x3ae),_0x5daa71,'max'),_0x482c5d=MiscUtil[_0x5ebbb3(0x392)](this['_actor'],'data',_0x5ebbb3(0x339),_0x5ebbb3(0x3ae),_0x5daa71,'value');if(_0x2a10a6!=null){if(_0x2a10a6<_0x2be9e3){_0x369f6d=!![];const _0x40a4a8=_0x2be9e3-_0x2a10a6;_0xbe1a98['data'][_0x5ebbb3(0x3ae)][_0x5daa71]={'max':_0x2be9e3,'value':_0x482c5d+_0x40a4a8},_0x47b6ad[_0x5daa71]={'max':_0x2be9e3,'value':_0x482c5d+_0x40a4a8};}}else _0x369f6d=!![],_0xbe1a98[_0x5ebbb3(0x339)][_0x5ebbb3(0x3ae)][_0x5daa71]={'max':_0x2be9e3,'value':_0x2be9e3},_0x47b6ad[_0x5daa71]={'max':_0x2be9e3,'value':_0x2be9e3};});}else{if(_0x4ae610===_0x587fac(0x325)){const _0x407146=MiscUtil[_0x587fac(0x392)](this[_0x587fac(0x23d)],_0x587fac(0x339),'data',_0x587fac(0x3ae),'pact',_0x587fac(0x2e6)),_0x52df6c=MiscUtil[_0x587fac(0x392)](this[_0x587fac(0x23d)],_0x587fac(0x339),_0x587fac(0x339),_0x587fac(0x3ae),_0x587fac(0x325),'value'),_0x385746=UtilActors['CASTER_TYPE_TO_PROGRESSION'][_0x587fac(0x325)][_0x2e32ce-0x1][_0x587fac(0x360)](Boolean);if(_0x407146!=null){if(_0x407146<_0x385746){_0x369f6d=!![];const _0x473a26=_0x385746-_0x407146;_0xbe1a98[_0x587fac(0x339)][_0x587fac(0x3ae)][_0x587fac(0x325)]={'max':_0x385746,'value':_0x52df6c+_0x473a26},_0x47b6ad[_0x587fac(0x325)]={'max':_0x385746,'value':_0x52df6c+_0x473a26};}}else _0x369f6d=!![],_0xbe1a98['data'][_0x587fac(0x3ae)][_0x587fac(0x325)]={'max':_0x385746,'value':_0x385746},_0x47b6ad['pact']={'max':_0x385746,'value':_0x385746};}}!_0x369f6d&&(delete _0xbe1a98['data'][_0x587fac(0x3ae)],delete _0x1a1d44[_0x587fac(0x2f4)][_0x587fac(0x339)]['spells']);}if(_0x4b45c6)(_0xbe1a98['data']['attributes']=_0xbe1a98[_0x587fac(0x339)][_0x587fac(0x2a0)]||{})['spellcasting']=_0x4b45c6;if(_0x1a1d44[_0x587fac(0x26e)]&&Charactermancer_Class_HpIncreaseModeSelect[_0x587fac(0x3b6)](_0x36a7e5)){const _0x446d92=Parser[_0x587fac(0x2ca)](Charactermancer_Util[_0x587fac(0x1f1)](this['_actor'])[_0x587fac(0x31d)]);let _0x187c1d=_0x1a1d44[_0x587fac(0x383)]?_0x36a7e5['hd'][_0x587fac(0x346)]*_0x36a7e5['hd'][_0x587fac(0x333)]+_0x446d92:0x0;const _0x176823=_0x1a1d44[_0x587fac(0x383)]?_0x1a1d44[_0x587fac(0x363)]-0x1:_0x1a1d44[_0x587fac(0x363)];switch(_0x1a1d44[_0x587fac(0x2d9)]){case Charactermancer_Class_HpIncreaseModeSelect[_0x587fac(0x33a)]:{const _0x2d0f60=Math['ceil'](_0x36a7e5['hd']['number']*((_0x36a7e5['hd'][_0x587fac(0x333)]+0x1)/0x2));_0x187c1d+=_0x176823*Math['max'](_0x2d0f60+_0x446d92,0x1);break;}case Charactermancer_Class_HpIncreaseModeSelect[_0x587fac(0x2ac)]:{for(let _0x12aae3=0x0;_0x12aae3<_0x176823;++_0x12aae3){const _0x2107b1=new Roll(_0x36a7e5['hd'][_0x587fac(0x346)]+'d'+_0x36a7e5['hd'][_0x587fac(0x333)]+_0x587fac(0x2fb)+_0x446d92);_0x2107b1[_0x587fac(0x32d)](),_0x187c1d+=Math[_0x587fac(0x2e6)](_0x2107b1[_0x587fac(0x36c)],0x1),await _0x2107b1[_0x587fac(0x391)]({'flavor':_0x587fac(0x245),'speaker':{'actor':this['_actor']['id'],'alias':this[_0x587fac(0x23d)]['name'],'scene':null,'token':null}});}break;}case Charactermancer_Class_HpIncreaseModeSelect[_0x587fac(0x38e)]:{_0x187c1d=0x0;break;}default:throw new Error(_0x587fac(0x321)+_0x1a1d44['hpIncreaseMode']+'\x22');}if(_0x187c1d)switch(_0x1a1d44[_0x587fac(0x22a)]){case Charactermancer_Class_ProficiencyImportModeSelect[_0x587fac(0x2c2)]:{const _0x5bc417=(this[_0x587fac(0x23d)]?.['data']?.[_0x587fac(0x339)]?.[_0x587fac(0x2a0)]?.['hp']?.['value']||0x0)+_0x187c1d,_0x257a4a=(this[_0x587fac(0x23d)]?.[_0x587fac(0x339)]?.[_0x587fac(0x339)]?.['attributes']?.['hp']?.[_0x587fac(0x2e6)]||0x0)+_0x187c1d;MiscUtil[_0x587fac(0x2d4)](_0xbe1a98,_0x587fac(0x339),_0x587fac(0x2a0),'hp',_0x587fac(0x22f),_0x5bc417),MiscUtil['set'](_0xbe1a98,_0x587fac(0x339),_0x587fac(0x2a0),'hp',_0x587fac(0x2e6),_0x257a4a);break;}case Charactermancer_Class_ProficiencyImportModeSelect[_0x587fac(0x336)]:{const _0x182e4f=(_0x1a1d44[_0x587fac(0x383)]?0x0:this[_0x587fac(0x23d)]?.[_0x587fac(0x339)]?.['data']?.[_0x587fac(0x2a0)]?.['hp']?.[_0x587fac(0x22f)]||0x0)+_0x187c1d,_0xb8cdec=(_0x1a1d44['isIncludesLevelOne']?0x0:this[_0x587fac(0x23d)]?.[_0x587fac(0x339)]?.[_0x587fac(0x339)]?.['attributes']?.['hp']?.['max']||0x0)+_0x187c1d;MiscUtil[_0x587fac(0x2d4)](_0xbe1a98,'data',_0x587fac(0x2a0),'hp',_0x587fac(0x22f),_0x182e4f),MiscUtil[_0x587fac(0x2d4)](_0xbe1a98,_0x587fac(0x339),_0x587fac(0x2a0),'hp',_0x587fac(0x2e6),_0xb8cdec);break;}case Charactermancer_Class_ProficiencyImportModeSelect[_0x587fac(0x367)]:break;default:throw new Error(_0x587fac(0x309)+_0x1a1d44[_0x587fac(0x22a)]+'\x22');}}await DataConverter[_0x587fac(0x3b1)](MiscUtil[_0x587fac(0x392)](this['_actor'],_0x587fac(0x339),_0x587fac(0x339),_0x587fac(0x1ff),'languages'),_0x36a7e5[_0x587fac(0x347)],_0xbe1a98[_0x587fac(0x339)],_0x1a1d44);if(_0x1a1d44[_0x587fac(0x350)])return;if(Object['keys'](_0xbe1a98['data'])[_0x587fac(0x25a)])await this[_0x587fac(0x23d)][_0x587fac(0x27f)](_0xbe1a98);}async[_0x98c2a9(0x30e)](_0x16bd1f,_0x209259,_0x1dca41,_0x58b9df){const _0x16090e=_0x98c2a9,_0x265894={'chosenProficiencies':{}};_0x265894['chosenProficiencies']=await this['_pImportEntry_pDoUpdateCharacter_pPopulateProficienciesFrom'](_0x16bd1f,_0x209259[_0x16090e(0x23c)],_0x209259[_0x16090e(0x36e)],Charactermancer_Class_ProficiencyImportModeSelect[_0x16090e(0x336)],_0x58b9df);if(_0x58b9df[_0x16090e(0x350)])return;await this[_0x16090e(0x2a5)](_0x209259,_0x58b9df);if(_0x58b9df[_0x16090e(0x350)])return;return _0x265894;}async[_0x98c2a9(0x2d3)](_0x41cde2,_0x484767,_0x121b29,_0x370bae,_0x53faf3){const _0x18cc8e=_0x98c2a9,_0x36b382={'skills':{}};if(_0x484767?.[_0x18cc8e(0x251)]){const _0x35026f=await DataConverter[_0x18cc8e(0x314)](MiscUtil[_0x18cc8e(0x392)](this[_0x18cc8e(0x23d)],_0x18cc8e(0x339),'data',_0x18cc8e(0x251)),_0x484767[_0x18cc8e(0x251)],_0x41cde2['data'],_0x53faf3);if(_0x53faf3[_0x18cc8e(0x350)])return _0x36b382;_0x36b382[_0x18cc8e(0x251)]=_0x35026f;}const _0x2495be=await Charactermancer_Class_StartingProficiencies[_0x18cc8e(0x206)]({'mode':_0x370bae,'primaryProficiencies':_0x370bae===Charactermancer_Class_ProficiencyImportModeSelect[_0x18cc8e(0x336)]?_0x484767:null,'multiclassProficiencies':_0x370bae===Charactermancer_Class_ProficiencyImportModeSelect[_0x18cc8e(0x2c2)]?_0x484767:null,'savingThrowsProficiencies':_0x121b29,'existingProficienciesFvttArmor':MiscUtil[_0x18cc8e(0x392)](this[_0x18cc8e(0x23d)],_0x18cc8e(0x339),_0x18cc8e(0x339),_0x18cc8e(0x1ff),_0x18cc8e(0x24c)),'existingProficienciesFvttWeapons':MiscUtil[_0x18cc8e(0x392)](this[_0x18cc8e(0x23d)],_0x18cc8e(0x339),_0x18cc8e(0x339),_0x18cc8e(0x1ff),_0x18cc8e(0x39f)),'existingProficienciesFvttTools':MiscUtil[_0x18cc8e(0x392)](this[_0x18cc8e(0x23d)],_0x18cc8e(0x339),_0x18cc8e(0x339),_0x18cc8e(0x1ff),_0x18cc8e(0x39d)),'existingProficienciesFvttSavingThrows':Charactermancer_Class_StartingProficiencies[_0x18cc8e(0x355)](this[_0x18cc8e(0x23d)])});if(_0x2495be==null)return _0x53faf3[_0x18cc8e(0x350)]=!![];if(_0x2495be===VeCt[_0x18cc8e(0x2c4)])return;return Charactermancer_Class_StartingProficiencies[_0x18cc8e(0x27a)](_0x41cde2,_0x2495be),_0x36b382;}async[_0x98c2a9(0x21f)](_0x5a65e6,_0x3e8a27,_0x534437,_0x45444a){const _0x1e4e59=_0x98c2a9,_0x5c27aa={'chosenProficiencies':{}};if(_0x3e8a27[_0x1e4e59(0x297)]&&_0x3e8a27[_0x1e4e59(0x297)]['proficienciesGained']){_0x5c27aa['chosenProficiencies']=await this[_0x1e4e59(0x2d3)](_0x5a65e6,_0x3e8a27[_0x1e4e59(0x297)]['proficienciesGained'],null,Charactermancer_Class_ProficiencyImportModeSelect[_0x1e4e59(0x2c2)],_0x45444a);if(_0x45444a[_0x1e4e59(0x350)])return;}return _0x5c27aa;}[_0x98c2a9(0x1f3)](_0x12151d){return Charactermancer_Class_Util['getExistingClassItems'](this['_actor'],_0x12151d);}async['_pImportEntry_pGetCurLevelFillClassData'](_0x238497,_0x1d4203,_0x5b3e8c,_0x512df0){const _0xa6a6f4=_0x98c2a9,_0x41a0b9={'curLevel':0x0,'existingClassItem':null};let _0x2cd741={};if(_0x512df0[_0xa6a6f4(0x26e)]&&_0x512df0['isIncludesLevelOne'])switch(_0x512df0[_0xa6a6f4(0x22a)]){case Charactermancer_Class_ProficiencyImportModeSelect[_0xa6a6f4(0x2c2)]:{_0x2cd741=await this[_0xa6a6f4(0x21f)](_0x238497,_0x1d4203,_0x5b3e8c,_0x512df0);break;}case Charactermancer_Class_ProficiencyImportModeSelect['MODE_PRIMARY']:{_0x2cd741=await this['_pImportEntry_pDoUpdateCharacter_pPopulateLevelOneProficienciesAndEquipment'](_0x238497,_0x1d4203,_0x5b3e8c,_0x512df0);if(_0x512df0['isCancelled'])return;break;}case Charactermancer_Class_ProficiencyImportModeSelect[_0xa6a6f4(0x367)]:{break;}default:throw new Error(_0xa6a6f4(0x309)+_0x512df0[_0xa6a6f4(0x22a)]+'\x22');}let _0x1bef43=await DataConverterClass[_0xa6a6f4(0x2f7)](_0x1d4203,_0x5b3e8c);if(Config[_0xa6a6f4(0x392)](_0xa6a6f4(0x3af),'isImportDescription')&&_0x1d4203[_0xa6a6f4(0x288)]&&_0x1d4203[_0xa6a6f4(0x288)]['length'])_0x1bef43+=Renderer[_0xa6a6f4(0x392)]()[_0xa6a6f4(0x20e)](!![])[_0xa6a6f4(0x3b8)]({'type':_0x1d4203['fluff'][0x0]['type']||_0xa6a6f4(0x2b9),'entries':_0x1d4203[_0xa6a6f4(0x288)][0x0][_0xa6a6f4(0x38d)]||[]});const _0x46c3ef=this[_0xa6a6f4(0x1f3)](_0x1d4203),_0x3c5c39=await(async()=>{const _0x58e715=_0xa6a6f4;if(!_0x46c3ef['length'])return null;if(!_0x5b3e8c&&_0x46c3ef['length']===0x1)return _0x46c3ef[0x0];if(!_0x5b3e8c)return this['_pGetUserClassItem'](_0x1d4203,_0x5b3e8c,_0x46c3ef);const _0x3e510b=_0x46c3ef[_0x58e715(0x2ae)](_0x21bfbd=>MiscUtil[_0x58e715(0x392)](_0x21bfbd,_0x58e715(0x339),_0x58e715(0x25c)));if(!_0x3e510b[_0x58e715(0x25a)]&&_0x46c3ef[_0x58e715(0x25a)]===0x1)return _0x46c3ef[0x0];if(!_0x3e510b['length'])return this[_0x58e715(0x2d8)](_0x1d4203,_0x5b3e8c,_0x46c3ef);const _0x1af1e0=_0x46c3ef[_0x58e715(0x2ae)](_0x18ded6=>(MiscUtil[_0x58e715(0x392)](_0x18ded6,'data',_0x58e715(0x25c))||'')===_0x5b3e8c[_0x58e715(0x386)]);if(!_0x1af1e0['length'])return this[_0x58e715(0x2d8)](_0x1d4203,_0x5b3e8c,_0x46c3ef);if(_0x1af1e0[_0x58e715(0x25a)]===0x1)return _0x1af1e0[0x0];return this[_0x58e715(0x2d8)](_0x1d4203,_0x5b3e8c,_0x1af1e0);})();if(_0x3c5c39){let _0x3195cd=![];const _0x38788b={'_id':_0x3c5c39[_0xa6a6f4(0x37d)]||_0x3c5c39[_0xa6a6f4(0x339)]['_id']};_0x1bef43&&!(MiscUtil[_0xa6a6f4(0x392)](_0x3c5c39,_0xa6a6f4(0x339),_0xa6a6f4(0x308),_0xa6a6f4(0x22f))||''[_0xa6a6f4(0x35c)]())&&(_0x3195cd=!![],((_0x38788b[_0xa6a6f4(0x339)]=_0x38788b[_0xa6a6f4(0x339)]||{})['description']=_0x38788b['data']['description']||{})['value']=_0x1bef43);let _0x26dbd6=MiscUtil[_0xa6a6f4(0x392)](_0x3c5c39,_0xa6a6f4(0x339),_0xa6a6f4(0x31b));_0x26dbd6&&(_0x512df0[_0xa6a6f4(0x394)]>_0x26dbd6&&(_0x3195cd=!![],(_0x38788b[_0xa6a6f4(0x339)]=_0x38788b[_0xa6a6f4(0x339)]||{})[_0xa6a6f4(0x31b)]=_0x512df0['targetLevel']));if(_0x5b3e8c&&_0x5b3e8c['name']){const _0x4b1c09=MiscUtil[_0xa6a6f4(0x392)](_0x3c5c39,_0xa6a6f4(0x339),_0xa6a6f4(0x25c));_0x4b1c09!==_0x5b3e8c[_0xa6a6f4(0x386)]&&(_0x3195cd=!![],(_0x38788b[_0xa6a6f4(0x339)]=_0x38788b['data']||{})[_0xa6a6f4(0x25c)]=_0x5b3e8c['name']);}if(_0x3195cd)_0x512df0[_0xa6a6f4(0x262)]['push'](_0x38788b);_0x41a0b9[_0xa6a6f4(0x236)]=_0x26dbd6||0x0,_0x41a0b9[_0xa6a6f4(0x387)]=_0x3c5c39;}else{const _0xfa2532=(_0x5b3e8c||{})['casterProgression']||_0x1d4203['casterProgression'],_0x5ffd49=await UtilCompendium['pGetCompendiumImage'](_0xa6a6f4(0x35e),_0x1d4203)||_0xa6a6f4(0x213)+SharedConsts[_0xa6a6f4(0x327)]+_0xa6a6f4(0x264),_0x2ad47a=_0x2cd741[_0xa6a6f4(0x338)]&&_0x2cd741[_0xa6a6f4(0x338)][_0xa6a6f4(0x251)]?Object[_0xa6a6f4(0x261)](_0x2cd741[_0xa6a6f4(0x338)][_0xa6a6f4(0x251)]):[],_0x298258={'name':UtilApplications[_0xa6a6f4(0x2ce)](DataConverter[_0xa6a6f4(0x2db)](_0x1d4203,{'isActorItem':!![]})),'type':_0xa6a6f4(0x35e),'data':{'description':{'value':_0x1bef43,'chat':'','unidentified':''},'source':DataConverter[_0xa6a6f4(0x356)](_0x1d4203),'levels':_0x512df0[_0xa6a6f4(0x394)],'subclass':_0x5b3e8c?_0x5b3e8c['name']:'','hitDice':DataConverterClass[_0xa6a6f4(0x2a4)](_0x1d4203),'hitDiceUsed':0x0,'spellcasting':UtilActors[_0xa6a6f4(0x2a2)](_0xfa2532)||_0xfa2532,'skills':{'number':_0x512df0[_0xa6a6f4(0x22a)]===Charactermancer_Class_ProficiencyImportModeSelect[_0xa6a6f4(0x2c2)]?_0x1d4203[_0xa6a6f4(0x252)]||0x0:_0x1d4203[_0xa6a6f4(0x37e)]||0x0,'value':_0x2ad47a}},'flags':this[_0xa6a6f4(0x286)](_0x1d4203,_0x5b3e8c,_0x512df0),'img':_0x5ffd49};_0x512df0[_0xa6a6f4(0x24b)][_0xa6a6f4(0x330)](_0x298258),await DataConverterClass[_0xa6a6f4(0x353)](this[_0xa6a6f4(0x23d)],_0x1d4203,_0x5b3e8c)&&_0x512df0[_0xa6a6f4(0x310)][_0xa6a6f4(0x330)](new ImportListClass[(_0xa6a6f4(0x2be))]({'actor':this[_0xa6a6f4(0x23d)],'class':_0x1d4203,'subclass':_0x5b3e8c,'itemData':_0x298258}));}if(Config['get']('importClass',_0xa6a6f4(0x205))){const _0x1349c1=MiscUtil[_0xa6a6f4(0x392)](this[_0xa6a6f4(0x23d)],_0xa6a6f4(0x339),_0xa6a6f4(0x2ab))||[],_0x3d493e=_0x1349c1['some'](_0x2a65e9=>_0x2a65e9[_0xa6a6f4(0x396)]===ImportListClass[_0xa6a6f4(0x30f)]&&(!_0x2a65e9[_0xa6a6f4(0x26a)]||/^Actor\.[^.]+$/['test'](_0x2a65e9['origin']||'')));if(!_0x3d493e){const _0x1bb031=CONST[_0xa6a6f4(0x202)][_0xa6a6f4(0x2bc)];_0x512df0[_0xa6a6f4(0x2ab)][_0xa6a6f4(0x330)](UtilActiveEffects[_0xa6a6f4(0x381)]({'key':_0xa6a6f4(0x29b),'value':'10\x20+\x20@abilities.dex.mod','mode':_0x1bb031,'priority':UtilActiveEffects[_0xa6a6f4(0x2d5)](_0x1bb031),'label':ImportListClass[_0xa6a6f4(0x30f)],'icon':_0xa6a6f4(0x21a)}));}}return _0x41a0b9;}['_getClassFlags'](_0x53a25c,_0x1490b2,_0x284e23){const _0x3ae69a=_0x98c2a9;if(_0x284e23['proficiencyImportMode']===Charactermancer_Class_ProficiencyImportModeSelect[_0x3ae69a(0x336)])return{[SharedConsts['MODULE_NAME_FAKE']]:{'isPrimaryClass':!![]}};return{};}async[_0x98c2a9(0x2d8)](_0x4ee7e9,_0x139186,_0x9f6909){const _0x5ff2cd=_0x98c2a9,_0x23ae97=''+(_0x4ee7e9['name']||'(Unnamed\x20class)')+(_0x139186?'\x20('+(_0x139186['name']||_0x5ff2cd(0x1ee))+')':''),_0x3f08ba=await InputUiUtil[_0x5ff2cd(0x397)]({'values':_0x9f6909,'placeholder':_0x5ff2cd(0x28f),'title':'Select\x20Existing\x20Feature\x20to\x20Import\x20'+_0x23ae97+_0x5ff2cd(0x2bb),'fnDisplay':_0x31cf21=>{const _0x2f780c=_0x5ff2cd;if(_0x31cf21==null)return'(Create\x20New\x20Feature)';const _0x37ead8=(MiscUtil[_0x2f780c(0x392)](_0x31cf21,'data',_0x2f780c(0x25c))||'')[_0x2f780c(0x35c)]();return''+(_0x31cf21[_0x2f780c(0x386)]||'(Unnamed\x20class)')+(_0x37ead8?':\x20'+_0x37ead8:'');},'isAllowNull':!![]});if(_0x3f08ba==null)return null;return _0x9f6909[_0x3f08ba];}async[_0x98c2a9(0x3b0)](_0x4e9079,_0x1f1a32,_0x41e6b1,_0x1bef76){const _0x35dcac=_0x98c2a9;if(_0x4e9079[_0x35dcac(0x1f6)])return;const _0x1ea199=Charactermancer_Util['getCasterProgressionMeta']({'casterProgression':DataConverterClass[_0x35dcac(0x302)](_0x4e9079['casterProgression'],_0x1f1a32?.[_0x35dcac(0x39c)]),'curLevel':_0x41e6b1,'targetLevel':_0x1bef76[_0x35dcac(0x394)],'isBreakpointsOnly':!![]});if(!_0x1ea199)return;const {spellLevelLow:_0x2b84d3,spellLevelHigh:_0x3af5ac,deltaLevels:_0x4aba44}=_0x1ea199,_0x1e83ed=await InputUiUtil['pGetUserBoolean']({'title':_0x35dcac(0x248),'htmlDescription':_0x35dcac(0x263)+(_0x4aba44===0x1?'':'s')+'\x20'+(_0x4aba44===0x1?_0x1bef76['targetLevel']:_0x41e6b1+0x1+'-'+_0x1bef76['targetLevel'])+')?</p>','textYes':_0x35dcac(0x315),'textNo':'No'});if(!_0x1e83ed)return;const _0x3fa78e=(await Vetools[_0x35dcac(0x29a)](!![]))['spell'],_0x10dfa3=Charactermancer_Class_Util[_0x35dcac(0x246)](_0x3fa78e,_0x4e9079,_0x2b84d3,_0x3af5ac);for(const _0x1ce3c3 of _0x10dfa3){const _0x58801a=UrlUtil['URL_TO_HASH_BUILDER'][UrlUtil['PG_SPELLS']](_0x1ce3c3),_0x23df0c=DataConverterSpell[_0x35dcac(0x2ef)](this['_actor'],_0x1ce3c3['name'],_0x1ce3c3[_0x35dcac(0x1fc)]);if(_0x23df0c){_0x1bef76['spellHashToItemIdMap'][_0x58801a]=_0x23df0c['_id']||_0x23df0c['data'][_0x35dcac(0x37d)];continue;}const _0x4999de=await DataConverterSpell[_0x35dcac(0x249)](_0x1ce3c3,{...UtilActors[_0x35dcac(0x326)](),'casterLevel':_0x1bef76[_0x35dcac(0x394)],'abilityAbv':_0x4e9079[_0x35dcac(0x35d)]}),_0x55a690=await this[_0x35dcac(0x23d)][_0x35dcac(0x2f8)](_0x35dcac(0x2bf),_0x4999de,{});_0x1bef76[_0x35dcac(0x271)][_0x58801a]=_0x55a690['_id']||_0x55a690['data']['_id'];}}async[_0x98c2a9(0x1ef)](_0x6c27ed,_0x1f4629,_0x370917,_0xaccb00){const _0x11696a=_0x98c2a9;if(!_0x1f4629||!_0x1f4629[_0x11696a(0x25a)])return;for(const _0x253634 of _0x1f4629){const _0x5e47be=Charactermancer_Util[_0x11696a(0x2dc)]({'casterProgression':_0x253634?.[_0x11696a(0x39c)]||_0x6c27ed[_0x11696a(0x39c)],'curLevel':_0x370917,'targetLevel':_0xaccb00['targetLevel']}),_0x405c43=await Charactermancer_AdditionalSpellsSelect[_0x11696a(0x206)]({'additionalSpells':_0x253634[_0x11696a(0x269)],'sourceHintText':_0x253634[_0x11696a(0x386)],'curLevel':_0x370917,'targetLevel':_0xaccb00[_0x11696a(0x394)],'spellLevelLow':_0x5e47be?_0x5e47be[_0x11696a(0x273)]:null,'spellLevelHigh':_0x5e47be?_0x5e47be['spellLevelHigh']:null});if(_0x405c43==null)return _0xaccb00[_0x11696a(0x350)]=!![];if(_0x405c43===VeCt[_0x11696a(0x2c4)])continue;await Charactermancer_AdditionalSpellsSelect['pApplyFormDataToActor'](this[_0x11696a(0x23d)],_0x405c43,{'abilityAbv':_0xaccb00[_0x11696a(0x35d)],'casterLevel':_0xaccb00[_0x11696a(0x394)],'hashToIdMap':_0xaccb00[_0x11696a(0x271)]});}}async[_0x98c2a9(0x2dd)](_0x596735,_0x54396f,_0x1c4358,_0x12aecd,_0x5ff4a5){const _0x4a69a0=_0x98c2a9;if(_0x596735[_0x4a69a0(0x2e9)])await this[_0x4a69a0(0x291)]({'allPreloadedFeatures':_0x596735[_0x4a69a0(0x2e9)],'importOpts':_0x12aecd,'dataBuilderOpts':_0x5ff4a5}),this[_0x4a69a0(0x28c)]({'conInitial':_0x596735[_0x4a69a0(0x2f5)],'conFinal':_0x596735[_0x4a69a0(0x1f7)],'isConPreApplied':!![],'dataBuilderOpts':_0x5ff4a5});else{const _0x5da8a0=_0x54396f[_0x4a69a0(0x2ae)](_0x2b69f1=>_0x1c4358['includes'](_0x2b69f1[_0x4a69a0(0x365)]-0x1)),_0x554da6=await this[_0x4a69a0(0x359)](_0x5da8a0,_0x12aecd,_0x5ff4a5);if(_0x5ff4a5[_0x4a69a0(0x350)])return;this[_0x4a69a0(0x28c)]({'conInitial':_0x554da6[_0x4a69a0(0x258)],'conFinal':_0x554da6[_0x4a69a0(0x24a)],'dataBuilderOpts':_0x5ff4a5});}}async['_pImportEntry_pFillItemArrayPredefinedFeatures']({allPreloadedFeatures:_0x354955,importOpts:_0x1a9138,dataBuilderOpts:_0x3ab094}){const _0x1f3e18=_0x98c2a9,_0x5b6149=DataConverterSpell['doHookSpellLinkRender'][_0x1f3e18(0x385)](null,this[_0x1f3e18(0x23d)]['id'],_0x3ab094[_0x1f3e18(0x271)]);await Renderer[_0x1f3e18(0x392)]()[_0x1f3e18(0x37b)]({'entryType':'link','pluginType':'*','fnPlugin':_0x5b6149,'pFn':async()=>{const _0x2853a6=_0x1f3e18;for(const _0x2ae616 of _0x354955){await this['_pAddLoadedFeature'](_0x2ae616,_0x3ab094);if(_0x3ab094[_0x2853a6(0x350)])return;}}});}async['_pImportEntry_pFillItemArrayFeatures'](_0x4838aa,_0x3c9750,_0x5b5b1c){const _0x382250=_0x98c2a9,_0x5e7723=Charactermancer_Util[_0x382250(0x1f1)](this[_0x382250(0x23d)])[_0x382250(0x31d)],_0x24c425=DataConverterSpell[_0x382250(0x243)][_0x382250(0x385)](null,this['_actor']['id'],_0x5b5b1c['spellHashToItemIdMap']);await Renderer['get']()[_0x382250(0x37b)]({'entryType':'link','pluginType':'*','fnPlugin':_0x24c425,'pFn':async()=>{const _0x4c62e5=_0x382250;_0x4838aa=Charactermancer_Class_Util[_0x4c62e5(0x39e)](_0x4838aa),Charactermancer_Class_Util[_0x4c62e5(0x2ff)](_0x4838aa,this['_pageFilter'],_0x3c9750[_0x4c62e5(0x240)]||this['_pageFilter']['filterBox'][_0x4c62e5(0x295)]());const _0x515a57=new Charactermancer_Class_Util[(_0x4c62e5(0x250))](this[_0x4c62e5(0x23d)]),_0xbe480=Charactermancer_Class_Util[_0x4c62e5(0x285)](_0x4838aa);for(const _0x2c5793 of _0xbe480){const {topLevelFeature:_0x2800a4,optionsSets:_0x24e149}=_0x2c5793,_0x325677=_0x2800a4['name'][_0x4c62e5(0x20a)]();if(_0x325677==='ability\x20score\x20improvement'){await this[_0x4c62e5(0x38f)](_0x2800a4,_0x5b5b1c);if(_0x5b5b1c[_0x4c62e5(0x350)])return;continue;}for(const _0x6829c7 of _0x24e149){const _0x26df23=await Charactermancer_Class_FeatureOptionsSelect[_0x4c62e5(0x206)]({'actor':this[_0x4c62e5(0x23d)],'optionsSet':_0x6829c7,'level':_0x2800a4[_0x4c62e5(0x365)],'existingFeatureChecker':_0x515a57});if(!_0x26df23)return _0x5b5b1c['isCancelled']=!![];if(_0x26df23===VeCt['SYM_UI_SKIP'])continue;for(const _0x277620 of _0x26df23[_0x4c62e5(0x339)]?.[_0x4c62e5(0x275)]){await this[_0x4c62e5(0x208)](_0x277620,_0x5b5b1c,_0x515a57);if(_0x5b5b1c[_0x4c62e5(0x350)])return;}Charactermancer_Class_FeatureOptionsSelect['doApplyProficiencyFormDataToActorUpdate'](this[_0x4c62e5(0x23d)],_0x5b5b1c[_0x4c62e5(0x318)],_0x26df23);}}}});if(_0x5b5b1c['isCancelled'])return;const _0x451034=Charactermancer_Util[_0x382250(0x1f1)](this[_0x382250(0x23d)])[_0x382250(0x31d)];return{'conInitial':_0x5e7723,'conFinal':_0x451034};}[_0x98c2a9(0x28c)]({conInitial:_0x2e6993,conFinal:_0x371eb3,dataBuilderOpts:_0x153e7a,isConPreApplied:_0x3d7ac8}){const _0xd798e2=_0x98c2a9;if(_0x2e6993==null||_0x371eb3==null||_0x371eb3===_0x2e6993)return;const _0x4dcdc4=Parser[_0xd798e2(0x2ca)](_0x2e6993),_0x405f13=Parser[_0xd798e2(0x2ca)](_0x371eb3),_0x67e667=(_0x153e7a[_0xd798e2(0x28e)]+(_0x3d7ac8?0x0:_0x153e7a[_0xd798e2(0x363)]))*(_0x405f13-_0x4dcdc4),_0x178b25=(this[_0xd798e2(0x23d)]?.[_0xd798e2(0x339)]?.['data']?.[_0xd798e2(0x2a0)]?.['hp']?.[_0xd798e2(0x22f)]||0x0)+_0x67e667,_0x27918a=(this['_actor']?.[_0xd798e2(0x339)]?.[_0xd798e2(0x339)]?.[_0xd798e2(0x2a0)]?.['hp']?.[_0xd798e2(0x2e6)]||0x0)+_0x67e667;MiscUtil[_0xd798e2(0x2d4)](_0x153e7a[_0xd798e2(0x318)],_0xd798e2(0x339),_0xd798e2(0x2a0),'hp','value',_0x178b25),MiscUtil[_0xd798e2(0x2d4)](_0x153e7a[_0xd798e2(0x318)],_0xd798e2(0x339),_0xd798e2(0x2a0),'hp','max',_0x27918a);}[_0x98c2a9(0x349)]({actorUpdate:_0x4ac582}){const _0x2c8f84=_0x98c2a9;_0x4ac582?.[_0x2c8f84(0x339)]?.[_0x2c8f84(0x251)]&&Object['entries'](_0x4ac582[_0x2c8f84(0x339)][_0x2c8f84(0x251)])['forEach'](([_0x1f1d9d,_0x34d7ab])=>{const _0x2548df=_0x2c8f84;_0x34d7ab[_0x2548df(0x22f)]=Math[_0x2548df(0x2e6)](this[_0x2548df(0x23d)][_0x2548df(0x339)]?.[_0x2548df(0x339)]?.['skills']?.[_0x1f1d9d]?.[_0x2548df(0x22f)],_0x34d7ab[_0x2548df(0x22f)],0x0);});}[_0x98c2a9(0x255)]({actorUpdate:_0x4d15eb}){const _0x5cca50=_0x98c2a9,_0x155732=[[_0x5cca50(0x339),'data','traits',_0x5cca50(0x2d0)],[_0x5cca50(0x339),_0x5cca50(0x339),'traits',_0x5cca50(0x39d)],[_0x5cca50(0x339),'data',_0x5cca50(0x1ff),_0x5cca50(0x39f)],[_0x5cca50(0x339),_0x5cca50(0x339),_0x5cca50(0x1ff),_0x5cca50(0x24c)]];_0x155732[_0x5cca50(0x2e8)](_0x199a79=>{const _0x403be9=_0x5cca50,_0x4a4a26=_0x199a79[_0x403be9(0x373)](0x1),_0x41c9aa=MiscUtil[_0x403be9(0x392)](this[_0x403be9(0x23d)],..._0x199a79),_0x3c535f=MiscUtil[_0x403be9(0x392)](_0x4d15eb,..._0x4a4a26);if(!_0x41c9aa&&!_0x3c535f)return;if(!_0x41c9aa&&_0x3c535f)return;if(_0x41c9aa&&!_0x3c535f)return MiscUtil['set'](_0x4d15eb,..._0x4a4a26,MiscUtil[_0x403be9(0x2fa)](_0x41c9aa));_0x41c9aa[_0x403be9(0x22f)]&&_0x3c535f[_0x403be9(0x22f)]?MiscUtil[_0x403be9(0x2d4)](_0x4d15eb,..._0x4a4a26,_0x403be9(0x22f),[...new Set([..._0x41c9aa[_0x403be9(0x22f)],..._0x3c535f['value']])]):MiscUtil[_0x403be9(0x2d4)](_0x4d15eb,..._0x4a4a26,_0x403be9(0x22f),MiscUtil[_0x403be9(0x2fa)](_0x41c9aa['value']||_0x3c535f['value']));if(_0x41c9aa[_0x403be9(0x2a8)]&&_0x41c9aa[_0x403be9(0x2a8)][_0x403be9(0x35c)]()[_0x403be9(0x25a)]&&_0x3c535f['custom']&&_0x3c535f[_0x403be9(0x2a8)][_0x403be9(0x35c)]()['length']){const _0x518d59=_0x41c9aa[_0x403be9(0x2a8)][_0x403be9(0x35c)]()[_0x403be9(0x20d)](';')[_0x403be9(0x2a1)](_0x3bea07=>_0x3bea07[_0x403be9(0x35c)]())[_0x403be9(0x2ae)](Boolean);_0x3c535f[_0x403be9(0x2a8)][_0x403be9(0x35c)]()[_0x403be9(0x20d)](';')[_0x403be9(0x2a1)](_0x5cb955=>_0x5cb955[_0x403be9(0x35c)]())[_0x403be9(0x2ae)](Boolean)['filter'](_0x59b357=>!_0x518d59['some'](_0x2c561c=>_0x2c561c['toLowerCase']()===_0x59b357[_0x403be9(0x20a)]()))[_0x403be9(0x2e8)](_0x3958c9=>_0x518d59['push'](_0x3958c9)),MiscUtil[_0x403be9(0x2d4)](_0x4d15eb,..._0x4a4a26,'custom',_0x518d59['join'](';'));}else MiscUtil['set'](_0x4d15eb,..._0x4a4a26,_0x403be9(0x2a8),_0x41c9aa['custom']||_0x3c535f[_0x403be9(0x2a8)]);});}async['_pImportEntry_pFinalise'](_0x2da2dd){const _0x1fd40e=_0x98c2a9;if(_0x2da2dd[_0x1fd40e(0x265)]?.[_0x1fd40e(0x339)]?.[_0x1fd40e(0x2c7)])MiscUtil['set'](_0x2da2dd[_0x1fd40e(0x318)],_0x1fd40e(0x339),'currency',_0x2da2dd[_0x1fd40e(0x265)][_0x1fd40e(0x339)][_0x1fd40e(0x2c7)]);Object['keys'](_0x2da2dd['actorUpdate'])['length']&&(this[_0x1fd40e(0x349)]({'actorUpdate':_0x2da2dd['actorUpdate']}),this['_doMergeExistingOtherProficiencyData']({'actorUpdate':_0x2da2dd[_0x1fd40e(0x318)]}),await this[_0x1fd40e(0x23d)][_0x1fd40e(0x27f)](_0x2da2dd[_0x1fd40e(0x318)]));const _0x85e770=[];if(_0x2da2dd[_0x1fd40e(0x24b)][_0x1fd40e(0x25a)]){const _0x54a5a3=_0x2da2dd[_0x1fd40e(0x24b)][_0x1fd40e(0x2ae)](_0x502b98=>_0x502b98[_0x1fd40e(0x334)]===_0x1fd40e(0x35e)),_0x2635af=_0x2da2dd[_0x1fd40e(0x24b)][_0x1fd40e(0x2ae)](_0x3a0ab8=>_0x3a0ab8[_0x1fd40e(0x334)]!==_0x1fd40e(0x35e));if(_0x54a5a3['length']){const _0xdedafb=await UtilActors[_0x1fd40e(0x24e)](this['_actor'],_0x54a5a3);_0x85e770['push'](..._0xdedafb);}if(_0x2635af[_0x1fd40e(0x25a)]){const _0x5cdc50=await UtilActors[_0x1fd40e(0x24e)](this[_0x1fd40e(0x23d)],_0x2635af);_0x85e770[_0x1fd40e(0x330)](..._0x5cdc50);}}_0x2da2dd[_0x1fd40e(0x262)]['length']&&await this['_actor']['updateEmbeddedEntity']('OwnedItem',_0x2da2dd[_0x1fd40e(0x262)]);await Charactermancer_StartingEquipment[_0x1fd40e(0x211)](this[_0x1fd40e(0x23d)],_0x2da2dd[_0x1fd40e(0x265)]);_0x2da2dd[_0x1fd40e(0x2ab)]['length']&&await UtilActors['pAddActorEffects'](this['_actor'],_0x2da2dd[_0x1fd40e(0x2ab)]);const _0x5a45d1=[];if(_0x2da2dd[_0x1fd40e(0x1f9)][_0x1fd40e(0x25a)])for(const _0x1821ac of _0x2da2dd[_0x1fd40e(0x1f9)]){const _0x4c49e1=DataConverter[_0x1fd40e(0x201)](_0x85e770,_0x1821ac[_0x1fd40e(0x2e7)]);if(!_0x4c49e1)continue;_0x5a45d1[_0x1fd40e(0x330)](...DataConverterClass['getItemEffects'](this[_0x1fd40e(0x23d)],_0x1821ac['effect'],_0x4c49e1[_0x1fd40e(0x361)]));}if(_0x2da2dd[_0x1fd40e(0x310)][_0x1fd40e(0x25a)])for(const _0xfa9bb4 of _0x2da2dd['classSubclassRequiresEffects']){const _0x501e5c=DataConverter['getImportedEmbed'](_0x85e770,_0xfa9bb4['itemData']);if(!_0x501e5c)continue;_0x5a45d1[_0x1fd40e(0x330)](...await DataConverterClass[_0x1fd40e(0x2b7)](this[_0x1fd40e(0x23d)],_0xfa9bb4[_0x1fd40e(0x35e)],_0xfa9bb4[_0x1fd40e(0x25c)],_0x501e5c[_0x1fd40e(0x361)]));}if(_0x2da2dd['loadedsRequiresEffects'][_0x1fd40e(0x25a)])for(const _0x15d24c of _0x2da2dd[_0x1fd40e(0x29f)]){const _0x1072a0=DataConverter[_0x1fd40e(0x201)](_0x85e770,_0x15d24c[_0x1fd40e(0x2e7)]);if(!_0x1072a0)continue;_0x5a45d1[_0x1fd40e(0x330)](...await DataConverterClass[_0x1fd40e(0x32b)](this[_0x1fd40e(0x23d)],_0x15d24c[_0x1fd40e(0x290)],_0x1072a0[_0x1fd40e(0x361)]));}if(_0x2da2dd['optionalfeaturesRequiresEffects'][_0x1fd40e(0x25a)])for(const _0x2bdec3 of _0x2da2dd[_0x1fd40e(0x366)]){const _0x22d77c=DataConverter['getImportedEmbed'](_0x85e770,_0x2bdec3[_0x1fd40e(0x2e7)]);if(!_0x22d77c)continue;_0x5a45d1[_0x1fd40e(0x330)](...await DataConverterOptionalfeature[_0x1fd40e(0x212)](this[_0x1fd40e(0x23d)],_0x2bdec3[_0x1fd40e(0x2c1)],_0x22d77c['entity']));}if(_0x5a45d1[_0x1fd40e(0x25a)])await UtilActors[_0x1fd40e(0x2b4)](this[_0x1fd40e(0x23d)],_0x5a45d1);Util[_0x1fd40e(0x26c)](_0x2da2dd[_0x1fd40e(0x2f4)]);if(Object[_0x1fd40e(0x261)](_0x2da2dd['postItemActorUpdate'])[_0x1fd40e(0x25a)])await this[_0x1fd40e(0x23d)][_0x1fd40e(0x27f)](_0x2da2dd[_0x1fd40e(0x2f4)]);}async[_0x98c2a9(0x208)](_0x2ed08f,_0x490f34,_0x4bffac){const _0x10abac=_0x98c2a9,_0x2ca001=_0x2ed08f[_0x10abac(0x361)];if(_0x4bffac)_0x4bffac['addImportFeature'](_0x2ed08f[_0x10abac(0x2ba)],_0x2ed08f[_0x10abac(0x1fc)],_0x2ed08f['hash']);let _0x123283;switch(_0x2ed08f[_0x10abac(0x334)]){case'classFeature':case _0x10abac(0x322):{_0x123283=await DataConverterClass[_0x10abac(0x209)](_0x2ed08f,this[_0x10abac(0x23d)]),_0x490f34[_0x10abac(0x24b)]['push'](_0x123283),_0x490f34['items'][_0x10abac(0x330)](...await DataConverterClass[_0x10abac(0x241)](this['_actor'],_0x2ed08f)),await DataConverterClass['pMutActorUpdateClassSubclassFeatureItem'](this['_actor'],_0x490f34[_0x10abac(0x318)],_0x2ed08f,_0x490f34),MiscUtil['set'](_0x123283[_0x10abac(0x339)],_0x10abac(0x30a),SharedConsts['MODULE_NAME_FAKE'],_0x10abac(0x3a6),_0x2ed08f[_0x10abac(0x334)]),await this[_0x10abac(0x374)](_0x2ed08f,_0x490f34,_0x4bffac,_0x123283);break;}case _0x10abac(0x2c1):{await this[_0x10abac(0x20c)]({'entity':_0x2ca001,'dataBuilderOpts':_0x490f34,'spellHashToItemPosMap':_0x490f34['spellHashToItemIdMap']});if(_0x490f34['isCancelled'])return;const _0x4e5826=await DataConverterOptionalfeature[_0x10abac(0x35a)](_0x2ca001,{'isActorItem':!![]});_0x123283=_0x4e5826,_0x490f34[_0x10abac(0x24b)]['push'](_0x4e5826),await DataConverterOptionalfeature[_0x10abac(0x29e)](this['_actor'],_0x490f34['actorUpdate'],_0x2ca001,_0x490f34),MiscUtil[_0x10abac(0x2d4)](_0x4e5826[_0x10abac(0x339)],_0x10abac(0x30a),SharedConsts['MODULE_NAME_FAKE'],'dataType',_0x2ca001['_ancestorType']||_0x10abac(0x2f1)),await this['_pAddLoadedFeature_pDddLinkedActiveEffects_optionalfeature'](_0x2ed08f,_0x490f34,_0x4bffac,_0x123283);break;}default:throw new Error(_0x10abac(0x26d)+_0x2ed08f[_0x10abac(0x334)]+'\x22');}const _0x53e638=_0x2ca001[_0x10abac(0x223)]||_0x2ca001['_ancestorClassName']||_0x2ed08f[_0x10abac(0x223)],_0x40a02c=_0x2ca001[_0x10abac(0x27c)]||_0x2ca001[_0x10abac(0x2fc)]||_0x2ed08f[_0x10abac(0x27c)];if(_0x53e638)MiscUtil['set'](_0x123283[_0x10abac(0x339)],'flags',SharedConsts['MODULE_NAME_FAKE'],'className',_0x53e638);if(_0x40a02c)MiscUtil[_0x10abac(0x2d4)](_0x123283[_0x10abac(0x339)],_0x10abac(0x30a),SharedConsts[_0x10abac(0x287)],'subclassName',_0x40a02c);}async[_0x98c2a9(0x374)](_0xb8d4be,_0x5465e7,_0x614d06,_0x3dae4a){const _0x1e5a75=_0x98c2a9,{entity:_0x2629d0}=_0xb8d4be,_0x502b7c=(_0x2629d0[_0x1e5a75(0x386)]||'')['toLowerCase']()[_0x1e5a75(0x35c)]();if(/^unarmored defen[sc]e/['test'](_0x502b7c)){const _0x247a30=DataConverterClass['getUnarmoredDefenseFormula'](_0x2629d0);_0x247a30&&_0x5465e7[_0x1e5a75(0x1f9)][_0x1e5a75(0x330)](new ImportListClass[(_0x1e5a75(0x34d))]({'actor':this[_0x1e5a75(0x23d)],'itemData':_0x3dae4a,'effect':{'name':'Unarmored\x20Defense','changes':[{'key':'data.attributes.ac.value','mode':_0x1e5a75(0x2bc),'value':_0x247a30}]}}));}await DataConverterClass[_0x1e5a75(0x232)](this['_actor'],_0xb8d4be)&&_0x5465e7[_0x1e5a75(0x29f)][_0x1e5a75(0x330)](new ImportListClass[(_0x1e5a75(0x2f6))]({'actor':this[_0x1e5a75(0x23d)],'loaded':_0xb8d4be,'itemData':_0x3dae4a}));}async[_0x98c2a9(0x260)](_0x485958,_0x22e916,_0x3449ad,_0xfad5a3){const _0x2525bb=_0x98c2a9,{entity:_0x351793}=_0x485958;await DataConverterOptionalfeature[_0x2525bb(0x3ab)](this[_0x2525bb(0x23d)],_0x351793)&&_0x22e916[_0x2525bb(0x366)][_0x2525bb(0x330)](new ImportListClass[(_0x2525bb(0x25b))]({'actor':this[_0x2525bb(0x23d)],'optionalfeature':_0x351793,'itemData':_0xfad5a3}));}async[_0x98c2a9(0x3a0)](_0x3709b3,_0x500602){const _0x42f836=_0x98c2a9;if(_0x3709b3[_0x42f836(0x25a)]>0x1)return;if(_0x3709b3[0x0]===0x0)return;const _0x386db6=(MiscUtil[_0x42f836(0x392)](this[_0x42f836(0x23d)],_0x42f836(0x339),_0x42f836(0x24b))||[])['filter'](_0x1c55dd=>_0x1c55dd[_0x42f836(0x334)]==='class');if(_0x386db6[_0x42f836(0x25a)])return;const _0x58ae0c=_0x3709b3[0x0]+0x1,_0x3a57eb=await InputUiUtil[_0x42f836(0x34c)]({'title':'Import\x20Lower\x20Levels?','htmlDescription':'You\x20have\x20selected\x20a\x20single\x20level\x20to\x20import\x20(level\x20'+_0x58ae0c+_0x42f836(0x34f)+(_0x58ae0c===0x2?'':'s')+'\x20'+(_0x58ae0c===0x2?'1':'1-'+(_0x58ae0c-0x1))+'\x20too?','textYes':_0x42f836(0x303)+_0x58ae0c,'textNo':'Import\x20Level\x20'+_0x58ae0c});if(_0x3a57eb==null){_0x500602[_0x42f836(0x350)]=!![];return;}if(_0x3a57eb){const _0x1846f1=_0x3709b3[0x0];for(let _0x4983ad=0x0;_0x4983ad<=_0x1846f1;++_0x4983ad){_0x3709b3[_0x4983ad]=_0x4983ad;}}}async[_0x98c2a9(0x38f)](_0x5b43c1,_0x554d4c){const _0x5e9cb5=_0x98c2a9,_0x9fc5c0=new ImportListClass[(_0x5e9cb5(0x23e))](this[_0x5e9cb5(0x23d)],_0x5b43c1,_0x554d4c);_0x9fc5c0[_0x5e9cb5(0x3b8)](!![]),await _0x9fc5c0[_0x5e9cb5(0x234)]();}async[_0x98c2a9(0x2a5)](_0x5390dd,_0x5ef122){const _0x276e87=_0x98c2a9;if(!_0x5390dd['startingEquipment'])return;const _0x1aa3bf=new Charactermancer_StartingEquipment({'actor':this[_0x276e87(0x23d)],'startingEquipment':_0x5390dd['startingEquipment'],'appSubTitle':_0x5390dd['name'],'equiSpecialSource':_0x5390dd[_0x276e87(0x1fc)],'equiSpecialPage':_0x5390dd[_0x276e87(0x2ba)]}),_0x1ea038=await _0x1aa3bf[_0x276e87(0x234)]();if(_0x1ea038==null)return _0x5ef122[_0x276e87(0x350)]=!![];if(_0x1ea038===VeCt[_0x276e87(0x2c4)])return;_0x5ef122[_0x276e87(0x265)]=_0x1ea038;}}ImportListClass[_0x98c2a9(0x30f)]=_0x98c2a9(0x28b),ImportListClass['ImportEntryOpts']=class extends ImportListCharacter[_0x98c2a9(0x2df)]{constructor(_0x593715){const _0x37a905=_0x98c2a9;super(_0x593715),_0x593715=_0x593715||{},this[_0x37a905(0x26e)]=!!_0x593715[_0x37a905(0x26e)],this[_0x37a905(0x318)]={},this[_0x37a905(0x2f4)]={},this[_0x37a905(0x262)]=[],this[_0x37a905(0x1f9)]=[],this['classSubclassRequiresEffects']=[],this[_0x37a905(0x29f)]=[],this[_0x37a905(0x366)]=[],this[_0x37a905(0x271)]={},this[_0x37a905(0x265)]=null,this[_0x37a905(0x394)]=null,this[_0x37a905(0x363)]=null,this['numLevelsPrev']=null,this[_0x37a905(0x383)]=null,this[_0x37a905(0x35d)]=null,this[_0x37a905(0x22a)]=null,this[_0x37a905(0x2d9)]=null;}},ImportListClass[_0x98c2a9(0x34d)]=class{constructor({actor:_0x10f1a5,effect:_0x32d089,itemData:_0x25369a}){const _0x340053=_0x98c2a9;this[_0x340053(0x3b5)]=_0x10f1a5,this[_0x340053(0x2c0)]=_0x32d089,this[_0x340053(0x2e7)]=_0x25369a;}},ImportListClass[_0x98c2a9(0x2be)]=class{constructor({actor:_0x1e18d9,class:_0xb005fe,subclass:_0xecdc2b,itemData:_0x5420e1}){const _0x50e2fd=_0x98c2a9;this[_0x50e2fd(0x3b5)]=_0x1e18d9,this[_0x50e2fd(0x35e)]=_0xb005fe,this[_0x50e2fd(0x25c)]=_0xecdc2b,this[_0x50e2fd(0x2e7)]=_0x5420e1;}},ImportListClass[_0x98c2a9(0x2f6)]=class{constructor({actor:_0x51208b,loaded:_0x41d725,itemData:_0x2ef78e}){const _0x57c06e=_0x98c2a9;this['actor']=_0x51208b,this[_0x57c06e(0x290)]=_0x41d725,this[_0x57c06e(0x2e7)]=_0x2ef78e;}},ImportListClass['OptionalfeatureRequiresEffects']=class{constructor({actor:_0x3aaf9c,optionalfeature:_0x1ba710,itemData:_0x5dbc73}){const _0x174c3b=_0x98c2a9;this[_0x174c3b(0x3b5)]=_0x3aaf9c,this[_0x174c3b(0x2c1)]=_0x1ba710,this['itemData']=_0x5dbc73;}},ImportListClass[_0x98c2a9(0x23e)]=class extends Application{constructor(_0x3cc577,_0x45ae83,_0x225a15){const _0x1bd29f=_0x98c2a9;super({'title':_0x1bd29f(0x229)+_0x45ae83['level'],'template':SharedConsts[_0x1bd29f(0x342)]+_0x1bd29f(0x368),'width':0x280,'resizable':!![]}),this[_0x1bd29f(0x305)]=_0x225a15,this[_0x1bd29f(0x21e)]=null,this[_0x1bd29f(0x2bd)]=null,this[_0x1bd29f(0x239)]=new Promise((_0x8a35ce,_0x5c68f1)=>{const _0x52d6a7=_0x1bd29f;this[_0x52d6a7(0x21e)]=_0x8a35ce,this[_0x52d6a7(0x2bd)]=_0x5c68f1;}),this[_0x1bd29f(0x2a9)]=new ImportListClass[(_0x1bd29f(0x23e))]['Component'](_0x3cc577,_0x225a15,this[_0x1bd29f(0x393)][_0x1bd29f(0x385)](this));}[_0x98c2a9(0x2e5)](_0x5afbad){const _0x3eb6d8=_0x98c2a9;this['_comp'][_0x3eb6d8(0x3b8)](_0x5afbad);}async[_0x98c2a9(0x393)](){const _0x5ef624=_0x98c2a9;await super[_0x5ef624(0x393)]();if(!this[_0x5ef624(0x2a9)]['isDataEntered'])this[_0x5ef624(0x305)][_0x5ef624(0x350)]=!![];this[_0x5ef624(0x21e)]();}['pWaitForUserInput'](){const _0x239a1e=_0x98c2a9;return this[_0x239a1e(0x239)];}},ImportListClass[_0x98c2a9(0x23e)]['Component']=class extends BaseComponent{constructor(_0x24e075,_0x1252a7,_0x61854d){const _0x409b6d=_0x98c2a9;super(),this[_0x409b6d(0x23d)]=_0x24e075,this[_0x409b6d(0x305)]=_0x1252a7,this[_0x409b6d(0x26f)]=_0x61854d,this[_0x409b6d(0x237)]=![],Object[_0x409b6d(0x259)](this[_0x409b6d(0x304)],Charactermancer_Util['getBaseAbilityScores'](this[_0x409b6d(0x23d)]));}get[_0x98c2a9(0x337)](){return this['_isDataEntered'];}[_0x98c2a9(0x3b8)](_0x561b2c){const _0xfae0c3=_0x98c2a9,_0x2f663f=$(_0xfae0c3(0x332))[_0xfae0c3(0x204)](()=>this['_state'][_0xfae0c3(0x3aa)]=_0xfae0c3(0x39a)),_0x21ba22=$(_0xfae0c3(0x33d))[_0xfae0c3(0x204)](()=>this[_0xfae0c3(0x3a4)][_0xfae0c3(0x3aa)]=_0xfae0c3(0x390)),_0x1e1de5=$('<div\x20class=\x22flex-col\x20w-100\x20h-100\x22></div>'),_0x48028a=$(_0xfae0c3(0x242)),_0x25f477=()=>{const _0xe758f=_0xfae0c3,_0x591276=this['_state'][_0xe758f(0x3aa)]===_0xe758f(0x39a);_0x2f663f[_0xe758f(0x306)](_0xe758f(0x2fd),_0x591276),_0x21ba22[_0xe758f(0x306)]('active',!_0x591276),_0x1e1de5['toggleVe'](_0x591276),_0x48028a[_0xe758f(0x293)](!_0x591276);};_0x25f477(),this[_0xfae0c3(0x384)](_0xfae0c3(0x3aa),_0x25f477),this[_0xfae0c3(0x372)](_0x1e1de5),this[_0xfae0c3(0x30c)](_0x48028a),$$(_0x561b2c)`<div class="flex-col w-100 h-100">
-			<div class="flex no-shrink btn-group mb-1">${_0x2f663f}${_0x21ba22}</div>
-			${_0x1e1de5}
-			${_0x48028a}
-		</div>`;}['_render_ability'](_0x61144c){const _0x41f79c=_0x98c2a9,_0x3a55ca=['str',_0x41f79c(0x2cd),_0x41f79c(0x31d),_0x41f79c(0x311),'wis',_0x41f79c(0x25d)]['map'](_0x2ad93e=>{const _0x3f79c4=_0x41f79c,_0x3215ef=$(_0x3f79c4(0x33e)),_0x544dd2=$(_0x3f79c4(0x33e)),_0x52e019=()=>{const _0x395163=_0x3f79c4;_0x3215ef['text'](this[_0x395163(0x3a4)][_0x2ad93e]),_0x544dd2['text'](Parser[_0x395163(0x29d)](this[_0x395163(0x3a4)][_0x2ad93e]));};this[_0x3f79c4(0x384)](_0x2ad93e,_0x52e019),_0x52e019();const _0x463ea9=_0x2ad93e+_0x3f79c4(0x3a5),{$wrp:_0x29166d,$ipt:_0x41cfda}=ComponentUiUtil[_0x3f79c4(0x3a8)](this,_0x463ea9,0x0,{'min':0x0,'fallbackOnNaN':0x0,'html':_0x3f79c4(0x227),'asMeta':!![],'decorationRight':_0x3f79c4(0x2a6),'decorationLeft':_0x3f79c4(0x2cf)});_0x41cfda[_0x3f79c4(0x204)](()=>_0x41cfda['select']());const _0x17a3b3=$(_0x3f79c4(0x33e)),_0x4b2c1e=$('<div\x20class=\x22col-2\x20text-center\x22></div>'),_0x66a95d=()=>{const _0x258587=_0x3f79c4,_0x457211=this[_0x258587(0x3a4)][_0x2ad93e]+this[_0x258587(0x3a4)][_0x463ea9];_0x17a3b3['text'](_0x457211),_0x4b2c1e[_0x258587(0x1f8)](Parser['getAbilityModifier'](_0x457211)),_0x17a3b3['toggleClass'](_0x258587(0x1fd),_0x457211>0x14)[_0x258587(0x2cc)](_0x457211>0x14?'You\x20can\x27t\x20increase\x20an\x20ability\x20score\x20above\x2020\x20using\x20this\x20feature.':'');};this[_0x3f79c4(0x384)](_0x463ea9,_0x66a95d),_0x66a95d();const _0x1e2417=$$`<div class="flex w-100 my-1">
-				<div class="col-1 text-right bold">${_0x2ad93e[_0x3f79c4(0x27b)]()}</div>
-				${_0x3215ef}
-				${_0x544dd2}
-				<div class="col-2">${_0x29166d}</div>
+import {Vetools} from "./Vetools.js";
+import {LGT, Util} from "./Util.js";
+import {DataConverter} from "./DataConverter.js";
+import {DataConverterSpell} from "./DataConverterSpell.js";
+import {DataConverterClass} from "./DataConverterClass.js";
+import {DataConverterClassSubclassFeature} from "./DataConverterClassSubclassFeature.js";
+import {UtilActors} from "./UtilActors.js";
+import {UtilApplications} from "./UtilApplications.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {Config} from "./Config.js";
+import {UtilList2} from "./UtilList2.js";
+import {ImportListFeat} from "./ImportListFeat.js";
+import {ImportListCharacter} from "./ImportListCharacter.js";
+import {
+	Charactermancer_Class_HpIncreaseModeSelect,
+	Charactermancer_Class_LevelSelect,
+	Charactermancer_Class_ProficiencyImportModeSelect,
+	Charactermancer_Class_StartingProficiencies,
+	Charactermancer_Class_Util,
+	PageFilterClassesFoundry,
+} from "./UtilCharactermancerClass.js";
+import {Charactermancer_StartingEquipment} from "./UtilCharactermancerEquipment.js";
+import {Charactermancer_AdditionalSpellsSelect} from "./UtilCharactermancerAdditionalSpells.js";
+import {UtilDataSource} from "./UtilDataSource.js";
+import {Charactermancer_Util} from "./UtilCharactermancer.js";
+import {UtilGameSettings} from "./UtilGameSettings.js";
+import {
+	Charactermancer_Spell,
+	Charactermancer_Spell_Modal,
+} from "./UtilCharactermancerSpell.js";
+import {ImportedDocument, ImportSummary} from "./ImportList.js";
+import {UtilDataConverter} from "./UtilDataConverter.js";
+import {ConfigConsts} from "./ConfigConsts.js";
+import {UtilDocuments} from "./UtilDocuments.js";
+import {UtilActiveEffects} from "./UtilActiveEffects.js";
+import {Charactermancer_Spell_Util} from "./UtilCharactermancerSpellSlotLevelSelect.js";
+import {AppSourceSelectorMulti} from "./AppSourceSelectorMulti.js";
+import {ModalFilterClassesFvtt} from "./UtilModalFilter.js";
+import {UtilAdvancements} from "./UtilAdvancements.js";
+import {GameStorage} from "./GameStorage.js";
+
+class ImportListClass extends ImportListCharacter {
+	static get ID () { return "classes-subclasses"; }
+	static get DISPLAY_NAME_TYPE_PLURAL () { return "Classes & Subclasses"; }
+
+	static _ = this.registerImpl(this);
+
+	// region External
+	static init () {
+		const dropOpts = {
+			isForce: true,
+			fnGetSuccessMessage: ({ent}) => `Imported "${ent.className || ent.name}"${ent.subclassShortName ? ` (${ent.name})` : ""} via Class Importer`,
+			fnGetFailedMessage: ({ent}) => `Failed to import "${ent.className || ent.name}"${ent.subclassShortName ? ` (${ent.name})` : ""}! ${VeCt.STR_SEE_CONSOLE}`,
+		};
+		this._initCreateSheetItemHook({
+			...dropOpts,
+			prop: "class",
+			importerName: "Class",
+		});
+		this._initCreateSheetItemHook({
+			...dropOpts,
+			prop: "subclass",
+			importerName: "Subclass",
+		});
+
+		// region Temporarily disable advancements when dropping a Plutonium-imported class/subclass to sheet
+		Hooks.on("dropActorSheetData", (actor, actorSheet, data) => {
+			if (!Config.get("importClass", "isSuppressAdvancementsOnImportedDrop")) return;
+			if (data?.type !== "Item") return;
+
+			const item = game.items.get(data.id);
+			if (!item) return;
+
+			const propDroppable = item.getFlag(SharedConsts.MODULE_NAME_FAKE, "propDroppable");
+			if (!["class", "subclass"].includes(propDroppable)) return;
+
+			const isDisabled = game.settings.get("dnd5e", "disableAdvancements");
+			if (isDisabled) return;
+
+			GameStorage.setOverride("dnd5e", "disableAdvancements", true);
+			setTimeout(() => {
+				GameStorage.unsetOverride("dnd5e", "disableAdvancements");
+			}, 200);
+		});
+		// endregion
+
+		ImportListClass.SheetLevelUpButtonAdapter.init();
+	}
+	// endregion
+
+	constructor (externalData) {
+		externalData = externalData || {};
+		super(
+			{
+				title: "Import Classes",
+				template: `${SharedConsts.MODULE_LOCATION}/template/ImportListClass.hbs`,
+				height: Util.getMaxWindowHeight(),
+				resizable: true,
+			},
+			externalData,
+			{
+				namespace: "class_subclass",
+				dirsHomebrew: ["class", "subclass"],
+				defaultFolderPath: ["Classes"],
+				sidebarTab: "items",
+				gameProp: "items",
+				pageFilter: new PageFilterClassesFoundry(),
+				isDedupable: true,
+				configGroup: "importClass",
+				page: UrlUtil.PG_CLASSES,
+			},
+		);
+
+		this._cachedData = null;
+	}
+
+	async pSetContent (val) {
+		await super.pSetContent(val);
+		this._cachedData = null;
+	}
+
+	static async pPostLoad (data, {actor} = {}) {
+		const isIgnoredLookup = await DataConverterClassSubclassFeature.pGetClassSubclassFeatureIgnoredLookup({data});
+		const out = await PageFilterClassesFoundry.pPostLoad(data, {actor, isIgnoredLookup});
+		Charactermancer_Class_Util.addFauxOptionalFeatureFeatures(out, await this._pPostLoad_pGetAllOptionalFeatures());
+		return out;
+	}
+
+	async _pGetSources () {
+		return [
+			new UtilDataSource.DataSourceSpecial(
+				Config.get("ui", "isStreamerMode") ? "SRD" : "5etools",
+				Vetools.pGetClasses,
+				{
+					cacheKey: "5etools-classes",
+					pPostLoad: (data) => this.constructor.pPostLoad(data, {actor: this._actor}),
+					filterTypes: [UtilDataSource.SOURCE_TYP_OFFICIAL_ALL],
+					isDefault: true,
+				},
+			),
+			new UtilDataSource.DataSourceUrl(
+				"Custom URL",
+				"",
+				{
+					pPostLoad: (data) => this.constructor.pPostLoad(data, {actor: this._actor}),
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			new UtilDataSource.DataSourceFile(
+				"Upload File",
+				{
+					pPostLoad: (data) => this.constructor.pPostLoad(data, {actor: this._actor}),
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			...(await this._pGetSourcesHomebrew({pPostLoad: (data) => this.constructor.pPostLoad(data, {actor: this._actor})})),
+		];
+	}
+
+	isInvalidatedByConfigChange (configDiff) {
+		const isHideSubclassRows = !!Config.get("importClass", "isHideSubclassRows");
+
+		return this._cachedData && !!this._cachedData.isHideSubclassRows !== isHideSubclassRows;
+	}
+
+	getData () {
+		// On switching between actor/not actor importer, dump the cache
+		if (this._cachedData && (this._cachedData.isRadio !== !!this._actor)) this._cachedData = null;
+
+		// On switching between hide/show subclasses, dump the cache
+		const isHideSubclassRows = !!Config.get("importClass", "isHideSubclassRows");
+		if (this._cachedData && (!!this._cachedData.isHideSubclassRows !== !!isHideSubclassRows)) this._cachedData = null;
+
+		this._cachedData = this._cachedData || {
+			titleButtonRun: this._titleButtonRun,
+			titleSearch: this._titleSearch,
+			rows: this._content
+				.sort((a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(Parser.sourceJsonToFull(a.source || SRC_PHB), Parser.sourceJsonToFull(b.source || SRC_PHB)))
+				.map((cls, ixClass) => {
+					this._pageFilter.constructor.mutateForFilters(cls);
+
+					return {
+						name: cls.name,
+						source: cls.source,
+						sourceShort: Parser.sourceJsonToAbv(cls.source),
+						sourceLong: Parser.sourceJsonToFull(cls.source),
+						sourceClassName: Parser.sourceJsonToColor(cls.source),
+						sourceStyle: BrewUtil2.sourceJsonToStylePart(cls.source),
+						ixClass,
+						disabled: !cls.classFeatures,
+						subRows: isHideSubclassRows
+							? []
+							: (cls.subclasses || [])
+								.map((sc, ixSubclass) => ({
+									name: sc.name,
+									source: sc.source || cls.source,
+									sourceShort: Parser.sourceJsonToAbv(sc.source || cls.source),
+									sourceLong: Parser.sourceJsonToFull(sc.source || cls.source),
+									sourceClassName: Parser.sourceJsonToColor(sc.source || cls.source),
+									sourceStyle: BrewUtil2.sourceJsonToStylePart(sc.source || cls.source),
+									ixSubclass,
+								})),
+					};
+				}),
+		};
+
+		if (this._actor) this._cachedData.isRadio = true;
+		if (isHideSubclassRows) this._cachedData.isHideSubclassRows = true;
+
+		return this._cachedData;
+	}
+
+	_getDedupedData ({allContentFlat}) {
+		return ImportListClass.Utils.getDedupedData({allContentFlat});
+	}
+
+	_getBlacklistFilteredData ({dedupedAllContentFlat}) {
+		return ImportListClass.Utils.getBlacklistFilteredData({dedupedAllContentFlat});
+	}
+
+	_renderInner_initRunButton () {
+		this._$btnRun.click(async () => {
+			if (!this._list) return;
+
+			const listItems = this._actor
+				? this._list.items
+					.filter(it => it.data.tglSel && it.data.tglSel.classList.contains("active"))
+				: this._list.items
+					.filter(it => it.data.cbSel.checked);
+
+			if (!listItems.length) return ui.notifications.warn(`Please select something to import!`);
+
+			this.close();
+
+			await this._pImportListItems({listItems});
+
+			this._$cbAll.prop("checked", false).change();
+		});
+	}
+
+	async _pImportListItems ({listItems, isBackground}) {
+		this.activateSidebarTab();
+
+		const selIds = listItems.map(it => ({ixClass: it.data.ixClass, ixSubclass: it.data.ixSubclass}));
+
+		const mapped = selIds.map(({ixClass, ixSubclass}) => {
+			// Make a copy of the classes, so we can modify it later
+			const cls = MiscUtil.copy(this._content[ixClass]);
+			return {ixClass, cls, ixSubclass, sc: ixSubclass != null ? cls.subclasses[ixSubclass] : null};
+		});
+		// Wipe the subclass array from any pure classes. Any subclasses we add to this array later, will be imported
+		mapped.filter(it => !it.sc).forEach(it => it.cls.subclasses = []);
+		// Sort so that the pure classes are first
+		mapped.sort((a, b) => !!a.sc - !!b.sc);
+
+		const classes = [];
+		const looseSubclasses = [];
+		mapped.forEach(it => {
+			if (it.sc) {
+				const cls = classes.find(cls =>
+					cls.name.toLowerCase() === it.sc.className.toLowerCase()
+					&& cls.source.toLowerCase() === it.sc.classSource.toLowerCase(),
+				);
+
+				if (cls) cls.subclasses.push(it.sc);
+				else looseSubclasses.push({cls: it.cls, sc: it.sc});
+			} else classes.push(it.cls);
+		});
+
+		if (classes.length || looseSubclasses.length) await this._pDoPreCachePack();
+
+		await (
+			isBackground
+				? this._pImportListItems_background({classes, looseSubclasses})
+				: this._pImportListItems_foreground({classes, looseSubclasses})
+		);
+
+		if (!this._actor) game[this._gameProp].render();
+	}
+
+	async _pImportListItems_background ({classes, looseSubclasses}) {
+		for (const cls of classes) {
+			try {
+				const importedMeta = await this.pImportClass(cls);
+				UtilApplications.doShowImportedNotification(importedMeta);
+			} catch (e) {
+				UtilApplications.doShowImportedNotification({entity: entry, status: UtilApplications.TASK_EXIT_FAILED});
+				console.error(e);
+			}
+		}
+
+		for (const {cls, sc} of looseSubclasses) {
+			try {
+				const importedMeta = await this.pImportSubclass(cls, sc);
+				UtilApplications.doShowImportedNotification(importedMeta);
+			} catch (e) {
+				UtilApplications.doShowImportedNotification({entity: entry, status: UtilApplications.TASK_EXIT_FAILED});
+				console.error(e);
+			}
+		}
+	}
+
+	async _pImportListItems_foreground ({classes, looseSubclasses}) {
+		const tasks = [
+			...classes.map(cls => {
+				return new Util.Task(
+					`${cls.name} (${Parser.sourceJsonToAbv(cls.source)})`,
+					() => this.pImportClass(cls),
+				);
+			}),
+			...looseSubclasses.map(({cls, sc}) => {
+				return new Util.Task(
+					`${sc.name} (${Parser.sourceJsonToAbv(sc.source)})`,
+					() => this.pImportSubclass(cls, sc),
+				);
+			}),
+		];
+		await UtilApplications.pRunTasks(tasks);
+	}
+
+	async _renderInner_pInitFilteredList () {
+		// Init list library
+		this._list = new List({
+			$iptSearch: this._$iptSearch,
+			$wrpList: this._$wrpList,
+			fnSort: (a, b, opts) => {
+				if (opts.sortDir === "desc" && a.data.ixClass === b.data.ixClass && (a.data.ixSubclass != null || b.data.ixSubclass != null)) {
+					return a.data.ixSubclass != null ? -1 : 1;
+				}
+
+				return SortUtil.ascSortLower(a.values.sortName, b.values.sortName);
+			},
+		});
+		SortUtil.initBtnSortHandlers(this._$wrpBtnsSort, this._list);
+
+		const flatListItems = this._cachedData.rows.map(r => {
+			const fromClass = {...r};
+			delete fromClass.subRows;
+
+			if (Config.get("importClass", "isHideSubclassRows")) return [fromClass];
+
+			const fromSubclass = r.subRows.map(sr => ({
+				...sr,
+				ixClass: r.ixClass,
+				className: r.name,
+				classSource: r.source,
+				classSourceLong: r.sourceLong,
+				classSourceClassName: r.sourceClassName,
+			}));
+			return [fromClass, ...fromSubclass];
+		}).flat();
+
+		await this._pageFilter.pInitFilterBox({
+			$iptSearch: this._$iptSearch,
+			$btnReset: this._$btnReset,
+			$btnOpen: this._$bntFilter,
+			$btnToggleSummaryHidden: this._$btnToggleSummary,
+			$wrpMiniPills: this._$wrpMiniPills,
+			namespace: this._getFilterNamespace(),
+		});
+
+		this._content.forEach(it => this._pageFilter.addToFilters(it));
+
+		const optsListAbsorb = {
+			fnGetName: it => it.name,
+			// values used for sorting/search
+			fnGetValues: it => {
+				if (it.ixSubclass != null) {
+					return {
+						sortName: `${it.className} SOURCE ${it.classSourceLong} SUBCLASS ${it.name} SOURCE ${it.sourceLong}`,
+						source: it.source,
+						hash: UrlUtil.URL_TO_HASH_BUILDER["subclass"](it),
+					};
+				}
+
+				return {
+					sortName: `${it.name} SOURCE ${it.sourceLong}`,
+					source: it.source,
+					hash: UrlUtil.URL_TO_HASH_BUILDER[this._page](it),
+				};
+			},
+			fnGetData: (li, it) => {
+				const out = this._actor
+					? {tglSel: li.ele.firstElementChild.firstElementChild}
+					: UtilList2.absorbFnGetData(li);
+
+				if (it.ixSubclass != null) {
+					return {
+						...out,
+						ixClass: it.ixClass,
+						ixSubclass: it.ixSubclass,
+					};
+				}
+
+				return {
+					...out,
+					ixClass: it.ixClass,
+				};
+			},
+		};
+
+		if (this._actor) { // "Radio button" selection mode
+			optsListAbsorb.fnBindListeners = listItem => {
+				listItem.ele.addEventListener("click", () => {
+					const isScItem = listItem.data.ixSubclass != null;
+					const clsListItem = isScItem ? this._list.items.find(it => it.data.ixClass === listItem.data.ixClass && it.data.ixSubclass == null) : null;
+
+					// region If clicking an item for the first time
+					const actives = this._list.items.filter(it => it.data.tglSel.classList.contains("active"));
+					if (!actives.length) {
+						listItem.data.tglSel.classList.add("active");
+						listItem.ele.classList.add("list-multi-selected");
+
+						if (isScItem) {
+							clsListItem.data.tglSel.classList.add("active");
+							clsListItem.ele.classList.add("list-multi-selected");
+						}
+
+						return;
+					}
+					// endregion
+
+					// region If re-clicking the currently selected item
+					if (listItem.data.tglSel.classList.contains("active")) {
+						listItem.data.tglSel.classList.remove("active");
+						listItem.ele.classList.remove("list-multi-selected");
+
+						if (isScItem) { // Deselect parent class item
+							clsListItem.data.tglSel.classList.remove("active");
+							clsListItem.ele.classList.remove("list-multi-selected");
+						} else { // Deselect any subclass item
+							actives.forEach(li => {
+								li.data.tglSel.classList.remove("active");
+								li.ele.classList.remove("list-multi-selected");
+							});
+						}
+
+						return;
+					}
+					// endregion
+
+					// region If clicking a different item to the one currently selected
+					actives.forEach(li => {
+						li.data.tglSel.classList.remove("active");
+						li.ele.classList.remove("list-multi-selected");
+					});
+
+					listItem.data.tglSel.classList.add("active");
+					listItem.ele.classList.add("list-multi-selected");
+
+					if (isScItem) {
+						clsListItem.data.tglSel.classList.add("active");
+						clsListItem.ele.classList.add("list-multi-selected");
+					}
+					// endregion
+				});
+			};
+		} else {
+			optsListAbsorb.fnBindListeners = it => UtilList2.absorbFnBindListeners(this._list, it);
+		}
+
+		this._list.doAbsorbItems(flatListItems, optsListAbsorb);
+		this._list.init();
+
+		this._pageFilter.trimState();
+		this._pageFilter.filterBox.render();
+
+		this._pageFilter.filterBox.on(
+			FilterBox.EVNT_VALCHANGE,
+			this._handleFilterChange.bind(this),
+		);
+
+		this._handleFilterChange();
+	}
+
+	_renderInner_initFeelingLuckyButton () {
+		if (!this._actor) return super._renderInner_initFeelingLuckyButton();
+
+		this._$btnFeelingLucky.click(() => {
+			if (!this._list || !this._list.visibleItems.length) return;
+
+			const listItem = RollerUtil.rollOnArray(this._list.visibleItems);
+			if (!listItem) return;
+
+			listItem.ele.click();
+			listItem.ele.scrollIntoView({block: "center"});
+		});
+	}
+
+	_handleFilterChange () {
+		return ModalFilterClasses.handleFilterChange({
+			pageFilter: this._pageFilter,
+			list: this._list,
+			allData: this._content,
+		});
+	}
+
+	/**
+	 * Implement basic class importing for use by e.g. tag drag-and-drop.
+	 *
+	 * @param cls
+	 * @param importOpts Options object.
+	 * @param [importOpts.isTemp] if the item should be temporary, and displayed.
+	 * @param [importOpts.filterValues] Saved filter values to be used instead of our own.
+	 */
+	async _pImportEntry (cls, importOpts) {
+		importOpts = importOpts || {};
+
+		// If we don't have any filter values, generate some defaults
+		if (!importOpts.filterValues && !this._pageFilter?.filterBox) {
+			importOpts.filterValues = await ImportListClass.pGetDefaultFilterValues();
+		}
+
+		// If we receive a render-able hover entry rather than the real class, dereference it
+		if (cls?.data?.class) {
+			const scRef = cls?.data?.subclass;
+
+			cls = cls?.data?.class;
+			cls = await Renderer.hover.pCacheAndGet("raw_class", cls.source, UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES](cls), {isCopy: true});
+
+			const toLoad = {class: [cls]};
+
+			if (scRef) {
+				const sc = await Renderer.hover.pCacheAndGet("raw_subclass", scRef.source, UrlUtil.URL_TO_HASH_BUILDER["subclass"](scRef), {isCopy: true});
+				toLoad.subclass = [sc];
+			}
+
+			const data = await this.constructor.pPostLoad(toLoad);
+			cls = data[0];
+
+			if (scRef) {
+				const sc = cls.subclasses[0];
+				cls.subclasses = [];
+				return this.pImportSubclass(cls, sc, importOpts);
+			}
+		}
+
+		return this.pImportClass(cls, importOpts);
+	}
+
+	/**
+	 * @param cls
+	 * @param [importOpts] Options object.
+	 * @param [importOpts.isTemp] if the item should be temporary, and displayed.
+	 * @param [importOpts.filterValues] Saved filter values to be used instead of our own.
+	 * @param [importOpts.isCharactermancer] If the call is coming from the charactermancer.
+	 * @param [importOpts.levels] Pre-defined list of levels to import.
+	 */
+	async pImportClass (cls, importOpts) {
+		importOpts = importOpts || {};
+
+		console.log(...LGT, `Importing class "${cls.name}" (from "${Parser.sourceJsonToAbv(cls.source)}")`);
+
+		if (DataConverterClass.isStubClass(cls)) return ImportSummary.completedStub();
+
+		if (importOpts.isTemp) return this._pImportClass_pImportToItems(cls, importOpts);
+		if (this._actor) return this._pImportClass_pImportToActor(cls, importOpts);
+		return this._pImportClass_pImportToItems(cls, importOpts);
+	}
+
+	/**
+	 * @param cls A copy of the class data, which can be freely mutated.
+	 * @param importOpts
+	 */
+	async _pImportClass_pImportToActor (cls, importOpts) {
+		const dataBuilderOpts = new ImportListClass.ImportEntryOpts({
+			isClassImport: true,
+			isCharactermancer: importOpts.isCharactermancer,
+		});
+
+		// region Create one array of all class/subclass features
+		let allFeatures;
+
+		if (!cls._foundryAllFeatures) {
+			allFeatures = Charactermancer_Class_Util.getAllFeatures(cls);
+
+			this.constructor._tagFirstSubclassLoaded(cls, allFeatures);
+
+			// Filter features by source
+			allFeatures = Charactermancer_Util.getFilteredFeatures(allFeatures, this._pageFilter, importOpts.filterValues || this._pageFilter.filterBox.getValues());
+		} else {
+			this.constructor._tagFirstSubclassLoaded(cls);
+		}
+		// endregion
+
+		const sc = cls.subclasses?.length ? cls.subclasses[0] : null;
+
+		return this._pImportClassSubclass_pImportToActor({cls, sc, importOpts, dataBuilderOpts, allFeatures});
+	}
+
+	/**
+	 * We want to avoid importing the first subclass feature, as this will be the intro/header to the subclass, which
+	 * is imported as a separate subclass item. Therefore, tag it, so we don't treat it as a feature later.
+	 * This may be inaccurate when importing homebrew, but that's the fault of the homebrew!
+	 */
+	static _tagFirstSubclassLoaded (cls, allFeatures = null) {
+		let subclassLoadeds;
+		if (allFeatures) {
+			const group = allFeatures.find(it => it.subclassFeature);
+			if (!group?.loadeds.length) return;
+			subclassLoadeds = group.loadeds;
+		} else {
+			subclassLoadeds = cls._foundryAllFeatures.filter(it => it.type === "subclassFeature");
+		}
+
+		const expectedFirstSubclassFeatureLevel = cls.classFeatures.find(it => it.gainSubclassFeature)?.level;
+
+		// Bail out if the levels don't line up, and fall back on importing the header entry as a feature,
+		//   as there's probably something special going on.
+		if (subclassLoadeds[0]?.entity?.level !== expectedFirstSubclassFeatureLevel) return;
+
+		// Bail out if the feature is homebrew and has notable non-fluff data attached
+		if (
+			BrewUtil2.hasSourceJson(subclassLoadeds[0]?.entity?.source)
+			&& [
+				"skillProficiencies",
+				"languageProficiencies",
+				"toolProficiencies",
+				"armorProficiencies",
+				"weaponProficiencies",
+				"savingThrowProficiencies",
+				"immune",
+				"resist",
+				"vulnerable",
+				"conditionImmune",
+				"expertise",
+			].some(prop => subclassLoadeds[0].entity[prop])
+		) {
+			return;
+		}
+
+		subclassLoadeds[0]._foundryIsIgnoreFeature = true;
+	}
+
+	async _pImportClassSubclass_pImportToActor ({cls, sc, importOpts, dataBuilderOpts, allFeatures}) {
+		const selectedLevelIndices = await this._pGetSelectedLevelIndices(cls, importOpts, allFeatures, dataBuilderOpts, sc != null);
+		if (dataBuilderOpts.isCancelled) return ImportSummary.cancelled();
+
+		await this._pValidateUserLevelIndices(selectedLevelIndices, dataBuilderOpts);
+		if (dataBuilderOpts.isCancelled) return ImportSummary.cancelled();
+
+		dataBuilderOpts.targetLevel = Math.max(...selectedLevelIndices) + 1;
+		dataBuilderOpts.numLevels = dataBuilderOpts.targetLevel - Math.min(...selectedLevelIndices);
+		dataBuilderOpts.numLevelsPrev = UtilActors.getTotalClassLevels(this._actor);
+		dataBuilderOpts.isIncludesLevelOne = cls != null // Always false for subclasses, as we never want to import level 1 proficiencies
+			&& selectedLevelIndices.includes(0);
+		dataBuilderOpts.proficiencyImportMode = await this._pImportClass_pGetProficiencyImportMode(cls, dataBuilderOpts);
+		if (dataBuilderOpts.isCancelled) return ImportSummary.cancelled();
+		dataBuilderOpts.hpIncreaseMode = await this._pImportClass_pGetHpImportMode(cls, dataBuilderOpts);
+		if (dataBuilderOpts.isCancelled) return ImportSummary.cancelled();
+
+		const actUpdate = {
+			data: {},
+		};
+
+		const curLevelMetaAndExistingClassItem = await this._pImportEntry_pGetCurLevelFillClassData(actUpdate, cls, sc, importOpts, dataBuilderOpts);
+		if (dataBuilderOpts.isCancelled) return ImportSummary.cancelled();
+		const {curLevel, existingClassItem, existingSubclassItem} = curLevelMetaAndExistingClassItem;
+
+		this._pImportEntry_setActorFlags(actUpdate, cls, sc, curLevel, dataBuilderOpts);
+
+		await this._pImportEntry_pDoUpdateCharacter(actUpdate, cls, sc, curLevel, existingClassItem, existingSubclassItem, dataBuilderOpts);
+		if (dataBuilderOpts.isCancelled) return ImportSummary.cancelled();
+
+		await this._pImportCasterCantrips(cls, sc, curLevel, importOpts, dataBuilderOpts);
+
+		await this._pImportEntry_pFillItemArrayAdditionalSpells(cls, cls.subclasses, curLevel, dataBuilderOpts);
+		if (dataBuilderOpts.isCancelled) return ImportSummary.cancelled();
+
+		if (cls.preparedSpells && !cls.spellsKnownProgressionFixed) await this._pImportPreparedCasterSpells(cls, sc, curLevel, dataBuilderOpts);
+
+		await this._pImportEntry_pAddUpdateClassItem(cls, sc, dataBuilderOpts);
+
+		if (cls.preparedSpells) await this._pImportEntry_pFillPreparedSpells(cls, sc, curLevel, dataBuilderOpts);
+
+		await this._pImportEntry_pHandleFeatures(cls, sc, allFeatures, selectedLevelIndices, importOpts, dataBuilderOpts);
+		if (dataBuilderOpts.isCancelled) return ImportSummary.cancelled();
+
+		await this._pImportEntry_pAddUnarmedStrike();
+
+		await this._pImportEntry_pAddAdvancements(dataBuilderOpts);
+
+		await this._pImportEntry_pFinalise(dataBuilderOpts);
+
+		if (this._actor.isToken) this._actor.sheet.render();
+
+		return new ImportSummary({
+			status: UtilApplications.TASK_EXIT_COMPLETE,
+			imported: [
+				new ImportedDocument({
+					name: `${cls.name}${sc ? ` (${sc.name})` : ""}`,
+					actor: this._actor,
+				}),
+			],
+		});
+	}
+
+	async _pGetSelectedLevelIndices (cls, importOpts, allFeatures, dataBuilderOpts, isSubclass) {
+		if (cls._foundrySelectedLevelIndices) return cls._foundrySelectedLevelIndices;
+
+		// If there are pre-defined levels, map them to their relative index (which is always `level - 1`)
+		if (importOpts.levels) return importOpts.levels.map(it => it - 1).filter(it => it >= 0);
+
+		const indicesFormData = await Charactermancer_Class_LevelSelect.pGetUserInput({
+			features: allFeatures,
+			isSubclass,
+			maxPreviousLevel: this._pImportEntry_getApproxPreviousMaxLevel(cls),
+		});
+		if (indicesFormData == null) return dataBuilderOpts.isCancelled = true;
+
+		return indicesFormData.data;
+	}
+
+	/**
+	 * Take a rough guess at what levels the character has already gained in this class(/subclass). We will use this to
+	 * provide UI hints as to which levels the user shouldn't select when adding class levels.
+	 */
+	_pImportEntry_getApproxPreviousMaxLevel (cls) {
+		const existingClassItems = this._getExistingClassItems(cls);
+		if (!existingClassItems.length) return 0;
+		return Math.max(...existingClassItems.map(it => it.data.data.levels || 0));
+	}
+
+	_pImportEntry_setActorFlags (actUpdate, cls, sc, curLevel, dataBuilderOpts) {
+		const flags = {dnd5e: {}};
+
+		// (Note that these are now instead handled, generally, by active effects)
+
+		if (Object.keys(flags.dnd5e).length) actUpdate.flags = flags;
+	}
+
+	async _pImportClass_pGetProficiencyImportMode (cls, dataBuilderOpts) {
+		const existingClassItems = this._actor.items.filter(it => it.type === "class");
+
+		if (!dataBuilderOpts.isClassImport || !dataBuilderOpts.isIncludesLevelOne || !existingClassItems.length) return Charactermancer_Class_ProficiencyImportModeSelect.MODE_PRIMARY;
+
+		// If specified externally, use this
+		if (cls._foundryStartingProficiencyMode != null) return cls._foundryStartingProficiencyMode;
+
+		const out = await Charactermancer_Class_ProficiencyImportModeSelect.pGetUserInput();
+		if (out == null) dataBuilderOpts.isCancelled = true;
+		return out.data;
+	}
+
+	async _pImportClass_pGetHpImportMode (cls, dataBuilderOpts) {
+		if (!Charactermancer_Class_HpIncreaseModeSelect.isHpAvailable(cls)) return Charactermancer_Class_HpIncreaseModeSelect.MODE_DO_NOT_INCREASE;
+
+		// If specified externally, use this
+		if (cls._foundryHpIncreaseMode != null) return cls._foundryHpIncreaseMode;
+
+		const out = await Charactermancer_Class_HpIncreaseModeSelect.pGetUserInput();
+		if (out == null) return dataBuilderOpts.isCancelled = true;
+		if (out === VeCt.SYM_UI_SKIP) return Charactermancer_Class_HpIncreaseModeSelect.MODE_DO_NOT_INCREASE;
+		return out.data;
+	}
+
+	async _pImportClass_pImportToItems (cls, importOpts) {
+		const duplicateMeta = this._getDuplicateMeta({entity: cls, importOpts});
+		if (duplicateMeta.isSkip) {
+			return new ImportSummary({
+				status: UtilApplications.TASK_EXIT_SKIPPED_DUPLICATE,
+				imported: [
+					new ImportedDocument({
+						isExisting: true,
+						document: duplicateMeta.existing,
+					}),
+				],
+			});
+		}
+
+		const clsData = await DataConverterClass.pGetClassItem(cls, {isAddPermission: true, filterValues: importOpts.filterValues || this._pageFilter.filterBox.getValues()});
+
+		const Clazz = this._getDocumentClass();
+
+		if (importOpts.isTemp) {
+			const clsItem = await Item.create(clsData, {renderSheet: true, temporary: true});
+			const scItems = await (cls.subclasses || []).pSerialAwaitMap(sc => this._pImportSubclass_pImportToItems(cls, sc, importOpts));
+
+			return new ImportSummary({
+				status: UtilApplications.TASK_EXIT_COMPLETE,
+				imported: [
+					clsItem,
+					...scItems,
+				].map(it => new ImportedDocument({document: it, actor: this._actor})),
+			});
+		} else if (this._pack) {
+			if (duplicateMeta.isOverwrite) {
+				const clsItem = await this._pImportEntry_pDoUpdateExistingPackEntity(duplicateMeta, clsData);
+				const scItems = await (cls.subclasses || []).pSerialAwaitMap(sc => this._pImportSubclass_pImportToItems(cls, sc, importOpts));
+
+				return new ImportSummary({
+					status: UtilApplications.TASK_EXIT_COMPLETE_UPDATE_OVERWRITE,
+					imported: [
+						clsItem,
+						...scItems,
+					].map(it => new ImportedDocument({isExisting: true, document: it, actor: this._actor})),
+				});
+			}
+
+			const clsItem = new Clazz(clsData);
+			await this._pack.importDocument(clsItem);
+			const scItems = await (cls.subclasses || []).pSerialAwaitMap(sc => this._pImportSubclass_pImportToItems(cls, sc, importOpts));
+
+			await this._pImportEntry_pAddToTargetTableIfRequired([clsItem], duplicateMeta);
+
+			return new ImportSummary({
+				status: UtilApplications.TASK_EXIT_COMPLETE,
+				imported: [
+					clsItem,
+					...scItems,
+				].map(it => new ImportedDocument({document: it, actor: this._actor})),
+			});
+		} else {
+			if (duplicateMeta.isOverwrite) {
+				const clsItem = await this._pImportEntry_pDoUpdateExistingDirectoryEntity(duplicateMeta, clsData);
+				const scItems = await (cls.subclasses || []).pSerialAwaitMap(sc => this._pImportSubclass_pImportToItems(cls, sc, importOpts));
+
+				return new ImportSummary({
+					status: UtilApplications.TASK_EXIT_COMPLETE_UPDATE_OVERWRITE,
+					imported: [
+						clsItem,
+						...scItems,
+					].map(it => new ImportedDocument({isExisting: true, document: it, actor: this._actor})),
+				});
+			}
+
+			const folderId = await this._pImportEntry_pGetFolderId(cls);
+			if (folderId) clsData.folder = folderId;
+
+			const clsItem = await Item.create(clsData, {renderSheet: false, temporary: false});
+
+			await game.items.set(clsItem.id, clsItem);
+
+			const scItems = await (cls.subclasses || []).pSerialAwaitMap(sc => this._pImportSubclass_pImportToItems(cls, sc, importOpts, {folderId}));
+
+			return new ImportSummary({
+				status: UtilApplications.TASK_EXIT_COMPLETE,
+				imported: [
+					clsItem,
+					...scItems,
+				].map(it => new ImportedDocument({document: it, actor: this._actor})),
+			});
+		}
+	}
+
+	/**
+	 * @param cls
+	 * @param sc
+	 * @param [importOpts] Options object.
+	 * @param [importOpts.isTemp] if the item should be temporary, and displayed.
+	 * @param [importOpts.filterValues] Saved filter values to be used instead of our own.
+	 */
+	async pImportSubclass (cls, sc, importOpts) {
+		importOpts = importOpts || {};
+
+		console.log(...LGT, `Importing subclass "${sc.name}" (from "${Parser.sourceJsonToAbv(sc.source)}")`);
+
+		if (DataConverterClass.isStubClass(cls)) return ImportSummary.completedStub();
+		if (DataConverterClass.isStubSubclass(sc)) return ImportSummary.completedStub();
+
+		if (importOpts.isTemp) return this._pImportSubclass_pImportToItems(cls, sc, importOpts);
+		if (this._actor) return this._pImportSubclass_pImportToActor(cls, sc, importOpts);
+		return this._pImportSubclass_pImportToItems(cls, sc, importOpts);
+	}
+
+	async _pImportSubclass_pImportToActor (cls, sc, importOpts) {
+		const dataBuilderOpts = new ImportListClass.ImportEntryOpts({
+			isClassImport: false,
+			isCharactermancer: importOpts.isCharactermancer,
+		});
+
+		// region (Player) sanity check
+		const existingClassItems = this._actor.items.filter(it => it.type === "class");
+		if (!existingClassItems.length) {
+			const isImportSubclassOnly = await InputUiUtil.pGetUserBoolean({
+				title: "Import Class?",
+				htmlDescription: "You have selected a subclass to import, but have no class levels. Would you like to import the class too?",
+				textYes: "Import Class and Subclass",
+				textNo: "Import Only Subclass",
+			});
+
+			if (isImportSubclassOnly == null) {
+				dataBuilderOpts.isCancelled = true;
+				return ImportSummary.cancelled();
+			}
+
+			// If the user chooses, switch to the class importer
+			if (isImportSubclassOnly === true) {
+				const cpyCls = MiscUtil.copy(cls);
+				cpyCls.subclasses = [sc];
+				return this.pImportClass(cpyCls, importOpts);
+			}
+		}
+		// endregion
+
+		// region Create one array of all class/subclass features
+		let allFeatures = MiscUtil.copy(sc.subclassFeatures);
+
+		this.constructor._tagFirstSubclassLoaded(cls, allFeatures);
+
+		allFeatures = Charactermancer_Util.getFilteredFeatures(allFeatures, this._pageFilter, importOpts.filterValues || this._pageFilter.filterBox.getValues());
+		// endregion
+
+		return this._pImportClassSubclass_pImportToActor({cls, sc, importOpts, dataBuilderOpts, allFeatures});
+	}
+
+	/**
+	 * @param cls
+	 * @param sc
+	 * @param importOpts
+	 * @param [opts]
+	 * @param [opts.folderId] If this is part of a class import, the folder ID the class data is being imported to.
+	 */
+	async _pImportSubclass_pImportToItems (cls, sc, importOpts, opts) {
+		opts = opts || {};
+
+		const scData = await DataConverterClass.pGetSubclassItem(cls, sc, {isAddPermission: true, filterValues: importOpts.filterValues || this._pageFilter.filterBox.getValues()});
+
+		const duplicateMeta = this._getDuplicateMeta({name: scData.name, source: scData.data.source, importOpts});
+		if (duplicateMeta.isSkip) {
+			return new ImportSummary({
+				status: UtilApplications.TASK_EXIT_SKIPPED_DUPLICATE,
+				imported: [
+					new ImportedDocument({
+						isExisting: true,
+						document: duplicateMeta.existing,
+					}),
+				],
+			});
+		}
+
+		const Clazz = this._getDocumentClass();
+
+		if (importOpts.isTemp) {
+			const imported = await Item.create(scData, {renderSheet: true, temporary: true});
+
+			return new ImportSummary({
+				status: UtilApplications.TASK_EXIT_COMPLETE,
+				imported: [
+					new ImportedDocument({
+						document: imported,
+					}),
+				],
+			});
+		} else if (this._pack) {
+			if (duplicateMeta.isOverwrite) return this._pImportEntry_pDoUpdateExistingPackEntity(duplicateMeta, scData);
+
+			const scItem = new Clazz(scData);
+			await this._pack.importDocument(scItem);
+
+			await this._pImportEntry_pAddToTargetTableIfRequired([scItem], duplicateMeta);
+
+			return new ImportSummary({
+				status: UtilApplications.TASK_EXIT_COMPLETE,
+				imported: [
+					new ImportedDocument({
+						document: scItem,
+					}),
+				],
+			});
+		} else {
+			if (duplicateMeta.isOverwrite) return this._pImportEntry_pDoUpdateExistingDirectoryEntity(duplicateMeta, scData);
+
+			const folderId = opts.folderId || await this._pImportEntry_pGetFolderId(sc);
+			if (folderId) scData.folder = folderId;
+
+			const scItem = await Item.create(scData, {renderSheet: false, temporary: false});
+
+			await game.items.set(scItem.id, scItem);
+
+			return new ImportSummary({
+				status: UtilApplications.TASK_EXIT_COMPLETE,
+				imported: [
+					new ImportedDocument({
+						document: scItem,
+					}),
+				],
+			});
+		}
+	}
+
+	async _pImportEntry_pDoUpdateCharacter (actUpdate, cls, sc, curLevel, existingClassItem, existingSubclassItem, dataBuilderOpts) {
+		// `existingClassItem` is the exact class features item the user wants us to import into, but pulling out the
+		//    others allows us to calculate total spell slots
+		const otherExistingClassItems = this._actor.items
+			.filter(it => it.type === "class")
+			.filter(it => it !== existingClassItem);
+
+		// (As above)
+		const otherExistingSubclassItems = this._actor.items
+			.filter(it => it.type === "subclass")
+			.filter(it => it !== existingSubclassItem);
+
+		await this._pImportEntry_pDoUpdateCharacter_xp({actUpdate, dataBuilderOpts, otherExistingClassItems});
+		await this._pImportEntry_pDoUpdateCharacter_profBonus({actUpdate, dataBuilderOpts});
+		await this._pImportEntry_pDoUpdateCharacter_spellcasting({actUpdate, cls, sc, dataBuilderOpts, otherExistingClassItems, otherExistingSubclassItems});
+		await this._pImportEntry_pDoUpdateCharacter_psionics({actUpdate, cls, sc, dataBuilderOpts, otherExistingClassItems, otherExistingSubclassItems});
+		await this._pImportEntry_pDoUpdateCharacter_hp({actUpdate, cls, dataBuilderOpts});
+		await this._pImportEntry_pDoUpdateCharacter_languages({actUpdate, cls, dataBuilderOpts});
+		if (dataBuilderOpts.isCancelled) return;
+
+		if (Object.keys(actUpdate.data).length) await UtilDocuments.pUpdateDocument(this._actor, actUpdate);
+	}
+
+	async _pImportEntry_pDoUpdateCharacter_xp ({actUpdate, dataBuilderOpts, otherExistingClassItems}) {
+		if (Config.get("importClass", "isSetXp")) return;
+
+		const totalLevel = otherExistingClassItems
+			.map(it => it.data.data.levels || 0)
+			.reduce((a, b) => a + b, 0)
+			+ (dataBuilderOpts.targetLevel || 0);
+
+		if (totalLevel <= 0) return;
+
+		const xpObj = ((actUpdate.data.details = actUpdate.data.details || {}).xp = actUpdate.data.details.xp || {});
+		const curXp = MiscUtil.get(this._actor, "data", "data", "details", "xp", "value") || 0;
+		const tgtXp = Parser.LEVEL_XP_REQUIRED[totalLevel - 1];
+		const nxtXp = Parser.LEVEL_XP_REQUIRED[Math.min(totalLevel, 19)];
+		if (curXp < tgtXp) {
+			xpObj.pct = 0;
+			xpObj.value = tgtXp;
+		} else {
+			xpObj.pct = (curXp / nxtXp) * 100;
+		}
+		xpObj.max = nxtXp;
+	}
+
+	async _pImportEntry_pDoUpdateCharacter_profBonus ({actUpdate, dataBuilderOpts}) {
+		// Update proficiency if less than our target
+		const curProfBonus = MiscUtil.get(this._actor, "data", "data", "attributes", "prof");
+		const targetProf = Math.floor((dataBuilderOpts.targetLevel - 1) / 4) + 2;
+		if (curProfBonus < targetProf) (actUpdate.data.attributes = actUpdate.data.attributes || {}).prof = targetProf;
+	}
+
+	async _pImportEntry_pDoUpdateCharacter_spellcasting ({actUpdate, cls, sc, dataBuilderOpts, otherExistingClassItems, otherExistingSubclassItems}) {
+		const progressionMeta = Charactermancer_Class_Util.getCasterProgression(cls, sc, {targetLevel: dataBuilderOpts.targetLevel, otherExistingClassItems, otherExistingSubclassItems});
+
+		const isAnySlotMod = this._pImportEntry_pDoUpdateCharacter_spellcasting_slots({actUpdate, dataBuilderOpts, progressionMeta});
+		if (!isAnySlotMod) {
+			delete actUpdate.data?.spells;
+			delete dataBuilderOpts.postItemActorUpdate?.data?.spells;
+		}
+
+		const {spellAbility, totalSpellcastingLevels} = progressionMeta;
+		if (spellAbility) (actUpdate.data.attributes = actUpdate.data.attributes || {}).spellcasting = spellAbility;
+
+		// Set spell points, where appropriate
+		await this._pImportEntry_pDoUpdateCharacter_spellcasting_spellPoints({actUpdate, totalSpellcastingLevels});
+	}
+
+	_pImportEntry_pDoUpdateCharacter_spellcasting_slots ({actUpdate, dataBuilderOpts, progressionMeta}) {
+		const {casterProgression, totalSpellcastingLevels, maxPactCasterLevel} = progressionMeta;
+
+		if (!totalSpellcastingLevels && casterProgression !== "pact") return;
+
+		let isAnyMod = false;
+		actUpdate.data.spells = actUpdate.data.spells || {};
+		// Store a copy of the update to be applied after items have been applied--this allows us to correct any
+		//   spell slot counts which get broken by setting a caster mode in a class item.
+		const postDataSpells = MiscUtil.getOrSet(dataBuilderOpts.postItemActorUpdate, "data", "spells", {});
+
+		if (totalSpellcastingLevels) {
+			// always use the "full" caster table, as other caster progressions are converted to overall full-caster levels
+			const spellSlots = UtilDataConverter.CASTER_TYPE_TO_PROGRESSION.full;
+			let maxLevelSpells = spellSlots[totalSpellcastingLevels - 1] || spellSlots.last();
+
+			maxLevelSpells.forEach((slots, i) => {
+				if (slots === 0) return;
+				const lvlProp = `spell${i + 1}`;
+
+				const existingMax = MiscUtil.get(this._actor, "data", "data", "spells", lvlProp, "max");
+				const existingValue = MiscUtil.get(this._actor, "data", "data", "spells", lvlProp, "value");
+				if (existingMax != null) {
+					if (existingMax < slots) {
+						isAnyMod = true;
+
+						const delta = slots - existingMax;
+
+						actUpdate.data.spells[lvlProp] = {max: slots, value: existingValue + delta};
+						postDataSpells[lvlProp] = {max: slots, value: existingValue + delta};
+					}
+				} else {
+					isAnyMod = true;
+					actUpdate.data.spells[lvlProp] = {max: slots, value: slots};
+					postDataSpells[lvlProp] = {max: slots, value: slots};
+				}
+			});
+
+			return isAnyMod;
+		}
+
+		if (casterProgression === "pact") {
+			const existingMax = MiscUtil.get(this._actor, "data", "data", "spells", "pact", "max");
+			const existingValue = MiscUtil.get(this._actor, "data", "data", "spells", "pact", "value");
+
+			const slots = UtilDataConverter.CASTER_TYPE_TO_PROGRESSION.pact[maxPactCasterLevel - 1].find(Boolean);
+
+			if (existingMax != null) {
+				if (existingMax < slots) {
+					isAnyMod = true;
+
+					const delta = slots - existingMax;
+
+					actUpdate.data.spells.pact = {max: slots, value: existingValue + delta};
+					postDataSpells.pact = {max: slots, value: existingValue + delta};
+				}
+			} else {
+				isAnyMod = true;
+				actUpdate.data.spells.pact = {max: slots, value: slots};
+				postDataSpells.pact = {max: slots, value: slots};
+			}
+
+			return isAnyMod;
+		}
+
+		return false;
+	}
+
+	async _pImportEntry_pDoUpdateCharacter_spellcasting_spellPoints ({actUpdate, totalSpellcastingLevels}) {
+		if (
+			!totalSpellcastingLevels
+			|| Config.get("importSpell", Config.getSpellPointsKey({actorType: this._actor?.type})) === ConfigConsts.C_SPELL_POINTS_MODE__DISABLED
+		) return;
+		return Config.get("importSpell", "spellPointsResource") === ConfigConsts.C_SPELL_POINTS_RESOURCE__SHEET_ITEM
+			? UtilActors.pGetCreateActorSpellPointsItem({actor: this._actor, totalSpellcastingLevels})
+			: this._pImportEntry_pDoUpdateCharacter_spellcasting_spellPsiPoints_resource({
+				actUpdate,
+				amount: UtilDataConverter.getSpellPointTotal({totalSpellcastingLevels}),
+				label: "Spell Points",
+				resource: Config.getSpellPointsResource(),
+			});
+	}
+
+	async _pImportEntry_pDoUpdateCharacter_spellcasting_spellPsiPoints_resource ({actUpdate, amount, label, resource}) {
+		const propPathResource = (resource || "").trim().split(".");
+
+		if (!propPathResource.length) {
+			const msg = `Could not update ${label} total\u2014resource "${resource}" was not valid!`;
+			console.warn(...LGT, msg);
+			ui.notifications.warn(msg);
+			return;
+		}
+
+		const propPathValue = [...propPathResource, "value"];
+		const propPathMax = [...propPathResource, "max"];
+
+		const actorData = (this._actor.data._source || this._actor.data);
+		const curVal = MiscUtil.get(actorData, "data", ...propPathValue) || 0;
+		const curMax = MiscUtil.get(actorData, "data", ...propPathMax) || 0;
+
+		if (amount > curMax) {
+			const deltaCur = (amount - curMax);
+			MiscUtil.set(actUpdate, "data", ...propPathValue, curVal + deltaCur);
+			MiscUtil.set(actUpdate, "data", ...propPathMax, amount);
+
+			const propPathLabel = [...propPathResource, "label"];
+			if (!MiscUtil.get(actorData, "data", ...propPathLabel)) {
+				MiscUtil.set(actUpdate, "data", ...propPathLabel, label);
+			}
+		}
+	}
+
+	async _pImportEntry_pDoUpdateCharacter_psionics ({actUpdate, cls, sc, dataBuilderOpts, otherExistingClassItems, otherExistingSubclassItems}) {
+		const {totalMysticLevels} = Charactermancer_Class_Util.getMysticProgression({cls, targetLevel: dataBuilderOpts.targetLevel, otherExistingClassItems, otherExistingSubclassItems});
+
+		// Set psi points, where appropriate
+		await this._pImportEntry_pDoUpdateCharacter_psionics_psiPoints({actUpdate, totalMysticLevels});
+	}
+
+	async _pImportEntry_pDoUpdateCharacter_psionics_psiPoints ({actUpdate, totalMysticLevels}) {
+		if (!totalMysticLevels) return;
+		return Config.get("importPsionic", "psiPointsResource") === ConfigConsts.C_SPELL_POINTS_RESOURCE__SHEET_ITEM
+			? UtilActors.pGetCreateActorPsiPointsItem({actor: this._actor, totalMysticLevels})
+			: this._pImportEntry_pDoUpdateCharacter_spellcasting_spellPsiPoints_resource({
+				actUpdate,
+				amount: UtilDataConverter.getPsiPointTotal({totalMysticLevels}),
+				label: "Psi Points",
+				resource: Config.getPsiPointsResource(),
+			});
+	}
+
+	async _pImportEntry_pDoUpdateCharacter_hp ({actUpdate, cls, dataBuilderOpts}) {
+		if (!dataBuilderOpts.isClassImport || !Charactermancer_Class_HpIncreaseModeSelect.isHpAvailable(cls)) return;
+
+		const conMod = Parser.getAbilityModNumber(Charactermancer_Util.getCurrentAbilityScores(this._actor).con); // Factor in effects when adding HP
+
+		// You gain the hit points from your new class as described for levels after 1st.
+		//   You gain the 1st-level hit points for a class only when you are a 1st-level character.
+		//   --PHB, p163
+		const isFirstHpGain = dataBuilderOpts.isIncludesLevelOne && dataBuilderOpts.proficiencyImportMode !== Charactermancer_Class_ProficiencyImportModeSelect.MODE_MULTICLASS;
+
+		let hpIncrease = isFirstHpGain ? (cls.hd.number * cls.hd.faces) + conMod : 0;
+
+		const numLevels = isFirstHpGain ? dataBuilderOpts.numLevels - 1 : dataBuilderOpts.numLevels;
+
+		switch (dataBuilderOpts.hpIncreaseMode) {
+			case Charactermancer_Class_HpIncreaseModeSelect.MODE_TAKE_AVERAGE: {
+				const avg = Math.ceil(cls.hd.number * ((cls.hd.faces + 1) / 2));
+				hpIncrease += numLevels * Math.max((avg + conMod), 1);
+				break;
+			}
+
+			case Charactermancer_Class_HpIncreaseModeSelect.MODE_ROLL: {
+				for (let i = 0; i < numLevels; ++i) {
+					const roll = new Roll(`${cls.hd.number}d${cls.hd.faces} + ${conMod}`);
+					await roll.evaluate();
+					hpIncrease += Math.max(roll.total, 1);
+					// Post the roll to chat
+					await roll.toMessage({
+						flavor: `HP Increase`,
+						speaker: {
+							actor: this._actor.id,
+							alias: this._actor.name,
+							scene: null,
+							token: null,
+						},
+					});
+				}
+				break;
+			}
+
+			case Charactermancer_Class_HpIncreaseModeSelect.MODE_DO_NOT_INCREASE: {
+				hpIncrease = 0;
+				break;
+			}
+
+			default: throw new Error(`Unhandled Hit Points increase mode "${dataBuilderOpts.hpIncreaseMode}"`);
+		}
+
+		if (hpIncrease) {
+			const {value: curValue, max: curMax} = Charactermancer_Util.getBaseHp(this._actor);
+
+			switch (dataBuilderOpts.proficiencyImportMode) {
+				case Charactermancer_Class_ProficiencyImportModeSelect.MODE_MULTICLASS: {
+					const hpCurNxt = curValue + hpIncrease;
+					const hpMaxNxt = curMax + hpIncrease;
+
+					MiscUtil.set(actUpdate, "data", "attributes", "hp", "value", hpCurNxt);
+					MiscUtil.set(actUpdate, "data", "attributes", "hp", "max", hpMaxNxt);
+
+					break;
+				}
+
+				case Charactermancer_Class_ProficiencyImportModeSelect.MODE_PRIMARY: {
+					const hpCurNxt = (isFirstHpGain ? 0 : curValue) + hpIncrease;
+					const hpMaxNxt = (isFirstHpGain ? 0 : curMax) + hpIncrease;
+
+					MiscUtil.set(actUpdate, "data", "attributes", "hp", "value", hpCurNxt);
+					MiscUtil.set(actUpdate, "data", "attributes", "hp", "max", hpMaxNxt);
+
+					break;
+				}
+
+				case Charactermancer_Class_ProficiencyImportModeSelect.MODE_NONE: break;
+
+				default: throw new Error(`Unknown proficiency import mode "${dataBuilderOpts.proficiencyImportMode}"`);
+			}
+		}
+	}
+
+	async _pImportEntry_pDoUpdateCharacter_languages ({actUpdate, cls, dataBuilderOpts}) {
+		await DataConverter.pFillActorLanguageData(
+			MiscUtil.get(this._actor, "data", "data", "traits", "languages"),
+			cls.languageProficiencies,
+			actUpdate.data,
+			dataBuilderOpts,
+		);
+	}
+
+	async _pImportEntry_pDoUpdateCharacter_pPopulateLevelOneProficienciesAndEquipment (actUpdate, cls, sc, dataBuilderOpts) {
+		const out = {
+			chosenProficiencies: {},
+		};
+
+		// region saving throws; weapons/armor/tools
+		out.chosenProficiencies = await this._pImportEntry_pDoUpdateCharacter_pPopulateProficienciesFrom(actUpdate, cls.startingProficiencies, cls.proficiency, Charactermancer_Class_ProficiencyImportModeSelect.MODE_PRIMARY, dataBuilderOpts);
+		if (dataBuilderOpts.isCancelled) return;
+		// endregion
+
+		// region Equipment
+		await this._pImportEntry_pDoUpdateCharacter_pPopulateEquipment(cls, dataBuilderOpts);
+		if (dataBuilderOpts.isCancelled) return;
+		// endregion
+
+		return out;
+	}
+
+	async _pImportEntry_pDoUpdateCharacter_pPopulateProficienciesFrom (actUpdate, profs, savingThrowProfs, mode, dataBuilderOpts) {
+		const out = {
+			skills: {},
+		};
+
+		// region Skills
+		if (profs?.skills) {
+			const skills = await DataConverter.pFillActorSkillData(
+				MiscUtil.get(this._actor, "data", "data", "skills"),
+				profs.skills,
+				actUpdate.data,
+				dataBuilderOpts,
+			);
+
+			if (dataBuilderOpts.isCancelled) return out;
+
+			out.skills = skills; // Save the skills the user chose, so that we can add these to the final class item
+		}
+		// endregion
+
+		// region Other proficiencies (armor, weapons, tools)
+		const formDataOtherProfs = await Charactermancer_Class_StartingProficiencies.pGetUserInput({
+			mode,
+			primaryProficiencies: mode === Charactermancer_Class_ProficiencyImportModeSelect.MODE_PRIMARY ? profs : null,
+			multiclassProficiencies: mode === Charactermancer_Class_ProficiencyImportModeSelect.MODE_MULTICLASS ? profs : null,
+			savingThrowsProficiencies: savingThrowProfs,
+			existingProficienciesFvttArmor: MiscUtil.get(this._actor, "data", "data", "traits", "armorProf"),
+			existingProficienciesFvttWeapons: MiscUtil.get(this._actor, "data", "data", "traits", "weaponProf"),
+			existingProficienciesFvttTools: MiscUtil.get(this._actor, "data", "data", "traits", "toolProf"),
+			existingProficienciesFvttSavingThrows: Charactermancer_Class_StartingProficiencies.getExistingProficienciesFvttSavingThrows(this._actor),
+		});
+		if (formDataOtherProfs == null) return dataBuilderOpts.isCancelled = true;
+		if (formDataOtherProfs === VeCt.SYM_UI_SKIP) return;
+
+		Charactermancer_Class_StartingProficiencies.applyFormDataToActorUpdate(actUpdate, formDataOtherProfs);
+		// endregion
+
+		return out;
+	}
+
+	async _pImportEntry_pDoUpdateCharacter_pPopulateMulticlassProficiencies (actUpdate, cls, sc, dataBuilderOpts) {
+		const out = {
+			chosenProficiencies: {},
+		};
+
+		if (cls.multiclassing && cls.multiclassing.proficienciesGained) {
+			out.chosenProficiencies = await this._pImportEntry_pDoUpdateCharacter_pPopulateProficienciesFrom(actUpdate, cls.multiclassing.proficienciesGained, null, Charactermancer_Class_ProficiencyImportModeSelect.MODE_MULTICLASS, dataBuilderOpts);
+			if (dataBuilderOpts.isCancelled) return;
+		}
+
+		return out;
+	}
+
+	_getExistingClassItems (cls) { return Charactermancer_Class_Util.getExistingClassItems(this._actor, cls); }
+	_getExistingSubclassItems (cls, sc) { return Charactermancer_Class_Util.getExistingSubclassItems(this._actor, cls, sc); }
+
+	static _CurLevelMeta = class {
+		constructor ({curLevel = 0, existingCLassItem = null, existingSubclassItem = null} = {}) {
+			this.curLevel = curLevel;
+			this.existingClassItem = existingCLassItem;
+			this.existingSubclassItem = existingSubclassItem;
+		}
+	};
+
+	async _pImportEntry_pGetCurLevelFillClassData (actUpdate, cls, sc, importOpts, dataBuilderOpts) {
+		const outCurLevelMeta = new this.constructor._CurLevelMeta();
+
+		const proficiencyMeta = await this._pGetProficiencyMeta({actUpdate, cls, sc, dataBuilderOpts});
+		if (dataBuilderOpts.isCancelled) return;
+
+		const {existingClassItem, existingSubclassItem} = await this._pImportEntry_pGetUserExistingClassSubclassItem({cls, sc, dataBuilderOpts});
+		if (dataBuilderOpts.isCancelled) return;
+
+		dataBuilderOpts.classItem = existingClassItem;
+		dataBuilderOpts.subclassItem = existingSubclassItem;
+		outCurLevelMeta.existingClassItem = existingClassItem;
+		outCurLevelMeta.existingSubclassItem = existingSubclassItem;
+
+		await this._pImportEntry_pFillClassData({cls, sc, proficiencyMeta, outCurLevelMeta, importOpts, dataBuilderOpts});
+		await this._pImportEntry_pFillSubclassData({cls, sc, proficiencyMeta, outCurLevelMeta, importOpts, dataBuilderOpts});
+
+		return outCurLevelMeta;
+	}
+
+	async _pGetProficiencyMeta ({actUpdate, cls, sc, dataBuilderOpts}) {
+		if (!dataBuilderOpts.isClassImport || !dataBuilderOpts.isIncludesLevelOne) return {};
+
+		switch (dataBuilderOpts.proficiencyImportMode) {
+			case Charactermancer_Class_ProficiencyImportModeSelect.MODE_MULTICLASS: {
+				return this._pImportEntry_pDoUpdateCharacter_pPopulateMulticlassProficiencies(actUpdate, cls, sc, dataBuilderOpts);
+			}
+			case Charactermancer_Class_ProficiencyImportModeSelect.MODE_PRIMARY: {
+				return this._pImportEntry_pDoUpdateCharacter_pPopulateLevelOneProficienciesAndEquipment(actUpdate, cls, sc, dataBuilderOpts);
+			}
+			case Charactermancer_Class_ProficiencyImportModeSelect.MODE_NONE: {
+				return {};
+			}
+			default: throw new Error(`Unknown proficiency import mode "${dataBuilderOpts.proficiencyImportMode}"`);
+		}
+	}
+
+	/**
+	 * Find an existing item if it exists, so we can update it.
+	 * This is both over- and under-engineered. It is under-engineered in the sense that it does not respect identifiers
+	 * (i.e., a single class+subclass import can end up changing a class+subclass item which do not have a parent-child
+	 * relationship). It is over-engineered in the sense that it allows choosing nonsensical combinations of
+	 * class+subclass items instead of limiting the user to a "you probably meant to do X" selection.
+	 */
+	async _pImportEntry_pGetUserExistingClassSubclassItem ({cls, sc, dataBuilderOpts}) {
+		const existingClassItems = this._getExistingClassItems(cls);
+		const existingSubclassItems = this._getExistingSubclassItems(cls, sc);
+
+		if (!existingClassItems.length && !existingSubclassItems.length) return {};
+
+		const isChooseClass = cls && existingClassItems.length > 1;
+		const isChooseSubclass = sc && existingSubclassItems.length > 1;
+
+		if (isChooseClass && isChooseSubclass) {
+			const [isDataEntered, classSubclassItemSelection] = await this._pGetUserClassSubclassItems({cls, sc, existingClassItems, existingSubclassItems});
+			if (!isDataEntered) {
+				dataBuilderOpts.isCancelled = true;
+				return {};
+			}
+			return classSubclassItemSelection;
+		}
+
+		if (isChooseClass) {
+			return {
+				existingClassItem: await this._pGetUserClassSubclassItem({dataBuilderOpts, clsOrSc: cls, existingItems: existingClassItems, nameUnnamed: "(Unnamed Class)"}),
+				existingSubclassItem: existingSubclassItems[0],
+			};
+		}
+
+		if (isChooseSubclass) {
+			return {
+				existingClassItem: existingClassItems[0],
+				existingSubclassItem: await this._pGetUserClassSubclassItem({dataBuilderOpts, clsOrSc: sc, existingItems: existingSubclassItems, nameUnnamed: "(Unnamed Subclass)"}),
+			};
+		}
+
+		return {
+			existingClassItem: existingClassItems[0],
+			existingSubclassItem: existingSubclassItems[0],
+		};
+	}
+
+	async _pImportEntry_pFillClassData ({cls, sc, proficiencyMeta, outCurLevelMeta, importOpts, dataBuilderOpts}) {
+		const {existingClassItem} = outCurLevelMeta;
+
+		const classItemData = await DataConverterClass.pGetClassItem(
+			cls,
+			{
+				sc,
+				filterValues: importOpts.filterValues || this._pageFilter.filterBox.getValues(),
+				startingSkills: proficiencyMeta.chosenProficiencies && proficiencyMeta.chosenProficiencies.skills
+					? Object.keys(proficiencyMeta.chosenProficiencies.skills)
+					: [],
+				proficiencyImportMode: dataBuilderOpts.proficiencyImportMode,
+				level: dataBuilderOpts.targetLevel,
+				isClsDereferenced: true,
+				actor: this._actor,
+			},
+		);
+
+		if (existingClassItem) {
+			let isUpdate = false;
+			const update = {_id: existingClassItem.id};
+
+			const description = classItemData.data.description.value;
+			if (description && !(existingClassItem.data.data.description?.value || "").trim()) {
+				isUpdate = true;
+				MiscUtil.set(update, "data", "description", "value", description);
+			}
+
+			let curLevel = existingClassItem.data.data.levels;
+			if (curLevel) {
+				if (dataBuilderOpts.targetLevel > curLevel) {
+					isUpdate = true;
+					MiscUtil.set(update, "data", "levels", dataBuilderOpts.targetLevel);
+				}
+			}
+
+			dataBuilderOpts.classItemUpdate = update;
+			dataBuilderOpts.isPersistClassItemUpdate = dataBuilderOpts.isPersistClassItemUpdate || isUpdate;
+
+			outCurLevelMeta.curLevel = curLevel || 0;
+			outCurLevelMeta.existingClassItem = existingClassItem;
+			return;
+		}
+
+		// If there was no existing item, create a new class item
+		dataBuilderOpts.classItemToCreate = classItemData;
+	}
+
+	async _pImportEntry_pFillSubclassData ({cls, sc, proficiencyMeta, outCurLevelMeta, importOpts, dataBuilderOpts}) {
+		if (!sc) return;
+
+		const {existingSubclassItem} = outCurLevelMeta;
+
+		const subclassItemData = await DataConverterClass.pGetSubclassItem(
+			cls,
+			sc,
+			{
+				filterValues: importOpts.filterValues || this._pageFilter.filterBox.getValues(),
+				proficiencyImportMode: dataBuilderOpts.proficiencyImportMode,
+				isScDereferenced: true,
+				actor: this._actor,
+			},
+		);
+
+		if (existingSubclassItem) {
+			let isUpdate = false;
+			const update = {_id: existingSubclassItem.id};
+
+			const description = subclassItemData.data.description.value;
+			if (description && !(existingSubclassItem.data.data.description?.value || "").trim()) {
+				isUpdate = true;
+				MiscUtil.set(update, "data", "description", "value", description);
+			}
+
+			dataBuilderOpts.subclassItemUpdate = update;
+			dataBuilderOpts.isPersistSubclassItemUpdate = dataBuilderOpts.isPersistSubclassItemUpdate || isUpdate;
+
+			return;
+		}
+
+		dataBuilderOpts.subclassItemToCreate = subclassItemData;
+	}
+
+	async _pGetUserClassSubclassItem ({dataBuilderOpts, clsOrSc, existingItems, nameUnnamed}) {
+		const titlePart = clsOrSc.name || nameUnnamed;
+
+		const ix = await InputUiUtil.pGetUserEnum({
+			values: existingItems,
+			placeholder: "Select Existing Item...",
+			title: `Select Existing Item to Import ${titlePart} Levels To`,
+			fnDisplay: fvIt => {
+				if (fvIt == null) return `(Create New Item)`;
+				return fvIt.name || nameUnnamed;
+			},
+			isAllowNull: true,
+		});
+
+		if (ix == null) {
+			dataBuilderOpts.isCancelled = true;
+			return null;
+		}
+
+		return existingItems[ix];
+	}
+
+	async _pGetUserClassSubclassItems ({cls, sc, existingClassItems, existingSubclassItems}) {
+		const titlePart = `${cls.name || "(Unnamed class)"} (${sc.name || "(Unnamed subclass)"})`;
+
+		const {$modalInner, doClose, pGetResolved, doAutoResize: doAutoResizeModal} = await UtilApplications.pGetShowApplicationModal({
+			title: `Select Existing Items to Import ${titlePart} Levels To`,
+		});
+		const comp = BaseComponent.fromObject({ixItemClass: null, ixItemSubclass: null}, "*");
+
+		const $btnOk = $(`<button class="btn btn-primary mr-2">OK</button>`)
+			.click(async () => {
+				const out = {
+					existingClassItem: existingClassItems[comp._state.ixItemSubclass],
+					existingSubclassItem: existingSubclassItems[comp._state.ixItemSubclass],
+				};
+
+				return doClose(true, out);
+			});
+		const $btnCancel = $(`<button class="btn btn-default">Cancel</button>`)
+			.click(() => doClose(false));
+
+		const $selClass = ComponentUiUtil.$getSelEnum(
+			comp,
+			"ixItemClass",
+			{
+				values: existingClassItems,
+				fnDisplay: fvIt => fvIt == null ? `(Create New Item)` : (fvIt.name || "(Unnamed class)"),
+				displayNullAs: "(Create New Item)",
+				isAllowNull: true,
+				isSetIndexes: true,
+			},
+		);
+
+		const $selSubclass = ComponentUiUtil.$getSelEnum(
+			comp,
+			"ixItemSubclass",
+			{
+				values: existingSubclassItems,
+				fnDisplay: fvIt => fvIt == null ? `(Create New Item)` : (fvIt.name || "(Unnamed subclass)"),
+				displayNullAs: "(Create New Item)",
+				isAllowNull: true,
+				isSetIndexes: true,
+			},
+		);
+
+		$$($modalInner)`<div class="ve-flex-col">
+			<label class="split-v-center mb-2"><div class="no-shrink mr-2 w-100p text-right">Class item</div>${$selClass}</label>
+			<label class="split-v-center"><div class="no-shrink mr-2 w-100p text-right">Subclass item</div>${$selSubclass}</label>
+		</div>`;
+		$$`<div class="ve-flex-v-center ve-flex-h-right no-shrink pb-1 pt-1 px-1">${$btnOk}${$btnCancel}</div>`.appendTo($modalInner);
+		$selClass.focus();
+
+		doAutoResizeModal();
+
+		return pGetResolved();
+	}
+
+	async _pImportCasterCantrips (cls, sc, curLevel, importOpts, dataBuilderOpts) {
+		if (cls._foundryIsSkipImportCantrips) return;
+
+		const cantripProgressionMeta = Charactermancer_Spell_Util.getCasterCantripProgressionMeta({cls, sc, curLevel, targetLevel: dataBuilderOpts.targetLevel});
+		if (!cantripProgressionMeta) return;
+
+		const {maxCantripsHigh, deltaMaxCantrips} = cantripProgressionMeta;
+		if (!deltaMaxCantrips || !maxCantripsHigh) return;
+
+		const formData = await Charactermancer_Spell_Modal.pGetUserInput({
+			actor: this._actor,
+			existingClass: dataBuilderOpts.classItemUpdate ? cls : null,
+			existingCasterMeta: Charactermancer_Spell_Util.getExistingCasterMeta({cls, sc, actor: this._actor, targetLevel: dataBuilderOpts.targetLevel}),
+			spellDatas: (await Vetools.pGetAllSpells({isIncludeLoadedBrew: true, isApplyBlacklist: true})).spell,
+			className: cls.name,
+			classSource: cls.source,
+			brewClassSpells: cls.classSpells,
+			subclassName: sc?.name,
+			subclassSource: sc?.source,
+			brewSubclassSpells: sc?.subclassSpells,
+			brewSubSubclassSpells: sc?.subSubclassSpells,
+
+			maxLevel: 0,
+			maxLearnedCantrips: maxCantripsHigh,
+		});
+		if (!formData) return importOpts.isCancelled = true;
+		if (formData === VeCt.SYM_UI_SKIP) return;
+
+		await Charactermancer_Spell.pApplyFormDataToActor(this._actor, formData, {cls, sc});
+	}
+
+	async _pImportEntry_pFillPreparedSpells (cls, sc, curLevel, dataBuilderOpts) {
+		// This data is technically only usable in Tidy5e, but, set it regardless, in case the user later switches sheets
+		// if (!UtilCompat.isTidy5eSheetActive()) return
+
+		const spellsPreparedFormula = Charactermancer_Spell_Util.getMaxPreparedSpellsFormula({cls, sc});
+		if (!spellsPreparedFormula) return;
+
+		const existing = this._actor.effects.contents.find(it => (it.data?.label || "").toLowerCase().trim() === "prepared spells");
+		if (existing) return;
+
+		dataBuilderOpts.effects.push(UtilActiveEffects.getGenericEffect({
+			key: "data.details.maxPreparedSpells",
+			value: spellsPreparedFormula,
+			// N.b.: Tidy5e does not (as of 2022-01-05) define their "maxPreparedSpells" as numeric (or indeed, anything), so UPGRADE/DOWNGRADE don't work. Use OVERRIDE instead.
+			mode: CONST.ACTIVE_EFFECT_MODES.OVERRIDE,
+			label: `Prepared Spells`,
+			icon: await Vetools.pOptionallySaveImageToServerAndGetUrl(await DataConverterClass.pGetClassImagePath(cls)),
+			disabled: false,
+			priority: UtilActiveEffects.PRIORITY_BASE,
+			originActor: this._actor,
+			originActorItem: dataBuilderOpts.classItem,
+		}));
+	}
+
+	async _pImportPreparedCasterSpells (cls, sc, curLevel, dataBuilderOpts) {
+		if (cls._foundryIsSkipImportPreparedSpells) return;
+
+		const casterProgressionMeta = Charactermancer_Spell_Util.getCasterProgressionMeta({
+			casterProgression: DataConverter.getMaxCasterProgression(cls.casterProgression, sc?.casterProgression),
+			curLevel,
+			targetLevel: dataBuilderOpts.targetLevel,
+			isBreakpointsOnly: true,
+		});
+		if (!casterProgressionMeta) return;
+
+		const {spellLevelLow, spellLevelHigh, deltaLevels} = casterProgressionMeta;
+
+		const doImport = await InputUiUtil.pGetUserBoolean({
+			title: `Populate Spellbook`,
+			htmlDescription: `<p>Do you want to populate the spellbook for this class (for class level${deltaLevels === 1 ? "" : "s"} ${deltaLevels === 1 ? dataBuilderOpts.targetLevel : `${curLevel + 1}-${dataBuilderOpts.targetLevel}`})?</p>`,
+			textYes: "Yes",
+			textNo: "No",
+		});
+
+		if (!doImport) return;
+
+		const isBrewSource = sc ? BrewUtil2.hasSourceJson(sc.source) : BrewUtil2.hasSourceJson(cls.source);
+		const isUaSource = !isBrewSource && (sc ? SourceUtil.isNonstandardSource(sc.source) : SourceUtil.isNonstandardSource(cls.source));
+
+		const allSpells = (await Vetools.pGetAllSpells({
+			isFilterNonStandard: !isUaSource,
+			additionalSourcesBrew: isBrewSource ? this._getBrewSpellSources(cls, sc) : null,
+			isApplyBlacklist: true,
+		})).spell;
+
+		const spellsToImport = await Charactermancer_Class_Util.pGetPreparableSpells(allSpells, cls, spellLevelLow, spellLevelHigh);
+		if (!spellsToImport.length) return;
+
+		const {ImportListSpell} = await import("./ImportListSpell.js");
+		const importListSpell = new ImportListSpell({actor: this._actor});
+		await importListSpell.pInit();
+
+		for (const spell of spellsToImport) {
+			const existingSpell = DataConverterSpell.getActorSpell(this._actor, spell.name, spell.source);
+			if (existingSpell) continue;
+
+			await importListSpell.pImportEntry(
+				spell,
+				{
+					opts_pGetSpellItem: {
+						...(await UtilActors.pGetActorSpellItemOpts()),
+						ability: dataBuilderOpts.spellcastingAbility,
+					},
+				},
+			);
+		}
+	}
+
+	_getBrewSpellSources (cls, sc) {
+		const out = new Set();
+
+		if (!Parser.SOURCE_JSON_TO_ABV[cls.source]) out.add(cls.source);
+		if (sc && !Parser.SOURCE_JSON_TO_ABV[sc.source]) out.add(sc.source);
+
+		if (cls.classSpells) {
+			cls.classSpells
+				.filter(it => it.source && !Parser.SOURCE_JSON_TO_ABV[it.source])
+				.forEach(({source}) => out.add(source));
+		}
+		if (sc && sc.subclassSpells) {
+			sc.subclassSpells
+				.filter(it => it.source && !Parser.SOURCE_JSON_TO_ABV[it.source])
+				.forEach(({source}) => out.add(source));
+		}
+
+		return [...out];
+	}
+
+	async _pImportEntry_pFillItemArrayAdditionalSpells (cls, subclasses, curLevel, dataBuilderOpts) {
+		// region From class
+		const casterProgressionMeta = Charactermancer_Spell_Util.getCasterProgressionMeta({casterProgression: cls.casterProgression, curLevel, targetLevel: dataBuilderOpts.targetLevel});
+
+		const formData = await Charactermancer_AdditionalSpellsSelect.pGetUserInput({
+			additionalSpells: cls.additionalSpells,
+			sourceHintText: cls.name,
+			curLevel: curLevel,
+			targetLevel: dataBuilderOpts.targetLevel,
+			spellLevelLow: casterProgressionMeta ? casterProgressionMeta.spellLevelLow : null,
+			spellLevelHigh: casterProgressionMeta ? casterProgressionMeta.spellLevelHigh : null,
+			isStandalone: true,
+		});
+
+		if (formData == null) return dataBuilderOpts.isCancelled = true;
+		if (formData !== VeCt.SYM_UI_SKIP) {
+			await Charactermancer_AdditionalSpellsSelect.pApplyFormDataToActor(
+				this._actor,
+				formData,
+				{
+					abilityAbv: cls.spellcastingAbility,
+				},
+			);
+		}
+		// endregion
+
+		// region From subclass
+		for (const sc of subclasses) {
+			const casterProgressionMeta = Charactermancer_Spell_Util.getCasterProgressionMeta({casterProgression: sc?.casterProgression || cls.casterProgression, curLevel, targetLevel: dataBuilderOpts.targetLevel});
+
+			const formData = await Charactermancer_AdditionalSpellsSelect.pGetUserInput({
+				additionalSpells: sc.additionalSpells,
+				sourceHintText: sc.name,
+				curLevel: curLevel,
+				targetLevel: dataBuilderOpts.targetLevel,
+				spellLevelLow: casterProgressionMeta ? casterProgressionMeta.spellLevelLow : null,
+				spellLevelHigh: casterProgressionMeta ? casterProgressionMeta.spellLevelHigh : null,
+				isStandalone: true,
+			});
+
+			if (formData == null) return dataBuilderOpts.isCancelled = true;
+			if (formData === VeCt.SYM_UI_SKIP) continue;
+
+			await Charactermancer_AdditionalSpellsSelect.pApplyFormDataToActor(
+				this._actor,
+				formData,
+				{
+					abilityAbv: sc.spellcastingAbility,
+				},
+			);
+		}
+		// endregion
+	}
+
+	async _pImportEntry_pHandleFeatures (cls, sc, allFeatures, selectedLevelIndices, importOpts, dataBuilderOpts) {
+		if (cls._foundryAllFeatures) {
+			await this._pImportEntry_pFillItemArrayPredefinedFeatures({
+				allPreloadedFeatures: cls._foundryAllFeatures,
+				cls,
+				sc,
+				importOpts,
+				dataBuilderOpts,
+			});
+			this._pImportEntry_handleConDifference({
+				conInitial: cls._foundryConInitial,
+				conFinal: cls._foundryConFinal,
+				isConPreApplied: true,
+				dataBuilderOpts,
+			});
+			return;
+		}
+
+		const allChosenFeatures = allFeatures.filter(f => selectedLevelIndices.includes(f.level - 1));
+		const fillMeta = await this._pImportEntry_pFillItemArrayFeatures(allChosenFeatures, importOpts, dataBuilderOpts);
+		if (dataBuilderOpts.isCancelled) return;
+		this._pImportEntry_handleConDifference({
+			conInitial: fillMeta.conInitial,
+			conFinal: fillMeta.conFinal,
+			dataBuilderOpts,
+		});
+	}
+
+	async _pImportEntry_pFillItemArrayPredefinedFeatures (
+		{
+			allPreloadedFeatures,
+			cls,
+			sc,
+			importOpts,
+			dataBuilderOpts,
+		},
+	) {
+		const {ImportListClassFeature} = await import("./ImportListClassFeature.js");
+		const {ImportListOptionalFeature} = await import("./ImportListOptionalFeature.js");
+
+		const importListClassFeature = new ImportListClassFeature({actor: this._actor});
+		await importListClassFeature.pInit();
+
+		const importListOptionalFeature = new ImportListOptionalFeature({actor: this._actor});
+		await importListOptionalFeature.pInit();
+
+		for (const loaded of allPreloadedFeatures) {
+			if (loaded._foundryIsIgnoreFeature) continue;
+
+			switch (loaded.type) {
+				case "optionalfeature": {
+					const importSummary = await importListOptionalFeature.pImportEntry(
+						loaded.entity,
+						{
+							isCharactermancer: true,
+							isLeaf: true,
+						},
+					);
+
+					const importMetasWrapped = this.constructor._getLevelledEmbeddedDocuments({importSummary, level: loaded.entity.level});
+					const tgt = loaded.entity?.ancestorSubclassName
+						? dataBuilderOpts.importedSubclassFeatureLevelledEmbeddedDocuments
+						: dataBuilderOpts.importedClassFeatureLevelledEmbeddedDocuments;
+					tgt.push(...importMetasWrapped);
+
+					break;
+				}
+				case "classFeature": {
+					const importSummary = await importListClassFeature.pImportEntry(
+						loaded.entity,
+						{
+							isCharactermancer: true,
+							isLeaf: true,
+							spellcastingAbilityAbv: cls.spellcastingAbility,
+						},
+					);
+					dataBuilderOpts.importedClassFeatureLevelledEmbeddedDocuments.push(
+						...this.constructor._getLevelledEmbeddedDocuments({importSummary, level: loaded.entity.level}),
+					);
+					break;
+				}
+				case "subclassFeature": {
+					const importSummary = await importListClassFeature.pImportEntry(
+						loaded.entity,
+						{
+							isCharactermancer: true,
+							isLeaf: true,
+							spellcastingAbilityAbv: sc?.spellcastingAbility,
+						},
+					);
+					dataBuilderOpts.importedSubclassFeatureLevelledEmbeddedDocuments.push(
+						...this.constructor._getLevelledEmbeddedDocuments({importSummary, level: loaded.entity.level}),
+					);
+					break;
+				}
+				default: throw new Error(`Unhandled feature type "${loaded.type}"`);
+			}
+		}
+	}
+
+	async _pImportEntry_pFillItemArrayFeatures (allFeatures, importOpts, dataBuilderOpts) {
+		const conInitial = Charactermancer_Util.getCurrentAbilityScores(this._actor).con;
+
+		const existingFeatureChecker = new Charactermancer_Class_Util.ExistingFeatureChecker(this._actor);
+
+		const {ImportListClassFeature} = await import("./ImportListClassFeature.js");
+		const importListClassFeature = new ImportListClassFeature({actor: this._actor});
+		await importListClassFeature.pInit();
+
+		for (const feature of allFeatures) {
+			const lowName = (feature.name || "").toLowerCase().trim();
+			if (lowName === "ability score improvement") {
+				const abilityScoreIncrease = new ImportListClass.AbilityScoreIncrease(this._actor, feature.level, dataBuilderOpts);
+				abilityScoreIncrease.render(true);
+
+				const feat = await abilityScoreIncrease.pWaitForUserInput(); // This will set "dataBuilderOpts.isCancelled" as appropriate
+				if (feat) {
+					const importListFeat = new ImportListFeat({actor: this._actor});
+					await importListFeat.pImportEntry(
+						feat,
+						{
+							isCharactermancer: importOpts.isCharactermancer,
+						},
+					);
+				}
+				continue;
+			}
+
+			if (feature.loadeds?.length) {
+				feature.loadeds = feature.loadeds.filter(it => !it?._foundryIsIgnoreFeature);
+				if (!feature.loadeds.length) continue;
+			}
+
+			const importSummary = await importListClassFeature.pImportEntry(
+				feature,
+				{
+					isCharactermancer: importOpts.isCharactermancer,
+					isPreLoadedFeature: true,
+					featureEntriesPageFilter: this._pageFilter,
+					featureEntriesPageFilterValues: importOpts.filterValues || this._pageFilter.filterBox.getValues(),
+					existingFeatureChecker,
+					spellcastingAbilityAbv: dataBuilderOpts.spellcastingAbility,
+				},
+			);
+			const importMetasWrapped = this.constructor._getLevelledEmbeddedDocuments({importSummary, level: feature.level});
+
+			if (feature.classFeature) {
+				dataBuilderOpts.importedClassFeatureLevelledEmbeddedDocuments.push(...importMetasWrapped);
+			} else if (feature.subclassFeature) {
+				dataBuilderOpts.importedSubclassFeatureLevelledEmbeddedDocuments.push(...importMetasWrapped);
+			} else {
+				console.warn(...LGT, `Class/subclass feature had neither "classFeature" nor "subclassFeature" set! This should never occur!`);
+			}
+		}
+
+		if (dataBuilderOpts.isCancelled) return;
+
+		const conFinal = Charactermancer_Util.getCurrentAbilityScores(this._actor).con;
+		return {conInitial, conFinal};
+	}
+
+	static _getLevelledEmbeddedDocuments ({importSummary, level}) {
+		return importSummary.imported
+			.filter(importMeta => importMeta.embeddedDocument)
+			.map(importMeta => new UtilAdvancements.LevelledEmbeddedDocument_MinLevel1({
+				embeddedDocument: importMeta.embeddedDocument,
+				level: level,
+			}));
+	}
+
+	_pImportEntry_handleConDifference ({conInitial, conFinal, dataBuilderOpts, isConPreApplied}) {
+		if (conInitial == null || conFinal == null || conFinal === conInitial) return;
+
+		const modOld = Parser.getAbilityModNumber(conInitial);
+		const modNew = Parser.getAbilityModNumber(conFinal);
+		const hpIncrease = (dataBuilderOpts.numLevelsPrev + (isConPreApplied ? 0 : dataBuilderOpts.numLevels)) * (modNew - modOld);
+
+		const {value: curValue, max: curMax} = Charactermancer_Util.getBaseHp(this._actor);
+
+		const hpCurNxt = curValue + hpIncrease;
+		const hpMaxNxt = curMax + hpIncrease;
+
+		MiscUtil.set(dataBuilderOpts.actorUpdate, "data", "attributes", "hp", "value", hpCurNxt);
+		MiscUtil.set(dataBuilderOpts.actorUpdate, "data", "attributes", "hp", "max", hpMaxNxt);
+	}
+
+	async _pImportEntry_pAddUpdateClassItem (cls, sc, dataBuilderOpts) {
+		for (const {dataBuilderProp, dataBuilderPropOut, pFnHasSideLoadedEffects, pFnGetSideLoadedEffects} of [
+			{
+				dataBuilderProp: "classItemToCreate",
+				dataBuilderPropOut: "classItem",
+				pFnHasSideLoadedEffects: DataConverterClass.pHasClassSideLoadedEffects.bind(DataConverterClass),
+				pFnGetSideLoadedEffects: DataConverterClass.pGetClassItemEffects.bind(DataConverterClass),
+			},
+			{
+				dataBuilderProp: "subclassItemToCreate",
+				dataBuilderPropOut: "subclassItem",
+				pFnHasSideLoadedEffects: DataConverterClass.pHasSubclassSideLoadedEffects.bind(DataConverterClass),
+				pFnGetSideLoadedEffects: DataConverterClass.pGetSubclassItemEffects.bind(DataConverterClass),
+			},
+		]) {
+			if (!dataBuilderOpts[dataBuilderProp]) continue;
+
+			const importedEmbeds = await UtilActors.pAddActorItems(this._actor, [dataBuilderOpts[dataBuilderProp]]);
+			dataBuilderOpts[dataBuilderPropOut] = DataConverter.getImportedEmbed(importedEmbeds, dataBuilderOpts[dataBuilderProp])?.document;
+
+			if (await pFnHasSideLoadedEffects({actor: this._actor, cls, sc}) && dataBuilderOpts[dataBuilderPropOut]) {
+				const effectsToAdd = await pFnGetSideLoadedEffects({actor: this._actor, cls, sc, sheetItem: dataBuilderOpts[dataBuilderPropOut]});
+				await UtilActors.pAddActorEffects(this._actor, effectsToAdd);
+			}
+		}
+
+		const toPersistClassSubclassItemUpdates = [
+			dataBuilderOpts.isPersistClassItemUpdate ? dataBuilderOpts.classItemUpdate : null,
+			dataBuilderOpts.isPersistSubclassItemUpdate ? dataBuilderOpts.subclassItemUpdate : null,
+		].filter(Boolean);
+
+		if (toPersistClassSubclassItemUpdates.length) {
+			await UtilDocuments.pUpdateEmbeddedDocuments(
+				this._actor,
+				toPersistClassSubclassItemUpdates,
+				{
+					propData: "items",
+					ClsEmbed: Item,
+				},
+			);
+		}
+	}
+
+	async _pImportEntry_pAddUnarmedStrike () {
+		if (!Config.get(this._configGroup, "isAddUnarmedStrike")) return;
+
+		const actorItems = MiscUtil.get(this._actor, "data", "items") || [];
+		// Avoid adding if there's already e.g. "Unarmed Strike (Monk)"
+		const isExisting = actorItems.some(it => it.name.split("(")[0].trim().toLowerCase() === ImportListClass._ITEM_NAME_UNARMED_STRIKE.toLowerCase());
+		if (isExisting) return;
+
+		const dataUnarmed = {
+			name: "Unarmed Strike",
+			source: SRC_PHB,
+			page: 149,
+			srd: true,
+			type: "M",
+			rarity: "none",
+			weaponCategory: "simple",
+			foundryData: {
+				"equipped": true,
+				"damage.parts": [
+					[
+						"1 + @mod",
+						"bludgeoning",
+					],
+				],
+				"ability": "str",
+			},
+		};
+
+		const {ChooseImporter} = await import("./ChooseImporter.js");
+		const importer = ChooseImporter.getImporter("item", this._actor);
+		await importer.pInit();
+		await importer.pImportEntry(dataUnarmed);
+	}
+
+	async _pImportEntry_pAddAdvancements (dataBuilderOpts) {
+		if (dataBuilderOpts.importedClassFeatureLevelledEmbeddedDocuments.length) {
+			await UtilAdvancements.pAddAdvancementLinks({
+				actor: this._actor,
+				parentEmbeddedDocument: dataBuilderOpts.classItem,
+				childLevelledEmbeddedDocuments: dataBuilderOpts.importedClassFeatureLevelledEmbeddedDocuments,
+			});
+		}
+
+		if (dataBuilderOpts.importedSubclassFeatureLevelledEmbeddedDocuments.length) {
+			await UtilAdvancements.pAddAdvancementLinks({
+				actor: this._actor,
+				parentEmbeddedDocument: dataBuilderOpts.subclassItem,
+				childLevelledEmbeddedDocuments: dataBuilderOpts.importedSubclassFeatureLevelledEmbeddedDocuments,
+			});
+		}
+	}
+
+	async _pImportEntry_pFinalise (dataBuilderOpts) {
+		// Copy over equipment's actor currency update, as required
+		if (dataBuilderOpts.formDataEquipment?.data?.currency) MiscUtil.set(dataBuilderOpts.actorUpdate, "data", "currency", dataBuilderOpts.formDataEquipment.data.currency);
+
+		await this._pDoMergeAndApplyActorUpdate(dataBuilderOpts.actorUpdate);
+
+		// Import equipment
+		await Charactermancer_StartingEquipment.pImportEquipmentItemEntries(this._actor, dataBuilderOpts.formDataEquipment);
+
+		// Apply generic active effects
+		if (dataBuilderOpts.effects.length) {
+			await UtilActors.pAddActorEffects(this._actor, dataBuilderOpts.effects);
+		}
+
+		// Apply spell points active effects, if required
+		if (
+			Config.get("importSpell", Config.getSpellPointsKey({actorType: this._actor?.type})) === ConfigConsts.C_SPELL_POINTS_MODE__ENABLED_AND_UNLIMITED_SLOTS
+		) {
+			if (!UtilActors.hasActorSpellPointSlotEffect({actor: this._actor})) {
+				await UtilActors.pAddActorEffects(this._actor, UtilActors.getActorSpellPointsSlotsEffectData({actor: this._actor, sheetIem: dataBuilderOpts.classItem}));
+			}
+			Object.assign(
+				dataBuilderOpts.postItemActorUpdate,
+				foundry.utils.flattenObject(UtilActors.getActorSpellPointsSlotsUpdateData()),
+			);
+		}
+
+		// Handle any final updates that need to be made after items have been added/updated
+		Util.trimObject(dataBuilderOpts.postItemActorUpdate);
+		if (Object.keys(dataBuilderOpts.postItemActorUpdate).length) await UtilDocuments.pUpdateDocument(this._actor, dataBuilderOpts.postItemActorUpdate);
+	}
+
+	/**
+	 * Check if the user has only selected one high level while not having any class levels. If so, they probably meant
+	 * to import all levels up to and including that level, not just e.g. level 7. Give them a chance to fix their
+	 * mistake.
+	 */
+	async _pValidateUserLevelIndices (indices, dataBuilderOpts) {
+		// If the user selected more than one index, don't question them
+		if (indices.length > 1) return;
+
+		// If the user selected 1st level, don't question them
+		if (indices[0] === 0) return;
+
+		// If the user already has class levels, don't question them
+		const existingClassItems = this._actor.items.filter(it => it.type === "class");
+		if (existingClassItems.length) return;
+
+		const singleLevel = indices[0] + 1;
+		const isSelectMissing = await InputUiUtil.pGetUserBoolean({
+			title: "Import Lower Levels?",
+			htmlDescription: `You have selected a single level to import (level ${singleLevel}). Would you like to import level${singleLevel === 2 ? "" : "s"} ${singleLevel === 2 ? "1" : `1-${singleLevel - 1}`} too?`,
+			textYes: `Import Levels 1-${singleLevel}`,
+			textNo: `Import Level ${singleLevel}`,
+		});
+
+		if (isSelectMissing == null) {
+			dataBuilderOpts.isCancelled = true;
+			return;
+		}
+
+		if (isSelectMissing) {
+			const maxIndex = indices[0];
+			for (let i = 0; i <= maxIndex; ++i) {
+				indices[i] = i;
+			}
+		}
+	}
+
+	async _pImportEntry_pDoUpdateCharacter_pPopulateEquipment (cls, dataBuilderOpts) {
+		if (!cls.startingEquipment) return;
+
+		const startingEquipment = new Charactermancer_StartingEquipment({
+			actor: this._actor,
+			startingEquipment: cls.startingEquipment,
+			appSubTitle: cls.name,
+			equiSpecialSource: cls.source,
+			equiSpecialPage: cls.page,
+		});
+		const formData = await startingEquipment.pWaitForUserInput();
+		if (formData == null) return dataBuilderOpts.isCancelled = true;
+		if (formData === VeCt.SYM_UI_SKIP) return;
+
+		dataBuilderOpts.formDataEquipment = formData;
+	}
+
+	static async pGetDefaultFilterValues () {
+		const modalFilterClasses = new ModalFilterClasses({namespace: `${ModalFilterClasses.name}.default`});
+		await modalFilterClasses.pPreloadHidden();
+		return modalFilterClasses.pageFilter.filterBox.getValues();
+	}
+
+	_getAsTag (listItem) {
+		const cls = this._content[listItem.data.ixClass];
+		const sc = cls.subclasses[listItem.data.ixSubclass];
+
+		const ptId = DataUtil.generic.packUid(cls, "class");
+		return `@class[${ptId}]`;
+
+		// TODO(Future) enable this if/when we make `@subclass` a real tag
+		// if (!sc) {
+		// 	const ptId = DataUtil.generic.packUid(cls, "class");
+		// 	return `@class[${ptId}]`;
+		// }
+		//
+		// const ptId = DataUtil.class.packUidSubclass(sc);
+		// return `@subclass[${ptId}]`;
+	}
+}
+ImportListClass._AE_LABEL_BASE_AC = "Base/Unarmored AC";
+ImportListClass._ITEM_NAME_UNARMED_STRIKE = "Unarmed Strike";
+
+ImportListClass.ImportEntryOpts = class extends ImportListCharacter.ImportEntryOpts {
+	/**
+	 * @param [opts]
+	 * @param [opts.isClassImport]
+	 * @param [opts.isCharactermancer]
+	 */
+	constructor (opts) {
+		super(opts);
+		opts = opts || {};
+
+		this.isClassImport = !!opts.isClassImport;
+
+		this.actorUpdate = {}; // Note that this is not the main actor update; this is extra data populated from class features
+		this.postItemActorUpdate = {}; // An update that will be applied after all item updates have been made. Useful for fixing values after item updates have broken them.
+
+		this.classItemToCreate = null;
+		this.classItemUpdate = null;
+		this.isPersistClassItemUpdate = false;
+
+		this.subclassItemToCreate = null;
+		this.subclassItemUpdate = null;
+		this.isPersistSubclassItemUpdate = false;
+
+		this.classItem = null;
+		this.subclassItem = null;
+
+		this.formDataEquipment = null;
+
+		this.targetLevel = null; // Final level the actor will end up at
+		this.numLevels = null; // Total number of levels we are to import
+		this.numLevelsPrev = null; // Number of class levels the actor had before import
+		this.isIncludesLevelOne = null;
+		this.proficiencyImportMode = null;
+		this.hpIncreaseMode = null;
+
+		this.importedClassFeatureLevelledEmbeddedDocuments = [];
+		this.importedSubclassFeatureLevelledEmbeddedDocuments = [];
+	}
+};
+
+ImportListClass.Utils = class {
+	static getDedupedData ({allContentFlat}) {
+		allContentFlat = MiscUtil.copy(allContentFlat);
+
+		const out = [];
+		const seen = new Set();
+		allContentFlat.forEach(cls => {
+			const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES](cls);
+
+			// If it's an existing class, move any subclasses over to it
+			if (seen.has(hash)) {
+				if (cls.subclasses?.length) {
+					const existingCls = out.find(it => UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES](it) === hash);
+					(existingCls.subclasses = existingCls.subclasses || []).push(...cls.subclasses);
+				}
+				return;
+			}
+
+			seen.add(hash);
+			out.push(cls);
+		});
+
+		return out;
+	}
+
+	static getBlacklistFilteredData ({dedupedAllContentFlat}) {
+		const out = dedupedAllContentFlat.filter(cls => {
+			if (cls.source === VeCt.STR_GENERIC) return false;
+
+			return !ExcludeUtil.isExcluded(
+				UrlUtil.URL_TO_HASH_BUILDER["class"](cls),
+				"class",
+				cls.source,
+				{isNoCount: true},
+			);
+		});
+
+		out.forEach(cls => {
+			if (!cls.subclasses) return;
+
+			cls.subclasses = cls.subclasses.filter(sc => {
+				if (sc.source === VeCt.STR_GENERIC) return false;
+
+				return !ExcludeUtil.isExcluded(
+					UrlUtil.URL_TO_HASH_BUILDER["subclass"](sc),
+					"subclass",
+					sc.source,
+					{isNoCount: true},
+				);
+			});
+		});
+
+		return out;
+	}
+};
+
+ImportListClass.AbilityScoreIncrease = class extends Application {
+	constructor (actor, level, dataBuilderOpts) {
+		super({
+			title: `Ability Score Improvement\u2014Level ${level}`,
+			template: `${SharedConsts.MODULE_LOCATION}/template/ImportListClassAbilityScoreIncrease.hbs`,
+			width: 640,
+			resizable: true,
+		});
+
+		this._dataBuilderOpts = dataBuilderOpts;
+
+		this._resolve = null;
+		this._reject = null;
+		this._pUserInput = new Promise((resolve, reject) => {
+			this._resolve = resolve;
+			this._reject = reject;
+		});
+
+		this._comp = new ImportListClass.AbilityScoreIncrease.Component(
+			actor,
+			dataBuilderOpts,
+			this.close.bind(this),
+		);
+	}
+
+	activateListeners ($html) {
+		this._comp.render($html);
+	}
+
+	async close () {
+		await super.close();
+		if (!this._comp.isDataEntered) this._dataBuilderOpts.isCancelled = true;
+		this._resolve(this._comp.getFeat());
+	}
+
+	pWaitForUserInput () { return this._pUserInput; }
+};
+ImportListClass.AbilityScoreIncrease.Component = class extends BaseComponent {
+	constructor (actor, dataBuilderOpts, fnClose) {
+		super();
+		this._actor = actor;
+		this._dataBuilderOpts = dataBuilderOpts;
+		this._fnClose = fnClose;
+
+		this._isDataEntered = false;
+
+		Object.assign(
+			this.__state,
+			Charactermancer_Util.getBaseAbilityScores(this._actor),
+		);
+	}
+
+	get isDataEntered () { return this._isDataEntered; }
+
+	render ($html) {
+		const $btnShowTabAsi = $(`<button class="btn btn-default w-50 btn-5et">Ability Score Improvement</button>`)
+			.click(() => this._state.mode = "ability");
+		const $btnShowTabFeat = $(`<button class="btn btn-default w-50 btn-5et">Feat</button>`)
+			.click(() => this._state.mode = "feat");
+
+		const $wrpTabAsi = $(`<div class="ve-flex-col w-100 h-100"></div>`);
+		const $wrpTabFeat = $(`<div class="ve-flex-col w-100 h-100"></div>`);
+
+		const hkMode = () => {
+			const isAbilityMode = this._state.mode === "ability";
+			$btnShowTabAsi.toggleClass("active", isAbilityMode);
+			$btnShowTabFeat.toggleClass("active", !isAbilityMode);
+			$wrpTabAsi.toggleVe(isAbilityMode);
+			$wrpTabFeat.toggleVe(!isAbilityMode);
+		};
+		hkMode();
+		this._addHookBase("mode", hkMode);
+
+		this._render_ability($wrpTabAsi);
+		this._render_feat($wrpTabFeat);
+
+		$$($html)`<div class="ve-flex-col w-100 h-100">
+			<div class="ve-flex no-shrink btn-group mb-1">${$btnShowTabAsi}${$btnShowTabFeat}</div>
+			${$wrpTabAsi}
+			${$wrpTabFeat}
+		</div>`;
+	}
+
+	_render_ability ($wrpTabAsi) {
+		const rowMetas = [
+			"str",
+			"dex",
+			"con",
+			"int",
+			"wis",
+			"cha",
+		].map(abil => {
+			const $dispCur = $(`<div class="col-2 text-center"></div>`);
+			const $dispCurMod = $(`<div class="col-2 text-center"></div>`);
+			const hkBase = () => {
+				$dispCur.text(this._state[abil]);
+				$dispCurMod.text(Parser.getAbilityModifier(this._state[abil]));
+			};
+			this._addHookBase(abil, hkBase);
+			hkBase();
+
+			const propBonus = `${abil}Bonus`;
+			const {$wrp: $wrpBonus, $ipt: $iptBonus} = ComponentUiUtil.$getIptNumber(
+				this,
+				propBonus,
+				0,
+				{
+					min: 0,
+					fallbackOnNaN: 0,
+					html: `<input type="text" class="text-center" placeholder="0">`,
+					asMeta: true,
+					decorationRight: "ticker",
+					decorationLeft: "spacer",
+				},
+			);
+			$iptBonus.click(() => $iptBonus.select());
+
+			const $dispTotal = $(`<div class="col-2 text-center"></div>`);
+			const $dispTotalMod = $(`<div class="col-2 text-center"></div>`);
+			const hkBonus = () => {
+				const scoreTotal = this._state[abil] + this._state[propBonus];
+				$dispTotal.text(scoreTotal);
+				$dispTotalMod.text(Parser.getAbilityModifier(scoreTotal));
+				$dispTotal.toggleClass("veapp__msg-error", scoreTotal > 20).title(scoreTotal > 20 ? `You can't increase an ability score above 20 using this feature.` : "");
+			};
+			this._addHookBase(propBonus, hkBonus);
+			hkBonus();
+
+			const $row = $$`<div class="ve-flex w-100 my-1">
+				<div class="col-1 text-right bold">${abil.toUpperCase()}</div>
+				${$dispCur}
+				${$dispCurMod}
+				<div class="col-2">${$wrpBonus}</div>
 				<div class="col-1 text-center">=</div>
-				${_0x17a3b3}
-				${_0x4b2c1e}
-			</div>`;return{'$row':_0x1e2417,'$iptBonus':_0x41cfda};}),_0xeae59=$(_0x41f79c(0x2b3)),_0x1e9e53=()=>{const _0x17441d=_0x41f79c,_0x3b0c2d=[_0x17441d(0x345),_0x17441d(0x3a1),_0x17441d(0x357),_0x17441d(0x2e3),_0x17441d(0x200),'chaBonus'][_0x17441d(0x2a1)](_0x59b83c=>this[_0x17441d(0x3a4)][_0x59b83c])[_0x17441d(0x32a)]((_0x707c20,_0x33ffdc)=>_0x707c20+_0x33ffdc,0x0),_0x58ab9d=_0x3b0c2d>0x2;_0xeae59[_0x17441d(0x1f8)](_0x17441d(0x233)+(0x2-_0x3b0c2d))['toggleClass'](_0x17441d(0x1fd),_0x58ab9d),_0x3a55ca[_0x17441d(0x2e8)](_0x3ec37c=>_0x3ec37c['$iptBonus'][_0x17441d(0x306)](_0x17441d(0x2e4),_0x58ab9d));};[_0x41f79c(0x345),_0x41f79c(0x3a1),'conBonus','intBonus',_0x41f79c(0x200),'chaBonus']['forEach'](_0x275760=>this[_0x41f79c(0x384)](_0x275760,_0x1e9e53)),_0x1e9e53();const _0x412c2f=$('<button\x20class=\x22btn\x20btn-primary\x20mr-2\x22>Confirm</button>')[_0x41f79c(0x204)](async()=>{const _0x27b3b3=_0x41f79c,_0x54d2c3=[this['_state']['strBonus'],this[_0x27b3b3(0x3a4)]['dexBonus'],this[_0x27b3b3(0x3a4)]['conBonus'],this['_state'][_0x27b3b3(0x2e3)],this[_0x27b3b3(0x3a4)][_0x27b3b3(0x200)],this[_0x27b3b3(0x3a4)]['chaBonus']][_0x27b3b3(0x32a)]((_0xad4641,_0xf4a65a)=>_0xad4641+_0xf4a65a,0x0);if(_0x54d2c3!==0x2)return ui[_0x27b3b3(0x2d2)][_0x27b3b3(0x36d)](_0x27b3b3(0x2c6));await this[_0x27b3b3(0x378)](!![]);}),_0xfee1ba=$(_0x41f79c(0x344))[_0x41f79c(0x204)](()=>this['_pDoResolve'](VeCt[_0x41f79c(0x2c4)]));$$(_0x61144c)`
-		<div class="flex w-100 my-1 bold">
+				${$dispTotal}
+				${$dispTotalMod}
+			</div>`;
+
+			return {
+				$row,
+				$iptBonus,
+			};
+		});
+
+		const $dispRemain = $(`<div class="text-center" title="Remaining"></div>`);
+
+		const hkBonuses = () => {
+			const totalBonuses = [
+				"strBonus",
+				"dexBonus",
+				"conBonus",
+				"intBonus",
+				"wisBonus",
+				"chaBonus",
+			].map(prop => this._state[prop]).reduce((a, b) => a + b, 0);
+
+			const isInvalid = totalBonuses > 2;
+
+			$dispRemain.text(`Remaining: ${2 - totalBonuses}`).toggleClass("veapp__msg-error", isInvalid);
+			rowMetas.forEach(it => it.$iptBonus.toggleClass("form-control--error", isInvalid));
+		};
+		[
+			"strBonus",
+			"dexBonus",
+			"conBonus",
+			"intBonus",
+			"wisBonus",
+			"chaBonus",
+		].forEach(prop => this._addHookBase(prop, hkBonuses));
+		hkBonuses();
+
+		const $btnAcceptAsi = $(`<button class="btn btn-primary mr-2">Confirm</button>`)
+			.click(async () => {
+				const total = [
+					this._state.strBonus,
+					this._state.dexBonus,
+					this._state.conBonus,
+					this._state.intBonus,
+					this._state.wisBonus,
+					this._state.chaBonus,
+				].reduce((a, b) => a + b, 0);
+				if (total !== 2) return ui.notifications.error(`Please enter a combination of ability score changes which adds up to two!`);
+
+				await this._pDoResolve(true);
+			});
+
+		const $btnSkipAsi = $(`<button class="btn btn-default mr-3">Skip</button>`)
+			.click(() => this._pDoResolve(VeCt.SYM_UI_SKIP));
+
+		$$($wrpTabAsi)`
+		<div class="ve-flex w-100 my-1 bold">
 			<div class="text-center col-1"></div>
 			<div class="text-center col-2">Current</div>
 			<div class="text-center col-2 ve-muted">Mod</div>
-			<div class="text-center col-2 text-center">${_0xeae59}</div>
+			<div class="text-center col-2 text-center">${$dispRemain}</div>
 			<div class="text-center col-1"></div>
 			<div class="text-center col-2">Result</div>
 			<div class="text-center col-2 ve-muted">Mod</div>
 		</div>
-		<div class="flex-col w-100 h-100">
-			${_0x3a55ca[_0x41f79c(0x2a1)](_0x137e93=>_0x137e93[_0x41f79c(0x253)])}
+		<div class="ve-flex-col w-100 h-100">
+			${rowMetas.map(it => it.$row)}
 		</div>
-		<div class="flex-v-center flex-h-right w-100">${_0x412c2f}${_0xfee1ba}</div>
-		`;}['_render_feat'](_0x223437){const _0x5a1cb1=_0x98c2a9,_0x1af217=$(_0x5a1cb1(0x34a))['click'](async()=>{const _0x8d97c5=_0x5a1cb1,_0x1e77c5=await ImportListFeat[_0x8d97c5(0x343)][_0x8d97c5(0x3ba)]({'id':_0x8d97c5(0x1f0),'name':_0x8d97c5(0x362),'singleName':'Feat','wizardTitleWindow':_0x8d97c5(0x354),'wizardTitlePanel3':_0x8d97c5(0x377),'wizardTitleButtonOpenImporter':_0x8d97c5(0x300)},_0x8d97c5(0x2cb));if(!_0x1e77c5)return;this[_0x8d97c5(0x3a4)][_0x8d97c5(0x284)]=_0x1e77c5;}),_0x87b44f=$(_0x5a1cb1(0x235)),_0x3c90d4=()=>{const _0x424740=_0x5a1cb1;_0x87b44f[_0x424740(0x37f)]();if(!this[_0x424740(0x3a4)]['featData'])return;_0x87b44f[_0x424740(0x257)]('<hr\x20class=\x22hr-1\x22><h3\x20class=\x22mb-2\x20mt-0\x22>Selected:\x20'+this[_0x424740(0x3a4)][_0x424740(0x284)][_0x424740(0x386)]+_0x424740(0x369));const {page:_0x2a0ab7,source:_0xdc5986,hash:_0x531bdc}=MiscUtil[_0x424740(0x392)](this[_0x424740(0x3a4)][_0x424740(0x284)],_0x424740(0x30a),SharedConsts[_0x424740(0x287)])||{};if(!_0x531bdc)return;Renderer[_0x424740(0x2b1)][_0x424740(0x3a3)](_0x2a0ab7,_0xdc5986,_0x531bdc)[_0x424740(0x2f9)](_0x4fc4c2=>{const _0x36155b=_0x424740;_0x87b44f['empty'](),$$(_0x87b44f)`<hr class="hr-1">
-					${Vetools['withUnpatchedDiceRendering'](()=>Renderer[_0x36155b(0x2b1)]['$getHoverContent_stats'](UrlUtil[_0x36155b(0x272)],_0x4fc4c2))}`;});};_0x3c90d4(),this['_addHookBase']('featData',_0x3c90d4);const _0x8409d7=$(_0x5a1cb1(0x31f))[_0x5a1cb1(0x204)](async()=>{const _0x1476ab=_0x5a1cb1;if(!this['_state'][_0x1476ab(0x284)])return ui['notifications'][_0x1476ab(0x36d)]('Please\x20select\x20a\x20feat!');await this[_0x1476ab(0x378)](!![]);}),_0x286989=$(_0x5a1cb1(0x23b))['click'](()=>this[_0x5a1cb1(0x378)](VeCt[_0x5a1cb1(0x2c4)]));$$(_0x223437)`
-		<div class="flex-col h-100">
-			<div class="flex-v-center mb-1">
-				${_0x1af217}
-				<div class="flex-v-center btn-group">${_0x8409d7}${_0x286989}</div>
+		<div class="ve-flex-v-center ve-flex-h-right w-100">${$btnAcceptAsi}${$btnSkipAsi}</div>
+		`;
+	}
+
+	_render_feat ($wrpTabFeat) {
+		const $btnSelectFeat = $(`<button class="btn btn-default btn-5et w-100 mr-2">Choose Feat</button>`)
+			.click(async () => {
+				const featData = await ImportListFeat.UserChoose.pGetUserChoice(
+					{
+						id: "feats-classAbilityScoreIncrease",
+						name: "Feats",
+						singleName: "Feat",
+
+						wizardTitleWindow: "Select Source",
+						wizardTitlePanel3: "Configure and Open List",
+						wizardTitleButtonOpenImporter: "Open List",
+					},
+					"classAbilityScoreIncrease",
+				);
+				if (!featData) return;
+
+				const {page, source, hash} = MiscUtil.get(featData, "flags", SharedConsts.MODULE_NAME_FAKE) || {};
+				if (!page || !source || !hash) return;
+
+				this._state.feat = await Renderer.hover.pCacheAndGet(page, source, hash);
+			});
+
+		const $dispFeat = $(`<div></div>`);
+		const hkFeat = () => {
+			$dispFeat.empty();
+
+			if (!this._state.feat) return;
+			$dispFeat.html(`<hr class="hr-1"><h3 class="mb-2 mt-0">Selected: ${this._state.feat.name}</h3>`);
+
+			$dispFeat.empty();
+			$$($dispFeat)`<hr class="hr-1">
+			${Vetools.withUnpatchedDiceRendering(() => Renderer.hover.$getHoverContent_stats(UrlUtil.PG_FEATS, MiscUtil.copy(this._state.feat)))}`;
+		};
+		hkFeat();
+		this._addHookBase("feat", hkFeat);
+
+		const $btnAcceptFeat = $(`<button class="btn btn-primary btn-5et">Confirm</button>`)
+			.click(async () => {
+				if (!this._state.feat) return ui.notifications.error(`Please select a feat!`);
+				await this._pDoResolve(true);
+			});
+
+		const $btnSkipFeat = $(`<button class="btn btn-default btn-5et">Skip</button>`)
+			.click(() => this._pDoResolve(VeCt.SYM_UI_SKIP));
+
+		$$($wrpTabFeat)`
+		<div class="ve-flex-col h-100">
+			<div class="ve-flex-v-center mb-1">
+				${$btnSelectFeat}
+				<div class="ve-flex-v-center btn-group">${$btnAcceptFeat}${$btnSkipFeat}</div>
 			</div>
-			${_0x87b44f}
+			${$dispFeat}
 		</div>
-		`;}async['_pDoResolve'](_0x46347b){const _0x4251aa=_0x98c2a9;if(!_0x46347b)return this[_0x4251aa(0x26f)]();if(_0x46347b===VeCt[_0x4251aa(0x2c4)])return this['_isDataEntered']=!![],this[_0x4251aa(0x26f)]();const _0x5ef927=this['_getActorUpdate']();_0x5ef927&&(this[_0x4251aa(0x237)]=!![],await this[_0x4251aa(0x23d)][_0x4251aa(0x27f)](_0x5ef927));const _0x197ebf=this[_0x4251aa(0x215)]();_0x197ebf&&(this['_isDataEntered']=!![],this[_0x4251aa(0x305)][_0x4251aa(0x24b)][_0x4251aa(0x330)](_0x197ebf)),this[_0x4251aa(0x26f)]();}[_0x98c2a9(0x2b8)](){const _0x2cbf2e=_0x98c2a9;if(this['_state']['mode']!==_0x2cbf2e(0x39a))return null;return{'data':{'abilities':{'str':{'value':this[_0x2cbf2e(0x3a4)][_0x2cbf2e(0x2da)]+this[_0x2cbf2e(0x3a4)]['strBonus']},'dex':{'value':this['_state'][_0x2cbf2e(0x2cd)]+this[_0x2cbf2e(0x3a4)][_0x2cbf2e(0x3a1)]},'con':{'value':this['_state'][_0x2cbf2e(0x31d)]+this[_0x2cbf2e(0x3a4)][_0x2cbf2e(0x357)]},'int':{'value':this[_0x2cbf2e(0x3a4)]['int']+this[_0x2cbf2e(0x3a4)][_0x2cbf2e(0x2e3)]},'wis':{'value':this[_0x2cbf2e(0x3a4)][_0x2cbf2e(0x24f)]+this['_state'][_0x2cbf2e(0x200)]},'cha':{'value':this[_0x2cbf2e(0x3a4)][_0x2cbf2e(0x25d)]+this[_0x2cbf2e(0x3a4)]['chaBonus']}}}};}[_0x98c2a9(0x215)](){const _0x562999=_0x98c2a9;if(this[_0x562999(0x3a4)]['mode']!==_0x562999(0x390))return null;return this[_0x562999(0x3a4)][_0x562999(0x284)];}[_0x98c2a9(0x388)](){const _0x69f12e=_0x98c2a9;return{'mode':_0x69f12e(0x39a),'str':0x0,'dex':0x0,'con':0x0,'int':0x0,'wis':0x0,'cha':0x0,'strBonus':0x0,'dexBonus':0x0,'conBonus':0x0,'intBonus':0x0,'wisBonus':0x0,'chaBonus':0x0,'featData':null};}};export{ImportListClass};
+		`;
+	}
+
+	async _pDoResolve (isOutput) {
+		if (!isOutput) return this._fnClose();
+
+		if (isOutput === VeCt.SYM_UI_SKIP) {
+			this._isDataEntered = true;
+			return this._fnClose();
+		}
+
+		const actUpdate = this._getActorUpdate();
+		if (actUpdate) {
+			this._isDataEntered = true;
+			await UtilDocuments.pUpdateDocument(this._actor, actUpdate);
+		}
+
+		if (this.getFeat()) {
+			this._isDataEntered = true;
+		}
+
+		this._fnClose();
+	}
+
+	_getActorUpdate () {
+		if (this._state.mode !== "ability") return null;
+		return {
+			data: {
+				abilities: {
+					str: {value: this._state.str + this._state.strBonus},
+					dex: {value: this._state.dex + this._state.dexBonus},
+					con: {value: this._state.con + this._state.conBonus},
+					int: {value: this._state.int + this._state.intBonus},
+					wis: {value: this._state.wis + this._state.wisBonus},
+					cha: {value: this._state.cha + this._state.chaBonus},
+				},
+			},
+		};
+	}
+
+	getFeat () {
+		if (this._state.mode !== "feat") return null;
+		return MiscUtil.copy(this._state.feat);
+	}
+
+	_getDefaultState () {
+		return {
+			mode: "ability",
+
+			str: 0,
+			dex: 0,
+			con: 0,
+			int: 0,
+			wis: 0,
+			cha: 0,
+			strBonus: 0,
+			dexBonus: 0,
+			conBonus: 0,
+			intBonus: 0,
+			wisBonus: 0,
+			chaBonus: 0,
+
+			feat: null,
+		};
+	}
+};
+
+ImportListClass.SheetLevelUpButtonAdapter = class {
+	static init () {
+		Hooks.on("renderActorSheet", (app, $html, data) => {
+			this._pHandleRenderSheet(app, $html, data).then(null);
+		});
+	}
+
+	static async _pHandleRenderSheet (app, $html, data) {
+		if (!Config.get("importClass", "isAddLevelUpButton")) return;
+		if (!data.owner) return;
+		if (!data.isCharacter) return;
+
+		const sheetAdapter = ImportListClass.SheetLevelUpButtonAdapter._SUPPORTED_SHEETS[app.constructor.name];
+
+		if (!sheetAdapter) return;
+
+		const minRole = Config.get("import", "minimumRole");
+		if (game.user.role < minRole) return;
+
+		const existingClassItems = app.actor.items.filter(it => it.type === "class");
+		if (!existingClassItems.length) return;
+		const existingSubclassItems = app.actor.items.filter(it => it.type === "subclass");
+
+		const existingClassSubclassItemTuples = Charactermancer_Class_Util.getClassSubclassItemTuples({classItems: existingClassItems, subclassItems: existingSubclassItems});
+
+		const availableClassesMetas = await existingClassSubclassItemTuples.pSerialAwaitMap(tuple => this._pGetAvailableClassSubclass(tuple));
+
+		const $btnLevelUp = !availableClassesMetas.some(it => !it.errors) ? this._$getBtnLevelUp_errors({availableClassesMetas}) : this._$getBtnLevelUp({app, availableClassesMetas});
+
+		sheetAdapter.addButton(app.form, $btnLevelUp);
+	}
+
+	static _$getBtn () {
+		return $(`<button class="btn btn-5et btn-xxs ml-1 imp-cls__btn-sheet-level-up ve-flex-vh-center" type="button"><i class="fas fa-fw fa-arrow-alt-circle-up mx-auto pl-1p"></i></button>`);
+	}
+
+	static _$getBtnLevelUp_errors ({availableClassesMetas}) {
+		const ptErrors = availableClassesMetas.map(it => it.errors).filter(Boolean).flat().join("; ");
+
+		return this._$getBtn()
+			.prop("disabled", true)
+			.title(`Cannot Level Up\u2014no known classes found.${availableClassesMetas.length ? ` Errors were: ${ptErrors}.` : ""}`);
+	}
+
+	static _$getBtnLevelUp ({app, availableClassesMetas}) {
+		const isGlowing = !UtilGameSettings.getSafe(game.system.id, "disableExperienceTracking") && UtilActors.isLevelUp(app.actor);
+
+		return this._$getBtn()
+			.toggleClass("btn-pulse", !!isGlowing)
+			.title(`Level Up`)
+			.click(async () => {
+				const {$modalInner, doClose, doAutoResize: doAutoResizeModal} = await UtilApplications.pGetShowApplicationModal({
+					title: `Level Up`,
+					isMaxWidth640p: true,
+					isMinHeight0: true,
+				});
+
+				const $rows = availableClassesMetas.map(({errors, existingClassItem, existingSubclassItem, cls, sc, filterValues}) => {
+					if (errors) {
+						return $$`<div class="ve-flex-col stripe-even py-1 ve-muted">
+							<p>${(existingClassItem.name || "").qq()}${existingSubclassItem?.name ? ` (${existingSubclassItem.name.qq()})` : ""} was not available for level up:</p>${errors.map(it => `<p><i>${it.qq()}</i></p>`).join("")}
+						</div>`;
+					}
+
+					const $btnChoose = $(`<button class="btn btn-5et btn-sm no-wrap" title="Level up this class"><i class="fas fa-fw fa-arrow-alt-circle-up"></i> Level ${existingClassItem.data.data.levels} &#8594; Level ${existingClassItem.data.data.levels + 1}</button>`)
+						.click(async () => {
+							doClose();
+
+							const targetLevel = Number(existingClassItem.data.data.levels) + 1;
+
+							if (!sc) {
+								const minSubclassLevel = Math.min(...cls.classFeatures
+									.filter(it => it.gainSubclassFeature && it.classFeature)
+									.map(it => DataUtil.class.unpackUidClassFeature(it.classFeature).level));
+								if (targetLevel >= minSubclassLevel) {
+									const isSelectSubclass = await InputUiUtil.pGetUserBoolean({
+										title: `Choose Subclass?`,
+										htmlDescription: `Would you like to choose a subclass to include in the level up?`,
+										textYes: "Yes",
+										textNo: "No",
+									});
+
+									if (isSelectSubclass) {
+										const modalFilterClasses = new ModalFilterClasses({namespace: `${ModalFilterClasses.name}.selectSubclass`});
+										const selected = await modalFilterClasses.pGetUserSelection({ // Returns "raw" data
+											selectedClass: cls,
+											isClassDisabled: true,
+										});
+										if (selected) sc = selected.subclass;
+									}
+								}
+							}
+
+							const importList = new ImportListClass({actor: app.actor});
+							await importList.pInit();
+
+							cls = MiscUtil.copy(cls);
+							delete cls.subclasses; // (Ensure no legacy subclass junk goes through)
+
+							const importableClassData = await ImportListClass.pPostLoad(
+								{class: [cls], subclass: [sc].filter(Boolean)},
+								{actor: app.actor},
+							);
+							await importList.pImportClass(importableClassData[0], {levels: [targetLevel], filterValues});
+
+							ui.notifications.info(`Level up complete!`);
+						});
+
+					return $$`<div class="ve-flex-v-center stripe-even py-1">
+						<div class="w-100 mr-2">${existingClassItem.name}${sc && existingSubclassItem ? ` (${existingSubclassItem.name})` : ""}</div>
+						<div>${$btnChoose}</div>
+					</div>`;
+				});
+
+				const $btnAddNewLevel = $(`<button class="btn btn-5et btn-sm no-wrap"><i class="fas fa-fw fa-plus-circle"></i> Add New Class (Multiclass)</button>`)
+					.click(async () => {
+						doClose();
+
+						const importListClassSources = await (new ImportListClass()).pGetSources();
+						const appSourceSelector = new AppSourceSelectorMulti({
+							title: `Select Class Sources`,
+							filterNamespace: `ImportListClass_SheetLevelUpButtonAdapter_filter`,
+							savedSelectionKey: `ImportListClass_SheetLevelUpButtonAdapter_savedSelection`,
+							sourcesToDisplay: importListClassSources,
+							fnGetDedupedData: ImportListClass.Utils.getDedupedData.bind(ImportListClass.Utils),
+							fnGetBlacklistFilteredData: ImportListClass.Utils.getBlacklistFilteredData.bind(ImportListClass.Utils),
+						});
+
+						const classDatas = await appSourceSelector.pWaitForUserInput();
+						if (classDatas == null) return;
+
+						const modalFilterClasses = new ModalFilterClassesFvtt({
+							namespace: `${ModalFilterClasses.name}.selectSubclass`,
+							allData: classDatas,
+						});
+						const selected = await modalFilterClasses.pGetUserSelection({});
+						if (!selected?.class) return;
+
+						const importList = new ImportListClass({actor: app.actor});
+						await importList.pInit();
+
+						const clsRaw = await Renderer.hover.pCacheAndGet("raw_class", selected.class.source, UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES]({name: selected.class.name, source: selected.class.source}), {isCopy: true});
+						const scRaw = selected.subclass ? await Renderer.hover.pCacheAndGet("raw_subclass", selected.subclass.source, UrlUtil.URL_TO_HASH_BUILDER["subclass"]({name: selected.subclass.name, shortName: selected.subclass.shortName, source: selected.subclass.source, className: selected.subclass.className, classSource: selected.subclass.classSource}), {isCopy: true}) : null;
+
+						delete clsRaw.subclasses; // (Ensure no legacy subclass junk goes through)
+
+						const importableClassData = await ImportListClass.pPostLoad(
+							{class: [clsRaw], subclass: [scRaw].filter(Boolean)},
+							{actor: app.actor},
+						);
+
+						const clsOut = importableClassData[0];
+						clsOut._foundryStartingProficiencyMode = Charactermancer_Class_ProficiencyImportModeSelect.MODE_MULTICLASS;
+
+						await importList.pImportClass(importableClassData[0], {levels: [1], filterValues: (await ImportListClass.pGetDefaultFilterValues())});
+
+						ui.notifications.info(`Level up complete!`);
+					});
+
+				$$`<div class="ve-flex-col h-100 w-100 mt-2">
+						<div class="mb-1">Your current classes are listed below.</div>
+						<div class="mb-1">If you level a class which does not have a subclass, and is eligible for one, you will be prompted to choose a subclass.</div>
+						<div>${Renderer.get().render(`Alternatively, you may gain a level in a new class, if your DM allows {@variantrule multiclassing|phb}.`)}</div>
+						<hr class="hr-2">
+						<div class="w-100">
+							${$rows}
+						</div>
+						<hr class="hr-1 hr--dotted">
+						<div class="mt-1 mb-2 ve-flex-h-right">${$btnAddNewLevel}</div>
+					</div>`.appendTo($modalInner);
+
+				doAutoResizeModal();
+			});
+	}
+
+	static async _pCacheClassData () {
+		ImportListClass.SheetLevelUpButtonAdapter._P_LOADING_CLASS_DATA = ImportListClass.SheetLevelUpButtonAdapter._P_LOADING_CLASS_DATA || (async () => {
+			ImportListClass.SheetLevelUpButtonAdapter._CACHE_CLASS_DATA = await DataUtil.class.loadRawJSON();
+		})();
+		await ImportListClass.SheetLevelUpButtonAdapter._P_LOADING_CLASS_DATA;
+	}
+
+	static async _pGetAvailableClassSubclass (itemTuple) {
+		const {classItem: existingClassItem, subclassItem: existingSubclassItem} = itemTuple;
+
+		const levelNumber = Number(existingClassItem.data.data.levels);
+		if (isNaN(levelNumber)) return {existingClassItem, existingSubclassItem, errors: [`Class item "${existingClassItem.name}" (${existingClassItem.id}) did not have a valid "levels" value!`]};
+
+		const flags = existingClassItem?.data?.flags?.[SharedConsts.MODULE_NAME_FAKE];
+
+		const filterValues = await this._pGetFilterValues(flags);
+
+		const isClassDefinedInFlags = flags && flags.page && flags.source && flags.hash;
+		if (!isClassDefinedInFlags) return this._pGetAvailableClassSubclassFromName(itemTuple, filterValues);
+
+		const cls = await Renderer.hover.pCacheAndGet("raw_class", flags.source, flags.hash, {isCopy: true});
+		const sc = flags.sourceSubclass && flags.hashSubclass
+			? (await Renderer.hover.pCacheAndGet("raw_subclass", flags.sourceSubclass, flags.hashSubclass, {isCopy: true}))
+			: null;
+
+		if (flags.sourceSubclass && flags.hashSubclass && !sc) return {existingClassItem, existingSubclassItem, errors: [`Failed to find and/or load subclass "${flags.hashSubclass}" (${flags.sourceSubclass}) from flags`]};
+
+		if (cls) return {existingClassItem, existingSubclassItem, cls, sc, filterValues};
+
+		if (isClassDefinedInFlags) return {existingClassItem, existingSubclassItem, errors: [`Failed to find and/or load class "${flags.hash}" (${flags.source}) from flags`]};
+
+		return this._pGetAvailableClassSubclassFromName(existingClassItem, filterValues);
+	}
+
+	static async _pGetAvailableClassSubclassFromName (itemTuple, filterValues) {
+		const {classItem: existingClassItem, subclassItem: existingSubclassItem} = itemTuple;
+
+		await this._pCacheClassData();
+
+		const cls = Charactermancer_Class_Util.getClassFromExistingClassItem(existingClassItem, ImportListClass.SheetLevelUpButtonAdapter._CACHE_CLASS_DATA.class);
+
+		if (!cls) return {existingClassItem, errors: [`Failed to find and/or load class "${existingClassItem.name}" (${UtilDataConverter.getItemSource(existingClassItem).source}) by name`]};
+
+		const sc = existingSubclassItem
+			? Charactermancer_Class_Util.getSubclassFromExistingSubclassItem(existingSubclassItem, cls, ImportListClass.SheetLevelUpButtonAdapter._CACHE_CLASS_DATA.subclass)
+			: null;
+
+		if (existingSubclassItem && sc == null) return {existingClassItem, errors: [`Failed to find and/or load subclass "${existingSubclassItem.name}" by name`]};
+
+		return {existingClassItem, existingSubclassItem, cls, sc, filterValues};
+	}
+
+	static async _pGetFilterValues (flags) {
+		if (flags?.filterValues) return flags.filterValues;
+
+		// If there are no filter values present in the flags, we'll have to improvise--silently load up a class filter
+		//   selection modal and use it as a surrogate.
+		return ImportListClass.pGetDefaultFilterValues();
+	}
+
+	static registerSupportedSheet (sheetName, ClassAdapter) {
+		ImportListClass.SheetLevelUpButtonAdapter._SUPPORTED_SHEETS[sheetName] = ClassAdapter;
+	}
+};
+ImportListClass.SheetLevelUpButtonAdapter._P_LOADING_CLASS_DATA = null;
+ImportListClass.SheetLevelUpButtonAdapter._CACHE_CLASS_DATA = null;
+
+ImportListClass.SheetLevelUpButtonAdapter._SUPPORTED_SHEETS = {};
+
+ImportListClass.SheetLevelUpButtonAdapter.SheetAdapter = class {
+	static addButton (form, $btn) { throw new Error(`Unimplemented!`); }
+
+	/** Handle the case where the sheet can be entirely re-rendered. */
+	static _removeExistingButton (tgt) { $(tgt).find(`.imp-cls__btn-sheet-level-up`).remove(); }
+};
+
+ImportListClass.SheetLevelUpButtonAdapter.SheetAdapterActorSheet5eCharacter = class extends ImportListClass.SheetLevelUpButtonAdapter.SheetAdapter {
+	static addButton (form, $btn) {
+		if (!this._INDEX_PATH) {
+			const $ele = $(form).find(`.charlevel`);
+			this._INDEX_PATH = ElementUtil.getIndexPathToParent(form, $ele[0]);
+		}
+
+		const tgt = ElementUtil.getChildByIndexPath(form, this._INDEX_PATH);
+		$btn.css({fontSize: 10.5});
+		this._removeExistingButton(tgt);
+		$(tgt).append($btn);
+	}
+};
+ImportListClass.SheetLevelUpButtonAdapter.SheetAdapterActorSheet5eCharacter._INDEX_PATH = null;
+ImportListClass.SheetLevelUpButtonAdapter.registerSupportedSheet(
+	"ActorSheet5eCharacter",
+	ImportListClass.SheetLevelUpButtonAdapter.SheetAdapterActorSheet5eCharacter,
+);
+
+ImportListClass.SheetLevelUpButtonAdapter.Tidy5eSheet = class extends ImportListClass.SheetLevelUpButtonAdapter.SheetAdapter {
+	static addButton (form, $btn) {
+		if (!this._INDEX_PATH) {
+			const $ele = $(form).find(`.level-information`);
+			this._INDEX_PATH = ElementUtil.getIndexPathToParent(form, $ele[0]);
+		}
+
+		const tgt = ElementUtil.getChildByIndexPath(form, this._INDEX_PATH);
+		$btn.addClass("ml-2 ve-self-flex-center b-0");
+		this._removeExistingButton(tgt);
+		$(tgt).prepend($btn);
+	}
+};
+ImportListClass.SheetLevelUpButtonAdapter.Tidy5eSheet._INDEX_PATH = null;
+ImportListClass.SheetLevelUpButtonAdapter.registerSupportedSheet(
+	"Tidy5eSheet",
+	ImportListClass.SheetLevelUpButtonAdapter.Tidy5eSheet,
+);
+
+export {ImportListClass};

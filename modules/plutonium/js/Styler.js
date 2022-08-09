@@ -1,1 +1,334 @@
-const _0x5036=['1394805xbucYg','_ID_SHEET_COMPACT_POPOUT','plutonium__sheet-popout','_ID_COMPACT_SCENES','_ID_LOGO_GLITCH','head','_ID_HIDE_PLUT_DIRECTORY_BUTTONS','3XhLzyH','<div\x20class=\x22plutsrv__disp-version\x20text-center\x22\x20id=\x22','1lyvBGW','_handleConfigUpdate_compactDirectories','16hkvkes','length','89597YbIDVR','unlock','959805cjuCqT','isCompactChat','css/optional-compact-actors.css','Foundry\x20Virtual\x20Tabletop','plutonium__hide-plutonium-directory-buttons','name','tabNameSuffix','127EMBgTF','_ID_COMPACT_CHAT','<style\x20id=\x22','_ID_COMPACT_JOURNAL','_ID_COMPACT_ITEMS','plutonium__backend-version','plutonium__compact-chat','css/optional-compact-scenes.css','\x22>\x0a\x09\x09\x09\x09\x09\x09\x09#logo\x20{\x0a\x09\x09\x09\x09\x09\x09\x09\x09filter:\x20hue-rotate(100deg)\x20saturate(1.5);\x0a\x09\x09\x09\x09\x09\x09\x09}\x0a\x09\x09\x09\x09\x09\x09</style>','_ID_COMPACT_DIRECTORY_BUTTONS','_handleNameTabFromScene','scene','plutonium__compact-items','appendTo','2ZuoUhM','configGroupKey','file','canvasReady','plutonium__compact-tables','_handleConfigUpdate_compactSheetControls','_handleConfigUpdate','One\x20of\x20\x22css\x22\x20or\x20\x22file\x22\x20must\x20be\x20specified!','plutonium__compact-actors','_handleConfigUpdate_compactDirectoryButtons','/css/optional-sheet-compact-controls.css\x22\x20rel=\x22stylesheet\x22\x20type=\x22text/css\x22\x20media=\x22all\x22>','isShowPopout','trim','isDisplayBackendStatus','_handleConfigUpdate_handleGenericCssMod','\x22\x20rel=\x22stylesheet\x22\x20type=\x22text/css\x22\x20media=\x22all\x22>','plutonium__compact-scenes','css/optional-compact-journal.css','_TAB_TITLE_DEFAULT','isCompactItems','_handleConfigUpdate_showPopoutButton','isNameTabFromScene','css/optional-hide-plut-directory-buttons.css','remove','5036noPTrD','isCompactActors','</div>','_ID_BACKEND_VERSION','title','_ID_SHEET_POPOUT','266533fnrUQh','/css/optional-sheet-popout.css\x22\x20rel=\x22stylesheet\x22\x20type=\x22text/css\x22\x20media=\x22all\x22>','idStyle','_ID_SHEET_COMPACT_CONTROLS','css/optional-compact-directory-buttons.css','#logo',':\x20[online]\x20++++','css/optional-compact-items.css','get','css/optional-compact-tables.css','isCompactDirectoryButtons','isHidePlutoniumDirectoryButtons','plutonium__compact-journal','++++\x20Plutonium\x20server\x20v','navName','679559epzZTD','\x22\x20href=\x22','_handleConfigUpdate_hidePlutoniumDirectoryButtons','_ID_COMPACT_ACTORS','plutonium.configUpdate','_handleConfigUpdate_compactChat','/css/optional-sheet-compact-popout.css\x22\x20rel=\x22stylesheet\x22\x20type=\x22text/css\x22\x20media=\x22all\x22>','MODULE_LOCATION','body','_handleBackendCheck','6073XlYAWx','css','11okXmyz','plutonium__logo-glitch','<link\x20id=\x22','_LOCK_GLITCH','_ID_COMPACT_TABLES'];const _0x4a36=function(_0xf57955,_0x1e5e35){_0xf57955=_0xf57955-0x1e4;let _0x5036b3=_0x5036[_0xf57955];return _0x5036b3;};const _0x20cf16=_0x4a36;(function(_0x49784d,_0x598093){const _0x21d90b=_0x4a36;while(!![]){try{const _0x4ee8d4=-parseInt(_0x21d90b(0x214))*parseInt(_0x21d90b(0x23a))+-parseInt(_0x21d90b(0x222))*parseInt(_0x21d90b(0x1ed))+-parseInt(_0x21d90b(0x20d))+-parseInt(_0x21d90b(0x1f9))*-parseInt(_0x21d90b(0x1f7))+parseInt(_0x21d90b(0x1fe))*parseInt(_0x21d90b(0x207))+parseInt(_0x21d90b(0x209))*parseInt(_0x21d90b(0x20b))+-parseInt(_0x21d90b(0x240))*-parseInt(_0x21d90b(0x205));if(_0x4ee8d4===_0x598093)break;else _0x49784d['push'](_0x49784d['shift']());}catch(_0x133452){_0x49784d['push'](_0x49784d['shift']());}}}(_0x5036,0xb3c08));import{Config}from'./Config.js';import{SharedConsts}from'../shared/SharedConsts.js';class Styler{static['init'](){const _0x2f12c1=_0x4a36;Hooks['on'](_0x2f12c1(0x1f1),()=>this['_handleConfigUpdate']()),this[_0x2f12c1(0x228)](),Hooks['on'](_0x2f12c1(0x225),()=>this[_0x2f12c1(0x21e)]());}static['_handleConfigUpdate'](){const _0x13c2ff=_0x4a36;this[_0x13c2ff(0x208)](),this[_0x13c2ff(0x22b)](),this[_0x13c2ff(0x1ef)](),this[_0x13c2ff(0x236)](),this[_0x13c2ff(0x227)](),this[_0x13c2ff(0x1f2)](),this['_handleBackendCheck'](),this[_0x13c2ff(0x21e)]();}static[_0x20cf16(0x230)](_0x261dc7){const _0x19967c=_0x20cf16;if(!_0x261dc7['css']&&!_0x261dc7[_0x19967c(0x224)])throw new Error(_0x19967c(0x229));const _0x21cdfd=$('#'+_0x261dc7[_0x19967c(0x242)]);if(!Config[_0x19967c(0x1e6)](_0x261dc7['configGroup'],_0x261dc7[_0x19967c(0x223)]))return _0x21cdfd['remove']();if(_0x21cdfd[_0x19967c(0x20a)])return;_0x261dc7['css']?$(_0x19967c(0x216)+_0x261dc7['idStyle']+'\x22>\x0a\x09\x09\x09\x09'+_0x261dc7[_0x19967c(0x1f8)]+'\x0a\x09\x09\x09</style>')[_0x19967c(0x221)](document[_0x19967c(0x1f5)]):$(_0x19967c(0x1fb)+_0x261dc7[_0x19967c(0x242)]+_0x19967c(0x1ee)+SharedConsts['MODULE_LOCATION']+'/'+_0x261dc7[_0x19967c(0x224)]+_0x19967c(0x231))[_0x19967c(0x221)](document[_0x19967c(0x203)]);}static[_0x20cf16(0x208)](){const _0x5d995c=_0x20cf16;this[_0x5d995c(0x230)]({'configGroup':'ui','configGroupKey':'isCompactScenes','idStyle':Styler[_0x5d995c(0x201)],'file':_0x5d995c(0x21b)}),this[_0x5d995c(0x230)]({'configGroup':'ui','configGroupKey':_0x5d995c(0x23b),'idStyle':Styler[_0x5d995c(0x1f0)],'file':_0x5d995c(0x20f)}),this[_0x5d995c(0x230)]({'configGroup':'ui','configGroupKey':_0x5d995c(0x235),'idStyle':Styler[_0x5d995c(0x218)],'file':_0x5d995c(0x1e5)}),this[_0x5d995c(0x230)]({'configGroup':'ui','configGroupKey':'isCompactJournal','idStyle':Styler[_0x5d995c(0x217)],'file':_0x5d995c(0x233)}),this[_0x5d995c(0x230)]({'configGroup':'ui','configGroupKey':'isCompactTables','idStyle':Styler[_0x5d995c(0x1fd)],'file':_0x5d995c(0x1e7)});}static[_0x20cf16(0x22b)](){const _0x36efe5=_0x20cf16;this[_0x36efe5(0x230)]({'configGroup':'ui','configGroupKey':_0x36efe5(0x1e8),'idStyle':Styler[_0x36efe5(0x21d)],'file':_0x36efe5(0x244)});}static[_0x20cf16(0x1ef)](){const _0x19f803=_0x20cf16;this[_0x19f803(0x230)]({'configGroup':'ui','configGroupKey':_0x19f803(0x1e9),'idStyle':Styler['_ID_HIDE_PLUT_DIRECTORY_BUTTONS'],'file':_0x19f803(0x238)});}static[_0x20cf16(0x236)](){const _0x24f584=_0x20cf16,_0x53369c=$('#'+Styler[_0x24f584(0x23f)]);if(!Config[_0x24f584(0x1e6)]('ui',_0x24f584(0x22d))||Config[_0x24f584(0x1e6)]('ui','isCompactWindowBar'))return _0x53369c[_0x24f584(0x239)]();if(_0x53369c[_0x24f584(0x20a)])return;$(_0x24f584(0x1fb)+Styler[_0x24f584(0x23f)]+_0x24f584(0x1ee)+SharedConsts[_0x24f584(0x1f4)]+_0x24f584(0x241))[_0x24f584(0x221)](document[_0x24f584(0x203)]);}static[_0x20cf16(0x227)](){const _0x2ea84d=_0x20cf16;Config['get']('ui','isCompactWindowBar')?!$('#'+Styler[_0x2ea84d(0x243)])[_0x2ea84d(0x20a)]&&$(_0x2ea84d(0x1fb)+Styler[_0x2ea84d(0x243)]+_0x2ea84d(0x1ee)+SharedConsts[_0x2ea84d(0x1f4)]+_0x2ea84d(0x22c))[_0x2ea84d(0x221)](document[_0x2ea84d(0x203)]):$('#'+Styler[_0x2ea84d(0x243)])[_0x2ea84d(0x239)](),Config[_0x2ea84d(0x1e6)]('ui',_0x2ea84d(0x22d))?!$('#'+Styler[_0x2ea84d(0x1ff)])[_0x2ea84d(0x20a)]&&$(_0x2ea84d(0x1fb)+Styler[_0x2ea84d(0x1ff)]+_0x2ea84d(0x1ee)+SharedConsts[_0x2ea84d(0x1f4)]+_0x2ea84d(0x1f3))[_0x2ea84d(0x221)](document['head']):$('#'+Styler[_0x2ea84d(0x1ff)])[_0x2ea84d(0x239)]();}static['_handleConfigUpdate_compactChat'](){const _0x5d6c52=_0x20cf16;this[_0x5d6c52(0x230)]({'configGroup':'ui','configGroupKey':_0x5d6c52(0x20e),'idStyle':Styler[_0x5d6c52(0x215)],'file':'css/optional-compact-chat.css'});}static[_0x20cf16(0x1f6)](){Config['P_GET_BACKEND_VERSION']['then'](async _0x101386=>{const _0x13c362=_0x4a36;if(!_0x101386)return;await Styler[_0x13c362(0x1fc)]['pLock']();try{const _0x51d1fc=$('#'+Styler[_0x13c362(0x202)]),_0x1b66ad=$('#'+Styler[_0x13c362(0x23d)]),_0xb10eb8=$(_0x13c362(0x245));if(!Config[_0x13c362(0x1e6)]('ui',_0x13c362(0x22f))||Config[_0x13c362(0x1e6)]('ui','isStreamerMode')){_0xb10eb8['title'](''),_0x51d1fc['remove'](),_0x1b66ad[_0x13c362(0x239)]();return;}!_0x51d1fc[_0x13c362(0x20a)]&&(_0xb10eb8[_0x13c362(0x23e)](_0x13c362(0x1eb)+_0x101386+_0x13c362(0x1e4)),$(_0x13c362(0x216)+Styler[_0x13c362(0x202)]+_0x13c362(0x21c))[_0x13c362(0x221)](document[_0x13c362(0x1f5)])),!_0x1b66ad[_0x13c362(0x20a)]&&$(_0x13c362(0x206)+Styler[_0x13c362(0x23d)]+'\x22>'+_0x101386+_0x13c362(0x23c))[_0x13c362(0x221)](document[_0x13c362(0x1f5)]);}finally{Styler['_LOCK_GLITCH'][_0x13c362(0x20c)]();}});}static[_0x20cf16(0x21e)](){const _0x4564f4=_0x20cf16;if(Styler[_0x4564f4(0x234)]==null)Styler[_0x4564f4(0x234)]=document[_0x4564f4(0x23e)];if(!Config['get']('ui',_0x4564f4(0x237))){document[_0x4564f4(0x23e)]=Styler[_0x4564f4(0x234)];return;}const _0x43c92f=MiscUtil[_0x4564f4(0x1e6)](canvas,_0x4564f4(0x21f),'data'),_0x3d4806=Config[_0x4564f4(0x1e6)]('ui',_0x4564f4(0x213)),_0x2797ec=_0x3d4806&&_0x3d4806[_0x4564f4(0x22e)]()?_0x3d4806:_0x4564f4(0x210);if(_0x43c92f){const _0x14c014=_0x43c92f[_0x4564f4(0x1ec)]||canvas[_0x4564f4(0x21f)][_0x4564f4(0x212)];document[_0x4564f4(0x23e)]=_0x14c014+'\x20•\x20'+_0x2797ec;}else document[_0x4564f4(0x23e)]=_0x2797ec;}}Styler[_0x20cf16(0x1f0)]=_0x20cf16(0x22a),Styler[_0x20cf16(0x218)]=_0x20cf16(0x220),Styler[_0x20cf16(0x217)]=_0x20cf16(0x1ea),Styler['_ID_COMPACT_TABLES']=_0x20cf16(0x226),Styler[_0x20cf16(0x201)]=_0x20cf16(0x232),Styler[_0x20cf16(0x215)]=_0x20cf16(0x21a),Styler[_0x20cf16(0x21d)]='plutonium__compact-directory-buttons',Styler[_0x20cf16(0x204)]=_0x20cf16(0x211),Styler[_0x20cf16(0x23f)]=_0x20cf16(0x200),Styler[_0x20cf16(0x243)]='plutonium__sheet-compact-controls',Styler[_0x20cf16(0x1ff)]='plutonium__sheet-compact-popout',Styler[_0x20cf16(0x1fc)]=new VeLock(),Styler[_0x20cf16(0x202)]=_0x20cf16(0x1fa),Styler['_ID_BACKEND_VERSION']=_0x20cf16(0x219),Styler['_TAB_TITLE_DEFAULT']=null;export{Styler};
+import {Config} from "./Config.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {UtilCompat} from "./UtilCompat.js";
+import {UtilHooks} from "./UtilHooks.js";
+
+class Styler {
+	static init () {
+		// region Session-static mods
+		this._handleConfigUpdate_handleGenericCssMod({
+			condition: () => game.user.isGM,
+			idStyle: Styler._ID_GM_ONLY,
+			file: `css/optional-gm-only.css`,
+		});
+
+		this._handleConfigUpdate_handleGenericCssMod({
+			condition: () => !game.user.isGM,
+			idStyle: Styler._ID_PLAYER_ONLY,
+			file: `css/optional-player-only.css`,
+		});
+		// endregion
+
+		UtilHooks.on(UtilHooks.HK_CONFIG_UPDATE, () => this._handleConfigUpdate());
+		this._handleConfigUpdate();
+
+		Hooks.on("canvasReady", () => this._handleNameTabFromScene());
+		Hooks.on("updateScene", () => this._handleNameTabFromScene());
+		// Note: `deleteScene` fires before the canvas unloads the scene, so, allow a small delay
+		Hooks.on("deleteScene", () => setTimeout(() => this._handleNameTabFromScene(), 500));
+	}
+
+	static _handleConfigUpdate () {
+		this._handleConfigUpdate_compactDirectories();
+		this._handleConfigUpdate_compactDirectoryButtons();
+		this._handleConfigUpdate_hidePlutoniumDirectoryButtons();
+		this._handleConfigUpdate_showPopoutButton();
+		this._handleConfigUpdate_compactSheetControls();
+		this._handleConfigUpdate_compactChat();
+		this._handleConfigUpdate_sheetLevelUpButton();
+		this._handleConfigUpdate_wrapDirectories();
+		this._handleConfigUpdate_compatibilityPermissionViewer();
+		this._handleConfigUpdate_compatibilityTwilightUi();
+		this._handleConfigUpdate_compatibilityTidy5eSheet();
+		this._handleBackendCheck();
+		this._handleRivetCheck();
+		this._handleNameTabFromScene();
+	}
+
+	/**
+	 * @param opts Options object.
+	 * @param [opts.configGroup]
+	 * @param [opts.configGroupKey]
+	 * @param [opts.condition]
+	 * @param opts.idStyle
+	 * @param [opts.css]
+	 * @param [opts.file]
+	 */
+	static _handleConfigUpdate_handleGenericCssMod (opts) {
+		if (!opts.css && !opts.file) throw new Error(`One of "css" or "file" must be specified!`);
+		if (!(opts.configGroup && opts.configGroupKey) && !opts.condition) throw new Error(`One of "configGroup/Key" or "condition" must be specified!`);
+
+		const $style = $(`#${opts.idStyle}`);
+
+		const isActive = opts.condition && (opts.configGroup && opts.configGroupKey)
+			? opts.condition(Config.get(opts.configGroup, opts.configGroupKey))
+			: opts.condition
+				? opts.condition()
+				: Config.get(opts.configGroup, opts.configGroupKey);
+		if (!isActive) return $style.remove();
+
+		if ($style.length) return;
+
+		if (opts.css) {
+			$(`<style id="${opts.idStyle}">
+				${opts.css}
+			</style>`).appendTo(document.body);
+		} else {
+			$(`<link id="${opts.idStyle}" href="${SharedConsts.MODULE_LOCATION}/${opts.file}" rel="stylesheet" type="text/css" media="all">`).appendTo(document.head);
+		}
+	}
+
+	static _handleConfigUpdate_compactDirectories () {
+		this._handleConfigUpdate_handleGenericCssMod({
+			configGroup: "ui",
+			configGroupKey: "isCompactScenes",
+			idStyle: Styler._ID_COMPACT_SCENES,
+			file: `css/optional-compact-scenes.css`,
+		});
+
+		this._handleConfigUpdate_handleGenericCssMod({
+			configGroup: "ui",
+			configGroupKey: "isCompactActors",
+			idStyle: Styler._ID_COMPACT_ACTORS,
+			file: `css/optional-compact-actors.css`,
+		});
+
+		this._handleConfigUpdate_handleGenericCssMod({
+			configGroup: "ui",
+			configGroupKey: "isCompactItems",
+			idStyle: Styler._ID_COMPACT_ITEMS,
+			file: `css/optional-compact-items.css`,
+		});
+
+		this._handleConfigUpdate_handleGenericCssMod({
+			configGroup: "ui",
+			configGroupKey: "isCompactJournal",
+			idStyle: Styler._ID_COMPACT_JOURNAL,
+			file: `css/optional-compact-journal.css`,
+		});
+
+		this._handleConfigUpdate_handleGenericCssMod({
+			configGroup: "ui",
+			configGroupKey: "isCompactTables",
+			idStyle: Styler._ID_COMPACT_TABLES,
+			file: `css/optional-compact-tables.css`,
+		});
+
+		this._handleConfigUpdate_handleGenericCssMod({
+			configGroup: "ui",
+			configGroupKey: "isCompactCards",
+			idStyle: Styler._ID_COMPACT_CARDS,
+			file: `css/optional-compact-cards.css`,
+		});
+
+		this._handleConfigUpdate_handleGenericCssMod({
+			configGroup: "ui",
+			configGroupKey: "isCompactMacros",
+			idStyle: Styler._ID_COMPACT_MACROS,
+			file: `css/optional-compact-macros.css`,
+		});
+	}
+
+	static _handleConfigUpdate_compactDirectoryButtons () {
+		this._handleConfigUpdate_handleGenericCssMod({
+			configGroup: "ui",
+			configGroupKey: "isCompactDirectoryButtons",
+			idStyle: Styler._ID_COMPACT_DIRECTORY_BUTTONS,
+			file: `css/optional-compact-directory-buttons.css`,
+		});
+	}
+
+	static _handleConfigUpdate_hidePlutoniumDirectoryButtons () {
+		this._handleConfigUpdate_handleGenericCssMod({
+			configGroup: "ui",
+			configGroupKey: "isHidePlutoniumDirectoryButtons",
+			idStyle: Styler._ID_HIDE_PLUT_DIRECTORY_BUTTONS,
+			file: `css/optional-hide-plut-directory-buttons.css`,
+		});
+	}
+
+	static _handleConfigUpdate_showPopoutButton () {
+		this._handleConfigUpdate_handleGenericCssMod({
+			configGroup: "ui",
+			configGroupKey: "isShowPopout",
+			idStyle: Styler._ID_SHEET_POPOUT,
+			file: `css/optional-sheet-popout.css`,
+		});
+	}
+
+	static _handleConfigUpdate_compactSheetControls () {
+		this._handleConfigUpdate_handleGenericCssMod({
+			configGroup: "ui",
+			configGroupKey: "isCompactWindowBar",
+			idStyle: Styler._ID_SHEET_COMPACT_CONTROLS,
+			file: `css/optional-sheet-compact-controls.css`,
+		});
+	}
+
+	static _handleConfigUpdate_compactChat () {
+		this._handleConfigUpdate_handleGenericCssMod({
+			configGroup: "ui",
+			configGroupKey: "isCompactChat",
+			idStyle: Styler._ID_COMPACT_CHAT,
+			file: `css/optional-compact-chat.css`,
+		});
+	}
+
+	static _handleConfigUpdate_sheetLevelUpButton () {
+		this._handleConfigUpdate_handleGenericCssMod({
+			configGroup: "importClass",
+			configGroupKey: "isAddLevelUpButton",
+			idStyle: Styler._ID_SHEET_LEVEL_UP_BUTTON,
+			file: `css/optional-sheet-level-up-button.css`,
+		});
+	}
+
+	static _handleConfigUpdate_wrapDirectories () {
+		this._handleConfigUpdate_handleGenericCssMod({
+			configGroup: "ui",
+			configGroupKey: "isEnableFolderNameWrap",
+			idStyle: Styler._ID_WRAP_FOLDER_NAMES,
+			file: `css/optional-wrap-folder-names.css`,
+		});
+	}
+
+	static _handleConfigUpdate_compatibilityPermissionViewer () {
+		this._handleConfigUpdate_handleGenericCssMod({
+			condition: () => {
+				if (
+					!UtilCompat.isPermissionViewerActive()
+					|| (UtilCompat.isPermissionViewerActive() && UtilCompat.isSmolFoundryActive())
+				) return false;
+
+				const _UI_CONFIG_KEYS_COMPACT_DIRECTORY = [
+					"isCompactScenes",
+					"isCompactActors",
+					"isCompactItems",
+					"isCompactJournal",
+					"isCompactTables",
+					"isCompactCards",
+					"isCompactMacros",
+				];
+				return _UI_CONFIG_KEYS_COMPACT_DIRECTORY.some(it => Config.get("ui", it));
+			},
+			idStyle: Styler._ID_COMPATIBILITY_PERMISSION_VIEWER,
+			file: `css/optional-compatibility-permission-viewer.css`,
+		});
+	}
+
+	static _handleConfigUpdate_compatibilityTwilightUi () {
+		this._handleConfigUpdate_handleGenericCssMod({
+			condition: () => UtilCompat.isTwilightUiActive(),
+			idStyle: Styler._ID_COMPATIBILITY_TWILIGHT_UI,
+			file: `css/optional-compatibility-twilight-ui.css`,
+		});
+	}
+
+	static _handleConfigUpdate_compatibilityTidy5eSheet () {
+		this._handleConfigUpdate_handleGenericCssMod({
+			condition: () => UtilCompat.isTidy5eSheetActive(),
+			idStyle: Styler._ID_COMPATIBILITY_TIDY5E_SHEET,
+			file: `css/optional-compatibility-tidy5e-sheet.css`,
+		});
+	}
+
+	static _handleBackendCheck () {
+		Config.P_GET_BACKEND_VERSION
+			.then(async activeVersion => {
+				if (!activeVersion) return;
+
+				await Styler._LOCK_GLITCH.pLock();
+				try {
+					const $styleLogoGlitch = $(`#${Styler._ID_LOGO_GLITCH}`);
+					const $dispVersion = $(`#${Styler._ID_BACKEND_VERSION}`);
+
+					const $imgLogo = $(`#logo`);
+
+					if (!Config.get("ui", "isDisplayBackendStatus") || Config.get("ui", "isStreamerMode")) {
+						$imgLogo.title("");
+						$styleLogoGlitch.remove();
+						$dispVersion.remove();
+						return;
+					}
+
+					if (!$styleLogoGlitch.length) {
+						$imgLogo.title(`++++ Plutonium server v${activeVersion}: [online] ++++`);
+						$(`<style id="${Styler._ID_LOGO_GLITCH}">
+							#logo {
+								filter: hue-rotate(100deg) saturate(1.5);
+							}
+						</style>`).appendTo(document.body);
+					}
+
+					if (!$dispVersion.length) {
+						$(`<div class="plutsrv__disp-version text-center" id="${Styler._ID_BACKEND_VERSION}">${activeVersion}</div>`).appendTo(document.body);
+					}
+				} finally {
+					Styler._LOCK_GLITCH.unlock();
+				}
+			});
+	}
+
+	static _handleRivetCheck () {
+		if (!ExtensionUtil.ACTIVE) return;
+
+		const $dispVersion = $(`#${Styler._ID_DISP_RIVET_DETECTED}`);
+
+		if (!Config.get("rivet", "isDisplayStatus") || Config.get("ui", "isStreamerMode")) {
+			$dispVersion.remove();
+			return;
+		}
+
+		if (!$dispVersion.length) {
+			$(`<div class="rivet__disp-active ve-flex-vh-center" id="${Styler._ID_DISP_RIVET_DETECTED}"><span class="glyphicon glyphicon-send"></span></div>`).appendTo(document.body);
+		}
+	}
+
+	static _handleNameTabFromScene () {
+		if (Styler._TAB_TITLE_DEFAULT == null) Styler._TAB_TITLE_DEFAULT = document.title;
+
+		if (!Config.get("ui", "isNameTabFromScene")) {
+			document.title = Styler._TAB_TITLE_DEFAULT;
+			return;
+		}
+
+		const canvasData = MiscUtil.get(canvas, "scene", "data");
+		const nameSuffix = Config.get("ui", "tabNameSuffix");
+		const nameSuffixPart = nameSuffix && nameSuffix.trim() ? nameSuffix : "Foundry Virtual Tabletop";
+		if (canvasData) {
+			const sceneName = canvasData.navName || canvas.scene?.name;
+			document.title = `${sceneName} • ${nameSuffixPart}`;
+		} else {
+			document.title = nameSuffixPart;
+		}
+	}
+}
+Styler._ID_GM_ONLY = "plutonium__gm-only";
+Styler._ID_PLAYER_ONLY = "plutonium__player-only";
+Styler._ID_COMPACT_ACTORS = "plutonium__compact-actors";
+Styler._ID_COMPACT_ITEMS = "plutonium__compact-items";
+Styler._ID_COMPACT_JOURNAL = "plutonium__compact-journal";
+Styler._ID_COMPACT_TABLES = "plutonium__compact-tables";
+Styler._ID_COMPACT_CARDS = "plutonium__compact-cards";
+Styler._ID_COMPACT_SCENES = "plutonium__compact-scenes";
+Styler._ID_COMPACT_MACROS = "plutonium__compact-macros";
+Styler._ID_COMPACT_CHAT = "plutonium__compact-chat";
+Styler._ID_COMPACT_DIRECTORY_BUTTONS = "plutonium__compact-directory-buttons";
+Styler._ID_HIDE_PLUT_DIRECTORY_BUTTONS = "plutonium__hide-plutonium-directory-buttons";
+Styler._ID_HIDE_DIRECTORY_IMPORT_BUTTONS = "plutonium__hide-directory-import-buttons";
+Styler._ID_SHEET_POPOUT = "plutonium__sheet-popout";
+Styler._ID_SHEET_COMPACT_CONTROLS = "plutonium__sheet-compact-controls";
+Styler._ID_SHEET_COMPACT_POPOUT = "plutonium__sheet-compact-popout";
+Styler._LOCK_GLITCH = new VeLock();
+Styler._ID_LOGO_GLITCH = "plutonium__logo-glitch";
+Styler._ID_BACKEND_VERSION = "plutonium__backend-version";
+Styler._ID_SHEET_LEVEL_UP_BUTTON = "plutonium__sheet-level-up-button";
+Styler._ID_WRAP_FOLDER_NAMES = "plutonium__wrap-folder-names";
+Styler._ID_DISP_RIVET_DETECTED = "plutonium__disp-rivet-detected";
+Styler._ID_COMPATIBILITY_PERMISSION_VIEWER = "plutonium__compatibility-permission-viewer";
+Styler._ID_COMPATIBILITY_TWILIGHT_UI = "plutonium__compatibility-twilight-ui";
+Styler._ID_COMPATIBILITY_TIDY5E_SHEET = "plutonium__compatibility-tidy5e-sheet";
+
+Styler._TAB_TITLE_DEFAULT = null;
+
+export {Styler};

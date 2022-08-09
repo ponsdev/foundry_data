@@ -14,6 +14,10 @@
   border-bottom: 1px solid #444;
 }
 
+#settings .ms2t-switch-container h2 {
+  margin: 6px 0 0 0;
+}
+
 #settings .game-system {
   margin-bottom: .5rem;
 }
@@ -51,6 +55,13 @@
   align-items: center;
 }
 
+#module-management .package-list .package-title {
+  overflow: visible;
+  height: auto;
+  align-items: flex-start;
+  margin-right: 8px;
+}
+
 #module-management input.active {
   position: relative;
   margin-right: 8px;
@@ -60,7 +71,6 @@
 #client-settings {
   min-height: 100vh;
 }
-
 
 #client-settings input[type="checkbox"] {
   -webkit-appearance: none;
@@ -74,7 +84,11 @@
   cursor: pointer;
 }
 
-#client-settings input[type="checkbox"]:hover {
+#client-settings input[type="checkbox"]:disabled {
+  opacity: .4;
+}
+
+#client-settings input[type="checkbox"]:not(:disabled):hover {
   border: 1px solid rgba(0,0,0,.8);
   background: rgba(255,255,255,.8) ;
 }
@@ -98,6 +112,10 @@
 
 #client-settings.window-app .window-content {
   padding: 0;
+}
+
+#client-settings nav.tabs {
+  flex: 0;
 }
 
 #client-settings nav.tabs .item {
@@ -476,10 +494,24 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
-  height: 250px;
+  height: 400px;
   display: none;
   z-index: 1000;
 }
+
+#module-management .warning {
+  background: rgba(255, 120, 0, 1);
+  padding: 8px;
+  font-size: 11px;
+  margin: 8px 0;
+  color: #fff;
+  border-radius: 3px;
+}
+
+#module-management .warning span {
+  font-weight: 600;
+}
+
 
 #module-management #importExportModal .modal-wrap {
   height: 100%;
@@ -548,16 +580,22 @@
   outline: none; 
 }
 
+#module-management #importExportModal .export-options,
+#module-management #importExportModal .import-options {
+  display: flex;
+  margin-left: -1px;
+}
 #module-management #importExportModal button {
   background: rgba(0,255,0,.4);
   border: none;
   border-radius: 1px solid #333;
   color: #efefef;
   border-radius: 0 0 3px 3px;
-  flex: 0 0 40px;
+  flex: 1;
   height: 40px;
   line-height: 40px;
   margin: 0;
+  margin-right: 1px;
   padding: 0; 
   display: none;
 }
@@ -567,8 +605,8 @@
   box-shadow: none;
 }
 
-#module-management #importExportModal.export button.modules-export-copy,
-#module-management #importExportModal.import button.modules-import-confirm {
+#module-management #importExportModal.export .export-options button,
+#module-management #importExportModal.import .import-options button {
   display: block;
 }
 
@@ -586,4 +624,56 @@
 
 #client-settings #config-tabs div.tab[data-tab="modules"] div.form-group .picker_wrapper .picker_cancel button {
   height: 100%;
+}
+
+/* ----------------------------------------- */
+/*  DSA 5e Support                        */
+/* ----------------------------------------- */
+
+.system-dsa5 #client-settings form {
+  height: 100%;
+}
+
+.system-dsa5 #client-settings #config-tabs {
+  overflow-y: scroll;
+}
+
+.system-dsa5 #client-settings .sheet-footer {
+  flex: 0 1px;
+  margin-top: 16px;
+}
+
+.system-dsa5 #module-management form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.system-dsa5 #module-management .notes {
+  flex: 0 1px;
+}
+
+.system-dsa5 #module-management .module-list {
+  max-height: 100%;
+}
+
+.system-dsa5 #module-management .package-list {
+  height: 100%;
+}
+
+.system-dsa5 #client-settings #config-tabs {
+  overflow: hidden;
+}
+
+.system-dsa5 #client-settings #config-tabs .tab {
+  height: 100%;
+}
+
+.system-dsa5 #client-settings section.content .settings-list {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.system-dsa5 #client-settings #config-tabs .tab[data-tab=modules] .settings-list {
+  max-height: calc(100vh - 272px);
 }

@@ -28,7 +28,7 @@
           <div class="items-header-requirements">{{localize 'DND5E.Requirements'}}</div>
           {{/if}}
         {{else if section.isClass}}
-          <div class="items-header-subclass">{{localize 'TIDY5E.Subclass'}}</div>
+          <!-- <div class="items-header-subclass">{{localize 'TIDY5E.Subclass'}}</div> -->
           <div class="items-header-level">{{localize 'DND5E.Level'}}</div>
         {{else}}
         {{#if ../isCharacter}}
@@ -50,12 +50,17 @@
       {{#each section.items as |item iid|}}
       <li class="item {{#if ../../owner}}context-enabled{{/if}} {{#if isDepleted}}depleted{{/if}}" data-item-id="{{item._id}}">
         <div class="item-name rollable">
-          <div class="item-image" style="background-image: url({{item.img}})">
+          <div class="item-image" style="background-image: url('{{item.img}}')">
             <i class="fa fa-dice-d20"></i>
           </div>
-          <h4 title="{{localize 'TIDY5E.ToggleInfo'}} ({{item.name}})">
-            {{item.name}}
+          <h4>
+            {{#if (eq item.type "subclass")}}&rdsh;{{/if}}
+              {{item.name}}
+            {{#if item.data.isOriginalClass}} <i class="original-class fas fa-sun" title="{{localize 'DND5E.ClassOriginal'}}"></i>{{/if}}
           </h4>
+          {{#if item.data.properties.amm}}
+          <span class="ammo" data-id="{{item._id}}"></span>
+          {{/if}}
           {{#unless ../../isCharacter}}
           {{#if item.data.quantity}}
           <span class="item-quantity{{#if item.isStack}} isStack{{/if}}">
@@ -72,7 +77,7 @@
         {{/if}}
 
         {{#if section.hasActions}}
-        <div class="item-detail item-charges">
+        <div class="item-detail item-charges {{#if ../../isNPC}}{{#unless item.hasUses}} no-border{{/unless}}{{/if}}">
           {{#if item.isOnCooldown}}
           <a class="item-recharge rollable" title="{{item.labels.recharge}}"><i class="fas fa-dice-six"></i> {{item.data.recharge.value}}{{#if (ne item.data.recharge.value 6)}}+{{/if}}</a>
           {{else if item.data.recharge.value}}
@@ -80,12 +85,12 @@
 
           {{else if item.hasUses}}
           <input data-path="data.uses.value" type="text" value="{{item.data.uses.value}}">/ <input  class="uses-max" data-path="data.uses.max" type="text" value="{{item.data.uses.max}}">
-          {{else}}
+          {{else unless ../../isNPC}}
           <a class="addCharges" value="Add">Add</a>
           {{/if}}
         </div>
 
-        <div class="item-detail item-action">
+        <div class="item-detail item-action {{#if ../../isNPC}}{{#unless item.data.activation.type}} no-border{{/unless}}{{/if}}">
           {{#if item.data.activation.type }}
           {{item.labels.activation}}
           {{/if}}
@@ -102,13 +107,27 @@
         {{/if}}
         {{/unless}}
 
-        {{else if section.isClass}}
-        <div class="item-detail player-class" title="{{item.data.subclass}}">
+        {{else if (eq item.type "class")}}
+        <!-- <div class="item-detail player-class" title="{{item.data.subclass}}">
           <span>{{item.data.subclass}}</span>
         </div>
         <div class="item-detail item-level">
           {{item.data.levels}}
-        </div>
+        </div> -->
+
+
+        <div class="item-detail item-action">
+          <select class="level-selector">
+              {{#select 0}}
+              {{#each item.availableLevels}}
+                  <option value="{{this.delta}}" {{disabled this.disabled}}>
+                      {{localize "DND5E.LevelNumber" level=this.level}}
+                      {{#if this.delta}}({{numberFormat this.delta sign=true}}){{/if}}
+                  </option>
+              {{/each}}
+              {{/select}}
+          </select>
+      </div>
 
         {{else if section.columns}}
           {{#each section.columns}}

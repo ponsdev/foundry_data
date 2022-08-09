@@ -1,0 +1,21 @@
+{
+    "name": "pdftofoundry",
+    "title": "PDF to Foundry Importer",
+    "description": "",
+    "version": "3.3.2",
+    "author": "fryguy",
+    "scripts": [],
+    "esmodules": [
+        "main.bundle.js"
+    ],
+    "styles": ["./css/style.css"],
+    "packs": [],
+    "languages": [],
+    "minimumCoreVersion": "9.238",
+    "compatibleCoreVersion": "9.276",
+    "system": ["pf2e"],
+    "socket": true,
+    "url": "https://gitlab.com/fryguy1013/pdftofoundry",
+    "manifest": "https://gitlab.com/fryguy1013/pdftofoundry/-/jobs/artifacts/release/raw/static_module/module.json?job=build",
+    "download": "https://gitlab.com/fryguy1013/pdftofoundry/-/jobs/artifacts/release/raw/pdftofoundry.zip?job=build"
+  }

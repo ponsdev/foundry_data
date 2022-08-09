@@ -1,1 +1,275 @@
-const _0x1b55=['5etools-rollable-tables','journal','map','Source','isOverwrite','insert','_list','SOURCE_TYP_CUSTOM','2qCTBJK','5etools','635556BXIgNo','_pImportEntry_pImportToDirectoryGeneric','pGetTableRollableTable','_pImportEntry_pImportToDirectoryGeneric_pGetImportableData','_pImportEntry_getTablesFromGroup','push','sourceJsonToColor','_getDuplicateMeta','_pImportEntry_pGetFolderId','Tables','folder',',\x20Table\x20','DataSourceFile','SOURCE_TYP_BREW','DataSourceUrl','pGetHomebrewSources','53rDAIED','tables','source','table','text-center','_pImportTableGroup','\x22\x20(from\x20\x22','1093847voDbJp','imported','_pack','8510ilqlRc','bind','TASK_EXIT_SKIPPED_DUPLICATE','getData','isSkip','mutateForFilters','_titleButtonRun','isTemp','pImportEntry','Importing\x20table\x20group\x20\x22','_isRadio','get','Custom\x20URL','_titleSearch','_actor','log','SOURCE_TYP_OFFICIAL_ALL','doAbsorbItems','Importing\x20table\x20\x22','755242jmqekP','pGetRollableTables','create','_pageFilter','DataSourceSpecial','name','PG_TABLES','291313MHFtkH','TASK_EXIT_COMPLETE','_page','caption','absorbFnBindListeners','sourceJsonToAbv','_content','138BibtEf','2633CBsZEN','Cannot\x20import\x20table\x20to\x20actor!','1143213lsEwRc','tableGroup','sourceShort','absorbFnBindListenersRadio'];const _0x3bea=function(_0x440b5c,_0x1f3698){_0x440b5c=_0x440b5c-0x1cb;let _0x1b5574=_0x1b55[_0x440b5c];return _0x1b5574;};const _0x505eb5=_0x3bea;(function(_0xcd2220,_0x519060){const _0x402f1b=_0x3bea;while(!![]){try{const _0x560bae=parseInt(_0x402f1b(0x1e5))+-parseInt(_0x402f1b(0x202))+parseInt(_0x402f1b(0x209))*-parseInt(_0x402f1b(0x20a))+-parseInt(_0x402f1b(0x1ce))+-parseInt(_0x402f1b(0x1fb))+-parseInt(_0x402f1b(0x1e8))*parseInt(_0x402f1b(0x1de))+-parseInt(_0x402f1b(0x20c))*-parseInt(_0x402f1b(0x1cc));if(_0x560bae===_0x519060)break;else _0xcd2220['push'](_0xcd2220['shift']());}catch(_0x571b05){_0xcd2220['push'](_0xcd2220['shift']());}}}(_0x1b55,0xd7c42));import{ImportList}from'./ImportList.js';import{Vetools}from'./Vetools.js';import{LGT}from'./Util.js';import{Config}from'./Config.js';import{UtilList2}from'./UtilList2.js';import{DataConverterTable}from'./DataConverterTable.js';import{UtilApplications}from'./UtilApplications.js';import{UtilDataSource}from'./UtilDataSource.js';class ImportListRollableTable extends ImportList{constructor(_0x47726e){const _0x2905bc=_0x3bea;_0x47726e=_0x47726e||{},super({'title':'Import\x20Rollable\x20Tables'},_0x47726e,{'props':[_0x2905bc(0x1e1),_0x2905bc(0x20d)],'titleSearch':_0x2905bc(0x1e1),'sidebarTab':'tables','gameProp':_0x2905bc(0x1df),'defaultFolderPath':[_0x2905bc(0x1d7)],'folderType':'RollTable','pageFilter':new PageFilterTables(),'page':UrlUtil[_0x2905bc(0x201)],'isPreviewable':!![],'isDedupable':!![]});}async['pGetSources'](){const _0x4834b1=_0x3bea;return[new UtilDataSource[(_0x4834b1(0x1ff))](Config[_0x4834b1(0x1f3)]('ui','isStreamerMode')?'SRD':_0x4834b1(0x1cd),Vetools[_0x4834b1(0x1fc)][_0x4834b1(0x1e9)](Vetools),{'cacheKey':_0x4834b1(0x210),'isUseProps':!![],'filterTypes':[UtilDataSource[_0x4834b1(0x1f8)]],'isDefault':!![]}),new UtilDataSource[(_0x4834b1(0x1dc))](_0x4834b1(0x1f4),'',{'filterTypes':[UtilDataSource[_0x4834b1(0x1cb)]]}),new UtilDataSource[(_0x4834b1(0x1da))]('Upload\x20File',{'filterTypes':[UtilDataSource[_0x4834b1(0x1cb)]]}),...(await Vetools[_0x4834b1(0x1dd)](_0x4834b1(0x1e1)))[_0x4834b1(0x212)](({name:_0x159f01,url:_0x169559})=>new UtilDataSource['DataSourceUrl'](_0x159f01,_0x169559,{'filterTypes':[UtilDataSource[_0x4834b1(0x1db)]]}))];}[_0x505eb5(0x1eb)](){const _0x55130a=_0x505eb5;return{'isPreviewable':this['_isPreviewable'],'titleButtonRun':this[_0x55130a(0x1ee)],'titleSearch':this[_0x55130a(0x1f5)],'cols':[{'name':'Name','width':0x9,'field':_0x55130a(0x200)},{'name':_0x55130a(0x213),'width':0x2,'field':_0x55130a(0x1e0),'titleProp':'sourceLong','displayProp':_0x55130a(0x20e),'classNameProp':'sourceClassName','rowClassName':_0x55130a(0x1e2)}],'rows':this[_0x55130a(0x208)]['map']((_0x96c976,_0x8fd9ce)=>{const _0x2e6f52=_0x55130a;return this[_0x2e6f52(0x1fe)]['constructor'][_0x2e6f52(0x1ed)](_0x96c976),{'name':_0x96c976[_0x2e6f52(0x200)],'source':_0x96c976[_0x2e6f52(0x1e0)],'sourceShort':Parser['sourceJsonToAbv'](_0x96c976[_0x2e6f52(0x1e0)]),'sourceLong':Parser['sourceJsonToFull'](_0x96c976[_0x2e6f52(0x1e0)]),'sourceClassName':Parser[_0x2e6f52(0x1d4)](_0x96c976[_0x2e6f52(0x1e0)]),'ix':_0x8fd9ce};})};}['_activateListeners_absorbListItems'](){const _0x8b6ea7=_0x505eb5;this[_0x8b6ea7(0x216)][_0x8b6ea7(0x1f9)](this[_0x8b6ea7(0x208)],{'fnGetName':_0x330f9d=>_0x330f9d[_0x8b6ea7(0x200)],'fnGetValues':_0x5c3d17=>({'source':_0x5c3d17[_0x8b6ea7(0x1e0)],'hash':UrlUtil['URL_TO_HASH_BUILDER'][this[_0x8b6ea7(0x204)]](_0x5c3d17)}),'fnGetData':UtilList2['absorbFnGetData'],'fnBindListeners':_0x1811d3=>this[_0x8b6ea7(0x1f2)]?UtilList2[_0x8b6ea7(0x20f)](this[_0x8b6ea7(0x216)],_0x1811d3):UtilList2[_0x8b6ea7(0x206)](this[_0x8b6ea7(0x216)],_0x1811d3)});}[_0x505eb5(0x1d2)](_0x28a460){const _0x4d277e=_0x505eb5,_0x59ac5b=MiscUtil['copy'](_0x28a460);return _0x59ac5b[_0x4d277e(0x1df)]['forEach']((_0x5bb2cc,_0x2a0665)=>{const _0x3fa7d9=_0x4d277e;if(_0x59ac5b[_0x3fa7d9(0x200)])_0x5bb2cc[_0x3fa7d9(0x200)]=_0x5bb2cc[_0x3fa7d9(0x200)]||_0x59ac5b[_0x3fa7d9(0x200)]+_0x3fa7d9(0x1d9)+(_0x2a0665+0x1);_0x5bb2cc['source']=_0x5bb2cc[_0x3fa7d9(0x1e0)]||_0x59ac5b['source'];}),_0x59ac5b['tables'];}async[_0x505eb5(0x1e3)](_0x2c98c4,_0x33af40){const _0x566d0b=_0x505eb5;if(_0x2c98c4['__prop']!==_0x566d0b(0x20d))return null;console[_0x566d0b(0x1f7)](...LGT,_0x566d0b(0x1f1)+(_0x2c98c4['name']||_0x2c98c4[_0x566d0b(0x205)])+_0x566d0b(0x1e4)+Parser['sourceJsonToAbv'](_0x2c98c4[_0x566d0b(0x1e0)])+'\x22)');const _0x29621e=this[_0x566d0b(0x1d2)](_0x2c98c4),_0x3c1d10=[];let _0x3c5aa0=0x0;for(const _0x5b2b6a of _0x29621e){const _0x11c478=await this[_0x566d0b(0x1f0)](_0x5b2b6a,_0x33af40);if(_0x11c478[_0x566d0b(0x1e6)])_0x3c1d10[_0x566d0b(0x1d3)](_0x11c478[_0x566d0b(0x1e6)]);else{if(_0x11c478['existing'])_0x3c5aa0++;}}if(!_0x3c1d10&&_0x3c5aa0)return{'status':UtilApplications[_0x566d0b(0x1ea)]};const _0x2830ec=DataConverterTable['getTableGroupJournal'](_0x2c98c4,_0x3c1d10,{'isAddPermission':!![]}),_0x474177=this[_0x566d0b(0x1d5)]({'name':_0x2830ec[_0x566d0b(0x200)],'gameProp':_0x566d0b(0x211)});if(_0x474177[_0x566d0b(0x1ec)])return{'status':UtilApplications[_0x566d0b(0x1ea)]};const _0x51fc73=_0x33af40[_0x566d0b(0x1ef)]||!!this[_0x566d0b(0x1e7)];if(_0x51fc73){const _0x499e2f=await JournalEntry[_0x566d0b(0x1fd)](_0x2830ec,{'renderSheet':!![],'temporary':!![]});return{'imported':_0x499e2f,'status':UtilApplications[_0x566d0b(0x203)]};}if(_0x474177[_0x566d0b(0x214)])return this['_pImportEntry_pDoUpdateExistingDirectoryEntity'](_0x474177,_0x2830ec);const _0x45a0bd=await this[_0x566d0b(0x1d6)](_0x2c98c4);if(_0x45a0bd)_0x2830ec[_0x566d0b(0x1d8)]=_0x45a0bd;const _0x521149=await JournalEntry[_0x566d0b(0x1fd)](_0x2830ec,{'renderSheet':![],'temporary':![]});return await game['journal'][_0x566d0b(0x215)](_0x521149),{'imported':_0x521149,'status':UtilApplications['TASK_EXIT_COMPLETE']};}async[_0x505eb5(0x1f0)](_0x44bee1,_0xea098f){const _0x12a3e3=_0x505eb5;_0xea098f=_0xea098f||{};const _0x1fc85a=await this[_0x12a3e3(0x1e3)](_0x44bee1,_0xea098f);if(_0x1fc85a!=null)return _0x1fc85a;console[_0x12a3e3(0x1f7)](...LGT,_0x12a3e3(0x1fa)+(_0x44bee1[_0x12a3e3(0x200)]||_0x44bee1[_0x12a3e3(0x205)])+'\x22\x20(from\x20\x22'+Parser[_0x12a3e3(0x207)](_0x44bee1[_0x12a3e3(0x1e0)])+'\x22)');if(this[_0x12a3e3(0x1f6)])throw new Error(_0x12a3e3(0x20b));return this[_0x12a3e3(0x1cf)](_0x44bee1,_0xea098f);}[_0x505eb5(0x1d1)](_0x5df607,_0x521ca7){const _0x2135ec=_0x505eb5;return DataConverterTable[_0x2135ec(0x1d0)](_0x5df607,_0x521ca7);}}export{ImportListRollableTable};
+import {ImportedDocument, ImportList, ImportSummary} from "./ImportList.js";
+import {Vetools} from "./Vetools.js";
+import {LGT} from "./Util.js";
+import {Config} from "./Config.js";
+import {UtilList2} from "./UtilList2.js";
+import {DataConverterTable} from "./DataConverterTable.js";
+import {UtilApplications} from "./UtilApplications.js";
+import {UtilDataSource} from "./UtilDataSource.js";
+
+class ImportListRollableTable extends ImportList {
+	static get ID () { return "tables"; }
+	static get DISPLAY_NAME_TYPE_PLURAL () { return "Tables"; }
+
+	static _ = this.registerImpl(this);
+
+	static get FOLDER_TYPE () { return "RollTable"; }
+
+	constructor (externalData, applicationOptsOverride, subclassOptsOverride) {
+		externalData = externalData || {};
+		applicationOptsOverride = applicationOptsOverride || {};
+		subclassOptsOverride = subclassOptsOverride || {};
+		super(
+			{
+				title: "Import Rollable Tables",
+				...applicationOptsOverride,
+			},
+			externalData,
+			{
+				props: ["table", "tableGroup"],
+				dirsHomebrew: ["table"],
+				titleSearch: "table",
+				sidebarTab: "tables",
+				gameProp: "tables",
+				defaultFolderPath: ["Tables"],
+				pageFilter: new PageFilterTables(),
+				page: UrlUtil.PG_TABLES,
+				isPreviewable: true,
+				isDedupable: true,
+				configGroup: "importTable",
+				...subclassOptsOverride,
+			},
+		);
+	}
+
+	async _pGetSources () {
+		return [
+			new UtilDataSource.DataSourceSpecial(
+				Config.get("ui", "isStreamerMode") ? "SRD" : "5etools",
+				Vetools.pGetRollableTables.bind(Vetools),
+				{
+					cacheKey: "5etools-rollable-tables",
+					isUseProps: true,
+					filterTypes: [UtilDataSource.SOURCE_TYP_OFFICIAL_ALL],
+					isDefault: true,
+				},
+			),
+			new UtilDataSource.DataSourceUrl(
+				"Custom URL",
+				"",
+				{
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			new UtilDataSource.DataSourceFile(
+				"Upload File",
+				{
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			...(await this._pGetSourcesHomebrew()),
+		];
+	}
+
+	getData () {
+		return {
+			...super.getData(),
+			buttonsAdditional: [
+				{
+					name: "btn-run-journal-entries",
+					text: "Import as Journal Entries",
+				},
+			],
+			cols: [
+				{
+					name: "Name",
+					width: 9,
+					field: "name",
+				},
+				{
+					name: "Source",
+					width: 2,
+					field: "source",
+					titleProp: "sourceLong",
+					displayProp: "sourceShort",
+					classNameProp: "sourceClassName",
+					styleProp: "sourceStyle",
+					rowClassName: "text-center",
+				},
+			],
+			rows: this._content.map((it, ix) => {
+				this._pageFilter.constructor.mutateForFilters(it);
+
+				return {
+					name: it.name,
+					source: it.source,
+					sourceShort: Parser.sourceJsonToAbv(it.source),
+					sourceLong: Parser.sourceJsonToFull(it.source),
+					sourceClassName: Parser.sourceJsonToColor(it.source),
+					sourceStyle: BrewUtil2.sourceJsonToStylePart(it.source),
+					ix,
+				};
+			}),
+		};
+	}
+
+	_renderInner_initRunButtonsAdditional () {
+		this._$btnsRunAdditional["btn-run-journal-entries"].click(() => {
+			return this._pHandleClickRunButton({
+				gameProp: "journal",
+				sidebarTab: "journal",
+				optsImportEntry: {
+					isImportAsJournalEntry: true,
+				},
+			});
+		});
+	}
+
+	_renderInner_absorbListItems () {
+		this._list.doAbsorbItems(
+			this._content,
+			{
+				fnGetName: it => it.name,
+				// values used for sorting/search
+				fnGetValues: it => ({
+					source: it.source,
+					hash: UrlUtil.URL_TO_HASH_BUILDER[this._page](it),
+				}),
+				fnGetData: UtilList2.absorbFnGetData,
+				fnBindListeners: it => this._isRadio
+					? UtilList2.absorbFnBindListenersRadio(this._list, it)
+					: UtilList2.absorbFnBindListeners(this._list, it),
+			},
+		);
+	}
+
+	_pImportEntry_getTablesFromGroup (tbl) {
+		const tg = MiscUtil.copy(tbl);
+
+		tg.tables.forEach((t, i) => {
+			if (tg.name) t.name = t.name || `${tg.name}, Table ${i + 1}`;
+			t.source = t.source || tg.source;
+		});
+
+		return tg.tables;
+	}
+
+	async _pImportTableGroup (tg, importOpts) {
+		if (tg.__prop !== "tableGroup") return null;
+
+		console.log(...LGT, `Importing table group "${tg.name || tg.caption}" (from "${Parser.sourceJsonToAbv(tg.source)}")`);
+
+		const tables = this._pImportEntry_getTablesFromGroup(tg);
+		const rollableTables = [];
+
+		let cntSkipped = 0;
+		for (const tbl of tables) {
+			const importSummary = await this.pImportEntry(tbl, importOpts);
+			if (importSummary.imported) rollableTables.push(...importSummary.imported.map(it => it.document).filter(Boolean));
+			else if (importSummary.existing) cntSkipped++;
+		}
+
+		if (!rollableTables.length && cntSkipped) {
+			return new ImportSummary({status: UtilApplications.TASK_EXIT_SKIPPED_DUPLICATE});
+		}
+
+		const journalData = DataConverterTable.getTableGroupJournal(tg, rollableTables, {isAddPermission: true});
+
+		// Look for a duplicate journal item
+		const duplicateMetaJournal = this._getDuplicateMeta({name: journalData.name, gameProp: "journal", importOpts});
+		if (duplicateMetaJournal.isSkip) return new ImportSummary({status: UtilApplications.TASK_EXIT_SKIPPED_DUPLICATE});
+
+		// As we can't import the journal entry to the pack, treat any compendium imports as temp
+		const isTemp = importOpts.isTemp || !!this._pack;
+
+		if (isTemp) {
+			const imported = await JournalEntry.create(journalData, {renderSheet: true, temporary: true});
+
+			return new ImportSummary({
+				status: UtilApplications.TASK_EXIT_COMPLETE,
+				imported: [
+					new ImportedDocument({
+						document: imported,
+					}),
+				],
+			});
+		}
+
+		if (duplicateMetaJournal.isOverwrite) return this._pImportEntry_pDoUpdateExistingDirectoryEntity(duplicateMetaJournal, journalData);
+
+		const folderId = await this._pImportEntry_pGetFolderId(tg);
+		if (folderId) journalData.folder = folderId;
+
+		const journalItem = await JournalEntry.create(journalData, {renderSheet: false, temporary: false});
+
+		await game.journal.set(journalItem.id, journalItem);
+
+		return new ImportSummary({
+			status: UtilApplications.TASK_EXIT_COMPLETE,
+			imported: [
+				new ImportedDocument({
+					document: journalItem,
+				}),
+			],
+		});
+	}
+
+	/**
+	 * @param tbl
+	 * @param [importOpts] Options object.
+	 * @param [importOpts.isTemp] if the table should be temporary, and displayed.
+	 * @param [importOpts.isImportAsJournalEntry] if the table should be imported as a journal entry.
+	 */
+	async _pImportEntry (tbl, importOpts) {
+		importOpts = importOpts || {};
+
+		const importSummaryGroup = await this._pImportTableGroup(tbl, importOpts);
+		if (importSummaryGroup != null) return importSummaryGroup;
+
+		console.log(...LGT, `Importing table "${tbl.name || tbl.caption}" (from "${Parser.sourceJsonToAbv(tbl.source)}")`);
+
+		if (this._actor) throw new Error(`Cannot import table to actor!`);
+
+		if (importOpts.isImportAsJournalEntry) {
+			const importListJournal = new ImportListRollableTableJournal();
+			await importListJournal.pInit();
+			const nxtImportOpts = MiscUtil.copy(importOpts);
+			delete nxtImportOpts.isImportAsJournalEntry;
+			return importListJournal._pImportEntry(tbl, nxtImportOpts);
+		}
+
+		return this._pImportEntry_pImportToDirectoryGeneric(tbl, importOpts);
+	}
+
+	_pImportEntry_pImportToDirectoryGeneric_pGetImportableData (it, getItemOpts) {
+		return DataConverterTable.pGetTableRollableTable(it, getItemOpts);
+	}
+}
+
+/**
+ * Table importer which imports to journal entries.
+ */
+class ImportListRollableTableJournal extends ImportListRollableTable {
+	static get FOLDER_TYPE () { return "JournalEntry"; }
+
+	constructor (externalData) {
+		externalData = externalData || {};
+		super(
+			externalData,
+			{},
+			{
+				sidebarTab: "journal",
+				gameProp: "journal",
+			},
+		);
+	}
+
+	/** Use the base importer's folder path. */
+	get _folderPathSpecKeyConstructorName () { return "ImportListRollableTable"; }
+
+	_pImportEntry_pImportToDirectoryGeneric_pGetImportableData (it, getItemOpts) {
+		return DataConverterTable.pGetTableRollableTable(it, {isImportAsJournalEntry: true, ...getItemOpts});
+	}
+}
+
+export {ImportListRollableTable};

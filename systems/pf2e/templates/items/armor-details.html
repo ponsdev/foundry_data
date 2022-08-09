@@ -1,9 +1,8 @@
 <div class="form-group">
     <label>{{localize "PF2E.ArmorArmorTypeLabel"}}</label>
-    <select name="data.armorType.value" data-dtype="String">
-        {{#select data.armorType.value}}
-            <option value=""></option>
-            {{#each armorTypes as |name type|}}
+    <select name="data.category">
+        {{#select data.category}}
+            {{#each categories as |name type|}}
                 <option value="{{type}}">{{localize name}}</option>
             {{/each}}
         {{/select}}
@@ -11,8 +10,32 @@
 </div>
 
 <div class="form-group">
+    <label>{{localize "PF2E.ArmorGroupLabel"}}</label>
+    <select name="data.group">
+        {{#select data.group}}
+            <option value=""></option>
+            {{#each groups as |name type|}}
+                <option value="{{type}}">{{localize name}}</option>
+            {{/each}}
+        {{/select}}
+    </select>
+</div>
+
+<div class="form-group">
+    <label>{{localize "PF2E.ArmorBaseLabel"}}</label>
+    <select name="data.baseItem">
+        {{#select data.baseItem}}
+            <option value=""></option>
+            {{#each baseTypes as |name slug|}}
+                <option value="{{slug}}">{{name}}</option>
+            {{/each}}
+        {{/select}}
+    </select>
+</div>
+
+<div class="form-group">
     <label>{{localize "PF2E.PreciousMaterialLabel"}}</label>
-    <select name="data.preciousMaterial.value" data-dtype="String">
+    <select name="data.preciousMaterial.value">
         {{#select data.preciousMaterial.value}}
             <option value=""></option>
             {{#each preciousMaterials as |name type|}}
@@ -24,7 +47,7 @@
 
 <div class="form-group">
     <label>{{localize "PF2E.PreciousMaterialGradeLabel"}}</label>
-    <select name="data.preciousMaterialGrade.value" data-dtype="String">
+    <select name="data.preciousMaterialGrade.value">
         {{#select data.preciousMaterialGrade.value}}
             <option value=""></option>
             {{#each preciousMaterialGrades as |name type|}}
@@ -48,7 +71,7 @@
 
 <div class="form-group">
     <label>{{localize "PF2E.ResiliencyRuneLabel"}}</label>
-    <select name="data.resiliencyRune.value" data-dtype="String">
+    <select name="data.resiliencyRune.value">
         {{#select data.resiliencyRune.value}}
             <option value=""></option>
             {{#each armorResiliencyRunes as |name type|}}
@@ -61,7 +84,7 @@
 {{#if propertyRuneSlots1}}
     <div class="form-group">
         <label>{{localize "PF2E.PropertyRuneLabel1"}}</label>
-        <select name="data.propertyRune1.value" data-dtype="String">
+        <select name="data.propertyRune1.value">
             {{#select data.propertyRune1.value}}
                 <option value=""></option>
                 {{#each armorPropertyRunes as |name type|}}
@@ -75,7 +98,7 @@
 {{#if propertyRuneSlots2}}
     <div class="form-group">
         <label>{{localize "PF2E.PropertyRuneLabel2"}}</label>
-        <select name="data.propertyRune2.value" data-dtype="String">
+        <select name="data.propertyRune2.value">
             {{#select data.propertyRune2.value}}
                 <option value=""></option>
                 {{#each armorPropertyRunes as |name type|}}
@@ -89,7 +112,7 @@
 {{#if propertyRuneSlots3}}
     <div class="form-group">
         <label>{{localize "PF2E.PropertyRuneLabel3"}}</label>
-        <select name="data.propertyRune3.value" data-dtype="String">
+        <select name="data.propertyRune3.value">
             {{#select data.propertyRune3.value}}
                 <option value=""></option>
                 {{#each armorPropertyRunes as |name type|}}
@@ -103,7 +126,7 @@
 {{#if propertyRuneSlots4}}
     <div class="form-group">
         <label>{{localize "PF2E.PropertyRuneLabel4"}}</label>
-        <select name="data.propertyRune4.value" data-dtype="String">
+        <select name="data.propertyRune4.value">
             {{#select data.propertyRune4.value}}
                 <option value=""></option>
                 {{#each armorPropertyRunes as |name type|}}
@@ -116,76 +139,57 @@
 
 <div class="form-group">
     <label>{{localize "PF2E.ArmorArmorLabel"}}</label>
-    <input type="number" name="data.armor.value" value="{{data.armor.value}}" data-dtype="Number"/>
+    <input type="number" name="data.armor.value" value="{{data.armor.value}}" />
 </div>
 
 <div class="form-group">
     <label>{{localize "PF2E.ArmorDexLabel"}}</label>
-    <input type="number" name="data.dex.value" value="{{data.dex.value}}" data-dtype="Number"/>
+    <input type="number" name="data.dex.value" value="{{data.dex.value}}" />
 </div>
 
 <div class="form-group">
     <label>{{localize "PF2E.ArmorCheckLabel"}}</label>
-    <input type="number" name="data.check.value" value="{{data.check.value}}" data-dtype="Number"/>
+    <input type="number" name="data.check.value" value="{{data.check.value}}" />
 </div>
 
 <div class="form-group">
     <label>{{localize "PF2E.ArmorSpeedLabel"}}</label>
-    <input type="number" name="data.speed.value" value="{{data.speed.value}}" data-dtype="Number"/>
+    <input type="number" name="data.speed.value" value="{{data.speed.value}}" />
 </div>
 
 <div class="form-group">
     <label>{{localize "PF2E.ArmorStrengthLabel"}}</label>
-    <input type="number" name="data.strength.value" value="{{data.strength.value}}" data-dtype="Number"/>
+    <input type="number" name="data.strength.value" value="{{data.strength.value}}" />
 </div>
 
 <div class="form-group">
-    <label>{{localize "PF2E.ArmorGroupLabel"}}</label>
-    <select name="data.group.value" data-dtype="String">
-        {{#select data.group.value}}
-            <option value=""></option>
-            {{#each armorGroups as |name type|}}
-                <option value="{{type}}">{{localize name}}</option>
-            {{/each}}
-        {{/select}}
-    </select>
+    <label>{{localize "PF2E.MaxHitPointsHeader"}}</label>
+    <input type="number" name="data.hp.max" value="{{data.hp.max}}" />
 </div>
 
 <div class="form-group">
-  <label>{{localize "PF2E.MaxHitPointsHeader"}}</label>
-  <input type="number" name="data.maxHp.value" value="{{data.maxHp.value}}" data-dtype="Number"/>
+    <label>{{localize "PF2E.HitPointsHeader"}}</label>
+    <input type="number" name="data.hp.value" value="{{data.hp.value}}" />
 </div>
 
 <div class="form-group">
-  <label>{{localize "PF2E.HitPointsHeader"}}</label>
-  <input type="number" name="data.hp.value" value="{{data.hp.value}}" data-dtype="Number"/>
+    <label>{{localize "PF2E.ShieldBrokenThresholdLabel"}}</label>
+    <input type="number" name="data.hp.brokenThreshold" value="{{data.hp.brokenThreshold}}" />
 </div>
-
 <div class="form-group">
-  <label>{{localize "PF2E.ShieldBrokenThresholdLabel"}}</label>
-  <input type="number" name="data.brokenThreshold.value" value="{{data.brokenThreshold.value}}" data-dtype="Number"/>
+    <label>{{localize "PF2E.ShieldHardnessLabel"}}</label>
+    <input type="number" name="data.hardness" value="{{data.hardness}}" />
 </div>
-
-<div class="form-group">
-  <label>{{localize "PF2E.ShieldHardnessLabel"}}</label>
-  <input type="number" name="data.hardness.value" value="{{data.hardness.value}}" data-dtype="Number"/>
-</div>
-
-<div class="form-group">
-    <label>{{localize "PF2E.ArmorEquippedLabel"}}</label>
-    <input type="checkbox" name="data.equipped.value" value="1" data-dtype="Boolean" {{checked data.equipped.value}}/>
-</div>
-
 <div class="form-group-stacked">
     <label>
         {{localize "PF2E.TraitsLabel"}}
-        <a class="trait-selector" data-trait-selector="basic" data-config-types="armorTraits" data-property="data.traits"><i class="fas fa-edit"></i></a>
+        {{#if editable}}
+            <a class="trait-selector" data-trait-selector="basic" data-config-types="armorTraits" data-property="data.traits"><i class="fas fa-edit"></i></a>
+        {{/if}}
     </label>
-    <ul class="traits-list pf-value pf-large">
+    <ul class="traits-list tags">
         {{#each traits as |trait|}}
-            {{#if trait.selected}}
-                <li class="tag" data-trait="{{trait.value}}">{{localize trait.label}}</li>
-            {{/if}}
+            <li class="tag" data-trait="{{trait.value}}">{{trait.label}}</li>
         {{/each}}
     </ul>
 </div>

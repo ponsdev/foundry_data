@@ -1,3 +1,36 @@
+# 1.3.6
+* Fix crash on v9 - Close #7
+
+# 1.3.5
+ * Enabled v10 support
+
+# 1.3.4
+ * Fix new modules now enabling properly on v9
+ 
+# 1.3.3
+ * Fix issue with recent tab on v9
+ 
+# 1.3.2
+ * Make major rev detection smarter to support new v9 style numbering
+ * Fix issue when other modules don't define compatibleCoreVersion. Closes #2
+
+# 1.3.1 
+ * Re-add minor/major rev tabs at user request
+
+# 1.3.0
+ * Remove minor/major rev tabs, since data is more visible in foundry.
+ 
+# 1.2.1
+ * Re-enable bug-reporter support
+ 
+# 1.2.0
+ * Remove stale manifest checker, since it's now included in the core.
+ * Dropping 0.7.x support
+
+# 1.1.7
+ * Add Spanish language support, thanks to @lozalojo
+ * Fix error in counting modules
+
 # 1.1.6
  * Fix crash when a module has an undefined compatibleCoreVersion
 

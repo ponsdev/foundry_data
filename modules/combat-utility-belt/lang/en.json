@@ -1,4 +1,112 @@
 {
+    "combat-utility-belt": {
+        "SHORT_NAME": "CUB",
+        "NAME": "Combat Utility Belt",
+        "ID": "combat-utility-belt",
+        "ENHANCED_CONDITIONS" :{
+            "OutputChatConfirm": {
+                "Title": "Enable Output to Chat for All Conditions?",
+                "Content": "Click 'Yes' to enable 'Output to Chat' on all Conditions"
+            },
+            "ConditionLab": {
+                "NoReference": "--No Reference Entry-- (Drag a Journal, Item, Actor, etc. into this field to set)",
+                "FilterInputTitle": "Filter by Name",
+                "FilterButtonTitle": "Apply Filter",
+                "SortAnchorTitle": "Sort by Name - unsorted (click to change)",
+                "SortAnchorTitle_asc": "Sort by Name - A to Z (click to change)",
+                "SortAnchorTitle_desc": "Sort by Name - Z to A (click to change)",
+                "SortDirectionSave": {
+                    "Title": "Save Mapping with Sort Direction?",
+                    "Content": "<p>Click 'Yes' to save the Condition Lab map with the current sort direction. Click 'No' to cancel Saving.</p>",
+                    "CheckboxText": "Don't show this again"
+                }
+            },
+            "ChatCard": {
+                "Heading": "Enhanced Conditions",
+                "Title": {
+                    "Added": "Added",
+                    "Removed": "Removed",
+                    "Active": "Active"
+                }
+            },
+            "MacroConfig": {
+                "Heading": "Macros to Execute",
+                "ApplyHeading": "Apply Macro",
+                "RemoveHeading": "Remove Macro",
+                "Description": "Select a macro to execute when this condition is added to or removed from a token/actor",
+                "SelectNone": "--No Macro--"
+            },
+            "TriggerConfig": {
+                "Heading": "Triggers",
+                "ApplyHeading": "Apply Trigger",
+                "RemoveHeading": "Remove Trigger",
+                "Description": "Triggers that Apply or Remove this Condition",
+                "SelectNone": "--No Trigger--"
+            }
+        },
+        "CONCENTRATOR": {
+            "MessagePrefix": "Combat Utility Belt - Concentrator",
+            "NoMatchingCondition": "No matching condition found for Concentrator. Please check your Concentrator and Condition Lab",
+            "Prompts": {
+                "Check": {
+                    "Title": "Concentration Check",
+                    "Content": "<p>Roll a concentration check for <strong>{actorName}</strong>?</p><p>Spell: <strong>{spellName}</strong></p>",
+                    "ClosedByOther": "Another user has rolled the concentration check"
+                },
+                "EnableEnhancedConditions": {
+                    "Title": "Enable Enhanced Conditions?",
+                    "Content": "<p>In order to use Concentrator you must enable Enhanced Conditions.</p><strong>Would you like to enable Enhanced Conditions</strong>"
+                }
+            },
+            "Messages": {
+                "StartConcentration": "<h3>Concentrator</h3><p>{entityName} is now concentrating on <strong>{spellName}</strong>.",
+                "DoubleConcentration": "<h3>Concentrator</h3><p>{entityName} cast <strong>{newSpellName}</strong> while concentrating on <strong>{oldSpellName}</strong>. Concentration on the original spell is lost.",
+                "EndConcentration": "<h3>Concentrator</h3><p>{entityName}'s concentration on <strong>{spellName}</strong> is broken!</p>",
+                "ConcentrationTested": "<h3>Concentrator</h3><strong>{entityName}</strong> took damage and their concentration on <strong>{spellName}</strong> is being tested (<strong>DC{dc}</strong>)!</p>",
+                "Incapacitated": "<h3>Concentrator</h3><strong>{entityName}</strong> is incapacitated and concentration on <strong>{spellName}</strong> is lost!</p>"      
+            },
+            "UnknownSpell": "Unknown Spell"
+        },
+        "HIDE_NAMES": {
+            "MessageIcon": {
+                "Title": {
+                    "NameNotHidden": "Name not hidden (click to hide)",
+                    "NameHiddenPrefix": "Replacement Name:",
+                    "NameHiddenSuffix": "(click to reveal)"
+                }
+            }
+        },
+        "SETTINGS": {
+            "CONCENTRATOR": {
+                "AutoEndConcentrationN": "Automatically End Concentration",
+                "AutoEndConcentrationH": "Determines whether or not Concentration is automatically ended on a failed Concentration check.",
+                "NotifyConcentrationN": "Notify on Concentration Start",
+                "NotifyConcentrationH": "Send a message when a Concentration spell is cast.",
+                "NotifyConcentrationCheckN": "Notify on Concentration Check",
+                "NotifyConcentrationCheckH": "Send a message when a Concentrating actor is forced to make a check.",
+                "NotifyEndN": "Notify on Concentration End",
+                "NotifyEndH": "Send a message when Concentration on a spell ends. (Including when the caster is incapacitated/dies)",
+                "HideNPCConcentrationN": "Hide NPC Concentration",
+                "HideNPCConcentrationH": "Hide non-player-owned actor Concentration messages from players. This applies even if Concentration notifications are set to 'Everyone'"
+            },
+            "ENHANCED_CONDITIONS": {
+                "MigrationVersionN": "Migration Version",
+                "MigrationVersionH": "Version of CUB for which migration was last performed",
+                "ShowSortDirectionDialogN": "Show Condition Lab Sort Direction Save Dialog",
+                "ShowSortDirectionDialogH": "Whether or not to show the confirmation dialog for saving the sort direction."
+            }
+        },
+        "TRIGGLER": {
+            "ButtonTitle": "Open Triggler"
+        },
+        "WORDS": {
+            "Icon": "Icon",
+            "Macro": "Macro",
+            "Name": "Name",
+            "Reference": "Reference",
+            "Save": "Save"
+        }
+    },
     "GADGET_DESCRIPTIONS.AwardXP": "Provides an end of combat prompt to distribute XP from defeated hostile combatants.",
     "GADGET_DESCRIPTIONS.Concentrator": "Manages Concentration in the dnd5e game system.",
     "GADGET_DESCRIPTIONS.EnhancedConditions": "Provides the ability to map Conditions to Status Effect icons",
@@ -27,6 +135,8 @@
     "CONCENTRATOR.ConditionName": "Concentrating",
     "CONCENTRATOR.Alias": "Concentrator",
 
+    "ENHANCED_CONDITIONS.GameSystemNotSupported": "CUB Enhanced Conditions does not work with this game system. Please check the CUB Wiki for more info",
+    "ENHANCED_CONDITIONS.SimpleIconsNotSupported": "CUB Enhanced Conditions does not support game systems that use simple status effect icons.",
     "ENHANCED_CONDITIONS.MapMismatch": "This map does not match your game system and may not work as expected.",
     "ENHANCED_CONDITIONS.ApplyCondition.Failed.NoToken": "Apply Condition failed. No token provided",
     "ENHANCED_CONDITIONS.ApplyCondition.Failed.NoCondition": "Apply Condition failed. Could not find condition:",
@@ -49,7 +159,8 @@
     "ENHANCED_CONDITIONS.Lab.MappingType.Label": "Mapping Type",
     "ENHANCED_CONDITIONS.Lab.MappingType.Unsaved": "(unsaved changes)",
     "ENHANCED_CONDITIONS.Lab.ActiveEffects.Title": "Active Effect Config",
-    "ENHANCED_CONDITIONS.Lab.ActiveEffects.TitleDisabled": "Active Effect Config (Disabled - Save Mapping First)",
+    "ENHANCED_CONDITIONS.Lab.ActiveEffects.TitleDisabledNew": "Active Effect Config (Disabled - Save Mapping First)",
+    "ENHANCED_CONDITIONS.Lab.ActiveEffects.TitleDisabledDefault": "Active Effect Config (Disabled - Cannot Edit Default Mapping)",
     "ENHANCED_CONDITIONS.LAB.Import.NoFile": "You did not upload a data file!",
     "ENHANCED_CONDITIONS.Lab.ConfirmDeleteTitle": "Confirm Row Deletion",
     "ENHANCED_CONDITIONS.Lab.ConfirmDeleteContent": "Are you sure you want to delete this row?",
@@ -80,6 +191,16 @@
 
     "ENHANCED_CONDITIONS.ChatCard.Buttons.Undo": "Undo Remove Condition",
     "ENHANCED_CONDITIONS.ChatCard.Buttons.Remove": "Remove Condition",
+
+    "GIVE_XP.DistributeForm.XPModifier": "XP Modifier",
+    "GIVE_XP.DistributeForm.Friendlies": "Friendlies",
+    "GIVE_XP.DistributeForm.Hostiles": "Hostiles",
+    "GIVE_XP.DistributeForm.SelectFriendlies": "Select which friendlies will receive XP.",
+    "GIVE_XP.DistributeForm.SelectHostiles": "Select which hostiles will give XP.",
+    "GIVE_XP.DistributeForm.Distribution": "Distribution",
+    "GIVE_XP.DistributeForm.TotalXp": "Total XP",
+    "GIVE_XP.DistributeForm.CreaturesReceiving": "Creatures receiving",
+    "GIVE_XP.DistributeForm.XpPerCreature": "XP per friendly creature",
 
     "HIDE_NAMES.ActorForm.Enable": "Hide Actor Name",
     "HIDE_NAMES.ActorForm.EnableHint": "Enable hiding of this actor's name in Combat Tracker and Chat Messages (overrides default)",
@@ -156,6 +277,8 @@
     
     "SETTINGS.GiveXP.EnableN": "Enable Award XP",
     "SETTINGS.GiveXP.EnableH": "Adds an option at the end of combat to automatically distribute xp from the combat to the players",
+    "SETTINGS.GiveXP.ModifierN": "XP Modifier",
+    "SETTINGS.GiveXP.ModifierH": "Multiplies awarded XP by this value",
 
     "SETTINGS.HideNames.EnableN": "Enable Hide Actor Names",
     "SETTINGS.HideNames.EnableH": "Hides Actor names in various places such as Combat Tracker and Chat",
@@ -236,5 +359,6 @@
     "CUB.WORDS.Cancel": "Cancel",
     "CUB.WORDS.Reset": "Reset",
     "CUB.WORDS.Actor": "Actor",
-    "CUB.WORDS.Token": "Token"
+    "CUB.WORDS.Token": "Token",
+    "WORDS.Configuration": "Configuration"
 }

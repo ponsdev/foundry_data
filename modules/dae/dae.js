@@ -1,25 +1,16 @@
-/**
- * This is your TypeScript entry file for Foundry VTT.
- * Register custom settings, sheets, and constants using the Foundry API.
- * Change this heading to be more descriptive to your module, or remove it.
- * Author: [your name]
- * Content License: [copyright and-or license] If using an existing system
- * 					you may want to put a (link to a) license or copyright
- * 					notice here (e.g. the OGL).
- * Software License: [your license] Put your desired license here, which
- * 					 determines how others may use and modify your module
- */
 // Import TypeScript modules
 import { registerSettings } from "./module/settings.js";
 import { preloadTemplates } from "./module/preloadTemplates.js";
-import { daeSetupActions, doEffects, daeInitActions, ValidSpec, fetchParams, daeMacro } from "./module/dae.js";
+import { daeSetupActions, doEffects, daeInitActions, fetchParams, daeMacro, DAEfromUuid, DAEfromActorUuid, actionQueue } from "./module/dae.js";
 import { daeReadyActions } from "./module/dae.js";
-import { convertDuration, GMAction, GMActionMessage } from "./module/GMAction.js";
-import { migrateItem, migrateActorItems, migrateAllActors, removeActorEffects, fixupMonstersCompendium, fixupActors, fixupBonuses, migrateAllItems, migrateActorDAESRD, migrateAllActorsDAESRD, migrateAllNPCDAESRD } from "./module/migration.js";
+import { convertDuration, setupSocket } from "./module/GMAction.js";
+import { checkLibWrapperVersion, cleanArmorWorld, cleanEffectOrigins, fixDeprecatedChanges, fixDeprecatedChangesActor, fixDeprecatedChangesItem, fixTransferEffects, fixupDDBAC, migrateActorDAESRD, migrateAllActorsDAESRD, migrateAllNPCDAESRD, removeActorArmorEffects, removeActorEffectsArmorEffects, removeAllActorArmorEffects, removeAllItemsArmorEffects, removeAllTokenArmorEffects, removeItemArmorEffects, tobMapper } from "./module/migration.js";
 import { ActiveEffects } from "./module/apps/ActiveEffects.js";
-import { patchingSetup, patchingInitSetup, patchSpecialTraits } from "./module/patching.js";
-import { DAEActiveEffectConfig } from "./module/apps/DAEActiveEffectConfig.js";
-import { teleportToToken, blindToken, restoreVision, setTokenVisibility, setTileVisibility, moveToken, renameToken, getTokenFlag, setTokenFlag, setFlag, unsetFlag, getFlag, deleteActiveEffect } from "./module/daeMacros.js";
+import { patchingSetup, patchingInitSetup } from "./module/patching.js";
+import { addAutoFields, DAEActiveEffectConfig } from "./module/apps/DAEActiveEffectConfig.js";
+import { teleportToToken, blindToken, restoreVision, setTokenVisibility, setTileVisibility, moveToken, renameToken, getTokenFlag, setTokenFlag, setFlag, unsetFlag, getFlag, deleteActiveEffect, createToken, teleportToken } from "./module/daeMacros.js";
+import { EditOwnedItemEffectsItemSheet } from "./module/editItemEffects/classes/item-sheet.js";
+import { ValidSpec } from "./module/Systems/DAESystem.js";
 export let setDebugLevel = (debugText) => {
     debugEnabled = { "none": 0, "warn": 1, "debug": 2, "all": 3 }[debugText] || 0;
     // 0 = none, warnings = 1, debug = 2, all = 3
@@ -39,129 +30,137 @@ export let i18n = key => {
     return game.i18n.localize(key);
 };
 export let daeAlternateStatus;
+export let changesQueue;
+export var gameSystemCompatible = "maybe"; // no, yes, partial, maybe
+export var daeUntestedSystems;
 /* ------------------------------------ */
 /* Initialize module					*/
 /* ------------------------------------ */
 Hooks.once('init', async function () {
-    // Register custom module settings
-    registerSettings();
-    fetchParams();
     debug('Init setup actions');
-    daeInitActions();
-    patchingInitSetup();
-    // Assign custom classes and constants here
-    // Preload Handlebars templates
-    await preloadTemplates();
-    // Register custom sheets (if any)
+    const daeFlags = game.modules.get("dae").data.flags;
+    const systemDaeFlag = game.system.data.flags?.daeCompatible;
+    if (daeFlags.compatible?.includes(game.system.id) || systemDaeFlag === true)
+        gameSystemCompatible = "yes";
+    else if (daeFlags.incompatible?.includes(game.system.id) || systemDaeFlag === false)
+        gameSystemCompatible = "no";
+    if (gameSystemCompatible === "no") {
+        console.error(`DAE is not compatible with ${game.system.data.title} module disabled`);
+    }
+    else {
+        registerSettings();
+        daeUntestedSystems = game.settings.get("dae", "DAEUntestedSystems");
+        if (gameSystemCompatible === "yes" || daeUntestedSystems) {
+            if (gameSystemCompatible === "maybe")
+                console.warn(`DAE compatibility warning for ${game.system.data.title} is not tested with DAE`);
+            daeInitActions();
+            patchingInitSetup();
+            fetchParams(false);
+            // Preload Handlebars templates
+            await preloadTemplates();
+            //@ts-ignore Semaphore
+            changesQueue = new window.Semaphore(1);
+        }
+    }
+    ;
 });
-export let daeSpecialDurations;
-export let daeMacroRepeats;
+export var daeSpecialDurations;
+export var daeMacroRepeats;
 Hooks.once('ready', async function () {
-    if (!["dnd5e", "sw5e"].includes(game.system.id))
-        return;
-    debug("ready setup actions");
-    daeReadyActions();
-    // setupDAEMacros();
-    GMAction.readyActions();
-    daeSpecialDurations = { "None": "" };
-    if (game.modules.get("times-up")?.active && isNewerVersion(game.modules.get("times-up").data.version, "0.0.9")) {
-        daeSpecialDurations["turnStart"] = i18n("dae.turnStart");
-        daeSpecialDurations["turnEnd"] = i18n("dae.turnEnd");
-        daeMacroRepeats = {
-            "none": "",
-            "startEveryTurn": i18n("dae.startEveryTurn"),
-            "endEveryTurn": i18n("dae.endEveryTurn")
-        };
+    if (gameSystemCompatible !== "no" && (gameSystemCompatible === "yes" || daeUntestedSystems)) {
+        if ("maybe" === gameSystemCompatible) {
+            if (game.user.isGM)
+                ui.notifications.warn(`DAE is has not been tested with ${game.system.data.title}. Disable DAE if there are problems`);
+        }
+        checkLibWrapperVersion();
+        fetchParams();
+        debug("ready setup actions");
+        daeSpecialDurations = { "None": "" };
+        if (game.modules.get("times-up")?.active && isNewerVersion(game.modules.get("times-up").data.version, "0.0.9")) {
+            daeSpecialDurations["turnStart"] = i18n("dae.turnStart");
+            daeSpecialDurations["turnEnd"] = i18n("dae.turnEnd");
+            daeSpecialDurations["turnStartSource"] = i18n("dae.turnStartSource");
+            daeSpecialDurations["turnEndSource"] = i18n("dae.turnEndSource");
+            daeMacroRepeats = {
+                "none": "",
+                "startEveryTurn": i18n("dae.startEveryTurn"),
+                "endEveryTurn": i18n("dae.endEveryTurn")
+            };
+        }
+        daeReadyActions();
+        EditOwnedItemEffectsItemSheet.init();
+        // setupDAEMacros();
     }
-    if (game.modules.get("midi-qol")?.active) {
-        daeSpecialDurations["1Action"] = i18n("dae.1Action");
-        daeSpecialDurations["1Attack"] = i18n("dae.1Attack");
-        let attackTypes = ["mwak", "rwak", "msak", "rsak"];
-        if (game.system.id === "sw5e")
-            attackTypes = ["mwak", "rwak", "mpak", "rpak"];
-        attackTypes.forEach(at => {
-            daeSpecialDurations[`1Attack:${at}`] = `${CONFIG.DND5E.itemActionTypes[at]}: ${i18n("dae.1Attack")}`;
-        });
-        daeSpecialDurations["1Hit"] = i18n("dae.1Hit");
-        daeSpecialDurations["DamageDealt"] = i18n("dae.DamageDealt");
-        daeSpecialDurations["isAttacked"] = i18n("dae.isAttacked");
-        daeSpecialDurations["isDamaged"] = i18n("dae.isDamaged");
-        daeSpecialDurations["isSave"] = `${i18n("dae.isRollBase")} ${i18n("dae.isSaveDetail")}`;
-        daeSpecialDurations["isSaveSuccess"] = `${i18n("dae.isRollBase")} ${i18n("dae.isSaveDetail")}: ${i18n("dae.success")}`;
-        daeSpecialDurations["isSaveFailure"] = `${i18n("dae.isRollBase")} ${i18n("dae.isSaveDetail")}: ${i18n("dae.failure")}`;
-        daeSpecialDurations["isCheck"] = `${i18n("dae.isRollBase")} ${i18n("dae.isCheckDetail")}`;
-        daeSpecialDurations["isSkill"] = `${i18n("dae.isRollBase")} ${i18n("dae.isSkillDetail")}`;
-        Object.keys(CONFIG.DND5E.abilities).forEach(abl => {
-            daeSpecialDurations[`isSave.${abl}`] = `${i18n("dae.isRollBase")} ${CONFIG.DND5E.abilities[abl]} ${i18n("dae.isSaveDetail")}`;
-            daeSpecialDurations[`isCheck.${abl}`] = `${i18n("dae.isRollBase")} ${CONFIG.DND5E.abilities[abl]} ${i18n("dae.isCheckDetail")}`;
-        });
-        Object.keys(CONFIG.DND5E.damageTypes).forEach(dt => {
-            daeSpecialDurations[`isDamaged.${dt}`] = `${i18n("dae.isDamaged")}: ${CONFIG.DND5E.damageTypes[dt]}`;
-        });
-        Object.keys(CONFIG.DND5E.skills).forEach(skillId => {
-            daeSpecialDurations[`isSkill.${skillId}`] = `${i18n("dae.isRollBase")} ${i18n("dae.isSkillDetail")} ${CONFIG.DND5E.skills[skillId]}`;
-        });
+    else if (gameSystemCompatible === "maybe" && !daeUntestedSystems) {
+        ui.notifications.error(`DAE is not certified compatible with ${game.system.id} - enable Untested Systems in DAE settings to enable`);
     }
-    patchSpecialTraits();
+    else {
+        ui.notifications.error(`DAE is not compatible with ${game.system.id} - module disabled`);
+    }
 });
 /* ------------------------------------ */
 /* Setup module							*/
 /* ------------------------------------ */
 Hooks.once('setup', function () {
-    if (!["dnd5e", "sw5e"].includes(game.system.id))
-        return;
-    // Do anything after initialization but before
-    // ready
-    debug("setup actions");
-    GMAction.initActions();
-    daeSetupActions();
-    patchingSetup();
-    //@ts-ignore
-    window.DAE = {
-        ValidSpec,
-        GMActionMessage,
-        GMAction,
-        doEffects,
-        daeMacro: daeMacro,
-        migrateItem: migrateItem,
-        convertAllItems: migrateAllItems,
-        migrateActorItems: migrateActorItems,
-        migrateAllItems: migrateAllItems,
-        migrateAllActors: migrateAllActors,
-        fixupMonstersCompendium: fixupMonstersCompendium,
-        fixupActors: fixupActors,
-        removeActorEffects: removeActorEffects,
-        fixupBonuses: fixupBonuses,
-        ActiveEffects: ActiveEffects,
-        DAEActiveEffectConfig: DAEActiveEffectConfig,
-        teleportToToken: teleportToToken,
-        blindToken: blindToken,
-        restoreVision: restoreVision,
-        setTokenVisibility: setTokenVisibility,
-        setTileVisibility: setTileVisibility,
-        moveToken: moveToken,
-        renameToken: renameToken,
-        getTokenFlag: getTokenFlag,
-        setTokenFlag: setTokenFlag,
-        setFlag: setFlag,
-        unsetFlag: unsetFlag,
-        getFlag: getFlag,
-        deleteActiveEffect: deleteActiveEffect,
-        migrateActorDAESRD: migrateActorDAESRD,
-        migrateAllActorsDAESRD: migrateAllActorsDAESRD,
-        migrateAllNPCDAESRD: migrateAllNPCDAESRD,
-        convertDuration,
-        confirmAction
-    };
-});
-/* ------------------------------------ */
-/* When ready							*/
-/* ------------------------------------ */
-Hooks.once("ready", () => {
-    if (!["dnd5e", "sw5e"].includes(game.system.id))
-        return;
-    if (!game.modules.get("lib-wrapper")?.active && game.user.isGM)
-        ui.notifications.warn("The 'Dynamic effects using Active Effects' module recommends to install and activate the 'libWrapper' module.");
+    if (gameSystemCompatible === "no" || (gameSystemCompatible === "maybe" && !daeUntestedSystems)) {
+        ui.notifications.warn(`DAE disabled for ${game.system.data.name} - to enable choose Allow Untested Systems from the DAE settings`);
+    }
+    else {
+        // Do anything after initialization but before
+        // ready
+        debug("setup actions");
+        daeSetupActions();
+        patchingSetup();
+        //@ts-ignore
+        window.DAE = {
+            ActiveEffects: ActiveEffects,
+            addAutoFields: addAutoFields,
+            blindToken: blindToken,
+            cleanArmorWorld: cleanArmorWorld,
+            cleanEffectOrigins: cleanEffectOrigins,
+            confirmAction,
+            convertDuration,
+            createToken: createToken,
+            DAEActiveEffectConfig: DAEActiveEffectConfig,
+            DAEfromActorUuid: DAEfromActorUuid,
+            DAEfromUuid: DAEfromUuid,
+            daeMacro: daeMacro,
+            daeSpecialDurations: () => { return daeSpecialDurations; },
+            deleteActiveEffect: deleteActiveEffect,
+            doEffects,
+            fixDeprecatedChanges: fixDeprecatedChanges,
+            fixDeprecatedChangesActor: fixDeprecatedChangesActor,
+            fixDeprecatedChangesItem: fixDeprecatedChangesItem,
+            fixTransferEffects: fixTransferEffects,
+            fixupDDBAC: fixupDDBAC,
+            getFlag: getFlag,
+            getTokenFlag: getTokenFlag,
+            migrateActorDAESRD: migrateActorDAESRD,
+            migrateAllActorsDAESRD: migrateAllActorsDAESRD,
+            migrateAllNPCDAESRD: migrateAllNPCDAESRD,
+            moveToken: moveToken,
+            removeActorArmorEffects: removeActorArmorEffects,
+            removeActorEffectsArmorEffects: removeActorEffectsArmorEffects,
+            removeAllActorArmorEffects: removeAllActorArmorEffects,
+            removeAllItemsArmorEffects: removeAllItemsArmorEffects,
+            removeAllTokenArmorEffects: removeAllTokenArmorEffects,
+            removeItemArmorEffects: removeItemArmorEffects,
+            renameToken: renameToken,
+            restoreVision: restoreVision,
+            setFlag: setFlag,
+            setTileVisibility: setTileVisibility,
+            setTokenFlag: setTokenFlag,
+            setTokenVisibility: setTokenVisibility,
+            teleportToken: teleportToken,
+            teleportToToken: teleportToToken,
+            tobMapper: tobMapper,
+            unsetFlag: unsetFlag,
+            ValidSpec,
+            actionQueue: actionQueue
+        };
+        setupSocket();
+        Hooks.callAll("DAE.setupComplete");
+    }
 });
 export function confirmAction(toCheck, confirmFunction, title = i18n("dae.confirm")) {
     if (toCheck) {
@@ -188,4 +187,7 @@ export function confirmAction(toCheck, confirmFunction, title = i18n("dae.confir
     else
         return confirmFunction();
 }
-;
+Hooks.once('libChangelogsReady', function () {
+    //@ts-ignore
+    const libch = libChangelogs;
+});

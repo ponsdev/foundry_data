@@ -1,0 +1,241 @@
+/*!
+ * Copyright 2021 Andrew Cuccinello
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ *
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+.creature-builder .sheet-body h2, .creature-builder .sheet-body h3 {
+  margin-bottom: 0.1em;
+}
+.creature-builder .sheet-body .entry {
+  margin-left: 1em;
+}
+
+/* Copyright 2020 Andrew Cuccinello
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+div.roll-app nav.roll-app-nav {
+  display: flex;
+  background: black;
+  color: white;
+}
+div.roll-app nav.roll-app-nav a {
+  padding: 4px 8px;
+}
+
+table.roll-app-table tbody tr,
+table.roll-app-table thead tr {
+  text-align: center;
+}
+table.roll-app-table tbody tr td:not(:last-child),
+table.roll-app-table thead tr td:not(:last-child) {
+  border-right: 1px solid black;
+}
+table.roll-app-table tbody tr.selected {
+  background: black;
+  color: white;
+}
+table.roll-app-table tbody tr:nth-child(2n) {
+  background: rgba(0, 0, 0, 0.2);
+}
+table.roll-app-table tbody tr:nth-child(2n):hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+table.roll-app-table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+table.roll-app-table tbody a {
+  display: block;
+}
+
+/* Copyright 2020 Andrew Cuccinello
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+div.pf2e-toolbox.loot-app {
+  min-width: 975px;
+}
+div.pf2e-toolbox.loot-app section.sidebar.loot-generator-sidebar {
+  width: 300px;
+}
+div.pf2e-toolbox.loot-app section.sidebar.loot-generator-sidebar div.table-row {
+  border-top: 1px solid black;
+}
+div.pf2e-toolbox.loot-app section.sidebar.loot-generator-sidebar div.table-row button {
+  line-height: unset;
+}
+div.pf2e-toolbox.loot-app section.sidebar.loot-generator-sidebar div.table-row p {
+  margin: 0;
+}
+div.pf2e-toolbox.loot-app nav.loot-app-nav > .item {
+  padding: 4px;
+}
+div.pf2e-toolbox.loot-app section.content.loot-generator-body {
+  width: calc(100% - 300px);
+  overflow-y: auto;
+}
+
+/*!
+ * Copyright 2021 Andrew Cuccinello
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ *
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+.dj-settings-app.settings-app {
+  min-height: 600px;
+}
+.dj-settings-app.settings-app form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+}
+.dj-settings-app.settings-app form nav.settings-app-nav,
+.dj-settings-app.settings-app form div.settings-app-body {
+  flex-direction: column;
+  height: 100%;
+}
+.dj-settings-app.settings-app form nav.settings-app-nav {
+  display: flex;
+  padding-right: 8px;
+  border-right: 1px solid #782e22c0;
+}
+.dj-settings-app.settings-app form nav.settings-app-nav a.item {
+  border-bottom: 1px solid #782e22;
+  width: 8rem;
+  transition: 0.2s font-size, font-weight;
+}
+.dj-settings-app.settings-app form nav.settings-app-nav a.item:hover {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.dj-settings-app.settings-app form nav.settings-app-nav a.item.active {
+  font-weight: bold;
+}
+.dj-settings-app.settings-app form nav.settings-app-nav button {
+  margin-top: auto;
+}
+.dj-settings-app.settings-app form div.settings-app-body {
+  flex: 1;
+  padding-left: 8px;
+  border-left: 1px solid #999;
+  overflow-y: scroll !important;
+  height: 100%;
+}
+.dj-settings-app.settings-app form div.settings-app-body div.tab.active {
+  display: inline-block;
+  padding-right: 8px;
+  width: 100%;
+}
+.dj-settings-app.settings-app form div.settings-app-body div.tab.active h1 {
+  border-bottom: 1px solid #782e22;
+}
+.dj-settings-app.settings-app section.window-content {
+  overflow-y: hidden;
+}
+
+div.settings-app-body .features h1 {
+  margin: 0;
+}
+div.settings-app-body .features div.feature {
+  padding-bottom: 1em;
+  border-bottom: 1px solid #782e22;
+}
+div.settings-app-body .features div.feature div.feature-header {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #782e22;
+}
+div.settings-app-body .features div.feature div.feature-header span.title {
+  display: block;
+  font-size: 1.5em;
+  flex-grow: 1;
+}
+div.settings-app-body .features div.feature div.feature-header div.attributes {
+  line-height: 1.5rem;
+  flex-shrink: 1;
+}
+div.settings-app-body .features div.feature div.feature-header div.attributes i {
+  display: inline-block;
+  line-height: 1.5rem;
+  cursor: help;
+}
+div.settings-app-body .features div.feature p.feature-description {
+  padding-left: 1em;
+  text-align: justify;
+}
+div.settings-app-body .features div.feature div.feature-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 0.5em;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.1);
+}
+div.settings-app-body .features div.feature div.feature-content label {
+  font-weight: bold;
+}
+div.settings-app-body .features div.feature div.feature-content p.feature-help {
+  margin: 0;
+}
+div.settings-app-body .features div.feature p.feature-help {
+  padding: 0 1em;
+  margin: 1em 0 0 0;
+  font-size: smaller;
+  font-style: italic;
+  text-align: justify;
+}
+
+div.settings-app-body .license p {
+  text-align: justify;
+}
+
+.clearfix {
+  content: "";
+  clear: both;
+  display: table;
+}
+/*# sourceMappingURL=bundle.css.map */

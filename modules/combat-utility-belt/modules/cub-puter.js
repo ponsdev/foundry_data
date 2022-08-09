@@ -25,6 +25,7 @@ export class CUBPuter extends FormApplication {
             top: 200,
             left: 400,
             background: "#000",
+            popOut: true,
             resizable: true,
             closeOnSubmit: false
         });
@@ -66,7 +67,7 @@ export class CUBPuter extends FormApplication {
                 const [key, setting] = entry;
                 // Update setting data
                 const s = duplicate(setting);
-                s.value = game.settings.get(s.module, s.key);
+                s.value = game.settings.get(s.namespace, s.key);
                 s.type = setting.type instanceof Function ? setting.type.name : "String";
                 s.isCheckbox = setting.type === Boolean;
                 s.isSelect = s.choices !== undefined;
@@ -282,10 +283,10 @@ export class CUBPuter extends FormApplication {
             }
 
             const d = s.default;
-            const v = game.settings.get(s.module, s.key);
+            const v = game.settings.get(s.namespace, s.key);
 
             if ( v !== d ) {
-              await game.settings.set(s.module, s.key, d);
+              await game.settings.set(s.namespace, s.key, d);
               restored.push(k);
             }
         }
@@ -334,9 +335,9 @@ export class CUBPuter extends FormApplication {
           if (!s) {
               continue;
           }
-          let current = game.settings.get(s.module, s.key);
+          let current = game.settings.get(s.namespace, s.key);
           if ( v !== current ) {
-            await game.settings.set(s.module, s.key, v);
+            await game.settings.set(s.namespace, s.key, v);
             updated.push(k);
           }
         }
@@ -351,6 +352,7 @@ export class CUBPuter extends FormApplication {
      * @param {*} html 
      */
     static _onRender(app, html, data) {
+        ui.cub.cubPuter = app;
         const cubPuterSettings = Sidekick.getSetting(SETTING_KEYS.cubPuter.config);
         if (cubPuterSettings?.crt === true) {
             html.closest("#cub-puter").addClass("cub-puter-crt");
@@ -501,8 +503,12 @@ export class CUBPuter extends FormApplication {
  * @param {*} html 
  */
 export function createCUBPuterButton(html) {
+    if (!game.user.isGM) return;
+
     const cubDiv = html.find("#combat-utility-belt");
 
+    if (!cubDiv || !cubDiv.length) return;
+    
     const cubPuterButton = $(
         `<button id="${DEFAULT_CONFIG.cubPuter.buttonId}" data-action="cub-puter" title="${game.i18n.localize("SETTINGS.CUBPuter.ButtonH")}">
             <i class="fas fa-desktop"></i> ${DEFAULT_CONFIG.cubPuter.title}

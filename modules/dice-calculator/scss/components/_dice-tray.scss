@@ -74,22 +74,50 @@
     }
 
     &.dice-tray__advantage {
-      &:hover,
+      &:hover {
+        color: $c-green;
+        border-color: $c-green;
+        box-shadow: 0 0 6px inset $c-green;
+      }
+
       &.active {
         background: $c-green;
         box-shadow: 0 0 6px inset $c-green;
         border-color: $c-green;
         color: $c-white;
+
+        &:hover {
+          box-shadow: 0 0 6px inset $c-white;
+          border-color: $c-white;
+        }
       }
     }
 
     &.dice-tray__disadvantage {
-      &:hover,
+      &:hover {
+        color: $c-blaze;
+        border-color: $c-blaze;
+        box-shadow: 0 0 6px inset $c-blaze;
+      }
+
       &.active {
         background: $c-blaze;
         box-shadow: 0 0 6px inset $c-blaze;
         color: $c-white;
+
+        &:hover {
+          box-shadow: 0 0 6px inset $c-white;
+          border-color: $c-white;
+        }
       }
+    }
+
+    &.dice-tray__dicechain {
+      font-size: 10px;
+      height: 17px;
+      flex: 17px;
+      line-height: 1;
+      text-transform: uppercase;
     }
 
     svg {

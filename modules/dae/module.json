@@ -2,14 +2,26 @@
   "name": "dae",
   "title": "Dynamic effects using Active Effects",
   "description": "replacement for dynamic effects",
-  "version": "0.2.62",
-  "compatibleCoreVersion": "0.7.9",
-  "minimumCoreVersion": "0.7.4",
-  "minimumSystemVersion": "1.2.3",
+  "version": "0.10.26",
+  "minimumCoreVersion": "9",
+  "compatibleCoreVersion": "9",
+  "compatibility": {
+    "minimum": 9,
+    "verified": 9,
+    "maximum": 9
+  },
   "scripts": ["libs/tokenizer.min.js"],
-  "systems": ["dnd5e", "sw5e"],
+  "flags": {
+    "compatible": ["dnd5e", "sw5e"],
+    "incompatible": ["pf2e"],
+    "partial": []
+  },
   "esmodules": [
     "dae.js", "module/patching.js"
+  ],
+  "dependencies" : [ 
+    { "name": "lib-wrapper", "type": "module" },
+    { "name": "socketlib", "type": "module" }
   ],
   "styles": ["css/dae.css", "css/awesomplete.css"],
   "packs": [
@@ -18,15 +30,7 @@
       "label": "Premade Items",
       "path": "./packs/premadeitems.db",
       "module": "world",
-      "entity": "Item",
-      "lang": ["en", "de"]
-    },
-    {
-      "name": "sample-macros",
-      "label": "Sample macros",
-      "path": "./packs/sample-macros.db",
-      "module": "world",
-      "entity": "Macro",
+      "type": "Item",
       "lang": ["en", "de"]
     }
   ],
@@ -47,11 +51,6 @@
       "path": "lang/ko.json"
     },
     {
-      "lang": "cn",
-      "name": "中文",
-      "path": "lang/cn.json"
-    },
-    {
       "lang": "pt-BR",
       "name": "Português (Brasil)",
       "path": "lang/pt-BR.json"
@@ -65,13 +64,18 @@
       "lang": "it",
       "name": "Italian",
       "path": "lang/it.json"
+    },
+    {
+      "lang": "pl",
+      "name": "Polski",
+      "path": "lang/pl.json"
     }
   ],
   "socket": true,
   "url": "https://gitlab.com/tposney/dae",
-  "author": "tposney",
+  "authors": [{"name": "tposney"}],
   "bugs": "https://gitlab.com/tposney/dae/-/issues",
   "allowBugReporter": true,
   "manifest": "https://gitlab.com/tposney/dae/raw/master/package/module.json",
-  "download": "https://gitlab.com/tposney/dae/raw/master/package/dae-v0.2.62.zip"
+  "download": "https://gitlab.com/tposney/dae/raw/master/package/dae-v0.10.26.zip"
 }

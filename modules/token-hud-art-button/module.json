@@ -11,9 +11,9 @@
             "discord": "zeel#4200"
         }
     ],
-    "version": "1.1.3",
-    "minimumCoreVersion": "0.6.5",
-    "compatibleCoreVersion": "0.7.8",
+    "version": "1.2.1",
+    "minimumCoreVersion": "9",
+    "compatibleCoreVersion": "9",
     "socket": "true",
     "scripts": [
         "artbutton.js"
@@ -27,7 +27,7 @@
     ],
     "manifest": "https://github.com/zeel01/TokenHUDArtButton/releases/latest/download/module.json",
     "url": "https://github.com/zeel01/TokenHUDArtButton",
-    "download": "https://github.com/zeel01/TokenHUDArtButton/releases/download/v1.1.3/artbutton.zip",
+    "download": "https://github.com/zeel01/TokenHUDArtButton/releases/download/v1.2.1/artbutton.zip",
     "readme": "https://github.com/zeel01/TokenHUDArtButton/blob/master/readme.md",
     "bugs": "https://github.com/zeel01/TokenHUDArtButton/issues",
     "changelog": "https://github.com/zeel01/TokenHUDArtButton/releases",

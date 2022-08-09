@@ -14,6 +14,13 @@
   <section class='tab' data-tab='pc-sheet'>
     <h2>{{localize 'TIDY5E.Settings.TabPlayers.header'}}</h2>
     <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='journalTabDisabled' id='journalTabDisabled' {{checked settings.journalTabDisabled.value}}>
+      <div class="description">
+        <label for="journalTabDisabled">{{localize 'TIDY5E.Settings.JournalTab.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.JournalTab.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='classListDisabled' id='classListDisabled' {{checked settings.classListDisabled.value}}>
       <div class="description">
         <label for="classListDisabled">{{localize 'TIDY5E.Settings.ClassList.name'}}</label>
@@ -63,13 +70,6 @@
       </div>
     </article>
     <article class="setting">
-      <input type="checkbox" data-dtype='boolean' name='traitLabelsEnabled' id='traitLabelsEnabled' {{checked settings.traitLabelsEnabled.value}}>
-      <div class="description">
-        <label for="traitLabelsEnabled">{{localize 'TIDY5E.Settings.TraitLabels.name'}}</label>
-        <p class="notes">{{localize 'TIDY5E.Settings.TraitLabels.hint'}}</p>
-      </div>
-    </article>
-    <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='traitsTogglePc' id='traitsTogglePc' {{checked settings.traitsTogglePc.value}}>
       <div class="description">
         <label for="traitsTogglePc">{{localize 'TIDY5E.Settings.TraitsTogglePc.name'}}</label>
@@ -81,6 +81,26 @@
       <div class="description">
         <label for="traitsMovedBelowResource">{{localize 'TIDY5E.Settings.TraitsMovedBelowResource.name'}}</label>
         <p class="notes">{{localize 'TIDY5E.Settings.TraitsMovedBelowResource.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='ammoEquippedOnly' id='ammoEquippedOnly' {{checked settings.ammoEquippedOnly.value}}>
+      <div class="description">
+        <label for="ammoEquippedOnly">{{localize 'TIDY5E.Settings.AmmoEquippedOnly.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.AmmoEquippedOnly.hint'}}</p>
+      </div>
+    </article>
+    <article class="setting group">
+      <div>
+        <div class="description">
+          <label for="playerSheetWidth">{{localize 'TIDY5E.Settings.playerSheetWidth.name'}}</label>
+          <p class="notes">{{localize 'TIDY5E.Settings.playerSheetWidth.hint'}}</p>
+        </div>
+        <div class="settings-group">
+           <article>
+            <input type="number" data-dtype='number' name='playerSheetWidth' id='playerSheetWidth' value="{{settings.playerSheetWidth.value}}">
+          </article>
+        </div>
       </div>
     </article>
 	</section>
@@ -159,6 +179,19 @@
         <p class="notes">{{localize 'TIDY5E.Settings.SkillsAlwaysShown.hint'}}</p>
       </div>
     </article>
+    <article class="setting group">
+      <div>
+        <div class="description">
+          <label for="npsSheetWidth">{{localize 'TIDY5E.Settings.npsSheetWidth.name'}}</label>
+          <p class="notes">{{localize 'TIDY5E.Settings.npsSheetWidth.hint'}}</p>
+        </div>
+        <div class="settings-group">
+           <article>
+            <input type="number" data-dtype='number' name='npsSheetWidth' id='npsSheetWidth' value="{{settings.npsSheetWidth.value}}">
+          </article>
+        </div>
+      </div>
+    </article>
 
     <h3>{{localize 'TIDY5E.Settings.TabNPCsVehicles.labelVehicles'}}</h3>
     <article class="setting">
@@ -175,6 +208,19 @@
         <p class="notes">{{localize 'TIDY5E.Settings.HpOverlay.hint'}}</p>
       </div>
     </article>
+    <article class="setting group">
+      <div>
+        <div class="description">
+          <label for="vehicleSheetWidth">{{localize 'TIDY5E.Settings.vehicleSheetWidth.name'}}</label>
+          <p class="notes">{{localize 'TIDY5E.Settings.vehicleSheetWidth.hint'}}</p>
+        </div>
+        <div class="settings-group">
+           <article>
+            <input type="number" data-dtype='number' name='vehicleSheetWidth' id='vehicleSheetWidth' value="{{settings.vehicleSheetWidth.value}}">
+          </article>
+        </div>
+      </div>
+    </article>
 	</section>
   
 
@@ -183,7 +229,13 @@
   
   <section class='tab gm-only' data-tab='gm-options'>
     <h2>{{localize 'TIDY5E.Settings.TabGM.header'}}</h2>
-    
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='hiddenDeathSavesEnabled' id='hiddenDeathSavesEnabled' {{checked settings.hiddenDeathSavesEnabled.value}}>
+      <div class="description">
+        <label for="hiddenDeathSavesEnabled">{{localize 'TIDY5E.Settings.HiddenDeathSaves.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.HiddenDeathSaves.hint'}}</p>
+      </div>
+    </article>
     <article class="setting">
       <input type="checkbox" data-dtype='boolean' name='playerNameEnabled' id='playerNameEnabled' {{checked settings.playerNameEnabled.value}}>
       <div class="description">
@@ -348,6 +400,13 @@
         <p class="notes">{{localize 'TIDY5E.Settings.ExhaustionDisabled.hint'}}</p>
       </div>
     </article>
+    <article class="setting">
+      <input type="checkbox" data-dtype='boolean' name='traitLabelsEnabled' id='traitLabelsEnabled' {{checked settings.traitLabelsEnabled.value}}>
+      <div class="description">
+        <label for="traitLabelsEnabled">{{localize 'TIDY5E.Settings.TraitLabels.name'}}</label>
+        <p class="notes">{{localize 'TIDY5E.Settings.TraitLabels.hint'}}</p>
+      </div>
+    </article>
 	</section>
 
   {{!-- MODULE OPTIONS --}}
@@ -356,6 +415,22 @@
     <h2>{{localize 'TIDY5E.Settings.TabModules.header'}}</h2>
     
     <h3>{{localize 'TIDY5E.Settings.TabModules.labelActionsFavorites'}}</h3>
+    <article class="setting group">
+      <section>
+        <div class="description">
+          <label for="defaultActionsTab">{{localize 'TIDY5E.Settings.DefaultActionsTab.name'}}</label>
+          <p class="notes">{{localize 'TIDY5E.Settings.DefaultActionsTab.hint'}}</p>
+        </div>
+         <div class="settings-group">
+          <select name="defaultActionsTab" id="defaultActionsTab">  
+            {{#select settings.defaultActionsTab.value}}
+            <option value="default">{{localize "TIDY5E.Settings.DefaultActionsTab.default"}}</option>
+            <option value="attributes">{{localize "TIDY5E.Settings.DefaultActionsTab.attributes"}}</option>
+            {{/select}}
+          </select>
+        </div>
+      </section>
+    </article>
 
     <h3>{{localize 'TIDY5E.Settings.TabModules.labelMidiQoL'}}</h3>
     <article class="setting">

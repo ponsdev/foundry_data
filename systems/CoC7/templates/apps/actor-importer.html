@@ -1,0 +1,41 @@
+<form autocomplete="off">
+    <h2>{{localize 'CoC7.ActorImporter'}}</h2>
+    <p>{{localize 'CoC7.ActorImporterSummary'}}</p>
+    <div class="form-group">
+        <label for="coc-entity-type">{{localize 'CoC7.SelectActorType'}}:</label>
+        <select id="coc-entity-type" name="coc-entity-type">
+            <option value="npc">{{localize 'CoC7.NonPlayingCharacter'}}</option>
+            <option value="creature">{{localize 'CoC7.Creature'}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="coc-convert-6E">{{localize 'CoC7.ConvertFrom6Edition'}}:</label>
+        <select id="coc-convert-6E" name="coc-convert-6E">
+            <option value="coc-guess">{{localize 'CoC7.Guess'}}</option>
+            <option value="coc-convert">{{localize 'CoC7.Convert'}}</option>
+            <option value="coc-no-convert">{{localize 'CoC7.NoConvert'}}</option>
+        </select>
+    </div>
+     <div class="form-group">
+        <label for="coc-entity-lang">{{localize 'CoC7.SelectSourceLanguage'}}:</label>
+        <select id="coc-entity-lang" name="coc-entity-lang">
+        {{#each languages as |key id|}}
+            <option value="{{id}}"{{#if (eq ../language id)}} selected="selected"{{/if}}>{{localize key}}</option>
+        {{/each}}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="source">{{localize 'CoC7.ImportSkillItemLocations'}}:</label>
+        <select id="source" name="source">
+            <option value="">{{localize 'CoC7.ImportActorItemsNone'}}</option>
+            <option value="i">{{localize 'CoC7.ImportActorItemsItem'}}</option>
+            <option value="iwms" selected="selected">{{localize 'CoC7.ImportActorItemsItemWorldModuleSystem'}}</option>
+            <option value="wmis">{{localize 'CoC7.ImportActorItemsWorldModuleItemSystem'}}</option>
+        </select>
+    </div>
+    <div id="coc-prompt">{{localize 'CoC7.PasteTheDataBelow'}}</div>
+    <div class="form-group">
+        <textarea id="coc-pasted-character-data" name="coc-pasted-character-data" rows="30"
+            style="min-height:300px" placeholder=""></textarea>
+    </div>
+</form>

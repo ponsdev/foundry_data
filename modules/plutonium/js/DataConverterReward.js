@@ -1,1 +1,144 @@
-const _0x3a2f=['length','foundryReward','pHasRewardSideLoadedEffects','MODULE_NAME','getSourceWithPagePart','isActorItem','name','permissions','562191mHPfsI','importReward','permission','734664gJcYGY','MODULE_NAME_FAKE','setFirstSection','getCleanEntityName','</div>','pGetRewardItemEffects','42VzidOO','isAddPermission','get','source','PG_REWARDS','reward','isImportDescription','pGetAdditionalEffectsRaw_','pGetRewardSideData','93629AUwbnp','460378iImuvV','1929qpTJsi','entries','321848gpPCSb','render','/media/icon/mighty-force.svg','38316eHlTaL','feat','getNameWithSourcePart','2flqood'];const _0x5c03=function(_0x3d05e0,_0x33cc89){_0x3d05e0=_0x3d05e0-0xf9;let _0x3a2fb2=_0x3a2f[_0x3d05e0];return _0x3a2fb2;};const _0x3d35b4=_0x5c03;(function(_0x208a0f,_0x1debb5){const _0x9626c6=_0x5c03;while(!![]){try{const _0x38f50c=-parseInt(_0x9626c6(0x10f))+parseInt(_0x9626c6(0x109))+parseInt(_0x9626c6(0xff))*-parseInt(_0x9626c6(0x10a))+-parseInt(_0x9626c6(0x11b))+-parseInt(_0x9626c6(0x112))*-parseInt(_0x9626c6(0x108))+-parseInt(_0x9626c6(0x10c))+parseInt(_0x9626c6(0xf9));if(_0x38f50c===_0x1debb5)break;else _0x208a0f['push'](_0x208a0f['shift']());}catch(_0x3c68d6){_0x208a0f['push'](_0x208a0f['shift']());}}}(_0x3a2f,0x5c82f));import{UtilApplications}from'./UtilApplications.js';import{SharedConsts}from'../shared/SharedConsts.js';import{Config}from'./Config.js';import{DataConverter}from'./DataConverter.js';import{Vetools}from'./Vetools.js';import{UtilActiveEffects}from'./UtilActiveEffects.js';class DataConverterReward{static async['pGetRewardItem'](_0x3a5f74,_0x3e5a11){const _0x58822a=_0x5c03;_0x3e5a11=_0x3e5a11||{};const _0x55d7ab=Config['get'](_0x58822a(0x11c),_0x58822a(0x105))?'<div>'+Renderer[_0x58822a(0x101)]()[_0x58822a(0xfb)](!![])[_0x58822a(0x10d)]({'entries':_0x3a5f74[_0x58822a(0x10b)]},0x2)+_0x58822a(0xfd):'',_0x48e3b2=await this['_pGetAdditionalData'](_0x3a5f74),_0x54b564={'name':UtilApplications[_0x58822a(0xfc)](DataConverter[_0x58822a(0x111)](_0x3a5f74,{'isActorItem':_0x3e5a11[_0x58822a(0x118)]})),'data':{'source':DataConverter[_0x58822a(0x117)](_0x3a5f74),'description':{'value':_0x55d7ab,'chat':'','unidentified':''},'activation':{'type':'','cost':0x0,'condition':''},'duration':{'value':0x0,'units':''},'target':{'value':0x0,'units':'','type':''},'range':{'value':0x0,'long':0x0,'units':null},'uses':{'value':0x0,'max':0x0,'per':''},'ability':'','actionType':'','attackBonus':0x0,'chatFlavor':'','critical':null,'damage':{'parts':[],'versatile':''},'formula':'','save':{'ability':'','dc':null},'requirements':'','recharge':{'value':0x0,'charged':!![]},..._0x48e3b2},'permission':{'default':0x0},'type':_0x58822a(0x110),'img':'modules/'+SharedConsts[_0x58822a(0x116)]+_0x58822a(0x10e),'flags':{[SharedConsts[_0x58822a(0xfa)]]:{'page':UrlUtil[_0x58822a(0x103)],'source':_0x3a5f74[_0x58822a(0x102)],'hash':UrlUtil['URL_TO_HASH_BUILDER'][UrlUtil[_0x58822a(0x103)]](_0x3a5f74)}},'effects':[]};if(_0x3e5a11[_0x58822a(0x100)])_0x54b564[_0x58822a(0x11d)]={'default':Config[_0x58822a(0x101)](_0x58822a(0x11c),_0x58822a(0x11a))};return _0x54b564;}static async['_pGetAdditionalData'](_0x36ea37){const _0x154773=_0x5c03;return DataConverter['pGetAdditionalData_'](_0x36ea37,{'propBrew':_0x154773(0x114),'fnLoadJson':Vetools['pGetRewardSideData'],'propJson':_0x154773(0x104)});}static async[_0x3d35b4(0x115)](_0x2c4790,_0x2e78db){const _0x34ec74=_0x3d35b4;return(await DataConverter[_0x34ec74(0x106)](_0x2e78db,{'propBrew':'foundryReward','fnLoadJson':Vetools[_0x34ec74(0x107)],'propJson':'reward'}))?.[_0x34ec74(0x113)]>0x0;}static async[_0x3d35b4(0xfe)](_0x3bfbbd,_0x5ce164,_0x357d52,_0x575b5d){const _0x129188=_0x3d35b4,_0x240d8d=await DataConverter['pGetAdditionalEffectsRaw_'](_0x5ce164,{'propBrew':_0x129188(0x114),'fnLoadJson':Vetools[_0x129188(0x107)],'propJson':_0x129188(0x104)});return UtilActiveEffects['getExpandedEffects'](_0x3bfbbd,_0x357d52,_0x240d8d||[],{'parentName':_0x5ce164[_0x129188(0x119)],'additionalData':_0x575b5d});}}export{DataConverterReward};
+import {UtilApplications} from "./UtilApplications.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {Config} from "./Config.js";
+import {Vetools} from "./Vetools.js";
+import {UtilActiveEffects} from "./UtilActiveEffects.js";
+import {PageFilterClassesFoundry} from "./UtilCharactermancerClass.js";
+import {DataConverterFeature} from "./DataConverterFeature.js";
+import {UtilDataConverter} from "./UtilDataConverter.js";
+import {DataConverter} from "./DataConverter.js";
+
+class DataConverterReward extends DataConverterFeature {
+	static _SIDE_LOAD_OPTS = {
+		propBrew: "foundryReward",
+		fnLoadJson: async () => this._pGetPreloadSideData(),
+		propJson: "reward",
+	};
+
+	static init () {
+		PageFilterClassesFoundry.setImplSideData("reward", this);
+	}
+
+	static async pGetDereferencedRewardFeatureItem (feature) {
+		// Bypass the loader, since we don't expect refs in rewards (yet)
+		if (feature.entries) return MiscUtil.copy(feature);
+
+		const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_REWARDS](feature);
+		return Renderer.hover.pCacheAndGet(UrlUtil.PG_REWARDS, feature.source, hash, {isCopy: true});
+	}
+
+	static async pGetInitRewardFeatureLoadeds (feature, {actor = null} = {}) {
+		const asFeatRef = {reward: `${feature.name}|${feature.source}`};
+		// Bypass the loader, since we don't expect refs in rewards (yet)
+		await PageFilterClassesFoundry.pInitRewardLoadeds({reward: asFeatRef, raw: feature, actor});
+		return asFeatRef;
+	}
+
+	/**
+	 * @param reward
+	 * @param [opts] Options object.
+	 * @param [opts.isAddPermission]
+	 * @param [opts.defaultPermission]
+	 * @param [opts.isActorItem]
+	 * @param [opts.actor]
+	 */
+	static async pGetRewardItem (reward, opts) {
+		opts = opts || {};
+		if (opts.actor) opts.isActorItem = true;
+
+		const descriptionValue = await this._pGetGenericDescription(reward, "importReward");
+
+		const img = await this._pGetSaveImagePath(reward, {propCompendium: "reward"});
+
+		const additionalData = await this._pGetDataSideLoaded(reward);
+		const additionalFlags = await this._pGetFlagsSideLoaded(reward);
+
+		// For actor items, let the importer create the effects, so we can pass in additional flow data/etc.
+		const effects = opts.isActorItem ? [] : await this._pGetEffectsSideLoaded({ent: reward, img});
+		DataConverter.mutEffectsDisabledTransfer(effects, "importReward");
+
+		const out = {
+			name: UtilApplications.getCleanEntityName(UtilDataConverter.getNameWithSourcePart(reward, {isActorItem: opts.isActorItem})),
+			data: {
+				source: UtilDataConverter.getSourceWithPagePart(reward),
+				description: {
+					value: descriptionValue,
+					chat: "",
+					unidentified: "",
+				},
+
+				activation: {type: "", cost: 0, condition: ""},
+				duration: {value: 0, units: ""},
+				target: {value: 0, units: "", type: ""},
+				range: {value: 0, long: 0, units: null},
+				uses: {value: 0, max: 0, per: ""},
+				ability: "",
+				actionType: "",
+				attackBonus: null,
+				chatFlavor: "",
+				critical: {threshold: null, damage: ""},
+				damage: {parts: [], versatile: ""},
+				formula: "",
+				save: {ability: "", dc: null},
+				requirements: "",
+				recharge: {value: 0, charged: true},
+
+				...additionalData,
+			},
+			permission: {default: 0},
+			type: "feat",
+			img,
+			flags: {
+				...this._getRewardFlags(reward, opts),
+				...additionalFlags,
+			},
+			// For actor items, let the importer create the effects, so we can pass in additional flow data/etc.
+			effects,
+		};
+
+		if (opts.defaultPermission != null) out.permission = {default: opts.defaultPermission};
+		else if (opts.isAddPermission) out.permission = {default: Config.get("importReward", "permissions")};
+
+		return out;
+	}
+
+	static async pMutActorUpdateReward (actor, actorUpdate, optFeature, dataBuilderOpts) {
+		const sideData = await this.pGetSideLoadedMatch(optFeature);
+		this.mutActorUpdate(actor, actorUpdate, optFeature, {sideData});
+	}
+
+	static _getRewardFlags (reward, opts) {
+		opts = opts || {};
+
+		const out = {
+			[SharedConsts.MODULE_NAME_FAKE]: {
+				page: UrlUtil.PG_REWARDS,
+				source: reward.source,
+				hash: UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_REWARDS](reward),
+			},
+		};
+
+		if (opts.isAddDataFlags) {
+			out[SharedConsts.MODULE_NAME_FAKE].propDroppable = "reward";
+			out[SharedConsts.MODULE_NAME_FAKE].filterValues = opts.filterValues;
+		}
+
+		return out;
+	}
+
+	static async pHasRewardSideLoadedEffects (actor, reward) {
+		return (await this._pGetEffectsRawSideLoaded_(reward, this._SIDE_LOAD_OPTS))?.length > 0;
+	}
+
+	static async pGetRewardItemEffects (actor, reward, sheetItem, {additionalData, img} = {}) {
+		const effectsRaw = await this._pGetEffectsRawSideLoaded_(reward, {propBrew: "foundryReward", fnLoadJson: Vetools.pGetRewardSideData, propJson: "reward"});
+		return UtilActiveEffects.getExpandedEffects(effectsRaw || [], {actor, sheetItem, parentName: reward.name, additionalData, img});
+	}
+
+	static async _pGetPreloadSideData () {
+		if (!this._SIDE_DATA) this._SIDE_DATA = await Vetools.pGetRewardSideData();
+		return this._SIDE_DATA;
+	}
+}
+
+export {DataConverterReward};

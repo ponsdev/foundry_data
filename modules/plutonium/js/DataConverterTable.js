@@ -1,1 +1,306 @@
-const _0x58f9=['importTable','list','colLabels','_getHighestRoll','lastIndex','1KMmCZu','\x0a\x09\x09\x09\x09</div>','RollTable[','trim','render','_pGetTableRollableTable_pRollTable','permissions','pGetPlutoniumCompendiumId','[[/r\x20','index','@Compendium[','345168JTFtMf','rows','length','getTableRollMode','473479sArPfe','icons/svg/d20-black.svg','isAddPermission','row','PG_ITEMS','join','_pGetResultText_pGetReplacement','permission','585093DcuOAY','caption','976586ILNxrJ','1282923BCSjRg','now','packId','pSerialAwaitMap','PG_BESTIARY','getCleanEntityName','pGetTableRollableTable','SYM_AT','URL_TO_HASH_BUILDER','name','GENERIC_WALKER_ENTRIES_KEY_BLACKLIST','setFirstSection','map','4113082aQWmSt','pWalk','_pGetResultText_pReplace','copy','_pGetTableRollableTable_pOtherTable','948215fFfwsP','replace','packPackage','toLowerCase','1OynKCD','getAsyncWalker','exec','stripTags','getCleanDiceString','_pGetResultText','_getFoundryDiceTagged','PG_SPELLS','slice','splitTagByPipe','get'];const _0x7a2c=function(_0x35b74c,_0x538a5d){_0x35b74c=_0x35b74c-0x157;let _0x58f929=_0x58f9[_0x35b74c];return _0x58f929;};const _0x2e7525=_0x7a2c;(function(_0x3f2bf9,_0x2f70aa){const _0x58425a=_0x7a2c;while(!![]){try{const _0x59067d=parseInt(_0x58425a(0x17d))+-parseInt(_0x58425a(0x192))+-parseInt(_0x58425a(0x175))*parseInt(_0x58425a(0x166))+-parseInt(_0x58425a(0x171))+-parseInt(_0x58425a(0x17f))+-parseInt(_0x58425a(0x196))*parseInt(_0x58425a(0x180))+parseInt(_0x58425a(0x18d));if(_0x59067d===_0x2f70aa)break;else _0x3f2bf9['push'](_0x3f2bf9['shift']());}catch(_0x574fed){_0x3f2bf9['push'](_0x3f2bf9['shift']());}}}(_0x58f9,0xa403c));import{UtilApplications}from'./UtilApplications.js';import{Config}from'./Config.js';import{DataConverter}from'./DataConverter.js';import{UtilCompendium}from'./UtilCompendium.js';import{Vetools}from'./Vetools.js';class DataConverterTable{static['getTableGroupJournal'](_0x1a0266,_0x570a14,_0xdd7280){const _0x1e5cde=_0x7a2c;_0xdd7280=_0xdd7280||{};const _0x132a1c={'type':_0x1e5cde(0x162),'items':_0x570a14[_0x1e5cde(0x18c)](_0x69f626=>DataConverter[_0x1e5cde(0x187)]+_0x1e5cde(0x168)+_0x69f626['id']+']{'+(_0x69f626[_0x1e5cde(0x17e)]||_0x69f626['name'])+'}')},_0x1434e4={'name':UtilApplications['getCleanEntityName'](_0x1a0266[_0x1e5cde(0x189)]),'permission':{'default':0x0},'entryTime':Date[_0x1e5cde(0x181)](),'content':'<div>\x0a\x09\x09\x09\x09<p>The\x20following\x20tables\x20belong\x20to\x20this\x20group:</p>\x0a\x09\x09\x09\x09'+Renderer[_0x1e5cde(0x160)]()[_0x1e5cde(0x18b)](!![])[_0x1e5cde(0x16a)](_0x132a1c)[_0x1e5cde(0x193)](new RegExp(DataConverter[_0x1e5cde(0x187)],'g'),'@')+_0x1e5cde(0x167)};if(_0xdd7280[_0x1e5cde(0x177)])_0x1434e4[_0x1e5cde(0x17c)]={'default':Config[_0x1e5cde(0x160)](_0x1e5cde(0x161),'permissions')};return _0x1434e4;}static[_0x2e7525(0x186)](_0x38a330,_0x1ff91b){const _0x17d7d4=_0x2e7525;_0x1ff91b=_0x1ff91b||{};if(Renderer[_0x17d7d4(0x174)](_0x38a330))return this['_pGetTableRollableTable_pRollTable'](_0x38a330,_0x1ff91b);else return this[_0x17d7d4(0x191)](_0x38a330,_0x1ff91b);}static async[_0x2e7525(0x16b)](_0x1202ba,_0x26041b){const _0x31f3bb=_0x2e7525;_0x26041b=_0x26041b||{};const _0x2b05a0=(_0x1202ba[_0x31f3bb(0x163)][0x0]||'')['trim']()[_0x31f3bb(0x193)](/{@dice ([^}]+)}/,'$1'),_0x35d9f6={'name':UtilApplications['getCleanEntityName'](_0x1202ba[_0x31f3bb(0x189)]),'formula':_0x2b05a0,'results':await _0x1202ba[_0x31f3bb(0x172)][_0x31f3bb(0x183)](async(_0x442edb,_0x3dd1b2)=>{const _0x368048=_0x31f3bb;let _0xbc27f,_0x24f9e2;const _0x613b21=/^(\d+)([-\u2013](\d+))?$/['exec'](String(_0x442edb[0x0])[_0x368048(0x169)]());if(_0x613b21){if(_0x613b21[0x1]&&!_0x613b21[0x2]){_0xbc27f=Number(_0x613b21[0x1]);if(_0xbc27f===0x0)_0xbc27f=this['_getHighestRoll'](_0x2b05a0);_0x24f9e2=_0xbc27f;}else _0xbc27f=Number(_0x613b21[0x1]),_0x24f9e2=Number(_0x613b21[0x3]),_0x24f9e2<_0xbc27f&&(_0x24f9e2=this['_getHighestRoll'](_0x2b05a0));}else{const _0x5d10d6=/^(\d+)\+$/['exec'](_0x442edb[0x0]);_0xbc27f=Number(_0x5d10d6[0x1]),_0x24f9e2=_0xbc27f;}return{'id':_0x3dd1b2+0x1,'flags':{},'type':0x0,'text':await this[_0x368048(0x15b)](_0x442edb[_0x368048(0x15e)](0x1)),'img':_0x368048(0x176),'weight':0x1,'range':[_0xbc27f,_0x24f9e2],'drawn':![]};}),'replacement':!![],'displayRoll':!![]};if(_0x26041b['isAddPermission'])_0x35d9f6[_0x31f3bb(0x17c)]={'default':Config['get'](_0x31f3bb(0x161),_0x31f3bb(0x16c))};return _0x35d9f6;}static async[_0x2e7525(0x15b)](_0x2bc22d){const _0x12fb8f=_0x2e7525,_0x3eac2d=MiscUtil[_0x12fb8f(0x157)]({'keyBlacklist':MiscUtil[_0x12fb8f(0x18a)]}),_0x2a3e9f=await _0x3eac2d[_0x12fb8f(0x18e)](MiscUtil[_0x12fb8f(0x190)](_0x2bc22d),{'string':async _0x21407a=>{const _0x1e0e12=_0x12fb8f;return _0x21407a=await this[_0x1e0e12(0x18f)]({'str':_0x21407a,'re':/{@creature ([^}]+)}/g,'page':UrlUtil[_0x1e0e12(0x184)],'defaultSource':SRC_MM}),_0x21407a=await this['_pGetResultText_pReplace']({'str':_0x21407a,'re':/{@item ([^}]+)}/g,'page':UrlUtil[_0x1e0e12(0x179)],'defaultSource':SRC_DMG}),_0x21407a=await this[_0x1e0e12(0x18f)]({'str':_0x21407a,'re':/{@spell ([^}]+)}/g,'page':UrlUtil[_0x1e0e12(0x15d)],'defaultSource':SRC_PHB}),Renderer[_0x1e0e12(0x159)](this[_0x1e0e12(0x15c)](_0x21407a));}});return _0x2a3e9f[_0x12fb8f(0x18c)](_0xb8c3a1=>Renderer[_0x12fb8f(0x160)]()[_0x12fb8f(0x18b)](!![])[_0x12fb8f(0x16a)](_0xb8c3a1))[_0x12fb8f(0x17a)]('\x20|\x20');}static[_0x2e7525(0x164)](_0x3a4003){const _0x40c2ef=_0x2e7525,_0x4e9b78=/\d+/[_0x40c2ef(0x158)](_0x3a4003);if(_0x4e9b78)return Number(_0x4e9b78[0x0]);return 0x64;}static async[_0x2e7525(0x18f)]({str:_0x12a01b,re:_0x3b2bb3,page:_0xfa4c05,defaultSource:_0x426c9a}){const _0x5ce770=_0x2e7525;let _0x5805b0;while(_0x5805b0=_0x3b2bb3[_0x5ce770(0x158)](_0x12a01b)){const _0x3cf57e=_0x12a01b[_0x5ce770(0x15e)](0x0,_0x5805b0[_0x5ce770(0x16f)]),_0x1dae1a=_0x12a01b[_0x5ce770(0x15e)](_0x3b2bb3[_0x5ce770(0x165)]),_0x3fa1d8=await this[_0x5ce770(0x17b)]({'page':_0xfa4c05,'defaultSource':_0x426c9a,'m':_0x5805b0});_0x12a01b=''+_0x3cf57e+_0x3fa1d8+_0x1dae1a,_0x3b2bb3[_0x5ce770(0x165)]=_0x3cf57e[_0x5ce770(0x173)]+_0x3fa1d8[_0x5ce770(0x173)];}return _0x12a01b;}static async['_pGetResultText_pGetReplacement']({page:_0x3c058f,defaultSource:_0x9d9949,m:_0x18db81}){const _0x58698f=_0x2e7525;let [_0x3d9377,_0x2a5248,_0x4aef5f]=_0x18db81[0x1]['split']('|');_0x2a5248=_0x2a5248||_0x9d9949;const _0x9187da=UrlUtil[_0x58698f(0x188)][_0x3c058f]({'name':_0x3d9377,'source':_0x2a5248}),_0x503eaa=await UtilCompendium[_0x58698f(0x16d)](_0x3c058f,_0x9187da);if(!_0x503eaa)return _0x18db81[0x0];return _0x58698f(0x170)+_0x503eaa[_0x58698f(0x194)]+'.'+_0x503eaa['packName']+'.'+_0x503eaa[_0x58698f(0x182)]+']{'+(_0x4aef5f||_0x3d9377)+'}';}static async['_pGetTableRollableTable_pOtherTable'](_0x8cafc9,_0x241a82){const _0x93dd69=_0x2e7525;_0x241a82=_0x241a82||{};const _0x2ea86d={'name':UtilApplications[_0x93dd69(0x185)](_0x8cafc9[_0x93dd69(0x189)]),'formula':'1d'+(_0x8cafc9[_0x93dd69(0x172)]?_0x8cafc9[_0x93dd69(0x172)][_0x93dd69(0x173)]:'1'),'results':await _0x8cafc9['rows'][_0x93dd69(0x183)](async(_0x2d4f8b,_0x28b94f)=>{const _0x31af15=_0x93dd69;return _0x2d4f8b=_0x2d4f8b[_0x31af15(0x178)]||_0x2d4f8b,{'id':_0x28b94f+0x1,'flags':{},'type':0x0,'text':await this[_0x31af15(0x15b)](_0x2d4f8b),'img':_0x31af15(0x176),'weight':0x1,'range':[_0x28b94f+0x1,_0x28b94f+0x1],'drawn':![]};}),'replacement':!![],'displayRoll':!![]};if(_0x241a82[_0x93dd69(0x177)])_0x2ea86d[_0x93dd69(0x17c)]={'default':Config['get'](_0x93dd69(0x161),_0x93dd69(0x16c))};return _0x2ea86d;}static[_0x2e7525(0x15c)](_0x476298){return _0x476298['replace'](/{@(?:dice|damage) ([^}]+)}/gi,(..._0x5cf66a)=>{const _0xbe2730=_0x7a2c,[_0x4dd70e,_0x5151d6]=Renderer[_0xbe2730(0x15f)](_0x5cf66a[0x1]),_0x29d44a=Vetools[_0xbe2730(0x15a)](_0x4dd70e);return _0xbe2730(0x16e)+_0x29d44a+']]'+(_0x5151d6&&_0x29d44a[_0xbe2730(0x195)]()['trim']()!==_0x5151d6['toLowerCase']()['trim']()?'\x20('+_0x5151d6+')':'');});}}export{DataConverterTable};
+import {UtilApplications} from "./UtilApplications.js";
+import {Config} from "./Config.js";
+import {DataConverter} from "./DataConverter.js";
+import {Vetools} from "./Vetools.js";
+import {UtilDataConverter} from "./UtilDataConverter.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+
+class DataConverterTable extends DataConverter {
+	static _IMG_FALLBACK = `modules/${SharedConsts.MODULE_NAME}/media/icon/hamburger-menu.svg`;
+
+	/**
+	 * @param tg
+	 * @param rollableTables Foundry entities.
+	 * @param [opts] Options object.
+	 * @param [opts.isAddPermission]
+	 * @param [opts.defaultPermission]
+	 */
+	static getTableGroupJournal (tg, rollableTables, opts) {
+		opts = opts || {};
+
+		const entry = {
+			type: "list",
+			items: rollableTables.map(it => `${DataConverter.SYM_AT}RollTable[${it.id}]{${it.caption || it.name}}`),
+		};
+
+		const out = {
+			name: UtilApplications.getCleanEntityName(tg.name),
+			permission: {default: 0},
+			entryTime: Date.now(),
+			content: `<div>
+				<p>The following tables belong to this group:</p>
+				${Renderer.get().setFirstSection(true).render(entry).replace(new RegExp(DataConverter.SYM_AT, "g"), "@")}
+				</div>`,
+		};
+
+		if (opts.defaultPermission != null) out.permission = {default: opts.defaultPermission};
+		else if (opts.isAddPermission) out.permission = {default: Config.get("importTable", "permissions")};
+
+		return out;
+	}
+
+	/**
+	 * @param tbl
+	 * @param [opts] Options object.
+	 * @param [opts.isAddPermission]
+	 * @param [opts.defaultPermission]
+	 * @param [opts.isImportAsJournalEntry]
+	 */
+	static pGetTableRollableTable (tbl, opts) {
+		opts = opts || {};
+
+		if (opts.isImportAsJournalEntry) return this.pGetTableJournal(tbl, opts);
+
+		if (this._isRollableTable(tbl)) return this._pGetTableRollableTable_pRollTable(tbl, opts);
+		else return this._pGetTableRollableTable_pOtherTable(tbl, opts);
+	}
+
+	static _isRollableTable (tbl) {
+		return this._isRollableTable_getEntriesTableRollMode(tbl) || Renderer.getAutoConvertedTableRollMode(tbl);
+	}
+
+	static _isRollableTable_getEntriesTableRollMode (tbl) {
+		if (!tbl.colLabels || tbl.colLabels.length < 2) return RollerUtil.ROLL_COL_NONE;
+
+		const rollColMode = RollerUtil.getColRollType(tbl.colLabels[0]);
+		if (!rollColMode) return RollerUtil.ROLL_COL_NONE;
+
+		// scan the first column to ensure all rollable
+		if (tbl.rows.some(r => r[0]?.type !== "cell" || r[0].roll == null || (r[0].roll.exact == null && r[0].roll.min == null && r[0].roll.max == null))) return RollerUtil.ROLL_COL_NONE;
+
+		return rollColMode;
+	}
+
+	static _getTableDescription (tbl) {
+		return tbl.colLabels?.length ? `Table columns: ${tbl.colLabels.map(it => Renderer.stripTags(it)).join(" | ")}` : "";
+	}
+
+	static async _pGetTableRollableTable_pRollTable (tbl, opts) {
+		opts = opts || {};
+
+		const img = await this._pGetSaveImagePath(tbl, {propCompendium: "table"});
+
+		const toRoll = (tbl.colLabels[0] || "").trim().replace(/{@dice ([^}]+)}/, "$1");
+
+		const out = {
+			name: UtilApplications.getCleanEntityName(tbl.name),
+			formula: toRoll,
+			description: this._getTableDescription(tbl),
+			results: await tbl.rows.pSerialAwaitMap(async (r, i) => {
+				const {rangeLow, rangeHigh} = this._getRollRange(toRoll, r[0]);
+
+				return this.pGetTableResult({
+					type: CONST.TABLE_RESULT_TYPES.TEXT,
+					text: await this._pGetResultText(r.slice(1)),
+					rangeLow,
+					rangeHigh,
+				});
+			}),
+			replacement: true,
+			displayRoll: true,
+			img,
+		};
+
+		if (opts.defaultPermission != null) out.permission = {default: opts.defaultPermission};
+		else if (opts.isAddPermission) out.permission = {default: Config.get("importTable", "permissions")};
+
+		return out;
+	}
+
+	static _getRollRange (toRoll, cell) {
+		if (cell.type === "cell" && cell.roll != null) {
+			if (cell.roll.exact != null) {
+				return {rangeLow: cell.roll.exact, rangeHigh: cell.roll.exact};
+			}
+
+			// Convert "95-00" to "95-100"
+			const rangeHigh = cell.roll.max < cell.roll.min ? this._getHighestRoll(toRoll) : cell.roll.max;
+			return {rangeLow: cell.roll.min, rangeHigh: rangeHigh};
+		}
+
+		let rangeLow;
+		let rangeHigh;
+
+		const cellClean = String(cell).trim();
+
+		// format: "95-00" or "12"
+		const mBasic = /^(\d+)([-\u2013](\d+))?$/.exec(cellClean);
+		if (mBasic) {
+			if (mBasic[1] && !mBasic[2]) {
+				rangeLow = Number(mBasic[1]);
+				// Convert "00" to "100"
+				if (rangeLow === 0) rangeLow = this._getHighestRoll(toRoll);
+				rangeHigh = rangeLow;
+			} else {
+				rangeLow = Number(mBasic[1]);
+				rangeHigh = Number(mBasic[3]);
+
+				// Convert "95-00" to "95-100"
+				if (rangeHigh < rangeLow) {
+					rangeHigh = this._getHighestRoll(toRoll);
+				}
+			}
+
+			return {rangeLow, rangeHigh};
+		}
+
+		// format "3 or less"
+		const mOrLess = /^(\d+) or less$/i.exec(cellClean);
+		if (mOrLess) {
+			rangeLow = 1;
+			rangeHigh = Number(mOrLess[1]);
+
+			return {rangeLow, rangeHigh};
+		}
+
+		// format: "12+"
+		const mPlus = /^(\d+)\+$/.exec(cellClean);
+		rangeLow = Number(mPlus[1]);
+		rangeHigh = rangeLow;
+
+		return {rangeLow, rangeHigh};
+	}
+
+	static async _pGetResultText (cells) {
+		const walker = MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
+
+		let cpyCells = UtilDataConverter.getConvertedTagLinkEntries(MiscUtil.copy(cells));
+
+		cpyCells = walker.walk(
+			cpyCells,
+			{
+				string: str => {
+					return Renderer.stripTags(this._getFoundryDiceTagged(str));
+				},
+			},
+		);
+
+		return cpyCells
+			.map(it => Renderer.get().setFirstSection(true).render(it))
+			.join(" | ");
+	}
+
+	static _getHighestRoll (toRoll) {
+		const mFirstNum = /\d+/.exec(toRoll); // catch e.g. d1000's
+		if (mFirstNum) return Number(mFirstNum[0]);
+		return 100; // Fall back on d100, as this is the most common cause
+	}
+
+	static async _pGetTableRollableTable_pOtherTable (tbl, opts) {
+		opts = opts || {};
+
+		const img = await this._pGetSaveImagePath(tbl, {propCompendium: "table"});
+
+		const out = {
+			name: UtilApplications.getCleanEntityName(tbl.name),
+			formula: `1d${tbl.rows ? tbl.rows.length : "1"}`,
+			description: this._getTableDescription(tbl),
+			results: await tbl.rows.pSerialAwaitMap(async (r, i) => {
+				r = r.row || r;
+				return this.pGetTableResult({
+					type: CONST.TABLE_RESULT_TYPES.TEXT,
+					text: await this._pGetResultText(r),
+					rangeExact: i + 1,
+				});
+			}),
+			replacement: true,
+			displayRoll: true,
+			img,
+		};
+
+		if (opts.defaultPermission != null) out.permission = {default: opts.defaultPermission};
+		else if (opts.isAddPermission) out.permission = {default: Config.get("importTable", "permissions")};
+
+		return out;
+	}
+
+	/**
+	 * @param type `0` for "Text", `1` for "Entity", `2` for "Compendium"
+	 * @param text
+	 * @param [resultId] The ID of an entity, if this result is in "Entity" or "Compendium" mode. `text` and `resultId`
+	 *   are combined/converted to form the final result by `TableResult.getChatText`, which does:
+	 *   `@${collection}[${resultId}]{${text}}`.
+	 * @param [collection] Compendium ID, e.g. `world.my-compendium`.
+	 * @param rangeLow
+	 * @param rangeHigh
+	 * @param rangeExact
+	 * @param [img]
+	 * @param [flags]
+	 */
+	static async pGetTableResult (
+		{
+			type,
+			text,
+			resultId,
+			collection,
+			rangeLow,
+			rangeHigh,
+			rangeExact,
+			img = "icons/svg/d20-black.svg",
+			flags = {},
+		},
+	) {
+		if (rangeExact != null && (rangeLow != null || rangeHigh != null)) throw new Error(`Only one of "rangeExact" and "rangeLow/rangeHigh" may be specified!`);
+
+		return {
+			id: foundry.utils.randomID(),
+			resultId,
+			collection,
+			flags,
+			type,
+			text,
+			img: await Vetools.pOptionallySaveImageToServerAndGetUrl(img),
+			weight: 1,
+			range: [
+				rangeLow ?? rangeExact,
+				rangeHigh ?? rangeExact,
+			],
+			drawn: false,
+		};
+	}
+
+	static getMaxTableRange (table) { return Math.max(0, ...table.results.map(it => it.data.range).flat()); }
+
+	static _getFoundryDiceTagged (str) {
+		return str.replace(/{@(?:dice|damage) ([^}]+)}/gi, (...m) => {
+			const [rollText, displayText] = Renderer.splitTagByPipe(m[1]);
+			const rollTextClean = Vetools.getCleanDiceString(rollText);
+			return `[[/r ${rollTextClean}]]${displayText && rollTextClean.toLowerCase().trim() !== displayText.toLowerCase().trim() ? ` (${displayText})` : ""}`;
+		});
+	}
+
+	/**
+	 * @param tbl
+	 * @param [opts] Options object.
+	 * @param [opts.isAddPermission]
+	 * @param [opts.defaultPermission]
+	 */
+	static async pGetTableJournal (tbl, opts) {
+		opts = opts || {};
+
+		const cpy = MiscUtil.copy(tbl);
+		delete cpy.name;
+		cpy.type = cpy.type || "table";
+
+		const content = await UtilDataConverter.pGetWithDescriptionPlugins(() => {
+			return `<div>${Renderer.get().setFirstSection(true).render(cpy)}</div>`;
+		});
+
+		const img = await this._pGetSaveImagePath(tbl, {propCompendium: "table"});
+
+		const out = {
+			name: UtilApplications.getCleanEntityName(UtilDataConverter.getNameWithSourcePart(tbl)),
+			permission: {default: 0},
+			entryTime: Date.now(),
+			content,
+			img,
+		};
+
+		if (opts.defaultPermission != null) out.permission = {default: opts.defaultPermission};
+		else if (opts.isAddPermission) out.permission = {default: Config.get("importTable", "permissions")};
+
+		return out;
+	}
+}
+
+export {DataConverterTable};

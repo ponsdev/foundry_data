@@ -1,0 +1,31 @@
+{
+  "name": "pf2e-lootgen",
+  "title": "PF2e Loot Generator",
+  "description": "A loot generator/utility for the PF2E system in Foundry VTT. May eventually become system agnostic.",
+  "author": "Andrew Cuccinello [DJ#1982]",
+  "authors": [],
+  "url": "https://github.com/Djphoenix719/FVTT-PF2ELootGen",
+  "flags": {},
+  "version": "1.0.5",
+  "minimumCoreVersion": "0.8.8",
+  "compatibleCoreVersion": "0.8.9",
+  "scripts": [],
+  "esmodules": [
+    "./bundle.js"
+  ],
+  "styles": [
+    "./bundle.css"
+  ],
+  "languages": [],
+  "packs": [],
+  "system": [
+    "pf2e"
+  ],
+  "dependencies": [],
+  "socket": true,
+  "manifest": "https://raw.githubusercontent.com/Djphoenix719/FVTT-PF2ELootGen/master/module.json",
+  "download": "https://github.com/Djphoenix719/FVTT-PF2ELootGen/releases/download/v1.0.5/pf2e-lootgen-v1.0.5.zip",
+  "protected": false,
+  "coreTranslation": false,
+  "library": false
+}

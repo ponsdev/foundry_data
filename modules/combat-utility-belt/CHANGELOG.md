@@ -1,14 +1,219 @@
 # Changelog
 
 ## [Known Issues]
-> Some issues related to the upgrade to Active Effects can be resolved/mitigated by **Saving your Condition Lab** after updating to a CUB version greater than 1.3.0. Please try this before reporting an issue!
+1. Overlay Effects added to a token will trigger the matching non-Overlay Condition to output to chat. The reverse is also true.
+2. Chat log may not re-render when Hide Names settings are changed. This may cause the old name to still show in the log for players. Advise players to reload Foundry if you change these settings mid-session.
+3. The Default/Inferred Condition Lab Mappings for game systems may not correctly import all data. Importing the map from the CUB Condition Maps folder imports correctly.
+4. **PF2e users**: PF2e is not currently supported by Enhanced Conditions due to the customisation of the effects framework implemented by the system.
 
-1. Loading a world with an existing Condition Lab mapping from pre CUB v1.3.0 may cause any Conditions added to a token to default to the first mapped condition. WORKAROUND: After loading your world, go into the Condition Lab and click Save.
-2. Enhanced Conditions chat output for linked Tokens and Actors is not aggregated, so you may see multiple messages when many conditions are added/removed from an Actor/Token.
-3. Overlay Effects added to a token will trigger the matching non-Overlay Condition to output to chat. The reverse is also true.
-4. **PF2e users**: Enhanced Conditions `Output to Chat` setting will cause duplicate chat messages due to similar function built into the system.
-5. Chat log may not re-render when Hide Names settings are changed. This may cause the old name to still show in the log for players. Advise players to reload Foundry if you change these settings mid-session.
-6. Due to a possible bug in core/dnd5e Hide Names may show the Actor's prototype token disposition replacement name instead of the token disposition replacement when players load the game. Messages created during a session are not affected.
+## [1.9.1] - 2022-06-07
+### ✨ Enhanced Conditions
+- Sorting then saving the Condition Lab no longer causes a loss of data (eg. active effects)
+- Fixed an error that occurred when no Macros exist (thanks @strongpauly 🎉)
+- Changing from the `Other/Imported` Condition Lab Map Type to another (eg. `Default`) and then back no longer clears previous mapping
+- Minor changes to Condition Lab styling
+
+### 💭 Concentrator
+- Concentrator now respects chat visibility settings (eg. setting Concentration Check to `GM & Owner/s` will only display to those users)
+
+## [1.9.0] - 2022-05-18
+> This update adds compatibility for Foundry VTT v9.269
+### ✨ Enhanced Conditions
+- Conditions can now execute a Macro when they are added or removed. The macros are selectable from the Macros button in the Condition Lab row for that condition.
+- Added rudimentary sorting and filtering to the Condition Lab. This only affects the display of the Conditions in the lab, not the saved mapping.
+- When multiple Enhanced Conditions messages are output to chat one after another, the output is now merged into the previous chat message. This should prevent a torrent of messages when multiple conditions are added or removed from an actor/token in quick succession. Note: this will only occur when the last Enhanced Conditions message was less than 30s ago.
+- Improved the overall look and feel of the Condition Lab Layout.
+- Condition Add/Remove icon in chat now includes a "time since" in the tooltip.
+- Triggler Triggers for a Condition are now selectable from the Triggler button in the Condition Lab row for that condition.
+- Fixed a bug with the D&D 3.5e system where Condition Active Effects were immediately removed upon adding.
+
+### 💭 Concentrator
+- Concentrator now has the following notification settings: Start, Check, Double Concentration, Death
+- Concentrator notification settings now have the following options: No one, Gm & Owner/s, Everyone.
+- Added a setting to determine if NPC Concentration notifications should be hidden from players.
+
+### 😷 Hide Names
+- Added a clickable icon to chat cards that allows the quick hiding/unhiding of an actor's name.
+
+### 🔫 Triggler
+- Improved the logic of Triggler's detection of actor properties in the selections for simple Triggers.
+
+## [1.8.4] - 2022-03-06
+> This update adds compatibility for Foundry VTT v9.255
+### ✨ Enhanced Conditions
+- Fixed an issue with empty Condition Maps not allowing rows to be added in the Condition Lab
+- Fixed an issue with Condition Maps not correctly being built in some circumstances, causing the Condition Lab to fail to open
+
+## [1.8.3] - 2022-02-19
+### ✨ Enhanced Conditions
+- Conditions are now stored with a truly unique(ish) `id` instead of a "slugified" version of the name. Eg. previously a Condition named "The Butterfly Effect" would have had an `id` of `the-buttefly-effect`. This should fix any issues related to `id` duplication such as adding effects to tokens and having unrelated effects added
+> Note: this change only applies to newly created conditions or any conditions with a duplicate `id`
+- New Conditions now inherit the global/world setting for `Output to Chat`
+- Changed the placeholder name of new Conditions to `New Condition` instead of `newCondition`
+
+### Misc
+- Fixed a bug related to finding the first active GM
+
+## [1.8.2] - 2022-02-08
+> This update adds compatibility for Foundry VTT v9.249
+
+### ✨ Enhanced Conditions
+- Redesigned some code related to duplicate status effect entries. This fixes a bug that caused CUB to prevent `Pathfinder` buffs from showing on the token HUD status effect choices
+- Fixed a bug that caused reference entries (eg. Journal Entries) droppped onto a Condition to not correctly store their `id`s
+- **Mark Defeated** now works for linked tokens
+- Updated `Iron Claw Second Edition` Condition Map (thanks @hertzila)
+- Condition Lab **Add Row** button now generates an `id` for the new condition to avoid duplication issues
+- Condition Reference placeholder text is now a translatable
+
+### 💭 Concentrator
+- Fixed an issue with the Concentration icon not being removed from the spellbook when the status effect was toggled off on the token
+
+### 🏆 Award XP
+- Renamed **Modifier** setting to **XP Modifier**
+- Removed **XP Modifier** from standard module settings (it is still available in the CUBputer)
+
+### 🎲 Reroll Initiative
+- Temporary Combatants no longer reroll when they shouldn't
+- Rerolling initiative in the `Pathfinder` system will automatically skip the initiative dialog
+
+### 🔫 Triggler
+- Fixed an incompatibility with `Multilevel Tokens` module
+
+## [1.8.1] - 2022-01-13
+> This update adds compatibility for Foundry VTT V9.242
+
+### 💭 Concentrator
+- Added support for BetterRolls5e rolls (Constitution Save)
+
+### Misc
+- Fixed HP rolling on token drag-n-drop (including Mighty Summoner)
+
+### 🌎 Translations
+- Updated `한국어` (Korean) translation (thanks @flattenstream ! 🎉)
+- Updated `日本語` (Japanese) translation (thanks touge ! 🎉)
+
+## [1.8.0] - 2021-12-25
+> This update adds compatibility for Foundry VTT V9
+
+### 💭 Concentrator
+- Fixed an issue where Concentration was added when the BetterRolls5e `Info` button was pressed on a spell (thanks @cs96and 🎉)
+
+## [1.7.3] - 2021-12-02
+### 💭 Concentrator
+- Fixed an issue that was causing a "ghost" Concentrating condition to appear on some actors/tokens
+
+### ✨ Enhanced Conditions
+- Fixed an issue where duplicate conditions created programmatically would cause the Condition Lab to fail to load 
+
+## [1.7.2] - 2021-11-12
+### 🌎 Translations
+- Fixed an issue with the path for the Polski (Polish) translation
+
+## [1.7.1] - 2021-11-09
+### 💭 Concentrator
+- Fixed an issue causing Concentration checks to not appear for anyone except the GM that processes the damage.
+- Added a setting to control whether Concentration is automatically removed/ended on a failed check or when the condition is removed.
+
+## [1.7.0] - 2021-11-07
+### 💭 Concentrator
+> Concentrator has undergone some large-scale changes. Please read the following notes carefully.
+- Concentrator now tracks which spell an actor is concentrating on:
+- - The Concentration condition icon will show up next to the spell in the Spellbook. 
+- - An optional notification is also sent to chat (enabled via CUBputer).
+- When Concentration is being tested the prompt to the user and the message in chat now contain the spell the actor is concentrating on.
+- When Concentration is broken a notification will be sent to chat (if the setting is enabled via CUBputer).
+- Improved the back-end handling of concentration checks and the distribution of prompts to actor owners.
+- A warning is raised when starting Foundry if Concentrator is not mapped to a condition
+- - Suppressed a warning that fired whenever a token was damaged and the Concentrator was not mapped to a condition.
+
+### ✨ Enhanced Conditions
+- Added tooltips to status effects/conditions in the standard combat tracker
+- The Condition Lab button is no longer visible to players
+- When preparing a Condition Map, the label of a status effect is used if there is no name. This prevents a status effect with a valid label having its name set to match its icon. Eg. status effect `{label: "Awesome", img: "/path/to/icons/only-ok.png"}` will map a name of `Awesome` whereas previously it would map a name of `only ok`.
+
+### 🍳 Pan/Select
+- Fixed an issue with Pan/Select not firing on the first round of combat.
+
+### 🧍 Misc Actor/Token
+- When HP is auto rolled for a token and no HP formula exists, the max HP is now used instead. In the `dnd5e` system this fixes issues dropping tokens for vehicles, which may not have a formula.
+
+### 🖥️ CUBputer
+- The CUBputer button is no longer visible to players
+
+### 🌎 Translations
+- Added `Polski` (Polish) translation (thanks @MichalGolaszewski ! 🎉)
+- Updated `한국어` (Korean) translation (thanks @drdwing ! 🎉)
+
+## [1.6.2] - 2021-08-29
+### Enhanced Conditions
+- Fixed an issue that prevented Active Effects from being saved while the Condition Lab was open
+- Fixed an issue with Condition Icons that prevented the icon from updating when the filepicker was used
+- Added a dialog when `Output to Chat` is enabled to confirm it should be enabled for all Conditions for Enhanced Conditions
+- Fixed `System - Default` Condition Map not loading correctly in some cases
+- Disabled the Active Effect config button when used the `System - Default` mapping -- this mapping is not intended to allow any changes
+- Improved the detection of unsaved Condition Maps
+
+### Hide Names
+- Fixed an issue with the image popout (`View Character Artwork`) name not being hidden for some actors
+
+### Misc. Token
+- Fixed an issue where hostile Token HP was not being hidden from players (thanks @maselkov! 🎉)
+
+## [1.6.1] - 2021-08-05
+### Enhanced Conditions
+- Active Effects saved in an exported Condition Mapping can now be imported 📥!
+- Unsaved changes in the Condition Lab are more accurately reported. This includes actions such as renaming a Condition or toggling an Option.
+- [BREAKING] Removed compatibility with game systems that use simple status effect icons instead of active effects. This was necessary to resolve issues caused by this interaction that prevent basic system features working. If your system is not supported by Enhanced Conditions, a warning will popup when you click the Condition Lab button. A future update may restore this functionality.
+
+### Concentrator
+- Fixed an issue that could cause errors when loading Foundry (thanks @supernun 🎉)
+- Added a check to see if the update had already been processed when damage occurs
+
+### Hide Names
+- Status effect icons are no longer removed when name is hidden
+- Combat Carousel names are hidden again
+
+### Pan/Select
+- Panning works for Players again (thanks @thraxst 🎉)!
+- Improved the logic for Pan/Select
+
+### Award XP
+- Fixed detection of `End Combat` dialog for non-English languages (thanks @daimakaicho 🎉)!
+
+### Translations
+- Updated 日本語 (Japanese) translation (thanks touge and @brothersharper 🎉)!
+
+## [1.6.0] - 2021-06-15
+### Enhanced Conditions
+- `Active Effects Config` can be opened from the **Condition Lab** again!
+- Changes made in the `Active Effects Config` are shown without closing and reopening the form, and are saved to the attached Condition on Submit.
+- `Active Effects` attached to Conditions can now be Exported and Imported in the Condition Lab
+- **Condition Lab** `reference` entries for Conditions are now a text-input (Id) field linking to any entity in your Foundry instance (eg. Actor, Item, JournalEntry, Compendium JournalEntry etc). The field is in the format of `@EntityType[entityId]{DisplayName}` This field now accepts drag-drop similar to dropping an entity into a Journal Entry (or other enriched text entry). If the dropped Id resolves correctly, a link to the entity will show up next to the Id. You can also put good ol' plain text in this field if you want.
+> Note: the reference entry's `DisplayName` or text will override the Condition Name.
+- The drag handles in the **Condition Lab** have been removed in favour of simpler up/down arrows ("chevrons" if we're being pedantic). A future update may add drag handles or more advanced order-sorting to the Lab
+- Added support for the `Ironclaw 2e` system. Thanks to @hertzila! 🎉
+- Conditions are no longer output to chat if the `Output to Chat` setting is disabled in **CUBputer**. Additionally, When this setting is disabled the related checkboxes in the **Condition Lab** cannot be changed.
+### Triggler
+- When **Triggler** executes a macro it now passes the triggering token/actor to the macro for downstream usage.
+- Fixed logic in **Triggler** related to checking the ownership of the triggering actor/token.
+### Temporary Combatants
+- **Temporary Combatants** now work with Foundry VTT v0.8.x
+### Hide Names
+- **Hide Names** Actor button no longer disappears (🐱‍👤 ninja-style) after saving the form.
+
+### Translations
+- Updated `한국어` (Korean) translation (thanks @drdwing! 🎉)
+- Replaced `Castellano` (`es-ES`) translation with `Español` (`es`) (thanks @wallacemcgregor! 🎉)
+
+## [1.5.0] - 2021-05-31
+> Note: due to the large-scale changes introduced in [Foundry VTT v0.8.6](https://foundryvtt.com/releases/0.8.6) you may experience some 🐛bugs with this release. Please install the [Bug Reporter](https://foundryvtt.com/packages/bug-reporter) module to report issues, or file them on Github directly*
+- Added compatibility for Foundry VTT v0.8.6
+- **Award XP** now features a swish 🌟 new interface for selecting exactly which player and non-player characters are awarded/grant XP. Thanks to @wibble199 for this awesome addition! 🎉
+- Improved the robustness 💪 of some of the logic throughout the module
+- **CUBputer** gadget selector now extends to the title of the gadget, making it more intuitive for new users
+- Slightly improved the alignment of condition rows in **Enhanced Conditions** chat output. Also a border appeared around them somehow...? Let's just go with it!
+- 한국어 (Korean) translation updated! Thanks @drdwing! 🎉
+- 中文 (Chinese) translation updated! Thanks @fuyuennju 🎉
 
 ## [1.4.0] - 2021-02-07
 ### Added

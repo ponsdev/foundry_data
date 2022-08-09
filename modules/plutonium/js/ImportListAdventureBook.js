@@ -1,1 +1,1061 @@
-const _0x14c6=['colLabels','Spells','\x22\x20items\x20together!','log','href','SOURCE_TYP_BREW','PG_VEHICLES','type','PG_TABLES','displayName','_postLoadVetools','pLoadHash','Failed\x20to\x20build\x20journal\x20data!\x20','[name=\x22btn-run\x22]','input[data-source]','_availableEntities','bind','_registerImportableTag','_TAG_WALKER_BLACKLIST','5adAUua','map','checked','slice','head','defaultSource','tag','style','Task','splitTagByPipe','imported','Import\x20Complete','_contentMetadata','pGetHomebrewSources','_pubDate','ImportableTag','_HOMEBREW_OTHER_DATA','PG_ITEMS','161782QdjKqA','_defaultSource','dataProp','page','journal','_dataProp','hash','tableGroup','Custom\x20URL','splitByTags','each','PG_BESTIARY','618082FSXhkl','_fnGetInlineHash','name','@creature','STR_SEE_CONSOLE','_title','displayText','_activateListeners_initCheckboxes','Could\x20not\x20import—one\x20of\x20\x22','contents','Upload\x20File','getData','sourceJsonToColor','pImportEntry','_getData','notifications','Failed\x20to\x20import\x20','fnGetInlineData','...','Imported\x20','IMPORTABLE_TAG_CREATURE','change','pGetUserEnum','/template/ImportListAdventureBook.handlebars','_fnGetUrl','sort','error','activateTab','toTitleCase','getWalker','_importer','count','_availableInlineData','@table','DataSourceUrl','1YluYel','importedId','JournalEntry','_page','708795PWzGSD','values','activateSidebarTab','Choose\x20','_content','_activateListeners_initConfigButtons','$cb','find','_tagCbMetas','walk','Importing...','_getAdditionalContentForTag','sourceJsonToAbv','_pLoadInline','402194XkGGOo','Variant\x20Rules','_brewDataProp','filter','[].data\x22\x20was\x20missing!','SOURCE_TYP_OFFICIAL_SINGLE','length','_pHandleRunButtonClick_pDoPreImport','\x22\x20and\x20\x22','keys','forEach','splitFirstSpace','create','table','49630zbskqJ','sources','533958ouPzQa','get','_getDuplicateMeta','pRunTasks','_pLoad_doActivateTab','ascSortDate','sourceLong','_pHandleRunButtonClick_pDoMainImport','_getJournalDatas','prop','File\x20did\x20not\x20contain\x20importable\x20data—could\x20not\x20link\x20any\x20\x22','_pPostLoadOther','_fnGetInlineData','sourceJsonToFull','@variantrule','getMaxWindowHeight','_getExtractedGenericTag','SYM_AT','activateListeners','getAdventureBookTables','__prop','folderType','_extractTag','\x22\x20was\x20missing!','@item','_pImportEntry_pDoUpdateExistingDirectoryEntity','Unimplemented!','_IMPORTABLE_TAGS','_isActivatedTab','source','toLowerCase','startsWith','_pHandleRunButtonClick','pInit','input[data-type=\x22all\x22]','hover','caption','ascSortLower','fnGetInlineHash','title','_pLoadGenericHash','entries','add','copy','fnGetIndex','push','Failed\x20to\x20pre-process\x20data!\x20','SOURCE_TYP_CUSTOM','PG_VARIANTRULES','MODULE_LOCATION','click','split','Creatures','Importing\x20','883802iBgQoD','_fnGetIndex','getOrSet','_tag','button[data-type=\x22configure\x22]','importer','_displayName','URL_TO_HASH_BUILDER','data','Tables','[].contents\x22\x20and\x20\x22','pHandleEditFolderPathClick','@spell'];const _0x1ce3=function(_0x187b31,_0x18c8c0){_0x187b31=_0x187b31-0xfa;let _0x14c6fd=_0x14c6[_0x187b31];return _0x14c6fd;};const _0x4653b3=_0x1ce3;(function(_0xc7af61,_0x121a6f){const _0x278e4a=_0x1ce3;while(!![]){try{const _0x2d7dd7=-parseInt(_0x278e4a(0x132))*-parseInt(_0x278e4a(0x193))+-parseInt(_0x278e4a(0x170))+-parseInt(_0x278e4a(0xfc))+parseInt(_0x278e4a(0x164))+-parseInt(_0x278e4a(0x1a5))+parseInt(_0x278e4a(0x152))*parseInt(_0x278e4a(0xfa))+parseInt(_0x278e4a(0x197));if(_0x2d7dd7===_0x121a6f)break;else _0xc7af61['push'](_0xc7af61['shift']());}catch(_0x1347b7){_0xc7af61['push'](_0xc7af61['shift']());}}}(_0x14c6,0x6d727));import{ImportList}from'./ImportList.js';import{Vetools}from'./Vetools.js';import{SharedConsts}from'../shared/SharedConsts.js';import{Util,LGT}from'./Util.js';import{ImportListCreature}from'./ImportListCreature.js';import{ImportListSpell}from'./ImportListSpell.js';import{UtilApplications}from'./UtilApplications.js';import{ImportListItem}from'./ImportListItem.js';import{ImportListRollableTable}from'./ImportListRollableTable.js';import{DataConverter}from'./DataConverter.js';import{UtilDataSource}from'./UtilDataSource.js';import{ImportListVariantRule}from'./ImportListVariantRule.js';import{ImportListVehicleUpgrade}from'./ImportListVehicleUpgrade.js';class ImportListAdventureBook extends ImportList{constructor(_0xa58dab,_0x28c9b0,_0x1c9921,_0x1c7b72){const _0x30caa8=_0x1ce3;super({'title':_0xa58dab[_0x30caa8(0x123)],'template':SharedConsts[_0x30caa8(0x12d)]+_0x30caa8(0x187),'width':0x1e0,'height':Util[_0x30caa8(0x10b)](0x280),'resizable':!![]},_0x28c9b0,{..._0x1c9921,'sidebarTab':'journal','gameProp':_0x30caa8(0x168),'folderType':_0x30caa8(0x195),'isNonCacheableInstance':!![]}),this[_0x30caa8(0x133)]=_0x1c7b72[_0x30caa8(0x128)],this[_0x30caa8(0x188)]=_0x1c7b72['fnGetUrl'],this[_0x30caa8(0x169)]=_0x1c7b72[_0x30caa8(0x166)],this['_brewDataProp']=_0x1c7b72['brewDataProp'],this[_0x30caa8(0x175)]=_0x1c7b72[_0x30caa8(0x123)],this[_0x30caa8(0x14e)]=null,this[_0x30caa8(0x190)]=null,this[_0x30caa8(0x19f)]=null;}get['isRadio'](){return!![];}async['pGetSources'](){const _0x51351e=_0x1ce3,_0x119f34=await this['_fnGetIndex'](),_0x31e96f=_0x119f34[this['_dataProp']][_0x51351e(0x189)]((_0x505213,_0x443803)=>SortUtil[_0x51351e(0x101)](_0x443803[_0x51351e(0x160)],_0x505213['_pubDate'])||SortUtil[_0x51351e(0x121)](_0x505213[_0x51351e(0x172)],_0x443803['name']));return[..._0x31e96f['map'](_0x2ffc68=>new UtilDataSource[(_0x51351e(0x192))](_0x2ffc68[_0x51351e(0x172)],this[_0x51351e(0x188)](_0x2ffc68['id']),{'pPostLoad':this[_0x51351e(0x149)][_0x51351e(0x14f)](this),'userData':_0x2ffc68,'filterTypes':[UtilDataSource[_0x51351e(0x1aa)]]})),new UtilDataSource[(_0x51351e(0x192))](_0x51351e(0x16c),'',{'pPostLoad':this[_0x51351e(0x107)]['bind'](this),'filterTypes':[UtilDataSource[_0x51351e(0x12b)]]}),new UtilDataSource['DataSourceFile'](_0x51351e(0x17a),{'pPostLoad':this['_pPostLoadOther']['bind'](this),'filterTypes':[UtilDataSource[_0x51351e(0x12b)]]}),...(await Vetools[_0x51351e(0x15f)](this[_0x51351e(0x169)]))[_0x51351e(0x153)](({name:_0x47fa89,url:_0x42f3d6})=>new UtilDataSource[(_0x51351e(0x192))](_0x47fa89,_0x42f3d6,{'pPostLoad':this[_0x51351e(0x107)]['bind'](this),'filterTypes':[UtilDataSource[_0x51351e(0x144)]]}))];}[_0x4653b3(0x149)](_0x19ad69,_0x35e4fa,_0x122c8f){const _0x1c04fe=_0x4653b3;return _0x19ad69=MiscUtil['copy'](_0x19ad69),_0x19ad69['_contentMetadata']=MiscUtil[_0x1c04fe(0x127)](_0x122c8f),_0x19ad69;}async[_0x4653b3(0x107)](_0x2b31bc){const _0x1eadd4=_0x4653b3;if(!_0x2b31bc[this[_0x1eadd4(0x169)]]||!_0x2b31bc[this[_0x1eadd4(0x1a7)]])return ui[_0x1eadd4(0x17f)][_0x1eadd4(0x18a)]('File\x20did\x20not\x20contain\x20importable\x20data—one\x20of\x20\x22'+this[_0x1eadd4(0x169)]+_0x1eadd4(0x1ad)+this[_0x1eadd4(0x1a7)]+_0x1eadd4(0x113)),null;_0x2b31bc=MiscUtil['copy'](_0x2b31bc);const _0x475718=_0x2b31bc[this[_0x1eadd4(0x169)]]['map'](_0x258e8a=>{const _0x3e3289=_0x1eadd4,_0x5b7ab8=_0x2b31bc[this['_brewDataProp']][_0x3e3289(0x19e)](_0x3c0b34=>_0x3c0b34['id']===_0x258e8a['id']);if(!_0x5b7ab8)return null;return{'head':_0x258e8a,'body':_0x5b7ab8[_0x3e3289(0x13a)]};})[_0x1eadd4(0x1a8)](Boolean);if(!_0x475718['length'])return ui['notifications'][_0x1eadd4(0x18a)](_0x1eadd4(0x106)+this[_0x1eadd4(0x169)]+_0x1eadd4(0x1ad)+this[_0x1eadd4(0x1a7)]+_0x1eadd4(0x141)),null;let _0x4ece29;if(_0x475718['length']===0x1)_0x4ece29=_0x475718[0x0];else{const _0x1e1a93=await InputUiUtil[_0x1eadd4(0x186)]({'values':_0x475718['map'](_0x10ec42=>_0x10ec42[_0x1eadd4(0x156)]['id']),'fnDisplay':_0x204591=>{const _0x69d16f=_0x1eadd4,_0x402485=_0x475718[_0x69d16f(0x19e)](_0x2a4d28=>_0x2a4d28[_0x69d16f(0x156)]['id']===_0x204591);return _0x402485['head'][_0x69d16f(0x172)]+'\x20('+Parser[_0x69d16f(0x1a3)](_0x402485['head'][_0x69d16f(0x119)])+')';},'title':_0x1eadd4(0x19a)+this[_0x1eadd4(0x175)],'default':0x0,'isAllowNull':![],'isResolveItem':!![]});if(_0x1e1a93==null)return null;_0x4ece29=_0x475718[_0x1eadd4(0x19e)](_0x3bcb52=>_0x3bcb52[_0x1eadd4(0x156)]['id']===_0x1e1a93);}const _0x55d5be=MiscUtil['get'](_0x4ece29,'head',_0x1eadd4(0x179)),_0x507bae=MiscUtil[_0x1eadd4(0xfd)](_0x4ece29,'body');if(!_0x55d5be||!_0x507bae)return ui[_0x1eadd4(0x17f)][_0x1eadd4(0x18a)](_0x1eadd4(0x178)+this[_0x1eadd4(0x169)]+_0x1eadd4(0x13c)+this[_0x1eadd4(0x1a7)]+_0x1eadd4(0x1a9)),null;if(_0x55d5be['length']!==_0x507bae['length'])return ui[_0x1eadd4(0x17f)][_0x1eadd4(0x18a)]('Could\x20not\x20import—header\x20and\x20chapter\x20counts\x20differed!'),null;return{'_contentMetadata':_0x4ece29[_0x1eadd4(0x156)],'data':_0x4ece29['body']};}[_0x4653b3(0x17b)](){const _0xfbe131=_0x4653b3;try{return this[_0xfbe131(0x17e)]();}catch(_0x5f868b){ui[_0xfbe131(0x17f)][_0xfbe131(0x18a)](_0xfbe131(0x12a)+VeCt[_0xfbe131(0x174)]);throw _0x5f868b;}}[_0x4653b3(0x17e)](){const _0x454f81=_0x4653b3;this[_0x454f81(0x19b)]=MiscUtil['copy'](this[_0x454f81(0x19b)]),this[_0x454f81(0x14e)]={},this[_0x454f81(0x190)]={};const _0x1a26ce=MiscUtil[_0x454f81(0x18d)]({'keyBlacklist':ImportListAdventureBook['_TAG_WALKER_BLACKLIST']}),_0x568c19={},_0x367a66=this['_content'][_0x454f81(0x15e)]['source']||this[_0x454f81(0x19b)]['_contentMetadata']['id'];Object[_0x454f81(0x198)](ImportListAdventureBook[_0x454f81(0x117)])[_0x454f81(0x1a8)](_0xc0cfbd=>_0xc0cfbd[_0x454f81(0x181)])[_0x454f81(0x1af)](_0x8193b6=>{const _0xc64a56=_0x454f81,_0x32413a={[this[_0xc64a56(0x169)]]:this[_0xc64a56(0x19b)]['_contentMetadata'],[this[_0xc64a56(0x1a7)]]:{'data':this[_0xc64a56(0x19b)][_0xc64a56(0x13a)]}},_0x214d1d={'headProp':this[_0xc64a56(0x169)],'bodyProp':this[_0xc64a56(0x1a7)]};this[_0xc64a56(0x190)][_0x8193b6[_0xc64a56(0x158)]]=_0x8193b6[_0xc64a56(0x181)](_0x32413a,_0x214d1d)[_0xc64a56(0x189)]((_0x4bb911,_0x40c371)=>{const _0xc7e2cc=_0xc64a56;return SortUtil[_0xc7e2cc(0x121)](_0x4bb911['name'],_0x40c371['name'])||SortUtil[_0xc7e2cc(0x121)](Parser[_0xc7e2cc(0x109)](_0x4bb911[_0xc7e2cc(0x119)]||_0x367a66),Parser['sourceJsonToFull'](_0x40c371[_0xc7e2cc(0x119)]||_0x367a66));}),this[_0xc64a56(0x190)][_0x8193b6[_0xc64a56(0x158)]][_0xc64a56(0x1af)](_0x22cb72=>{const _0x16ef49=_0xc64a56,_0x41c2b9=_0x8193b6['fnGetInlineHash'](_0x22cb72);(_0x568c19[_0x8193b6['tag']]=_0x568c19[_0x8193b6[_0x16ef49(0x158)]]||new Set())['add'](_0x41c2b9);});}),this[_0x454f81(0x19b)][_0x454f81(0x13a)]['forEach'](_0x46f858=>{const _0x181e99=_0x454f81,_0x4ddba4={'string':_0x1d807d=>{const _0x379712=_0x1ce3,_0x5e35bd=Renderer[_0x379712(0x16d)](_0x1d807d),_0x34ed89=_0x5e35bd['length'];for(let _0x1a24d1=0x0;_0x1a24d1<_0x34ed89;++_0x1a24d1){const _0x4c0eca=_0x5e35bd[_0x1a24d1];if(!_0x4c0eca)continue;if(!_0x4c0eca[_0x379712(0x11b)]('{@'))continue;const [_0x382866,_0x845904]=Renderer[_0x379712(0x1b0)](_0x4c0eca[_0x379712(0x155)](0x1,-0x1)),_0x42ab7d=ImportListAdventureBook[_0x379712(0x117)][_0x382866];if(!_0x42ab7d)continue;const _0x593bbe=_0x42ab7d['_extractTag'](_0x845904);if(_0x568c19[_0x382866]&&_0x568c19[_0x382866]['has'](_0x593bbe['hash']))continue;(this[_0x379712(0x14e)][_0x382866]=this[_0x379712(0x14e)][_0x382866]||{})[_0x593bbe['source']]=this[_0x379712(0x14e)][_0x382866][_0x593bbe[_0x379712(0x119)]]||new Set(),this[_0x379712(0x14e)][_0x382866][_0x593bbe['source']][_0x379712(0x126)](_0x593bbe[_0x379712(0x16a)]);}return _0x1d807d;}};_0x1a26ce[_0x181e99(0x1a0)](_0x46f858,_0x4ddba4);}),Object[_0x454f81(0x198)](ImportListAdventureBook[_0x454f81(0x117)])[_0x454f81(0x1af)](_0x362eaa=>{const _0x4ad7ed=_0x454f81,_0x38a719=this[_0x4ad7ed(0x1a2)](_0x362eaa[_0x4ad7ed(0x158)]);if(!_0x38a719?.[_0x4ad7ed(0x1ab)])return;_0x38a719[_0x4ad7ed(0x1af)](({source:_0x3b5551,hash:_0x5163f2})=>{const _0x5c98f0=_0x4ad7ed;_0x3b5551=_0x3b5551['toLowerCase']();const _0x1ef65d=MiscUtil[_0x5c98f0(0x134)](this[_0x5c98f0(0x14e)],_0x362eaa[_0x5c98f0(0x158)],_0x3b5551,new Set());_0x1ef65d[_0x5c98f0(0x126)](_0x5163f2);});});const _0x274cba=Object[_0x454f81(0x1ae)](ImportListAdventureBook[_0x454f81(0x117)])[_0x454f81(0x153)](_0x10c18b=>{const _0x16607f=_0x454f81,_0x202e9a=ImportListAdventureBook[_0x16607f(0x117)][_0x10c18b],_0x1700e4=this[_0x16607f(0x14e)][_0x10c18b],_0x544710=this['_availableInlineData'][_0x10c18b],_0x28244b={'displayName':_0x202e9a['displayName'],'tag':_0x10c18b,'sources':[]};_0x1700e4&&_0x28244b['sources']['push'](...Object['entries'](_0x1700e4)[_0x16607f(0x153)](([_0x4f1c6c,_0x4eeead])=>{const _0x4680c8=_0x16607f;return{'sourceLong':Parser[_0x4680c8(0x109)](_0x4f1c6c),'sourceShort':Parser['sourceJsonToAbv'](_0x4f1c6c),'sourceClassName':Parser[_0x4680c8(0x17c)](_0x4f1c6c),'source':_0x4f1c6c,'count':_0x4eeead['size']};}));if(_0x544710&&_0x544710[_0x16607f(0x1ab)]){const _0x43f828=_0x28244b['sources']['find'](_0x4f7be8=>_0x4f7be8['source'][_0x16607f(0x11a)]()===_0x367a66[_0x16607f(0x11a)]());if(_0x43f828)_0x43f828[_0x16607f(0x18f)]+=_0x544710[_0x16607f(0x1ab)];else _0x28244b[_0x16607f(0xfb)][_0x16607f(0x129)]({'sourceLong':Parser['sourceJsonToFull'](_0x367a66),'sourceShort':Parser[_0x16607f(0x1a3)](_0x367a66),'sourceClassName':Parser[_0x16607f(0x17c)](_0x367a66),'source':_0x367a66,'count':_0x544710[_0x16607f(0x1ab)]});}return _0x28244b[_0x16607f(0xfb)][_0x16607f(0x189)]((_0x5b1547,_0x470bb2)=>SortUtil['ascSortLower'](_0x5b1547['sourceLong'],_0x470bb2[_0x16607f(0x102)])),_0x28244b;})[_0x454f81(0x1a8)](_0x3e383e=>_0x3e383e[_0x454f81(0xfb)]['length']);return{'name':this[_0x454f81(0x19b)][_0x454f81(0x15e)][_0x454f81(0x172)],'titleSearch':this['_titleSearch'],'tagSections':_0x274cba};}[_0x4653b3(0x10e)](_0xe64d88){const _0x8be4c6=_0x4653b3;this[_0x8be4c6(0x177)](_0xe64d88),this[_0x8be4c6(0x19c)](_0xe64d88),this['_activateListeners_initRunButton'](_0xe64d88);}[_0x4653b3(0x177)](_0x3c703b){const _0x319dc4=_0x4653b3;this[_0x319dc4(0x19f)]={},_0x3c703b[_0x319dc4(0x19e)](_0x319dc4(0x14d))['each']((_0x4f0004,_0x1a3519)=>{const _0x364912=_0x319dc4,_0x3055e3=$(_0x1a3519),_0x51e0b3=_0x3055e3[_0x364912(0x13a)](_0x364912(0x158)),_0x1e244f=_0x3055e3[_0x364912(0x13a)](_0x364912(0x119));(this[_0x364912(0x19f)][_0x51e0b3]=this[_0x364912(0x19f)][_0x51e0b3]||[])[_0x364912(0x129)]({'source':_0x1e244f,'$cb':_0x3055e3});});const _0x4fe428=_0x3c703b[_0x319dc4(0x19e)](_0x319dc4(0x11e))[_0x319dc4(0x153)]((_0x5cc47c,_0x9f8958)=>{const _0x15f03c=_0x319dc4,_0x7ddd1b=$(_0x9f8958),_0x26b756=_0x7ddd1b['data'](_0x15f03c(0x158));return _0x7ddd1b[_0x15f03c(0x185)](()=>{const _0x5ef4a2=_0x15f03c,_0x1e95e9=_0x7ddd1b[_0x5ef4a2(0x105)](_0x5ef4a2(0x154));this['_tagCbMetas'][_0x26b756][_0x5ef4a2(0x1af)](_0x2ab81d=>_0x2ab81d[_0x5ef4a2(0x19d)][_0x5ef4a2(0x105)](_0x5ef4a2(0x154),_0x1e95e9));}),_0x7ddd1b;})[_0x319dc4(0xfd)](),_0x4b6f6b=_0x3c703b[_0x319dc4(0x19e)]('input[data-type=\x22god\x22]');_0x4b6f6b[_0x319dc4(0x185)](()=>{const _0x554647=_0x319dc4,_0x1bc229=_0x4b6f6b[_0x554647(0x105)](_0x554647(0x154));_0x4fe428[_0x554647(0x1af)](_0xf32c49=>_0xf32c49[_0x554647(0x105)](_0x554647(0x154),_0x1bc229)[_0x554647(0x185)]());});}[_0x4653b3(0x19c)](_0x37a36f){const _0x593941=_0x4653b3;_0x37a36f[_0x593941(0x19e)](_0x593941(0x136))[_0x593941(0x16e)]((_0x3155a1,_0x409af8)=>{const _0x34bebb=_0x593941,_0x532491=$(_0x409af8),_0x1fe795=_0x532491[_0x34bebb(0x13a)](_0x34bebb(0x158)),_0x1b1d89=ImportListAdventureBook['_IMPORTABLE_TAGS'][_0x1fe795];_0x532491[_0x34bebb(0x12e)](async()=>{const _0x38b35f=_0x34bebb;await _0x1b1d89['importer']['pInit'](),await _0x1b1d89[_0x38b35f(0x137)][_0x38b35f(0x13d)]();});});}['_activateListeners_initRunButton'](_0x2ec65e){const _0x19a964=_0x4653b3;_0x2ec65e[_0x19a964(0x19e)](_0x19a964(0x14c))[_0x19a964(0x12e)](async()=>this[_0x19a964(0x11c)]());}async[_0x4653b3(0x11c)](){const _0x350d36=_0x4653b3;this['close'](),console[_0x350d36(0x142)](...LGT,_0x350d36(0x131)+this[_0x350d36(0x169)]+'\x20\x22'+this[_0x350d36(0x19b)]['_contentMetadata'][_0x350d36(0x172)]+'\x22');const _0x3300e1=await this[_0x350d36(0x1ac)]();await this[_0x350d36(0x103)](_0x3300e1);}async[_0x4653b3(0x1ac)](){const _0xc8d810=_0x4653b3,_0x4f40bb={};Object[_0xc8d810(0x125)](this[_0xc8d810(0x19f)])[_0xc8d810(0x1af)](([_0x514ef5,_0x46e346])=>{const _0x5d877d=_0xc8d810,_0x14c0a8=_0x46e346[_0x5d877d(0x1a8)](_0x4925b3=>_0x4925b3[_0x5d877d(0x19d)]['prop'](_0x5d877d(0x154)))[_0x5d877d(0x153)](_0xe48b41=>_0xe48b41[_0x5d877d(0x119)]);if(!_0x14c0a8[_0x5d877d(0x1ab)])return;_0x4f40bb[_0x514ef5]=_0x14c0a8;});const _0x64905={};if(!Object['keys'](_0x4f40bb)[_0xc8d810(0x1ab)])return _0x64905;const _0x27b969=[];for(const [_0x1122a7,_0x23543f]of Object[_0xc8d810(0x125)](_0x4f40bb)){const _0x3ca6c0=_0x64905[_0x1122a7]={},_0x2db6f6=ImportListAdventureBook[_0xc8d810(0x117)][_0x1122a7];for(const _0xb65739 of _0x23543f){const _0x1a8b03=[...MiscUtil[_0xc8d810(0xfd)](this[_0xc8d810(0x14e)],_0x1122a7,_0xb65739)||[]];for(const _0x252c16 of _0x1a8b03){const [_0x5ec4d7,_0xedd442]=_0x252c16[_0xc8d810(0x12f)](HASH_LIST_SEP),_0x12727a=decodeURIComponent(_0x5ec4d7)[_0xc8d810(0x18c)](),_0x5c4839=Parser[_0xc8d810(0x1a3)](_0xedd442);_0x27b969[_0xc8d810(0x129)](new Util[(_0xc8d810(0x15a))](_0x2db6f6[_0xc8d810(0x148)]+':\x20'+_0x12727a+'\x20('+_0x5c4839+')',()=>(async()=>{const _0x51256b=_0xc8d810,{folderType:_0x24f7c8,id:_0x3538a0}=await _0x2db6f6[_0x51256b(0x14a)](_0x252c16);(_0x3ca6c0[_0x1122a7]=_0x3ca6c0[_0x1122a7]||{})[_0x252c16]={'folderType':_0x24f7c8,'importedId':_0x3538a0};})()));}const _0x50764e=[...MiscUtil[_0xc8d810(0xfd)](this['_availableInlineData'],_0x1122a7)||[]];for(const _0x2fe4cb of _0x50764e){_0x27b969[_0xc8d810(0x129)](new Util[(_0xc8d810(0x15a))](_0x2db6f6[_0xc8d810(0x148)]+':\x20'+_0x2fe4cb[_0xc8d810(0x172)]+'\x20('+_0x2fe4cb[_0xc8d810(0x119)]+')',()=>(async()=>{await _0x2db6f6['_pLoadInline'](_0x2fe4cb);})()));}}}return await UtilApplications[_0xc8d810(0xff)](_0x27b969,{'titleInitial':_0xc8d810(0x1a1),'titleComplete':_0xc8d810(0x15d),'fnGetRowRunningText':_0x3e2a6e=>_0xc8d810(0x131)+_0x3e2a6e+_0xc8d810(0x182),'fnGetRowSuccessText':_0x4a5ecb=>_0xc8d810(0x183)+_0x4a5ecb+'.','fnGetRowErrorText':_0x26ac95=>_0xc8d810(0x180)+_0x26ac95+'!\x20'+VeCt[_0xc8d810(0x174)],'isForceClose':!![]}),_0x64905;}async[_0x4653b3(0x103)](_0x170409){const _0x55c0c7=_0x4653b3,_0x1e6746=MiscUtil['getWalker']({'keyBlacklist':ImportListAdventureBook['_TAG_WALKER_BLACKLIST']}),_0x44bde3={'string':_0x3936ed=>{const _0x53b8e6=_0x1ce3,_0x5312ba=Renderer[_0x53b8e6(0x16d)](_0x3936ed),_0x105b51=_0x5312ba['length'];let _0x21623a='';for(let _0x19ffd3=0x0;_0x19ffd3<_0x105b51;++_0x19ffd3){const _0x2856d2=_0x5312ba[_0x19ffd3];if(!_0x2856d2)continue;if(!_0x2856d2[_0x53b8e6(0x11b)]('{@')){_0x21623a+=_0x2856d2;continue;}const [_0x39d319,_0xdf75b2]=Renderer[_0x53b8e6(0x1b0)](_0x2856d2[_0x53b8e6(0x155)](0x1,-0x1)),_0x45bb73=ImportListAdventureBook['_IMPORTABLE_TAGS'][_0x39d319],_0x2e18a8=_0x170409[_0x39d319];if(!_0x45bb73||!_0x2e18a8){_0x21623a+=_0x2856d2;continue;}const _0x5bf932=_0x45bb73[_0x53b8e6(0x112)](_0xdf75b2),_0x3bf588=MiscUtil['get'](_0x2e18a8,_0x39d319,_0x5bf932[_0x53b8e6(0x16a)]);if(!_0x3bf588){_0x21623a+=_0x2856d2;continue;}_0x21623a+=''+DataConverter[_0x53b8e6(0x10d)]+_0x3bf588[_0x53b8e6(0x111)]+'['+_0x3bf588[_0x53b8e6(0x194)]+']{'+_0x5bf932[_0x53b8e6(0x176)]+'}';}return _0x21623a;}};this[_0x55c0c7(0x19b)][_0x55c0c7(0x13a)]=_0x1e6746[_0x55c0c7(0x1a0)](this[_0x55c0c7(0x19b)][_0x55c0c7(0x13a)],_0x44bde3);let _0xba2c21;try{_0xba2c21=this[_0x55c0c7(0x104)]();}catch(_0x5debaa){ui[_0x55c0c7(0x17f)][_0x55c0c7(0x18a)](_0x55c0c7(0x14b)+VeCt[_0x55c0c7(0x174)]);throw _0x5debaa;}const _0x90b1bb=[],_0x46f07d=await this['_pImportEntry_pGetFolderId']({'name':this[_0x55c0c7(0x19b)][_0x55c0c7(0x15e)][_0x55c0c7(0x172)],'source':this[_0x55c0c7(0x19b)][_0x55c0c7(0x15e)][_0x55c0c7(0x119)]},{'sorting':'m'});for(const _0x33bf99 of _0xba2c21){_0x90b1bb['push'](new Util[(_0x55c0c7(0x15a))](_0x33bf99['name'],()=>{const _0xcf5034=_0x55c0c7,_0x596aa0=this[_0xcf5034(0xfe)]({'name':_0x33bf99[_0xcf5034(0x172)]});if(_0x596aa0['isSkip'])return UtilApplications['TASK_EXIT_SKIPPED_DUPLICATE'];if(_0x596aa0['isOverwrite'])return this[_0xcf5034(0x115)](_0x596aa0,_0x33bf99);if(_0x46f07d)_0x33bf99['folder']=_0x46f07d;return JournalEntry[_0xcf5034(0x1b1)](_0x33bf99,{'renderSheet':![],'temporary':![]});}));}ui['sidebar'][_0x55c0c7(0x18b)](_0x55c0c7(0x168)),await UtilApplications[_0x55c0c7(0xff)](_0x90b1bb,{'titleInitial':_0x55c0c7(0x1a1),'titleComplete':_0x55c0c7(0x15d),'fnGetRowRunningText':_0xfc60e8=>_0x55c0c7(0x131)+_0xfc60e8+_0x55c0c7(0x182),'fnGetRowSuccessText':_0x24262f=>_0x55c0c7(0x183)+_0x24262f+'.','fnGetRowErrorText':_0x3bce98=>_0x55c0c7(0x180)+_0x3bce98+'!\x20'+VeCt[_0x55c0c7(0x174)]});}[_0x4653b3(0x104)](){const _0x8efa40=_0x4653b3;throw new Error(_0x8efa40(0x116));}['_getAdditionalContentForTag'](){return null;}static[_0x4653b3(0x150)](_0x33ee2f){const _0x118228=_0x4653b3;this[_0x118228(0x117)][_0x33ee2f['tag']]=_0x33ee2f;}}ImportListAdventureBook[_0x4653b3(0x117)]={},ImportListAdventureBook[_0x4653b3(0x162)]={},ImportListAdventureBook['ImportableTag']=class{constructor(_0x47604){const _0x1015fb=_0x4653b3;this[_0x1015fb(0x138)]=_0x47604['displayName'],this[_0x1015fb(0x135)]=_0x47604[_0x1015fb(0x158)],this['_page']=_0x47604[_0x1015fb(0x167)],this['_defaultSource']=_0x47604[_0x1015fb(0x157)],this[_0x1015fb(0x18e)]=_0x47604[_0x1015fb(0x137)],this[_0x1015fb(0x108)]=_0x47604[_0x1015fb(0x181)],this[_0x1015fb(0x171)]=_0x47604[_0x1015fb(0x122)],this[_0x1015fb(0x118)]=![];}get[_0x4653b3(0x148)](){return this['_displayName'];}get['tag'](){const _0x10d858=_0x4653b3;return this[_0x10d858(0x135)];}get['page'](){const _0x1c548b=_0x4653b3;return this[_0x1c548b(0x196)];}get[_0x4653b3(0x137)](){const _0x4e6d90=_0x4653b3;return this[_0x4e6d90(0x18e)];}get[_0x4653b3(0x181)](){return this['_fnGetInlineData'];}get[_0x4653b3(0x122)](){const _0x4b861f=_0x4653b3;return this[_0x4b861f(0x171)];}[_0x4653b3(0x14a)](_0x307e87){const _0x50a5a6=_0x4653b3;return this[_0x50a5a6(0x100)](),this[_0x50a5a6(0x124)](_0x307e87);}['_pLoad_doActivateTab'](){const _0x1abe90=_0x4653b3;!this['_isActivatedTab']&&(this[_0x1abe90(0x18e)][_0x1abe90(0x199)](),this['_isActivatedTab']=!![]);}async[_0x4653b3(0x124)](_0x429143){const _0x105823=_0x4653b3,[_0x14ced1,_0x3b6295]=_0x429143[_0x105823(0x12f)](HASH_LIST_SEP),_0x45b959=await Renderer[_0x105823(0x11f)]['pCacheAndGet'](this[_0x105823(0x196)],_0x3b6295,_0x429143);await this['_importer'][_0x105823(0x11d)]();const _0x2a5a8f=await this[_0x105823(0x18e)]['pImportEntry'](_0x45b959,{});return{'folderType':this[_0x105823(0x18e)][_0x105823(0x111)],'id':_0x2a5a8f[_0x105823(0x15c)]?.['id'],'hash':_0x429143};}static[_0x4653b3(0x10c)](_0x54dab4,_0x58a746,_0x2d1a6f){const _0xbe75c7=_0x4653b3,[_0x62a711,_0x5d6508,_0x399f34]=Renderer[_0xbe75c7(0x15b)](_0x2d1a6f),_0xc98c3c=(_0x5d6508||_0x58a746)['toLowerCase'](),_0x309195={'name':_0x62a711,'source':_0xc98c3c};return{'source':_0xc98c3c,'displayText':_0x399f34||_0x62a711,'hash':UrlUtil['URL_TO_HASH_BUILDER'][_0x54dab4](_0x309195)};}[_0x4653b3(0x112)](_0x53aeba){const _0x33b043=_0x4653b3;return ImportListAdventureBook[_0x33b043(0x161)]['_getExtractedGenericTag'](this['_page'],this[_0x33b043(0x165)],_0x53aeba);}async[_0x4653b3(0x1a4)](_0xc4822b){const _0x55fefb=_0x4653b3;this['_pLoad_doActivateTab'](),await this[_0x55fefb(0x18e)][_0x55fefb(0x11d)](),await this[_0x55fefb(0x18e)][_0x55fefb(0x17d)](_0xc4822b,{});}},ImportListAdventureBook[_0x4653b3(0x151)]=new Set(['name',_0x4653b3(0x120),_0x4653b3(0x13f),_0x4653b3(0x159),_0x4653b3(0x146),_0x4653b3(0x143),_0x4653b3(0x167)]),ImportListAdventureBook[_0x4653b3(0x184)]={'displayName':_0x4653b3(0x130),'tag':_0x4653b3(0x173),'page':UrlUtil[_0x4653b3(0x16f)],'defaultSource':SRC_MM,'importer':new ImportListCreature()},ImportListAdventureBook[_0x4653b3(0x150)](new ImportListAdventureBook['ImportableTag'](ImportListAdventureBook[_0x4653b3(0x184)])),ImportListAdventureBook[_0x4653b3(0x150)](new ImportListAdventureBook['ImportableTag']({'displayName':_0x4653b3(0x140),'tag':_0x4653b3(0x13e),'page':UrlUtil['PG_SPELLS'],'defaultSource':SRC_PHB,'importer':new ImportListSpell()})),ImportListAdventureBook[_0x4653b3(0x150)](new ImportListAdventureBook[(_0x4653b3(0x161))]({'displayName':'Items','tag':_0x4653b3(0x114),'page':UrlUtil[_0x4653b3(0x163)],'defaultSource':SRC_DMG,'importer':new ImportListItem()})),ImportListAdventureBook[_0x4653b3(0x150)](new ImportListAdventureBook[(_0x4653b3(0x161))]({'displayName':_0x4653b3(0x1a6),'tag':_0x4653b3(0x10a),'page':UrlUtil[_0x4653b3(0x12c)],'defaultSource':SRC_DMG,'importer':new ImportListVariantRule()})),ImportListAdventureBook['_registerImportableTag'](new ImportListAdventureBook['ImportableTag']({'displayName':'Vehicle\x20Upgrades','tag':'@vehupgrade','page':UrlUtil[_0x4653b3(0x145)],'defaultSource':SRC_GoS,'importer':new ImportListVehicleUpgrade()})),ImportListAdventureBook[_0x4653b3(0x150)](new ImportListAdventureBook['ImportableTag']({'displayName':_0x4653b3(0x13b),'tag':_0x4653b3(0x191),'page':UrlUtil['PG_TABLES'],'defaultSource':SRC_DMG,'importer':new ImportListRollableTable(),'fnGetInlineData':(_0x2e57f8,_0x3de9ae)=>{const _0x2e90b5=_0x4653b3,{table:_0x3a9faa,tableGroup:_0x3888a2}=UtilGenTables[_0x2e90b5(0x10f)](_0x2e57f8,_0x3de9ae);return _0x3a9faa[_0x2e90b5(0x1af)](_0x15bd8=>_0x15bd8[_0x2e90b5(0x110)]=_0x2e90b5(0x1b2)),_0x3888a2['forEach'](_0x28d5e1=>_0x28d5e1[_0x2e90b5(0x110)]=_0x2e90b5(0x16b)),[..._0x3a9faa,..._0x3888a2];},'fnGetInlineHash':_0x43a8a2=>{const _0x3e42a2=_0x4653b3;return UrlUtil[_0x3e42a2(0x139)][UrlUtil[_0x3e42a2(0x147)]](_0x43a8a2)[_0x3e42a2(0x11a)]();}}));export{ImportListAdventureBook};
+import {ImportedDocument, ImportList, ImportSummary} from "./ImportList.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {Util, LGT} from "./Util.js";
+import {ImportListCreature} from "./ImportListCreature.js";
+import {ImportListSpell} from "./ImportListSpell.js";
+import {UtilApplications} from "./UtilApplications.js";
+import {ImportListItem} from "./ImportListItem.js";
+import {ImportListRollableTable} from "./ImportListRollableTable.js";
+import {DataConverter} from "./DataConverter.js";
+import {UtilDataSource} from "./UtilDataSource.js";
+import {ImportListVariantRule} from "./ImportListVariantRule.js";
+import {ImportListVehicleUpgrade} from "./ImportListVehicleUpgrade.js";
+import {Config} from "./Config.js";
+import {ConfigConsts} from "./ConfigConsts.js";
+import {UtilFolders} from "./UtilFolders.js";
+import {UtilDocuments} from "./UtilDocuments.js";
+import {UtilAdventureBook} from "./UtilAdventureBook.js";
+
+class ImportListAdventureBook extends ImportList {
+	static get FOLDER_TYPE () { return "JournalEntry"; }
+
+	/**
+	 * @param applicationOpts
+	 * @param externalData
+	 * @param subclassOpts
+	 * @param subSubclassOpts
+	 * @param subSubclassOpts.fnGetIndex
+	 * @param subSubclassOpts.dataProp
+	 * @param subSubclassOpts.brewDataProp
+	 * @param subSubclassOpts.title
+	 */
+	constructor (applicationOpts, externalData, subclassOpts, subSubclassOpts) {
+		super(
+			{
+				title: applicationOpts.title,
+				template: `${SharedConsts.MODULE_LOCATION}/template/ImportListAdventureBook.hbs`,
+				width: 480,
+				height: Util.getMaxWindowHeight(640),
+				resizable: true,
+			},
+			externalData,
+			{
+				...subclassOpts,
+				sidebarTab: "journal",
+				gameProp: "journal",
+				isNonCacheableInstance: true,
+			},
+		);
+
+		this._fnGetIndex = subSubclassOpts.fnGetIndex;
+		this._dataProp = subSubclassOpts.dataProp;
+		this._brewDataProp = subSubclassOpts.brewDataProp;
+		this._title = subSubclassOpts.title;
+
+		// local fields
+		this._availableEntities = null;
+		this._availableInlineData = null;
+		this._tagCbMetas = null;
+		this._imageGroupCbMetas = null;
+		this._availableMaps = {};
+		this._entryIdToMap = {};
+		this._entryIdToName = {};
+	}
+
+	// Only ever allow a single adventure/book to be imported in one instance
+	get isRadio () { return true; }
+
+	async _pGetSources () {
+		const index = await this._fnGetIndex();
+
+		const data = index[this._dataProp]
+			.sort((a, b) => SortUtil.ascSortDate(b._pubDate, a._pubDate) || SortUtil.ascSortLower(a.name, b.name));
+
+		return [
+			...data.map(it => new UtilDataSource.DataSourceUrl(
+				it.name,
+				it._url,
+				{
+					pPostLoad: this._postLoadVetools.bind(this),
+					userData: it,
+					filterTypes: [UtilDataSource.SOURCE_TYP_OFFICIAL_SINGLE],
+					source: it.source,
+				}),
+			),
+			new UtilDataSource.DataSourceUrl(
+				"Custom URL",
+				"",
+				{
+					pPostLoad: this._pPostLoadOther.bind(this),
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			new UtilDataSource.DataSourceFile(
+				"Upload File",
+				{
+					pPostLoad: this._pPostLoadOther.bind(this),
+					filterTypes: [UtilDataSource.SOURCE_TYP_CUSTOM],
+				},
+			),
+			...(await this._pGetSourcesHomebrew({pPostLoad: this._pPostLoadOther.bind(this)})),
+		];
+	}
+
+	_postLoadVetools (data, file, userData) {
+		data = MiscUtil.copy(data);
+		data._contentMetadata = MiscUtil.copy(userData);
+		return data;
+	}
+
+	async _pPostLoadOther (data) {
+		if (!data[this._dataProp] || !data[this._brewDataProp]) {
+			ui.notifications.error(`File did not contain importable data\u2014one of "${this._dataProp}" and "${this._brewDataProp}" was missing!`);
+			return null;
+		}
+
+		data = MiscUtil.copy(data);
+
+		const importableTuples = data[this._dataProp].map(head => {
+			const body = data[this._brewDataProp].find(it => it.id === head.id);
+			if (!body) return null;
+			return {
+				head,
+				body: body.data,
+			};
+		}).filter(Boolean);
+
+		if (!importableTuples.length) {
+			ui.notifications.error(`File did not contain importable data\u2014could not link any "${this._dataProp}" and "${this._brewDataProp}" items together!`);
+			return null;
+		}
+
+		let chosenTuple;
+		if (importableTuples.length === 1) chosenTuple = importableTuples[0];
+		else {
+			const chosenId = await InputUiUtil.pGetUserEnum({
+				values: importableTuples.map(it => it.head.id),
+				fnDisplay: value => {
+					const indexItem = importableTuples.find(it => it.head.id === value);
+					return `${indexItem.head.name} (${Parser.sourceJsonToAbv(indexItem.head.source)})`;
+				},
+				title: `Choose ${this._title}`,
+				default: 0,
+				isAllowNull: false,
+				isResolveItem: true,
+			});
+
+			if (chosenId == null) return null;
+
+			chosenTuple = importableTuples.find(it => it.head.id === chosenId);
+		}
+
+		const headContents = MiscUtil.get(chosenTuple, "head", "contents");
+		const bodyData = MiscUtil.get(chosenTuple, "body");
+		if (!headContents || !bodyData) {
+			ui.notifications.error(`Could not import\u2014one of "${this._dataProp}[].contents" and "${this._brewDataProp}[].data" was missing!`);
+			return null;
+		}
+
+		if (headContents.length !== bodyData.length) {
+			ui.notifications.error(`Could not import\u2014header and chapter counts differed!`);
+			return null;
+		}
+
+		return {
+			_contentMetadata: chosenTuple.head,
+			data: chosenTuple.body,
+		};
+	}
+
+	getFolderPathMeta () {
+		return {
+			...super.getFolderPathMeta(),
+			published: {
+				label: "Publication Date (Full)",
+				getter: it => {
+					if (!it.published) return "\u2014";
+					const date = new Date(it.published);
+					return DatetimeUtil.getDateStr({date});
+				},
+			},
+			publishedFull: {
+				label: "Publication Date (Short)",
+				getter: it => {
+					if (!it.published) return "\u2014";
+					return it.published;
+				},
+			},
+			publishedYear: {
+				label: "Publication Year",
+				getter: it => {
+					if (!it.published) return "\u2014";
+					return new Date(it.published).getFullYear();
+				},
+			},
+		};
+	}
+
+	getData () {
+		try {
+			return this._getData();
+		} catch (e) {
+			ui.notifications.error(`Failed to pre-process data! ${VeCt.STR_SEE_CONSOLE}`);
+			throw e;
+		}
+	}
+
+	_getData () {
+		this._content = MiscUtil.copy(this._content);
+
+		this._availableEntities = {};
+		this._availableInlineData = {};
+
+		const tagWalker = MiscUtil.getWalker({
+			keyBlacklist: ImportListAdventureBook._TAG_WALKER_BLACKLIST,
+		});
+
+		// Track any hashes we've effectively found in inline data already, and avoid re-importing them
+		const fromInline = {};
+
+		const source = this._content[0]._contentMetadata.source || this._content[0]._contentMetadata.id;
+
+		// region Synthetic entities from inline data
+		Object.values(ImportListAdventureBook._IMPORTABLE_TAGS)
+			.filter(it => it.fnGetInlineData && it.fnGetInlineHash)
+			.forEach(importable => {
+				const pack = {
+					[this._dataProp]: this._content[0]._contentMetadata,
+					[this._brewDataProp]: {data: this._content[0].data},
+				};
+				const nxtOpts = {
+					headProp: this._dataProp,
+					bodyProp: this._brewDataProp,
+				};
+
+				const hashes = new Set();
+				this._availableInlineData[importable.tag] = importable.fnGetInlineData(pack, nxtOpts)
+					.sort((a, b) => {
+						return SortUtil.ascSortLower(a.name, b.name)
+							|| SortUtil.ascSortLower(Parser.sourceJsonToFull(a.source || source), Parser.sourceJsonToFull(b.source || source));
+					})
+					.filter(it => {
+						const hash = importable.fnGetInlineHash(it);
+						// This is iffy--e.g. multiple tables from the same adventure may have the same name.
+						//   Leave it disabled until we find a compelling case for/against (then make it a config option?).
+						// if (hashes.has(hash)) return false;
+						hashes.add(hash);
+						return true;
+					});
+
+				fromInline[importable.tag] = hashes;
+			});
+		// endregion
+
+		// region References to entities
+		this._content[0].data.forEach((chapter, ixChapter) => {
+			const handlers = {
+				string: (str) => {
+					const tagSplit = Renderer.splitByTags(str);
+					const len = tagSplit.length;
+					for (let i = 0; i < len; ++i) {
+						const s = tagSplit[i];
+						if (!s) continue;
+						if (!s.startsWith("{@")) continue;
+
+						const [tag, text] = Renderer.splitFirstSpace(s.slice(1, -1));
+						const importableTag = ImportListAdventureBook._IMPORTABLE_TAGS[tag];
+						if (!importableTag) continue;
+
+						const extractedTag = importableTag._extractTag(text);
+						if (!extractedTag) continue;
+
+						if (fromInline[tag] && fromInline[tag].has(extractedTag.hash)) continue;
+
+						(this._availableEntities[tag] = this._availableEntities[tag] || {})[extractedTag.source] =
+							this._availableEntities[tag][extractedTag.source] || new Set();
+						this._availableEntities[tag][extractedTag.source].add(extractedTag.hash);
+					}
+					return str;
+				},
+				object: (obj, lastKey, stack) => {
+					UtilAdventureBook.doProcessNode_mutAddMaps({
+						availableMaps: this._availableMaps,
+						entryIdToMap: this._entryIdToMap,
+						entryIdToName: this._entryIdToName,
+						entry: obj,
+						entryStack: stack,
+						source,
+						chapterInfo: this._content[0]._contentMetadata.contents?.[ixChapter],
+					});
+					return obj;
+				},
+			};
+
+			tagWalker.walk(chapter, handlers, undefined, []);
+		});
+		// endregion
+
+		// Post-processing step to add names to maps
+		UtilAdventureBook.mutMapNames({availableMaps: this._availableMaps, entryIdToMap: this._entryIdToMap, entryIdToName: this._entryIdToName});
+
+		Object.values(ImportListAdventureBook._IMPORTABLE_TAGS)
+			.forEach(importable => {
+				const additionalContent = this._getAdditionalContentForTag(importable.tag);
+				if (!additionalContent?.length) return;
+
+				additionalContent.forEach(({source, hash}) => {
+					source = source.toLowerCase();
+					const tgt = MiscUtil.getOrSet(this._availableEntities, importable.tag, source, new Set());
+					tgt.add(hash);
+				});
+			});
+
+		const tagSections = Object.entries(ImportListAdventureBook._IMPORTABLE_TAGS)
+			.map(([tag, importableMeta]) => {
+				const sourceMetas = this._availableEntities[tag];
+				const inlineData = this._availableInlineData[tag];
+
+				const out = {
+					displayName: importableMeta.displayName,
+					tag,
+					sources: [],
+				};
+
+				if (sourceMetas) {
+					out.sources.push(
+						...Object.entries(sourceMetas)
+							.map(([src, set]) => {
+								return {
+									sourceLong: Parser.sourceJsonToFull(src),
+									sourceShort: Parser.sourceJsonToAbv(src),
+									sourceClassName: Parser.sourceJsonToColor(src),
+									sourceStyle: BrewUtil2.sourceJsonToStylePart(src),
+									source: src,
+									count: set.size,
+								};
+							}),
+					);
+				}
+
+				if (inlineData && inlineData.length) {
+					const existingSource = out.sources.find(it => it.source.toLowerCase() === source.toLowerCase());
+
+					if (existingSource) existingSource.count += inlineData.length;
+					else {
+						out.sources.push({
+							sourceLong: Parser.sourceJsonToFull(source),
+							sourceShort: Parser.sourceJsonToAbv(source),
+							sourceClassName: Parser.sourceJsonToColor(source),
+							sourceStyle: BrewUtil2.sourceJsonToStylePart(source),
+							source,
+							count: inlineData.length,
+						});
+					}
+				}
+
+				out.sources.sort((a, b) => SortUtil.ascSortLower(a.sourceLong, b.sourceLong));
+
+				return out;
+			})
+			.filter(it => it.sources.length);
+
+		const imageGroupSections = Object.values(ImportListAdventureBook._IMPORTABLE_IMAGE_TYPES)
+			.map(it => it.group)
+			.unique()
+			.map(group => {
+				const importableImageTypes = Object.values(ImportListAdventureBook._IMPORTABLE_IMAGE_TYPES)
+					.filter(it => it.group === group);
+				if (!importableImageTypes.length) return null;
+
+				const imageTypeMetas = importableImageTypes
+					.map(({imageType, displayName}) => {
+						const count = Object.values(this._availableMaps[imageType] || {}).length;
+						if (!count) return null;
+
+						return {
+							imageType,
+							displayName,
+							count,
+						};
+					})
+					.filter(Boolean);
+				if (!imageTypeMetas.length) return null;
+
+				return {
+					group,
+					groupNamePlural: importableImageTypes[0].groupNamePlural,
+					imageTypeMetas,
+				};
+			})
+			.filter(Boolean);
+
+		return {
+			name: this._content[0]._contentMetadata.name,
+			titleSearch: this._titleSearch,
+			tagSections,
+			imageGroupSections,
+		};
+	}
+
+	async _renderInner_custom ($html) {
+		this._renderInner_initCheckboxes($html);
+		this._renderInner_initConfigButtons($html);
+		this._renderInner_initRunButton($html);
+	}
+
+	_renderInner_initCheckboxes ($html) {
+		this._tagCbMetas = {};
+		this._imageGroupCbMetas = {};
+
+		// region Tags
+		// Per-tag per-source checkboxes
+		$html.find(`input[data-tag][data-source]`).each((i, e) => {
+			const $cb = $(e);
+
+			const tag = $cb.data("tag");
+			const source = $cb.data("source");
+
+			(this._tagCbMetas[tag] = this._tagCbMetas[tag] || []).push({
+				source,
+				$cb,
+			});
+		});
+
+		// Per-tag "select all" checkboxes
+		const $cbsAllTag = $html.find(`input[data-tag][data-type="all"]`).map((i, e) => {
+			const $cb = $(e);
+			const tag = $cb.data("tag");
+			$cb.change(() => {
+				const toVal = $cb.prop("checked");
+				this._tagCbMetas[tag].forEach(meta => meta.$cb.prop("checked", toVal));
+			});
+			return $cb;
+		}).get();
+		// endregion
+
+		// region Image groups
+		// Per-tag image group checkboxes
+		$html.find(`input[data-image-group][data-image-type]`).each((i, e) => {
+			const $cb = $(e);
+
+			const imageGroup = $cb.data("image-group");
+			const imageType = $cb.data("image-type");
+
+			(this._imageGroupCbMetas[imageGroup] = this._imageGroupCbMetas[imageGroup] || []).push({
+				imageType,
+				$cb,
+			});
+		});
+
+		const $cbsAllImageGroup = $html.find(`input[data-image-group][data-type="all"]`).map((i, e) => {
+			const $cb = $(e);
+			const imageGroup = $cb.data("image-group");
+			$cb.change(() => {
+				const toVal = $cb.prop("checked");
+				this._imageGroupCbMetas[imageGroup].forEach(meta => meta.$cb.prop("checked", toVal));
+			});
+			return $cb;
+		}).get();
+		// endregion
+
+		// "God" checkbox
+		const $cbGod = $html.find(`input[data-type="god"]`);
+		$cbGod.change(() => {
+			const toVal = $cbGod.prop("checked");
+			$cbsAllTag.forEach($cb => $cb.prop("checked", toVal).change());
+			$cbsAllImageGroup.forEach($cb => $cb.prop("checked", toVal).change());
+		});
+	}
+
+	_renderInner_initConfigButtons ($html) {
+		const doBindConfigButtons = ({dataType, dataProp, lookup, pFnGetImporter}) => {
+			$html.find(`button[data-type="${dataType}"]`).each((i, e) => {
+				const $btn = $(e);
+				const key = $btn.data(dataProp);
+
+				$btn.click(async () => {
+					const importer = pFnGetImporter ? await pFnGetImporter() : lookup[key].importer;
+					await importer.pInit();
+					await importer.pHandleEditFolderPathClick();
+				});
+			});
+		};
+
+		// Per-tag "open config" buttons
+		doBindConfigButtons({
+			dataType: "configure-tag",
+			dataProp: "tag",
+			lookup: ImportListAdventureBook._IMPORTABLE_TAGS,
+		});
+
+		doBindConfigButtons({
+			dataType: "configure-image",
+			pFnGetImporter: () => this.constructor._getImportListMap(),
+		});
+	}
+
+	_renderInner_initRunButton ($html) {
+		$html.find(`[name="btn-run"]`).click(async () => this._pHandleRunButtonClick());
+	}
+
+	async _pHandleRunButtonClick () {
+		this.close();
+
+		console.log(...LGT, `Importing ${this._dataProp} "${this._content[0]._contentMetadata.name}"`);
+
+		const runInfo = new ImportListAdventureBook._RunInfo();
+
+		const preloadedTagMetas = await this._pHandleRunButtonClick_pDoPreImport({runInfo});
+		if (runInfo.isCancelled) return;
+		const entryIdToJournalId = await this._pHandleRunButtonClick_pDoMainImport({preloadedTagMetas, runInfo});
+		if (runInfo.isCancelled) return;
+		await this._pHandleRunButtonClick_pDoPostImport({entryIdToJournalId, runInfo});
+	}
+
+	async _pHandleRunButtonClick_pDoPreImport ({runInfo}) {
+		const loadedEntityInfos = {};
+
+		const taskListTags = await this._pHandleRunButtonClick_pGetTaskListTags({loadedEntityInfos});
+
+		if (!taskListTags.length) return loadedEntityInfos;
+
+		const runner = await UtilApplications.pRunTasks(
+			taskListTags,
+			{
+				titleInitial: "Importing...",
+				titleComplete: "Import Complete",
+				fnGetRowRunningText: (taskName) => `Importing ${taskName}...`,
+				fnGetRowSuccessText: (taskName) => `Imported ${taskName}.`,
+				fnGetRowErrorText: (taskName) => `Failed to import ${taskName}! ${VeCt.STR_SEE_CONSOLE}`,
+				// Force close this progress box, as we'll open another one for the main content later
+				isForceClose: true,
+			},
+		);
+		if (runner.isCancelled) return runInfo.isCancelled = runner.isCancelled;
+
+		return loadedEntityInfos;
+	}
+
+	async _pHandleRunButtonClick_pGetTaskListTags ({loadedEntityInfos}) {
+		const toImportTagSources = {};
+
+		Object.entries(this._tagCbMetas).forEach(([tag, metas]) => {
+			const activeSources = metas.filter(meta => meta.$cb.prop("checked")).map(meta => meta.source);
+			if (!activeSources.length) return;
+
+			toImportTagSources[tag] = activeSources;
+		});
+
+		const taskList = [];
+
+		for (const [tag, sources] of Object.entries(toImportTagSources)) {
+			const loaded = (loadedEntityInfos[tag] = {});
+			const importableTag = ImportListAdventureBook._IMPORTABLE_TAGS[tag];
+
+			for (const source of sources) {
+				// Import from hashes
+				const hashes = new Set([...(MiscUtil.get(this._availableEntities, tag, source) || [])]);
+				for (const hash of hashes) {
+					const [rawName, rawSource] = hash.split(HASH_LIST_SEP);
+					const prettyName = decodeURIComponent(rawName).toTitleCase();
+					const prettySource = Parser.sourceJsonToAbv(rawSource);
+
+					taskList.push(new Util.Task(
+						`${importableTag.displayName}: ${prettyName} (${prettySource})`,
+						() => (async () => {
+							const {folderType, id: importedId} = await importableTag.pLoadHash(hash);
+							(loaded[tag] = loaded[tag] || {})[hash] = {folderType, importedId};
+						})(),
+					));
+				}
+			}
+
+			// Import from inline data
+			const inlines = [...(MiscUtil.get(this._availableInlineData, tag) || [])];
+			for (const inline of inlines) {
+				taskList.push(new Util.Task(
+					`${importableTag.displayName}: ${inline.name} (${inline.source})`,
+					() => (async () => {
+						// Don't save the folder ID/imported IDs from these, as they will appear inline in the
+						//   imported data regardless.
+						await importableTag._pLoadInline(inline);
+					})(),
+				));
+			}
+		}
+
+		return taskList;
+	}
+
+	async _pHandleRunButtonClick_pGetTaskListImageGroups ({entryIdToJournalId}) {
+		const toImportImageTypes = {};
+
+		Object.entries(this._imageGroupCbMetas).forEach(([imageGroup, metas]) => {
+			const activeImageTypes = metas.filter(meta => meta.$cb.prop("checked")).map(meta => meta.imageType);
+			if (!activeImageTypes.length) return;
+
+			toImportImageTypes[imageGroup] = activeImageTypes;
+		});
+
+		let importListMap;
+		const taskList = [];
+
+		for (const imageTypes of Object.values(toImportImageTypes)) {
+			for (const imageType of imageTypes) {
+				const importableImageType = ImportListAdventureBook._IMPORTABLE_IMAGE_TYPES[imageType];
+
+				const urlToEntry = this._availableMaps[imageType];
+				for (const entry of Object.values(urlToEntry)) {
+					if (!importListMap) importListMap = await this.constructor._getImportListMap();
+
+					const task = new Util.Task(
+						`${importableImageType.groupName || importableImageType.group}: ${entry.name}`,
+						() => {
+							return importListMap.pImportEntry(
+								entry,
+								{
+									entryIdToJournalId,
+								},
+							);
+						},
+					);
+					taskList.push(task);
+				}
+			}
+		}
+
+		return taskList;
+	}
+
+	static async _getImportListMap () {
+		const {ImportListMap} = await import("./ImportListMap.js");
+		const importListMap = new ImportListMap();
+		await importListMap.pInit();
+		return importListMap;
+	}
+
+	async _pHandleRunButtonClick_pDoMainImport ({preloadedTagMetas, runInfo}) {
+		const tagWalker2 = MiscUtil.getWalker({
+			keyBlacklist: ImportListAdventureBook._TAG_WALKER_BLACKLIST,
+		});
+
+		const handlers = {
+			string: (str) => {
+				const tagSplit = Renderer.splitByTags(str);
+				const len = tagSplit.length;
+
+				let stack = "";
+				for (let i = 0; i < len; ++i) {
+					const s = tagSplit[i];
+					if (!s) continue;
+
+					if (!s.startsWith("{@")) {
+						stack += s;
+						continue;
+					}
+
+					const [tag, text] = Renderer.splitFirstSpace(s.slice(1, -1));
+					const importableTag = ImportListAdventureBook._IMPORTABLE_TAGS[tag];
+					const preloadedMeta = preloadedTagMetas[tag];
+
+					if (!importableTag || !preloadedMeta) {
+						stack += s;
+						continue;
+					}
+
+					const extractedTag = importableTag._extractTag(text);
+					if (!extractedTag) {
+						stack += s;
+						continue;
+					}
+
+					const preloaded = MiscUtil.get(preloadedMeta, tag, extractedTag.hash);
+
+					if (!preloaded) {
+						stack += s;
+						continue;
+					}
+
+					// e.g. `@Actor[myId]{myDisplayText}`
+					//   Encode the initial "@" as this temp string to ensure the renderer doesn't get the wrong idea
+					stack += `${DataConverter.SYM_AT}${preloaded.folderType}[${preloaded.importedId}]{${extractedTag.displayText}}`;
+				}
+
+				return stack;
+			},
+		};
+
+		this._content[0].data = tagWalker2.walk(this._content[0].data, handlers);
+
+		let wrappedJournalDatas;
+		try {
+			wrappedJournalDatas = await this._pGetJournalDatas();
+		} catch (e) {
+			ui.notifications.error(`Failed to build journal data! ${VeCt.STR_SEE_CONSOLE}`);
+			throw e;
+		}
+
+		const folderIdRoot = await this._pImportEntry_pGetFolderId({
+			name: this._content[0]._contentMetadata.name,
+			source: this._content[0]._contentMetadata.source,
+			published: this._content[0]._contentMetadata.published,
+		}, {sorting: "m"});
+
+		const finalizeLinkLookup = {};
+		const entryIdToJournalId = {};
+
+		const taskList = [];
+		for (const wrappedJournalData of wrappedJournalDatas) {
+			const task = new Util.Task(
+				wrappedJournalData.journalEntry.name,
+				() => this._pImportWrappedJournalData({finalizeLinkLookup, entryIdToJournalId, folderIdRoot, wrappedJournalData}),
+			);
+			taskList.push(task);
+		}
+
+		const finalizeTask = new Util.Task(
+			`Finalizing`,
+			async () => {
+				if (Object.keys(finalizeLinkLookup).length) {
+					const reLink = new RegExp(`%${SharedConsts.MODULE_NAME_FAKE}_(\\d+)__(\\d+)_${SharedConsts.MODULE_NAME_FAKE}%`, "gi");
+					const linkType = Config.get("journalEntries", "isEnableJournalEmbeds") && Config.get(this._configGroup, "isUseJournalEmbeds") ? `EmbedJournalEntry` : `JournalEntry`;
+
+					for (const metaChapters of Object.values(finalizeLinkLookup)) {
+						for (const journalEntry of Object.values(metaChapters)) {
+							const contentNxt = journalEntry.data.content.replace(reLink, (...m) => {
+								const [, ixChapterRaw, ixFlatRaw] = m;
+
+								const linkedJournalEntry = finalizeLinkLookup[ixChapterRaw]?.[ixFlatRaw];
+
+								return `@${linkType}[${linkedJournalEntry?.id}]`;
+							});
+
+							if (contentNxt !== journalEntry.data.content) await UtilDocuments.pUpdateDocument(journalEntry, {content: contentNxt});
+						}
+					}
+				}
+			},
+		);
+		taskList.push(finalizeTask);
+
+		ui.sidebar.activateTab("journal");
+
+		const runner = await UtilApplications.pRunTasks(
+			taskList,
+			{
+				titleInitial: "Importing...",
+				titleComplete: "Import Complete",
+				fnGetRowRunningText: (taskName) => taskName === `Finalizing` ? `${taskName}...` : `Importing ${taskName}...`,
+				fnGetRowSuccessText: (taskName) => taskName === `Finalizing` ? `Finalized.` : `Imported ${taskName}.`,
+				fnGetRowErrorText: (taskName) => taskName === `Finalizing` ? `Failed to finalize!` : `Failed to import ${taskName}! ${VeCt.STR_SEE_CONSOLE}`,
+			},
+		);
+		if (runner.isCancelled) return runInfo.isCancelled = runner.isCancelled;
+
+		if (runner.isCancelled) {
+			runInfo.isCancelled = runner.isCancelled;
+			return entryIdToJournalId;
+		}
+
+		return entryIdToJournalId;
+	}
+
+	async _pImportWrappedJournalData ({finalizeLinkLookup, entryIdToJournalId, folderIdRoot, wrappedJournalData}) {
+		const {journalEntry, folderNames} = wrappedJournalData;
+
+		const duplicateMetaOpts = {name: journalEntry.name};
+		if (
+			Config.get(this._configGroup, "journalEntrySplitMode") === ConfigConsts.C_IMPORT_ADVBOOK_JOURNAL_SPLIT_STRATEGY_CHAPTER
+			|| Config.get(this._configGroup, "isOrderingPrefixJournalNames")
+		) {
+			// For the basic case, or when we're using fully-qualified named, just match by name + source
+			duplicateMetaOpts.flags = {[SharedConsts.MODULE_NAME_FAKE]: {source: journalEntry.flags[SharedConsts.MODULE_NAME_FAKE].source}};
+		} else {
+			// Otherwise, match by flags
+			duplicateMetaOpts.flags = {
+				[SharedConsts.MODULE_NAME_FAKE]: {
+					source: journalEntry.flags[SharedConsts.MODULE_NAME_FAKE].source,
+					ixChapter: journalEntry.flags[SharedConsts.MODULE_NAME_FAKE].ixChapter,
+					ixFlat: journalEntry.flags[SharedConsts.MODULE_NAME_FAKE].ixFlat,
+				},
+			};
+		}
+
+		const duplicateMeta = Object.keys(duplicateMetaOpts).length ? this._getDuplicateMeta(duplicateMetaOpts) : null;
+		if (duplicateMeta?.isSkip) {
+			const entryIds = duplicateMeta.existing?.data?.flags?.[SharedConsts.MODULE_NAME_FAKE]?.entryIds || [];
+			entryIds.forEach(id => entryIdToJournalId[id] = duplicateMeta.existing.id);
+
+			return new ImportSummary({
+				status: UtilApplications.TASK_EXIT_SKIPPED_DUPLICATE,
+				imported: [
+					new ImportedDocument({
+						document: duplicateMeta.existing,
+						isExisting: true,
+					}),
+				],
+			});
+		}
+
+		if (duplicateMeta?.isOverwrite) {
+			const entryIds = duplicateMeta.existing?.data?.flags?.[SharedConsts.MODULE_NAME_FAKE]?.entryIds || [];
+			entryIds.forEach(id => entryIdToJournalId[id] = duplicateMeta.existing.id);
+
+			return this._pImportEntry_pDoUpdateExistingDirectoryEntity(duplicateMeta, journalEntry);
+		}
+
+		let folderId = folderIdRoot;
+		if (folderNames?.length) {
+			folderId = await UtilFolders.pCreateFoldersGetId({
+				folderType: this.constructor.FOLDER_TYPE,
+				folderIdRoot,
+				folderNames,
+				sorting: "m",
+			});
+		}
+		if (folderId) journalEntry.folder = folderId;
+
+		const createdEntry = await JournalEntry.create(journalEntry, {renderSheet: false, temporary: false});
+
+		const flags = createdEntry?.data?.flags?.[SharedConsts.MODULE_NAME_FAKE];
+		if (flags) (finalizeLinkLookup[flags.ixChapter] = finalizeLinkLookup[flags.ixChapter] || {})[flags.ixFlat] = createdEntry;
+
+		const entryIds = createdEntry?.data?.flags?.[SharedConsts.MODULE_NAME_FAKE]?.entryIds || [];
+		entryIds.forEach(id => entryIdToJournalId[id] = createdEntry.id);
+	}
+
+	async _pHandleRunButtonClick_pDoPostImport ({entryIdToJournalId, runInfo}) {
+		const taskListImageGroups = await this._pHandleRunButtonClick_pGetTaskListImageGroups({entryIdToJournalId});
+
+		if (!taskListImageGroups.length) return;
+
+		const runner = await UtilApplications.pRunTasks(
+			taskListImageGroups,
+			{
+				titleInitial: "Importing...",
+				titleComplete: "Import Complete",
+				fnGetRowRunningText: (taskName) => `Importing ${taskName}...`,
+				fnGetRowSuccessText: (taskName) => `Imported ${taskName}.`,
+				fnGetRowErrorText: (taskName) => `Failed to import ${taskName}! ${VeCt.STR_SEE_CONSOLE}`,
+				// Force close this progress box, as we leave the main one open
+				isForceClose: true,
+			},
+		);
+		if (runner.isCancelled) return runInfo.isCancelled = runner.isCancelled;
+	}
+
+	/**
+	 * @return {Promise}
+	 */
+	async _pGetJournalDatas () {
+		throw new Error(`Unimplemented!`);
+	}
+
+	/** Optionally return a list of `{source: "<source>>", hash: "<hash>"}` */
+	_getAdditionalContentForTag () { return null; }
+
+	static _registerImportableTag (importableTagInstance) {
+		this._IMPORTABLE_TAGS[importableTagInstance.tag] = importableTagInstance;
+	}
+
+	static _registerImportableImageType (importableImageTypeInstance) {
+		this._IMPORTABLE_IMAGE_TYPES[importableImageTypeInstance.imageType] = importableImageTypeInstance;
+	}
+}
+ImportListAdventureBook._IMPORTABLE_TAGS = {};
+ImportListAdventureBook._IMPORTABLE_IMAGE_TYPES = {};
+ImportListAdventureBook._HOMEBREW_OTHER_DATA = {};
+
+ImportListAdventureBook._RunInfo = class {
+	constructor () {
+		this.isCancelled = false;
+	}
+};
+
+ImportListAdventureBook.ImportableTag = class {
+	constructor (opts) {
+		this._displayName = opts.displayName;
+		this._tag = opts.tag;
+		this._props = opts.props;
+		this._page = opts.page;
+		this._defaultSource = opts.defaultSource;
+		this._importer = opts.importer;
+		this._fnGetInlineData = opts.fnGetInlineData;
+		this._fnGetInlineHash = opts.fnGetInlineHash;
+
+		// local fields
+		this._isActivatedTab = false;
+	}
+
+	get displayName () { return this._displayName; }
+	get tag () { return this._tag; }
+	get page () { return this._page; }
+	get importer () { return this._importer; }
+	get fnGetInlineData () { return this._fnGetInlineData; }
+	get fnGetInlineHash () { return this._fnGetInlineHash; }
+
+	pLoadHash (hash) {
+		this._pLoad_doActivateTab();
+		return this._pLoadGenericHash(hash);
+	}
+
+	_pLoad_doActivateTab () {
+		// Avoid repeatedly activating the same sidebar tab, as it requires a jQuery selector lookup each time
+		if (!this._isActivatedTab) {
+			this._importer.activateSidebarTab();
+			this._isActivatedTab = true;
+		}
+	}
+
+	async _pLoadGenericHash (hash) {
+		const [, source] = hash.split(HASH_LIST_SEP);
+
+		// Error out if the entity is not found; this is done in its own task, so will not crash the entire import
+		const entity = await Renderer.hover.pCacheAndGet(this._page, source, hash, {isRequired: true});
+
+		await this._importer.pInit();
+		const importSummary = await this._importer.pImportEntry(entity, {});
+
+		return {
+			folderType: this._importer.constructor.FOLDER_TYPE,
+			id: importSummary.imported?.[0]?.document?.id,
+			hash,
+		};
+	}
+
+	static _getExtractedGenericTag (page, defaultSource, tag) {
+		const [name, rawSource, rawDisplayText] = Renderer.splitTagByPipe(tag);
+		const source = (rawSource || defaultSource).toLowerCase();
+		const hashEnt = {name, source};
+		return {
+			source,
+			displayText: rawDisplayText || name,
+			hash: UrlUtil.URL_TO_HASH_BUILDER[page](hashEnt),
+		};
+	}
+
+	_extractTag (tag) {
+		const out = ImportListAdventureBook.ImportableTag._getExtractedGenericTag(this._page, this._defaultSource, tag);
+		// Note: this is a brute-force bodge. As an @tag can map to multiple data properties (e.g. "@item" maps to "item",
+		//   "baseitem", etc.), and we don't want to load every single linked entity here (for performance reasons), we
+		//   have no other choice but to loop through the potential props for each tagged UID. This isn't _too_ bad, as
+		//   hashes should be unique within the context of each @tag, so we should not expect any false positives.
+		const isExcluded = this._props.some(prop => ExcludeUtil.isExcluded(out.hash, prop, out.source, {isNoCount: true}));
+		if (isExcluded) return null;
+		return out;
+	}
+
+	async _pLoadInline (inline) {
+		this._pLoad_doActivateTab();
+		await this._importer.pInit();
+		await this._importer.pImportEntry(inline, {});
+	}
+};
+
+ImportListAdventureBook.ImportableImageType = class {
+	constructor ({group, groupName, groupNamePlural, displayName, imageType}) {
+		this._group = group;
+		this._groupName = groupName;
+		this._groupNamePlural = groupNamePlural;
+		this._displayName = displayName;
+		this._imageType = imageType;
+	}
+
+	get group () { return this._group; }
+	get groupName () { return this._groupName; }
+	get groupNamePlural () { return this._groupNamePlural; }
+	get displayName () { return this._displayName; }
+	get imageType () { return this._imageType; }
+};
+
+ImportListAdventureBook._TAG_WALKER_BLACKLIST = new Set([
+	"name",
+	"caption",
+	"colLabels",
+	"style",
+	"type",
+	"href",
+	"page",
+]);
+
+ImportListAdventureBook.IMPORTABLE_TAG_CREATURE = {
+	displayName: "Creatures",
+	tag: "@creature",
+	props: ["monster"],
+	page: UrlUtil.PG_BESTIARY,
+	defaultSource: SRC_MM,
+	importer: new ImportListCreature(),
+};
+ImportListAdventureBook._registerImportableTag(new ImportListAdventureBook.ImportableTag(ImportListAdventureBook.IMPORTABLE_TAG_CREATURE));
+
+ImportListAdventureBook._registerImportableTag(new ImportListAdventureBook.ImportableTag({
+	displayName: "Spells",
+	tag: "@spell",
+	props: ["spell"],
+	page: UrlUtil.PG_SPELLS,
+	defaultSource: SRC_PHB,
+	importer: new ImportListSpell(),
+}));
+
+ImportListAdventureBook._registerImportableTag(new ImportListAdventureBook.ImportableTag({
+	displayName: "Items",
+	tag: "@item",
+	props: ["item", "baseitem", "magicvariant", "itemGroup"],
+	page: UrlUtil.PG_ITEMS,
+	defaultSource: SRC_DMG,
+	importer: new ImportListItem(),
+}));
+
+ImportListAdventureBook._registerImportableTag(new ImportListAdventureBook.ImportableTag({
+	displayName: "Variant Rules",
+	tag: "@variantrule",
+	props: ["variantrule"],
+	page: UrlUtil.PG_VARIANTRULES,
+	defaultSource: SRC_DMG,
+	importer: new ImportListVariantRule(),
+}));
+
+ImportListAdventureBook._registerImportableTag(new ImportListAdventureBook.ImportableTag({
+	displayName: "Vehicle Upgrades",
+	tag: "@vehupgrade",
+	props: ["vehicleUpgrade"],
+	page: UrlUtil.PG_VEHICLES,
+	defaultSource: SRC_GoS,
+	importer: new ImportListVehicleUpgrade(),
+}));
+
+ImportListAdventureBook._registerImportableTag(new ImportListAdventureBook.ImportableTag({
+	displayName: "Tables",
+	tag: "@table",
+	props: ["table", "tableGroup"],
+	page: UrlUtil.PG_TABLES,
+	defaultSource: SRC_DMG,
+	importer: new ImportListRollableTable(),
+	fnGetInlineData: (pack, opts) => {
+		const {table: inlineTables, tableGroup: inlineTableGroups} = UtilGenTables.getAdventureBookTables(pack, opts);
+		inlineTables.forEach(it => it.__prop = "table");
+		inlineTableGroups.forEach(it => it.__prop = "tableGroup");
+		return [...inlineTables, ...inlineTableGroups];
+	},
+	fnGetInlineHash: it => {
+		return UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_TABLES](it).toLowerCase();
+	},
+}));
+
+ImportListAdventureBook._registerImportableImageType(new ImportListAdventureBook.ImportableImageType({
+	group: "maps",
+	groupName: "Map",
+	groupNamePlural: "Maps",
+	displayName: "Map",
+	imageType: "map",
+}));
+
+ImportListAdventureBook._registerImportableImageType(new ImportListAdventureBook.ImportableImageType({
+	group: "maps",
+	groupName: "Map",
+	groupNamePlural: "Maps",
+	displayName: "Player Map",
+	imageType: "mapPlayer",
+}));
+
+export {ImportListAdventureBook};

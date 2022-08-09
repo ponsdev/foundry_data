@@ -1,4 +1,36 @@
 # Changelog
+### v1.2.7 - 15-03-2022
+Fixes issue 26 - Movement becomes bugged after first pop-up window for player
+
+### v1.2.6 - 24-02-2022
+Fixes crashing scene in rendering which leads to not all tokens placed correctly when 3+ players are involved in scene change (Second attempt)
+
+### v1.2.5 - 22-02-2022
+Revert non-working changes
+
+### v1.2.4 - 22-02-2022
+Fixes crashing scene in rendering which leads to not all tokens placed correctly when 3+ players are involved in scene change
+
+### v1.2.3 - 20-02-2022
+Fixes error when saving non-owned token positions due to Foundry permission system
+
+### v1.2.2 - 06-01-2022
+Added localisation: Deutsch (German)<br />
+Added localisation: Italian
+
+### v1.2.1 - 03-01-2022
+Maintainer change. Corresponding changes to Readme and manifest.
+
+### v1.2.0 - 02-01-2022
+Changes for compatibility Foundry v9
+
+### v1.1.5 - 31-05-2021
+Additions:
+-Added option to always block combat movement, even when it's the token's turn
+
+Other:
+-Added compatibility for Foundry 0.8.6
+
 ### v1.1.4 - 25-02-2021
 Additions
 -Added control button to quickly enable or disable movement blocking during combat

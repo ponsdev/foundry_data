@@ -11,7 +11,7 @@
     border: none;
     pointer-events: none;
     flex: 0 0 40px;
-    height: 40px;
+    height: 44px;
     z-index: 30;
     margin-bottom: 8px;
     display:none;
@@ -34,7 +34,7 @@
 #navigation .monks-scene-navigation .scene-list {
     display: flex !important;
     flex-direction: row;
-    padding: 2px;
+    padding: 5px 4px 2px 4px;
     border-radius: 4px;
     margin: 0px;
     margin-bottom: 2px;
@@ -43,11 +43,12 @@
 #navigation.background .monks-scene-navigation .scene-list {
     border: 1px solid #3a00ae;
     background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 5px;
 }
 #navigation.background.ui .monks-scene-navigation .scene-list {
     border-color: var(--tertiary);
 }
-#navigation.background.collapsed .monks-scene-navigation .scene-list{
+#navigation.collapsed .monks-scene-navigation .scene-list{
     display:none !important;
 }
 #navigation .monks-scene-navigation.opening .scene-list {
@@ -82,6 +83,12 @@
     max-width: 150px;
 }
 
+/*
+#navigation .monks-scene-navigation .scene-list > li.folder.expanded {
+    margin-left: 4px;
+}
+*/
+
 #navigation .monks-scene-navigation .scene-list > li:last-child {
     min-width: 150px;
     margin-right: 0px;
@@ -107,8 +114,20 @@
     padding-right: 4px;
 }
 
+#navigation:not(.background) .monks-scene-navigation .scene-list > li.folder-header {
+    border: 1px solid #3a00ae;
+    line-height: 32px;
+    height:32px;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
 #navigation.ui .monks-scene-navigation .scene-list > li.folder-header {
     border-right-color: var(--tertiary);
+}
+
+#navigation:not(.background) .monks-scene-navigation .scene-list > li.folder-header {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 #navigation .monks-scene-navigation .scene-list > li a {
@@ -138,11 +157,20 @@
 #navigation .monks-scene-navigation .scene-list > li.folder a {
     background: #111;
     padding-top: 4px;
-    border-top:5px solid #000;
+    border-top: 5px solid #3a00ae;
+    border-left: 1px solid #3a00ae;
+    border-right: 1px solid #3a00ae;
 }
 
 #navigation .monks-scene-navigation .scene-list > li.folder.expanded a {
-    height: 46px;
+    /*height: 46px;*/
+    height: 38px;
+    margin-top: 9px;
+    background: #222;
+}
+
+#navigation:not(.background) .monks-scene-navigation .scene-list > li.folder.expanded a {
+    height: 38px;
 }
 
 #navigation.background .monks-scene-navigation .scene-list > li.folder.expanded a {
@@ -234,17 +262,17 @@
     color: #fff;
 }
 
-.sidebar-directory .directory-item.scene h3 a {
+.sidebar-tab.directory .directory-item.scene h3 > a {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 5px 10px;
     border-radius: 4px;
 }
 
-.sidebar-directory .directory-item.scene h3 a i{
-    margin-right:4px;
+.sidebar-tab.directory .directory-item.scene h3 a i {
+    margin-right: 4px;
 }
 
-.sidebar-directory .directory-item.scene h3 .permissions {
+.sidebar-tab.directory .directory-item.scene h3 .permissions {
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 0px;
@@ -256,16 +284,20 @@
     line-height: 14px;
 }
 
-.sidebar-directory .directory-item.scene h3 .permissions i {
+.sidebar-tab.directory .directory-item.scene h3 .permissions > a {
+    line-height: 19px;
+}
+
+.sidebar-tab.directory .directory-item.scene h3 .permissions i {
     font-size: 13px;
     text-shadow: 1px 1px 3px #000;
 }
 
-.sidebar-directory .directory-item.scene h3 .permissions:empty {
+.sidebar-tab.directory .directory-item.scene h3 .permissions:empty {
     display: none;
 }
 
-.sidebar-directory .directory-item.scene h3 .permissions div {
+.sidebar-tab.directory .directory-item.scene h3 .permissions div {
     width: 16px;
     height: 16px;
     display: inline-block;
@@ -279,7 +311,34 @@
     text-shadow: none;
 }
 
-.sidebar-directory .directory-item.scene h3 .permissions i + div,
-.sidebar-directory .directory-item.scene h3 .permissions i + i {
+.sidebar-tab.directory .directory-item.scene h3 .permissions i + div,
+.sidebar-tab.directory .directory-item.scene h3 .permissions i + i {
     margin-left: 5px;
+}
+
+.sidebar-tab.directory .directory-item.scene:not(.navigate) h3 .fa-compass {
+    color: #808080;
+}
+
+/*
+#navigation .monks-scene-navigation + .monks-scene-navigation .scene-list {
+    margin-left: 8px;
+}
+#navigation .monks-scene-navigation + .monks-scene-navigation + .monks-scene-navigation .scene-list {
+    margin-left: 16px;
+}
+#navigation .monks-scene-navigation + .monks-scene-navigation + .monks-scene-navigation + .monks-scene-navigation .scene-list {
+    margin-left: 24px;
+}
+#navigation .monks-scene-navigation + .monks-scene-navigation + .monks-scene-navigation + .monks-scene-navigation + .monks-scene-navigation .scene-list {
+    margin-left: 32px;
+}
+#navigation .monks-scene-navigation + .monks-scene-navigation + .monks-scene-navigation + .monks-scene-navigation + .monks-scene-navigation + .monks-scene-navigation .scene-list {
+    margin-left: 40px;
+}
+    */
+
+#navigation .monks-scene-navigation:not(:first-child) .scene-list {
+    border-right-width: 4px;
+    border-left-width: 4px;
 }

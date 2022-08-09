@@ -1,1 +1,43 @@
-const _0x5dcd=['1049126QymXSL','3rSdvQP','1327140nLFycR','$.prototype.animate','register','1831101yvwZeZ','633CTtFKz','number','241WecjbK','length','MODULE_NAME','_getNextArgs','duration','isFastAnimations','init','object','894867tXKEiq','332qoOjqW','761PjmSBA','291329AStedM'];const _0x8afa=function(_0x189256,_0x1d102f){_0x189256=_0x189256-0x107;let _0x5dcd06=_0x5dcd[_0x189256];return _0x5dcd06;};const _0x21b1c3=_0x8afa;(function(_0x337c10,_0x38264d){const _0x14ee2a=_0x8afa;while(!![]){try{const _0x394428=parseInt(_0x14ee2a(0x10f))*parseInt(_0x14ee2a(0x111))+-parseInt(_0x14ee2a(0x115))+-parseInt(_0x14ee2a(0x10c))+parseInt(_0x14ee2a(0x112))+parseInt(_0x14ee2a(0x110))+-parseInt(_0x14ee2a(0x10e))*-parseInt(_0x14ee2a(0x118))+parseInt(_0x14ee2a(0x116))*parseInt(_0x14ee2a(0x10d));if(_0x394428===_0x38264d)break;else _0x337c10['push'](_0x337c10['shift']());}catch(_0x2e5500){_0x337c10['push'](_0x337c10['shift']());}}}(_0x5dcd,0xe0152));import{libWrapper,UtilLibWrapper}from'./PatcherLibWrapper.js';import{SharedConsts}from'../shared/SharedConsts.js';import{Config}from'./Config.js';class Patcher_Jquery{static[_0x21b1c3(0x10a)](){const _0x54450b=_0x21b1c3;libWrapper[_0x54450b(0x114)](SharedConsts[_0x54450b(0x11a)],_0x54450b(0x113),function(_0x24a8e1,..._0x4adcc6){const _0x3d49a2=_0x54450b;return _0x24a8e1(...Patcher_Jquery[_0x3d49a2(0x107)](..._0x4adcc6));},UtilLibWrapper['LIBWRAPPER_MODE_WRAPPER']);}static[_0x21b1c3(0x107)](..._0x10f807){const _0x11fdb0=_0x21b1c3;let _0x5024ec=[..._0x10f807];if(Config['get']('ui',_0x11fdb0(0x109)))for(let _0x4c1ed8=0x0;_0x4c1ed8<_0x5024ec[_0x11fdb0(0x119)];++_0x4c1ed8){const _0x115557=_0x5024ec[_0x4c1ed8];if(typeof _0x115557===_0x11fdb0(0x10b)&&_0x115557[_0x11fdb0(0x108)]!=null){if(_0x115557[_0x11fdb0(0x108)]>0x21)_0x115557[_0x11fdb0(0x108)]=0x21;break;}else{if(typeof _0x115557===_0x11fdb0(0x117)){if(_0x115557>0x21)_0x5024ec[_0x4c1ed8]=0x21;break;}}}return _0x5024ec;}}export{Patcher_Jquery};
+import {UtilLibWrapper} from "./PatcherLibWrapper.js";
+import {Config} from "./Config.js";
+
+class Patcher_Jquery {
+	static init () {
+		UtilLibWrapper.addPatch(
+			"$.prototype.animate",
+			this._lw_$_prototype_animate,
+			UtilLibWrapper.LIBWRAPPER_MODE_WRAPPER,
+		);
+	}
+
+	static _lw_$_prototype_animate (fn, ...args) {
+		return fn(...Patcher_Jquery._getNextArgs(...args));
+	}
+
+	static _getNextArgs (...args) {
+		let nxtArgs = [...args];
+
+		if (Config.get("ui", "isFastAnimations")) {
+			for (let i = 0; i < nxtArgs.length; ++i) {
+				const arg = nxtArgs[i];
+
+				// This mysteriously breaks when going to lower numbers
+				//   Therefore, limit it to "numbers above 33," in case lower numbers have special meaning
+				//   It may be that there exists a race condition between this and e.g. saving sheet state,
+				//   which would explain things like "opening a token sheet, closing it, then updating the health of
+				//   the token causes the sheet to re-open" existing.
+				if (typeof arg === "object" && arg.duration != null) {
+					if (arg.duration > 33) arg.duration = 33;
+					break;
+				} else if (typeof arg === "number") {
+					if (arg > 33) nxtArgs[i] = 33;
+					break;
+				}
+			}
+		}
+
+		return nxtArgs;
+	}
+}
+
+export {Patcher_Jquery};

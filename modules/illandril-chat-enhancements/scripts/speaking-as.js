@@ -6,14 +6,27 @@ const CSS_CURRENT_SPEAKER = CSS_PREFIX + 'currentSpeaker';
 const currentSpeakerDisplay = document.createElement('div');
 currentSpeakerDisplay.classList.add(CSS_CURRENT_SPEAKER);
 
-const speakerOptions = [];
-currentSpeakerDisplay.addEventListener(
-  'contextmenu',
-  (event) => {
-    speakerOptions.splice(0, speakerOptions.length);
-    const actors = game.actors.entities.filter(
-      (a) => a.hasPerm(game.user, 'OWNER') && utils.hasTokenOnSheet(a)
+function updateSpeaker() {
+  currentSpeakerDisplay.innerText = game.i18n.format('illandril-chat-enhancements.currentSpeaker', {
+    name: ChatMessage.getSpeaker().alias,
+  });
+}
+
+Hooks.once('renderChatLog', () => {
+  const chatControls = document.getElementById('chat-controls');
+  chatControls.parentNode.insertBefore(currentSpeakerDisplay, chatControls);
+
+  const currentSpeakerToggleMenu = new ContextMenu(
+    $(chatControls.parentNode),
+    '.' + CSS_CURRENT_SPEAKER,
+    []
+  );
+  const originalRender = currentSpeakerToggleMenu.render.bind(currentSpeakerToggleMenu);
+  currentSpeakerToggleMenu.render = (...args) => {
+    const actors = game.actors.contents.filter(
+      (a) => a.isOwner && utils.hasTokenOnSheet(a)
     );
+    const speakerOptions = [];
     for (let actor of actors) {
       speakerOptions.push({
         name: actor.name,
@@ -23,25 +36,10 @@ currentSpeakerDisplay.addEventListener(
         },
       });
     }
-  },
-  false
-);
+    currentSpeakerToggleMenu.menuItems = speakerOptions;
+    originalRender(...args);
+  };
 
-function updateSpeaker() {
-  currentSpeakerDisplay.innerText = game.i18n.format('illandril-chat-enhancements.currentSpeaker', {
-    name: ChatMessage.getSpeaker().alias,
-  });
-}
-
-Hooks.once('ready', () => {
-  const chatControls = document.getElementById('chat-controls');
-  chatControls.parentNode.insertBefore(currentSpeakerDisplay, chatControls);
-
-  const currentSpeakerToggleMenu = new ContextMenu(
-    $(chatControls.parentNode),
-    '.' + CSS_CURRENT_SPEAKER,
-    speakerOptions
-  );
 
   updateSpeaker();
 

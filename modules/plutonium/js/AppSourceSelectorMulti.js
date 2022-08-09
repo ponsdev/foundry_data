@@ -1,49 +1,799 @@
-const _0xc227=['addItem','filter','Failed\x20to\x20read\x20file!\x20','includes','text','_filterBox','focus','isDefault','_reject','_props','url','toggleVe','pGetUrlOutputs','_handleAccept_pGetUrlOutputs','_pUserInput','<input\x20type=\x22file\x22\x20accept=\x22.json\x22\x20class=\x22ve-hidden\x22>','_$getStageNone','trim','values','41EOLohz','<div\x20class=\x22w-100\x20italic\x20','Custom\x20Url','<div\x20class=\x22flex-col\x20mb-1\x20w-100\x22>\x0a\x09\x09\x09<div\x20class=\x22flex-v-center\x22><i>Select\x20a\x20source\x20to\x20view\x20import\x20options</i></div>\x0a\x09\x09\x09<hr\x20class=\x22hr-1\x22>\x0a\x09\x09</div>','No\x20sources\x20selected!','isRadio','1sujYFr','indexOf','pGetElements','_getFilterTypesIcon','createElement','toDisplay','flat','filters','_triggerCollectionUpdate','cbSel','SOURCE_TYP_CUSTOM','title','target','sourcesToDisplay','_handleAccept_pGetSpecialOutput','_resolve','get','318499Ohcfib','Type','isCustom','_sortTypeFilterItems','SOURCE_TYP_ARCANA','\x22></div>','state','addEventListener','<i\x20class=\x22fab\x20fa-d-and-d\x20mr-1\x20sourceAL\x22\x20title=\x22','getValues','notifications','_filterNamespace','placeholder','item','pGetUserBoolean','_addHookAll','htmlToNode','_pPopulateBoxOptions','addToFilters','close','_handleAccept_pGetFileOutputs','disable','SOURCE_TYP_OFFICIAL_ALL','isFile','$wrpRow','3bNaFfg','pInitFilterBox','has','<i\x20class=\x22fas\x20fa-vial\x20mr-1\x20sourceSpicy\x22\x20title=\x22','_typeFilter','_pageFilter','640961wJxwlr','AppSourceSelectorMulti__massSelectionWarning','displayName','uploadedFileMetas','row\x20imp-wiz__row\x20veapp__list-row-hoverable\x20flex-v-center\x20','JSON\x20URL','checked','<div\x20class=\x22fltr__mini-view\x20btn-group\x22></div>','warn','bindSelectAllCheckbox','readAsText','className','appendTo','AppSourceSelectorAppFilter','Select\x20Sources','5617gxAsjA','_pGetElements_pGetListElements','pAddToHomebrew','handlePostClose','_sourcesToDisplay','ascSort','val','_$getStageUrl','SOURCE_TYP_OFFICIAL_SINGLE','264971rvveUp','addToHomebrewSourceLookup','text-sneaky','Enter\x20JSON\x20URL','getMaxWindowHeight','_comp','map','_sortListItems','change','101138zBZSyr','length','_state','addClass','key','$getIptStr','cacheKey','push','<span\x20class=\x22col-11-5\x22>','items','disabled','toObject','_$stgUrl','_pGetInitialSources','compareListNames','Cancel','teardown','savedSelectionKey','data','pSet','filterBox','1dETTfB','pDoMetaMerge','click','549540OYCEkA','<i\x20class=\x22fas\x20fa-question-circle\x20ve-muted\x20mr-1\x22\x20title=\x22','_$getStageSpecial','getCustomUrls','SOURCE_TYP_UNKNOWN','86358hMySXy','comp','_$stgSpecial','$iptUrl','_addHookBase','<button\x20class=\x22btn\x20btn-5et\x22\x20title=\x22Toggle\x20Filter\x20Summary\x20Display\x22><span\x20class=\x22glyphicon\x20glyphicon-resize-small\x22></span></button>','identifier','<span\x20class=\x22col-0-5\x20flex-vh-center\x22></span>','Failed\x20to\x20load\x20sources!\x20','name','uid','<div\x20class=\x22flex-col\x20w-100\x22></div>','Enter','_isRadio','showVe','_pGetOutputEntities','contents','_getRenderedCollection','_handleFilterChange','list-multi-selected','min','SOURCE_TYPE_ORDER','isShowCustomUrlForm','_detachCollection','\x22></i>','pGetSelectedSources','activateListeners','_$stgUpload','constructor','files','_savedSelectionKey','specialMetas','<button\x20class=\x22btn\x20btn-5et\x20btn-default\x20btn-xs\x22>Add\x20Custom</button>','mutateAndAddToFilters','hideVe','append','_$getStageUpload','_renderCollection','_list','parse','empty','</span>','error','parent','isStreamerMode','<button\x20class=\x22btn\x20btn-5et\x20btn-default\x20btn-xs\x22>Add\x20File</button>','keydown','initBtnSortHandlers','_$stgNone','<button\x20class=\x22btn\x20btn-5et\x20btn-xs\x20mr-1\x22>Upload\x20File</button>','<input\x20type=\x22checkbox\x22\x20class=\x22no-events\x22>','filterTypes','handlePreClose','STR_SEE_CONSOLE','urlMetas','fromObject','<i\x20class=\x22fas\x20fa-user\x20ve-muted\x20mr-1\x22\x20title=\x22','<i\x20class=\x22fas\x20fa-beer\x20mr-1\x20sourceHomebrew\x22\x20title=\x22','pWaitForUserInput','_proxyAssignSimple','pGet','pageFilter','some'];const _0x4a45=function(_0x118db1,_0x24dc9d){_0x118db1=_0x118db1-0xb8;let _0xc2275c=_0xc227[_0x118db1];return _0xc2275c;};const _0x4a67be=_0x4a45;(function(_0x6dca7c,_0x2ca18f){const _0xe9e429=_0x4a45;while(!![]){try{const _0x5694f6=-parseInt(_0xe9e429(0x121))+parseInt(_0xe9e429(0x104))*-parseInt(_0xe9e429(0xdd))+-parseInt(_0xe9e429(0xe3))+-parseInt(_0xe9e429(0xfb))*-parseInt(_0xe9e429(0x179))+parseInt(_0xe9e429(0x11c))+-parseInt(_0xe9e429(0x119))*-parseInt(_0xe9e429(0xc4))+-parseInt(_0xe9e429(0x173))*-parseInt(_0xe9e429(0xf2));if(_0x5694f6===_0x2ca18f)break;else _0x6dca7c['push'](_0x6dca7c['shift']());}catch(_0x4576fe){_0x6dca7c['push'](_0x6dca7c['shift']());}}}(_0xc227,0x5131e));import{SharedConsts}from'../shared/SharedConsts.js';import{Util}from'./Util.js';import{Config}from'./Config.js';import{Vetools}from'./Vetools.js';import{AppFilter}from'./FilterApplications.js';import{UtilDataSource}from'./UtilDataSource.js';class AppSourceSelectorMulti extends Application{constructor(_0x182a1b){const _0x306e9b=_0x4a45;super({'title':_0x182a1b[_0x306e9b(0xbe)]||_0x306e9b(0xf1),'width':0x320,'template':SharedConsts['MODULE_LOCATION']+'/template/AppSourceSelectorMulti.handlebars','height':Util[_0x306e9b(0xff)](),'resizable':!![]}),this[_0x306e9b(0xf6)]=_0x182a1b[_0x306e9b(0xc0)],this[_0x306e9b(0x13f)]=_0x182a1b[_0x306e9b(0x115)],this[_0x306e9b(0xcf)]=_0x182a1b['filterNamespace'],this[_0x306e9b(0x169)]=_0x182a1b['props'],this[_0x306e9b(0x12e)]=!!_0x182a1b[_0x306e9b(0x178)],this['_list']=null,this[_0x306e9b(0xe2)]=null,this[_0x306e9b(0x151)]=null,this[_0x306e9b(0x13c)]=null,this[_0x306e9b(0x110)]=null,this[_0x306e9b(0x123)]=null,this[_0x306e9b(0x100)]=BaseComponent[_0x306e9b(0x158)]({'uploadedFileMetas':[],'isShowCustomUrlForm':![],'urlMetas':[],'specialMetas':[]}),this[_0x306e9b(0xc2)]=null,this['_reject']=null,this[_0x306e9b(0x16e)]=null;}get[_0x4a67be(0x15e)](){const _0x1c5c7d=_0x4a67be;return this[_0x1c5c7d(0xe2)];}get['uploadedFiles'](){const _0x23efd2=_0x4a67be;return this[_0x23efd2(0x100)][_0x23efd2(0x106)]['uploadedFileMetas'][_0x23efd2(0x101)](_0xdb2829=>_0xdb2829[_0x23efd2(0x116)][_0x23efd2(0x131)]);}[_0x4a67be(0x13a)](){const _0xb267f=_0x4a67be;if(!this[_0xb267f(0x147)])return this['_pGetInitialSources']();return this[_0xb267f(0x147)][_0xb267f(0x10d)][_0xb267f(0x161)](_0x449891=>_0x449891['data']['cbSel'][_0xb267f(0xe9)])[_0xb267f(0x101)](_0x396b33=>this[_0xb267f(0xf6)][_0x396b33['ix']]);}async[_0x4a67be(0x17b)](_0x1510ea,_0x5c20c1){const _0x4c5dd7=_0x4a67be;return this[_0x4c5dd7(0xf3)](_0x1510ea,_0x5c20c1);}[_0x4a67be(0x170)](){const _0x2a6d3d=_0x4a67be;return $(_0x2a6d3d(0x176));}[_0x4a67be(0x145)](){const _0x14e1b8=_0x4a67be,_0xea73a3=$(_0x14e1b8(0x14e))[_0x14e1b8(0x11b)](()=>{const _0x494b95=_0x14e1b8,_0x5430ca={'id':CryptUtil['uid'](),'data':{'name':null,'contents':null}};this[_0x494b95(0x100)][_0x494b95(0x106)][_0x494b95(0xe6)]=[...this[_0x494b95(0x100)]['_state'][_0x494b95(0xe6)],_0x5430ca];const _0xa220e0=this[_0x494b95(0x100)][_0x494b95(0x132)]({'prop':_0x494b95(0xe6)}),_0xebe663=_0xa220e0[_0x5430ca['id']];_0xebe663['$btnUpload'][_0x494b95(0x11b)]();}),_0x4f19fd=$('<div\x20class=\x22flex-col\x20w-100\x22></div>'),_0x3d0f41=$$`<div class="flex-col w-100 py-1">
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {Util} from "./Util.js";
+import {Config} from "./Config.js";
+import {Vetools} from "./Vetools.js";
+import {AppFilter} from "./FilterApplications.js";
+import {UtilDataSource} from "./UtilDataSource.js";
+
+/**
+ * Can either be used as a standalone application, or used to generate pre-wired elements to insert into other UI.
+ */
+class AppSourceSelectorMulti extends Application {
+	/**
+	 * @param opts
+	 * @param opts.title
+	 * @param opts.sourcesToDisplay
+	 * @param opts.savedSelectionKey
+	 * @param opts.filterNamespace
+	 * @param [opts.props] Props to map the loaded data to.
+	 * @param [opts.isRadio] If the source list should use radio boxes rather than checkboxes.
+	 *
+	 * @param [opts.isDedupable]
+	 * @param [opts.page]
+	 * @param [opts.fnGetDedupedData]
+	 * @param [opts.fnGetBlacklistFilteredData]
+	 */
+	constructor (opts) {
+		super({
+			title: opts.title || "Select Sources",
+			width: 800,
+			template: `${SharedConsts.MODULE_LOCATION}/template/AppSourceSelectorMulti.hbs`,
+			height: Util.getMaxWindowHeight(),
+			resizable: true,
+		});
+
+		this._sourcesToDisplay = opts.sourcesToDisplay;
+		this._savedSelectionKey = opts.savedSelectionKey;
+		this._filterNamespace = opts.filterNamespace;
+		this._props = opts.props;
+		this._isRadio = !!opts.isRadio;
+
+		this._list = null;
+		this._pageFilter = null;
+
+		this._$stgNone = null;
+		this._$stgUpload = null;
+		this._$stgUrl = null;
+		this._$stgSpecial = null;
+
+		this._comp = BaseComponent.fromObject({
+			uploadedFileMetas: [],
+
+			isShowCustomUrlForm: false,
+			urlMetas: [],
+
+			specialMetas: [],
+		});
+
+		// region Used in standalone app mode
+		this._isDedupable = !!opts.isDedupable;
+		this._page = opts.page;
+		this._fnGetDedupedData = opts.fnGetDedupedData;
+		this._fnGetBlacklistFilteredData = opts.fnGetBlacklistFilteredData;
+
+		this._resolve = null;
+		this._reject = null;
+		this._pUserInput = null;
+		// endregion
+	}
+
+	get pageFilter () { return this._pageFilter; }
+	get uploadedFiles () { return this._comp._state.uploadedFileMetas.map(it => it.data.contents); }
+	pGetSelectedSources () {
+		if (!this._list) return this._pGetInitialSources();
+		return this._list.items.filter(it => it.data.cbSel.checked).map(li => this._sourcesToDisplay[li.ix]);
+	}
+
+	async pGetElements ($wrpList, cbSourceChange) {
+		return this._pGetElements_pGetListElements($wrpList, cbSourceChange);
+	}
+
+	_$getStageNone () {
+		return $(`<div class="ve-flex-col mb-1 w-100">
+			<div class="ve-flex-v-center"><i>Select a source to view import options</i></div>
+			<hr class="hr-1">
+		</div>`);
+	}
+
+	/**
+	 * This assumes that, at most, a single "file upload" source is present in the list.
+	 */
+	_$getStageUpload () {
+		const $btnAddUpload = $(`<button class="btn btn-5et btn-default btn-xs">Add File</button>`)
+			.click(() => {
+				const nxt = {
+					id: CryptUtil.uid(),
+					data: {
+						name: null,
+						contents: null,
+					},
+				};
+				this._comp._state.uploadedFileMetas = [...this._comp._state.uploadedFileMetas, nxt];
+
+				// Click the upload button on the newest one, to immediately allow a file to be loaded
+				const renderedCollection = this._comp._getRenderedCollection({prop: "uploadedFileMetas"});
+				const renderedMeta = renderedCollection[nxt.id];
+				renderedMeta.$btnUpload.click();
+			});
+
+		const $wrpUploadRows = $(`<div class="ve-flex-col w-100"></div>`);
+
+		const $stgUpload = $$`<div class="ve-flex-col w-100 py-1">
 			<div class="mb-1 split-v-center">
 				<div>File Sources:</div>
-				${_0xea73a3}
+				${$btnAddUpload}
 			</div>
-			${_0x4f19fd}
+			${$wrpUploadRows}
 			<hr class="hr-1">
-		</div>`,_0x4d8d8d=()=>{const _0x522d2d=_0x14e1b8;this['_comp'][_0x522d2d(0x146)]({'prop':_0x522d2d(0xe6),'fnUpdateExisting':(_0x4e3def,_0x16ecbd)=>{const _0xf883c0=_0x522d2d;_0x4e3def['comp'][_0xf883c0(0x15c)](_0xf883c0(0xca),_0x16ecbd['data'],!![]);if(!_0x4e3def['$wrpRow']['parent']()['is'](_0x4f19fd))_0x4e3def[_0xf883c0(0xdc)][_0xf883c0(0xef)](_0x4f19fd);},'fnGetNew':_0x31e6b0=>{const _0x4aafcd=_0x522d2d,_0x22a190=BaseComponent[_0x4aafcd(0x158)](_0x31e6b0[_0x4aafcd(0x116)],'*');_0x22a190['_addHookAll'](_0x4aafcd(0xca),()=>{const _0xe80133=_0x4aafcd;_0x31e6b0[_0xe80133(0x116)]=_0x22a190[_0xe80133(0x10f)](),this[_0xe80133(0x100)][_0xe80133(0xbb)]('uploadedFileMetas');});const _0x307c65=$('<div\x20class=\x22imp__disp-filename\x20mr-1\x20ve-muted\x20w-100\x22></div>')[_0x4aafcd(0x11b)](()=>_0x13e093[_0x4aafcd(0x11b)]()),_0x245143=()=>_0x307c65[_0x4aafcd(0x164)](_0x22a190[_0x4aafcd(0x106)][_0x4aafcd(0x12a)]||'Select\x20file...')[_0x4aafcd(0xbe)](_0x22a190[_0x4aafcd(0x106)][_0x4aafcd(0x12a)]||'');_0x22a190['_addHookBase'](_0x4aafcd(0x12a),_0x245143),_0x245143();const _0x13e093=$(_0x4aafcd(0x152))['click'](()=>{const _0x2adde5=_0x4aafcd,_0x125737=$(_0x2adde5(0x16f))['change'](_0x4e95c1=>{const _0x175126=_0x2adde5,_0x503972=_0x4e95c1[_0x175126(0xbf)],_0x4bd19d=_0x125737[0x0][_0x175126(0x13e)],_0x255ba2=new FileReader();_0x255ba2['onload']=async()=>{const _0x184461=_0x175126,_0x411573=_0x4bd19d[0x0]||{};try{const _0x1db4cf=JSON[_0x184461(0x148)](_0x255ba2['result']);Vetools[_0x184461(0xfc)](_0x1db4cf),await Vetools[_0x184461(0xf4)](_0x1db4cf);const _0x2e26f9=await DataUtil[_0x184461(0x11a)](CryptUtil['uid'](),_0x1db4cf);_0x22a190[_0x184461(0x15c)](_0x184461(0xca),{'name':_0x411573[_0x184461(0x12a)],'contents':_0x2e26f9});}catch(_0x324961){ui[_0x184461(0xce)][_0x184461(0x14b)](_0x184461(0x162)+VeCt[_0x184461(0x156)]);throw _0x324961;}},_0x255ba2[_0x175126(0xed)](_0x503972[_0x175126(0x13e)][0x0]);})['click']();}),_0x978bcd=$('<button\x20class=\x22btn\x20btn-5et\x20btn-xs\x20btn-danger\x22\x20title=\x22Delete\x22><span\x20class=\x22glyphicon\x20glyphicon-trash\x22></span></button>')[_0x4aafcd(0x11b)](()=>this[_0x4aafcd(0x100)][_0x4aafcd(0x106)][_0x4aafcd(0xe6)]=this[_0x4aafcd(0x100)]['_state'][_0x4aafcd(0xe6)]['filter'](_0x4fb688=>_0x4fb688!==_0x31e6b0)),_0x2927a2=$$`<div class="flex-v-center my-1 w-100">
-						${_0x13e093}${_0x307c65}${_0x978bcd}
-					</div>`[_0x4aafcd(0xef)](_0x4f19fd);return{'comp':_0x22a190,'$wrpRow':_0x2927a2,'$btnUpload':_0x13e093};}});};return _0x4d8d8d(),this[_0x14e1b8(0x100)][_0x14e1b8(0x125)](_0x14e1b8(0xe6),_0x4d8d8d),_0x3d0f41;}[_0x4a67be(0xf9)](){const _0xe16fd9=_0x4a67be,_0x4bba39=$(_0xe16fd9(0x141))['click'](()=>{const _0x585885=_0xe16fd9,_0x26d5cf={'id':CryptUtil[_0x585885(0x12b)](),'data':{'displayName':_0x585885(0x175),'isCustom':!![],'url':null}};this[_0x585885(0x100)][_0x585885(0x106)][_0x585885(0x157)]=[...this[_0x585885(0x100)][_0x585885(0x106)][_0x585885(0x157)],_0x26d5cf];const _0x312e18=this[_0x585885(0x100)][_0x585885(0x132)]({'prop':'urlMetas'}),_0x1063c2=_0x312e18[_0x26d5cf['id']];_0x1063c2[_0x585885(0x124)][_0x585885(0x166)]();}),_0x4ba417=()=>_0x4bba39[_0xe16fd9(0x16b)](this['_comp'][_0xe16fd9(0x106)][_0xe16fd9(0x137)]);this[_0xe16fd9(0x100)][_0xe16fd9(0x125)](_0xe16fd9(0x137),_0x4ba417),_0x4ba417();const _0x537c7b=$(_0xe16fd9(0x12c)),_0x59a439=$$`<div class="flex-col w-100 py-1">
+		</div>`;
+
+		const hkUploadFileMetas = () => {
+			this._comp._renderCollection({
+				prop: "uploadedFileMetas",
+				fnUpdateExisting: (renderedMeta, uploadFileMeta) => {
+					renderedMeta.comp._proxyAssignSimple("state", uploadFileMeta.data, true);
+					if (!renderedMeta.$wrpRow.parent().is($wrpUploadRows)) renderedMeta.$wrpRow.appendTo($wrpUploadRows);
+				},
+				fnGetNew: uploadFileMeta => {
+					const comp = BaseComponent.fromObject(uploadFileMeta.data, "*");
+					comp._addHookAll("state", () => {
+						uploadFileMeta.data = comp.toObject("*");
+						this._comp._triggerCollectionUpdate("uploadedFileMetas");
+					});
+
+					const $dispName = $(`<div class="imp__disp-filename mr-1 ve-muted w-100"></div>`)
+						.click(() => $btnUpload.click());
+					const hkName = () => $dispName.text(comp._state.name || "Select file...").title(comp._state.name || "");
+					comp._addHookBase("name", hkName);
+					hkName();
+
+					const $btnUpload = $(`<button class="btn btn-5et btn-xs mr-1">Upload File</button>`)
+						.click(() => {
+							const $ipt = $(`<input type="file" accept=".json" class="ve-hidden">`)
+								.change(evt => {
+									const input = evt.target;
+									const files = $ipt[0].files;
+
+									const reader = new FileReader();
+									reader.onload = async () => {
+										const file = (files[0] || {});
+
+										try {
+											const json = JSON.parse(reader.result);
+											Vetools.addToHomebrew(json, {isReplaceExisting: true});
+											const fileData = await DataUtil.pDoMetaMerge(CryptUtil.uid(), json);
+											comp._proxyAssignSimple("state", {name: file.name, contents: fileData});
+										} catch (e) {
+											ui.notifications.error(`Failed to read file! ${VeCt.STR_SEE_CONSOLE}`);
+											throw e;
+										}
+									};
+									reader.readAsText(input.files[0]);
+								})
+								.click();
+						});
+
+					const $btnDelete = $(`<button class="btn btn-5et btn-xs btn-danger" title="Delete"><span class="glyphicon glyphicon-trash"></span></button>`)
+						.click(() => this._comp._state.uploadedFileMetas = this._comp._state.uploadedFileMetas.filter(it => it !== uploadFileMeta));
+
+					const $wrpRow = $$`<div class="ve-flex-v-center my-1 w-100">
+						${$btnUpload}${$dispName}${$btnDelete}
+					</div>`.appendTo($wrpUploadRows);
+
+					return {
+						comp,
+						$wrpRow,
+						$btnUpload,
+					};
+				},
+			});
+		};
+		hkUploadFileMetas();
+		this._comp._addHookBase("uploadedFileMetas", hkUploadFileMetas);
+
+		return $stgUpload;
+	}
+
+	_$getStageUrl () {
+		const $btnAddUrl = $(`<button class="btn btn-5et btn-default btn-xs">Add Custom</button>`)
+			.click(() => {
+				const nxt = {
+					id: CryptUtil.uid(),
+					data: {
+						displayName: "Custom Url",
+						isCustom: true,
+						url: null,
+					},
+				};
+
+				this._comp._state.urlMetas = [
+					...this._comp._state.urlMetas,
+					nxt,
+				];
+
+				// Focus the new URL input
+				const renderedCollection = this._comp._getRenderedCollection({prop: "urlMetas"});
+				const renderedMeta = renderedCollection[nxt.id];
+				renderedMeta.$iptUrl.focus();
+			});
+		const hkIsCustomUrls = () => $btnAddUrl.toggleVe(this._comp._state.isShowCustomUrlForm);
+		this._comp._addHookBase("isShowCustomUrlForm", hkIsCustomUrls);
+		hkIsCustomUrls();
+
+		const $wrpUrlRows = $(`<div class="ve-flex-col w-100"></div>`);
+
+		const $stgUrl = $$`<div class="ve-flex-col w-100 py-1">
 			<div class="mb-1 split-v-center">
 				<div>URL Sources:</div>
-				${_0x4bba39}
+				${$btnAddUrl}
 			</div>
-			${_0x537c7b}
+			${$wrpUrlRows}
 			<hr class="hr-1">
-		</div>`,_0x25b3bd=()=>{const _0x405644=_0xe16fd9;this['_comp'][_0x405644(0x146)]({'prop':'urlMetas','fnUpdateExisting':(_0x41a0c6,_0x1ef56a)=>{const _0x15c963=_0x405644;_0x41a0c6[_0x15c963(0x122)]['_proxyAssignSimple'](_0x15c963(0xca),_0x1ef56a[_0x15c963(0x116)],!![]);if(!_0x41a0c6[_0x15c963(0xdc)][_0x15c963(0x14c)]()['is'](_0x537c7b))_0x41a0c6['$wrpRow'][_0x15c963(0xef)](_0x537c7b);},'fnGetNew':_0x5e4dd2=>{const _0x233850=_0x405644,_0x2dfd4b=BaseComponent[_0x233850(0x158)](_0x5e4dd2['data'],'*');_0x2dfd4b[_0x233850(0xd3)](_0x233850(0xca),()=>{const _0x5495b9=_0x233850;_0x5e4dd2[_0x5495b9(0x116)]=_0x2dfd4b[_0x5495b9(0x10f)](),this[_0x5495b9(0x100)][_0x5495b9(0xbb)](_0x5495b9(0x157));});const _0x50a422=ComponentUiUtil[_0x233850(0x109)](_0x2dfd4b,'url');if(Config[_0x233850(0xc3)]('ui','isStreamerMode'))_0x50a422[_0x233850(0x107)](_0x233850(0xfd));const _0x85c091=()=>{const _0x1526ce=_0x233850;_0x2dfd4b[_0x1526ce(0x106)][_0x1526ce(0xc6)]?_0x50a422[_0x1526ce(0xbe)](_0x1526ce(0xfe))[_0x1526ce(0xd0)](_0x1526ce(0xfe))['val'](_0x2dfd4b[_0x1526ce(0x106)][_0x1526ce(0x16a)]):_0x50a422[_0x1526ce(0xbe)](_0x1526ce(0xe8))['val'](_0x2dfd4b['_state']['displayName'])[_0x1526ce(0xd9)]();};this[_0x233850(0x100)][_0x233850(0x125)](_0x233850(0x16a),_0x85c091),this['_comp'][_0x233850(0x125)](_0x233850(0xe5),_0x85c091),_0x85c091();const _0x221431=!_0x2dfd4b[_0x233850(0x106)][_0x233850(0xc6)]?null:$('<button\x20class=\x22btn\x20btn-5et\x20btn-xs\x20btn-danger\x20ml-2\x22\x20title=\x22Delete\x22><span\x20class=\x22glyphicon\x20glyphicon-trash\x22></span></button>')[_0x233850(0x11b)](()=>this[_0x233850(0x100)][_0x233850(0x106)][_0x233850(0x157)]=this[_0x233850(0x100)][_0x233850(0x106)][_0x233850(0x157)][_0x233850(0x161)](_0x3fa054=>_0x3fa054!==_0x5e4dd2)),_0x389737=$$`<div class="flex-v-center my-1 w-100">
-						${_0x50a422}${_0x221431}
-					</div>`['appendTo'](_0x537c7b);return{'comp':_0x2dfd4b,'$wrpRow':_0x389737,'$iptUrl':_0x50a422};}});};return _0x25b3bd(),this[_0xe16fd9(0x100)][_0xe16fd9(0x125)](_0xe16fd9(0x157),_0x25b3bd),_0x59a439;}['_$getStageSpecial'](){const _0xe2ddcc=_0x4a67be,_0x55583e=$('<div\x20class=\x22flex-col\x20w-100\x22></div>'),_0x44c81d=$$`<div class="flex-col w-100 py-1">
-			<div class="mb-1 flex-v-center">
+		</div>`;
+
+		const hkUrlMetas = () => {
+			this._comp._renderCollection({
+				prop: "urlMetas",
+				fnUpdateExisting: (renderedMeta, urlMeta) => {
+					renderedMeta.comp._proxyAssignSimple("state", urlMeta.data, true);
+					if (!renderedMeta.$wrpRow.parent().is($wrpUrlRows)) renderedMeta.$wrpRow.appendTo($wrpUrlRows);
+				},
+				fnGetNew: urlMeta => {
+					const comp = BaseComponent.fromObject(urlMeta.data, "*");
+					comp._addHookAll("state", () => {
+						urlMeta.data = comp.toObject("*");
+						this._comp._triggerCollectionUpdate("urlMetas");
+					});
+
+					const $iptUrl = ComponentUiUtil.$getIptStr(comp, "url");
+					if (Config.get("ui", "isStreamerMode")) $iptUrl.addClass("text-sneaky");
+					const hkDisplayNameUrl = () => {
+						if (comp._state.isCustom) {
+							$iptUrl.title("Enter JSON URL").placeholder("Enter JSON URL").val(comp._state.url);
+						} else {
+							$iptUrl.title("JSON URL").val(comp._state.displayName).disable();
+						}
+					};
+					this._comp._addHookBase("url", hkDisplayNameUrl);
+					this._comp._addHookBase("displayName", hkDisplayNameUrl);
+					hkDisplayNameUrl();
+
+					const $btnDelete = !comp._state.isCustom ? null : $(`<button class="btn btn-5et btn-xs btn-danger ml-2" title="Delete"><span class="glyphicon glyphicon-trash"></span></button>`)
+						.click(() => this._comp._state.urlMetas = this._comp._state.urlMetas.filter(it => it !== urlMeta));
+
+					const $wrpRow = $$`<div class="ve-flex-v-center my-1 w-100">
+						${$iptUrl}${$btnDelete}
+					</div>`.appendTo($wrpUrlRows);
+
+					return {
+						comp,
+						$wrpRow,
+						$iptUrl,
+					};
+				},
+			});
+		};
+		hkUrlMetas();
+		this._comp._addHookBase("urlMetas", hkUrlMetas);
+
+		return $stgUrl;
+	}
+
+	_$getStageSpecial () {
+		const $wrpSpecialRows = $(`<div class="ve-flex-col w-100"></div>`);
+
+		const $stgSpecial = $$`<div class="ve-flex-col w-100 py-1">
+			<div class="mb-1 ve-flex-v-center">
 				<div>Pre-Compiled Sources:</div>
 			</div>
-			${_0x55583e}
+			${$wrpSpecialRows}
 			<hr class="hr-1">
-		</div>`,_0x4f568a=()=>{const _0x5efd26=_0x4a45;this[_0x5efd26(0x100)][_0x5efd26(0x146)]({'prop':'specialMetas','fnUpdateExisting':(_0x5f5792,_0x488e05)=>{const _0xd9a67d=_0x5efd26;_0x5f5792[_0xd9a67d(0x122)][_0xd9a67d(0x15c)](_0xd9a67d(0xca),_0x488e05['data'],!![]);if(!_0x5f5792[_0xd9a67d(0xdc)][_0xd9a67d(0x14c)]()['is'](_0x55583e))_0x5f5792[_0xd9a67d(0xdc)]['appendTo'](_0x55583e);},'fnGetNew':_0x366830=>{const _0x105e30=_0x5efd26,_0xcc659=BaseComponent[_0x105e30(0x158)](_0x366830['data'],'*');_0xcc659['_addHookAll']('state',()=>{const _0x580017=_0x105e30;_0x366830[_0x580017(0x116)]=_0xcc659['toObject'](),this[_0x580017(0x100)][_0x580017(0xbb)](_0x580017(0x157));});const _0x38f59a=$(_0x105e30(0x174)+(Config[_0x105e30(0xc3)]('ui',_0x105e30(0x14d))?_0x105e30(0xfd):'')+_0x105e30(0xc9)),_0x557483=()=>_0x38f59a[_0x105e30(0x164)](_0xcc659[_0x105e30(0x106)][_0x105e30(0xe5)]);this[_0x105e30(0x100)][_0x105e30(0x125)](_0x105e30(0xe5),_0x557483),_0x557483();const _0x3c00e3=$$`<div class="flex-v-center my-1 w-100">${_0x38f59a}</div>`[_0x105e30(0xef)](_0x55583e);return{'comp':_0xcc659,'$wrpRow':_0x3c00e3};}});};return _0x4f568a(),this[_0xe2ddcc(0x100)][_0xe2ddcc(0x125)](_0xe2ddcc(0x140),_0x4f568a),_0x44c81d;}async[_0x4a67be(0x111)](){const _0x3659c6=_0x4a67be,_0x2df2a0=new Set(await StorageUtil[_0x3659c6(0x15d)](this[_0x3659c6(0x13f)])||[]),_0x237c8b=this[_0x3659c6(0xf6)][_0x3659c6(0x161)](_0x4aa0d7=>_0x2df2a0[_0x3659c6(0xdf)](_0x4aa0d7[_0x3659c6(0x127)]));if(!_0x237c8b['length'])_0x237c8b['push'](...this[_0x3659c6(0xf6)][_0x3659c6(0x161)](_0x271ae8=>_0x271ae8[_0x3659c6(0x167)]));return _0x237c8b;}async[_0x4a67be(0xf3)](_0x351409,_0x492708=null){const _0x438e8a=_0x4a67be;this[_0x438e8a(0x151)]=this[_0x438e8a(0x170)](),this[_0x438e8a(0x13c)]=this[_0x438e8a(0x145)](),this[_0x438e8a(0x110)]=this[_0x438e8a(0xf9)](),this[_0x438e8a(0x123)]=this[_0x438e8a(0x11e)]();const _0x36fd0e=await this[_0x438e8a(0x111)](),_0x454fb1=({isSkipSave:_0x23ad66}={})=>{const _0x4eac12=_0x438e8a,_0x179aed=this[_0x4eac12(0x147)]['items'][_0x4eac12(0x161)](_0x2a5c57=>_0x2a5c57[_0x4eac12(0x116)][_0x4eac12(0xbc)][_0x4eac12(0xe9)])['map'](_0x796005=>this['_sourcesToDisplay'][_0x796005['ix']]),_0x9d80ee=_0x179aed[_0x4eac12(0x101)](_0x3a05d8=>_0x3a05d8[_0x4eac12(0x127)]);if(!_0x23ad66)StorageUtil[_0x4eac12(0x117)](this[_0x4eac12(0x13f)],_0x9d80ee);const _0x1655a2=_0x179aed[_0x4eac12(0x15f)](_0x583096=>_0x583096[_0x4eac12(0xdb)]),_0x334c8b=_0x179aed['some'](_0x41e99c=>_0x41e99c[_0x4eac12(0x16a)]!=null),_0x5856fd=_0x179aed[_0x4eac12(0x15f)](_0x33db6c=>_0x33db6c['url']==null&&!_0x33db6c[_0x4eac12(0xdb)]);this['_$stgNone'][_0x4eac12(0x16b)](!_0x1655a2&&!_0x334c8b&&!_0x5856fd),this[_0x4eac12(0x13c)][_0x4eac12(0x16b)](_0x1655a2),this[_0x4eac12(0x110)]['toggleVe'](_0x334c8b),this[_0x4eac12(0x123)][_0x4eac12(0x16b)](_0x5856fd);if(_0x334c8b){this[_0x4eac12(0x100)]['_state'][_0x4eac12(0x137)]=_0x179aed[_0x4eac12(0x15f)](_0x3a2ec0=>_0x3a2ec0[_0x4eac12(0x16a)]==='');const _0x22e747=this[_0x4eac12(0x100)][_0x4eac12(0x106)][_0x4eac12(0x137)]?this[_0x4eac12(0x100)][_0x4eac12(0x106)][_0x4eac12(0x157)][_0x4eac12(0x161)](_0x569dc9=>_0x569dc9[_0x4eac12(0x116)][_0x4eac12(0xc6)]):[];this[_0x4eac12(0x100)][_0x4eac12(0x106)][_0x4eac12(0x157)]=[..._0x179aed[_0x4eac12(0x161)](_0x2dcda9=>_0x2dcda9[_0x4eac12(0x16a)])[_0x4eac12(0x101)](_0x45ea57=>({'id':_0x45ea57[_0x4eac12(0x16a)],'data':{'isCustom':![],'displayName':_0x45ea57[_0x4eac12(0x16a)]}})),..._0x22e747];}else this[_0x4eac12(0x100)][_0x4eac12(0x106)][_0x4eac12(0x157)]=[];_0x5856fd?this['_comp']['_state']['specialMetas']=[..._0x179aed['filter'](_0xb60fa4=>_0xb60fa4['url']==null&&!_0xb60fa4[_0x4eac12(0xdb)])[_0x4eac12(0x101)](_0x10d25a=>({'id':_0x10d25a[_0x4eac12(0x10a)],'data':{'displayName':_0x10d25a[_0x4eac12(0x12a)]}}))]:this[_0x4eac12(0x100)]['_state']['specialMetas']=[];if(_0x492708)_0x492708(_0x179aed);};if(this[_0x438e8a(0xe2)])this[_0x438e8a(0xe2)][_0x438e8a(0x114)]();this[_0x438e8a(0xe2)]=new AppSourceSelectorMulti[(_0x438e8a(0xf0))]();const _0x579e55=$('<button\x20class=\x22btn-5et\x20veapp__btn-filter\x22>Filter</button>'),_0x173feb=$(_0x438e8a(0x126)),_0x4c765b=$('<input\x20type=\x22search\x22\x20class=\x22search\x20w-100\x20form-control\x22\x20placeholder=\x22Find\x20source...\x22>'),_0x586fe1=$('<button\x20class=\x22btn-5et\x20veapp__btn-list-reset\x22>Reset</button>')[_0x438e8a(0x11b)](()=>_0x4c765b[_0x438e8a(0xf8)]('')),_0x2a9d70=$(_0x438e8a(0xea)),_0x274f87=this[_0x438e8a(0x12e)]?null:$(_0x438e8a(0x153)),_0x29871f=$$`<label class="btn btn-5et btn-xs col-0-5 flex-vh-center" ${this['_isRadio']?_0x438e8a(0x10e):''}>${_0x274f87}</label>`,_0x20d165=$$`<div class="flex-v-stretch input-group input-group--bottom mb-1 no-shrink">
-			${_0x29871f}
+		</div>`;
+
+		const hkSpecialMetas = () => {
+			this._comp._renderCollection({
+				prop: "specialMetas",
+				fnUpdateExisting: (renderedMeta, specialMeta) => {
+					renderedMeta.comp._proxyAssignSimple("state", specialMeta.data, true);
+					if (!renderedMeta.$wrpRow.parent().is($wrpSpecialRows)) renderedMeta.$wrpRow.appendTo($wrpSpecialRows);
+				},
+				fnGetNew: specialMetas => {
+					const comp = BaseComponent.fromObject(specialMetas.data, "*");
+					comp._addHookAll("state", () => {
+						specialMetas.data = comp.toObject("*");
+						this._comp._triggerCollectionUpdate("urlMetas");
+					});
+
+					const $dispName = $(`<div class="w-100 italic ${Config.get("ui", "isStreamerMode") ? "text-sneaky" : ""}"></div>`);
+					const hkDisplayName = () => $dispName.text(comp._state.displayName);
+					this._comp._addHookBase("displayName", hkDisplayName);
+					hkDisplayName();
+
+					const $wrpRow = $$`<div class="ve-flex-v-center my-1 w-100">${$dispName}</div>`
+						.appendTo($wrpSpecialRows);
+
+					return {
+						comp,
+						$wrpRow,
+					};
+				},
+			});
+		};
+		hkSpecialMetas();
+		this._comp._addHookBase("specialMetas", hkSpecialMetas);
+
+		return $stgSpecial;
+	}
+
+	async _pGetInitialSources () {
+		const initialSourceIds = await this._pGetInitialSourceIds();
+		const initialSources = this._sourcesToDisplay.filter(it => initialSourceIds.has(it.identifier));
+		if (!initialSources.length) initialSources.push(...this._sourcesToDisplay.filter(it => it.isDefault));
+		return initialSources;
+	}
+
+	async _pGetInitialSourceIds () {
+		if (this.isForceSelectAllSources()) {
+			return new Set(this._sourcesToDisplay.map(it => it.identifier));
+		}
+		return new Set((await StorageUtil.pGet(this._savedSelectionKey)) || []);
+	}
+
+	isForceSelectAllSources () {
+		if (this._isRadio) return false;
+		if (game.user.isGM) return Config.get("dataSources", "isGmForceSelectAllowedSources");
+		return Config.get("dataSources", "isPlayerForceSelectAllowedSources");
+	}
+
+	static $getFilterListElements ({isRadio = false, isForceSelectAll = false} = {}) {
+		const $btnOpenFilter = $(`<button class="btn-5et veapp__btn-filter">Filter</button>`);
+		const $btnToggleSummaryHidden = $(`<button class="btn btn-5et" title="Toggle Filter Summary Display"><span class="glyphicon glyphicon-resize-small"></span></button>`);
+		const $iptSearch = $(`<input type="search" class="search w-100 form-control" placeholder="Find source...">`);
+		const $btnReset = $(`<button class="btn-5et veapp__btn-list-reset">Reset</button>`)
+			.click(() => $iptSearch.val(""));
+		const $wrpMiniPills = $(`<div class="fltr__mini-view btn-group"></div>`);
+
+		const isHideCbAll = isRadio || isForceSelectAll;
+
+		const $cbAll = isHideCbAll ? null : $(`<input type="checkbox" class="no-events">`);
+		const $lblCbAll = $$`<label class="btn btn-5et btn-xs col-0-5 ve-flex-vh-center" ${isHideCbAll ? "disabled" : ""}>${$cbAll}</label>`;
+
+		const $wrpBtnsSort = $$`<div class="ve-flex-v-stretch input-group input-group--bottom mb-1 no-shrink">
+			${$lblCbAll}
 			<button class="btn-5et btn-xs col-11-5 sort" data-sort="name">Name</button>
-		</div>`,_0x510325=$('<div\x20class=\x22veapp__list\x20mb-1\x20h-100\x20min-h-0\x22></div>');return $$(_0x351409)`
-			<div class="flex-v-stretch input-group input-group--top no-shrink">
-				${_0x579e55}
-				${_0x173feb}
-				${_0x4c765b}
-				${_0x586fe1}
-			</div>
-			${_0x2a9d70}
-			${_0x20d165}
-			${_0x510325}
-		`,this[_0x438e8a(0x147)]=new List({'$iptSearch':_0x4c765b,'$wrpList':_0x510325,'fnSort':this['constructor']['_sortListItems']}),SortUtil[_0x438e8a(0x150)](_0x20d165,this[_0x438e8a(0x147)]),!this[_0x438e8a(0x12e)]&&(ListUiUtil[_0x438e8a(0xec)](_0x274f87,this[_0x438e8a(0x147)]),_0x274f87[_0x438e8a(0x103)](()=>_0x454fb1())),await this[_0x438e8a(0xe2)][_0x438e8a(0xde)]({'$iptSearch':_0x4c765b,'$btnReset':_0x586fe1,'$btnOpen':_0x579e55,'$btnToggleSummaryHidden':_0x173feb,'$wrpMiniPills':_0x2a9d70,'namespace':this['_filterNamespace']}),this['_sourcesToDisplay']['forEach']((_0x2e2a92,_0x34abef)=>{const _0x2e7ec0=_0x438e8a,_0x26303e=_0x36fd0e[_0x2e7ec0(0x163)](_0x2e2a92);this[_0x2e7ec0(0xe2)][_0x2e7ec0(0x142)](_0x2e2a92);const _0x4ac5b4=document[_0x2e7ec0(0x17d)]('label');_0x4ac5b4[_0x2e7ec0(0xee)]=_0x2e7ec0(0xe7)+(_0x26303e?_0x2e7ec0(0x134):'');const _0x3024a7=this[_0x2e7ec0(0x12e)]?Util['htmlToNode']('<input\x20type=\x22radio\x22\x20name=\x22radio\x22\x20class=\x22no-events\x20mx-1\x22>'):Util[_0x2e7ec0(0xd4)]('<input\x20type=\x22checkbox\x22\x20class=\x22no-events\x20mx-1\x22>');if(_0x26303e)_0x3024a7[_0x2e7ec0(0xe9)]=!![];const _0x43bd27=Util['htmlToNode'](_0x2e7ec0(0x128));_0x43bd27[_0x2e7ec0(0x144)](_0x3024a7),_0x4ac5b4['append'](_0x43bd27),_0x4ac5b4['append'](Util[_0x2e7ec0(0xd4)](_0x2e7ec0(0x10c)+this[_0x2e7ec0(0x13d)][_0x2e7ec0(0x17c)](_0x2e2a92[_0x2e7ec0(0x154)])+_0x2e2a92['name']+_0x2e7ec0(0x14a)));const _0x650b27=new ListItem(_0x34abef,_0x4ac5b4,_0x2e2a92[_0x2e7ec0(0x12a)],{'filterTypes':_0x2e2a92[_0x2e7ec0(0x154)]},{'cbSel':_0x3024a7});_0x4ac5b4[_0x2e7ec0(0xcb)]('click',_0x4452a0=>{const _0x422b87=_0x2e7ec0;if(this['_isRadio'])ListUiUtil['handleSelectClickRadio'](this[_0x422b87(0x147)],_0x650b27,_0x4452a0);else ListUiUtil['handleSelectClick'](this[_0x422b87(0x147)],_0x650b27,_0x4452a0);_0x454fb1();}),this[_0x2e7ec0(0x147)][_0x2e7ec0(0x160)](_0x650b27);}),_0x454fb1({'isSkipSave':!![]}),this[_0x438e8a(0x147)]['init'](),this[_0x438e8a(0xe2)][_0x438e8a(0x118)]['render'](),this[_0x438e8a(0xe2)][_0x438e8a(0x118)]['on'](FilterBox['EVNT_VALCHANGE'],this[_0x438e8a(0x133)]['bind'](this)),this[_0x438e8a(0x133)](),{'$stgNone':this[_0x438e8a(0x151)],'$stgUpload':this['_$stgUpload'],'$stgUrl':this[_0x438e8a(0x110)],'$stgSpecial':this['_$stgSpecial'],'$iptSearch':_0x4c765b};}[_0x4a67be(0x133)](){const _0x4637fd=_0x4a67be,_0x24108b=this['_pageFilter'][_0x4637fd(0x118)][_0x4637fd(0xcd)]();this[_0x4637fd(0x147)][_0x4637fd(0x161)](_0x174acb=>this[_0x4637fd(0xe2)]['toDisplay'](_0x24108b,this[_0x4637fd(0xf6)][_0x174acb['ix']]));}static[_0x4a67be(0x102)](_0x27dded,_0x3cbfb1,_0x36d7f0){const _0x7fc35c=_0x4a67be,_0x27f471=Math[_0x7fc35c(0x135)](..._0x27dded[_0x7fc35c(0x172)]['filterTypes']['map'](_0x50860e=>UtilDataSource['SOURCE_TYPE_ORDER']['indexOf'](_0x50860e))),_0x5319e1=Math[_0x7fc35c(0x135)](..._0x3cbfb1[_0x7fc35c(0x172)][_0x7fc35c(0x154)]['map'](_0x4b1ca5=>UtilDataSource[_0x7fc35c(0x136)][_0x7fc35c(0x17a)](_0x4b1ca5)));return SortUtil['ascSort'](_0x27f471,_0x5319e1)||SortUtil[_0x7fc35c(0x112)](_0x27dded,_0x3cbfb1);}static['_getFilterTypesIcon'](_0x38c9e2){const _0x3e7c62=_0x4a67be;if(_0x38c9e2['includes'](UtilDataSource[_0x3e7c62(0xda)])||_0x38c9e2['includes'](UtilDataSource[_0x3e7c62(0xfa)]))return _0x3e7c62(0xcc)+UtilDataSource['SOURCE_TYP_OFFICIAL_BASE']+_0x3e7c62(0x139);if(_0x38c9e2[_0x3e7c62(0x163)](UtilDataSource[_0x3e7c62(0xc8)]))return _0x3e7c62(0xe0)+UtilDataSource[_0x3e7c62(0xc8)]+_0x3e7c62(0x139);if(_0x38c9e2[_0x3e7c62(0x163)](UtilDataSource['SOURCE_TYP_BREW']))return _0x3e7c62(0x15a)+UtilDataSource['SOURCE_TYP_BREW']+'\x22></i>';if(_0x38c9e2[_0x3e7c62(0x163)](UtilDataSource[_0x3e7c62(0xbd)]))return _0x3e7c62(0x159)+UtilDataSource[_0x3e7c62(0xbd)]+'\x22></i>';if(_0x38c9e2[_0x3e7c62(0x163)](UtilDataSource[_0x3e7c62(0x120)]))return _0x3e7c62(0x11d)+UtilDataSource[_0x3e7c62(0xbd)]+_0x3e7c62(0x139);return'';}[_0x4a67be(0x13b)](_0x2b9f4d){(async()=>{const _0x514642=_0x4a45,_0x39d279=$('<div\x20class=\x22veapp-loading__wrp-outer\x22><i>Loading...</i></div>')[_0x514642(0xef)](_0x2b9f4d[_0x514642(0x149)]()),_0x47eeb=$('<div\x20class=\x22flex-col\x20w-100\x20h-100\x20min-h-0\x22></div>'),{$iptSearch:_0x1ff1f5}=await this[_0x514642(0x17b)](_0x47eeb);_0x1ff1f5[_0x514642(0x14f)](_0x18e9f9=>{const _0x2e8106=_0x514642;if(_0x18e9f9[_0x2e8106(0x108)]===_0x2e8106(0x12d))_0x39cf86[_0x2e8106(0x11b)]();});const _0x39cf86=$('<button\x20class=\x22mt-auto\x20btn\x20btn-5et\x22>Confirm</button>')[_0x514642(0x11b)](async()=>{const _0x437d77=_0x514642;try{_0x39d279[_0x437d77(0x12f)]();const _0x5bf49e=await this[_0x437d77(0x13a)]();if(!_0x5bf49e[_0x437d77(0x105)])return _0x39d279[_0x437d77(0x143)](),ui[_0x437d77(0xce)][_0x437d77(0x14b)](_0x437d77(0x177));if(_0x5bf49e[_0x437d77(0x105)]>0xa){const _0x2589af=await InputUiUtil[_0x437d77(0xd2)]({'title':'You\x20have\x20many\x20sources\x20selected,\x20which\x20may\x20negatively\x20impact\x20performance.\x20Do\x20you\x20want\x20to\x20continue?','storageKey':_0x437d77(0xe4),'textYesRemember':'Continue\x20and\x20Remember','textYes':'Continue','textNo':_0x437d77(0x113)});if(!_0x2589af){_0x39d279[_0x437d77(0x143)]();return;}}const _0x196fe3=await this[_0x437d77(0x130)](_0x5bf49e);if(!_0x196fe3[_0x437d77(0x105)])return _0x39d279[_0x437d77(0x143)](),ui['notifications'][_0x437d77(0xeb)]('No\x20sources\x20to\x20be\x20loaded!\x20Please\x20finish\x20entering\x20source\x20details\x20first.');this['_resolve'](_0x196fe3),this[_0x437d77(0xd7)]();}catch(_0x42e8b1){_0x39d279[_0x437d77(0x143)](),ui[_0x437d77(0xce)][_0x437d77(0x14b)](_0x437d77(0x129)+VeCt[_0x437d77(0x156)]);throw _0x42e8b1;}});$$(_0x2b9f4d)`
-			${_0x47eeb}
+		</div>`;
+		const $list = $(`<div class="veapp__list mb-1 h-100 min-h-0"></div>`);
+
+		const $wrpFilterControls = $$`<div class="ve-flex-v-stretch input-group input-group--top no-shrink">
+			${$btnOpenFilter}
+			${$btnToggleSummaryHidden}
+			${$iptSearch}
+			${$btnReset}
+		</div>`;
+
+		return {
+			$cbAll,
+			$wrpFilterControls,
+			$wrpMiniPills,
+			$wrpBtnsSort,
+			$list,
+			$btnOpenFilter,
+			$iptSearch,
+			$btnReset,
+			$btnToggleSummaryHidden,
+		};
+	}
+
+	static getListItem (
+		{
+			pageFilter,
+			isRadio,
+			list,
+			src,
+			srcI,
+			fnOnClick,
+			initialSources,
+			isSelected,
+			isForceSelectAll,
+		},
+	) {
+		isSelected = isSelected === undefined && initialSources ? initialSources.includes(src) : !!isSelected;
+
+		pageFilter.mutateAndAddToFilters(src);
+
+		const eleCb = e_({
+			outer: isRadio
+				? `<input type="radio" name="radio" class="no-events mx-1">`
+				: `<input type="checkbox" class="no-events mx-1">`,
+		});
+		if (isSelected) eleCb.checked = true;
+		if (isForceSelectAll) eleCb.setAttribute("disabled", true);
+
+		const eleWrpCb = e_({
+			tag: "span",
+			clazz: "col-0-5 ve-flex-vh-center",
+			children: [
+				eleCb,
+			],
+		});
+
+		const eleLi = e_({
+			tag: "label",
+			clazz: `row imp-wiz__row veapp__list-row-hoverable ve-flex-v-center ${isSelected ? "list-multi-selected" : ""}`,
+			children: [
+				eleWrpCb,
+				e_({
+					tag: "span",
+					clazz: "col-11-5",
+					html: `${this._getFilterTypesIcon(src.filterTypes)}${src.name}`,
+				}),
+			],
+		});
+
+		const listItem = new ListItem(
+			srcI,
+			eleLi,
+			src.name,
+			{
+				filterTypes: src.filterTypes,
+				abbreviations: src.abbreviations || [],
+			},
+			{
+				cbSel: eleCb,
+			},
+		);
+
+		if (!isForceSelectAll) {
+			eleLi.addEventListener("click", evt => {
+				if (isRadio) ListUiUtil.handleSelectClickRadio(list, listItem, evt);
+				else ListUiUtil.handleSelectClick(list, listItem, evt);
+				if (fnOnClick) fnOnClick({list, listItem});
+			});
+		}
+
+		return listItem;
+	}
+
+	async _pGetElements_pGetListElements ($wrpList, cbSourceChange = null) {
+		this._$stgNone = this._$getStageNone();
+		this._$stgUpload = this._$getStageUpload();
+		this._$stgUrl = this._$getStageUrl();
+		this._$stgSpecial = this._$getStageSpecial();
+
+		const initialSources = await this._pGetInitialSources();
+
+		const setSources = ({isSkipSave} = {}) => {
+			const selSources = this._list.items.filter(it => it.data.cbSel.checked).map(li => this._sourcesToDisplay[li.ix]);
+
+			const selSourceIdentifiers = selSources.map(source => source.identifier);
+			if (!isSkipSave) StorageUtil.pSet(this._savedSelectionKey, selSourceIdentifiers);
+
+			const isShowStageUpload = selSources.some(it => it.isFile);
+			const isShowStageUrl = selSources.some(it => it.url != null);
+			const isShowStageSpecial = selSources.some(it => it.url == null && !it.isFile);
+
+			this._$stgNone.toggleVe(!isShowStageUpload && !isShowStageUrl && !isShowStageSpecial);
+			this._$stgUpload.toggleVe(isShowStageUpload);
+			this._$stgUrl.toggleVe(isShowStageUrl);
+			this._$stgSpecial.toggleVe(isShowStageSpecial);
+
+			// region Convert list state to component state
+			if (isShowStageUrl) {
+				this._comp._state.isShowCustomUrlForm = selSources.some(it => it.url === "");
+
+				const customUrlMetas = this._comp._state.isShowCustomUrlForm
+					? this._comp._state.urlMetas.filter(it => it.data.isCustom)
+					: [];
+
+				this._comp._state.urlMetas = [
+					...selSources.filter(it => it.url).map(it => ({id: it.url, data: {isCustom: false, displayName: it.url}})),
+					...customUrlMetas,
+				];
+			} else {
+				this._comp._state.urlMetas = [];
+			}
+
+			if (isShowStageSpecial) {
+				this._comp._state.specialMetas = [
+					...selSources.filter(it => it.url == null && !it.isFile).map(it => ({id: it.cacheKey, data: {displayName: it.name}})),
+				];
+			} else {
+				this._comp._state.specialMetas = [];
+			}
+			// endregion
+
+			// Run any source-change callbacks
+			if (cbSourceChange) cbSourceChange(selSources);
+		};
+
+		if (this._pageFilter) this._pageFilter.teardown();
+		this._pageFilter = new AppSourceSelectorMulti.AppSourceSelectorAppFilter();
+
+		const isForceSelectAll = this.isForceSelectAllSources();
+
+		const {
+			$cbAll,
+			$wrpFilterControls,
+			$wrpMiniPills,
+			$wrpBtnsSort,
+			$list,
+			$btnOpenFilter,
+			$iptSearch,
+			$btnReset,
+			$btnToggleSummaryHidden,
+		} = this.constructor.$getFilterListElements({isRadio: this._isRadio, isForceSelectAll});
+
+		$$($wrpList)`
+			${$wrpFilterControls}
+			${$wrpMiniPills}
+			${$wrpBtnsSort}
+			${$list}
+		`;
+
+		this._list = new List({
+			$iptSearch,
+			$wrpList: $list,
+			fnSort: UtilDataSource.sortListItems.bind(UtilDataSource),
+		});
+		SortUtil.initBtnSortHandlers($wrpBtnsSort, this._list);
+		if ($cbAll) {
+			ListUiUtil.bindSelectAllCheckbox($cbAll, this._list);
+			$cbAll.change(() => setSources());
+		}
+
+		await this._pageFilter.pInitFilterBox({
+			$iptSearch,
+			$btnReset,
+			$btnOpen: $btnOpenFilter,
+			$btnToggleSummaryHidden,
+			$wrpMiniPills,
+			namespace: this._filterNamespace,
+		});
+
+		this._sourcesToDisplay.forEach((src, srcI) => {
+			const listItem = this.constructor.getListItem({
+				pageFilter: this._pageFilter,
+				list: this._list,
+				isRadio: this._isRadio,
+				src,
+				srcI,
+				fnOnClick: setSources,
+				initialSources,
+				isForceSelectAll,
+			});
+			this._list.addItem(listItem);
+		});
+
+		setSources({isSkipSave: true});
+
+		this._list.init();
+
+		this._pageFilter.trimState();
+		this._pageFilter.filterBox.render();
+
+		this._pageFilter.filterBox.on(
+			FilterBox.EVNT_VALCHANGE,
+			this._handleFilterChange.bind(this),
+		);
+
+		this._handleFilterChange();
+
+		return {
+			$stgNone: this._$stgNone,
+			$stgUpload: this._$stgUpload,
+			$stgUrl: this._$stgUrl,
+			$stgSpecial: this._$stgSpecial,
+
+			$iptSearch,
+		};
+	}
+
+	_handleFilterChange () {
+		const f = this._pageFilter.filterBox.getValues();
+		this._list.filter(li => this._pageFilter.toDisplay(f, this._sourcesToDisplay[li.ix]));
+	}
+
+	static _getFilterTypesIcon (filterTypes) {
+		if (filterTypes.includes(UtilDataSource.SOURCE_TYP_OFFICIAL_ALL) || filterTypes.includes(UtilDataSource.SOURCE_TYP_OFFICIAL_SINGLE)) {
+			return `<i class="fab fa-d-and-d mr-1 sourceAL" title="${UtilDataSource.SOURCE_TYP_OFFICIAL_BASE}"></i>`;
+		}
+
+		if (filterTypes.includes(UtilDataSource.SOURCE_TYP_ARCANA)) {
+			return `<i class="fas fa-fw fa-vial mr-1 sourceSpicy" title="${UtilDataSource.SOURCE_TYP_ARCANA}"></i>`;
+		}
+
+		if (filterTypes.includes(UtilDataSource.SOURCE_TYP_BREW_LOCAL)) {
+			return `<i class="fas fa-fw fa-beer mr-1 sourceHomebrew sourceHomebrew--local" title="${UtilDataSource.SOURCE_TYP_BREW_LOCAL}"></i>`;
+		}
+
+		if (filterTypes.includes(UtilDataSource.SOURCE_TYP_BREW)) {
+			return `<i class="fas fa-fw fa-beer mr-1 sourceHomebrew" title="${UtilDataSource.SOURCE_TYP_BREW}"></i>`;
+		}
+
+		if (filterTypes.includes(UtilDataSource.SOURCE_TYP_CUSTOM)) {
+			return `<i class="fas fa-fw fa-user ve-muted mr-1" title="${UtilDataSource.SOURCE_TYP_CUSTOM}"></i>`;
+		}
+
+		if (filterTypes.includes(UtilDataSource.SOURCE_TYP_UNKNOWN)) {
+			return `<i class="fas fa-fw fa-question-circle ve-muted mr-1" title="${UtilDataSource.SOURCE_TYP_CUSTOM}"></i>`;
+		}
+
+		return "";
+	}
+
+	// region Standalone app
+	activateListeners ($html) {
+		(async () => {
+			const $ovrLoading = $(`<div class="veapp-loading__wrp-outer"><i>Loading...</i></div>`)
+				.appendTo($html.empty());
+
+			const $wrpList = $(`<div class="ve-flex-col w-100 h-100 min-h-0"></div>`);
+
+			const {$iptSearch} = await this.pGetElements($wrpList);
+
+			$iptSearch.keydown(evt => {
+				if (evt.key === "Enter") $btnAccept.click();
+			});
+
+			const $btnAccept = $(`<button class="mt-auto btn btn-5et">Confirm</button>`)
+				.click(() => this._pAcceptAndResolveSelection({$ovrLoading}));
+
+			$$($html)`
+			${$wrpList}
 			<hr class="hr-1">
-			<div class="flex-col w-100 overflow-y-auto pr-1 max-h-40 imp__disp-import-from no-shrink">
-				<h3 class="mb-1">Import From</h3>
-				${this[_0x514642(0x151)]}
-				${this[_0x514642(0x13c)]}
-				${this[_0x514642(0x110)]}
-				${this[_0x514642(0x123)]}
+			<div class="ve-flex-col w-100 overflow-y-auto pr-1 max-h-40 imp__disp-import-from no-shrink">
+				<h3 class="mb-1">Source</h3>
+				${this._$stgNone}
+				${this._$stgUpload}
+				${this._$stgUrl}
+				${this._$stgSpecial}
 			</div>
-			${_0x39cf86}
-			${_0x39d279[_0x514642(0x143)]()}`,_0x1ff1f5[_0x514642(0x166)]();})();}async[_0x4a67be(0x130)](_0x453e64){const _0x52a3c2=_0x4a67be;let _0x13628c=[];for(const _0x485b0e of _0x453e64){if(_0x485b0e[_0x52a3c2(0xdb)])_0x13628c['push'](...await this[_0x52a3c2(0xd8)](_0x485b0e));else{if(_0x485b0e[_0x52a3c2(0x16a)]!=null)_0x13628c['push'](...await this[_0x52a3c2(0x16d)](_0x485b0e));else _0x13628c[_0x52a3c2(0x10b)](await this[_0x52a3c2(0xc1)](_0x485b0e));}}_0x13628c=_0x13628c[_0x52a3c2(0xb9)]();if(_0x13628c[_0x52a3c2(0x105)]===0x1&&_0x13628c[0x0]instanceof Array)_0x13628c=_0x13628c[0x0];return _0x13628c;}[_0x4a67be(0x11f)](){const _0x5b319b=_0x4a67be;return this[_0x5b319b(0x100)]['_state']['urlMetas']['filter'](_0x140a00=>_0x140a00[_0x5b319b(0x116)][_0x5b319b(0xc6)]&&_0x140a00['data'][_0x5b319b(0x16a)]&&_0x140a00['data'][_0x5b319b(0x16a)]['trim']())[_0x5b319b(0x101)](_0x5e0900=>_0x5e0900[_0x5b319b(0x116)][_0x5b319b(0x16a)][_0x5b319b(0x171)]());}async['_handleAccept_pGetFileOutputs'](_0x17645c){const _0x82e685=await UtilDataSource['pGetFileOutputs'](this,_0x17645c,this['_props']);return _0x82e685['contents'];}async[_0x4a67be(0x16d)](_0x73c778){const _0x190a8d=_0x4a67be,_0x11f739=await UtilDataSource[_0x190a8d(0x16c)](this,_0x73c778,this[_0x190a8d(0x169)]);return _0x11f739[_0x190a8d(0x131)];}async[_0x4a67be(0xc1)](_0x3a0b56){const _0x5d6b1d=_0x4a67be,_0x101d56=await UtilDataSource['pGetSpecialOutput'](_0x3a0b56,this[_0x5d6b1d(0x169)]);return _0x101d56[_0x5d6b1d(0x131)];}[_0x4a67be(0x155)](){const _0x214de4=_0x4a67be;this[_0x214de4(0x100)]['_detachCollection']('urlMetas'),this['_comp'][_0x214de4(0x138)](_0x214de4(0xe6)),this[_0x214de4(0x100)][_0x214de4(0x138)](_0x214de4(0x140));}['handlePostClose'](){const _0x3bb2a2=_0x4a67be;if(this['_pageFilter'])this['_pageFilter'][_0x3bb2a2(0x114)]();}async['close'](..._0x5059f1){const _0x14c004=_0x4a67be;this[_0x14c004(0x155)](),await super[_0x14c004(0xd7)](..._0x5059f1),this[_0x14c004(0xf5)]();}[_0x4a67be(0x15b)](){const _0x24c3e5=_0x4a67be;return this[_0x24c3e5(0x16e)]=new Promise((_0x315a42,_0x51a87c)=>{const _0x5db145=_0x24c3e5;this[_0x5db145(0xc2)]=_0x315a42,this[_0x5db145(0x168)]=_0x51a87c;}),this[_0x24c3e5(0x16e)];}async['pLoadInitialSelection'](){const _0x30bd08=_0x4a67be,_0x5c8f5b=await this[_0x30bd08(0x111)]();return this[_0x30bd08(0x130)](_0x5c8f5b);}}AppSourceSelectorMulti[_0x4a67be(0xf0)]=class extends AppFilter{static[_0x4a67be(0xc7)](_0x5ca9d1,_0x3a982f){const _0x43a648=_0x4a67be;_0x5ca9d1=_0x5ca9d1['item'],_0x3a982f=_0x3a982f[_0x43a648(0xd1)];const _0x162c41=UtilDataSource['SOURCE_TYPE_ORDER__FILTER'][_0x43a648(0x17a)](_0x5ca9d1),_0x58a929=UtilDataSource['SOURCE_TYPE_ORDER__FILTER'][_0x43a648(0x17a)](_0x3a982f);return SortUtil[_0x43a648(0xf7)](_0x162c41,_0x58a929);}constructor(){const _0x4c8278=_0x4a67be;super(),this[_0x4c8278(0xe1)]=new Filter({'header':_0x4c8278(0xc5),'itemSortFn':AppSourceSelectorMulti[_0x4c8278(0xf0)][_0x4c8278(0xc7)]});}static['mutateForFilters'](){}[_0x4a67be(0xd6)](_0x5e7f2c,_0x171a11){const _0x47a66f=_0x4a67be;if(_0x171a11)return;this[_0x47a66f(0xe1)][_0x47a66f(0x160)](_0x5e7f2c[_0x47a66f(0x154)]);}async[_0x4a67be(0xd5)](_0x38eab8){const _0x2c68b0=_0x4a67be;_0x38eab8[_0x2c68b0(0xba)]=[this[_0x2c68b0(0xe1)]];}['toDisplay'](_0x117eb9,_0x422b09){const _0x237d33=_0x4a67be;return this[_0x237d33(0x165)][_0x237d33(0xb8)](_0x117eb9,_0x422b09[_0x237d33(0x154)]);}};export{AppSourceSelectorMulti};
+			${$btnAccept}
+			${$ovrLoading.hideVe()}`;
+
+			$iptSearch.focus();
+		})();
+	}
+
+	async _pAcceptAndResolveSelection ({$ovrLoading, isSilent = false, isBackground = false} = {}) {
+		try {
+			if ($ovrLoading) $ovrLoading.showVe();
+
+			const sources = await this.pGetSelectedSources();
+			if (!isSilent && !sources.length) {
+				if ($ovrLoading) $ovrLoading.hideVe();
+				return ui.notifications.error(`No sources selected!`);
+			}
+
+			if (!isSilent && sources.length > 10) {
+				const isContinue = await InputUiUtil.pGetUserBoolean({
+					title: `You have many sources selected, which may negatively impact performance. Do you want to continue?`,
+					storageKey: "AppSourceSelectorMulti__massSelectionWarning",
+					textYesRemember: "Continue and Remember",
+					textYes: "Continue",
+					textNo: "Cancel",
+				});
+
+				if (!isContinue) {
+					if ($ovrLoading) $ovrLoading.hideVe();
+					return;
+				}
+			}
+
+			const out = await this._pGetOutputEntities(sources, {isBackground});
+
+			if (!isSilent && !out.length) {
+				if ($ovrLoading) $ovrLoading.hideVe();
+				return ui.notifications.warn(`No sources to be loaded! Please finish entering source details first.`);
+			}
+
+			this._resolve(out);
+			this.close();
+		} catch (e) {
+			if ($ovrLoading) $ovrLoading.hideVe();
+			ui.notifications.error(`Failed to load sources! ${VeCt.STR_SEE_CONSOLE}`);
+			throw e;
+		}
+	}
+
+	async _pGetOutputEntities (sources, {isBackground = false} = {}) {
+		const {dedupedAllContentFlat} = await UtilDataSource.pGetAllContent({
+			sources,
+			uploadedFiles: this.uploadedFiles,
+			customUrls: this.getCustomUrls(),
+			isBackground,
+			props: this._props,
+
+			page: this._page,
+
+			isDedupable: this._isDedupable,
+			fnGetDedupedData: this._fnGetDedupedData,
+
+			fnGetBlacklistFilteredData: this._fnGetBlacklistFilteredData,
+		});
+		return dedupedAllContentFlat;
+	}
+
+	getCustomUrls () {
+		return this._comp._state.urlMetas
+			.filter(it => it.data.isCustom && it.data.url && it.data.url.trim())
+			.map(it => it.data.url.trim());
+	}
+
+	handlePreClose () {
+		this._comp._detachCollection("urlMetas");
+		this._comp._detachCollection("uploadedFileMetas");
+		this._comp._detachCollection("specialMetas");
+	}
+
+	handlePostClose () {
+		if (this._pageFilter) this._pageFilter.teardown();
+	}
+
+	async close (...args) {
+		this.handlePreClose();
+		await super.close(...args);
+		this.handlePostClose();
+	}
+
+	pWaitForUserInput ({isRenderApp = true} = {}) {
+		const isSelectAll = this.isForceSelectAllSources();
+
+		if (!isSelectAll && isRenderApp) this.render(true);
+
+		this._pUserInput = new Promise((resolve, reject) => {
+			this._resolve = resolve;
+			this._reject = reject;
+		});
+
+		if (isSelectAll) this._pAcceptAndResolveSelection({isSilent: true, isBackground: true}).then(null);
+
+		return this._pUserInput;
+	}
+	// endregion
+
+	/**
+	 * Get an initial selection. If the user has used this UI before, load up the sources they selected last. Otherwise,
+	 * load a default set.
+	 */
+	async pLoadInitialSelection () {
+		const initialSources = await this._pGetInitialSources();
+		return this._pGetOutputEntities(initialSources);
+	}
+}
+
+AppSourceSelectorMulti.AppSourceSelectorAppFilter = class extends AppFilter {
+	static _sortTypeFilterItems (a, b) {
+		a = a.item;
+		b = b.item;
+
+		const ixA = UtilDataSource.SOURCE_TYPE_ORDER__FILTER.indexOf(a);
+		const ixB = UtilDataSource.SOURCE_TYPE_ORDER__FILTER.indexOf(b);
+
+		return SortUtil.ascSort(ixA, ixB);
+	}
+
+	constructor () {
+		super();
+
+		this._typeFilter = new Filter({
+			header: "Type",
+			itemSortFn: AppSourceSelectorMulti.AppSourceSelectorAppFilter._sortTypeFilterItems,
+		});
+	}
+
+	static mutateForFilters () {
+		// (Do nothing)
+	}
+
+	addToFilters (entity, isExcluded) {
+		if (isExcluded) return;
+
+		this._typeFilter.addItem(entity.filterTypes);
+	}
+
+	async _pPopulateBoxOptions (opts) {
+		opts.filters = [
+			this._typeFilter,
+		];
+	}
+
+	toDisplay (values, ent) {
+		return this._filterBox.toDisplay(
+			values,
+			ent.filterTypes,
+		);
+	}
+};
+
+export {AppSourceSelectorMulti};

@@ -12,7 +12,7 @@ const EasyTarget = {
 
 		distance *= (dim.size / dim.distance);
 		width *= (dim.size / dim.distance);
-		direction = toRadians(direction);
+		direction = Math.toRadians(direction);
 
 		switch (shape) {
 			case 'Circle': return fn.apply(template, [distance]);
@@ -139,17 +139,9 @@ const EasyTarget = {
 			wrapped(...args);
 
 			if (oe.altKey) {
-				const template = new MeasuredTemplate(object.data);
+				const template = new MeasuredTemplate(object.document);
 				template.shape = EasyTarget.getTemplateShape(template);
 				EasyTarget.targetTokensInArea([template], EasyTarget.releaseBehaviour(oe));
-			}
-		};
-
-		const keyboardManagerOnKeyC = function (wrapped, ...args) {
-			const [,, modifiers] = args;
-
-			if (!(modifiers.isShift && modifiers.isAlt)) {
-				wrapped(...args);
 			}
 		};
 
@@ -161,7 +153,6 @@ const EasyTarget = {
 			libWrapper.register('easy-target', 'Canvas.prototype._onClickLeft', canvasOnClickLeft, 'WRAPPER');
 			libWrapper.register('easy-target', 'Canvas.prototype._onDragLeftDrop', canvasOnDragLeftDrop, 'WRAPPER');
 			libWrapper.register('easy-target', 'TemplateLayer.prototype._onDragLeftDrop', templateLayerOnDragLeftDrop, 'WRAPPER');
-			libWrapper.register('easy-target', 'KeyboardManager.prototype._onKeyC', keyboardManagerOnKeyC, 'MIXED');
 		} else {
 			const cachedTokenSetTarget = Token.prototype.setTarget;
 			Token.prototype.setTarget = function () {
@@ -197,11 +188,6 @@ const EasyTarget = {
 			TemplateLayer.prototype._onDragLeftDrop = function () {
 				return templateLayerOnDragLeftDrop.call(this, cachedTemplateLayerOnDragLeftDrop.bind(this), ...arguments);
 			};
-
-			const cachedKeyboardManagerOnKeyC = KeyboardManager.prototype._onKeyC;
-			KeyboardManager.prototype._onKeyC = function () {
-				return keyboardManagerOnKeyC.call(this, cachedKeyboardManagerOnKeyC.bind(this), ...arguments);
-			};
 		}
 	},
 
@@ -231,7 +217,20 @@ const EasyTarget = {
 	}
 };
 
-Hooks.once('init', () => EasyTarget.patch());
+Hooks.once('init', () => {
+	EasyTarget.patch();
+	game.keybindings.register('easy-target', 'clear-targets', {
+		name: 'EASYTGT.ClearAllTargets',
+		editable: [{key: 'KeyC', modifiers: ['Alt', 'Shift']}],
+		onDown: () => {
+			game.user.targets.forEach(token =>
+				token.setTarget(false, {releaseOthers: false, groupSelection: true}));
+			game.user.broadcastActivity({targets: game.user.targets.ids});
+			return true;
+		}
+	});
+});
+
 Hooks.once('ready', function () {
 	game.settings.register('easy-target', 'release', {
 		name: 'EASYTGT.ReleaseBehaviour',
@@ -245,14 +244,4 @@ Hooks.once('ready', function () {
 			'standard': 'EASYTGT.Standard'
 		}
 	});
-});
-
-document.addEventListener('keydown', event => {
-	if ((event.altKey && event.key === 'C')
-		|| (event.metaKey && event.shiftKey && event.key === 'c'))
-	{
-		game.user.targets.forEach(token =>
-			token.setTarget(false, {releaseOthers: false, groupSelection: true}));
-		game.user.broadcastActivity({targets: game.user.targets.ids});
-	}
 });

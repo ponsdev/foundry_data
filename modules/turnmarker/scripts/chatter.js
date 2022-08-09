@@ -3,17 +3,34 @@ import { Settings } from "./settings.js";
 export class Chatter {
 
     static sendTurnMessage(combatant, hideNPC_name=false) {
-        let players = [];
-        combatant.players.forEach(player => {
-            players.push(player.name);
-        });
-        if (players.length == 0) players.push("GM");
+        const announceLabel = game.i18n.localize("tm.announceLabel");
         let combatantName = combatant.actor.name;
         let aliasName = combatantName;
         if (Settings.getAnnounceTokenName()) {
             combatantName = combatant.token.name;
             aliasName = combatant.name;
         }
+
+        let announceText;
+        if (Settings.getAnnounceTurnMarkerAlias()) {
+            aliasName = announceLabel;
+            announceText = "";
+        } else {
+            announceText = `<em>${announceLabel}</em>`;
+        }
+
+        let playerNameDisplay;
+        if (Settings.getAnnouncePlayerNames()) {
+          let players = [];
+          combatant.players.forEach(player => {
+              players.push(player.name);
+          });
+          if (players.length == 0) players.push("GM");
+          playerNameDisplay = `<p>${players.join(' - ')}</p>`;
+        } else {
+          playerNameDisplay = "";
+        }
+
         if (hideNPC_name && !combatant.actor.hasPlayerOwner) {
             combatantName = "???";
         }
@@ -25,20 +42,19 @@ export class Chatter {
                 `<div class="flexrow">${this.placeImage(combatant)}
                     <div style="flex: 12;">
                         <h2>${combatantName}'s Turn</h2>
-                        <p>${players.join(' - ')}</p>
+                        ${playerNameDisplay}
                     </div>
-                    </div><em>Turn Marker</em>`
+                    </div>${announceText}`
         });
     }
 
     static placeImage(combatant) {
         if (Settings.getIncludeAnnounceImage()) {
             let img = combatant.img;
-            if (combatant.flags.core && combatant.flags.core.thumb) {
-                img = combatant.flags.core.thumb;
+            if (combatant.actor.data.img) {
+                img = combatant.actor.data.img;
             }
-            return `<div style="flex:3;"><img src="${img}" style="border: none;" /></div>`;
-            // return `<div style="flex:3;"><video><source="${combatant.img}"></video></div>`;
+            return `<div style="flex:3;padding-right:4px"><img src="${img}" style="border: none;" /></div>`;
         } else return '';
     }
 }

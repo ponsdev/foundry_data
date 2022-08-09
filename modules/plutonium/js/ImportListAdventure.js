@@ -1,1 +1,62 @@
-const _0x4cf5=['map','filter','_content','some','IMPORTABLE_TAG_CREATURE','URL_TO_HASH_BUILDER','getAdventureUrl','Adventures','otherSources','PG_BESTIARY','666133mXdlhP','_contentMetadata','adventure','SOURCE_JSON_TO_FULL','579234qiYQVL','1999821urgUDi','_getJournalDatas','365130CWAosS','_getAdditionalContentForTag','bind','429960QUxDeI','adventureData','334882qKytvJ','562244dVnYXD','pPreRender','pGetAdventureIndex','source','_ALL_CREATURES','tag','data'];const _0x2933=function(_0x329b5b,_0x5338e3){_0x329b5b=_0x329b5b-0x173;let _0x4cf5cb=_0x4cf5[_0x329b5b];return _0x4cf5cb;};const _0x453c44=_0x2933;(function(_0xfc2e89,_0x542c49){const _0x290d03=_0x2933;while(!![]){try{const _0x58b30b=-parseInt(_0x290d03(0x179))+parseInt(_0x290d03(0x18b))+-parseInt(_0x290d03(0x177))+-parseInt(_0x290d03(0x17a))+-parseInt(_0x290d03(0x174))+-parseInt(_0x290d03(0x18f))+parseInt(_0x290d03(0x190));if(_0x58b30b===_0x542c49)break;else _0xfc2e89['push'](_0xfc2e89['shift']());}catch(_0x3fa29e){_0xfc2e89['push'](_0xfc2e89['shift']());}}}(_0x4cf5,0x60508));import{ImportListAdventureBook}from'./ImportListAdventureBook.js';import{Vetools}from'./Vetools.js';import{DataConverter}from'./DataConverter.js';class ImportListAdventure extends ImportListAdventureBook{constructor(_0x535d12){const _0x4e821a=_0x2933;super({'title':'Import\x20Adventure'},_0x535d12,{'titleSearch':'adventures','defaultFolderPath':[_0x4e821a(0x188)],'namespace':_0x4e821a(0x18d),'isFolderOnly':!![]},{'fnGetIndex':Vetools[_0x4e821a(0x17c)][_0x4e821a(0x176)](Vetools),'fnGetUrl':Vetools[_0x4e821a(0x187)][_0x4e821a(0x176)](Vetools),'dataProp':_0x4e821a(0x18d),'brewDataProp':_0x4e821a(0x178),'title':'Adventure'});}async[_0x453c44(0x17b)](_0x5698d8){const _0x3d5ca6=_0x453c44;await super[_0x3d5ca6(0x17b)](_0x5698d8);if(ImportListAdventure[_0x3d5ca6(0x17e)])return;ImportListAdventure[_0x3d5ca6(0x17e)]=await Vetools['pGetAllCreatures']();}[_0x453c44(0x175)](_0x6d43eb){const _0x52c9e8=_0x453c44;if(_0x6d43eb!==ImportListAdventureBook[_0x52c9e8(0x185)][_0x52c9e8(0x17f)])return;const _0x5cc6ec=this['_content']?.[_0x52c9e8(0x18c)]?.[_0x52c9e8(0x17d)];if(!Parser[_0x52c9e8(0x18e)][_0x5cc6ec])return;return(ImportListAdventure[_0x52c9e8(0x17e)]?.['monster']||[])[_0x52c9e8(0x182)](_0x129e1c=>{const _0x20b05f=_0x52c9e8;if(_0x129e1c[_0x20b05f(0x17d)]===_0x5cc6ec)return!![];return _0x129e1c[_0x20b05f(0x189)]&&_0x129e1c['otherSources'][_0x20b05f(0x184)](_0x5b739f=>_0x5b739f[_0x20b05f(0x17d)]===_0x5cc6ec);})[_0x52c9e8(0x181)](_0x7d47be=>({'source':_0x7d47be[_0x52c9e8(0x17d)],'hash':UrlUtil[_0x52c9e8(0x186)][UrlUtil[_0x52c9e8(0x18a)]](_0x7d47be)}));}[_0x453c44(0x173)](){const _0x30fa27=_0x453c44;return DataConverter['getAdventureJournals'](this[_0x30fa27(0x183)][_0x30fa27(0x180)],this[_0x30fa27(0x183)][_0x30fa27(0x18c)],{'isAddPermission':!![]});}}ImportListAdventure[_0x453c44(0x17e)]=null;export{ImportListAdventure};
+import {ImportListAdventureBook} from "./ImportListAdventureBook.js";
+import {Vetools} from "./Vetools.js";
+import {DataConverterAdventureBook} from "./DataConverterAdventureBook.js";
+
+class ImportListAdventure extends ImportListAdventureBook {
+	static get ID () { return "adventures"; }
+	static get DISPLAY_NAME_TYPE_PLURAL () { return "Adventures"; }
+
+	static _ = this.registerImpl(this);
+
+	constructor (externalData) {
+		super(
+			{title: "Import Adventure"},
+			externalData,
+			{
+				titleSearch: "adventures",
+				defaultFolderPath: ["Adventures"],
+				dirsHomebrew: ["adventure"],
+				namespace: "adventure",
+				isFolderOnly: true,
+				configGroup: "importAdventure",
+			},
+			{
+				fnGetIndex: Vetools.pGetAdventureIndex.bind(Vetools),
+				dataProp: "adventure",
+				brewDataProp: "adventureData",
+				title: "Adventure",
+			},
+		);
+	}
+
+	async pPreRender (...args) {
+		await super.pPreRender(...args);
+
+		// Pre-load all creatures, so we can add them, as source-appropriate, to the selection being imported.
+		if (ImportListAdventure._ALL_CREATURES) return;
+		ImportListAdventure._ALL_CREATURES = await Vetools.pGetAllCreatures();
+	}
+
+	_getAdditionalContentForTag (tag) {
+		if (tag !== ImportListAdventureBook.IMPORTABLE_TAG_CREATURE.tag) return;
+
+		// Only search up additional creatures for official content
+		const source = this._content?.[0]?._contentMetadata?.source;
+		if (!Parser.SOURCE_JSON_TO_FULL[source]) return;
+
+		return (ImportListAdventure._ALL_CREATURES?.monster || [])
+			.filter(it => {
+				if (it.source === source) return true;
+				return it.otherSources && it.otherSources.some(os => os.source === source);
+			})
+			.map(it => ({source: it.source, hash: UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BESTIARY](it)}));
+	}
+
+	_pGetJournalDatas () {
+		return DataConverterAdventureBook.pGetAdventureJournals(this._content[0].data, this._content[0]._contentMetadata, {isAddPermission: true});
+	}
+}
+
+ImportListAdventure._ALL_CREATURES = null;
+
+export {ImportListAdventure};

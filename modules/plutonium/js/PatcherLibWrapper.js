@@ -1,1 +1,32 @@
-const _0x3cb2=['splice','16789kMQZIV','290967RlHgKA','libWrapper\x20Shim:\x20\x22','773189aBymQr','347VzmCxN','configurable','is_fallback','register','LIBWRAPPER_MODE_OVERRIDE','LIBWRAPPER_MODE_MIXED','\x22\x20does\x20not\x20have\x20a\x20setter','MIXED','get','bind','reduce','getOwnPropertyDescriptor','WRAPPER','1nYuako','35041rkJCGU','value','502115SeUBtb','pop','45hDSPpG','5Uogpya','OVERRIDE','split','set','1506084kEbtNN','init','830111CqHZvY','call','slice'];const _0x38e0=function(_0x5a1abe,_0x4a2755){_0x5a1abe=_0x5a1abe-0x1b8;let _0x3cb24f=_0x3cb2[_0x5a1abe];return _0x3cb24f;};const _0x45ac26=_0x38e0;(function(_0x21cd5d,_0x2f0d4f){const _0x11296a=_0x38e0;while(!![]){try{const _0x41087d=parseInt(_0x11296a(0x1c0))*-parseInt(_0x11296a(0x1cb))+-parseInt(_0x11296a(0x1ba))*parseInt(_0x11296a(0x1c4))+parseInt(_0x11296a(0x1bf))*-parseInt(_0x11296a(0x1bb))+parseInt(_0x11296a(0x1c6))+-parseInt(_0x11296a(0x1cd))+-parseInt(_0x11296a(0x1bd))+-parseInt(_0x11296a(0x1ce))*-parseInt(_0x11296a(0x1ca));if(_0x41087d===_0x2f0d4f)break;else _0x21cd5d['push'](_0x21cd5d['shift']());}catch(_0x35ea89){_0x21cd5d['push'](_0x21cd5d['shift']());}}}(_0x3cb2,0xcdc4a));class UtilLibWrapper{}UtilLibWrapper['LIBWRAPPER_MODE_WRAPPER']=_0x45ac26(0x1b9),UtilLibWrapper[_0x45ac26(0x1d3)]=_0x45ac26(0x1d5),UtilLibWrapper[_0x45ac26(0x1d2)]=_0x45ac26(0x1c1);let libWrapper;Hooks['once'](_0x45ac26(0x1c5),()=>{const _0x2e7e39=_0x45ac26;if(globalThis['libWrapper']&&!(globalThis['libWrapper'][_0x2e7e39(0x1d0)]??!![])){libWrapper=globalThis['libWrapper'];return;}libWrapper=class{static get['is_fallback'](){return!![];}static[_0x2e7e39(0x1d1)](_0x3ea0f8,_0x1d131e,_0x55ffca,_0xd773c6=_0x2e7e39(0x1d5)){const _0x442bf3=_0x2e7e39,_0x5e2e27=_0x1d131e['endsWith']('#set');_0x1d131e=!_0x5e2e27?_0x1d131e:_0x1d131e[_0x442bf3(0x1c8)](0x0,-0x4);const _0x57c16b=_0x1d131e[_0x442bf3(0x1c2)]('.'),_0x67834c=_0x57c16b[_0x442bf3(0x1be)](),_0x392d37=_0x57c16b[_0x442bf3(0x1c9)](0x0,0x1)[0x0],_0x56ac7d=eval,_0xbba334=_0x57c16b[_0x442bf3(0x1d8)]((_0x3dcd9a,_0xc902f3)=>_0x3dcd9a[_0xc902f3],globalThis[_0x392d37]??_0x56ac7d(_0x392d37));let _0x319b61=_0xbba334,_0x279e41=null;while(_0x319b61){_0x279e41=Object[_0x442bf3(0x1b8)](_0x319b61,_0x67834c);if(_0x279e41)break;_0x319b61=Object['getPrototypeOf'](_0x319b61);}if(!_0x279e41)throw new Error('libWrapper\x20Shim:\x20\x27'+_0x1d131e+'\x27\x20does\x20not\x20exist\x20or\x20could\x20not\x20be\x20found.');let _0xb70579=null;const _0x46111a=_0xd773c6===_0x442bf3(0x1c1)?function(){const _0x2a4171=_0x442bf3;return _0x55ffca[_0x2a4171(0x1c7)](this,...arguments);}:function(){const _0x534a28=_0x442bf3;return _0x55ffca[_0x534a28(0x1c7)](this,_0xb70579[_0x534a28(0x1d7)](this),...arguments);};if(!_0x5e2e27)_0x279e41[_0x442bf3(0x1bc)]?(_0xb70579=_0x279e41[_0x442bf3(0x1bc)],_0x279e41[_0x442bf3(0x1bc)]=_0x46111a):(_0xb70579=_0x279e41[_0x442bf3(0x1d6)],_0x279e41[_0x442bf3(0x1d6)]=_0x46111a);else{if(!_0x279e41[_0x442bf3(0x1c3)])throw new Error(_0x442bf3(0x1cc)+_0x1d131e+_0x442bf3(0x1d4));_0xb70579=_0x279e41[_0x442bf3(0x1c3)],_0x279e41['set']=_0x46111a;}_0x279e41[_0x442bf3(0x1cf)]=!![],Object['defineProperty'](_0xbba334,_0x67834c,_0x279e41);}};});export{libWrapper,UtilLibWrapper};
+import {SharedConsts} from "../shared/SharedConsts.js";
+
+class UtilLibWrapper {
+	static LIBWRAPPER_MODE_WRAPPER = "WRAPPER";
+	static LIBWRAPPER_MODE_MIXED = "MIXED";
+	static LIBWRAPPER_MODE_OVERRIDE = "OVERRIDE";
+
+	static _PATCHES = {};
+
+	static addPatch (target, fn, mode) {
+		return this.togglePatch(target, fn, mode, true);
+	}
+
+	static togglePatch (target, fn, mode, isActive) {
+		if (!isActive) {
+			if (!this._PATCHES[target]) return;
+			libWrapper.unregister(SharedConsts.MODULE_NAME, target, false);
+
+			delete this._PATCHES[target];
+			return;
+		}
+
+		if (this._PATCHES[target]) return;
+
+		this._PATCHES[target] = true;
+		libWrapper.register(SharedConsts.MODULE_NAME, target, fn, mode);
+	}
+}
+
+export {
+	UtilLibWrapper,
+};

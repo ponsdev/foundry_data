@@ -1,1 +1,299 @@
-const _0x7809=['notifications','content','[name=btn-filter]','_getSelectedIds','158451RJkFZn','Delete\x20Complete','JournalEntry','input','children','_$btnReset','delete','reset','filter','doAbsorbItems','RollTable','its','journal\x20entry','867063tMjaig','info','Unknown\x20collection\x20\x22','getValues','then','STR_SEE_CONSOLE','Deleting\x20','_activateListeners_listAbsorbGetData','pInitFilterBox','items','.search','data','_rows','checked','warn','type','unknown','_namePlural','filterBox','EVNT_VALCHANGE','addToFilters','959969RZPhYi','toDisplay','_sortNamePathRows','map','_mapEntitiesToRows','their','find','\x20and\x20','tool-','[name=\x22btn-prune\x22]','actor','5725wqfGXJ','render','_nameSingle','actors','val','_gameProp','prop','add','_list','_activateListeners_initBtnReset','482wncccJ','<h3>Are\x20you\x20sure?</h3><p>Any\x20empty\x20folders\x20will\x20be\x20permanently\x20deleted.</p>','3779cBFNar','.veapp__list','entities','length','_entityClass','Failed\x20to\x20delete\x20','1FZInHf','[data-name=\x22wrp-btns-sort\x22]','_activateListeners_doBindSelectAll','_sidebarTab','journal\x20entries','ascSortLower','_pDoDelete','click','pGetConfirmation','813376PLXTDa','_collection','_$iptSearch','sort','Actor','_folderType','_handleFilterChange','bind','...','_pageFilter','absorbFnBindListeners','_activateListeners_pInitListAndFilters','[name=\x22cb-select-all\x22]','values','getFolderPath','2ZgFxCE','_listSortNamePathRows','journal','path','639688ooEGcN','Task','_collectionName','\x20data\x20will\x20be\x20permanently\x20deleted.</p>','Deleted\x20','\x20folder','forEach','_pDoPruneFolders','pRunTasks','<h3>Are\x20you\x20sure?</h3><p>','fa-trash','tables','sidebar','item','bindSelectAllCheckbox','Deleting...','Delete','collection','ele','_activateListeners_initBtnPrune','name','has','[name=btn-toggle-summary]'];const _0x4225=function(_0x4258d0,_0x4b72ae){_0x4258d0=_0x4258d0-0xe7;let _0x780915=_0x7809[_0x4258d0];return _0x780915;};const _0x30760d=_0x4225;(function(_0xb922c2,_0x37c1f2){const _0x879769=_0x4225;while(!![]){try{const _0x2e6245=parseInt(_0x879769(0xeb))+parseInt(_0x879769(0x146))+parseInt(_0x879769(0xfa))*parseInt(_0x879769(0x119))+-parseInt(_0x879769(0xfe))+-parseInt(_0x879769(0x126))+parseInt(_0x879769(0x158))*-parseInt(_0x879769(0x13b))+parseInt(_0x879769(0x150))*parseInt(_0x879769(0x152));if(_0x2e6245===_0x37c1f2)break;else _0xb922c2['push'](_0xb922c2['shift']());}catch(_0x5d450c){_0xb922c2['push'](_0xb922c2['shift']());}}}(_0x7809,0x77d09));import{UtilList2}from'./UtilList2.js';import{UtilApplications}from'./UtilApplications.js';import{Util}from'./Util.js';class BaseCollectionTool extends Application{static['_sortNamePathRows'](_0x3dacc9,_0x256c50){const _0x11f742=_0x4225;if(_0x3dacc9['path']==null&&_0x256c50[_0x11f742(0xfd)]==null)return SortUtil[_0x11f742(0xe7)](_0x3dacc9[_0x11f742(0x112)],_0x256c50[_0x11f742(0x112)]);if(_0x3dacc9[_0x11f742(0xfd)]!=null&&_0x256c50[_0x11f742(0xfd)]==null)return-0x1;if(_0x3dacc9[_0x11f742(0xfd)]==null&&_0x256c50[_0x11f742(0xfd)]!=null)return 0x1;return SortUtil[_0x11f742(0xe7)](_0x3dacc9[_0x11f742(0xfd)],_0x256c50['path'])||SortUtil['ascSortLower'](_0x3dacc9[_0x11f742(0x112)],_0x256c50[_0x11f742(0x112)]);}static[_0x30760d(0xfb)](_0x4530cc,_0x178f54,_0xa2c0bc){const _0x2e2cb5=_0x30760d,_0x411652={'name':_0x4530cc[_0x2e2cb5(0x112)],'path':_0x4530cc[_0x2e2cb5(0xf8)]['path']},_0x46664f={'name':_0x178f54[_0x2e2cb5(0x112)],'path':_0x178f54[_0x2e2cb5(0xf8)]['path']};return BaseCollectionTool[_0x2e2cb5(0x13d)](_0x411652,_0x46664f);}constructor(_0xe8fe6f,_0xeefa4f){const _0x2dd7af=_0x30760d;super(_0xe8fe6f),this[_0x2dd7af(0x100)]=_0xeefa4f,this[_0x2dd7af(0x156)]=null,this[_0x2dd7af(0xec)]=null,this[_0x2dd7af(0x15b)]=null,this[_0x2dd7af(0x14b)]=null,this[_0x2dd7af(0xf0)]=null,this['_nameSingle']=null,this[_0x2dd7af(0x137)]=null;switch(_0xeefa4f){case _0x2dd7af(0x10b):{this[_0x2dd7af(0x156)]=Item,this['_collection']=Item[_0x2dd7af(0x10f)],this[_0x2dd7af(0x15b)]=_0x2dd7af(0x12f),this[_0x2dd7af(0x14b)]=_0x2dd7af(0x12f),this[_0x2dd7af(0xf0)]='Item',this[_0x2dd7af(0x148)]=_0x2dd7af(0x10b),this['_namePlural']=_0x2dd7af(0x12f);break;}case _0x2dd7af(0x145):{this['_entityClass']=Actor,this[_0x2dd7af(0xec)]=Actor[_0x2dd7af(0x10f)],this[_0x2dd7af(0x15b)]=_0x2dd7af(0x149),this[_0x2dd7af(0x14b)]='actors',this[_0x2dd7af(0xf0)]=_0x2dd7af(0xef),this[_0x2dd7af(0x148)]=_0x2dd7af(0x145),this['_namePlural']=_0x2dd7af(0x149);break;}case _0x2dd7af(0xfc):{this[_0x2dd7af(0x156)]=JournalEntry,this[_0x2dd7af(0xec)]=JournalEntry[_0x2dd7af(0x10f)],this[_0x2dd7af(0x15b)]=_0x2dd7af(0xfc),this[_0x2dd7af(0x14b)]=_0x2dd7af(0xfc),this[_0x2dd7af(0xf0)]=_0x2dd7af(0x11b),this['_nameSingle']=_0x2dd7af(0x125),this[_0x2dd7af(0x137)]=_0x2dd7af(0x15c);break;}case'rolltable':{this[_0x2dd7af(0x156)]=RollTable,this[_0x2dd7af(0xec)]=RollTable[_0x2dd7af(0x10f)],this[_0x2dd7af(0x15b)]=_0x2dd7af(0x109),this[_0x2dd7af(0x14b)]=_0x2dd7af(0x109),this[_0x2dd7af(0xf0)]=_0x2dd7af(0x123),this[_0x2dd7af(0x148)]='table',this['_namePlural']=_0x2dd7af(0x109);break;}default:throw new Error(_0x2dd7af(0x128)+_0xeefa4f+'\x22');}}[_0x30760d(0x13f)](){const _0x19cda2=_0x30760d;return this[_0x19cda2(0xec)][_0x19cda2(0x154)][_0x19cda2(0x13e)]((_0x3dbb49,_0x1870cc)=>{const _0x39b7e7=_0x19cda2,_0x44278e=UtilApplications[_0x39b7e7(0xf9)](_0x3dbb49,{'isAddTrailingSlash':!![]});return{'path':_0x44278e,'name':_0x3dbb49[_0x39b7e7(0x112)],'displayName':''+(_0x44278e||'')+_0x3dbb49[_0x39b7e7(0x112)],'id':_0x3dbb49['id'],'type':MiscUtil['get'](_0x3dbb49,_0x39b7e7(0x131),_0x39b7e7(0x135))||_0x39b7e7(0x136),'ix':_0x1870cc};})[_0x19cda2(0xee)](BaseCollectionTool[_0x19cda2(0x13d)]);}[_0x30760d(0xf1)](){const _0x18b2bb=_0x30760d,_0x2a7445=this[_0x18b2bb(0xf4)][_0x18b2bb(0x138)][_0x18b2bb(0x129)]();this[_0x18b2bb(0x14e)][_0x18b2bb(0x121)](_0x594bbf=>this[_0x18b2bb(0xf4)][_0x18b2bb(0x13c)](_0x2a7445,this['_rows'][_0x594bbf['ix']]));}[_0x30760d(0x14f)](_0x40cbf0){const _0x5d92e6=_0x30760d;this[_0x5d92e6(0x11e)]=_0x40cbf0['find']('[name=\x22btn-reset\x22]')[_0x5d92e6(0xe9)](()=>{const _0x2a5c41=_0x5d92e6;_0x40cbf0[_0x2a5c41(0x141)](_0x2a5c41(0x130))[_0x2a5c41(0x14a)]('');if(this[_0x2a5c41(0x14e)])this[_0x2a5c41(0x14e)][_0x2a5c41(0x120)]();});}[_0x30760d(0x12d)](_0x4600b0){return UtilList2['absorbFnGetData'](_0x4600b0);}[_0x30760d(0x15a)](_0x288476){const _0x516de9=_0x30760d;ListUiUtil[_0x516de9(0x10c)](_0x288476,this[_0x516de9(0x14e)]);}[_0x30760d(0xf6)](_0x42e48a){const _0x4b37e8=_0x30760d;return this[_0x4b37e8(0xed)]=_0x42e48a[_0x4b37e8(0x141)](_0x4b37e8(0x130)),this[_0x4b37e8(0x14e)]=new List({'$iptSearch':this[_0x4b37e8(0xed)],'$wrpList':_0x42e48a['find'](_0x4b37e8(0x153)),'fnSort':BaseCollectionTool[_0x4b37e8(0xfb)]}),SortUtil['initBtnSortHandlers'](_0x42e48a[_0x4b37e8(0x141)](_0x4b37e8(0x159)),this[_0x4b37e8(0x14e)]),this[_0x4b37e8(0x15a)](_0x42e48a[_0x4b37e8(0x141)](_0x4b37e8(0xf7))),this[_0x4b37e8(0xf4)][_0x4b37e8(0x12e)]({'$iptSearch':this[_0x4b37e8(0xed)],'$btnReset':this[_0x4b37e8(0x11e)],'$btnOpen':_0x42e48a[_0x4b37e8(0x141)](_0x4b37e8(0x117)),'$btnToggleSummaryHidden':_0x42e48a['find'](_0x4b37e8(0x114)),'$wrpMiniPills':_0x42e48a[_0x4b37e8(0x141)]('.fltr__mini-view'),'namespace':_0x4b37e8(0x143)+this[_0x4b37e8(0x100)]})[_0x4b37e8(0x12a)](()=>{const _0x17bced=_0x4b37e8;this[_0x17bced(0x132)][_0x17bced(0x104)](_0x1b3733=>this['_pageFilter'][_0x17bced(0x13a)](_0x1b3733)),this[_0x17bced(0x14e)][_0x17bced(0x122)](this['_rows'],{'fnGetName':_0x45fdfb=>_0x45fdfb[_0x17bced(0x112)],'fnGetValues':_0x101f2e=>({'id':_0x101f2e['id'],'path':_0x101f2e[_0x17bced(0xfd)]}),'fnGetData':this[_0x17bced(0x12d)][_0x17bced(0xf2)](this),'fnBindListeners':_0x1670aa=>UtilList2[_0x17bced(0xf5)](this['_list'],_0x1670aa)}),this[_0x17bced(0x14e)]['init'](),this[_0x17bced(0xf4)][_0x17bced(0x138)][_0x17bced(0x147)](),this[_0x17bced(0xf4)][_0x17bced(0x138)]['on'](FilterBox[_0x17bced(0x139)],this[_0x17bced(0xf1)][_0x17bced(0xf2)](this)),this[_0x17bced(0xf1)]();});}[_0x30760d(0x118)](){const _0x46c3c4=_0x30760d;return this['_list']['items']['filter'](_0x4325d0=>$(_0x4325d0[_0x46c3c4(0x110)])[_0x46c3c4(0x141)](_0x46c3c4(0x11c))['prop']('checked'))['map'](_0x1f97f5=>({'name':_0x1f97f5[_0x46c3c4(0x112)],'id':_0x1f97f5[_0x46c3c4(0xf8)]['id']}));}[_0x30760d(0x111)](_0x500d69){const _0x1ebc77=_0x30760d;_0x500d69['find'](_0x1ebc77(0x144))['click'](async()=>{const _0xd0a4b6=_0x1ebc77,_0x48fecd=await UtilApplications[_0xd0a4b6(0xea)]({'title':'Delete\x20Folders','content':_0xd0a4b6(0x151),'confirmText':'Delete','faIcon':_0xd0a4b6(0x108)});if(!_0x48fecd)return;await this['_pDoPruneFolders']();});}async[_0x30760d(0xe8)](_0x36dc83){const _0x561b6e=_0x30760d;if(!this['_list'])return;let _0x47cae7=this[_0x561b6e(0x118)]();if(!_0x47cae7[_0x561b6e(0x155)])return ui[_0x561b6e(0x115)][_0x561b6e(0x134)]('Please\x20select\x20something\x20to\x20delete!');const _0x1acdba=this[_0x561b6e(0x100)]['uppercaseFirst'](),_0x6bc8e1=_0x47cae7['length']!==0x1?'s':'',_0x5e01fd=await UtilApplications[_0x561b6e(0xea)]({'title':'Delete\x20'+_0x1acdba+_0x6bc8e1,'content':_0x561b6e(0x107)+_0x47cae7[_0x561b6e(0x155)]+'\x20'+_0x1acdba+_0x6bc8e1+_0x561b6e(0x142)+(_0x6bc8e1?_0x561b6e(0x140):_0x561b6e(0x124))+_0x561b6e(0x101),'confirmText':_0x561b6e(0x10e),'faIcon':_0x561b6e(0x108)});if(!_0x5e01fd)return;this['close'](),ui[_0x561b6e(0x10a)]['activateTab'](this[_0x561b6e(0x15b)]);if(_0x36dc83[_0x561b6e(0x14c)](_0x561b6e(0x133))){const _0xb48256=await this[_0x561b6e(0x105)](_0x47cae7[_0x561b6e(0x13e)](({id:_0x238118})=>_0x238118));_0x47cae7=_0x47cae7[_0x561b6e(0x121)](({id:_0x1d9525})=>!_0xb48256[_0x561b6e(0x113)](_0x1d9525));}const _0xf8f603=new Util[(_0x561b6e(0xff))](_0x47cae7[_0x561b6e(0x155)],()=>this[_0x561b6e(0x156)][_0x561b6e(0x11f)](_0x47cae7[_0x561b6e(0x13e)](({id:_0x25a702})=>_0x25a702)));await UtilApplications[_0x561b6e(0x106)]([_0xf8f603],{'titleInitial':_0x561b6e(0x10d),'titleComplete':_0x561b6e(0x11a),'fnGetRowRunningText':_0x4f3ecd=>_0x561b6e(0x12c)+_0x4f3ecd+'\x20'+(_0x4f3ecd===0x1?this[_0x561b6e(0x148)]:this[_0x561b6e(0x137)])+_0x561b6e(0xf3),'fnGetRowSuccessText':_0x5ecb1d=>'Deleted\x20'+_0x5ecb1d+'\x20'+(_0x5ecb1d===0x1?this['_nameSingle']:this['_namePlural'])+'.','fnGetRowErrorText':_0x4d941d=>_0x561b6e(0x157)+_0x4d941d+'\x20'+(_0x4d941d===0x1?this[_0x561b6e(0x148)]:this[_0x561b6e(0x137)])+'!\x20'+VeCt[_0x561b6e(0x12b)]});if(_0x36dc83['prop'](_0x561b6e(0x133)))await this['_pDoPruneFolders']();game[this['_gameProp']][_0x561b6e(0x147)]();}async['_pDoPruneFolders'](_0x326f4b){const _0x20c38b=_0x30760d,_0x495a9a=()=>Folder[_0x20c38b(0x10f)][_0x20c38b(0x154)][_0x20c38b(0x121)](_0x50f044=>_0x50f044[_0x20c38b(0x131)][_0x20c38b(0x135)]===this[_0x20c38b(0xf0)]),_0x218d00=_0x326f4b?new Set(_0x326f4b):null,_0x34d1cc=new Set();let _0x1cebff=0x0,_0x5892b2=null,_0x5c23a1=_0x495a9a()[_0x20c38b(0x155)];do{let _0x1abe18;_0x218d00?_0x1abe18=_0x495a9a()[_0x20c38b(0x121)](_0x544b23=>{const _0x465fde=_0x20c38b;if(!_0x544b23[_0x465fde(0x11d)]||!_0x544b23[_0x465fde(0x11d)][_0x465fde(0x155)]){if(!_0x544b23[_0x465fde(0x116)]['length'])return!![];const _0x24f87d=_0x544b23['content'][_0x465fde(0x13e)](_0x5b7d9f=>_0x5b7d9f['id'])[_0x465fde(0x121)](_0x259bfc=>_0x218d00[_0x465fde(0x113)](_0x259bfc));if(_0x24f87d[_0x465fde(0x155)]===_0x544b23[_0x465fde(0x116)][_0x465fde(0x155)])return _0x24f87d[_0x465fde(0x104)](_0x1f3b1a=>_0x34d1cc[_0x465fde(0x14d)](_0x1f3b1a)),!![];}return![];}):_0x1abe18=_0x495a9a()[_0x20c38b(0x121)](_0x487360=>!_0x487360['content'][_0x20c38b(0x155)]&&(!_0x487360[_0x20c38b(0x11d)]||!_0x487360[_0x20c38b(0x11d)][_0x20c38b(0x155)]));for(const _0x571233 of _0x1abe18){await _0x571233[_0x20c38b(0x11f)]({'deleteSubfolders':!![],'deleteContents':!![]}),_0x1cebff++;}_0x5892b2=_0x5c23a1,_0x5c23a1=_0x495a9a()[_0x20c38b(0x155)];}while(_0x5c23a1!==_0x5892b2);if(_0x1cebff)ui[_0x20c38b(0x115)][_0x20c38b(0x127)](_0x20c38b(0x102)+_0x1cebff+_0x20c38b(0x103)+(_0x1cebff===0x1?'':'s')+'.');return _0x34d1cc;}}export{BaseCollectionTool};
+import {UtilList2} from "./UtilList2.js";
+import {UtilApplications} from "./UtilApplications.js";
+import {Util} from "./Util.js";
+
+class BaseCollectionTool extends Application {
+	static _sortNamePathRows (a, b) {
+		if (a.path == null && b.path == null) return SortUtil.ascSortLower(a.name, b.name);
+		if (a.path != null && b.path == null) return -1;
+		if (a.path == null && b.path != null) return 1;
+		return SortUtil.ascSortLower(a.path, b.path) || SortUtil.ascSortLower(a.name, b.name);
+	}
+
+	static _listSortNamePathRows (a, b, o) { // This ignores the options object--potentially expand in future
+		const nxtA = {name: a.name, path: a.values.path};
+		const nxtB = {name: b.name, path: b.values.path};
+		return BaseCollectionTool._sortNamePathRows(nxtA, nxtB);
+	}
+
+	constructor (applicationOpts, collectionName) {
+		super(applicationOpts);
+
+		this._collectionName = collectionName;
+		this._documentClass = null;
+		this._collection = null;
+		this._sidebarTab = null;
+		this._gameProp = null;
+		this._folderType = null;
+		this._nameSingle = null;
+		this._namePlural = null;
+		switch (collectionName) {
+			case "scene": {
+				this._documentClass = Scene;
+				this._collection = CONFIG.Scene.collection.instance;
+				this._sidebarTab = "scenes";
+				this._gameProp = "scenes";
+				this._folderType = "Scene";
+				this._nameSingle = "scene";
+				this._namePlural = "scenes";
+				break;
+			}
+			case "actor": {
+				this._documentClass = Actor;
+				this._collection = CONFIG.Actor.collection.instance;
+				this._sidebarTab = "actors";
+				this._gameProp = "actors";
+				this._folderType = "Actor";
+				this._nameSingle = "actor";
+				this._namePlural = "actors";
+				break;
+			}
+			case "item": {
+				this._documentClass = Item;
+				this._collection = CONFIG.Item.collection.instance;
+				this._sidebarTab = "items";
+				this._gameProp = "items";
+				this._folderType = "Item";
+				this._nameSingle = "item";
+				this._namePlural = "items";
+				break;
+			}
+			case "journal": {
+				this._documentClass = JournalEntry;
+				this._collection = CONFIG.JournalEntry.collection.instance;
+				this._sidebarTab = "journal";
+				this._gameProp = "journal";
+				this._folderType = "JournalEntry";
+				this._nameSingle = "journal entry";
+				this._namePlural = "journal entries";
+				break;
+			}
+			case "rolltable": {
+				this._documentClass = RollTable;
+				this._collection = CONFIG.RollTable.collection.instance;
+				this._sidebarTab = "tables";
+				this._gameProp = "tables";
+				this._folderType = "RollTable";
+				this._nameSingle = "table";
+				this._namePlural = "tables";
+				break;
+			}
+			case "macro": {
+				this._documentClass = Macro;
+				this._collection = CONFIG.Macro.collection.instance;
+				this._sidebarTab = null;
+				this._gameProp = "macros";
+				this._folderType = "Macro";
+				this._nameSingle = "macro";
+				this._namePlural = "macros";
+				break;
+			}
+			case "cards": {
+				this._documentClass = Cards;
+				this._collection = CONFIG.Cards.collection.instance;
+				this._sidebarTab = "cards";
+				this._gameProp = "cards";
+				this._folderType = "Cards";
+				this._nameSingle = "card stack";
+				this._namePlural = "card stacks";
+				break;
+			}
+			default: throw new Error(`Unknown collection "${collectionName}"`);
+		}
+	}
+
+	_mapEntitiesToRows () {
+		return this._collection.contents
+			.map((it, ix) => {
+				const path = UtilApplications.getFolderPath(it, {isAddTrailingSlash: true});
+				return {
+					path,
+					name: it.name,
+					displayName: `${path || ""}${it.name}`,
+					id: it.id,
+					type: MiscUtil.get(it, "data", "type") || "unknown",
+					ix,
+				};
+			})
+			.sort(BaseCollectionTool._sortNamePathRows);
+	}
+
+	_handleFilterChange () {
+		const f = this._pageFilter.filterBox.getValues();
+		this._list.filter(li => this._pageFilter.toDisplay(f, this._rows[li.ix]));
+	}
+
+	_activateListeners_initBtnReset ($html) {
+		this._$btnReset = $html.find(`[name="btn-reset"]`).click(() => {
+			$html.find(`.search`).val("");
+			if (this._list) this._list.reset();
+		});
+	}
+
+	// Expose these methods to be overridden by child classes
+	_activateListeners_listAbsorbGetData (li) { return UtilList2.absorbFnGetData(li); }
+	_activateListeners_doBindSelectAll ($cbAll) { ListUiUtil.bindSelectAllCheckbox($cbAll, this._list); }
+
+	_activateListeners_pInitListAndFilters ($html) {
+		this._$iptSearch = $html.find(`.search`);
+
+		// Init list library
+		this._list = new List({
+			$iptSearch: this._$iptSearch,
+			$wrpList: $html.find(`.veapp__list`),
+			fnSort: BaseCollectionTool._listSortNamePathRows,
+		});
+		SortUtil.initBtnSortHandlers($html.find(`[data-name="wrp-btns-sort"]`), this._list);
+		this._activateListeners_doBindSelectAll($html.find(`[name="cb-select-all"]`));
+
+		return this._pageFilter.pInitFilterBox({
+			$iptSearch: this._$iptSearch,
+			$btnReset: this._$btnReset,
+			$btnOpen: $html.find(`[name=btn-filter]`),
+			$btnToggleSummaryHidden: $html.find(`[name=btn-toggle-summary]`),
+			$wrpMiniPills: $html.find(`.fltr__mini-view`),
+			namespace: `tool-${this._collectionName}`,
+		}).then(() => {
+			this._rows.forEach(it => this._pageFilter.addToFilters(it));
+
+			this._list.doAbsorbItems(
+				this._rows,
+				{
+					fnGetName: it => it.name,
+					fnGetValues: it => ({
+						id: it.id,
+						path: it.path,
+					}),
+					fnGetData: this._activateListeners_listAbsorbGetData.bind(this),
+					fnBindListeners: it => UtilList2.absorbFnBindListeners(this._list, it),
+				},
+			);
+
+			this._list.init();
+
+			this._pageFilter.trimState();
+			this._pageFilter.filterBox.render();
+
+			this._pageFilter.filterBox.on(
+				FilterBox.EVNT_VALCHANGE,
+				this._handleFilterChange.bind(this),
+			);
+
+			this._handleFilterChange();
+		});
+	}
+
+	_getSelectedIds () {
+		return this._list.items
+			.filter(it => $(it.ele).find(`input`).prop("checked"))
+			.map(it => ({name: it.name, id: it.values.id}));
+	}
+
+	_activateListeners_initBtnPrune ($html) {
+		$html.find(`[name="btn-prune"]`).click(async () => {
+			const doDelete = await UtilApplications.pGetConfirmation({
+				title: `Delete Folders`,
+				content: `<h3>Are you sure?</h3><p>Any empty folders will be permanently deleted.</p>`,
+				confirmText: "Delete",
+				faIcon: "fa-trash",
+			});
+			if (!doDelete) return;
+
+			await this._pDoPruneFolders();
+		});
+	}
+
+	async _pDoDelete ($cbPruneAuto) {
+		if (!this._list) return;
+
+		let selIds = this._getSelectedIds();
+
+		if (!selIds.length) return ui.notifications.warn(`Please select something to delete!`);
+
+		const collectionTitle = this._collectionName.uppercaseFirst();
+		const pluralStr = selIds.length !== 1 ? "s" : "";
+		const doDelete = await UtilApplications.pGetConfirmation({
+			title: `Delete ${collectionTitle}${pluralStr}`,
+			content: `<h3>Are you sure?</h3><p>${selIds.length} ${collectionTitle}${pluralStr} and ${pluralStr ? "their" : "its"} data will be permanently deleted.</p>`,
+			confirmText: "Delete",
+			faIcon: "fa-trash",
+		});
+		if (!doDelete) return;
+
+		this.close();
+		if (this._sidebarTab) ui.sidebar.activateTab(this._sidebarTab);
+
+		// If folder pruning is enabled, check if there are any folders that we can delete (thus deleting their contents)
+		//   This is much faster than deleting individual records
+		let cntPruned = 0;
+		if ($cbPruneAuto.prop("checked")) {
+			const delIds = await this._pDoPruneFolders(selIds.map(({id}) => id));
+			cntPruned = delIds.size;
+			selIds = selIds.filter(({id}) => !delIds.has(id));
+		}
+
+		const task = new Util.Task(selIds.length, () => this._documentClass.deleteDocuments(selIds.map(({id}) => id)));
+		await UtilApplications.pRunTasks(
+			[task],
+			{
+				titleInitial: "Deleting...",
+				titleComplete: "Delete Complete",
+				fnGetRowRunningText: (cnt) => `Deleting ${cntPruned + cnt} ${cntPruned + cnt === 1 ? this._nameSingle : this._namePlural}...`,
+				fnGetRowSuccessText: (cnt) => `Deleted ${cntPruned + cnt} ${cntPruned + cnt === 1 ? this._nameSingle : this._namePlural}.`,
+				fnGetRowErrorText: (cnt) => `Failed to delete ${cntPruned + cnt} ${cntPruned + cnt === 1 ? this._nameSingle : this._namePlural}! ${VeCt.STR_SEE_CONSOLE}`,
+			},
+		);
+
+		if ($cbPruneAuto.prop("checked")) await this._pDoPruneFolders();
+
+		game[this._gameProp].render();
+	}
+
+	/**
+	 * @param [toDeleteEntityIds] Optional list of IDs for entities that are to be deleted.
+	 */
+	async _pDoPruneFolders (toDeleteEntityIds) {
+		const getFolders = () => CONFIG.Folder.collection.instance.contents.filter(it => it.data.type === this._folderType);
+
+		const setSelectedIds = toDeleteEntityIds ? new Set(toDeleteEntityIds) : null;
+		const setDeleted = new Set();
+
+		let cntPruned = 0;
+		let cntFoldersPrev = null;
+		let cntFolders = getFolders().length;
+		do {
+			let dirsToDelete;
+			if (setSelectedIds) {
+				dirsToDelete = getFolders().filter(it => {
+					if (!it.children || !it.children.length) {
+						if (!it.content.length) return true;
+
+						// If all the directory's contents are to be deleted, delete the directory instead
+						const selContentIds = it.content.map(c => c.id).filter(id => setSelectedIds.has(id));
+						if (selContentIds.length === it.content.length) {
+							selContentIds.forEach(id => setDeleted.add(id));
+							return true;
+						}
+					}
+					return false;
+				});
+			} else {
+				dirsToDelete = getFolders().filter(it => !it.content.length && (!it.children || !it.children.length));
+			}
+
+			for (const dir of dirsToDelete) {
+				await dir.delete({deleteSubfolders: true, deleteContents: true});
+				cntPruned++;
+			}
+
+			cntFoldersPrev = cntFolders;
+			cntFolders = getFolders().length;
+		} while (cntFolders !== cntFoldersPrev);
+
+		if (cntPruned) ui.notifications.info(`Deleted ${cntPruned} folder${cntPruned === 1 ? "" : "s"}.`);
+
+		return setDeleted;
+	}
+}
+
+export {BaseCollectionTool};

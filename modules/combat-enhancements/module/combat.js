@@ -50,7 +50,7 @@ export class CombatSidebarCe {
         }
 
         // Retrieve the combatant for this actor, or exit if not valid.
-        const combatant = game.combat.combatants.find(c => c._id == $actorRow.data('combatant-id'));
+        const combatant = game.combat.data.combatants.find(c => c.id == $actorRow.data('combatant-id'));
         if (!combatant) {
           return;
         }
@@ -59,10 +59,11 @@ export class CombatSidebarCe {
 
         // Check for bad numbers, otherwise convert into a Number type.
         let value = $input.val();
+        let inputValue = getProperty(actor.data, $input.attr('name'));
         if (dataset.dtype == 'Number') {
           value = Number(value);
           if (Number.isNaN(value)) {
-            $input.val(actor.data.data.attributes.hp.value);
+            $input.val(inputValue);
             return false;
           }
         }
@@ -71,8 +72,9 @@ export class CombatSidebarCe {
         let updateData = {};
         // If this started with a "+" or "-", handle it as a relative change.
         let operation = $input.val().match(/^\+|\-/g);
+        console.log($input.attr('name'));
         if (operation) {
-          updateData[$input.attr('name')] = Number(actor.data.data.attributes.hp.value) + value;
+          updateData[$input.attr('name')] = Number(inputValue) + value;
         }
         // Otherwise, set it absolutely.
         else {
@@ -96,7 +98,7 @@ export class CombatSidebarCe {
             // Store the combatant type for reference. We have to do this
             // because dragover doesn't have access to the drag data, so we
             // store it as a new type entry that can be split later.
-            let newCombatant = game.combat.combatants.find(c => c._id == dragData.combatantId);
+            let newCombatant = game.combat.data.combatants.find(c => c.id == dragData.combatantId);
             event.originalEvent.dataTransfer.setData(`newtype--${dragData.actorType}`, '');
 
             // Set the drag image.
@@ -147,7 +149,7 @@ export class CombatSidebarCe {
             // needs to be refactored.
             // ---------------------------------------------------------------
             // const view = game.scenes.viewed;
-            // const combats = view ? game.combats.entities.filter(c => c.data.scene === view._id) : [];
+            // const combats = view ? game.combats.entities.filter(c => c.data.scene === view.id) : [];
             // let combat = combats.length ? combats.find(c => c.data.active) || combats[0] : null;
 
             // Retreive the drop target, remove any hover classes.
@@ -165,28 +167,28 @@ export class CombatSidebarCe {
             }
 
             // Retrieve the combatant being dropped.
-            let newCombatant = combat.combatants.find(c => c._id == data.combatantId);
+            let newCombatant = combat.data.combatants.find(c => c.id == data.combatantId);
 
             // Retrieve the combatants grouped by type.
             let combatants = this.getCombatantsData(false);
             // Retrieve the combatant being dropped onto.
             let originalCombatant = combatants.find(c => {
-              return c._id == $dropTarget.data('combatant-id');
+              return c.id == $dropTarget.data('combatant-id');
             });
 
             // Exit early if there's no target.
-            if (!originalCombatant?._id) {
+            if (!originalCombatant?.id) {
               return;
             }
 
-            let nextCombatantElem = $(`.combatant[data-combatant-id="${originalCombatant._id}"] + .combatant`);
+            let nextCombatantElem = $(`.combatant[data-combatant-id="${originalCombatant.id}"] + .combatant`);
             let nextCombatantId = nextCombatantElem.length > 0 ? nextCombatantElem.data('combatant-id') : null;
             let nextCombatant = null;
             if (nextCombatantId) {
-              nextCombatant = combatants.find(c => c._id == nextCombatantId);
+              nextCombatant = combatants.find(c => c.id == nextCombatantId);
             }
 
-            if (nextCombatant && nextCombatant._id == newCombatant._id) {
+            if (nextCombatant && nextCombatant.id == newCombatant.id) {
               return;
             }
 
@@ -201,7 +203,7 @@ export class CombatSidebarCe {
             if (oldInit !== null) {
               // Set the initiative of the actor being draged to the drop
               // target's -1. This will later be adjusted increments of 10.
-              // let updatedCombatant = combatants.find(c => c._id == newCombatant._id);
+              // let updatedCombatant = combatants.find(c => c.id == newCombatant.id);
               let initiative = (oldInit[0] + oldInit[1]) / 2;
               let updateOld = false;
 
@@ -215,20 +217,20 @@ export class CombatSidebarCe {
               }
 
               let updates = [{
-                _id: newCombatant._id,
+                _id: newCombatant.id,
                 initiative: initiative
               }];
 
               if (updateOld) {
                 updates.push({
-                  _id: originalCombatant._id,
+                  _id: originalCombatant.id,
                   initiative: oldInit[0]
                 });
               }
 
               // If there are updates, update the combatants at once.
               if (updates) {
-                await combat.updateCombatant(updates);
+                await combat.updateEmbeddedDocuments('Combatant', updates, {});
                 ui.combat.render();
               }
             }
@@ -242,15 +244,15 @@ export class CombatSidebarCe {
         return;
       }
 
-      let inCombat = game.combat.combatants.find(c => c?.actor?.data?._id == actor?.data?._id);
+      let inCombat = game.combat.data.combatants.find(c => c?.actor?.data?.id == actor?.data?.id);
       if (inCombat) {
         ui.combat.render();
       }
     });
 
-    Hooks.on('updateToken', (scene, token, data, options, id) => {
-      if (data.actorData && game.combat) {
-        let inCombat = game.combat.combatants.find(c => c.tokenId == token._id);
+    Hooks.on('updateToken', (token, data, options, id) => {
+      if ((data.actorData || data.flags?.barbrawl) && game.combat) {
+        let inCombat = game.combat.data.combatants.find(c => c.data.tokenId == token.id);
         if (inCombat) {
           ui.combat.render();
         }
@@ -273,7 +275,7 @@ export class CombatSidebarCe {
 
         combatants.forEach(c => {
           // Add class to trigger drag events.
-          let $combatant = html.find(`.combatant[data-combatant-id="${c._id}"]`);
+          let $combatant = html.find(`.combatant[data-combatant-id="${c.id}"]`);
           $combatant.addClass('actor-elem');
 
           // Add svg circle.
@@ -291,7 +293,7 @@ export class CombatSidebarCe {
             // Display the HP input/div.
             let $healthInput = null;
             if (c.editable) {
-              $healthInput = $(`<div class="ce-modify-hp-wrapper">HP <input onclick="this.select();" class="ce-modify-hp" type="text" name="data.${c.combatAttr}.value" value="${getProperty(c.actor.data.data, c.combatAttr + '.value')}" data-dtype="Number"></div>`);
+              $healthInput = $(`<div class="ce-modify-hp-wrapper">${game.i18n.localize("COMBAT_ENHANCEMENTS.hp.label")} <input onclick="this.select();" class="ce-modify-hp" type="text" name="data.${c.combatAttr}.value" value="${getProperty(c.actor.data.data, c.combatAttr + '.value')}" data-dtype="Number"></div>`);
             }
             // else {
             //   $healthInput = $(`<div class="ce-modify-hp-wrapper">HP ${getProperty(c.actor.data.data, c.combatAttr + '.value')}</div>`);
@@ -342,7 +344,7 @@ export class CombatSidebarCe {
         let displayHealthRadials = game.settings.get('combat-enhancements', 'enableHpRadial');
 
         // Retrieve the health bars mode from the token's resource settings.
-        let displayBarsMode = Object.entries(CONST.TOKEN_DISPLAY_MODES).find(i => i[1] == combatant.token.displayBars)[0];
+        let displayBarsMode = Object.entries(CONST.TOKEN_DISPLAY_MODES).find(i => i[1] == combatant.token.data.displayBars)[0];
         // Assume player characters should always show their health bar.
         let displayHealth = alwaysOnType && group == alwaysOnType ? true : false;
 
@@ -351,8 +353,8 @@ export class CombatSidebarCe {
           combatant.combatAttr = 'attributes.hp';
         }
 
-        if (combatant.token.bar1.attribute) {
-          combatant.combatAttr = combatant.token.bar1.attribute;
+        if (combatant.token.data.bar1.attribute) {
+          combatant.combatAttr = combatant.token.data.bar1.attribute;
         }
 
         // If this is a group other than character (such as NPC), we need to
@@ -361,7 +363,7 @@ export class CombatSidebarCe {
           // If the mode is one of the owner options, only the token owner or
           // the GM should be able to see it.
           if (displayBarsMode.includes("OWNER")) {
-            if (combatant.owner || game.user.isGM) {
+            if (combatant.isOwner || game.user.isGM) {
               displayHealth = true;
             }
           }
@@ -388,12 +390,41 @@ export class CombatSidebarCe {
         // Set a property for whether or not this is editable. This controls
         // whether editabel fields like HP will be shown as an input or a div
         // in the combat tracker HTML template.
-        combatant.editable = editableHp && (combatant.owner || game.user.isGM);
+        combatant.editable = editableHp && (combatant.isOwner || game.user.isGM);
+
+
+        // If the Bar Brawl module is enabled, let it handle the bar's value and visibility.
+        let currentHealth, maxHealth;
+        if (game.modules.get("barbrawl")?.active) {
+          // Fetch the bar's validated source data.
+          let barData = window.BarBrawlApi?.getBar(combatant.token, "bar1");
+          if (displayHealth && barData && window.BarBrawlApi?.isBarVisible) {
+            // Make sure that the bar should be visible for the current user.
+            displayHealth = window.BarBrawlApi.isBarVisible(combatant.token.object, barData, true);
+          }
+          if (barData && window.BarBrawlApi?.getActualBarValue) {
+            // Fetch the value that should actually be displayed on the bar.
+            const barValue = window.BarBrawlApi.getActualBarValue(combatant.token, barData);
+            currentHealth = barValue.value;
+            maxHealth = barValue.max;
+          }
+        }
+        // Otherwise, retrieve the current and max health bar data.
+        else {
+          if (currentHealth === undefined) {
+            let resource = combatant.token.getBarAttribute(null, { alternative: combatant.combatAttr });
+            if (resource && resource.type === "bar") {
+              currentHealth = resource.value;
+              maxHealth = resource.max;
+            }
+          }
+
+        }
 
         // Build the radial progress circle settings for the template.
         combatant.healthSvg = CeUtility.getProgressCircle({
-          current: getProperty(combatant.actor.data.data, combatant.combatAttr + '.value'),
-          max: getProperty(combatant.actor.data.data, combatant.combatAttr + '.max'),
+          current: currentHealth,
+          max: maxHealth,
           radius: 16
         });
 

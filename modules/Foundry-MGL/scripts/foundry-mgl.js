@@ -1,44 +1,60 @@
-import Utils from "./Utils/Utils.js";
-import MetricModule from "./MetricModule.js";
-// @ts-ignore
-import { DND5E } from "../../../systems/dnd5e/module/config.js";
-import Settings from "./Settings.js";
-const debug = Utils.debug.bind(Utils);
-/**
- * Defines distance units and sets encumbrance
- */
+import {getSetting, registerSettings} from "./Settings.js";
+import {
+    onCompendiumRender,
+    onRenderActorSheet,
+    onRenderItemSheet,
+    onRenderJurnalSheet,
+    onRenderRollTable,
+    onRenderSideBar
+} from "./MetricModule.js";
+import {consoleLog} from "./Utils/Utils.js";
+import {addNewSizes, convertI18NObject} from "./Pf2e/Pf2eConverter.js";
+
 Hooks.on('init', () => {
-    debug("Changing labels 'Feet' and 'Miles' to 'Meters' and 'Kilometers'.");
-    DND5E.distanceUnits["m"] = game.i18n.localize("metricsystem.meters");
-    DND5E.distanceUnits["km"] = game.i18n.localize("metricsystem.kilometers");
-    debug("Changing encumbrance calculation.");
-    DND5E.encumbrance["currencyPerWeight"] = 100;
-    DND5E.encumbrance["strMultiplier"] = 7.5;
-    Settings.registerSettings();
+    if (game.system.id === 'dnd5e') {
+        consoleLog("Changing labels 'Feet' and 'Miles' to 'Meters' and 'Kilometers'.")
+        CONFIG.DND5E.distanceUnits["m"] = game.i18n.localize("metricsystem.meters");
+        CONFIG.DND5E.distanceUnits["km"] = game.i18n.localize("metricsystem.kilometers");
+        consoleLog("Changing encumbrance calculation.")
+        CONFIG.DND5E.encumbrance["currencyPerWeight"].imperial = 100;
+        CONFIG.DND5E.encumbrance["strMultiplier"].imperial = 7.5;
+    }
+
+    registerSettings();
 });
-/**
- * Changes labels from lbs. to kg.
- */
+
 Hooks.on('ready', () => {
-    debug("Changing label 'lbs.' to 'kg'.");
-    // @ts-ignore
-    game.i18n.translations.DND5E["AbbreviationLbs"] = 'kg';
+    consoleLog("Changing label 'lbs.' to 'kg'.");
+    if (game.system.id === 'dnd5e') game.i18n.translations.DND5E["AbbreviationLbs"] = 'kg';
+
+    //if (game.system.id === 'pf2e') game.i18n.translations.PF2E = pf2ePack;
+    if (game.system.id === 'pf2e') {
+        game.i18n.translations.PF2EM = {};
+        convertI18NObject(game.i18n.translations.PF2E);
+        addNewSizes();
+    }
 });
-/**
- * Makes default scene settings to be converted
- */
-Hooks.on('preCreateScene', (scenedata) => {
-    const gridDist = Settings.getSetting("sceneGridDistance");
-    const gridUnits = Settings.getSetting("sceneGridUnits");
-    if (!Settings.getSetting("sceneConversion"))
-        return;
-    debug(`New Scene: changing gridUnits to '${gridUnits}' and gridDistance to '${gridDist}'.`);
-    scenedata.gridDistance = gridDist;
-    scenedata.gridUnits = gridUnits;
-});
-Hooks.on('renderActorSheet', MetricModule.onRenderActorSheet);
-Hooks.on('renderItemSheet', MetricModule.onRenderItemSheet);
-Hooks.on('renderJournalSheet', MetricModule.onRenderJurnalSheet);
-Hooks.on("renderSidebarTab", MetricModule.onRenderSideBar.bind(MetricModule));
-Hooks.on('renderRollTableConfig', MetricModule.onRenderRollTable);
-Hooks.on('renderCompendium', MetricModule.onCompendiumRender);
+
+Hooks.on('createScene', (scene) => {
+    const gridDist = getSetting("sceneGridDistance");
+    const gridUnits = getSetting("sceneGridUnits");
+    if (!getSetting("sceneConversion")) return;
+    consoleLog(`New Scene: changing gridUnits to '${gridUnits}' and gridDistance to '${gridDist}'.`);
+    const sceneClone = JSON.parse(JSON.stringify(scene));
+
+    sceneClone.gridDistance = gridDist;
+    sceneClone.gridUnits = gridUnits;
+    scene.update(sceneClone)
+})
+
+Hooks.on('renderActorSheet', onRenderActorSheet);
+
+Hooks.on('renderItemSheet', onRenderItemSheet);
+
+Hooks.on('renderJournalSheet', onRenderJurnalSheet);
+
+Hooks.on("renderSidebarTab", onRenderSideBar);
+
+Hooks.on('renderRollTableConfig', onRenderRollTable);
+
+Hooks.on('renderCompendium', onCompendiumRender)

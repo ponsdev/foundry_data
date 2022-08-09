@@ -11,69 +11,97 @@
  */
 // Import JavaScript modules
 // Import TypeScript modules
-import { registerSettings } from "./module/settings.js";
 import { preloadTemplates } from "./module/preloadTemplates.js";
-import { MODULE_NAME } from "./module/settings.js";
-import { initHooks, readyHooks } from "./module/Hooks.js";
-export let debugEnabled = 0;
-// 0 = none, warnings = 1, debug = 2, all = 3
-export let debug = (...args) => { if (debugEnabled > 1)
-    console.log(`DEBUG:${MODULE_NAME} | `, ...args); };
-export let log = (...args) => console.log(`${MODULE_NAME} | `, ...args);
-export let warn = (...args) => { if (debugEnabled > 0)
-    console.warn(`${MODULE_NAME} | `, ...args); };
-export let error = (...args) => console.error(`${MODULE_NAME} | `, ...args);
-export let timelog = (...args) => warn(`${MODULE_NAME} | `, Date.now(), ...args);
-export let i18n = key => {
-    return game.i18n.localize(key);
-};
-export let i18nFormat = (key, data = {}) => {
-    return game.i18n.format(key, data);
-};
-export let setDebugLevel = (debugText) => {
-    debugEnabled = { "none": 0, "warn": 1, "debug": 2, "all": 3 }[debugText] || 0;
-    // 0 = none, warnings = 1, debug = 2, all = 3
-    if (debugEnabled >= 3)
-        CONFIG.debug.hooks = true;
-};
+import { initHooks, readyHooks, setupHooks } from "./module/module.js";
+import { registerSettings } from "./module/settings.js";
+import CONSTANTS from "./module/constants.js";
+import { dialogWarning, error } from "./module/lib/lib.js";
 /* ------------------------------------ */
 /* Initialize module					*/
 /* ------------------------------------ */
 Hooks.once('init', async () => {
-    console.log(`${MODULE_NAME} | Initializing ${MODULE_NAME}`);
-    initHooks();
+    console.log(`${CONSTANTS.MODULE_NAME} | Initializing ${CONSTANTS.MODULE_NAME}`);
     // Assign custom classes and constants here
     // Register custom module settings
     registerSettings();
-    //fetchParams();
     // Preload Handlebars templates
     await preloadTemplates();
     // Register custom sheets (if any)
+    initHooks();
 });
 /* ------------------------------------ */
 /* Setup module							*/
 /* ------------------------------------ */
 Hooks.once('setup', function () {
-    // Do anything after initialization but before ready
-    // setupModules();
-    registerSettings();
+    setupHooks();
 });
 /* ------------------------------------ */
 /* When ready							*/
 /* ------------------------------------ */
 Hooks.once('ready', () => {
     // Do anything once the module is ready
-    if (!game.modules.get("lib-wrapper")?.active && game.user.isGM) {
-        ui.notifications.error(`The '${MODULE_NAME}' module requires to install and activate the 'libWrapper' module.`);
+    if (!game.modules.get('lib-wrapper')?.active && game.user?.isGM) {
+        ui.notifications?.error(`The '${CONSTANTS.MODULE_NAME}' module requires to install and activate the 'libWrapper' module.`);
         return;
     }
-    if (!game.modules.get("token-attacher")?.active && game.user.isGM) {
-        ui.notifications.error(`The '${MODULE_NAME}' module requires to install and activate the 'token-attacher' module.`);
-        return;
+    if (!game.modules.get('lib-wrapper')?.active && game.user?.isGM) {
+        let word = 'install and activate';
+        if (game.modules.get('lib-wrapper'))
+            word = 'activate';
+        throw error(`Requires the 'libWrapper' module. Please ${word} it.`);
     }
-    if (game.modules.get("mountup")?.active && game.user.isGM) {
-        ui.notifications.warn(`The 'mountup', is not needed anymore just use '${MODULE_NAME}'`);
+    if (!game.modules.get('token-attacher')?.active && game.user?.isGM) {
+        let word = 'install and activate';
+        if (game.modules.get('token-attacher'))
+            word = 'activate';
+        throw error(`Requires the 'token-attacher' module. Please ${word} it.`);
+    }
+    if (!game.modules.get('token-z')?.active && game.user?.isGM) {
+        let word = 'install and activate';
+        if (game.modules.get('token-z'))
+            word = 'activate';
+        throw error(`Requires the 'token-z' module. Please ${word} it.`);
+    }
+    if (!game.modules.get('active-effect-manager-lib')?.active && game.user?.isGM) {
+        let word = 'install and activate';
+        if (game.modules.get('active-effect-manager-lib'))
+            word = 'activate';
+        throw error(`Requires the 'active-effect-manager-lib' module. Please ${word} it.`);
+    }
+    if (game.modules.get('mountup')?.active && game.user?.isGM) {
+        dialogWarning(`Remove 'mountup' module. The module "Mount Up" breaks the API.`);
     }
     readyHooks();
 });
-// Add any additional hooks if necessary
+/**
+ * Initialization helper, to set API.
+ * @param api to set to game module.
+ */
+export function setApi(api) {
+    const data = game.modules.get(CONSTANTS.MODULE_NAME);
+    data.api = api;
+}
+/**
+ * Returns the set API.
+ * @returns Api from games module.
+ */
+export function getApi() {
+    const data = game.modules.get(CONSTANTS.MODULE_NAME);
+    return data.api;
+}
+/**
+ * Initialization helper, to set Socket.
+ * @param socket to set to game module.
+ */
+export function setSocket(socket) {
+    const data = game.modules.get(CONSTANTS.MODULE_NAME);
+    data.socket = socket;
+}
+/*
+ * Returns the set socket.
+ * @returns Socket from games module.
+ */
+export function getSocket() {
+    const data = game.modules.get(CONSTANTS.MODULE_NAME);
+    return data.socket;
+}

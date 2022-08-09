@@ -1,1 +1,296 @@
-const _0x40a2=['push','filter','name','/media/icon/mountain-cave.svg','pGetActorItemCompendiumImage','bind','159tglfGK','replace','SKILL_ABV_TO_FULL','skillToAbilityAbv','MODULE_NAME','1219228XfPHTm','/media/icon/dragon-breath.svg','\x22\x20did\x20not\x20match\x20an\x20expected\x20modifier/proficiency\x20amount!\x20A\x20fallback\x20value\x20(\x22','override','modules/','some','1KzjlEA','max','isLegendary','143685CxROSo','spell0','pGetCompendiumImage','trim','pGetIconImage','lower','spellLevel','breath\x20weapons','_getFeatureSrdAliases','foundryData','spellcasting','spells','351773tKscjF','getDataSpells','1gfRKmj','/media/icon/mailed-fist.svg','1583MqQvTv','\x22)\x20will\x20be\x20used.','_pGetParsedAction_getImg','Creature\x20\x22','slots','source','/media/icon/eyestalk.svg','foundryFlags','_foundryData','entries','value','361153tBpgJz','/media/icon/mighty-force.svg','proficient','3rQZCdi','monsterFeature','_getFeatureImage','_foundryFlags','pGetLairActionImage','forEach','isAttack','abs','creature','pact','expert','skill','/media/icon/spell-book.svg','pGetTraitReactionLegendaryImage','1wNWkGA','2642555ZVCZSU','232535fgUNGn','getAbilityModNumber'];const _0x46ea=function(_0x490a91,_0x52f2ec){_0x490a91=_0x490a91-0xb5;let _0x40a25d=_0x40a2[_0x490a91];return _0x40a25d;};const _0x228a81=_0x46ea;(function(_0x364877,_0x1191dc){const _0x3fdbe4=_0x46ea;while(!![]){try{const _0x7c999a=-parseInt(_0x3fdbe4(0xe9))*parseInt(_0x3fdbe4(0xec))+parseInt(_0x3fdbe4(0xc0))*parseInt(_0x3fdbe4(0xde))+parseInt(_0x3fdbe4(0xb6))*-parseInt(_0x3fdbe4(0xc5))+-parseInt(_0x3fdbe4(0xcb))*parseInt(_0x3fdbe4(0xda))+parseInt(_0x3fdbe4(0xce))+parseInt(_0x3fdbe4(0xb8))+parseInt(_0x3fdbe4(0xb7))*parseInt(_0x3fdbe4(0xdc));if(_0x7c999a===_0x1191dc)break;else _0x364877['push'](_0x364877['shift']());}catch(_0x4ddf6c){_0x364877['push'](_0x364877['shift']());}}}(_0x40a2,0x9664c));import{DataConverter}from'./DataConverter.js';import{UtilActors}from'./UtilActors.js';import{LGT}from'./Util.js';import{SharedConsts}from'../shared/SharedConsts.js';import{UtilCompendium}from'./UtilCompendium.js';import{DataConverterActor}from'./DataConverterActor.js';class DataConverterCreature{static async['pGetParsedAction'](_0x35bac2,_0x1a1cc3,_0x4aa636){const _0x5d28fd=_0x46ea,{damageTuples:_0x2fc73f,formula:_0x4a0d1e,offensiveAbility:_0x37344c,isAttack:_0x34af89,rangeShort:_0x11ab52,rangeLong:_0x25ee41,actionType:_0x20172c,isProficient:_0x30fde9,attackBonus:_0x4b71a5}=DataConverterActor['getParsedActionEntryData'](_0x35bac2,_0x1a1cc3,_0x4aa636,{'mode':_0x5d28fd(0xf4)}),_0x18f5a=await this[_0x5d28fd(0xe0)](_0x35bac2,_0x1a1cc3,_0x4aa636,{'isAttack':_0x34af89});return{'damageTuples':_0x2fc73f,'formula':_0x4a0d1e,'offensiveAbility':_0x37344c,'isAttack':_0x34af89,'rangeShort':_0x11ab52,'rangeLong':_0x25ee41,'actionType':_0x20172c,'isProficient':_0x30fde9,'attackBonus':_0x4b71a5,'_foundryData':_0x1a1cc3[_0x5d28fd(0xe6)],'foundryData':_0x1a1cc3[_0x5d28fd(0xd7)],'_foundryFlags':_0x1a1cc3[_0x5d28fd(0xef)],'foundryFlags':_0x1a1cc3[_0x5d28fd(0xe5)],'img':_0x18f5a};}static async['_pGetParsedAction_getImg'](_0x36a1d8,_0x96986,_0x35fb9c,_0x4e6399){const _0x3682de=_0x46ea;_0x4e6399=_0x4e6399||{};const _0x109707=await this[_0x3682de(0xee)](_0x36a1d8,_0x96986,_0x35fb9c,_0x4e6399);if(_0x109707)return _0x109707;if(_0x96986[_0x3682de(0xbc)]){if(_0x96986['name']['toLowerCase']()['startsWith'](_0x3682de(0xd5)))return _0x3682de(0xc9)+SharedConsts[_0x3682de(0xc4)]+_0x3682de(0xc6);if(/^eye ray/i['test'](_0x96986['name']))return _0x3682de(0xc9)+SharedConsts[_0x3682de(0xc4)]+_0x3682de(0xe4);}return _0x3682de(0xc9)+SharedConsts['MODULE_NAME']+_0x3682de(0xdd);}static async[_0x228a81(0xee)](_0x3ddb58,_0x4ed5eb,_0x58bc20,_0x31cd01){const _0x7c18a3=_0x228a81;_0x31cd01=_0x31cd01||{};const _0x510414=await DataConverter[_0x7c18a3(0xd2)](_0x7c18a3(0xed),_0x4ed5eb);if(_0x510414)return _0x510414;const _0x192ae2=await UtilCompendium[_0x7c18a3(0xd0)]('monsterFeature',_0x4ed5eb,{'fnGetAliases':this['_getFeatureSrdAliases']['bind'](this,{'isAttack':_0x31cd01[_0x7c18a3(0xf2)],'isLegendary':_0x31cd01[_0x7c18a3(0xcd)]}),'isIgnoreSrd':!![]});if(_0x192ae2)return _0x192ae2;const _0x29a684=await UtilCompendium[_0x7c18a3(0xbe)](_0x7c18a3(0xed),_0x4ed5eb,{'fnGetAliases':this[_0x7c18a3(0xd6)][_0x7c18a3(0xbf)](this,{'isAttack':_0x31cd01[_0x7c18a3(0xf2)],'isLegendary':_0x31cd01['isLegendary']})});if(_0x29a684)return _0x29a684;return null;}static async[_0x228a81(0xb5)](_0x43365e,_0x33dcdb,_0x116aab,_0xabba60){const _0x16ae07=_0x228a81;_0xabba60=_0xabba60||{};const _0xb94e06=await this[_0x16ae07(0xee)](_0x43365e,_0x33dcdb,_0x116aab,_0xabba60);if(_0xb94e06)return _0xb94e06;return'modules/'+SharedConsts[_0x16ae07(0xc4)]+_0x16ae07(0xea);}static async[_0x228a81(0xf0)](_0x12b4e6,_0x54a91d,_0x26e88d){const _0x9ed0b4=_0x228a81,_0x13ef77=await this[_0x9ed0b4(0xee)](_0x12b4e6,_0x54a91d,_0x26e88d);if(_0x13ef77)return _0x13ef77;return _0x9ed0b4(0xc9)+SharedConsts[_0x9ed0b4(0xc4)]+_0x9ed0b4(0xbd);}static async['pGetSpellcastingImage'](_0x2daee2,_0x9822f6,_0x8e07ae){const _0x2399f4=_0x228a81,_0x128ec9=await this[_0x2399f4(0xee)](_0x2daee2,_0x9822f6,_0x8e07ae);if(_0x128ec9)return _0x128ec9;return _0x2399f4(0xc9)+SharedConsts[_0x2399f4(0xc4)]+_0x2399f4(0xf8);}static[_0x228a81(0xd6)](_0x452ed2,_0x507728){const _0x5f4b9c=_0x228a81;if(!_0x507728[_0x5f4b9c(0xbc)])return[];const _0x17375a=[],_0x55ef8b=_0x507728[_0x5f4b9c(0xbc)][_0x5f4b9c(0xc1)](/\([^)]+\)/g,'')[_0x5f4b9c(0xc1)](/\s+/g,'\x20')[_0x5f4b9c(0xd1)]();if(_0x55ef8b!==_0x507728[_0x5f4b9c(0xbc)])_0x17375a['push'](_0x55ef8b);const _0x35892e=_0x507728[_0x5f4b9c(0xbc)][_0x5f4b9c(0xc1)](/{@[^}]+}/g,'')['replace'](/\s+/g,'\x20')[_0x5f4b9c(0xd1)]();if(_0x35892e!==_0x507728['name'])_0x17375a['push'](_0x35892e);if(_0x452ed2['isLegendary'])_0x17375a[_0x5f4b9c(0xba)](_0x507728['name']+'\x20(Legendary)');if(_0x452ed2[_0x5f4b9c(0xf2)])_0x17375a[_0x5f4b9c(0xba)](_0x507728['name']+'\x20Attack');const _0xc4b582=_0x507728[_0x5f4b9c(0xbc)]['replace'](/ Attack$/,'');if(_0xc4b582!==_0x507728['name'])_0x17375a[_0x5f4b9c(0xba)](_0xc4b582);return _0x17375a;}static['getDataSkills'](_0x304d39,_0x488fde,_0x5a67ec){const _0x338316=_0x228a81,_0x1fa133={};return Object[_0x338316(0xe7)](UtilActors[_0x338316(0xc2)])['forEach'](([_0x5cd056,_0x4e627f])=>{const _0x4be880=_0x338316,_0x2e8092=Parser[_0x4be880(0xc3)](_0x4e627f);let _0x2a0a41=0x0,_0x343675=Parser[_0x4be880(0xb9)](_0x304d39[_0x2e8092]),_0x3fabc6=0x0;if(_0x304d39[_0x4be880(0xf7)]&&_0x304d39[_0x4be880(0xf7)][_0x4e627f]){const _0x1b9dd7=Number(_0x304d39['skill'][_0x4e627f]);if(!isNaN(_0x1b9dd7)){const _0x1a5265=Parser['getAbilityModNumber'](_0x304d39[_0x2e8092]),_0x3091ce=_0x1a5265+_0x5a67ec['assumedPb'],_0x5c4b67=_0x1a5265+0x2*_0x5a67ec['assumedPb'];if(_0x3091ce===_0x1b9dd7)_0x2a0a41=0x1;else{if(_0x5c4b67===_0x1b9dd7)_0x2a0a41=0x2;else{const _0x387c64=Math[_0x4be880(0xf3)](_0x1b9dd7-_0x3091ce),_0x4c822b=Math[_0x4be880(0xf3)](_0x1b9dd7-_0x5c4b67);if(_0x387c64<_0x4c822b)_0x2a0a41=0x1;else _0x2a0a41=0x2;const _0x3ecd22=_0x2a0a41===0x2?_0x5c4b67:_0x3091ce;console['warn'](...LGT,_0x4be880(0xe1)+_0x304d39[_0x4be880(0xbc)]+'\x22\x20('+_0x304d39[_0x4be880(0xe3)]+')\x20skill\x20\x22'+_0x4e627f+'\x22\x20bonus\x20\x22'+_0x304d39[_0x4be880(0xf7)][_0x4e627f]+_0x4be880(0xc7)+(_0x2a0a41===0x2?_0x4be880(0xf6):_0x4be880(0xeb))+'\x22\x20=\x20\x22'+UiUtil['intToBonus'](_0x3ecd22)+_0x4be880(0xdf));}}}}_0x1fa133[_0x5cd056]={'value':_0x2a0a41,'ability':_0x2e8092,'mod':_0x343675,'bonus':_0x3fabc6,'passive':0xa+_0x343675};}),_0x1fa133;}static[_0x228a81(0xdb)](_0x23b876,_0x2d9704,_0x33aa49){const _0x4431b1=_0x228a81,_0x3660de={};_0x3660de[_0x4431b1(0xcf)]={'value':0x0,'max':0x0};if(_0x23b876['spellcasting']&&_0x23b876[_0x4431b1(0xd8)][_0x4431b1(0xca)](_0x560a20=>_0x560a20[_0x4431b1(0xd9)]))for(let _0x43f5ad=0x1;_0x43f5ad<0xa;++_0x43f5ad){const _0x265bc3='spell'+_0x43f5ad;_0x3660de[_0x265bc3]=_0x3660de[_0x265bc3]||{'value':0x0,'max':0x0},_0x23b876[_0x4431b1(0xd8)][_0x4431b1(0xbb)](_0x150f3f=>_0x150f3f[_0x4431b1(0xd9)]&&_0x150f3f['spells'][_0x43f5ad]&&_0x150f3f[_0x4431b1(0xd9)][_0x43f5ad]['slots'])[_0x4431b1(0xf1)](_0x3ca1ed=>{const _0x5a1330=_0x4431b1,_0x23d859=_0x3ca1ed[_0x5a1330(0xd9)][_0x43f5ad];if(_0x23d859[_0x5a1330(0xd3)]){_0x3660de[_0x5a1330(0xf5)]=_0x3660de[_0x5a1330(0xf5)]||{'value':0x0,'max':0x0,'level':_0x33aa49[_0x5a1330(0xd4)],'override':0x0},_0x3660de[_0x5a1330(0xf5)][_0x5a1330(0xe8)]+=_0x23d859[_0x5a1330(0xe2)],_0x3660de[_0x5a1330(0xf5)][_0x5a1330(0xcc)]+=_0x23d859[_0x5a1330(0xe2)],_0x3660de[_0x5a1330(0xf5)][_0x5a1330(0xc8)]+=_0x23d859[_0x5a1330(0xe2)];return;}_0x3660de[_0x265bc3]['value']+=_0x23d859['slots'],_0x3660de[_0x265bc3][_0x5a1330(0xcc)]+=_0x23d859['slots'];});}else for(let _0x3275df=0x1;_0x3275df<0xa;++_0x3275df){_0x3660de['spell'+_0x3275df]={'value':0x0,'max':0x0};}return _0x3660de;}}export{DataConverterCreature};
+import {DataConverter} from "./DataConverter.js";
+import {UtilActors} from "./UtilActors.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {UtilCompendium} from "./UtilCompendium.js";
+import {DataConverterActor} from "./DataConverterActor.js";
+import {Vetools} from "./Vetools.js";
+
+class DataConverterCreature extends DataConverter {
+	static _SIDE_LOAD_OPTS = {
+		propBrew: "foundryMonster",
+		fnLoadJson: Vetools.pGetCreatureSideData.bind(Vetools),
+		propJson: "monster",
+	};
+
+	static async pGetParsedAction (mon, action, monOpts) {
+		const {
+			damageTuples,
+			formula,
+			offensiveAbility,
+			isAttack,
+			rangeShort,
+			rangeLong,
+			actionType,
+			isProficient,
+			attackBonus,
+		} = DataConverterActor.getParsedActionEntryData(mon, action, monOpts, {mode: "creature", summonSpellLevel: mon._summonedBySpell_level ?? mon.summonedBySpellLevel});
+
+		const img = await this._pGetParsedAction_getImg(mon, action, monOpts, {isAttack});
+
+		const propChild = "monsterAction";
+
+		return {
+			damageTuples,
+			formula,
+			offensiveAbility,
+			isAttack,
+			rangeShort,
+			rangeLong,
+			actionType,
+			isProficient,
+			attackBonus,
+			foundryFlags: {
+				[SharedConsts.MODULE_NAME_FAKE]: {
+					page: propChild,
+					source: action.source || mon.source,
+					hash: UrlUtil.URL_TO_HASH_BUILDER[propChild]({
+						source: mon.source,
+						...action,
+						monsterName: mon.name,
+						monsterSource: mon.source,
+					}),
+				},
+			},
+			_foundryData: action._foundryData,
+			_foundryFlags: action._foundryFlags,
+			img,
+		};
+	}
+
+	/**
+	 * @param mon
+	 * @param action
+	 * @param monOpts
+	 * @param [opts]
+	 * @param [opts.isAttack]
+	 * @param [opts.isLegendary]
+	 */
+	static async _pGetParsedAction_getImg (mon, action, monOpts, opts) {
+		opts = opts || {};
+
+		const imgFeature = await this._getFeatureImage(mon, action, monOpts, opts);
+		if (imgFeature) return imgFeature;
+
+		if (action.name) {
+			if (action.name.toLowerCase().startsWith("breath weapons")) return `icons/magic/fire/blast-jet-stream-embers-yellow.webp`;
+
+			if (/^eye ray/i.test(action.name)) return `icons/commodities/biological/eye-tentacle-green-yellow.webp`;
+		}
+
+		return `modules/${SharedConsts.MODULE_NAME}/media/icon/mailed-fist.svg`;
+	}
+
+	/**
+	 * @param mon
+	 * @param entFeature
+	 * @param monOpts
+	 * @param [opts]
+	 * @param [opts.isAttack]
+	 * @param [opts.isLegendary]
+	 */
+	static async _getFeatureImage (mon, entFeature, monOpts, opts) {
+		opts = opts || {};
+
+		const imgCustomIcon = await DataConverter.pGetIconImage("monsterFeature", entFeature);
+		if (imgCustomIcon) return imgCustomIcon;
+
+		const img = await UtilCompendium.pGetCompendiumImage(
+			"monsterFeature",
+			entFeature,
+			{
+				fnGetAliases: this._getFeatureSrdAliases.bind(this, {isAttack: opts.isAttack, isLegendary: opts.isLegendary}),
+				isIgnoreSrd: true,
+			},
+		);
+		if (img) return img;
+
+		const imgDeep = await UtilCompendium.pGetActorItemCompendiumImage(
+			"monsterFeature",
+			entFeature,
+			{
+				fnGetAliases: this._getFeatureSrdAliases.bind(this, {isAttack: opts.isAttack, isLegendary: opts.isLegendary}),
+			},
+		);
+		if (imgDeep) return imgDeep;
+
+		return null;
+	}
+
+	/**
+	 * @param mon
+	 * @param ent
+	 * @param monOpts
+	 * @param [opts]
+	 * @param [opts.isAttack]
+	 * @param [opts.isLegendary]
+	 */
+	static async pGetTraitReactionLegendaryImage (mon, ent, monOpts, opts) {
+		opts = opts || {};
+
+		const imgFeature = await this._getFeatureImage(mon, ent, monOpts, opts);
+		if (imgFeature) return imgFeature;
+
+		return `modules/${SharedConsts.MODULE_NAME}/media/icon/mighty-force.svg`;
+	}
+
+	static async pGetLairActionImage (mon, ent, monOpts) {
+		const imgFeature = await this._getFeatureImage(mon, ent, monOpts);
+		if (imgFeature) return imgFeature;
+
+		return `modules/${SharedConsts.MODULE_NAME}/media/icon/mountain-cave.svg`;
+	}
+
+	static async pGetSpellcastingImage (mon, ent, monOpts) {
+		const imgFeature = await this._getFeatureImage(mon, ent, monOpts);
+		if (imgFeature) return imgFeature;
+
+		return `modules/${SharedConsts.MODULE_NAME}/media/icon/spell-book.svg`;
+	}
+
+	static async pGetVariantImage (mon, ent, monOpts) {
+		const imgFeature = await this._getFeatureImage(mon, ent, monOpts);
+		if (imgFeature) return imgFeature;
+
+		return `modules/${SharedConsts.MODULE_NAME}/media/icon/archive-research.svg`;
+	}
+
+	/**
+	 * @param options
+	 * @param [options.isLegendary] If the incoming entry is a legendary action. SRD legendary actions are suffixed.
+	 * @param [options.isAttack]
+	 * @param entry
+	 */
+	static _getFeatureSrdAliases (options, entry) {
+		if (!entry.name) return [];
+
+		const out = [];
+
+		const noBrackets = entry.name
+			.replace(/\([^)]+\)/g, "")
+			.replace(/\s+/g, " ")
+			.trim();
+		if (noBrackets !== entry.name) out.push(noBrackets);
+
+		const noTags = entry.name
+			.replace(/{@[^}]+}/g, "")
+			.replace(/\s+/g, " ")
+			.trim();
+		if (noTags !== entry.name) out.push(noTags);
+
+		if (options.isLegendary) out.push(`${entry.name} (Legendary)`);
+		if (options.isAttack) out.push(`${entry.name} Attack`);
+
+		const noAttack = entry.name.replace(/ Attack$/, "");
+		if (noAttack !== entry.name) out.push(noAttack);
+
+		return out;
+	}
+
+	static getDataSkills (mon, data, dataBuilderOpts) {
+		const out = {};
+
+		Object.entries(UtilActors.SKILL_ABV_TO_FULL).forEach(([abv, full]) => {
+			const ab = Parser.skillToAbilityAbv(full);
+
+			const {profType, bonusCheck} = this._getDataSkills_getSkillMeta({mon, dataBuilderOpts, full, ab});
+
+			out[abv] = {
+				value: profType,
+				ability: ab,
+				bonuses: {
+					check: bonusCheck,
+					passive: "",
+				},
+			};
+		});
+
+		return out;
+	}
+
+	static _getDataSkills_getSkillMeta ({mon, dataBuilderOpts, full, ab}) {
+		if (!mon.skill?.[full]) return {profType: 0, bonusCheck: 0};
+
+		const mSkill = /^\s*(?<number>[-+]?\s*\d+)\s*(?:[-+]|$)/.exec(`${mon.skill[full]}`);
+		if (!mSkill) return {profType: 0, bonusCheck: 0};
+
+		const skillNum = Number(mSkill.groups.number.replace(/\s+/g, ""));
+
+		const abMod = Parser.getAbilityModNumber(mon[ab] || 0);
+
+		// If the bonus matches the expected ability mod number exactly, it's not really a bonus, so bail out
+		if (skillNum === abMod) return {profType: 0, bonusCheck: 0};
+
+		const profValue = abMod + dataBuilderOpts.getSheetPb();
+		const expertValue = abMod + (2 * dataBuilderOpts.getSheetPb());
+
+		if (profValue === skillNum) return {profType: 1, bonusCheck: 0};
+		if (expertValue === skillNum) return {profType: 2, bonusCheck: 0};
+
+		// region If no proficiency matches exactly with our expected output, fill in the gap with a bonus
+		// Default to the closest value, and fill the missing difference with a bonus
+		const profType = skillNum >= expertValue ? 2 : skillNum >= profValue ? 1 : 0;
+		return {
+			profType,
+			bonusCheck: profType === 0 ? skillNum : profType === 1 ? skillNum - profValue : skillNum - expertValue,
+		};
+		// endregion
+	}
+
+	static isSlotSpellcaster (mon) {
+		return mon.spellcasting && mon.spellcasting.some(it => it.spells);
+	}
+
+	static getDataSpells (mon, data, monOpts) {
+		const out = {};
+
+		out.spell0 = {value: 0, max: 0};
+
+		if (this.isSlotSpellcaster(mon)) {
+			for (let i = 1; i < 10; ++i) {
+				const kSpell = `spell${i}`;
+
+				out[kSpell] = out[kSpell] || {
+					value: 0,
+					max: 0,
+					override: null, // Required for "Overwrite Duplicates" to work as expected
+				};
+
+				// Total up all spell slots
+				mon.spellcasting
+					.filter(it => it.spells && it.spells[i] && it.spells[i].slots)
+					.forEach(it => {
+						const lvl = it.spells[i];
+
+						// Pact magic
+						if (lvl.lower) {
+							out.pact = out.pact || {
+								value: 0,
+								max: 0, // Doesn't have any effect
+								level: monOpts.spellLevel, // Doesn't have any effect (and isn't saved?)
+								override: 0, // The real "max" slots
+							};
+							out.pact.value += lvl.slots;
+							out.pact.max += lvl.slots;
+							out.pact.override += lvl.slots;
+							return;
+						}
+
+						out[kSpell].value += lvl.slots;
+						out[kSpell].max += lvl.slots;
+					});
+			}
+		} else {
+			for (let i = 1; i < 10; ++i) {
+				out[`spell${i}`] = {
+					value: 0,
+					max: 0,
+					override: null, // Required for "Overwrite Duplicates" to work as expected
+				};
+			}
+		}
+
+		return out;
+	}
+}
+
+export {DataConverterCreature};

@@ -1,1 +1,179 @@
-const _0x278a=['dataset','3fyeIDN','removeClass','classList','775820ulEDzV','_doRemoveFromExistingMessages','addClass','chatmsg__trim-top','find','215883mGlLfO','_LAST_CONFIG_STATE','color','alias','next','_doBindTrimmedTopEventHandlers','_$getExistingRender','_handleRenderChatMessage','MODULE_NAME','init','length','element','_doAddToExistingMessages','_EVENT_NAMESPACE','1018566LksoKI','messageId','shiftKey','$ele','1413189YHnioI','chatmsg__trim-top--inspecting','chat','header.message-header','hasClass','_handleDeleteChatMessage','mouseleave.','448472fHvppv','chatmsg__trim-bottom','data','-chat','author','off','whisper','1aUcwez','isCompactChat','blind','_isMetaMatch','mousemove.','deleteChatMessage','timestamp','each','_SPEAKER_TIMEOUT_MSEC','user','276646WJuxFE','handleConfigUpdate','remove','.message[data-message-id=\x22','9CRUXhI','get','renderChatMessage','deepEquals','161403gDqZGO','_LAST_MESSAGE_META','mouseover.','_getMessageMeta','.message','collection'];const _0x200b=function(_0xa91073,_0x42b04e){_0xa91073=_0xa91073-0x9d;let _0x278a99=_0x278a[_0xa91073];return _0x278a99;};const _0x122904=_0x200b;(function(_0x5d445e,_0x33fc01){const _0xde8fd7=_0x200b;while(!![]){try{const _0x17b502=parseInt(_0xde8fd7(0xb6))+-parseInt(_0xde8fd7(0xce))*-parseInt(_0xde8fd7(0xdd))+parseInt(_0xde8fd7(0x9f))+-parseInt(_0xde8fd7(0xc4))*parseInt(_0xde8fd7(0xb2))+parseInt(_0xde8fd7(0xbd))+-parseInt(_0xde8fd7(0xa4))+parseInt(_0xde8fd7(0xd6))*-parseInt(_0xde8fd7(0xd2));if(_0x17b502===_0x33fc01)break;else _0x5d445e['push'](_0x5d445e['shift']());}catch(_0x279b82){_0x5d445e['push'](_0x5d445e['shift']());}}}(_0x278a,0xbe837));import{Config}from'./Config.js';import{SharedConsts}from'../shared/SharedConsts.js';class Patcher_ChatMessage{static[_0x122904(0xcf)](){const _0x17907f=_0x122904;if(Patcher_ChatMessage[_0x17907f(0xa5)]==null||Patcher_ChatMessage['_LAST_CONFIG_STATE']!==Config[_0x17907f(0xd3)]('ui',_0x17907f(0xc5))){Patcher_ChatMessage[_0x17907f(0xa5)]=Config[_0x17907f(0xd3)]('ui',_0x17907f(0xc5));if(Patcher_ChatMessage[_0x17907f(0xa5)])this[_0x17907f(0xb0)]();else this[_0x17907f(0xa0)]();}}static[_0x122904(0xb0)](){const _0x3eef12=_0x122904,_0x3b37e6=ui['chat'][_0x3eef12(0xaf)][_0x3eef12(0xa3)](_0x3eef12(0xda));_0x3b37e6[_0x3eef12(0xcb)]((_0x2c9294,_0xc7f125)=>{const _0x281182=_0x3eef12,_0xd0e01e=$(_0xc7f125),_0x53e7f0=ChatMessage[_0x281182(0xdb)][_0x281182(0xd3)](_0xc7f125[_0x281182(0xdc)][_0x281182(0xb3)]);this[_0x281182(0xab)](_0x53e7f0,_0xd0e01e,!![]);});}static[_0x122904(0xa0)](){const _0x5f3358=_0x122904,_0x96c9fe=ui[_0x5f3358(0xb8)][_0x5f3358(0xaf)][_0x5f3358(0xa3)]('.message');_0x96c9fe[_0x5f3358(0xcb)]((_0x3eca51,_0x7dbd6c)=>{const _0x1f5b61=_0x5f3358;_0x7dbd6c[_0x1f5b61(0x9e)][_0x1f5b61(0xd0)]('chatmsg__trim-top'),_0x7dbd6c[_0x1f5b61(0x9e)][_0x1f5b61(0xd0)]('chatmsg__trim-bottom'),$(_0x7dbd6c)[_0x1f5b61(0xc2)](_0x1f5b61(0xc8)+Patcher_ChatMessage[_0x1f5b61(0xb1)])['off'](_0x1f5b61(0xd8)+Patcher_ChatMessage[_0x1f5b61(0xb1)])[_0x1f5b61(0xc2)]('mouseleave.'+Patcher_ChatMessage[_0x1f5b61(0xb1)]);});}static[_0x122904(0xad)](){const _0x58e4ac=_0x122904;Hooks['on'](_0x58e4ac(0xd4),(_0x46f89c,_0x3baeb9)=>{const _0x310e15=_0x58e4ac;if(!Config['get']('ui',_0x310e15(0xc5)))return;this[_0x310e15(0xab)](_0x46f89c,_0x3baeb9);}),Hooks['on'](_0x58e4ac(0xc9),(..._0x5802ab)=>{const _0x587c20=_0x58e4ac;if(!Config[_0x587c20(0xd3)]('ui',_0x587c20(0xc5)))return;this['_handleDeleteChatMessage'](..._0x5802ab);});}static[_0x122904(0xab)](_0xc80cd3,_0xa3f70a,_0x2d0f22){const _0x242ed4=_0x122904;if(!_0x2d0f22){const _0xc6e372=this[_0x242ed4(0xaa)](_0xc80cd3);if(_0xc6e372&&_0xc6e372[_0x242ed4(0xae)])return this['_doHandleExistingMessage'](_0xc80cd3,_0xa3f70a,_0xc6e372);}if(!this[_0x242ed4(0xc7)](_0xc80cd3)){Patcher_ChatMessage['_LAST_MESSAGE_META']=this[_0x242ed4(0xd9)](_0xc80cd3,_0xa3f70a);return;}Patcher_ChatMessage[_0x242ed4(0xd7)][_0x242ed4(0xb5)][_0x242ed4(0xa1)](_0x242ed4(0xbe));const _0x47044e=this[_0x242ed4(0xd9)](_0xc80cd3,_0xa3f70a);_0x47044e[_0x242ed4(0xb5)][_0x242ed4(0xa1)](_0x242ed4(0xa2)),this[_0x242ed4(0xa9)](_0x47044e[_0x242ed4(0xb5)]),Patcher_ChatMessage[_0x242ed4(0xd7)]=_0x47044e;}static[_0x122904(0xd9)](_0x138597,_0x3a17eb){const _0x42da74=_0x122904,_0x90a77a=_0x3a17eb[_0x42da74(0xa3)](_0x42da74(0xb9));return{'$ele':_0x3a17eb,'$header':_0x90a77a,'chatMessage':_0x138597};}static[_0x122904(0xaa)](_0x11b498){const _0x452763=_0x122904;return ui[_0x452763(0xb8)]['element'][_0x452763(0xa3)](_0x452763(0xd1)+_0x11b498['id']+'\x22]');}static['_doHandleExistingMessage'](_0x5c68b3,_0x491cdc,_0x70536e){const _0x57e500=_0x122904;if(_0x70536e[_0x57e500(0xba)](_0x57e500(0xbe)))_0x491cdc['addClass'](_0x57e500(0xbe));_0x70536e['hasClass'](_0x57e500(0xa2))&&(_0x491cdc[_0x57e500(0xa1)](_0x57e500(0xa2)),this[_0x57e500(0xa9)](_0x491cdc));}static[_0x122904(0xc7)](_0x5ec338){const _0x1b4ac3=_0x122904;if(!Patcher_ChatMessage[_0x1b4ac3(0xd7)])return![];const {chatMessage:_0x27ccc1}=Patcher_ChatMessage[_0x1b4ac3(0xd7)];if(_0x27ccc1[_0x1b4ac3(0xbf)][_0x1b4ac3(0xca)]<_0x5ec338['data'][_0x1b4ac3(0xca)]-Patcher_ChatMessage['_SPEAKER_TIMEOUT_MSEC'])return![];if(_0x27ccc1[_0x1b4ac3(0xcd)]?.['id']!==_0x5ec338[_0x1b4ac3(0xcd)]?.['id'])return![];if(_0x27ccc1[_0x1b4ac3(0xcd)]?.['color']!==_0x5ec338[_0x1b4ac3(0xcd)]?.[_0x1b4ac3(0xa6)])return![];if(_0x27ccc1[_0x1b4ac3(0xc1)]?.['id']!==_0x5ec338['author']?.['id'])return![];if(_0x27ccc1[_0x1b4ac3(0xa7)]!==_0x5ec338[_0x1b4ac3(0xa7)])return![];if(!CollectionUtil[_0x1b4ac3(0xd5)](_0x27ccc1[_0x1b4ac3(0xbf)]?.[_0x1b4ac3(0xc3)],_0x5ec338[_0x1b4ac3(0xbf)]?.[_0x1b4ac3(0xc3)]))return![];if(_0x27ccc1[_0x1b4ac3(0xbf)]?.[_0x1b4ac3(0xc6)]!==_0x5ec338[_0x1b4ac3(0xbf)]?.[_0x1b4ac3(0xc6)])return![];return!![];}static[_0x122904(0xbb)](_0x7f551a){const _0x2b4dda=_0x122904,_0x1000ca=ui['chat'][_0x2b4dda(0xaf)][_0x2b4dda(0xa3)]('.message[data-message-id=\x22'+_0x7f551a['id']+'\x22]'),_0x3abba0=_0x1000ca['prev'](),_0x91ec48=_0x1000ca[_0x2b4dda(0xa8)]();_0x91ec48['length']&&(!_0x1000ca[_0x2b4dda(0xba)](_0x2b4dda(0xa2))&&_0x1000ca[_0x2b4dda(0xba)](_0x2b4dda(0xbe))&&_0x91ec48['removeClass'](_0x2b4dda(0xa2)));_0x3abba0[_0x2b4dda(0xae)]&&(_0x1000ca['hasClass'](_0x2b4dda(0xa2))&&!_0x1000ca[_0x2b4dda(0xba)](_0x2b4dda(0xbe))&&_0x3abba0[_0x2b4dda(0x9d)](_0x2b4dda(0xbe)));if(Patcher_ChatMessage['_LAST_MESSAGE_META']){const {chatMessage:_0x53736c}=Patcher_ChatMessage['_LAST_MESSAGE_META'];if(_0x53736c===_0x7f551a)Patcher_ChatMessage['_LAST_MESSAGE_META']=null;}}static[_0x122904(0xa9)](_0x3c1c1a){const _0x3625f1=_0x122904;_0x3c1c1a['on'](_0x3625f1(0xc8)+Patcher_ChatMessage[_0x3625f1(0xb1)],_0x41b5d5=>{const _0x285aa3=_0x3625f1;if(!_0x41b5d5[_0x285aa3(0xb4)])return;_0x3c1c1a['addClass'](_0x285aa3(0xb7));})['on'](_0x3625f1(0xd8)+Patcher_ChatMessage[_0x3625f1(0xb1)],_0x5af0e5=>{const _0x205203=_0x3625f1;if(!_0x5af0e5[_0x205203(0xb4)])return;_0x3c1c1a[_0x205203(0xa1)](_0x205203(0xb7));})['on'](_0x3625f1(0xbc)+Patcher_ChatMessage['_EVENT_NAMESPACE'],()=>{const _0xb67673=_0x3625f1;_0x3c1c1a[_0xb67673(0x9d)](_0xb67673(0xb7));});}}Patcher_ChatMessage[_0x122904(0xa5)]=null,Patcher_ChatMessage[_0x122904(0xcc)]=0x7530,Patcher_ChatMessage[_0x122904(0xd7)]=null,Patcher_ChatMessage[_0x122904(0xb1)]=SharedConsts[_0x122904(0xac)]+_0x122904(0xc0);export{Patcher_ChatMessage};
+import {Config} from "./Config.js";
+import {SharedConsts} from "../shared/SharedConsts.js";
+
+class Patcher_ChatMessage {
+	static handleConfigUpdate ({isInit = false} = {}) {
+		try {
+			return this._handleConfigUpdate_();
+		} catch (e) {
+			if (!isInit) throw e;
+			Config.handleFailedInitConfigApplication("ui", "isCompactChat", e);
+		}
+	}
+
+	static _handleConfigUpdate_ () {
+		// On option change, update the existing message renders in chat
+		if (Patcher_ChatMessage._LAST_CONFIG_STATE == null || Patcher_ChatMessage._LAST_CONFIG_STATE !== Config.get("ui", "isCompactChat")) {
+			Patcher_ChatMessage._LAST_CONFIG_STATE = Config.get("ui", "isCompactChat");
+			if (Patcher_ChatMessage._LAST_CONFIG_STATE) this._doAddToExistingMessages();
+			else this._doRemoveFromExistingMessages();
+		}
+	}
+
+	static _doAddToExistingMessages () {
+		const $messages = ui.chat.element.find(`.message`);
+		$messages.each((i, e) => {
+			const $ele = $(e);
+			const chatMessage = CONFIG.ChatMessage.collection.instance.get(e.dataset.messageId);
+			this._handleRenderChatMessage(chatMessage, $ele, true);
+		});
+	}
+
+	static _doRemoveFromExistingMessages () {
+		const $messages = ui.chat.element.find(`.message`);
+		$messages.each((i, e) => {
+			e.classList.remove(`chatmsg__trim-top`);
+			e.classList.remove(`chatmsg__trim-bottom`);
+			$(e)
+				.off(`mousemove.${Patcher_ChatMessage._EVENT_NAMESPACE}`)
+				.off(`mouseover.${Patcher_ChatMessage._EVENT_NAMESPACE}`)
+				.off(`mouseleave.${Patcher_ChatMessage._EVENT_NAMESPACE}`);
+		});
+	}
+
+	static init () {
+		Hooks.on("renderChatMessage", (chatMessage, $ele) => {
+			if (!Config.get("ui", "isCompactChat")) return;
+
+			this._handleRenderChatMessage(chatMessage, $ele);
+		});
+
+		Hooks.on("deleteChatMessage", (...args) => {
+			if (!Config.get("ui", "isCompactChat")) return;
+
+			this._handleDeleteChatMessage(...args);
+		});
+	}
+
+	static _handleRenderChatMessage (chatMessage, $ele, isIgnoreExisting) {
+		// region Handle message updates
+		if (!isIgnoreExisting) {
+			const $eleExisting = this._$getExistingRender(chatMessage);
+			if ($eleExisting && $eleExisting.length) {
+				return this._doHandleExistingMessage(chatMessage, $ele, $eleExisting);
+			}
+		}
+		// endregion
+
+		if (!this._isMetaMatch(chatMessage)) {
+			Patcher_ChatMessage._LAST_MESSAGE_META = this._getMessageMeta(chatMessage, $ele);
+			return;
+		}
+
+		// region Adjust previous message
+		Patcher_ChatMessage._LAST_MESSAGE_META.$ele.addClass(`chatmsg__trim-bottom`);
+		// endregion
+
+		// region Adjust this message
+		const nxtMeta = this._getMessageMeta(chatMessage, $ele);
+
+		nxtMeta.$ele.addClass(`chatmsg__trim-top`);
+		this._doBindTrimmedTopEventHandlers(nxtMeta.$ele);
+		// endregion
+
+		Patcher_ChatMessage._LAST_MESSAGE_META = nxtMeta;
+	}
+
+	static _getMessageMeta (chatMessage, $ele) {
+		const $header = $ele.find(`header.message-header`);
+
+		return {
+			$ele,
+			$header,
+			chatMessage,
+		};
+	}
+
+	static _$getExistingRender (chatMessage) {
+		// Based on `ui.chat.updateMessage`
+		// Note that this is a performance nightmare, but until Foundry updates chat to e.g. track existing renders,
+		//   this is all we can do without performing invasive surgery.
+		return ui.chat.element.find(`.message[data-message-id="${chatMessage.id}"]`);
+	}
+
+	static _doHandleExistingMessage (chatMessage, $ele, $eleExisting) {
+		if ($eleExisting.hasClass("chatmsg__trim-bottom")) $ele.addClass("chatmsg__trim-bottom");
+
+		if ($eleExisting.hasClass("chatmsg__trim-top")) {
+			$ele.addClass("chatmsg__trim-top");
+			this._doBindTrimmedTopEventHandlers($ele);
+		}
+	}
+
+	static _isMetaMatch (chatMessage) {
+		if (!Patcher_ChatMessage._LAST_MESSAGE_META) return false;
+
+		const {chatMessage: lastChatMessage} = Patcher_ChatMessage._LAST_MESSAGE_META;
+		if (!lastChatMessage?.data || !chatMessage?.data) return false;
+
+		// If the last message by this speaker was too long ago
+		if (lastChatMessage.data.timestamp < chatMessage.data.timestamp - Patcher_ChatMessage._SPEAKER_TIMEOUT_MSEC) return false;
+
+		if (lastChatMessage.user?.id !== chatMessage.user?.id) return false;
+		if (lastChatMessage.user?.color !== chatMessage.user?.color) return false;
+		if (lastChatMessage.author?.id !== chatMessage.author?.id) return false;
+		if (lastChatMessage.alias !== chatMessage.alias) return false;
+		if (!CollectionUtil.deepEquals(lastChatMessage.data?.whisper, chatMessage.data?.whisper)) return false;
+		if (lastChatMessage.data?.blind !== chatMessage.data?.blind) return false;
+
+		return true;
+	}
+
+	static _handleDeleteChatMessage (chatMessage) {
+		const $ele = ui.chat.element.find(`.message[data-message-id="${chatMessage.id}"]`);
+
+		const $prevEle = $ele.prev();
+		const $nxtEle = $ele.next();
+
+		// If we were a group header, and the next element is a group member, make the next element a group header
+		if ($nxtEle.length) {
+			if (!$ele.hasClass(`chatmsg__trim-top`) && $ele.hasClass(`chatmsg__trim-bottom`)) {
+				$nxtEle.removeClass(`chatmsg__trim-top`);
+			}
+		}
+
+		// If we were a group footer, and the previous element is a group member, make the previous element the group footer
+		if ($prevEle.length) {
+			if ($ele.hasClass(`chatmsg__trim-top`) && !$ele.hasClass(`chatmsg__trim-bottom`)) {
+				$prevEle.removeClass(`chatmsg__trim-bottom`);
+			}
+		}
+
+		// Cleanup the tracked message, if we are deleting it
+		if (Patcher_ChatMessage._LAST_MESSAGE_META) {
+			const {chatMessage: lastChatMessage} = Patcher_ChatMessage._LAST_MESSAGE_META;
+			if (lastChatMessage === chatMessage) Patcher_ChatMessage._LAST_MESSAGE_META = null;
+		}
+	}
+
+	static _doBindTrimmedTopEventHandlers ($ele) {
+		$ele
+			.on(`mousemove.${Patcher_ChatMessage._EVENT_NAMESPACE}`, evt => {
+				if (!evt.shiftKey) return;
+				$ele.addClass(`chatmsg__trim-top--inspecting`);
+			})
+			.on(`mouseover.${Patcher_ChatMessage._EVENT_NAMESPACE}`, evt => {
+				if (!evt.shiftKey) return;
+				$ele.addClass(`chatmsg__trim-top--inspecting`);
+			})
+			.on(`mouseleave.${Patcher_ChatMessage._EVENT_NAMESPACE}`, () => {
+				$ele.removeClass(`chatmsg__trim-top--inspecting`);
+			});
+	}
+}
+Patcher_ChatMessage._LAST_CONFIG_STATE = null;
+Patcher_ChatMessage._SPEAKER_TIMEOUT_MSEC = 30_000;
+Patcher_ChatMessage._LAST_MESSAGE_META = null;
+Patcher_ChatMessage._EVENT_NAMESPACE = `${SharedConsts.MODULE_NAME}-chat`;
+
+export {Patcher_ChatMessage};

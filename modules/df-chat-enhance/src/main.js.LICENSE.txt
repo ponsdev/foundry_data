@@ -1,0 +1,5 @@
+//! NOTICE! The message list is inverted, it is sorted OLDEST to NEWEST,
+
+//! at the very bottom of the chat log.
+
+//! so message[0] is at the very top of the chat log, and message[n] is

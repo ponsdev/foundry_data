@@ -1,1 +1,409 @@
-const _0x26b2=['SOURCE_TYP_OFFICIAL_BASE','28838zACLNG','SOURCE_TYP_OFFICIAL_ALL','Homebrew','Failed\x20to\x20load\x20pre-defined\x20source\x20\x22','62011ztokuj','1zZDEeq','SOURCE_TYP_CUSTOM','DataSourceUrl','uploadedFiles','getContent','Custom/User','all','VE_SOURCE_CUSTOM_FILE','110321VMagqT','isUseProps','1SVoMCf','DataSourceSpecial','special','2wCulRN','error','1829749ImVoNj','map','DataSourceBase','No\x20cache\x20key\x20specified!','SOURCE_TYP_UNKNOWN','\x20(Single\x20Source)','\x20(All)','VE_SOURCE_CUSTOM_URL','source','filterTypes','SOURCE_TYP_OFFICIAL_SINGLE','UA/Etc.','isFile','208053MxUIAs','Official','SOURCE_TYP_BREW','notifications','147784iMqWQK','Unknown','\x22!\x20','SOURCE_TYP_ARCANA','url','Failed\x20to\x20load\x20URL!\x20','cacheKey','pLoadImporterSourceSpecial','SOURCE_TYPE_ORDER','getCustomUrls','userData','isDefault','10PpQMVG','pGetUrlOutputs','identifier','1070257ZalHCY','pPostLoad'];const _0x2080=function(_0x390217,_0x21a16a){_0x390217=_0x390217-0x16b;let _0x26b23=_0x26b2[_0x390217];return _0x26b23;};const _0x10c444=_0x2080;(function(_0x2e82bc,_0x2aca9b){const _0x19d542=_0x2080;while(!![]){try{const _0x4c2a17=-parseInt(_0x19d542(0x174))*-parseInt(_0x19d542(0x18a))+parseInt(_0x19d542(0x199))+parseInt(_0x19d542(0x1a0))*parseInt(_0x19d542(0x1a1))+-parseInt(_0x19d542(0x177))*-parseInt(_0x19d542(0x19c))+-parseInt(_0x19d542(0x196))*-parseInt(_0x19d542(0x172))+parseInt(_0x19d542(0x186))+-parseInt(_0x19d542(0x179));if(_0x4c2a17===_0x2aca9b)break;else _0x2e82bc['push'](_0x2e82bc['shift']());}catch(_0x28403d){_0x2e82bc['push'](_0x2e82bc['shift']());}}}(_0x26b2,0xc802a));import{Vetools}from'./Vetools.js';class UtilDataSource{static async['pGetFileOutputs'](_0x1170c3,_0x39e920,_0x7b789b){const _0x571e38=_0x2080,_0x215b3d=await Promise['all'](_0x1170c3[_0x571e38(0x16d)][_0x571e38(0x17a)](_0x1006fd=>{const _0x106e41=_0x571e38,_0x74fc82=Vetools[_0x106e41(0x16e)](_0x1006fd,_0x7b789b);return _0x39e920['pPostLoad']?_0x39e920[_0x106e41(0x19a)](_0x74fc82,_0x1006fd,_0x39e920['userData']):_0x74fc82;}));return{'contents':_0x215b3d['filter'](_0x559e76=>_0x559e76!=null)};}static async[_0x10c444(0x197)](_0x16c90f,_0x540a03,_0x32dd8c){const _0x54e0c2=_0x10c444;if(_0x540a03[_0x54e0c2(0x18e)]===''){const _0x229119=_0x16c90f[_0x54e0c2(0x193)]();let _0x3a5f42;try{_0x3a5f42=await Promise[_0x54e0c2(0x170)](_0x229119[_0x54e0c2(0x17a)](async _0x535b7c=>{const _0x31b6f5=_0x54e0c2,_0x323caf=await Vetools['pGetWithCache'](_0x535b7c);return _0x540a03[_0x31b6f5(0x19a)]?_0x540a03[_0x31b6f5(0x19a)](Vetools[_0x31b6f5(0x16e)](_0x323caf,_0x32dd8c),_0x323caf,_0x540a03[_0x31b6f5(0x194)]):Vetools['getContent'](_0x323caf,_0x32dd8c);}));}catch(_0xcdb476){ui[_0x54e0c2(0x189)][_0x54e0c2(0x178)]('Failed\x20to\x20load\x20one\x20or\x20more\x20URLs!\x20'+VeCt['STR_SEE_CONSOLE']);throw _0xcdb476;}return{'cacheKeys':_0x229119,'contents':_0x3a5f42};}let _0x56046c;try{const _0x3d37ce=await Vetools['pGetWithCache'](_0x540a03[_0x54e0c2(0x18e)]);_0x56046c=Vetools[_0x54e0c2(0x16e)](_0x3d37ce,_0x32dd8c);if(_0x540a03[_0x54e0c2(0x19a)])_0x56046c=await _0x540a03[_0x54e0c2(0x19a)](_0x56046c,_0x3d37ce,_0x540a03['userData']);}catch(_0x31b6f9){ui[_0x54e0c2(0x189)]['error'](_0x54e0c2(0x18f)+VeCt['STR_SEE_CONSOLE']);throw _0x31b6f9;}return{'cacheKeys':[_0x540a03['url']],'contents':[_0x56046c]};}static async['pGetSpecialOutput'](_0x368d19,_0x3d25f3){const _0x41f33f=_0x10c444;let _0x3545b9;try{const _0x23cd7a=await Vetools[_0x41f33f(0x191)](_0x368d19);_0x3545b9=_0x23cd7a;if(_0x368d19['isUseProps'])_0x3545b9=Vetools['getContent'](_0x3545b9,_0x3d25f3);if(_0x368d19[_0x41f33f(0x19a)])_0x3545b9=await _0x368d19[_0x41f33f(0x19a)](_0x3545b9,_0x23cd7a,_0x368d19['userData']);}catch(_0x33caae){ui[_0x41f33f(0x189)][_0x41f33f(0x178)](_0x41f33f(0x19f)+_0x368d19[_0x41f33f(0x190)]+_0x41f33f(0x18c)+VeCt['STR_SEE_CONSOLE']);throw _0x33caae;}return{'cacheKeys':[_0x368d19['cacheKey']],'contents':[_0x3545b9]};}}UtilDataSource[_0x10c444(0x19b)]=_0x10c444(0x187),UtilDataSource[_0x10c444(0x19d)]=UtilDataSource[_0x10c444(0x19b)]+_0x10c444(0x17f),UtilDataSource['SOURCE_TYP_OFFICIAL_SINGLE']=UtilDataSource[_0x10c444(0x19b)]+_0x10c444(0x17e),UtilDataSource[_0x10c444(0x16b)]=_0x10c444(0x16f),UtilDataSource[_0x10c444(0x18d)]=_0x10c444(0x184),UtilDataSource[_0x10c444(0x188)]=_0x10c444(0x19e),UtilDataSource[_0x10c444(0x17d)]=_0x10c444(0x18b),UtilDataSource[_0x10c444(0x192)]=[UtilDataSource['SOURCE_TYP_OFFICIAL_ALL'],UtilDataSource['SOURCE_TYP_CUSTOM'],UtilDataSource[_0x10c444(0x183)],UtilDataSource[_0x10c444(0x18d)],UtilDataSource[_0x10c444(0x188)],UtilDataSource['SOURCE_TYP_UNKNOWN']],UtilDataSource['SOURCE_TYPE_ORDER__FILTER']=[UtilDataSource[_0x10c444(0x19d)],UtilDataSource['SOURCE_TYP_OFFICIAL_SINGLE'],UtilDataSource['SOURCE_TYP_ARCANA'],UtilDataSource[_0x10c444(0x188)],UtilDataSource['SOURCE_TYP_CUSTOM'],UtilDataSource[_0x10c444(0x17d)]],UtilDataSource[_0x10c444(0x17b)]=class{constructor(_0x5cffac,_0x2b1d83){const _0x2af990=_0x10c444;this['name']=_0x5cffac,this['pPostLoad']=_0x2b1d83[_0x2af990(0x19a)],this[_0x2af990(0x182)]=_0x2b1d83[_0x2af990(0x182)]||[UtilDataSource[_0x2af990(0x17d)]],this[_0x2af990(0x195)]=!!_0x2b1d83['isDefault'];}get[_0x10c444(0x198)](){throw new Error('Unimplemented!');}},UtilDataSource[_0x10c444(0x16c)]=class extends UtilDataSource[_0x10c444(0x17b)]{constructor(_0x356580,_0x2d2073,_0x2e205a){const _0x33dc4e=_0x10c444;_0x2e205a=_0x2e205a||{},super(_0x356580,_0x2e205a),this[_0x33dc4e(0x18e)]=_0x2d2073,this[_0x33dc4e(0x181)]=_0x2e205a[_0x33dc4e(0x181)],this[_0x33dc4e(0x194)]=_0x2e205a[_0x33dc4e(0x194)];}get[_0x10c444(0x198)](){const _0x1a7fa5=_0x10c444;return this[_0x1a7fa5(0x18e)]===''?_0x1a7fa5(0x180):this[_0x1a7fa5(0x18e)];}},UtilDataSource['DataSourceFile']=class extends UtilDataSource['DataSourceBase']{constructor(_0xce8d54,_0x12c9ab){const _0x2f6d0f=_0x10c444;_0x12c9ab=_0x12c9ab||{},super(_0xce8d54,_0x12c9ab),this[_0x2f6d0f(0x185)]=!![],this[_0x2f6d0f(0x181)]=_0x12c9ab[_0x2f6d0f(0x181)];}get['identifier'](){const _0x2462ba=_0x10c444;return _0x2462ba(0x171);}},UtilDataSource[_0x10c444(0x175)]=class extends UtilDataSource[_0x10c444(0x17b)]{constructor(_0x3afd9a,_0x122cee,_0x4acbef){const _0x235ff2=_0x10c444;_0x4acbef=_0x4acbef||{},super(_0x3afd9a,_0x4acbef),this[_0x235ff2(0x176)]={'pGet':_0x122cee};if(!_0x4acbef[_0x235ff2(0x190)])throw new Error(_0x235ff2(0x17c));this['cacheKey']=_0x4acbef[_0x235ff2(0x190)],this[_0x235ff2(0x173)]=_0x4acbef['isUseProps'];}get['identifier'](){return this['cacheKey'];}};export{UtilDataSource};
+import {Vetools} from "./Vetools.js";
+import {Config} from "./Config.js";
+
+class UtilDataSource {
+	static sortListItems (a, b, o) {
+		const ixTypeA = Math.min(...a.values.filterTypes.map(it => UtilDataSource.SOURCE_TYPE_ORDER.indexOf(it)));
+		const ixTypeB = Math.min(...b.values.filterTypes.map(it => UtilDataSource.SOURCE_TYPE_ORDER.indexOf(it)));
+
+		return SortUtil.ascSort(ixTypeA, ixTypeB) || SortUtil.compareListNames(a, b);
+	}
+
+	static async pGetFileOutputs (source, props, uploadedFiles) {
+		uploadedFiles = uploadedFiles || [];
+
+		const allContent = await Promise.all(uploadedFiles.map(f => {
+			const data = Vetools.getContent(f, props);
+			return source.pPostLoad ? source.pPostLoad(data, f, source.userData) : data;
+		}));
+
+		return {
+			contents: allContent.filter(it => it != null),
+		};
+	}
+
+	static async pGetUrlOutputs (source, props, customUrls) {
+		if (source.url === "") {
+			customUrls = customUrls || [];
+
+			let loadedDatas;
+			try {
+				loadedDatas = await Promise.all(customUrls.map(async url => {
+					const data = await Vetools.pGetWithCache(url);
+					return source.pPostLoad ? source.pPostLoad(Vetools.getContent(data, props), data, source.userData) : Vetools.getContent(data, props);
+				}));
+			} catch (e) {
+				ui.notifications.error(`Failed to load one or more URLs! ${VeCt.STR_SEE_CONSOLE}`);
+				throw e;
+			}
+
+			return {
+				cacheKeys: customUrls,
+				contents: loadedDatas,
+			};
+		}
+
+		let loadedData;
+		try {
+			const data = await Vetools.pGetWithCache(source.url);
+			loadedData = Vetools.getContent(data, props);
+			if (source.pPostLoad) loadedData = await source.pPostLoad(loadedData, data, source.userData);
+		} catch (e) {
+			const msg = `Failed to load URL "${source.url}"!`;
+			ui.notifications.error(`${msg} ${VeCt.STR_SEE_CONSOLE}`);
+			console.error(msg);
+			throw e;
+		}
+		return {
+			cacheKeys: [source.url],
+			contents: [loadedData],
+		};
+	}
+
+	static async pGetSpecialOutput (source, props) {
+		let loadedData;
+		try {
+			const json = await Vetools.pLoadImporterSourceSpecial(source);
+			loadedData = json;
+			if (source.isUseProps) loadedData = Vetools.getContent(loadedData, props);
+			if (source.pPostLoad) loadedData = await source.pPostLoad(loadedData, json, source.userData);
+		} catch (e) {
+			ui.notifications.error(`Failed to load pre-defined source "${source.cacheKey}"! ${VeCt.STR_SEE_CONSOLE}`);
+			throw e;
+		}
+		return {
+			cacheKeys: [source.cacheKey],
+			contents: [loadedData],
+		};
+	}
+
+	static _PROPS_NO_BLACKLIST = new Set(["itemProperty", "itemType"]);
+	static _PROP_RE_FOUNDRY = /^foundry[A-Z]/;
+
+	static getMergedData (data, {isFilterBlacklisted = true} = {}) {
+		const mergedData = {};
+
+		data.forEach(sourceData => {
+			Object.entries(sourceData)
+				.forEach(([prop, arr]) => {
+					if (!arr || !(arr instanceof Array)) return;
+					if (mergedData[prop]) mergedData[prop] = [...mergedData[prop], ...MiscUtil.copy(arr)];
+					else mergedData[prop] = MiscUtil.copy(arr);
+				});
+		});
+
+		if (isFilterBlacklisted) {
+			Object.entries(mergedData)
+				.forEach(([prop, arr]) => {
+					if (!arr || !(arr instanceof Array)) return;
+					mergedData[prop] = mergedData[prop]
+						.filter(it => {
+							// Ignore "Generic" entries, as we expect them to be synthetic
+							if (SourceUtil.getEntitySource(it) === VeCt.STR_GENERIC) return false;
+
+							if (
+								it.__prop
+								&& (this._PROPS_NO_BLACKLIST.has(it.__prop) || this._PROP_RE_FOUNDRY.test(it.__prop))
+							) return false;
+
+							// region Sanity checks
+							if (!SourceUtil.getEntitySource(it)) {
+								console.warn(`Entity did not have a "source"! This should never occur.`);
+								return true;
+							}
+							if (!it.__prop) {
+								console.warn(`Entity did not have a "__prop"! This should never occur.`);
+								return true;
+							}
+							if (!UrlUtil.URL_TO_HASH_BUILDER[it.__prop]) {
+								console.warn(`No hash builder found for "__prop" "${it.__prop}"! This should never occur.`);
+								return true;
+							}
+							// endregion
+
+							// region Handle specific sub-entities
+							switch (it.__prop) {
+								case "class": {
+									if (!it.subclasses?.length) break;
+
+									it.subclasses = it.subclasses.filter(sc => {
+										if (sc.source === VeCt.STR_GENERIC) return false;
+
+										return !ExcludeUtil.isExcluded(
+											UrlUtil.URL_TO_HASH_BUILDER["subclass"](sc),
+											"subclass",
+											sc.source,
+											{isNoCount: true},
+										);
+									});
+								}
+							}
+							// endregion
+
+							return !ExcludeUtil.isExcluded(
+								UrlUtil.URL_TO_HASH_BUILDER[it.__prop](it),
+								it.__prop,
+								SourceUtil.getEntitySource(it),
+								{isNoCount: true},
+							);
+						});
+				});
+		}
+
+		return mergedData;
+	}
+
+	/**
+	 * If data is being loaded in the background, display an info notification if it is taking a long time, to let
+	 *   the user know that _something_ is happening.
+	 */
+	static async pHandleBackgroundLoad ({pLoad, isBackground = false}) {
+		const pTimeout = isBackground ? MiscUtil.pDelay(500, VeCt.SYM_UTIL_TIMEOUT) : null;
+
+		const promises = [pLoad, pTimeout].filter(Boolean);
+
+		const winner = await Promise.race(promises);
+		if (winner === VeCt.SYM_UTIL_TIMEOUT) ui.notifications.info(`Please wait while data is being loaded...`);
+		return pLoad;
+	}
+
+	static async pGetAllContent (
+		{
+			sources,
+			uploadedFiles,
+			customUrls,
+			isBackground = false,
+			props,
+			userData,
+			cacheKeys = null,
+
+			// region Dedupe
+			page,
+			isDedupable = false,
+			fnGetDedupedData = null,
+			// endregion
+
+			// region Blacklist
+			// - `page`
+			fnGetBlacklistFilteredData = null,
+			// endregion
+		},
+	) {
+		const allContent = [];
+
+		const pLoad = sources.pMap(async source => {
+			if (source.isFile) {
+				// Returns an array, as multiple files may be loaded
+				const filesContentMeta = await UtilDataSource.pGetFileOutputs(source, props, uploadedFiles);
+				allContent.push(...filesContentMeta.contents);
+
+				// Never cache file loads, as we cannot guarantee the file contents will be the same. This also
+				//   prevents any further step from creating a cache key.
+				if (cacheKeys) cacheKeys.push(null);
+			} else if (source.url != null) {
+				// Returns an array, as multiple URLs may be specified for a "custom URL" source
+				const urlContentMeta = await UtilDataSource.pGetUrlOutputs(source, props, customUrls);
+
+				allContent.push(...urlContentMeta.contents);
+				if (cacheKeys) cacheKeys.push(...urlContentMeta.cacheKeys);
+			} else {
+				// Returns a single item
+				const specialContentMeta = await UtilDataSource.pGetSpecialOutput(source, props);
+				allContent.push(...specialContentMeta.contents);
+				if (cacheKeys) cacheKeys.push(...specialContentMeta.cacheKeys);
+			}
+		});
+
+		await UtilDataSource.pHandleBackgroundLoad({pLoad, isBackground});
+
+		// Flatten the content into a single array
+		const allContentFlat = allContent instanceof Array ? allContent.flat(2) : allContent;
+
+		let dedupedAllContentFlat = fnGetDedupedData
+			? fnGetDedupedData({allContentFlat, isDedupable})
+			: this._getDedupedAllContentFlat({allContentFlat, isDedupable});
+
+		dedupedAllContentFlat = fnGetBlacklistFilteredData
+			? fnGetBlacklistFilteredData({dedupedAllContentFlat, page})
+			: this._getBlacklistFilteredData({dedupedAllContentFlat, page});
+
+		if (dedupedAllContentFlat instanceof Array && Config.get("import", "isShowVariantsInLists")) {
+			dedupedAllContentFlat = dedupedAllContentFlat
+				.map(it => [it, ...DataUtil.proxy.getVersions(it.__prop, it)])
+				.flat();
+		}
+		return {dedupedAllContentFlat, cacheKeys, userData};
+	}
+
+	static _getBlacklistFilteredData ({dedupedAllContentFlat, page}) {
+		if (!UrlUtil.URL_TO_HASH_BUILDER[page]) return dedupedAllContentFlat;
+		return dedupedAllContentFlat.filter(it => {
+			if (it.source === VeCt.STR_GENERIC) return false;
+
+			// region Sanity checks
+			if (!SourceUtil.getEntitySource(it)) {
+				console.warn(`Entity did not have a "source"! This should never occur.`);
+				return true;
+			}
+			if (!it.__prop) {
+				console.warn(`Entity did not have a "__prop"! This should never occur.`);
+				return true;
+			}
+			// endregion
+
+			return !ExcludeUtil.isExcluded(
+				(UrlUtil.URL_TO_HASH_BUILDER[it.__prop] || UrlUtil.URL_TO_HASH_BUILDER[page])(it),
+				it.__prop,
+				SourceUtil.getEntitySource(it),
+				{isNoCount: true},
+			);
+		});
+	}
+
+	static _getDedupedAllContentFlat ({allContentFlat, page, isDedupable = false}) {
+		if (!isDedupable) return allContentFlat;
+		return this._getDedupedData({allContentFlat, page});
+	}
+
+	static _getDedupedData ({allContentFlat, page}) {
+		if (!UrlUtil.URL_TO_HASH_BUILDER[page]) return allContentFlat;
+
+		const contentHashes = new Set();
+		return allContentFlat.filter(it => {
+			const fnGetHash = UrlUtil.URL_TO_HASH_BUILDER[page];
+			if (!fnGetHash) return true;
+			const hash = fnGetHash(it);
+			if (contentHashes.has(hash)) return false;
+			contentHashes.add(hash);
+			return true;
+		});
+	}
+}
+
+UtilDataSource.SOURCE_TYP_OFFICIAL_BASE = "Official";
+UtilDataSource.SOURCE_TYP_OFFICIAL_ALL = `${UtilDataSource.SOURCE_TYP_OFFICIAL_BASE} (All)`;
+UtilDataSource.SOURCE_TYP_OFFICIAL_SINGLE = `${UtilDataSource.SOURCE_TYP_OFFICIAL_BASE} (Single Source)`;
+UtilDataSource.SOURCE_TYP_CUSTOM = "Custom/User";
+UtilDataSource.SOURCE_TYP_ARCANA = "UA/Etc.";
+UtilDataSource.SOURCE_TYP_BREW = "Homebrew";
+UtilDataSource.SOURCE_TYP_BREW_LOCAL = "Local Homebrew";
+UtilDataSource.SOURCE_TYP_UNKNOWN = "Unknown";
+
+UtilDataSource.SOURCE_TYPE_ORDER = [
+	UtilDataSource.SOURCE_TYP_OFFICIAL_ALL,
+	UtilDataSource.SOURCE_TYP_CUSTOM,
+	UtilDataSource.SOURCE_TYP_OFFICIAL_SINGLE,
+	UtilDataSource.SOURCE_TYP_ARCANA,
+	UtilDataSource.SOURCE_TYP_BREW_LOCAL,
+	UtilDataSource.SOURCE_TYP_BREW,
+	UtilDataSource.SOURCE_TYP_UNKNOWN,
+];
+
+UtilDataSource.SOURCE_TYPE_ORDER__FILTER = [ // Order used in filter sorting
+	UtilDataSource.SOURCE_TYP_OFFICIAL_ALL,
+	UtilDataSource.SOURCE_TYP_OFFICIAL_SINGLE,
+	UtilDataSource.SOURCE_TYP_ARCANA,
+	UtilDataSource.SOURCE_TYP_BREW_LOCAL,
+	UtilDataSource.SOURCE_TYP_BREW,
+	UtilDataSource.SOURCE_TYP_CUSTOM,
+	UtilDataSource.SOURCE_TYP_UNKNOWN,
+];
+
+UtilDataSource.DataSourceBase = class {
+	/**
+	 * @param name Source name.
+	 * @param [opts] Options object.
+	 * @param [opts.pPostLoad] Data modifier.
+	 * @param [opts.filterTypes]
+	 * @param [opts.isDefault]
+	 * @param [opts.abbreviations]
+	 * @param [opts.isWorldSelectable] If this source should be selectable using the World Data Source Selector app.
+	 */
+	constructor (name, opts) {
+		this.name = name;
+
+		this.pPostLoad = opts.pPostLoad;
+		this.filterTypes = opts.filterTypes || [UtilDataSource.SOURCE_TYP_UNKNOWN];
+		this.isDefault = !!opts.isDefault;
+		this.abbreviations = opts.abbreviations;
+		this.isWorldSelectable = !!opts.isWorldSelectable;
+	}
+
+	get identifier () { throw new Error(`Unimplemented!`); }
+	get identifierWorld () { return this.isDefault ? "5etools" : this.identifier; }
+};
+
+UtilDataSource.DataSourceUrl = class extends UtilDataSource.DataSourceBase {
+	/**
+	 * @param name Source name.
+	 * @param url Source URL.
+	 * @param [opts] Options object.
+	 * @param [opts.source] Source identifier.
+	 * @param [opts.pPostLoad] Data modifier.
+	 * @param [opts.userData] Additional data to pass through to the loadee.
+	 * @param [opts.filterTypes]
+	 * @param [opts.icon]
+	 * @param [opts.isDefault]
+	 * @param [opts.abbreviations]
+	 */
+	constructor (name, url, opts) {
+		opts = opts || {};
+
+		super(name, {isWorldSelectable: !!url, ...opts});
+
+		this.url = url;
+		this.source = opts.source;
+		this.userData = opts.userData;
+	}
+
+	get identifier () { return this.url === "" ? `VE_SOURCE_CUSTOM_URL` : this.url; }
+	get identifierWorld () { return this.source ?? super.identifierWorld; }
+};
+
+UtilDataSource.DataSourceFile = class extends UtilDataSource.DataSourceBase {
+	/**
+	 * @param name Source name.
+	 * @param [opts] Options object.
+	 * @param [opts.pPostLoad] Data modifier.
+	 * @param [opts.filterTypes]
+	 * @param [opts.isDefault]
+	 * @param [opts.abbreviations]
+	 */
+	constructor (name, opts) {
+		opts = opts || {};
+
+		super(name, {isWorldSelectable: false, ...opts});
+
+		this.isFile = true;
+	}
+
+	get identifier () { return `VE_SOURCE_CUSTOM_FILE`; }
+};
+
+UtilDataSource.DataSourceSpecial = class extends UtilDataSource.DataSourceBase {
+	/**
+	 * @param name Source name.
+	 * @param pGet Data getter.
+	 * @param opts Options object.
+	 * @param opts.cacheKey Cache key to store the pGet data under.
+	 * @param [opts.pPostLoad] Data modifier.
+	 * @param [opts.isUseProps] If the prop info should be applied to the loaded data.
+	 * @param [opts.filterTypes]
+	 * @param [opts.isDefault]
+	 * @param [opts.abbreviations]
+	 */
+	constructor (name, pGet, opts) {
+		opts = opts || {};
+
+		super(name, {isWorldSelectable: true, ...opts});
+
+		this.special = {pGet};
+		if (!opts.cacheKey) throw new Error(`No cache key specified!`);
+		this.cacheKey = opts.cacheKey;
+		this.isUseProps = opts.isUseProps;
+	}
+
+	get identifier () { return this.cacheKey; }
+};
+
+export {UtilDataSource};

@@ -4,7 +4,7 @@ export const registerSettings = function() {
         name: "NotYourTurn.Player",
         scope: "world",
         config: true,
-        type:Number,
+        type: Number,
         default:2,
         choices:["NotYourTurn.Mode_Off","NotYourTurn.Mode_WarningOnly","NotYourTurn.Mode_Dialogbox","NotYourTurn.Mode_Autoblock"]
     });
@@ -12,7 +12,7 @@ export const registerSettings = function() {
         name: "NotYourTurn.Trusted",
         scope: "world",
         config: true,
-        type:Number,
+        type: Number,
         default:2,
         choices:["NotYourTurn.Mode_Off","NotYourTurn.Mode_WarningOnly","NotYourTurn.Mode_Dialogbox","NotYourTurn.Mode_Autoblock"]
     });
@@ -20,7 +20,7 @@ export const registerSettings = function() {
         name: "NotYourTurn.Assistant",
         scope: "world",
         config: true,
-        type:Number,
+        type: Number,
         default:1,
         choices:["NotYourTurn.Mode_Off","NotYourTurn.Mode_WarningOnly","NotYourTurn.Mode_Dialogbox","NotYourTurn.Mode_Autoblock"]
     });
@@ -29,7 +29,7 @@ export const registerSettings = function() {
         hint: "NotYourTurn.Mode_Hint",
         scope: "world",
         config: true,
-        type:Number,
+        type: Number,
         default:1,
         choices:["NotYourTurn.Mode_Off","NotYourTurn.Mode_WarningOnly","NotYourTurn.Mode_Dialogbox","NotYourTurn.Mode_Autoblock"]
     });
@@ -39,7 +39,7 @@ export const registerSettings = function() {
         hint: "NotYourTurn.IgnoreButton_Hint",
         scope: "world",
         config: true,
-        type:Number,
+        type: Number,
         default:2,
         choices:["NotYourTurn.Ignore_Everyone","NotYourTurn.Ignore_Trusted","NotYourTurn.Ignore_Assistants","NotYourTurn.Ignore_Gamemaster","NotYourTurn.Ignore_Nobody"]
     });
@@ -59,6 +59,14 @@ export const registerSettings = function() {
         default: true,
         type: Boolean
     });
+    game.settings.register('NotYourTurn','AlwaysBlock', {
+        name: "NotYourTurn.AlwaysBlock",
+        hint: "NotYourTurn.AlwaysBlock_Hint",
+        scope: "world",
+        config: true,
+        default: false,
+        type: Boolean
+    });
     game.settings.register('NotYourTurn','nonCombat', {
         name: "nonCombat",
         scope: "world",
@@ -71,6 +79,6 @@ export const registerSettings = function() {
         scope: "world",
         config: false,
         default: true,
-        type: Boolean
+        type: Boolean 
     });
 }

@@ -1,28 +1,30 @@
 {
   "name": "midi-qol",
   "title": "Midi QOL",
-  "description": "replacement for minor-qol that automates rolling weapon/spell attacks",
-  "systems": ["dnd5e", "sw5e"],
-  "version": "0.3.103",
-  "author": "tposney",
+  "description": "Automates rolling weapon/spell attacks and applying damage",
+  "system": ["dnd5e", "sw5e", "n5e"],
+  "version": "0.9.71",
+  "authors": [{"name": "tposney"}],
   "socket": true,
-  "authors": [
-    {
-      "name": "",
-      "email": "",
-      "url": ""
-    }
-  ],
   "scripts": [],
-  "esmodules": ["midi-qol.js"],
+  "esmodules": ["src/midi-qol.js"],
   "styles": ["css/styles.css"],
+  "dependencies": [
+    {
+    "name": "socketlib", "type": "module"
+    },
+    {
+    "name": "lib-wrapper", "type": "module"
+    }
+
+  ],
   "packs": [
     {
       "name": "midiqol-sample-items",
       "label": "MidiQOL Sample Items",
       "path": "./packs/sampleitems.db",
       "module": "world",
-      "entity": "Item",
+      "type": "Item",
       "lang": ["en", "de"]
     }
   ],
@@ -41,11 +43,6 @@
           "lang": "ko",
           "name": "Korean",
           "path": "lang/ko.json"
-      },
-      {
-          "lang": "cn",
-          "name": "中文",
-          "path": "lang/cn.json"
       },
       {
           "lang": "fr",
@@ -73,13 +70,18 @@
           "path": "lang/it.json"
       }
   ],
-  "minimumCoreVersion": "0.7.6",
-  "compatibleCoreVersion": "0.7.9",
-  "minimumSystemVersion": "1.2.3",
+  "minimumCoreVersion": "9",
+  "compatibleCoreVersion": "9",
+  "compatibility": {
+    "minimum": 9,
+    "verified": 9,
+    "maximum": 9
+  },
   "bugs": "https://gitlab.com/tposney/midi-qol/-/issues",
-  "allowBugReporter": true,
-  "dependencies": [{"name": "socketlib"}],
+  "flags": {
+    "allowBugReporter": true
+  },
   "url": "https://gitlab.com/tposney/midi-qol",
   "manifest": "https://gitlab.com/tposney/midi-qol/raw/master/package/module.json",
-  "download": "https://gitlab.com/tposney/midi-qol/raw/master/package/midi-qol-v0.3.103.zip"
+  "download": "https://gitlab.com/tposney/midi-qol/raw/master/package/midi-qol-v0.9.71.zip"
 }

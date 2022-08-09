@@ -2,7 +2,7 @@
     "name": "combat-utility-belt",
     "title": "Combat Utility Belt",
     "description": "Adds various combat-focused features",
-    "version": "1.4.0",
+    "version": "1.9.1",
     "author": "Evan Clarke [errational#2007]",
     "authors": [
         {
@@ -13,16 +13,15 @@
             "reddit": "u/etherboy12"
         }
     ],
-    "minimumCoreVersion": "0.7.6",
-    "compatibleCoreVersion": "0.7.9",
+    "minimumCoreVersion": "9.235",
+    "compatibleCoreVersion": "9.269",
     "url": "https://github.com/death-save/combat-utility-belt",
     "bugs": "https://github.com/death-save/combat-utility-belt/issues",
     "readme": "https://github.com/death-save/combat-utility-belt/wiki",
     "manifest": "https://github.com/death-save/combat-utility-belt/releases/latest/download/module.json",
-    "download": "https://github.com/death-save/combat-utility-belt/releases/download/1.4.0/module.zip",
+    "download": "https://github.com/death-save/combat-utility-belt/releases/download/1.9.1/module.zip",
     "scripts": [
-        "./library/typewriterjs/core.js",
-        "greensock/dist/gsap.min.js"
+        "./library/typewriterjs/core.js"
     ],
     "esmodules": [
         "./combat-utility-belt.js"
@@ -49,9 +48,9 @@
             "path": "lang/pt-BR.json"
         },
         {
-            "lang": "es-ES",
-            "name": "Castellano",
-            "path": "lang/es-ES.json"
+            "lang": "es",
+            "name": "Español",
+            "path": "lang/es.json"
         },
         {
             "lang": "cn",
@@ -62,6 +61,11 @@
             "lang": "de",
             "name": "Deutsch",
             "path": "lang/de.json"
+        },
+        {
+            "lang": "pl",
+            "name": "Polski",
+            "path": "lang/pl.json"
         }
     ],
     "packs": [
@@ -71,7 +75,7 @@
             "system": "dnd5e",
             "module": "combat-utility-belt",
             "path": "./packs/conditionsdnd5e.db",
-            "entity": "JournalEntry"
+            "type": "JournalEntry"
         },
         {
             "name": "conditionsarchmage",
@@ -79,7 +83,7 @@
             "system": "archmage",
             "module": "combat-utility-belt",
             "path": "./packs/conditionsarchmage.db",
-            "entity": "JournalEntry"
+            "type": "JournalEntry"
         }
     ],
     "styles": [
@@ -94,5 +98,9 @@
             "type": "cover",
             "url": "https://user-images.githubusercontent.com/42503461/88756618-f949b900-d118-11ea-9a64-6599be2f3efa.png"
         }
-    ]
+    ],
+    "flags": {
+        "allowBugReporter": true
+    },
+    "socket": true
 }

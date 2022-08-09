@@ -1,17 +1,16 @@
 # sound-link
-Ability to add sound button in your journals and items text areas that will toggle a sound from your Sound Library.
-The link needs to be added in the HTML part of the text editor. 
-It looks like this:
-
+Ability to add a sound button in the text of your journals and items that will toggle a sound from your Sound Library.
+You can add a sound link button in two ways
+1. writing @Sound[Playlist name|Sound Name]{Sound Name} in the text editor of a journal. It's the same way you would write a link for an Actors or a Journals
+- or -
+2. Editing the HTML source of the editor and adding an a href link there. The link looks like this:
 ```<a class="sound_link" data-playlist="PLAYLIST NAME" data-sound="SOUND NAME">Sound Name</a>```
 
-**IMPORTANT**
-
-This does require **The Furnace** module installed with **Advanced Macros *ON***.
-
-You also need to import **"toggle-playlist-sound"** macro from the *Furnace Macro Compendium* in to your game since this will be called from the sound link.
+Be aware that the first option might not work and cause conflicts with other modes that modify how the TextEditor renders the content. If so, use the second option.
 
 ![Example](https://raw.githubusercontent.com/superseva/sound-link/master/sound-link-example.jpg)
+
+**EXTRA**
 
 Thanks to **brunocalado** for writing this macro that helps in generating the link text so you can easily paste it inside the journal.
 

@@ -1,1 +1,476 @@
-const _0x5af0=['checked','AppFilter','teardown','761DPZEzO','filter','actor','_pageFilter','render','find','_$iptSearch','addEventListener','_actor','getFltrSpellLevelStr','Material','_rows','MODULE_LOCATION','[name=btn-toggle-summary]','concentration','val','pInitFilterBox','_actorItems','filterBox','prop','getData','pHandleButtonClick','pCommitState','Ritual','pSetSpellItemIsPrepared','62119hfQkLJ','handleSelectClick','input','Verbal','131248ihQgvf','Concentration','639VrbwOn','Somatic','_$btnReset','click','forEach','initBtnSortHandlers','_filterBox','1319bDdMeF','then','_levelFilter','2OiBZEI','change','name','material','_handleFilterChange','toggleClass','Level','Spell\x20Prepared\x20Toggler','type','_list','components','ve-hidden','_pPopulateBoxOptions','close','ele','getMaxWindowHeight','1003dBBSaj','_activateListeners_pInitListAndFilters','data','map','addToFilters','reset','vocal','prepared','/template/ActorSpellPreparedToggler.handlebars','.search','level','[name=btn-filter]','621434KPnoru','_activateListeners_initBtnReset','ritual','spell','activateListeners','toDisplay','preparation','push','$dispModified','685347mbuJJJ','mode','_fMisc','visibleItems','resetNextState','setNextState','sortMetaFilter','EVNT_VALCHANGE','items','[data-name=\x22wrp-btns-sort\x22]','.act-sp-prep__disp-modified','bind','2696715HrnSDk','.fltr__mini-view','get'];const _0x2f19=function(_0x1eccc4,_0x3c9637){_0x1eccc4=_0x1eccc4-0x1c6;let _0x5af00f=_0x5af0[_0x1eccc4];return _0x5af00f;};const _0x24807a=_0x2f19;(function(_0x10cbdf,_0x47edfc){const _0x5435b8=_0x2f19;while(!![]){try{const _0x467890=parseInt(_0x5435b8(0x1c8))+parseInt(_0x5435b8(0x1d1))+-parseInt(_0x5435b8(0x202))*-parseInt(_0x5435b8(0x209))+parseInt(_0x5435b8(0x200))+parseInt(_0x5435b8(0x1fc))*parseInt(_0x5435b8(0x20c))+-parseInt(_0x5435b8(0x1e3))*-parseInt(_0x5435b8(0x21c))+-parseInt(_0x5435b8(0x1dd));if(_0x467890===_0x47edfc)break;else _0x10cbdf['push'](_0x10cbdf['shift']());}catch(_0x594f50){_0x10cbdf['push'](_0x10cbdf['shift']());}}}(_0x5af0,0x7327c));import{SharedConsts}from'../shared/SharedConsts.js';import{Util}from'./Util.js';import{AppFilter}from'./FilterApplications.js';import{DataConverterSpell}from'./DataConverterSpell.js';class ActorSpellPreparedToggler extends Application{static[_0x24807a(0x1f8)](_0xe1d783,_0x40ccbf,_0x18b7eb,_0x4c30d1){const _0x4f2b55=_0x24807a,_0x148d65=new ActorSpellPreparedToggler(_0x40ccbf[_0x4f2b55(0x1e5)]);_0x148d65[_0x4f2b55(0x1e7)](!![]);}constructor(_0x44b063){const _0x409bab=_0x24807a;super({'title':_0x409bab(0x213),'template':SharedConsts[_0x409bab(0x1ef)]+_0x409bab(0x224),'width':0x1e0,'height':Util[_0x409bab(0x21b)](),'resizable':!![]}),this['_actor']=_0x44b063,this[_0x409bab(0x1f4)]=this[_0x409bab(0x1eb)][_0x409bab(0x1d9)][_0x409bab(0x1e4)](_0x1416f9=>_0x1416f9[_0x409bab(0x214)]===_0x409bab(0x1cb)&&_0x1416f9['data']['data']['level']!==0x0&&_0x1416f9[_0x409bab(0x21e)][_0x409bab(0x21e)][_0x409bab(0x1ce)]&&_0x1416f9['data'][_0x409bab(0x21e)][_0x409bab(0x1ce)][_0x409bab(0x1d2)]===_0x409bab(0x223)),this['_pageFilter']=new ActorSpellPreparedToggler[(_0x409bab(0x1e1))](),this['_list']=null,this[_0x409bab(0x204)]=null,this['_$iptSearch']=null;}[_0x24807a(0x210)](){const _0x27df97=_0x24807a,_0x196a06=this[_0x27df97(0x1e6)]['filterBox']['getValues']();this['_list'][_0x27df97(0x1e4)](_0x345115=>this[_0x27df97(0x1e6)][_0x27df97(0x1cd)](_0x196a06,this['_rows'][_0x345115['ix']]));}[_0x24807a(0x1cc)](_0x5ef55f){const _0x196c86=_0x24807a;super[_0x196c86(0x1cc)](_0x5ef55f),this['_activateListeners_initBtnRun'](_0x5ef55f),this[_0x196c86(0x1c9)](_0x5ef55f),this[_0x196c86(0x21d)](_0x5ef55f);}['_activateListeners_initBtnRun'](_0x322444){_0x322444['find']('[name=\x22btn-run\x22]')['click'](async()=>{const _0x17ce41=_0x2f19;for(const _0x53c3d8 of this[_0x17ce41(0x215)][_0x17ce41(0x1d9)]){await _0x53c3d8[_0x17ce41(0x21e)][_0x17ce41(0x1f9)]();}});}[_0x24807a(0x1c9)](_0x428022){const _0x338a4c=_0x24807a;this[_0x338a4c(0x204)]=_0x428022[_0x338a4c(0x1e8)]('[name=\x22btn-reset\x22]')['click'](()=>{const _0x4f528b=_0x338a4c;_0x428022[_0x4f528b(0x1e8)]('.search')[_0x4f528b(0x1f2)]('');if(!this[_0x4f528b(0x215)])return;this['_list'][_0x4f528b(0x221)](),this[_0x4f528b(0x215)]['items'][_0x4f528b(0x206)](_0x1992d8=>_0x1992d8['data'][_0x4f528b(0x1d5)]());});}[_0x24807a(0x21d)](_0x1f96e9){const _0x726fa4=_0x24807a;this[_0x726fa4(0x1e9)]=_0x1f96e9[_0x726fa4(0x1e8)](_0x726fa4(0x225)),this[_0x726fa4(0x215)]=new List({'$iptSearch':this[_0x726fa4(0x1e9)],'$wrpList':_0x1f96e9[_0x726fa4(0x1e8)]('.veapp__list'),'isUseJquery':!![],'fnSort':PageFilterSpells['sortSpells']}),SortUtil[_0x726fa4(0x207)](_0x1f96e9[_0x726fa4(0x1e8)](_0x726fa4(0x1da)),this['_list']);const _0x20dc0a=_0x1f96e9['find']('[name=\x22cb-select-all\x22]')[_0x726fa4(0x20d)](()=>{const _0x6a0df5=_0x726fa4,_0x30d44b=_0x20dc0a[_0x6a0df5(0x1f6)](_0x6a0df5(0x1e0));this[_0x6a0df5(0x215)][_0x6a0df5(0x1d4)][_0x6a0df5(0x206)](_0x271e13=>_0x271e13[_0x6a0df5(0x21e)][_0x6a0df5(0x1d6)](_0x30d44b));});return this['_pageFilter'][_0x726fa4(0x1f3)]({'$iptSearch':this[_0x726fa4(0x1e9)],'$btnReset':this[_0x726fa4(0x204)],'$btnOpen':_0x1f96e9[_0x726fa4(0x1e8)](_0x726fa4(0x1c7)),'$btnToggleSummaryHidden':_0x1f96e9[_0x726fa4(0x1e8)](_0x726fa4(0x1f0)),'$wrpMiniPills':_0x1f96e9[_0x726fa4(0x1e8)](_0x726fa4(0x1de)),'namespace':'tool-actor-spell-prepared-toggler'})[_0x726fa4(0x20a)](()=>{const _0x444acb=_0x726fa4;this[_0x444acb(0x1ee)][_0x444acb(0x206)](_0x1c23d3=>this['_pageFilter'][_0x444acb(0x220)](_0x1c23d3)),this[_0x444acb(0x215)]['doAbsorbItems'](this[_0x444acb(0x1f4)],{'fnGetName':_0xf8d0e2=>_0xf8d0e2['name'],'fnGetValues':_0xef3931=>({'level':MiscUtil[_0x444acb(0x1df)](_0xef3931,'data',_0x444acb(0x21e),'level')||-0x1}),'fnGetData':_0x4fed3d=>{const _0x5b8ca2=_0x444acb,_0x446691=$(_0x4fed3d['ele']);return{'cbSel':_0x446691['find'](_0x5b8ca2(0x1fe))[0x0],'$dispModified':_0x446691[_0x5b8ca2(0x1e8)](_0x5b8ca2(0x1db))};},'fnBindListeners':(_0x3c0783,_0x36e66c)=>{const _0x3135b9=_0x444acb,_0x47c58a={'prepared':_0x36e66c['data']['data'][_0x3135b9(0x1ce)][_0x3135b9(0x223)]},_0x13a7dd=()=>{const _0x5990a0=_0x3135b9;_0x3c0783[_0x5990a0(0x21e)]['cbSel'][_0x5990a0(0x1e0)]=_0x47c58a[_0x5990a0(0x223)],_0x3c0783[_0x5990a0(0x21e)][_0x5990a0(0x1d0)][_0x5990a0(0x211)](_0x5990a0(0x217),_0x36e66c[_0x5990a0(0x21e)][_0x5990a0(0x21e)]['preparation'][_0x5990a0(0x223)]===_0x47c58a['prepared']);},_0x4dc1c2=_0x213ac7=>{const _0x2eea3f=_0x3135b9;_0x47c58a[_0x2eea3f(0x223)]=_0x213ac7,_0x13a7dd();},_0x4d628c=()=>{const _0x223e28=_0x3135b9;_0x47c58a['prepared']=_0x36e66c['data'][_0x223e28(0x21e)][_0x223e28(0x1ce)]['prepared'],_0x13a7dd();},_0x10f8f4=async()=>{const _0x2565a1=_0x3135b9;await DataConverterSpell[_0x2565a1(0x1fb)](_0x36e66c,_0x47c58a[_0x2565a1(0x223)]),_0x13a7dd();};_0x3c0783[_0x3135b9(0x21e)][_0x3135b9(0x1d6)]=_0x4dc1c2,_0x3c0783['data']['resetNextState']=_0x4d628c,_0x3c0783[_0x3135b9(0x21e)][_0x3135b9(0x1f9)]=_0x10f8f4,_0x3c0783[_0x3135b9(0x21a)][_0x3135b9(0x1ea)](_0x3135b9(0x205),_0x13b987=>{const _0x2ebcab=_0x3135b9;ListUiUtil[_0x2ebcab(0x1fd)](this[_0x2ebcab(0x215)],_0x3c0783,_0x13b987,{'isNoHighlightSelection':!![],'fnOnSelectionChange':(_0x35acd1,_0x5d94f8)=>_0x35acd1[_0x2ebcab(0x21e)][_0x2ebcab(0x1d6)](_0x5d94f8)});});}}),this[_0x444acb(0x215)]['init'](),this[_0x444acb(0x1e6)][_0x444acb(0x1f5)][_0x444acb(0x1e7)](),this['_pageFilter'][_0x444acb(0x1f5)]['on'](FilterBox[_0x444acb(0x1d8)],this['_handleFilterChange'][_0x444acb(0x1dc)](this)),this[_0x444acb(0x210)]();});}[_0x24807a(0x1f7)](){const _0x4bbd02=_0x24807a;return this[_0x4bbd02(0x1ee)]=this[_0x4bbd02(0x1f4)][_0x4bbd02(0x21f)]((_0x2b6cc0,_0x1e2455)=>({'name':_0x2b6cc0[_0x4bbd02(0x20e)],'isPrepared':_0x2b6cc0['data']['data']['preparation'][_0x4bbd02(0x223)],'level':MiscUtil[_0x4bbd02(0x1df)](_0x2b6cc0,_0x4bbd02(0x21e),_0x4bbd02(0x21e),_0x4bbd02(0x1c6))||-0x1,'concentration':!!MiscUtil[_0x4bbd02(0x1df)](_0x2b6cc0,_0x4bbd02(0x21e),_0x4bbd02(0x21e),'components',_0x4bbd02(0x1f1)),'v':!!MiscUtil[_0x4bbd02(0x1df)](_0x2b6cc0,'data',_0x4bbd02(0x21e),_0x4bbd02(0x216),_0x4bbd02(0x222)),'s':!!MiscUtil[_0x4bbd02(0x1df)](_0x2b6cc0,'data',_0x4bbd02(0x21e),_0x4bbd02(0x216),'somatic'),'m':!!MiscUtil['get'](_0x2b6cc0,_0x4bbd02(0x21e),_0x4bbd02(0x21e),'components',_0x4bbd02(0x20f)),'ritual':!!MiscUtil[_0x4bbd02(0x1df)](_0x2b6cc0,_0x4bbd02(0x21e),_0x4bbd02(0x21e),_0x4bbd02(0x216),_0x4bbd02(0x1ca)),'ix':_0x1e2455})),{...super['getData'](),'rows':this['_rows']};}['close'](..._0x18fd0c){const _0x2796d6=_0x24807a;return this[_0x2796d6(0x1e6)][_0x2796d6(0x1e2)](),super[_0x2796d6(0x219)](..._0x18fd0c);}}ActorSpellPreparedToggler[_0x24807a(0x1e1)]=class extends AppFilter{constructor(){const _0x31ab07=_0x24807a;super(),this['_levelFilter']=new Filter({'header':_0x31ab07(0x212),'items':[0x1,0x2,0x3,0x4,0x5,0x6,0x7,0x8,0x9],'displayFn':_0x58dd89=>~_0x58dd89?PageFilterSpells[_0x31ab07(0x1ec)](_0x58dd89):'Unknown'}),this['_miscFilter']=new Filter({'header':'Components\x20&\x20Miscellaneous','items':[_0x31ab07(0x201),_0x31ab07(0x1ff),_0x31ab07(0x203),_0x31ab07(0x1ed),_0x31ab07(0x1fa)],'itemSortFn':PageFilterSpells[_0x31ab07(0x1d7)]});}['addToFilters'](_0x2c4b64,_0x9d8a5f){const _0x50bccc=_0x24807a;if(_0x9d8a5f)return;this[_0x50bccc(0x20b)]['addItem'](_0x2c4b64['level']),_0x2c4b64['_fMisc']=[];if(_0x2c4b64[_0x50bccc(0x1f1)])_0x2c4b64['_fMisc'][_0x50bccc(0x1cf)](_0x50bccc(0x201));if(_0x2c4b64['v'])_0x2c4b64['_fMisc'][_0x50bccc(0x1cf)](_0x50bccc(0x1ff));if(_0x2c4b64['s'])_0x2c4b64[_0x50bccc(0x1d3)][_0x50bccc(0x1cf)](_0x50bccc(0x203));if(_0x2c4b64['m'])_0x2c4b64['_fMisc']['push']('Material');if(_0x2c4b64[_0x50bccc(0x1ca)])_0x2c4b64[_0x50bccc(0x1d3)][_0x50bccc(0x1cf)](_0x50bccc(0x1fa));}async[_0x24807a(0x218)](_0x197424){_0x197424['filters']=[this['_levelFilter'],this['_miscFilter']];}['toDisplay'](_0x54afa3,_0x3e2e59){const _0x2be70d=_0x24807a;return this[_0x2be70d(0x208)][_0x2be70d(0x1cd)](_0x54afa3,_0x3e2e59[_0x2be70d(0x1c6)],_0x3e2e59[_0x2be70d(0x1d3)]);}};export{ActorSpellPreparedToggler};
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {LGT, Util} from "./Util.js";
+import {AppFilter} from "./FilterApplications.js";
+import {DataConverterSpell} from "./DataConverterSpell.js";
+import {UtilDocuments} from "./UtilDocuments.js";
+import {UtilApplications} from "./UtilApplications.js";
+
+class ActorSpellPreparedToggler extends Application {
+	// region External
+	static pHandleButtonClick (evt, app, $html, data) {
+		const instance = new ActorSpellPreparedToggler(app.actor);
+		instance.render(true);
+	}
+	// endregion
+
+	constructor (actor) {
+		super({
+			title: "Spell Prepared Toggler",
+			template: `${SharedConsts.MODULE_LOCATION}/template/ActorSpellPreparedToggler.hbs`,
+			width: 480,
+			height: Util.getMaxWindowHeight(),
+			resizable: true,
+		});
+
+		this._actor = actor;
+		this._actorItems = this._actor.items
+			// Filter out cantrips and spells not in "prepared" mode
+			.filter(it => it.type === "spell" && it.data.data.level !== 0 && it.data.data.preparation && it.data.data.preparation.mode === "prepared");
+
+		// Local fields
+		this._pageFilter = new ActorSpellPreparedToggler.AppFilter();
+
+		this._$iptName = null;
+		this._activeSaveId = null;
+		this._compSaves = null;
+		this._$wrpSaveRows = null;
+		this._renderableCollectionRules = null;
+
+		this._list = null;
+		this._$btnReset = null;
+		this._$iptSearch = null;
+	}
+
+	_handleFilterChange () {
+		const f = this._pageFilter.filterBox.getValues();
+		this._list.filter(li => this._pageFilter.toDisplay(f, this._rows[li.ix]));
+	}
+
+	activateListeners ($html) {
+		super.activateListeners($html);
+
+		this._activateListeners_initIptListName($html);
+		this._activateListeners_initBtnListNew($html);
+		this._activateListeners_initBtnListSave($html);
+		this._activateListeners_initBtnListLoad($html);
+		this._activateListeners_initBtnRun($html);
+		this._activateListeners_initBtnReset($html);
+		this._activateListeners_pInitListAndFilters($html)
+			.then(() => this._pDoLoadInitialState());
+	}
+
+	_activateListeners_initIptListName ($html) {
+		this._$iptName = $html.find(`[name="ipt-list-name"]`);
+	}
+
+	_activateListeners_initBtnListNew ($html) {
+		$html.find(`[name="btn-list-new"]`)
+			.click(async () => {
+				this._activeSaveId = null;
+				this._$iptName.val("");
+			});
+	}
+
+	_getActiveSave ({activeSaveId = null} = {}) {
+		activeSaveId = activeSaveId || this._activeSaveId;
+		return this._compSaves.spellLists.find(it => it.id === activeSaveId);
+	}
+
+	_activateListeners_initBtnListSave ($html) {
+		$html.find(`[name="btn-list-save"]`)
+			.click(async () => {
+				try {
+					let activeSave = this._getActiveSave();
+					if (!activeSave) {
+						activeSave = {
+							id: CryptUtil.uid(),
+							entity: {
+								name: "",
+								spells: [],
+							},
+						};
+						this._compSaves.spellLists.push(activeSave);
+					}
+
+					this._activeSaveId = activeSave.id;
+
+					activeSave.entity.name = this._$iptName.val().trim() || "(Unnamed List)";
+					this._$iptName.val(activeSave.entity.name);
+
+					activeSave.entity.spells = this._list.items
+						.map(li => {
+							// Sanity check
+							const spellItem = this._actor.items.get(li.data.spellItemId);
+							if (!spellItem) return;
+
+							return {
+								id: li.data.spellItemId,
+								isPrepared: li.data.getNextState(),
+							};
+						})
+						.filter(Boolean);
+
+					// region Set actor flag
+					const existingActorFlags = this._actor.flags?.[SharedConsts.MODULE_NAME_FAKE];
+					const nxtFlags = {...existingActorFlags || {}};
+					MiscUtil.set(nxtFlags, this.constructor.name, "saveId", this._activeSaveId);
+					await UtilDocuments.pUpdateDocument(this._actor, {flags: {[SharedConsts.MODULE_NAME_FAKE]: nxtFlags}});
+					// endregion
+
+					this._compSaves.triggerSpellListsCollectionUpdate();
+
+					ui.notifications.info(`Saved as "${activeSave.entity.name}"!`);
+				} catch (e) {
+					ui.notifications.error(`Failed to save list! ${VeCt.STR_SEE_CONSOLE}`);
+					console.error(...LGT, e);
+				}
+			});
+	}
+
+	_activateListeners_initBtnListLoad ($html) {
+		$html.find(`[name="btn-list-load"]`)
+			.click(async () => {
+				try {
+					const {$modalInner, doClose} = await UtilApplications.pGetShowApplicationModal({
+						title: `Load Prepared Spell List`,
+						cbClose: (save) => {
+							this._$wrpSaveRows.detach();
+							if (!save) return;
+							this._doLoadSave(save);
+							ui.notifications.info(`Loaded list "${this._getActiveSave().entity.name}"!`);
+						},
+					});
+
+					if (!this._compSaves.spellLists.length) $modalInner.append(`<div class="italic ve-muted py-1">No saved spell lists found.</div>`);
+
+					this._$wrpSaveRows = this._$wrpSaveRows || $(`<div class="ve-flex-col w-100 h-100"></div>`);
+					this._$wrpSaveRows.appendTo($modalInner);
+
+					if (!this._renderableCollectionRules) {
+						this._renderableCollectionRules = new ActorSpellPreparedToggler.RenderableCollectionSpellLists(
+							this._compSaves,
+							this._$wrpSaveRows,
+						);
+						const hk = () => {
+							this._renderableCollectionRules.render();
+
+							StorageUtil.pSet(
+								this._getStorageKeyAllLists(),
+								this._compSaves.spellLists,
+							);
+						};
+						this._compSaves.addHookSpellLists(hk);
+						hk();
+					}
+					this._renderableCollectionRules.cbClose = doClose;
+				} catch (e) {
+					ui.notifications.error(`Failed to load list! ${VeCt.STR_SEE_CONSOLE}`);
+					console.error(...LGT, e);
+				}
+			});
+	}
+
+	_activateListeners_initBtnRun ($html) {
+		$html.find(`[name="btn-run"]`).click(async () => {
+			for (const it of this._list.items) {
+				await it.data.pCommitState();
+			}
+		});
+	}
+
+	_activateListeners_initBtnReset ($html) {
+		this._$btnReset = $html.find(`[name="btn-reset"]`).click(() => {
+			$html.find(`.search`).val("");
+			if (!this._list) return;
+
+			this._list.reset();
+			this._list.items.forEach(it => it.data.resetNextState());
+		});
+	}
+
+	_activateListeners_pInitListAndFilters ($html) {
+		this._$iptSearch = $html.find(`.search`);
+
+		// Init list library
+		this._list = new List({
+			$iptSearch: this._$iptSearch,
+			$wrpList: $html.find(`.veapp__list`),
+			isUseJquery: true,
+			fnSort: PageFilterSpells.sortSpells,
+		});
+		SortUtil.initBtnSortHandlers($html.find(`[data-name="wrp-btns-sort"]`), this._list);
+
+		const $cbAll = $html.find(`[name="cb-select-all"]`).change(() => {
+			const isChecked = $cbAll.prop("checked");
+			this._list.visibleItems.forEach(it => it.data.setNextState(isChecked));
+		});
+
+		return this._pageFilter.pInitFilterBox({
+			$iptSearch: this._$iptSearch,
+			$btnReset: this._$btnReset,
+			$btnOpen: $html.find(`[name=btn-filter]`),
+			$btnToggleSummaryHidden: $html.find(`[name=btn-toggle-summary]`),
+			$wrpMiniPills: $html.find(`.fltr__mini-view`),
+			namespace: `tool-actor-spell-prepared-toggler`,
+		}).then(() => {
+			this._rows.forEach(it => this._pageFilter.addToFilters(it));
+
+			this._list.doAbsorbItems(
+				this._actorItems,
+				{
+					fnGetName: it => it.name,
+					fnGetValues: it => ({
+						level: MiscUtil.get(it, "data", "data", "level") || -1,
+					}),
+					fnGetData: (li, it) => {
+						const $li = $(li.ele);
+						return ({
+							spellItemId: it.id,
+							cbSel: $li.find(`input`)[0],
+							$dispModified: $li.find(`.act-sp-prep__disp-modified`),
+						});
+					},
+					fnBindListeners: (li, it) => {
+						const nxtState = {
+							prepared: it.data.data.preparation.prepared,
+						};
+
+						const handleNextState = () => {
+							li.data.cbSel.checked = nxtState.prepared;
+							li.data.$dispModified.toggleClass("ve-hidden", it.data.data.preparation.prepared === nxtState.prepared);
+						};
+
+						const setNextState = (val) => {
+							nxtState.prepared = val;
+							handleNextState();
+						};
+
+						const resetNextState = () => {
+							nxtState.prepared = it.data.data.preparation.prepared;
+							handleNextState();
+						};
+
+						const getNextState = () => nxtState.prepared;
+
+						const pCommitState = async () => {
+							await DataConverterSpell.pSetSpellItemIsPrepared(it, nxtState.prepared);
+							handleNextState();
+						};
+
+						li.data.setNextState = setNextState;
+						li.data.resetNextState = resetNextState;
+						li.data.getNextState = getNextState;
+						li.data.pCommitState = pCommitState;
+
+						li.ele.addEventListener("click", evt => {
+							ListUiUtil.handleSelectClick(
+								this._list,
+								li,
+								evt,
+								{
+									isNoHighlightSelection: true,
+									fnOnSelectionChange: (li, setTo) => li.data.setNextState(setTo),
+								},
+							);
+						});
+					},
+				},
+			);
+
+			this._list.init();
+
+			this._pageFilter.trimState();
+			this._pageFilter.filterBox.render();
+
+			this._pageFilter.filterBox.on(
+				FilterBox.EVNT_VALCHANGE,
+				this._handleFilterChange.bind(this),
+			);
+
+			this._handleFilterChange();
+		});
+	}
+
+	async _pDoLoadInitialState () {
+		// region Prepare save list
+		this._compSaves = new ActorSpellPreparedToggler.SavedSpellListComponent();
+
+		const allSaves = await StorageUtil.pGet(this._getStorageKeyAllLists());
+		if (!allSaves?.length) return;
+
+		this._compSaves.spellLists = allSaves;
+		// endregion
+
+		// region Load current save
+		const flags = this._actor.data.flags?.[SharedConsts.MODULE_NAME_FAKE];
+		if (!flags?.[this.constructor.name]?.saveId) return;
+
+		const save = allSaves.find(it => it.id === flags[this.constructor.name].saveId);
+		if (!save) return;
+
+		this._doLoadSave(save);
+		// endregion
+	}
+
+	_doLoadSave (save) {
+		if (!save?.entity.spells?.length) return;
+
+		this._activeSaveId = save.id;
+		this._$iptName.val(save.entity.name);
+
+		save.entity.spells.forEach(({id, isPrepared}) => {
+			const li = this._list.items.find(li => li.data.spellItemId === id);
+			if (li) li.data.setNextState(isPrepared);
+		});
+	}
+
+	_getStorageKeyAllLists () { return `${this.constructor.name}.saves`; }
+
+	getData () {
+		this._rows = this._actorItems.map((it, ix) => ({
+			name: it.name,
+			isPrepared: it.data.data.preparation.prepared,
+			level: MiscUtil.get(it, "data", "data", "level") || -1,
+			concentration: !!MiscUtil.get(it, "data", "data", "components", "concentration"),
+			v: !!MiscUtil.get(it, "data", "data", "components", "vocal"),
+			s: !!MiscUtil.get(it, "data", "data", "components", "somatic"),
+			m: !!MiscUtil.get(it, "data", "data", "components", "material"),
+			ritual: !!MiscUtil.get(it, "data", "data", "components", "ritual"),
+			ix,
+		}));
+
+		return {
+			...super.getData(),
+			rows: this._rows,
+		};
+	}
+
+	close (...args) {
+		this._pageFilter.teardown();
+		return super.close(...args);
+	}
+}
+
+ActorSpellPreparedToggler.AppFilter = class extends AppFilter {
+	constructor () {
+		super();
+
+		this._levelFilter = new Filter({
+			header: "Level",
+			items: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+			displayFn: lvl => ~lvl ? PageFilterSpells.getFltrSpellLevelStr(lvl) : "Unknown",
+		});
+		this._miscFilter = new Filter({
+			header: "Components & Miscellaneous",
+			items: ["Concentration", "Verbal", "Somatic", "Material", "Ritual"],
+			itemSortFn: PageFilterSpells.sortMetaFilter,
+		});
+	}
+
+	addToFilters (entity, isExcluded) {
+		if (isExcluded) return;
+
+		this._levelFilter.addItem(entity.level);
+		entity._fMisc = [];
+		if (entity.concentration) entity._fMisc.push("Concentration");
+		if (entity.v) entity._fMisc.push("Verbal");
+		if (entity.s) entity._fMisc.push("Somatic");
+		if (entity.m) entity._fMisc.push("Material");
+		if (entity.ritual) entity._fMisc.push("Ritual");
+	}
+
+	async _pPopulateBoxOptions (opts) {
+		opts.filters = [
+			this._levelFilter,
+			this._miscFilter,
+		];
+	}
+
+	toDisplay (values, ent) {
+		return this._filterBox.toDisplay(
+			values,
+			ent.level,
+			ent._fMisc,
+		);
+	}
+};
+
+ActorSpellPreparedToggler.SavedSpellListComponent = class extends BaseComponent {
+	get spellLists () { return this._state[ActorSpellPreparedToggler.SavedSpellListComponent._PROP_SPELL_LISTS]; }
+	set spellLists (val) { this._state[ActorSpellPreparedToggler.SavedSpellListComponent._PROP_SPELL_LISTS] = val; }
+
+	addHookSpellLists (hk) { this._addHookBase(ActorSpellPreparedToggler.SavedSpellListComponent._PROP_SPELL_LISTS, hk); }
+
+	triggerSpellListsCollectionUpdate () { this._triggerCollectionUpdate(ActorSpellPreparedToggler.SavedSpellListComponent._PROP_SPELL_LISTS); }
+
+	_getDefaultState () {
+		return {
+			[ActorSpellPreparedToggler.SavedSpellListComponent._PROP_SPELL_LISTS]: [],
+		};
+	}
+};
+ActorSpellPreparedToggler.SavedSpellListComponent._PROP_SPELL_LISTS = "spellLists";
+
+ActorSpellPreparedToggler.RenderableCollectionSpellLists = class extends RenderableCollectionBase {
+	constructor (compSaves, $wrp) {
+		super(compSaves, ActorSpellPreparedToggler.SavedSpellListComponent._PROP_SPELL_LISTS);
+		this._$wrp = $wrp;
+		this._cbClose = null;
+	}
+
+	set cbClose (fn) { this._cbClose = fn; }
+
+	getNewRender (spellList) {
+		const parentComp = this._comp;
+
+		const comp = BaseComponent.fromObject(spellList.entity, "*");
+		comp._addHookAll("state", () => {
+			spellList.entity = comp.toObject("*");
+			parentComp.triggerSpellListsCollectionUpdate();
+		});
+
+		const $btnLoad = $(`<button class="btn btn-xxs" title="Load"><span class="glyphicon glyphicon-ok"></span></button>`)
+			.click(() => {
+				this._cbClose(spellList);
+			});
+
+		const $btnDelete = $(`<button class="btn btn-xxs btn-danger" title="Delete"><span class="glyphicon glyphicon-trash"></span></button>`)
+			.click(() => {
+				parentComp.spellLists = parentComp.spellLists.filter(it => it !== spellList);
+			});
+
+		const $wrpRow = $$`<div class="ve-flex-v-center py-1 stripe-even toggsp__row">
+			<div class="mr-2">${$btnLoad}</div>
+			<div class="ve-flex-v-center w-100 mr-2">${comp._state.name}</div>
+			<div class="">${$btnDelete}</div>
+		</div>`.appendTo(this._$wrp);
+
+		return {
+			comp,
+			$wrpRow,
+			fnCleanup: () => {
+				// (Unused)
+			},
+		};
+	}
+
+	doUpdateExistingRender (renderedMeta, spellList) {
+		renderedMeta.comp._proxyAssignSimple("state", spellList.entity, true);
+	}
+
+	doDeleteExistingRender (renderedMeta) {
+		renderedMeta.fnCleanup();
+	}
+
+	doReorderExistingComponent (renderedMeta, spellList) {
+		const parent = this._comp;
+
+		const ix = parent.spellLists.map(it => it.id).indexOf(spellList.id);
+		const curIx = this._$wrp.find(`.toggsp__row`).index(renderedMeta.$wrpRow);
+
+		const isMove = !this._$wrp.length || curIx !== ix;
+		if (isMove) renderedMeta.$wrpRow.detach().appendTo(this._$wrp);
+	}
+};
+
+export {ActorSpellPreparedToggler};

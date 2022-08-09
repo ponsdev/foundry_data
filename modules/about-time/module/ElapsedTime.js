@@ -1,72 +1,77 @@
 import { FastPriorityQueue, Quentry } from "./FastPirorityQueue.js";
 import { PseudoClock, PseudoClockMessage, _addEvent } from "./PseudoClock.js";
-import { calendars, DTCalc } from "./calendar/DTCalc.js";
-import { DateTime } from "./calendar/DateTime.js";
-import { DTMod } from "./calendar/DTMod.js";
+import { currentWorldTime, DateTime, dateToTimestamp, intervalATtoSC, intervalSCtoAT } from "./calendar/DateTime.js";
 const _moduleSocket = "module.about-time";
 const _updateClock = "updateClock";
 let _userId = "";
 let _isGM = false;
-class CombatRound {
-    constructor(id, round) {
-        this._id = id;
-        this._round = round;
-        return this;
-    }
-}
+let warn = (...args) => {
+    if (ElapsedTime.debug)
+        console.warn("about-time | ", ...args);
+};
+let log = (...args) => {
+    console.log("about-time | ", ...args);
+};
 export class ElapsedTime {
-    static setDebug(val) {
-        ElapsedTime.debug = val;
-        DTCalc.debug = val;
-    }
     get eventQueue() { return ElapsedTime._eventQueue; }
     set eventQueue(queue) { ElapsedTime._eventQueue = queue; }
     static currentTimeString() {
-        let pad = DTCalc.padNumber;
-        let dt = DTMod.fromSeconds(PseudoClock.currentTime);
-        return `${pad(dt.hours, 2)}:${pad(dt.minutes, 2)}:${pad(dt.seconds, 2)}`;
+        //@ts-ignore
+        const datetime = window.SimpleCalendar.api.timestampToDate(game.time.worldTime);
+        return `${datetime.hour}:${datetime.minute}:${datetime.second}`;
+    }
+    static timeString(duration) {
+        //@ts-ignore
+        const datetime = window.SimpleCalendar.api.timestampToDate(duration);
+        return `${datetime.hour}:${datetime.minute}:${datetime.second}`;
     }
     static currentTime() {
-        return DTMod.fromSeconds(PseudoClock.currentTime);
+        //@ts-ignore
+        return intervalSCtoAT(window.SimpleCalendar.api.timestampToDate(game.time.worldTime));
     }
     static currentTimeSeconds() {
-        return PseudoClock.currentTime % DTCalc.spd;
+        //@ts-ignore
+        return game.time.worlTime;
     }
     static status() {
-        console.log(ElapsedTime._eventQueue.array, ElapsedTime._eventQueue.size, ElapsedTime._activeCombats, ElapsedTime._saveInterval);
+        console.log(ElapsedTime._eventQueue.array, ElapsedTime._eventQueue.size, ElapsedTime._saveInterval);
     }
     static _displayCurrentTime() {
-        console.log(`Elapsed time ${ElapsedTime.currentTimeString()}`);
+        //@ts-ignore
+        console.log(`Elapsed time ${window.SimpleCalendar.api.timestampToDate(game.time.worldTime)}`);
     }
-    static _calcSeconds(days, hours, minutes, seconds) {
-        if (ElapsedTime.debug)
-            ElapsedTime.log("calcseconds", days, hours, minutes, seconds);
-        let calcSeconds = (((((days * DTCalc.hpd) +
-            hours) * DTCalc.mph)
-            + minutes) * DTCalc.spm)
-            + seconds;
-        if (ElapsedTime.debug)
-            ElapsedTime.log("calcseconds", days, hours, minutes, seconds, calcSeconds);
-        return calcSeconds;
-    }
-    static setClock(timeInSeconds) {
-        if (PseudoClock.isGM)
-            PseudoClock.setClock(timeInSeconds);
+    static setTimeA(seconds) {
+        //@ts-ignore
+        if (!Number.isNumeric(seconds))
+            console.error("about-time | attempting to set time to non-numeric value", seconds);
         else
-            PseudoClock.warnNotGM("Elapsedtime Set clock");
+            game.settings.set("core", "time", seconds);
+    }
+    // These will all have to change to the SC versions
+    static setClock(timeInSeconds) {
+        if (game.user.isGM) {
+            ElapsedTime.setTimeA(timeInSeconds);
+        }
     }
     static advanceClock(timeIncrement) {
+        warn("about-time | advanceClock() deprecated please use game.time.advance(increment)");
         if (typeof timeIncrement !== "number")
             return;
-        if (PseudoClock.isGM)
-            PseudoClock.setClock(PseudoClock.currentTime + timeIncrement);
-        else
-            PseudoClock.warnNotGM("Elapsedtime Advance clock");
+        if (!game.user.isGM)
+            return;
+        //@ts-ignore
+        game.time.advance(timeIncrement);
     }
     static advanceTime(spec = {}) {
-        if (PseudoClock.isGM) {
-            let advSeconds = DTMod.create(spec).toSeconds();
-            ElapsedTime.advanceClock(advSeconds);
+        warn(`about-time advanceTime() deprecated please use
+      const newTime = SimpleCalendar.api.timestampPlusInterval(game.time.worldTime, spec)
+      game.settings.set("core", "time", newTime)
+    `);
+        spec = intervalATtoSC(spec);
+        if (game.user.isGM) {
+            //@ts-ignore
+            const newTime = window.SimpleCalendar.api.timestampPlusInterval(game.time.worldTime, spec);
+            ElapsedTime.setTimeA(newTime);
         }
         else
             PseudoClock.warnNotGM("Elapsedtime advance time");
@@ -76,22 +81,29 @@ export class ElapsedTime {
      * @param spec {hours=0, minutes=0, seconds=0}
      */
     static setTime(spec) {
-        if (PseudoClock.isGM) {
-            let seconds = DTMod.create(spec).toSeconds() % DTCalc.spd;
-            let days = Math.floor(PseudoClock.currentTime / DTCalc.spd);
-            ElapsedTime.setClock(seconds + days * DTCalc.spd);
+        warn(`about-time setTime() deprecated please use
+    const newTime = window.SimpleCalendar.api.dateToTimestamp(spec);
+    game.settings.set("core", "time", newTime)
+  `);
+        spec = intervalATtoSC(spec);
+        if (game.user.isGM) {
+            //@ts-ignore
+            const newTime = window.SimpleCalendar.api.dateToTimestamp(spec);
+            ElapsedTime.setTimeA(newTime);
         }
         else
             PseudoClock.warnNotGM("Elapsedtime Set time");
     }
     /**
-     * Set the clock to the given date time
+     * Set the clock to the given date time | date time assumed to be a full date time
      * @param dt DateTIme
      */
     static setDateTime(dt) {
-        if (PseudoClock.isGM) {
-            let timeInSeconds = dt.toSeconds() - DateTime.create({ years: DTCalc.clockStartYear }).toSeconds();
-            PseudoClock.setClock(timeInSeconds);
+        warn(`about-time setDateTime() deprecated please use
+    game.settings.set("core", "time", timestamp)
+  `);
+        if (game.user.isGM) {
+            ElapsedTime.setTimeA(dt.timestamp);
         }
         else
             PseudoClock.warnNotGM("Elapsedtime Set DateTime");
@@ -100,15 +112,16 @@ export class ElapsedTime {
      * set specif
      * @param param0
      */
-    static setAbsolute({ years = null, months = null, days = null, hours = null, minutes = null, seconds = null } = {}) {
-        if (PseudoClock.isGM) {
-            let dt = DateTime.now().setAbsolute({ years, months, days, hours, minutes, seconds });
-            if (years !== null && months !== null && days !== null && hours !== null && minutes !== null && seconds !== null) {
-                // no defaulting needed set this absolutely
-                dt = DateTime.create({ years, months, days, hours, minutes, seconds });
-            }
-            ElapsedTime.setDateTime(dt);
-            return dt;
+    static setAbsolute(spec = { years: 0, months: 0, days: 0, hours: 0, minutes: 0, seconds: 0 }) {
+        warn(`about-time ssetAbsolute() deprecated please use
+    const newTime = window.SimpleCalendar.api.dateToTimestamp(newSpec);
+    game.settings.set("core", "time", timestamp)
+  `);
+        if (game.user.isGM) {
+            const newSpec = intervalATtoSC(spec);
+            //@ts-ignore
+            const newTime = window.SimpleCalendar.api.dateToTimestamp(newSpec);
+            ElapsedTime.setTimeA(newTime);
         }
         else
             PseudoClock.warnNotGM("Elapsedtime Set absolute");
@@ -126,16 +139,33 @@ export class ElapsedTime {
      *
      */
     static doAt(when, handler, ...args) {
+        if (typeof when === "number") { // assume it is already a timestamp
+        }
+        else if (when instanceof DateTime) {
+            when = when.timestamp;
+        }
+        else {
+            when = intervalATtoSC(when);
+            when = dateToTimestamp(when);
+        }
         return ElapsedTime.gsetTimeoutAt(when, handler, ...args);
     }
     static doIn(when, handler, ...args) {
+        if (typeof when !== "number") {
+            when = intervalATtoSC(when);
+            //@ts-ignore
+            when = window.SimpleCalendar.api.timestampPlusInterval(0, when);
+        }
         return ElapsedTime.gsetTimeoutIn(when, handler, ...args);
     }
     static doEvery(when, handler, ...args) {
         // this needs to add in the current time spec
+        if (typeof when !== "number")
+            when = intervalATtoSC(when);
         return ElapsedTime.gsetInterval(when, handler, ...args);
     }
     static reminderAt(when, ...args) {
+        when = intervalATtoSC(when);
         //@ts-ignore
         return this.doAt(when, (...args) => game.Gametime.ElapsedTime.message(...args), ...args);
     }
@@ -143,9 +173,9 @@ export class ElapsedTime {
         //@ts-ignore
         return this.doIn(when, (...args) => game.Gametime.ElapsedTime.message(...args), ...args);
     }
-    static reminderEvery(DTMod, ...args) {
+    static reminderEvery(interval, ...args) {
         //@ts-ignore
-        return this.doEvery(DTMod, (...args) => game.Gametime.ElapsedTime.message(...args), ...args);
+        return this.doEvery(interval, (...args) => game.Gametime.ElapsedTime.message(...args), ...args);
     }
     static notifyAt(when, eventName, ...args) {
         if (ElapsedTime.debug)
@@ -165,87 +195,83 @@ export class ElapsedTime {
     }
     /* These are the base level routines - exist for analogy to normal real time clock */
     static gsetTimeout(when, handler, ...args) {
-        if (!when.toSeconds)
-            when = DTMod.create(when);
-        let timeout = DateTime.now().add(when).toSeconds();
+        let timeout;
+        if (typeof when !== "number") {
+            when = intervalATtoSC(when);
+            //TODO make sure this is right
+            ///@ts-ignore
+            timeout = window.SimpleCalendar.api.timestampPlusInterval(currentWorldTime(), when);
+        }
+        else
+            timeout = when;
         if (ElapsedTime.debug)
             ElapsedTime.log("gsetTimeout", timeout, handler, ...args);
         return ElapsedTime._addEVent(timeout, false, null, handler, ...args);
     }
     static gsetTimeoutAt(when, handler, ...args) {
-        let turnSpec = when;
-        if (turnSpec.turns || turnSpec.rounds) { // do the effect at the specified round and turn.
-            if ((turnSpec.turns || turnSpec.rounds) && turnSpec.startEnd) {
-                // turnspec should be rounds: x or turns: x turn: start/end optional token => tokens turn not turn #
-                console.log("DoIn matched a turn/round spec", turnSpec);
-                return;
-            }
+        let eventTime;
+        if (when instanceof DateTime)
+            eventTime = when.timestamp;
+        else if (typeof when === "number")
+            eventTime = when;
+        else {
+            when = intervalATtoSC(when);
+            eventTime = dateToTimestamp(when);
         }
-        if (!when.toSeconds)
-            when = DateTime.create(when);
-        let timeoutSeconds = when.toSeconds() - DateTime.now().toSeconds();
-        return ElapsedTime._addEVent(timeoutSeconds, false, null, handler, ...args);
+        return ElapsedTime._addEVent(eventTime, false, null, handler, ...args);
     }
     static gsetTimeoutIn(when, handler, ...args) {
-        let turnSpec = when;
-        if (turnSpec.turns || turnSpec.rounds) {
-            if ((turnSpec.turns || turnSpec.rounds) && turnSpec.startEnd) {
-                // turnspec should be rounds: x or turns: x turn: start/end optional token => tokens turn not turn #
-                console.log("DoIn matched a turn/round spec", turnSpec);
-                return;
-            }
+        let timeoutSeconds;
+        if (typeof when === "number")
+            timeoutSeconds = when + currentWorldTime();
+        else {
+            when = intervalATtoSC(when);
+            //@ts-ignore
+            timeoutSeconds = window.SimpleCalendar.api.timestampPlusInterval(currentWorldTime(), when);
         }
-        if (!when.toSeconds)
-            when = DTMod.create(when);
-        let timeoutSeconds = DateTime.now().add(when).toSeconds() - DateTime.now().toSeconds();
         return ElapsedTime._addEVent(timeoutSeconds, false, null, handler, ...args);
     }
     static gsetInterval(when, handler, ...args) {
-        // @ts-ignore
-        if (when.rounds) {
-            // @ts-ignore
-            when.seconds = (when.seconds ? when.seconds : 0) + (when.rounds * CONFIG.time.roundTime);
-            // @ts-ignore
-            delete when.rounds;
+        // TODO look at when.rounds solution
+        let futureTime;
+        if (typeof when !== "number") {
+            //@ts-ignore
+            futureTime = window.SimpleCalendar.api.timestampPlusInterval(currentWorldTime(), when);
         }
-        if (!when.toSeconds)
-            when = DTMod.create(when);
-        let timeout = DateTime.now().add(when).toSeconds() - DateTime.now().toSeconds();
-        ;
-        return ElapsedTime._addEVent(timeout, true, when, handler, ...args);
+        else
+            futureTime = currentWorldTime() + when;
+        // let timeout = futureTime - currentWorldTime();
+        // let timeout = DateTime.now().add(when).toSeconds() - DateTime.now().toSeconds();;
+        return ElapsedTime._addEVent(futureTime, true, when, handler, ...args);
     }
     static gclearTimeout(uid) {
         return ElapsedTime._eventQueue.removeId(uid);
     }
     static doAtEvery(when, every, handler, ...args) {
-        if (!when.toSeconds)
-            when = DateTime.create(when);
-        let timeout = when.toSeconds() - DateTime.now().toSeconds();
-        ;
-        return ElapsedTime._addEVent(timeout, true, every, handler, ...args);
+        return ElapsedTime._addEVent(when, true, every, handler, ...args);
     }
     static reminderAtEvery(when, every, ...args) {
-        if (!when.toSeconds)
-            when = DateTime.create(when);
-        let timeout = when.toSeconds() - DateTime.now().toSeconds();
-        ;
         //@ts-ignore
-        return ElapsedTime._addEVent(timeout, true, every, (...args) => game.Gametime.ElapsedTime.message(...args), ...args);
+        return ElapsedTime._addEVent(when, true, every, (...args) => game.Gametime.ElapsedTime.message(...args), ...args);
     }
     static notifyAtEvery(when, every, eventName, ...args) {
-        if (!when.toSeconds)
-            when = DateTime.create(when);
-        let timeout = when.toSeconds() - DateTime.now().toSeconds();
-        ;
         //@ts-ignore
-        return ElapsedTime._addEVent(timeout, true, every, (eventName, ...args) => game.Gametime._notifyEvent(eventName, ...args), eventName, ...args);
+        return ElapsedTime._addEVent(when, true, every, (eventName, ...args) => game.Gametime._notifyEvent(eventName, ...args), eventName, ...args);
     }
     static _addEVent(time, recurring, increment = null, handler, ...args) {
-        // only allow macros to be run
+        // only allow macros to be run - TODO fix this
         //@ts-ignore
         // if (!game.macros.get(handler) && !game.macros.entities.find(m=>m.name === handler)) return undefined;
+        let finalTime;
+        if (typeof time === "number") {
+            finalTime = time;
+        }
+        else if (time instanceof DateTime) {
+            finalTime = time.timestamp;
+        }
+        else
+            finalTime = dateToTimestamp(time);
         let handlerString;
-        let whandler;
         if (time < 0) {
             ui.notifications.warn("Cannot set event in the past");
             time = 1;
@@ -258,7 +284,7 @@ export class ElapsedTime {
             }
             catch (err) {
                 let name = handlerString.match(/[^\{\()]*/);
-                console.warn(`about-time | handler not valid ${name}`);
+                warn(`about-time | handler not valid ${name}`);
                 console.log(`try wrapping in (<arglist>) => func(<arglist>)`);
                 return undefined;
             }
@@ -267,9 +293,7 @@ export class ElapsedTime {
         if (ElapsedTime.debug)
             ElapsedTime.log("add event", handler);
         // if the increment is just data upgrade it to a DTmod
-        if (recurring && !increment.toSeconds)
-            increment = DTMod.create(increment);
-        const entry = new Quentry(PseudoClock.currentTime + time, recurring, increment, handler, uid, ...args);
+        const entry = new Quentry(finalTime, recurring, increment, handler, uid, ...args);
         if (PseudoClock.isMaster) {
             ElapsedTime._eventQueue.add(entry);
             ElapsedTime._save(true);
@@ -281,21 +305,12 @@ export class ElapsedTime {
             PseudoClock._notifyUsers(eventMessage);
         }
     }
-    /*
-    static _addEVentAt(time: number, recurring: boolean, increment: DTMod,  handler: (...args) => any, ...args) {
-      const entry = new Quentry(time, recurring, increment, handler, null, ...args)
-      ElapsedTime._eventQueue.add(entry);
-      ElapsedTime._save(true);
-      return entry._uid;
-    }
-  */
     /**
      * call and if required reschedule events due to execute at the new time
      * @param newTime passed by the clock update
      */
     static async pseudoClockUpdate(newTime) {
         var _a, _b, _c;
-        // newTime = newTime / 1000;
         if (!PseudoClock.isMaster)
             return;
         if (ElapsedTime.debug)
@@ -305,9 +320,9 @@ export class ElapsedTime {
         const q = ElapsedTime._eventQueue;
         if (ElapsedTime.debug && q.size) {
             ElapsedTime.log("pseudoClockUpdate", q);
-            ElapsedTime.log("pseudoClockUpdate", PseudoClock.currentTime, q.peek()._time);
+            ElapsedTime.log("pseudoClockUpdate", currentWorldTime(), q.peek()._time);
         }
-        while (q.peek() && q.peek()._time <= PseudoClock.currentTime) {
+        while (q.peek() && q.peek()._time <= currentWorldTime()) {
             let qe = q.poll();
             if (ElapsedTime.debug)
                 ElapsedTime.log("pseudoClockUpdate - doing event ", qe);
@@ -349,9 +364,10 @@ export class ElapsedTime {
                         ElapsedTime.log("recurring event", qe._increment, qe._handler, qe._time);
                     // let newTime = DateTime.now().add(qe._increment).toSeconds() - DateTime.now().toSeconds() + PseudoClock.currentTime;
                     // Do via date creation and add so things like +1 year work correctly
-                    let execTime = DateTime.createFromSeconds(qe._time);
-                    let seconds = execTime.add(qe._increment).toSeconds() - DateTime.create().toSeconds();
-                    //  let seconds = execTime.add(qe._increment).toSeconds();
+                    // let execTime = DateTime.createFromSeconds(qe._time);
+                    let execTime = qe._time;
+                    //@ts-ignore
+                    let seconds = window.SimpleCalendar.api.timestampPlusInterval(execTime, qe._increment);
                     if (seconds <= qe._time) {
                         // attempting to schedule recurring event in the past
                         console.error("about-time | Event time not increasing event reschedule rejected", qe);
@@ -381,10 +397,6 @@ export class ElapsedTime {
             ElapsedTime._save(true);
         }
     }
-    static resetCombats() {
-        ElapsedTime._activeCombats = [];
-        ElapsedTime._save(true);
-    }
     static _load() {
         let saveData = game.settings.get("about-time", "store");
         if (ElapsedTime.debug)
@@ -409,76 +421,10 @@ export class ElapsedTime {
                     ElapsedTime.log("_save saving", new Date(), ElapsedTime.currentTimeString());
                 let saveData = {
                     _eventQueue: ElapsedTime._eventQueue.exportToJSON(),
-                    _activeCombats: ElapsedTime._activeCombats,
                 };
                 // put something in to throttle saving
                 game.settings.set("about-time", "store", saveData);
-                PseudoClock._save(true);
                 ElapsedTime._lastSaveTime = newSaveTime;
-            }
-        }
-    }
-    static setOffset() {
-        let offset = game.settings.get("about-time", "timeZeroOffset") || "";
-        if (game.system.id === "pf2e") {
-            try {
-                const dateTheme = game.settings.get("pf2e", "worldClock.dateTheme");
-                const matches = game.settings.get('pf2e', 'worldClock.worldCreatedOn').match(/\s*(\d*)-(\d*)-(\d*)T(\d*):(\d*):(\d*)\..*/);
-                calendars.Gregorian.clock_start_year = 0;
-                calendars.Gregorian.first_day = 6;
-                const pf2eIndex = Object.keys(calendars).indexOf("Golarian PF2E");
-                const gregIndex = Object.keys(calendars).indexOf("Gregorian");
-                switch (dateTheme) {
-                    case "IC":
-                        DTCalc.createFromData(calendars["Golarian PF2E"]);
-                        game.settings.set("about-time", "calendar", pf2eIndex);
-                        break;
-                    case "AR":
-                        DTCalc.createFromData(calendars["Golarian PF2E"]);
-                        game.settings.set("about-time", "calendar", pf2eIndex);
-                        break;
-                    case "CE":
-                        DTCalc.createFromData(calendars["Gregorian"]);
-                        game.settings.set("about-time", "calendar", gregIndex);
-                        break;
-                    case "AD":
-                        DTCalc.createFromData(calendars["Gregorian"]);
-                        game.settings.set("about-time", "calendar", gregIndex);
-                        break;
-                }
-                const years = Number(matches[1]) + CONFIG.PF2E.worldClock[dateTheme].yearOffset - DTCalc.clockStartYear;
-                const months = Number(matches[2]) - 1;
-                const days = Number(matches[3]) - 1;
-                const hours = Number(matches[4]);
-                const minutes = Number(matches[5]);
-                const seconds = Number(matches[6]);
-                const offsetObj = { years, months, days, hours, minutes, seconds };
-                let secondsOffset = DateTime.create(offsetObj).toSeconds();
-                console.warn(`about-time | Time zero offset is ${secondsOffset} ${offset}: `, DateTime.createFromSeconds(secondsOffset).longDate());
-                PseudoClock.timeZeroOffset = secondsOffset;
-            }
-            catch (err) {
-                console.warn(`Could not set time offset from ${offset} assuming 0`);
-                PseudoClock.timeZeroOffset = 0;
-            }
-        }
-        else if (offset !== "") {
-            try {
-                const matches = offset.match(/\s*(\d*)\/(\d*)\/(\d*)\s*(\d*):(\d*):(\d*)\s*/);
-                const years = Number(matches[1]) - DTCalc.clockStartYear;
-                const months = Number(matches[2]) - 1;
-                const days = Number(matches[3]) - 1;
-                const hours = Number(matches[4]);
-                const minutes = Number(matches[5]);
-                const seconds = Number(matches[6]);
-                const offsetObj = { years, months, days, hours, minutes, seconds };
-                let secondsOffset = DateTime.create(offsetObj).toSeconds();
-                console.warn(`about-time | Time zero offset is ${secondsOffset} ${offset}: `, DateTime.createFromSeconds(secondsOffset).longDate());
-                PseudoClock.timeZeroOffset = secondsOffset;
-            }
-            catch (err) {
-                console.warn(`Could not set time offset from ${offset} assuming 0`);
-                PseudoClock.timeZeroOffset = 0;
             }
         }
     }
@@ -490,35 +436,20 @@ export class ElapsedTime {
         // find a better way to do this.
         ElapsedTime._fetchParams();
         ElapsedTime._load();
-        ElapsedTime.setOffset();
         Hooks.on("updateWorldTime", ElapsedTime.pseudoClockUpdate);
-        Hooks.on("updateCombat", () => {
-            if (!PseudoClock.isMaster)
-                return;
-            PseudoClock.pauseRealTime();
-        });
-        Hooks.on("deleteCombat", () => {
-            if (PseudoClock.isMaster)
-                PseudoClock.resumeRealTime();
-        });
     }
     static _initialize(currentTime = 0) {
         ElapsedTime._eventQueue = new FastPriorityQueue();
-        ElapsedTime._activeCombats = [];
         if (PseudoClock.isMaster)
             ElapsedTime._save(true);
     }
     static _createFromData(data) {
         // ElapsedTime._eventQueue = FastPriorityQueue.createFromData(data._eventQueue);
         ElapsedTime._eventQueue = FastPriorityQueue.createFromJson(data._eventQueue);
-        ElapsedTime._activeCombats = data._activeCombats || [];
         ElapsedTime._fetchParams();
     }
     static _fetchParams() {
         ElapsedTime.debug = game.settings.get("about-time", "debug") || false;
-        PseudoClock.setDebug(ElapsedTime.debug);
-        if (ElapsedTime.debug)
-            ElapsedTime.log("_fetchParams", `hpd ${DTCalc.hpd}`, `mph ${DTCalc.mph}`, `spm ${DTCalc.spm}`);
     }
     static showQueue() {
         if (ElapsedTime._eventQueue.size === 0) {
@@ -563,7 +494,7 @@ export class ElapsedTime {
         let chatMessage = ChatMessage;
         let chatData = {
             //@ts-ignore
-            user: game.user._id,
+            user: game.user.id,
             //@ts-ignore
             speaker: { actor: game.user.actor },
             content: content,

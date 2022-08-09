@@ -1,1 +1,135 @@
-const _0x3b4f=['4660htWpwV','windows','_ELEMENTS_WITH_FOCUS','get','length','5914SdwJhc','MODULE_NAME','add','INPUT','hasFocus','menu','map','_MODAL_STACK','ascSort','appId','Could\x20not\x20determine\x20z-index\x20for\x20app\x20','style','sort','ready','saveFog','display','activeLayer','warn','init','close','47VcwNMR','game.keyboard._onEscape','isFixEscapeKey','closeAllMenus','2AxDwYE','10PKiZMq','isEscapeable','keys','blur','has','sight','element','target','zIndex','settings','_onEscape','_controlled','TEXTAREA','context','_plut_IsPopout','8590gWfjRb','5CHkLpu','bind','2549RPIKnf','136598VgywkI','key','185494NfMjAR','register','9784elXKMh','filter','releaseAll','z-index'];const _0x5566=function(_0xdd2e82,_0x49a826){_0xdd2e82=_0xdd2e82-0xda;let _0x3b4f93=_0x3b4f[_0xdd2e82];return _0x3b4f93;};const _0x51f0c0=_0x5566;(function(_0x38932e,_0x277dc3){const _0x9b543=_0x5566;while(!![]){try{const _0x14baba=parseInt(_0x9b543(0xed))*-parseInt(_0x9b543(0xfd))+parseInt(_0x9b543(0xec))+-parseInt(_0x9b543(0x111))*-parseInt(_0x9b543(0xef))+-parseInt(_0x9b543(0xf0))+parseInt(_0x9b543(0xdd))*-parseInt(_0x9b543(0xf8))+parseInt(_0x9b543(0xf2))+-parseInt(_0x9b543(0xf4))*-parseInt(_0x9b543(0xdc));if(_0x14baba===_0x277dc3)break;else _0x38932e['push'](_0x38932e['shift']());}catch(_0x4c9c57){_0x38932e['push'](_0x38932e['shift']());}}}(_0x3b4f,0x1d76f));import{libWrapper,UtilLibWrapper}from'./PatcherLibWrapper.js';import{SharedConsts}from'../shared/SharedConsts.js';import{Config}from'./Config.js';import{Menu}from'./Menu.js';class Patcher_GameKeyboard{static[_0x51f0c0(0x10f)](){const _0x37f1c0=_0x51f0c0;ui[_0x37f1c0(0xe6)]['render'](),libWrapper[_0x37f1c0(0xf3)](SharedConsts[_0x37f1c0(0xfe)],_0x37f1c0(0x112),function(_0x31c81e,_0x43acf1,_0x393cb4,_0x2c39e4){const _0x34e59b=_0x37f1c0;if(!Config[_0x34e59b(0xfb)]('ui',_0x34e59b(0xda))){if(UiUtil[_0x34e59b(0x104)]&&UiUtil[_0x34e59b(0x104)]['length'])return;return _0x31c81e(_0x43acf1,_0x393cb4,_0x2c39e4);}return Patcher_GameKeyboard[_0x34e59b(0xe7)][_0x34e59b(0xee)](this)(_0x43acf1,_0x393cb4,_0x2c39e4);},UtilLibWrapper['LIBWRAPPER_MODE_MIXED']);}static[_0x51f0c0(0xe7)](_0x3e3b65,_0x54c9d2,_0xa4dfe0){const _0x3abc3a=_0x51f0c0;if(UiUtil[_0x3abc3a(0x104)]&&UiUtil[_0x3abc3a(0x104)][_0x3abc3a(0xfc)])return;if(_0x54c9d2)return;if(ui[_0x3abc3a(0x102)][_0x3abc3a(0xe3)]&&ui[_0x3abc3a(0x102)][_0x3abc3a(0xe3)]?.[0x0]?.[_0x3abc3a(0x108)]?.[_0x3abc3a(0x10c)]===''){ui[_0x3abc3a(0x102)]['toggle']();return;}if(_0xa4dfe0[_0x3abc3a(0x101)]&&Patcher_GameKeyboard[_0x3abc3a(0xfa)][_0x3abc3a(0xe1)](_0x3e3b65[_0x3abc3a(0xe4)]['nodeName'])){_0x3e3b65[_0x3abc3a(0xe4)][_0x3abc3a(0xe0)]();return;}if(canvas[_0x3abc3a(0x10a)])canvas[_0x3abc3a(0xe2)][_0x3abc3a(0x10b)]();if(ui[_0x3abc3a(0xea)]&&ui['context'][_0x3abc3a(0x102)][_0x3abc3a(0xfc)])ui[_0x3abc3a(0xea)][_0x3abc3a(0x110)]();else{if(Menu[_0x3abc3a(0xdb)]())return;else{if(canvas[_0x3abc3a(0x10a)]&&Object[_0x3abc3a(0xdf)](canvas[_0x3abc3a(0x10d)][_0x3abc3a(0xe8)])[_0x3abc3a(0xfc)])_0x3e3b65['preventDefault'](),canvas[_0x3abc3a(0x10d)][_0x3abc3a(0xf6)]();else{if(Object['values'](ui[_0x3abc3a(0xf9)])[_0x3abc3a(0xf5)](_0x1c2f06=>(_0x1c2f06[_0x3abc3a(0xde)]==null||_0x1c2f06[_0x3abc3a(0xde)]===!![])&&!_0x1c2f06['_plut_IsPopout'])[_0x3abc3a(0xfc)]){const _0x2d148a=Object['entries'](ui[_0x3abc3a(0xf9)])['filter'](([_0x1528b3,_0x23fa1d])=>(_0x23fa1d[_0x3abc3a(0xde)]==null||_0x23fa1d[_0x3abc3a(0xde)]===!![])&&!_0x23fa1d[_0x3abc3a(0xeb)])[_0x3abc3a(0x103)](([_0x57f30c,_0x3d321f])=>{const _0x23955b=_0x3abc3a,_0x2c4887=Number(((_0x3d321f[_0x23955b(0xe3)][0x0]||{})[_0x23955b(0x108)]||{})[_0x23955b(0xf7)]||-0x1);if(isNaN(_0x2c4887)||!~_0x2c4887)console[_0x23955b(0x10e)](_0x23955b(0x107)+_0x57f30c);return{'appId':_0x57f30c,'zIndex':isNaN(_0x2c4887)?-0x1:_0x2c4887};})[_0x3abc3a(0x109)]((_0x4d2718,_0x5a79db)=>SortUtil[_0x3abc3a(0x105)](_0x5a79db['zIndex'],_0x4d2718[_0x3abc3a(0xe5)]));ui[_0x3abc3a(0xf9)][_0x2d148a[0x0][_0x3abc3a(0x106)]][_0x3abc3a(0x110)]();}else ui['menu']['toggle']();}}}this['_handled'][_0x3abc3a(0xff)](_0xa4dfe0[_0x3abc3a(0xf1)]);}}Patcher_GameKeyboard['_ELEMENTS_WITH_FOCUS']=new Set([_0x51f0c0(0x100),_0x51f0c0(0xe9)]);export{Patcher_GameKeyboard};
+import {SharedConsts} from "../shared/SharedConsts.js";
+import {Config} from "./Config.js";
+import {Menu} from "./Menu.js";
+import {UtilApplications} from "./UtilApplications.js";
+import {PopoutSheet} from "./PopoutSheet.js";
+import {UtilLibWrapper} from "./PatcherLibWrapper.js";
+import {UtilUi} from "./UtilUi.js";
+
+class Patcher_GameKeyboard {
+	static prePreInit () {
+		this._init_registerKeybindEsc();
+	}
+
+	static init () {
+		Hooks.on(`${SharedConsts.MODULE_NAME_FAKE}.configUpdate`, () => this._pHandleConfigUpdate());
+		this._pHandleConfigUpdate();
+
+		this._init_patchEscapeMethods();
+	}
+
+	static _init_patchEscapeMethods () {
+		// region Store incoming keypresses so we can test against them later
+		// Note: we cannot use e.g. `game.keyboard.downKeys`, as the raw events are filtered before reaching this set.
+		UtilLibWrapper.addPatch(
+			"game.keyboard._handleKeyboardEvent",
+			this._lw_game_keyboard__handleKeyboardEvent,
+			UtilLibWrapper.LIBWRAPPER_MODE_WRAPPER,
+		);
+		// endregion
+
+		UtilLibWrapper.addPatch(
+			"game.keyboard.hasFocus",
+			this._lw_game_keyboard_hasFocus,
+			UtilLibWrapper.LIBWRAPPER_MODE_WRAPPER,
+		);
+	}
+
+	static _lw_game_keyboard__handleKeyboardEvent (fn, ...args) {
+		const val = fn(...args);
+		Patcher_GameKeyboard._LAST_KEYBOARD_EVENT_INFO = {event: args[0], isUp: args[1]};
+		return val;
+	}
+
+	static _lw_game_keyboard_hasFocus (fn, ...args) {
+		const val = fn(...args);
+		if (!Config.get("ui", "isFixEscapeKey")) return val;
+		if (Patcher_GameKeyboard._LAST_KEYBOARD_EVENT_INFO?.event?.key !== "Escape") return val;
+		// Fake that we're not focussing an input, so that our custom handler can run
+		return false;
+	}
+
+	static async _pHandleConfigUpdate () {
+		try {
+			await Patcher_GameKeyboard._LOCK_EDIT_KEYBINDS.pLock();
+			await this._pHandleConfigUpdate_();
+		} finally {
+			Patcher_GameKeyboard._LOCK_EDIT_KEYBINDS.unlock();
+		}
+	}
+
+	static async _pHandleConfigUpdate_ () {
+		// This force-binds the key depending on our Config--we do this as we need to patch other parts of the key
+		//   handling to fully enable our alternate Escape handler, unfortunately.
+		game.keybindings.set(SharedConsts.MODULE_NAME, Patcher_GameKeyboard._ACTION_DISMISS);
+		if (!Config.get("ui", "isFixEscapeKey")) return;
+		game.keybindings.set(SharedConsts.MODULE_NAME, Patcher_GameKeyboard._ACTION_DISMISS, [{key: "Escape"}]);
+	}
+
+	static _init_registerKeybindEsc () {
+		game.keybindings.register(
+			SharedConsts.MODULE_NAME,
+			Patcher_GameKeyboard._ACTION_DISMISS,
+			{
+				name: "KEYBINDINGS.Dismiss",
+				hint: `An improved version of Foundry's built-in binding. Bind the "Escape" key to (in this order): de-select active input fields; de-select selected canvas elements; close context menus; close individual windows in most-recently-active-first order; toggle the main menu.`,
+				onDown: (context) => {
+					const {event} = context;
+
+					if (UiUtil._MODAL_STACK && UiUtil._MODAL_STACK.length) return true;
+
+					/* eslint-disable */
+					// Plutonium: If the game menu is open, close it
+					if (UtilUi.isGameMenuOpen()) {
+						ui.menu.toggle();
+						return true;
+					}
+
+					// Plutonium: Make ESC de-focus input fields
+					if (document.hasFocus() && Patcher_GameKeyboard._ELEMENTS_WITH_FOCUS.has(event.target.nodeName)) {
+						event.target.blur();
+						return true;
+					}
+
+					// Save fog of war if there are pending changes
+					if (canvas.ready) canvas.sight.saveFog();
+
+					// Case 1 - dismiss an open context menu
+					if (ui.context && ui.context.menu.length) ui.context.close();
+
+					// Plutonium: dismiss an open context menu
+					else if (Menu.closeAllMenus()) return true;
+
+					// Case 2 - release controlled objects (if not in a preview)
+					else if (canvas.ready && Object.keys(canvas.activeLayer?._controlled || {}).length) {
+						event.preventDefault();
+						if (!canvas.activeLayer.preview?.children.length) canvas.activeLayer.releaseAll();
+					}
+
+					// Case 3 - close open UI windows
+					else if (Object.values(ui.windows).filter(app => (app.isEscapeable == null || app.isEscapeable === true) && !PopoutSheet.isPoppedOut(app)).length) {
+						// Close the topmost app
+						UtilApplications.getOpenAppsSortedByZindex()
+							.filter(app => (app.isEscapeable == null || app.isEscapeable === true) && !PopoutSheet.isPoppedOut(app))
+							.last()
+							.close();
+					}
+
+					// Case 4 - toggle the main menu
+					else ui.menu.toggle();
+					/* eslint-enable */
+
+					return true;
+				},
+				restricted: false,
+				precedence: CONST.KEYBINDING_PRECEDENCE.PRIORITY,
+			},
+		);
+	}
+}
+Patcher_GameKeyboard._ACTION_DISMISS = "KEYBINDINGS.Dismiss";
+Patcher_GameKeyboard._ELEMENTS_WITH_FOCUS = new Set(["INPUT", "TEXTAREA"]);
+Patcher_GameKeyboard._LOCK_EDIT_KEYBINDS = new VeLock();
+Patcher_GameKeyboard._LAST_KEYBOARD_EVENT_INFO = null;
+
+export {Patcher_GameKeyboard};

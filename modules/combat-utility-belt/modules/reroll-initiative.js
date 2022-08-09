@@ -3,7 +3,6 @@ import { Sidekick } from "./sidekick.js";
 
 /**
  * Rerolls initiative for all combatants
- * @todo refactor to preUpdate hook
  */
 export class RerollInitiative {
 
@@ -13,7 +12,7 @@ export class RerollInitiative {
      * @param {*} update 
      * @param {*} options 
      */
-    static _onPreUpdateCombat(combat, update, options) {
+    static _onPreUpdateCombat(combat, update, options, userId) {
         const reroll = Sidekick.getSetting(SETTING_KEYS.rerollInitiative.enable);
 
         // Return early if we are NOT a GM OR we are not the player that triggered the update AND that player IS a GM
@@ -27,7 +26,7 @@ export class RerollInitiative {
         // If we are not moving forward through the rounds, return
         if (update.round < 2 || update.round < combat.previous.round) return;
 
-        const gmUsers = game.users.entities.filter(u => u.isGM);
+        const gmUsers = game.users.contents.filter(u => u.isGM);
         const gmUserId = game.user.isGM ? game.userId : gmUsers.length ? gmUsers[0].id : null;
 
         if (!gmUserId) return;
@@ -52,10 +51,25 @@ export class RerollInitiative {
         if (!shouldReroll || game.userId != rerollUserId) return;
 
         const combatantIds = rerollTemp ? 
-            combat.combatants.map(c => c._id) : 
-            combat.combatants.filter(c => !hasProperty(c, `flags.${NAME}.${FLAGS.temporaryCombatants.temporaryCombatant}`)).map(c => c._id);
+            combat.combatants.map(c => c.id) : 
+            combat.combatants.filter(c => !hasProperty(c, `data.flags.${NAME}.${FLAGS.temporaryCombatants.temporaryCombatant}`)).map(c => c.id);
 
-        await combat.rollInitiative(combatantIds);
+        const rollOptions = RerollInitiative.getRollInitiativeOptions();
+        await combat.rollInitiative(combatantIds, rollOptions);
         await combat.update({turn: 0});
+    }
+
+    static getRollInitiativeOptions() {
+        const systemId = game.system.id;
+
+        switch (systemId) {
+            case "pf1":
+                return {
+                    skipDialog: true
+                }
+        
+            default:
+                return {};
+        }
     }
 }

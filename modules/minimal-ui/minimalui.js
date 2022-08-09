@@ -1,174 +1,62 @@
 'use strict';
 
-class MinimalUICamera {
-    static initSettings() {
-        game.settings.register("minimal-ui", "hidePlayerCameras", {
-            name: game.i18n.localize("MinimalUI.HidePlayerCameraName"),
-            hint: game.i18n.localize("MinimalUI.HidePlayerCameraHint"),
-            scope: "world",
-            config: true,
-            default: "default",
-            type: String,
-            choices: {
-                "default": game.i18n.localize("MinimalUI.SettingsDefault"),
-                "hidden": game.i18n.localize("MinimalUI.HidePlayerCameraSetting")
-            },
-            onChange: _ => {
-                window.location.reload();
-            }
-        });
-    }
-
-    static initHooks() {
-        Hooks.on('renderCameraViews', async function() {
-            switch(game.settings.get('minimal-ui', 'hidePlayerCameras')) {
-                case 'hidden': {
-                    $("#camera-views > div").each(function(i, box) {
-                        if (!game.users.get($(box).attr("data-user")).isGM) {
-                            $(box).remove();
-                        }
-                    });
-                }
-            }
-        });
-    }
-}
-
 const rootStyle = document.querySelector(':root').style;
+
+const debouncedReload = debounce(() => window.location.reload(), 100);
 
 class MinimalUIControls {
 
-    static controlsLocked = false;
-    static fakeDisabled = false;
-    static cssControlsLastPos = '0px';
+    static delayedProcessing = false;
 
-    static controlToolsHoverTransition;
-
-    static cssControlsStartVisible = '0px';
-    static cssControlsHiddenPositionSmall = '-40px';
-    static cssControlsHiddenPositionStandard = '-50px';
-
-    static cssControlsSubMenuSmall = '55px';
-    static cssControlsSubMenuStandard = '65px';
-    static cssControlsSubMenuDndUi = '65px';
-
-    static cssControlsPaddingDefault = '7px';
-    static cssControlsPaddingHidden = '26px';
+    static cssControlsStandardWidth = '36px';
+    static cssControlsStandardHeight = '36px';
+    static cssControlsStandardLineHeight = '36px';
+    static cssControlsStandardFontSize = '24px';
 
     static cssControlsSmallWidth = '25px';
     static cssControlsSmallHeight = '24px';
     static cssControlsSmallLineHeight = '25px';
     static cssControlsSmallFontSize = '15px';
 
-    static revealControls() {
-        rootStyle.setProperty('--controlspad', MinimalUIControls.cssControlsPaddingDefault);
-        rootStyle.setProperty('--controlsxpos', MinimalUIControls.cssControlsStartVisible);
+    static positionControls() {
+        const logoSettings = game.settings.get('minimal-ui', 'foundryLogoSize');
+        const navSettings = game.settings.get('minimal-ui', 'sceneNavigation');
+        const navSizeSettings = game.settings.get('minimal-ui', 'sceneNavigationSize');
+        if (logoSettings === 'hidden' && navSettings === 'hidden') {
+            rootStyle.setProperty('--controlstop', '-65px');
+        } else if (navSizeSettings === 'big') {
+            rootStyle.setProperty('--controlstop', '115px');
+        } else if (navSizeSettings === 'standard') {
+            rootStyle.setProperty('--controlstop', '100px');
+        } else if (logoSettings !== 'standard') {
+            rootStyle.setProperty('--controlstop', '75px');
+        }
     }
 
-    static revealControlTools() {
+    static showSubControls() {
+        if (game.settings.get('minimal-ui', 'controlsSubHide') === 'autohide') {
+            rootStyle.setProperty('--controlssubop', '0%');
+        } else if (game.settings.get('minimal-ui', 'controlsSubHide') === 'autohide-plus') {
+            rootStyle.setProperty('--controlssubdisna', 'none');
+            rootStyle.setProperty('--controlssubopna', '0%');
+        }
+    }
+
+    static sizeControls() {
         if (game.settings.get('minimal-ui', 'controlsSize') === 'small') {
-            rootStyle.setProperty('--controlssubleft', MinimalUIControls.cssControlsSubMenuSmall);
+            rootStyle.setProperty('--controlsw', MinimalUIControls.cssControlsSmallWidth);
+            rootStyle.setProperty('--controlsh', MinimalUIControls.cssControlsSmallHeight);
+            rootStyle.setProperty('--controlslh', MinimalUIControls.cssControlsSmallLineHeight);
+            rootStyle.setProperty('--controlsfs', MinimalUIControls.cssControlsSmallFontSize);
         } else {
-            rootStyle.setProperty('--controlssubleft', MinimalUIControls.cssControlsSubMenuStandard);
-        }
-        // Special compatibility DnD-UI
-        if (game.modules.get('dnd-ui') && game.modules.get('dnd-ui').active) {
-            rootStyle.setProperty('--controlssubleft', MinimalUIControls.cssControlsSubMenuDndUi);
-        }
-        // ---
-    }
-
-    static hideControls() {
-        rootStyle.setProperty('--controlspad', MinimalUIControls.cssControlsPaddingHidden);
-        if (game.settings.get('minimal-ui', 'controlsSize') === 'small') {
-            rootStyle.setProperty('--controlsxpos', MinimalUIControls.cssControlsHiddenPositionSmall);
-        } else {
-            rootStyle.setProperty('--controlsxpos', MinimalUIControls.cssControlsHiddenPositionStandard);
-        }
-    }
-
-    static hideControlTools() {
-        if (game.settings.get('minimal-ui', 'controlsSize') === 'small') {
-            rootStyle.setProperty('--controlssubleft', MinimalUIControls.cssControlsHiddenPositionSmall);
-        } else {
-            rootStyle.setProperty('--controlssubleft', MinimalUIControls.cssControlsHiddenPositionStandard);
-        }
-    }
-
-    static lockControls(unlock) {
-        const sidebarLock = $("#sidebar-lock > i");
-        if (!MinimalUIControls.controlsLocked) {
-            MinimalUIControls.controlsLocked = true;
-            MinimalUIControls.cssControlsLastPos = rootStyle.getPropertyValue('--controlsxpos');
-            MinimalUIControls.revealControls();
-            MinimalUIControls.revealControlTools();
-            sidebarLock.removeClass("fa-lock-open");
-            sidebarLock.addClass("fa-lock");
-        } else if (unlock) {
-            MinimalUIControls.controlsLocked = false;
-            sidebarLock.removeClass("fa-lock");
-            sidebarLock.addClass("fa-lock-open");
-            MinimalUIControls.hideControls();
-            MinimalUIControls.hideControlTools();
-        }
-    }
-
-    static positionSidebar() {
-        let availableHeight = parseInt($("#board").css('height'));
-        switch(true) {
-            case (game.settings.get('minimal-ui', 'controlsPosition') === 'top' || game.settings.get('minimal-ui', 'controlsStyle') === 'column'): {
-                rootStyle.setProperty('--controlsypos', ((availableHeight/3)-(availableHeight/9)-(availableHeight/9))+'px');
-                break;
-            }
-            case (game.settings.get('minimal-ui', 'controlsPosition') === 'center'): {
-                rootStyle.setProperty('--controlsypos', ((availableHeight/3)-(availableHeight/9))+'px');
-                break;
-            }
-            case (game.settings.get('minimal-ui', 'controlsPosition') ===  'lower'): {
-                rootStyle.setProperty('--controlsypos', ((availableHeight/3))+'px');
-                break;
-            }
-            case (game.settings.get('minimal-ui', 'controlsPosition') ===  'bottom'): {
-                rootStyle.setProperty('--controlsypos', ((availableHeight/3)+(availableHeight/9))+'px');
-                break;
-            }
-        }
-    }
-
-    static addLockButton() {
-        const locked = MinimalUIControls.controlsLocked ? 'fa-lock' : 'fa-lock-open';
-        const SidebarLockButton =
-            $(`
-            <li id="sidebar-lock" class="scene-control"
-            title="${game.i18n.localize("MinimalUI.PinSidebar")}">
-            <i class="fas ${locked} minui-lock"></i>
-            </li>
-            `);
-        if (game.settings.get('minimal-ui', 'controlsBehaviour') === 'autohide') {
-            SidebarLockButton
-                .click(() => MinimalUIControls.lockControls(true))
-                .appendTo("#controls");
+            rootStyle.setProperty('--controlsw', MinimalUIControls.cssControlsStandardWidth);
+            rootStyle.setProperty('--controlsh', MinimalUIControls.cssControlsStandardHeight);
+            rootStyle.setProperty('--controlslh', MinimalUIControls.cssControlsStandardLineHeight);
+            rootStyle.setProperty('--controlsfs', MinimalUIControls.cssControlsStandardFontSize);
         }
     }
 
     static initSettings() {
-
-        game.settings.register('minimal-ui', 'controlsBehaviour', {
-            name: game.i18n.localize("MinimalUI.ControlsBehaviourName"),
-            hint: game.i18n.localize("MinimalUI.ControlsBehaviourHint"),
-            scope: 'world',
-            config: true,
-            type: String,
-            choices: {
-                "always": game.i18n.localize("MinimalUI.SettingsAlwaysVisible"),
-                "autohide": game.i18n.localize("MinimalUI.SettingsAutoHide")
-            },
-            default: "autohide",
-            onChange: _ => {
-                window.location.reload();
-            }
-        });
-
         game.settings.register('minimal-ui', 'controlsSize', {
             name: game.i18n.localize("MinimalUI.ControlsSizeName"),
             hint: game.i18n.localize("MinimalUI.ControlsSizeHint"),
@@ -180,175 +68,84 @@ class MinimalUIControls {
                 "standard": game.i18n.localize("MinimalUI.SettingsStandard")
             },
             default: "small",
-            onChange: _ => {
-                window.location.reload();
-            }
+            onChange: MinimalUIControls.sizeControls
         });
-
-        game.settings.register('minimal-ui', 'controlsStyle', {
-            name: game.i18n.localize("MinimalUI.ControlsStyleName"),
-            hint: game.i18n.localize("MinimalUI.ControlsStyleHint"),
+        game.settings.register('minimal-ui', 'controlsSubHide', {
+            name: game.i18n.localize("MinimalUI.ControlsSubHideName"),
+            hint: game.i18n.localize("MinimalUI.ControlsSubHideHint"),
             scope: 'world',
             config: true,
             type: String,
             choices: {
-                "default": game.i18n.localize("MinimalUI.ControlsStyleExpandRight"),
-                "column": game.i18n.localize("MinimalUI.ControlsStyleSingleColumn")
+                "autohide": game.i18n.localize("MinimalUI.SettingsAutoHide"),
+                "autohide-plus": game.i18n.localize("MinimalUI.SettingsAutoHidePlus"),
+                "visible": game.i18n.localize("MinimalUI.SettingsAlwaysVisible")
             },
-            default: "default",
-            onChange: _ => {
-                window.location.reload();
-            }
+            default: "visible",
+            onChange: debouncedReload
         });
-
-        game.settings.register('minimal-ui', 'controlsPosition', {
-            name: game.i18n.localize("MinimalUI.ControlsPositionName"),
-            hint: game.i18n.localize("MinimalUI.ControlsPositionHint"),
-            scope: 'world',
-            config: true,
-            type: String,
-            choices: {
-                "top": game.i18n.localize("MinimalUI.ControlsPositionTopLeft"),
-                "center": game.i18n.localize("MinimalUI.ControlsPositionUpperLeft"),
-                "lower": game.i18n.localize("MinimalUI.ControlsPositionLowerLeft"),
-                "bottom": game.i18n.localize("MinimalUI.ControlsPositionBottomLeft")
-            },
-            default: "center",
-            onChange: _ => {
-                window.location.reload();
-            }
-        });
-
-    }
-
+    };
     static initHooks() {
-        Hooks.once('renderSceneControls', async function() {
-            if (game.settings.get('minimal-ui', 'controlsSize') === 'small') {
-                rootStyle.setProperty('--controlsw', MinimalUIControls.cssControlsSmallWidth);
-                rootStyle.setProperty('--controlsh', MinimalUIControls.cssControlsSmallHeight);
-                rootStyle.setProperty('--controlslh', MinimalUIControls.cssControlsSmallLineHeight);
-                rootStyle.setProperty('--controlsfs', MinimalUIControls.cssControlsSmallFontSize);
-            }
-            MinimalUIControls.positionSidebar();
+        Hooks.once('renderSceneControls', function () {
+            MinimalUIControls.positionControls();
+            MinimalUIControls.showSubControls();
+            MinimalUIControls.sizeControls();
         });
-
-        Hooks.on('canvasPan', function() {
-            MinimalUIControls.positionSidebar();
-        });
-
-        Hooks.once('renderSceneControls', async function() {
-
-            switch(game.settings.get('minimal-ui', 'controlsStyle')) {
-                case 'default': {
-                    rootStyle.setProperty('--controlssubstyle', 'block');
-                    break;
-                }
-                case 'column': {
-                    rootStyle.setProperty('--controlssubstyle', 'contents');
-                    break;
-                }
+        Hooks.on('renderSceneControls', function() {
+            function controlsSubHoverRefresh() {
+                setTimeout(() => {
+                    const activeElement = $('#controls');
+                    if (activeElement.length && !activeElement.is(':hover')) {
+                        rootStyle.setProperty('--controlssubdisna', 'none');
+                        MinimalUIControls.delayedProcessing = false;
+                    } else controlsSubHoverRefresh();
+                }, 6000);
             }
-
-        });
-
-        Hooks.on('renderSceneControls', async function() {
-
-            const controls = $("#controls");
-            const controlSettings = game.settings.get('minimal-ui', 'controlsBehaviour');
-
-            // Hide controls altogether when they're disabled
-            if (!MinimalUIControls.fakeDisabled && controls.hasClass('disabled')) {
-                controls.hide();
-            } else {
-                controls.show();
-            }
-
-            if (controlSettings === 'autohide') {
-                controls.hover(
-                    function () {
-                        if (!MinimalUIControls.controlsLocked) {
-                            MinimalUIControls.revealControls();
-                            MinimalUIControls.revealControlTools();
-                            clearTimeout(MinimalUIControls.controlToolsHoverTransition);
-                        }
-                    },
-                    function () {
-                        if (!MinimalUIControls.controlsLocked) {
-                            MinimalUIControls.controlToolsHoverTransition = setTimeout(function () {
-                                MinimalUIControls.hideControls();
-                                MinimalUIControls.hideControlTools();
-                            }, 500);
-                        }
+            function controlsSubClickRefresh() {
+                setTimeout(() => {
+                    if (game.settings.get('minimal-ui', 'controlsSubHide') === 'autohide')
+                        rootStyle.setProperty('--controlssubop', '0%');
+                    else if (game.settings.get('minimal-ui', 'controlsSubHide') === 'autohide-plus') {
+                        controlsSubHoverRefresh();
                     }
-                );
+                    rootStyle.setProperty('--opacitycontrols', game.settings.get("minimal-ui", "transparencyPercentage") + '%');
+                }, 3000);
             }
-
-            if (controlSettings === 'autohide' && !MinimalUIControls.controlsLocked) {
-                MinimalUIControls.hideControls();
-                MinimalUIControls.hideControlTools();
-            } else {
-                MinimalUIControls.revealControls();
-                MinimalUIControls.revealControlTools();
-            }
-
-            MinimalUIControls.addLockButton();
-
-            // --------------- COMPATIBILITY SECTION ------------------
-            // Here we add workarounds for minimal UI to work well with modules that affect UI components
-
-            // Give a little time for other modules to add their controls first, and reapply changes
-            await new Promise(waitABit => setTimeout(waitABit, 1));
-
-            $("#controls > li.scene-control").on('click', function() {
-                MinimalUIControls.lockControls(false);
-                $("#controls > li.scene-control.active > ol > li").on('click', function() {
-                    MinimalUIControls.lockControls(false);
+            if (['autohide', 'autohide-plus'].includes(game.settings.get('minimal-ui', 'controlsSubHide'))) {
+                $('#controls li').click(() => {
+                    rootStyle.setProperty('--controlssubop', '100%');
+                    rootStyle.setProperty('--controlssubopna', '100%');
+                    rootStyle.setProperty('--opacitycontrols', '100%');
+                    rootStyle.setProperty('--controlssubdisna', 'block');
+                    controlsSubClickRefresh();
                 });
-            });
-            $("#controls > li.scene-control.active > ol > li").on('click', function() {
-                MinimalUIControls.lockControls(false);
-            });
-
-            // Delete and add lock button if needed, so the lock is always at the bottom
-            const controlsList = $("#controls > li");
-            const sidebarLock = $("#sidebar-lock");
-            if (controlsList.index(sidebarLock) !== controlsList.length) {
-                sidebarLock.remove();
-                MinimalUIControls.addLockButton();
+                if (game.settings.get('minimal-ui', 'controlsSubHide') === 'autohide-plus') {
+                    $('#controls li').hover(() => {
+                        if (MinimalUIControls.delayedProcessing) return;
+                        MinimalUIControls.delayedProcessing = true;
+                        rootStyle.setProperty('--controlssubdisna', 'block');
+                        controlsSubHoverRefresh();
+                    });
+                }
             }
-
-            // Support for Simple Dice Roller
-            if (game.modules.has('simple-dice-roller') && game.modules.get('simple-dice-roller').active) {
-                $("#controls > li.scene-control.sdr-scene-control").click(function() {
-                    let olControl = $("#controls > li.scene-control.sdr-scene-control.active > ol")[0];
-                    if (olControl) {
-                        olControl.style.setProperty('display', 'inherit');
-                    }
-                });
-            }
-
-            // ----------------------------------------------------------------------
-
         });
-    }
-
+    };
 }
 
 class MinimalUIHotbar {
 
     static hotbarLocked = false;
 
-    static cssHotbarHidden = '-48px';
-    static cssHotbarReveal = '1px';
-    static cssHotbarShown = '10px';
+    static cssHotbarHidden = '-50px';
 
     static cssHotbarLeftControlsLineHeight = '24px';
     static cssHotbarRightControlsLineHeight = '12px';
     static cssHotbarRightControlsLineHeightDnDUi = '10px';
     static cssHotbarControlsAutoHideHeight = '100%';
-    static cssHotbarAutoHideHeight = '1px';
+    static cssHotbarAutoHideHeight = '-5px';
     static cssHotbarAutoHideShadow = '-1px';
     static cssHotbarControlsMargin = '0px';
+    static cssHotbarCustomHotbarCompatHover = '10px';
 
     static htmlHotbarLockButton =
         `
@@ -357,22 +154,17 @@ class MinimalUIHotbar {
         </a>
         `
 
-    static collapseHotbar(toggleId) {
-        let target = document.getElementById(toggleId);
-        if (target) {
-            target.click();
-        }
-    }
-
     static lockHotbar(unlock) {
+        if ((game.modules.get("custom-hotbar")?.active) || (game.modules.get('monks-hotbar-expansion')?.active))
+            return;
         const barLock = $("#bar-lock > i");
         if (MinimalUIHotbar.hotbarLocked && unlock) {
             rootStyle.setProperty('--hotbarypos', MinimalUIHotbar.cssHotbarHidden);
             barLock.removeClass("fa-lock");
             barLock.addClass("fa-lock-open");
             MinimalUIHotbar.hotbarLocked = false;
-        } else {
-            rootStyle.setProperty('--hotbarypos', MinimalUIHotbar.cssHotbarReveal);
+        } else if (game.settings.get('minimal-ui', 'hotbar') === 'autohide') {
+            rootStyle.setProperty('--hotbarypos', MinimalUIHotbar.cssHotbarAutoHideHeight);
             barLock.removeClass("fa-lock-open");
             barLock.addClass("fa-lock");
             MinimalUIHotbar.hotbarLocked = true;
@@ -380,65 +172,78 @@ class MinimalUIHotbar {
     }
 
     static positionHotbar() {
-        let availableWidth = parseInt($("#board").css('width'));
-        switch(game.settings.get('minimal-ui', 'hotbarPosition')) {
+        let availableWidth = canvas.app.screen.width;
+        switch (game.settings.get('minimal-ui', 'hotbarPosition')) {
             case 'default': {
                 rootStyle.setProperty('--hotbarxpos', '220px');
+                rootStyle.setProperty('--playerbot', '-8px');
+                break;
+            }
+            case 'extremeLeft': {
+                if (
+                  !(game.modules.get("custom-hotbar")?.active) &&
+                  availableWidth >= 1200
+                ) {
+                    rootStyle.setProperty('--hotbarxpos', '5px');
+                    if (!(game.modules.get('sidebar-macros')?.active && game.settings.get('sidebar-macros', 'hideMacroHotbar')))
+                        rootStyle.setProperty('--playerbot', '55px');
+                }
                 break;
             }
             case 'left': {
-                rootStyle.setProperty('--hotbarxpos', ((availableWidth/2.5)-(availableWidth/9)-(availableWidth/9))+'px');
+                rootStyle.setProperty('--hotbarxpos', ((availableWidth / 2.5) - (availableWidth / 9) - (availableWidth / 9)) + 'px');
+                rootStyle.setProperty('--playerbot', '-8px');
                 break;
             }
             case 'center': {
-                rootStyle.setProperty('--hotbarxpos', ((availableWidth/2.5)-(availableWidth/9))+'px');
+                rootStyle.setProperty('--hotbarxpos', ((availableWidth / 2.5) - (availableWidth / 9)) + 'px');
+                rootStyle.setProperty('--playerbot', '-8px');
                 break;
             }
             case 'right': {
-                rootStyle.setProperty('--hotbarxpos', ((availableWidth/2.5))+'px');
+                rootStyle.setProperty('--hotbarxpos', ((availableWidth / 2.5)) + 'px');
+                rootStyle.setProperty('--playerbot', '-8px');
                 break;
             }
             case 'manual': {
-                rootStyle.setProperty('--hotbarxpos', game.settings.get('minimal-ui', 'hotbarPixelPosition')+'px');
+                rootStyle.setProperty('--hotbarxpos', game.settings.get('minimal-ui', 'hotbarPixelPosition') + 'px');
+                rootStyle.setProperty('--playerbot', '-8px');
                 break;
             }
         }
     }
 
     static configureHotbar() {
-        switch(game.settings.get('minimal-ui', 'hotbar')) {
-            case 'collapsed': {
-                MinimalUIHotbar.collapseHotbar("bar-toggle");
-                if (game.modules.has("custom-hotbar") && game.modules.get('custom-hotbar').active) {
-                    MinimalUIHotbar.collapseHotbar("custom-bar-toggle");
+        if (game.settings.get('minimal-ui', 'hotbar') === 'autohide') {
+            if (!(game.modules.get("custom-hotbar")?.active || game.modules.get('monks-hotbar-expansion')?.active)) {
+                rootStyle.setProperty('--hotbarypos', MinimalUIHotbar.cssHotbarHidden);
+                rootStyle.setProperty('--hotbarlh1', MinimalUIHotbar.cssHotbarLeftControlsLineHeight);
+                rootStyle.setProperty('--hotbarlh2', MinimalUIHotbar.cssHotbarRightControlsLineHeight);
+                if (game.modules.get('dnd-ui')?.active) {
+                    rootStyle.setProperty('--hotbarlh2', MinimalUIHotbar.cssHotbarRightControlsLineHeightDnDUi);
                 }
-                break;
-            }
-            case 'autohide': {
-                if (!(game.modules.has("custom-hotbar") && game.modules.get('custom-hotbar').active)) {
-                    rootStyle.setProperty('--hotbarypos', MinimalUIHotbar.cssHotbarHidden);
-                    rootStyle.setProperty('--hotbarlh1', MinimalUIHotbar.cssHotbarLeftControlsLineHeight);
-                    rootStyle.setProperty('--hotbarlh2', MinimalUIHotbar.cssHotbarRightControlsLineHeight);
-                    if (game.modules.get('dnd-ui') && game.modules.get('dnd-ui').active) {
-                        rootStyle.setProperty('--hotbarlh2', MinimalUIHotbar.cssHotbarRightControlsLineHeightDnDUi);
-                    }
-                    rootStyle.setProperty('--hotbarmg', MinimalUIHotbar.cssHotbarControlsMargin);
-                    rootStyle.setProperty('--hotbarhh', MinimalUIHotbar.cssHotbarControlsAutoHideHeight);
-                    rootStyle.setProperty('--hotbarhv', MinimalUIHotbar.cssHotbarAutoHideHeight);
-                    rootStyle.setProperty('--hotbarshp', MinimalUIHotbar.cssHotbarAutoHideShadow);
-                    $("#hotbar-directory-controls").append(MinimalUIHotbar.htmlHotbarLockButton);
-                    $("#macro-directory").click(function() {MinimalUIHotbar.lockHotbar(false);});
-                    $("#bar-lock").click(function() {MinimalUIHotbar.lockHotbar(true);});
-                    if (MinimalUIHotbar.hotbarLocked) {
-                        MinimalUIHotbar.lockHotbar(false);
-                    }
+                rootStyle.setProperty('--hotbarmg', MinimalUIHotbar.cssHotbarControlsMargin);
+                rootStyle.setProperty('--hotbarhh', MinimalUIHotbar.cssHotbarControlsAutoHideHeight);
+                rootStyle.setProperty('--hotbarhv', MinimalUIHotbar.cssHotbarAutoHideHeight);
+                rootStyle.setProperty('--hotbarshp', MinimalUIHotbar.cssHotbarAutoHideShadow);
+                $("#hotbar-directory-controls").append(MinimalUIHotbar.htmlHotbarLockButton);
+                $("#macro-directory").click(function () {
+                    MinimalUIHotbar.lockHotbar(false);
+                });
+                $("#bar-lock").click(function () {
+                    MinimalUIHotbar.lockHotbar(true);
+                });
+                $(".page-control").click(function () {
+                    MinimalUIHotbar.lockHotbar(false);
+                });
+                if (MinimalUIHotbar.hotbarLocked) {
+                    MinimalUIHotbar.lockHotbar(false);
                 }
                 $("#bar-toggle").remove();
-                break;
             }
         }
     }
-    
+
     static initSettings() {
 
         game.settings.register('minimal-ui', 'hotbar', {
@@ -448,33 +253,14 @@ class MinimalUIHotbar {
             config: true,
             type: String,
             choices: {
-                "shown": game.i18n.localize("MinimalUI.SettingsStartVisible"),
+                "shown": game.i18n.localize("MinimalUI.SettingsAlwaysVisible"),
                 "autohide": game.i18n.localize("MinimalUI.SettingsAutoHide"),
                 "collapsed": game.i18n.localize("MinimalUI.SettingsCollapsed"),
                 "onlygm": game.i18n.localize("MinimalUI.SettingsOnlyGM"),
                 "hidden": game.i18n.localize("MinimalUI.SettingsHide")
             },
-            default: "autohide",
-            onChange: _ => {
-                window.location.reload();
-            }
-        });
-
-        game.settings.register('minimal-ui', 'hotbarSize', {
-            name: game.i18n.localize("MinimalUI.HotbarSizeName"),
-            hint: game.i18n.localize("MinimalUI.HotbarSizeHint"),
-            scope: 'world',
-            config: true,
-            type: String,
-            choices: {
-                "slots_3": game.i18n.localize("MinimalUI.HotbarSlots3"),
-                "slots_6": game.i18n.localize("MinimalUI.HotbarSlots6"),
-                "slots_10":game.i18n.localize("MinimalUI.HotbarSlots10")
-            },
-            default: "slots_10",
-            onChange: _ => {
-                window.location.reload();
-            }
+            default: "collapsed",
+            onChange: debouncedReload
         });
 
         game.settings.register('minimal-ui', 'hotbarPosition', {
@@ -484,16 +270,15 @@ class MinimalUIHotbar {
             config: true,
             type: String,
             choices: {
-                "default": game.i18n.localize("MinimalUI.SettingsDefault"),
+                "default": game.i18n.localize("MinimalUI.HotbarPositionMaxLeft"),
+                "extremeLeft": game.i18n.localize("MinimalUI.HotbarPositionExtremeLeft"),
                 "left": game.i18n.localize("MinimalUI.HotbarPositionCenterLeft"),
                 "center": game.i18n.localize("MinimalUI.HotbarPositionCenter"),
                 "right": game.i18n.localize("MinimalUI.HotbarPositionCenterRight"),
                 "manual": game.i18n.localize("MinimalUI.HotbarPositionManual")
             },
-            default: "center",
-            onChange: _ => {
-                MinimalUIHotbar.positionHotbar();
-            }
+            default: "extremeLeft",
+            onChange: MinimalUIHotbar.positionHotbar
         });
 
         game.settings.register('minimal-ui', 'hotbarPixelPosition', {
@@ -503,59 +288,48 @@ class MinimalUIHotbar {
             config: true,
             type: String,
             default: "400",
-            onChange: _ => {
-                MinimalUIHotbar.positionHotbar();
-            }
+            onChange: MinimalUIHotbar.positionHotbar
         });
     }
 
     static initHooks() {
-        Hooks.on('canvasPan', function() {
+        Hooks.on('ready', async function() {
             MinimalUIHotbar.positionHotbar();
         });
 
-        Hooks.once('ready', async function() {
-
-            MinimalUIHotbar.positionHotbar();
-
-            if (game.settings.get('minimal-ui', 'hotbar') !== 'hidden') {
-                const gmCondition = game.settings.get('minimal-ui', 'hotbar') === 'onlygm';
-                if (gmCondition) {
-                    if (game.user.isGM)
-                        rootStyle.setProperty('--hotbarvis', 'visible');
-                } else
-                    rootStyle.setProperty('--hotbarvis', 'visible');
-            }
-
-        });
-
-        Hooks.on('renderHotbar', async function() {
-
+        // Needs to be .on so changing hotbar pages also applies
+        Hooks.on('renderHotbar', function () {
             MinimalUIHotbar.configureHotbar();
-
-            switch(game.settings.get('minimal-ui', 'hotbarSize')) {
-                case "slots_3": {
-                    $("#macro-list > li").each(function(i, slot) {
-                        if (i > 2) {
-                            rootStyle.setProperty('--hotbarwf', '152px');
-                            $(slot).remove();
-                        }
-                    });
-                    break;
-                }
-                case "slots_6": {
-                    $("#macro-list > li").each(function(i, slot) {
-                        if (i > 5) {
-                            rootStyle.setProperty('--hotbarwf', '302px');
-                            $(slot).remove();
-                        }
-                    });
-                    break;
-                }
+            if (game.modules.get('custom-hotbar')?.active) {
+                rootStyle.setProperty('--hotbarhv', MinimalUIHotbar.cssHotbarCustomHotbarCompatHover);
+                $("#hotbar").css('margin-bottom', '-5px');
             }
-
+            if (game.modules.get('monks-hotbar-expansion')?.active) {
+                $("#hotbar").css('position', 'absolute');
+            }
         });
 
+        Hooks.once('renderHotbar', function() {
+            const hotbarSetting = game.settings.get('minimal-ui', 'hotbar');
+            if (hotbarSetting === 'collapsed')
+                ui.hotbar.collapse();
+            else if (hotbarSetting === 'onlygm') {
+                if (!game.user.isGM)
+                    rootStyle.setProperty('--hotbarvis', 'hidden');
+            } else if (hotbarSetting === 'hidden')
+                rootStyle.setProperty('--hotbarvis', 'hidden');
+        });
+
+        Hooks.once('renderCustomHotbar', function() {
+            if (game.modules.get("custom-hotbar")?.active && game.settings.get('minimal-ui', 'hotbar') === 'collapsed') {
+                ui.customHotbar?.collapse();
+            }
+        });
+
+        Hooks.on('renderCompendium', function(compendium) {
+            if (compendium.metadata.type === 'Macro')
+                MinimalUIHotbar.lockHotbar(false);
+        });
     }
 
 }
@@ -564,8 +338,19 @@ class MinimalUILogo {
 
     static hiddenInterface = false;
 
-    static hideAll(alsoChat) {
+    static hideAll() {
         $('#logo').click(_ => {
+            let alsoChat;
+            switch (game.settings.get('minimal-ui', 'foundryLogoBehaviour')) {
+                case 'toggleAll': {
+                    alsoChat = true;
+                    break;
+                }
+                case 'toggleButChat': {
+                    alsoChat = false;
+                    break;
+                }
+            }
             if (!MinimalUILogo.hiddenInterface) {
                 if (alsoChat) {
                     $('#sidebar').hide();
@@ -617,14 +402,12 @@ class MinimalUILogo {
                 "standard": game.i18n.localize("MinimalUI.SettingsStandard")
             },
             default: "hidden",
-            onChange: _ => {
-                window.location.reload();
-            }
+            onChange: debouncedReload
         });
 
         game.settings.register('minimal-ui', 'foundryLogoBehaviour', {
             name: game.i18n.localize("MinimalUI.LogoBehaviourName"),
-            hint:  game.i18n.localize("MinimalUI.LogoBehaviourHint"),
+            hint: game.i18n.localize("MinimalUI.LogoBehaviourHint"),
             scope: 'world',
             config: true,
             type: String,
@@ -632,10 +415,7 @@ class MinimalUILogo {
                 "toggleAll": game.i18n.localize("MinimalUI.LogoBehaviourToggle"),
                 "toggleButChat": game.i18n.localize("MinimalUI.LogoBehaviourToggleNoChat")
             },
-            default: "toggleButChat",
-            onChange: _ => {
-                window.location.reload();
-            }
+            default: "toggleButChat"
         });
 
         game.settings.register('minimal-ui', 'foundryLogoImage', {
@@ -644,6 +424,7 @@ class MinimalUILogo {
             scope: 'world',
             config: true,
             type: String,
+            filePicker: 'file',
             default: "icons/fvtt.png",
             onChange: _ => {
                 MinimalUILogo.updateImageSrc(game.settings.get('minimal-ui', 'foundryLogoImage'));
@@ -653,23 +434,14 @@ class MinimalUILogo {
 
     static initHooks() {
 
-        Hooks.once('renderSceneNavigation', async function() {
+        Hooks.once('renderSceneNavigation', async function () {
             MinimalUILogo.updateImageSrc(game.settings.get('minimal-ui', 'foundryLogoImage'));
         });
 
-        Hooks.once('ready', async function() {
+        Hooks.once('ready', async function () {
 
             if (game.settings.get('minimal-ui', 'foundryLogoSize') !== 'hidden') {
-                switch (game.settings.get('minimal-ui', 'foundryLogoBehaviour')) {
-                    case 'toggleAll': {
-                        MinimalUILogo.hideAll(true);
-                        break;
-                    }
-                    case 'toggleButChat': {
-                        MinimalUILogo.hideAll(false);
-                        break;
-                    }
-                }
+                MinimalUILogo.hideAll();
             }
 
             switch (game.settings.get('minimal-ui', 'foundryLogoSize')) {
@@ -686,7 +458,7 @@ class MinimalUILogo {
             }
 
             // Compatibility Workaround for bullseye module
-            if (game.modules.has('bullseye') && game.modules.get('bullseye').active) {
+            if (game.modules.get('bullseye') && game.modules.get('bullseye').active) {
                 rootStyle.setProperty('--logovis', 'visible');
                 rootStyle.setProperty('--logoh', '50px');
                 rootStyle.setProperty('--logow', '100px');
@@ -700,17 +472,14 @@ class MinimalUILogo {
 
 class MinimalUINavigation {
 
-    static cssSceneNavNoLogoStart = '5px';
+    static cssSceneNavNoLogoStart = '-14px';
     static cssSceneNavSmallLogoStart = '75px';
-    static cssSceneNavBullseyeStart = '125px';
+    static cssSceneNavBullseyeStart = '100px';
 
-    static collapseNavigation(toggleId) {
-        let target = document.getElementById(toggleId);
-        if (target) {
-            target.click();
-        }
+    static async collapseNavigation() {
+        await ui.nav.collapse();
     }
-    
+
     static initSettings() {
 
         game.settings.register('minimal-ui', 'sceneNavigation', {
@@ -724,10 +493,8 @@ class MinimalUINavigation {
                 "collapsed": game.i18n.localize("MinimalUI.SettingsCollapsed"),
                 "hidden": game.i18n.localize("MinimalUI.SettingsHide")
             },
-            default: "shown",
-            onChange: _ => {
-                window.location.reload();
-            }
+            default: "collapsed",
+            onChange: debouncedReload
         });
 
         game.settings.register('minimal-ui', 'sceneNavigationSize', {
@@ -742,27 +509,44 @@ class MinimalUINavigation {
                 "big": game.i18n.localize("MinimalUI.SettingsBig")
             },
             default: "small",
-            onChange: _ => {
-                window.location.reload();
-            }
+            onChange: debouncedReload
         });
-        
+
     }
-    
+
     static initHooks() {
 
-        Hooks.once('ready', async function() {
-            switch(game.settings.get('minimal-ui', 'foundryLogoSize')) {
+        Hooks.once('ready', async function () {
+            switch (game.settings.get('minimal-ui', 'foundryLogoSize')) {
                 case 'small': {
                     rootStyle.setProperty('--navixpos', MinimalUINavigation.cssSceneNavSmallLogoStart);
                     break;
                 }
             }
 
-            switch(game.settings.get('minimal-ui', 'sceneNavigation')) {
+            // Compatibility Workaround for bullseye module
+            if (game.modules.get('bullseye') && game.modules.get('bullseye').active) {
+                rootStyle.setProperty('--navixpos', MinimalUINavigation.cssSceneNavBullseyeStart);
+            }
+        });
+
+        Hooks.once('renderSceneNavigation', async function () {
+
+            switch (game.settings.get('minimal-ui', 'foundryLogoSize')) {
+                case 'small': {
+                    rootStyle.setProperty('--navixmg', '25px');
+                    break;
+                }
+                case 'hidden': {
+                    rootStyle.setProperty('--navixmg', '10px');
+                    break;
+                }
+            }
+
+            switch (game.settings.get('minimal-ui', 'sceneNavigation')) {
                 case 'collapsed': {
+                    MinimalUINavigation.collapseNavigation();
                     rootStyle.setProperty('--navivis', 'visible');
-                    MinimalUINavigation.collapseNavigation("nav-toggle");
                     break;
                 }
                 case 'shown': {
@@ -771,15 +555,7 @@ class MinimalUINavigation {
                 }
             }
 
-            // Compatibility Workaround for bullseye module
-            if (game.modules.has('bullseye') && game.modules.get('bullseye').active) {
-                rootStyle.setProperty('--navixpos', MinimalUINavigation.cssSceneNavBullseyeStart);
-            }
-        });
-
-        Hooks.once('renderSceneNavigation', async function() {
-
-            switch(game.settings.get('minimal-ui', 'sceneNavigationSize')) {
+            switch (game.settings.get('minimal-ui', 'sceneNavigationSize')) {
                 case 'standard': {
                     rootStyle.setProperty('--navilh', '32px');
                     rootStyle.setProperty('--navifs', '16px');
@@ -797,10 +573,10 @@ class MinimalUINavigation {
             }
 
         });
-        
-        Hooks.on('renderSceneNavigation', async function() {
 
-            switch(game.settings.get('minimal-ui', 'foundryLogoSize')) {
+        Hooks.on('renderSceneNavigation', async function () {
+
+            switch (game.settings.get('minimal-ui', 'foundryLogoSize')) {
                 case 'hidden': {
                     rootStyle.setProperty('--navixpos', MinimalUINavigation.cssSceneNavNoLogoStart);
                     break;
@@ -812,20 +588,21 @@ class MinimalUINavigation {
             }
 
             // Compatibility Workaround for bullseye module
-            if (game.modules.has('bullseye') && game.modules.get('bullseye').active) {
+            if (game.modules.get('bullseye') && game.modules.get('bullseye').active) {
                 rootStyle.setProperty('--navixpos', MinimalUINavigation.cssSceneNavBullseyeStart);
             }
 
         });
 
     }
-    
+
 }
 
 class MinimalUIPlayers {
 
+    static cssPlayersHiddenWidth = '32px';
     static cssPlayersSmallFontSize = '12px';
-    static cssPlayersSmallWidth = '150px';
+    static cssPlayersSmallWidth = '175px';
     static cssPlayersStandardFontSize = 'inherit';
     static cssPlayersStandardWidth = '200px';
 
@@ -839,12 +616,11 @@ class MinimalUIPlayers {
             choices: {
                 "default": game.i18n.localize("MinimalUI.SettingsAlwaysVisible"),
                 "autohide": game.i18n.localize("MinimalUI.SettingsAutoHide"),
+                "clicktoggle": game.i18n.localize("MinimalUI.SettingsClickToggle"),
                 "hidden": game.i18n.localize("MinimalUI.SettingsHide")
             },
-            default: "autohide",
-            onChange: _ => {
-                window.location.reload();
-            }
+            default: "clicktoggle",
+            onChange: debouncedReload
         });
 
         game.settings.register('minimal-ui', 'playerListSize', {
@@ -857,45 +633,64 @@ class MinimalUIPlayers {
                 "small": game.i18n.localize("MinimalUI.SettingsSmall"),
                 "standard": game.i18n.localize("MinimalUI.SettingsStandard")
             },
-            default: "small",
-            onChange: _ => {
-                window.location.reload();
-            }
+            default: "standard",
+            onChange: debouncedReload
         });
+
+        // Ping Logger compatibility setting
+        if (game.modules.get('ping-logger')?.active) {
+            game.settings.register('minimal-ui', 'playerShowPing', {
+                name: game.i18n.localize("MinimalUI.PlayersShowPingName"),
+                hint: game.i18n.localize("MinimalUI.PlayersShowPingHint"),
+                scope: 'world',
+                config: true,
+                type: String,
+                choices: {
+                    "showPing": game.i18n.localize("MinimalUI.PlayersShowPing"),
+                    "hidePing": game.i18n.localize("MinimalUI.PlayersHidePing"),
+                },
+                default: "hidePing",
+                onChange: debouncedReload
+            });
+        }
     }
 
     static initHooks() {
 
-        Hooks.on('renderPlayerList', async function() {
+        Hooks.on('renderPlayerList', async function () {
             const players = $("#players");
 
             players[0].val = "";
             const plSize = game.settings.get('minimal-ui', 'playerListSize');
+            const plSetting = game.settings.get('minimal-ui', 'playerList');
 
-            switch(game.settings.get('minimal-ui', 'playerList')) {
+            switch (plSetting) {
                 case 'default': {
+                    players.css('transition', 'ease-out 0.5s');
                     if (plSize === 'small') {
                         rootStyle.setProperty('--playerfsize', MinimalUIPlayers.cssPlayersSmallFontSize);
-                        rootStyle.setProperty('--playerwidth', MinimalUIPlayers.cssPlayersSmallWidth);
+                        rootStyle.setProperty('--players-width', MinimalUIPlayers.cssPlayersSmallWidth);
+                        rootStyle.setProperty('--playerwidthhv', MinimalUIPlayers.cssPlayersSmallWidth);
                     } else {
                         rootStyle.setProperty('--playerfsize', MinimalUIPlayers.cssPlayersStandardFontSize);
-                        rootStyle.setProperty('--playerwidth', MinimalUIPlayers.cssPlayersStandardWidth);
                         rootStyle.setProperty('--playerfsizehv', MinimalUIPlayers.cssPlayersStandardFontSize);
+                        rootStyle.setProperty('--players-width', MinimalUIPlayers.cssPlayersStandardWidth);
                         rootStyle.setProperty('--playerwidthhv', MinimalUIPlayers.cssPlayersStandardWidth);
                     }
                     rootStyle.setProperty('--playervis', 'visible');
                     // DnD UI Special Compatibility
                     if (game.modules.get('dnd-ui') && game.modules.get('dnd-ui').active) {
-                        rootStyle.setProperty('--playerwidth', '200px');
+                        rootStyle.setProperty('--players-width', '200px');
                     }
                     // SWADE Special Compatibility
                     rootStyle.setProperty('--playerbennies', 'inline');
                     // ---
                     break;
                 }
-                case 'autohide': {
+                case 'autohide': case 'clicktoggle': {
                     if (plSize === 'small') {
                         rootStyle.setProperty('--playerfsizehv', MinimalUIPlayers.cssPlayersSmallFontSize);
+                        rootStyle.setProperty('--playerwidthhv', MinimalUIPlayers.cssPlayersSmallWidth);
                     } else {
                         rootStyle.setProperty('--playerfsizehv', MinimalUIPlayers.cssPlayersStandardFontSize);
                         rootStyle.setProperty('--playerwidthhv', MinimalUIPlayers.cssPlayersStandardWidth);
@@ -908,39 +703,99 @@ class MinimalUIPlayers {
                         players.css('border-image', 'none');
                         players.css('border-color', 'black');
                         players.hover(
-                            function() {
+                            function () {
                                 players.css('border-image', '');
                                 players.css('border-color', '');
                             },
-                            function() {
+                            function () {
                                 players.css('border-image', 'none');
                                 players.css('border-color', 'black');
                             }
                         );
                     }
-                    // Compatibility for Raise Hand module
-                    if (game.modules.has('raise-my-hand') && game.modules.get('raise-my-hand').active) {
-                        rootStyle.setProperty('--playerwidth', '42px');
-                        rootStyle.setProperty('--playerslh', '20px');
+                    let playerWidthPixel = parseInt(MinimalUIPlayers.cssPlayersHiddenWidth);
+
+                    // Compatibility for Ping Logger module
+                    if (game.modules.get('ping-logger')?.active) {
+                        if (game.settings.get('minimal-ui', 'playerShowPing') === "showPing") {
+                            // Increase width and height to display ping
+                            rootStyle.setProperty('--playerpingdisplay', 'initial');
+                            rootStyle.setProperty('--playerslh', '20px');
+                            playerWidthPixel += 36;
+                        } else {
+                            // Hide the ping, and only display on hover
+                            rootStyle.setProperty('--playerpingdisplay', 'none');
+                            players.hover(
+                                function () {
+                                    $(".pingLogger_pingSpan").show();
+                                },
+                                function () {
+                                    $(".pingLogger_pingSpan").hide();
+                                }
+                            );
+                        }
                     }
+
+                    rootStyle.setProperty('--players-width', `${playerWidthPixel}px`);
                     // SWADE Special Compatibility
                     rootStyle.setProperty('--playerbennies', 'none');
-                    if (game.system.data.name === 'swede') {
+                    if (game.system.data.name === 'swade') {
                         players.hover(
-                            function() {
+                            function () {
                                 $(".bennies-count").show();
                             },
-                            function() {
+                            function () {
                                 $(".bennies-count").hide();
                             }
                         );
                     }
                     // ---
+                    if (plSetting === 'autohide') {
+                        players.hover(
+                          () => {
+                              players.css('width', 'var(--playerwidthhv)');
+                              players.css('font-size', 'var(--playerfsizehv)');
+                              players.css('opacity', '100%');
+                              $("#players ol li.player").css('line-height', '20px');
+                          },
+                          () => {
+                              players.css('width', '');
+                              players.css('font-size', 'var(--playerfsize)');
+                              players.css('opacity', 'var(--opacity)');
+                              $("#players ol li.player").css('line-height', '2px');
+                          });
+                    } else {
+                        players.css('transition', 'ease-out 0.5s');
+                        let state = 0;
+                        $("#player-list").click(() => {
+                            if (state === 0) {
+                                players.css('transition', '');
+                                players.css('width', 'var(--playerwidthhv)');
+                                players.css('font-size', 'var(--playerfsizehv)');
+                                players.css('opacity', '100%');
+                                $("#players ol li.player").css('line-height', '20px');
+                                state = 1;
+                                setTimeout(() => {if (state === 1 ) players.css('transition', 'ease-out 0.5s');}, 100);
+                            } else {
+                                players.css('transition', '');
+                                players.css('width', '');
+                                players.css('font-size', 'var(--playerfsize)');
+                                players.css('opacity', 'var(--opacity)');
+                                $("#players ol li.player").css('line-height', '2px');
+                                state = 0;
+                                setTimeout(() => {if (state === 0 ) players.css('transition', 'ease-out 0.5s');}, 100);
+                            }
+                        });
+                        players.hover(
+                          () => {
+                              players.css('opacity', '100%');
+                          },
+                          () => {
+                              players.css('opacity', 'var(--opacity)');
+                          });
+                    }
                     break;
                 }
-            }
-            if (game.settings.get('minimal-ui', 'hotbar') === 'autohide') {
-                rootStyle.setProperty('--playerbot', '2px');
             }
             // DnD UI Special Compatibility
             if (game.modules.get('dnd-ui') && game.modules.get('dnd-ui').active) {
@@ -967,34 +822,46 @@ class MinimalUISidebar {
                 "shown": game.i18n.localize("MinimalUI.SettingsStartVisible"),
                 "collapsed": game.i18n.localize("MinimalUI.SettingsCollapsed")
             },
-            default: "collapsed",
-            onChange: _ => {
-                window.location.reload();
-            }
+            default: "shown"
         });
     }
 
     static initHooks() {
-        Hooks.once('renderSidebarTab', async function() {
-            switch(game.settings.get('minimal-ui', 'rightcontrolsBehaviour')) {
+        Hooks.once('renderChatLog', async function () {
+            const sidebarElem = $("#sidebar-tabs");
+            const newHeight = parseInt(sidebarElem.css('--sidebar-tab-height')) / 1.25;
+            sidebarElem.css('--sidebar-tab-height', newHeight + 'px');
+            switch (game.settings.get('minimal-ui', 'rightcontrolsBehaviour')) {
                 case 'shown': {
+                    rootStyle.setProperty('--fpsvis', 'unset');
                     rootStyle.setProperty('--controlsvis', 'visible');
                     break;
                 }
                 case 'collapsed': {
-                    await new Promise(waitABit => setTimeout(waitABit, 100));
-                    await ui.sidebar.collapse();
-                    await new Promise(waitABit => setTimeout(waitABit, 400));
+                    ui.sidebar.element.hide();
+                    ui.sidebar.collapse();
+                    // wait for animation to finish
+                    await new Promise(waitABit => setTimeout(waitABit, 600));
                     rootStyle.setProperty('--controlsvis', 'visible');
+                    ui.sidebar.element.fadeIn('slow');
                     break;
                 }
                 default: {
+                    rootStyle.setProperty('--fpsvis', 'unset');
                     rootStyle.setProperty('--controlsvis', 'visible');
                     break;
                 }
             }
         });
-
+        Hooks.on('collapseSidebar', function(_, isCollapsing) {
+            if (isCollapsing) {
+                rootStyle.setProperty('--fpsposx', '-5px');
+                rootStyle.setProperty('--fpsvis', 'unset');
+            } else {
+                rootStyle.setProperty('--fpsposx', '300px');
+                rootStyle.setProperty('--fpsvis', 'unset');
+            }
+        });
     }
 }
 
@@ -1007,7 +874,7 @@ class MinimalUITheme {
             label: game.i18n.localize("MinimalUI.ColorPicker"),
             scope: "world",
             restricted: true,
-            defaultColor: "#ff490080",
+            defaultColor: "#00000080",
             onChange: _ => {
                 rootStyle.setProperty('--bordercolor', game.settings.get('minimal-ui', 'borderColor'));
                 if (game.modules.get('minimal-window-controls')?.active) {
@@ -1025,7 +892,7 @@ class MinimalUITheme {
             label: game.i18n.localize("MinimalUI.ColorPicker"),
             scope: "world",
             restricted: true,
-            defaultColor: "#ff000060",
+            defaultColor: "#7c7c7c40",
             type: String,
             onChange: _ => {
                 rootStyle.setProperty('--shadowcolor', game.settings.get('minimal-ui', 'shadowColor'));
@@ -1055,6 +922,23 @@ class MinimalUITheme {
                 }
             }
         });
+
+        game.settings.register("minimal-ui", "transparencyPercentage", {
+            name: game.i18n.localize("MinimalUI.TransparencyPercentageName"),
+            hint: game.i18n.localize("MinimalUI.TransparencyPercentageHint"),
+            scope: "world",
+            config: true,
+            default: 100,
+            type: Number,
+            onChange: _ => {
+                const transparency = game.settings.get('minimal-ui', 'transparencyPercentage');
+                if (transparency >= 0 && transparency <= 100) {
+                    rootStyle.setProperty('--opacity', transparency.toString() + '%');
+                    // Need one separate for controls to handle some click events - there is probably a better way
+                    rootStyle.setProperty('--opacitycontrols', transparency.toString() + '%');
+                }
+            }
+        });
     }
 
     static initHooks() {
@@ -1062,82 +946,14 @@ class MinimalUITheme {
             rootStyle.setProperty('--bordercolor', game.settings.get('minimal-ui', 'borderColor'));
             rootStyle.setProperty('--shadowcolor', game.settings.get('minimal-ui', 'shadowColor'));
             rootStyle.setProperty('--shadowstrength', game.settings.get('minimal-ui', 'shadowStrength') + 'px');
+            const transparency = game.settings.get('minimal-ui', 'transparencyPercentage');
+            if (transparency >= 0 && transparency <= 100) {
+                rootStyle.setProperty('--opacity', transparency.toString() + '%');
+                // Need one separate for controls to handle some click events - there is probably a better way
+                rootStyle.setProperty('--opacitycontrols', transparency.toString() + '%');
+            }
         });
     }
-}
-
-class MinimalUIDynamic {
-
-    static lastHoverTime;
-
-    static initSettings() {
-
-        game.settings.register('minimal-ui', 'dynamicMinimalUi', {
-            name: game.i18n.localize("MinimalUI.DynamicUIName"),
-            hint: game.i18n.localize("MinimalUI.DynamicUIHint"),
-            scope: 'world',
-            config: true,
-            type: String,
-            choices: {
-                "enabled": game.i18n.localize("MinimalUI.Enabled"),
-                "disabled": game.i18n.localize("MinimalUI.Disabled")
-            },
-            default: "disabled",
-            onChange: _ => {
-                window.location.reload();
-            }
-        });
-
-    }
-
-    static initHooks() {
-
-        Hooks.on('hoverToken', function() {
-            if (game.settings.get('minimal-ui', 'dynamicMinimalUi') === 'enabled') {
-                if (game.time.serverTime - MinimalUIDynamic.lastHoverTime > 60000) {
-                    if (!ui.sidebar._collapsed)
-                        ui.sidebar.collapse();
-                    if (game.settings.get('minimal-ui', 'controlsBehaviour') === 'autohide' && MinimalUIControls.controlsLocked) {
-                        MinimalUIControls.lockControls(true);
-                    }
-                    MinimalUIDynamic.lastHoverTime = game.time.serverTime;
-                }
-            }
-        });
-
-        Hooks.on('canvasInit', function() {
-            const sidebarInitState = game.settings.get('minimal-ui', 'rightcontrolsBehaviour');
-            const dynamicModeState = game.settings.get('minimal-ui', 'dynamicMinimalUi');
-            if (sidebarInitState === 'collapsed' && dynamicModeState === 'enabled' && MinimalUIDynamic.lastHoverTime) {
-                if (!ui.sidebar._collapsed)
-                    ui.sidebar.collapse();
-                if (game.settings.get('minimal-ui', 'controlsBehaviour') === 'autohide' && MinimalUIControls.controlsLocked) {
-                    MinimalUIControls.lockControls(true);
-                }
-            }
-        });
-
-        if (!game.modules.get('chat-notifications')?.active) {
-            Hooks.on('renderChatMessage', function () {
-                if (game.settings.get('minimal-ui', 'dynamicMinimalUi') === 'enabled') {
-                    MinimalUIDynamic.lastHoverTime = game.time.serverTime;
-                    if (ui.sidebar._collapsed) {
-                        if (ui.sidebar.activeTab !== 'chat')
-                            ui.sidebar.activateTab('chat');
-                        ui.sidebar.expand();
-                    }
-                }
-            });
-        }
-
-        Hooks.on('sidebarCollapse', function(_, collapsed) {
-            if (game.settings.get('minimal-ui', 'dynamicMinimalUi') === 'enabled' && !collapsed) {
-                MinimalUIDynamic.lastHoverTime = game.time.serverTime;
-            }
-        });
-
-    }
-
 }
 
 class MinimalUIPatch {
@@ -1147,25 +963,98 @@ class MinimalUIPatch {
     }
 
     static initHooks() {
-        Hooks.on('renderSidebarTab', function(app) {
-            if (app._minimized) app.maximize();
+        Hooks.on('changeSidebarTab', function (app) {
+            const target = Object.values(ui.windows).find(a => a.tabName === app.tabName);
+            if (ui.sidebar._collapsed && target?._minimized)
+                target.maximize();
+            else if (ui.sidebar._collapsed && target?.popOut)
+                target.bringToTop();
         });
 
-        Hooks.once('ready', async function() {
+        Hooks.on('renderSidebarTab', function (app) {
+            if (app?.popOut)
+                app.bringToTop();
+        });
 
-            $("#sidebar-tabs > a:nth-child(n)").click(function(eve) {
-                const tabName = jQuery(eve.currentTarget).attr('data-tab');
-                if (ui.sidebar._collapsed) {
-                    if (tabName === 'chat') {
-                        ui.sidebar.expand();
-                    } else {
-                        ui.sidebar.activateTab(tabName);
-                    }
-                }
+        Hooks.on('ready', function(app) {
+            // For some reason, the chat pop out does not trigger a changeSidebarTab nor renderSidebarTab. Apply exceptionally.
+            const chatTab = ui.sidebar.element.find('[data-tab="chat"]');
+            if (chatTab?.length) {
+                chatTab.click(() => {
+                    if (ui.sidebar._collapsed)
+                        ui.chat._popout?.bringToTop();
+                });
+                chatTab.contextmenu(() => {
+                    ui.chat._popout?.bringToTop();
+                });
+            }
+            $("#sidebar-tabs > a").contextmenu((e) => {
+                const tab = ui[$(e.currentTarget).attr('data-tab')];
+                if (tab?._popout?._minimized)
+                    tab._popout.maximize();
             });
-
         });
     }
+
+}
+
+class MinimalUICamera {
+
+  static updateCameraSettings() {
+    switch (game.settings.get('minimal-ui', 'cameraBehavior')) {
+      case 'default': {
+        rootStyle.setProperty('--novid', 'inherit');
+        rootStyle.setProperty('--noviddis', 'block');
+        rootStyle.setProperty('--novidleftflex', 'unset');
+        rootStyle.setProperty('--novidlefttop', '0');
+        rootStyle.setProperty('--novidleftleft', '0');
+        break;
+      }
+      case 'reduced': {
+        rootStyle.setProperty('--novid', 'inherit');
+        rootStyle.setProperty('--noviddis', 'none');
+        rootStyle.setProperty('--novidleftflex', 'row');
+        rootStyle.setProperty('--novidlefttop', '-50px');
+        rootStyle.setProperty('--novidleftleft', '5px');
+        break;
+      }
+      case 'hidden': {
+        rootStyle.setProperty('--novid', 'none');
+        rootStyle.setProperty('--noviddis', 'inherit');
+        rootStyle.setProperty('--novidleftflex', 'inherit');
+        rootStyle.setProperty('--novidlefttop', 'inherit');
+        rootStyle.setProperty('--novidleftleft', 'inherit');
+        break;
+      }
+    }
+  }
+
+  static initSettings() {
+    game.settings.register('minimal-ui', 'cameraBehavior', {
+      name: game.i18n.localize("MinimalUI.NoCameraBehaviorName"),
+      hint: game.i18n.localize("MinimalUI.NoCameraBehaviorHint"),
+      scope: 'world',
+      config: true,
+      type: String,
+      choices: {
+        "default": game.i18n.localize("MinimalUI.SettingsDefault"),
+        "reduced": game.i18n.localize("MinimalUI.NoCameraBehaviorReduced"),
+        "hidden": game.i18n.localize("MinimalUI.NoCameraBehaviorHidden")
+      },
+      default: "default",
+      onChange: MinimalUICamera.updateCameraSettings
+    });
+  }
+
+  static initHooks() {
+    Hooks.on('ready', function() {
+      MinimalUICamera.updateCameraSettings();
+    });
+    Hooks.on('rtcSettingsChanged', function(act, cl) {
+      if (cl.client?.users[game.user.id]?.hidden !== undefined)
+        game.webrtc.render();
+    });
+  }
 
 }
 
@@ -1182,11 +1071,6 @@ Hooks.once('init', () => {
     } else {
         MinimalUI.noColorSettings = true;
     }
-    /** ------------------------- */
-
-    /** Initialize settings for Special Feature Functionality */
-    MinimalUIDynamic.initSettings();
-    MinimalUIDynamic.initHooks();
     /** ------------------------- */
 
     /** Initialize settings for Core Component Functionality */

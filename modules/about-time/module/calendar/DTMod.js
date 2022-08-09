@@ -1,4 +1,5 @@
 // date-time modifer applied to DateTime
+import { intervalATtoSC } from "./DateTime.js";
 import { DTCalc } from "./DTCalc.js";
 /**
  * A modifer for add opeations to DateTimes.
@@ -6,20 +7,22 @@ import { DTCalc } from "./DTCalc.js";
  */
 export class DTMod {
     constructor({ years = 0, months = 0, days = 0, hours = 0, minutes = 0, seconds = 0 }) {
-        this.years = years;
-        this.months = months;
-        this.days = days;
-        this.hours = hours;
-        this.minutes = minutes;
-        this.seconds = seconds;
+        this._interval = intervalATtoSC({ years, months, days, hours, minutes, seconds });
+        console.warn(`about-time | DTMod deprecated use 
+      {year: y, month: m, day: d, hours: h, minutes: m, seconds: s`);
         return this;
+    }
+    get interval() { return this._interval; }
+    ;
+    set interval(interval) {
+        this._interval = intervalATtoSC(interval);
     }
     /**
      * Short hand creation method DTMod.create({....})
      * @param data {years=0, months=0, days=0,hours=0, minutes=0, seconds=0}
      */
-    static create(data = {}) {
-        return new DTMod(data);
+    static create({ years = 0, months = 0, days = 0, hours = 0, minutes = 0, seconds = 0 }) {
+        return new DTMod({ years, months, days, minutes, hours, seconds });
     }
     /**
    * Add together two DTMods. no managment of values other than making them integers
@@ -27,48 +30,41 @@ export class DTMod {
    * returns a new mod
    */
     add(increment) {
-        let years = Math.floor(this.years + (increment.years || 0));
-        let months = Math.floor(this.months + (increment.months || 0));
-        let days = Math.floor(this.days + (increment.days || 0));
-        let hours = Math.floor(this.hours + (increment.hours || 0));
-        let minutes = Math.floor(this.minutes + (increment.minutes || 0));
-        let seconds = Math.floor(this.seconds + (increment.seconds || 0));
-        return new DTMod({ years, months, days, hours, minutes, seconds });
+        console.warn("about-time | add() deprecated - do the calc directly");
+        let year = Math.floor(this.interval.year + (increment.interval.year || 0));
+        let month = Math.floor(this.interval.month + (increment.interval.month || 0));
+        let day = Math.floor(this.interval.day + (increment.interval.day || 0));
+        let hour = Math.floor(this.interval.hour + (increment.interval.hour || 0));
+        let minute = Math.floor(this.interval.minute + (increment.interval.minute || 0));
+        let second = Math.floor(this.interval.second + (increment.interval.second || 0));
+        const result = new DTMod({});
+        result.interval = { year, month, day, hour, minute, second };
+        return result;
     }
     /**
      * WARNING does not work for leap years
      * A convenience method to allow conversion of time specs to seconds.
      */
     toSeconds() {
-        let seconds = Object.keys(DTMod.mapper).reduce((acc, key) => acc = acc + DTMod.mapper[key](this[key]), 0);
-        if (seconds > DTCalc.dpy[0] * DTCalc.spd) {
-            console.warn("DTMod conversion to seconds more than 1 year");
-            console.log("DTMod", this);
-        }
-        //    seconds += DTCalc.numLeapYears(this.years) * DTCalc.spd;
-        return seconds;
+        console.warn(`about-time | toSconds  deprecated use
+    SimpleCalendar.api.timestampPlusInterval(game.time.worldTime, interval) - game.time.worldTime`);
+        //@ts-ignore
+        return window.SimpleCalendar.api.timestampPlusinterval(window.SimpleCalendar.api.timestamp(), this.interval) - window.SimpleCalendar.api.timestamp();
     }
     /* The following methods are all for using DTMods to represent times and do time arithmetic */
     static timeString(timeInSeconds) {
+        console.warn("about-time | timeString deprecated - print it yourself");
         let dmhs = this.fromSeconds(timeInSeconds);
         let pad = DTCalc.padNumber;
-        return `${pad(dmhs.hours)}:${pad(dmhs.minutes)}:${pad(dmhs.seconds)}`;
+        return `${pad(dmhs.interval.hour)}:${pad(dmhs.interval.minute)}:${pad(dmhs.interval.second)}`;
     }
     static fromSeconds(seconds) {
-        let days = Math.floor(seconds / DTCalc.spd);
-        seconds = seconds % DTCalc.spd;
-        let hours = Math.floor(seconds / DTCalc.sph);
-        seconds = seconds % DTCalc.sph;
-        let minutes = Math.floor(seconds / DTCalc.spm);
-        seconds = seconds % DTCalc.spm;
-        return new DTMod({ hours: hours, minutes: minutes, seconds: seconds, days: days });
+        // wont work for pathfinder
+        console.warn(`about-time | fromSeeconds deprecated use 
+    const interval = window.SimpleCalendar.api.timestampToDate(seconds);
+    `);
+        //@ts-ignore
+        const dateTime = window.SimpleCalendar.api.timestampToDate(seconds);
+        return new DTMod({ years: 0, months: 0, days: 0, hours: dateTime.hours, minutes: dateTime.minutes, seconds: dateTime.seconds });
     }
 }
-DTMod.mapper = {
-    "years": (years) => years * DTCalc.spy,
-    "months": DTCalc.monthsToSeconds,
-    "days": (days) => days * DTCalc.spd,
-    "hours": (hours) => hours * DTCalc.sph,
-    "minutes": (minutes) => minutes * DTCalc.spm,
-    "seconds": (s) => s
-};

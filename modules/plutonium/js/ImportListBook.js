@@ -1,1 +1,37 @@
-var _0x35b8=['bookData','_content','3ZnJAVQ','Books','_getJournalDatas','getBookUrl','getBookJournals','data','books','pGetBookIndex','181muZJsl','1OpTlXx','Import\x20Book','179334QcMhfQ','226842wRaakC','1LjbNXk','182656axOnmT','bind','74073bUCvDp','176984AGBnZj','book','Book','14907VMmVdW'];var _0x3c99=function(_0x231c90,_0x34893){_0x231c90=_0x231c90-0xaf;var _0x35b802=_0x35b8[_0x231c90];return _0x35b802;};var _0x35bcf1=_0x3c99;(function(_0x5a5958,_0x55e595){var _0x2a0d27=_0x3c99;while(!![]){try{var _0x209dd9=-parseInt(_0x2a0d27(0xb2))*-parseInt(_0x2a0d27(0xb5))+parseInt(_0x2a0d27(0xb1))+parseInt(_0x2a0d27(0xb9))*parseInt(_0x2a0d27(0xc5))+parseInt(_0x2a0d27(0xb6))+-parseInt(_0x2a0d27(0xb0))+parseInt(_0x2a0d27(0xbc))*parseInt(_0x2a0d27(0xc4))+-parseInt(_0x2a0d27(0xb3));if(_0x209dd9===_0x55e595)break;else _0x5a5958['push'](_0x5a5958['shift']());}catch(_0x386ae0){_0x5a5958['push'](_0x5a5958['shift']());}}}(_0x35b8,0x2011f));import{ImportListAdventureBook}from'./ImportListAdventureBook.js';import{Vetools}from'./Vetools.js';import{DataConverter}from'./DataConverter.js';class ImportListBook extends ImportListAdventureBook{constructor(_0xae0e87){var _0x1dab1a=_0x3c99;super({'title':_0x1dab1a(0xaf)},_0xae0e87,{'titleSearch':_0x1dab1a(0xc2),'defaultFolderPath':[_0x1dab1a(0xbd)],'namespace':'book','isFolderOnly':!![]},{'fnGetIndex':Vetools[_0x1dab1a(0xc3)][_0x1dab1a(0xb4)](Vetools),'fnGetUrl':Vetools[_0x1dab1a(0xbf)][_0x1dab1a(0xb4)](Vetools),'dataProp':_0x1dab1a(0xb7),'brewDataProp':_0x1dab1a(0xba),'title':_0x1dab1a(0xb8)});}[_0x35bcf1(0xbe)](){var _0x2681ef=_0x35bcf1;return DataConverter[_0x2681ef(0xc0)](this['_content'][_0x2681ef(0xc1)],this[_0x2681ef(0xbb)]['_contentMetadata'],{'isAddPermission':!![]});}}export{ImportListBook};
+import {ImportListAdventureBook} from "./ImportListAdventureBook.js";
+import {Vetools} from "./Vetools.js";
+import {DataConverterAdventureBook} from "./DataConverterAdventureBook.js";
+
+class ImportListBook extends ImportListAdventureBook {
+	static get ID () { return "books"; }
+	static get DISPLAY_NAME_TYPE_PLURAL () { return "Books"; }
+
+	static _ = this.registerImpl(this);
+
+	constructor (externalData) {
+		super(
+			{title: "Import Book"},
+			externalData,
+			{
+				titleSearch: "books",
+				defaultFolderPath: ["Books"],
+				dirsHomebrew: ["book"],
+				namespace: "book",
+				isFolderOnly: true,
+				configGroup: "importBook",
+			},
+			{
+				fnGetIndex: Vetools.pGetBookIndex.bind(Vetools),
+				dataProp: "book",
+				brewDataProp: "bookData",
+				title: "Book",
+			},
+		);
+	}
+
+	_pGetJournalDatas () {
+		return DataConverterAdventureBook.pGetBookJournals(this._content[0].data, this._content[0]._contentMetadata, {isAddPermission: true});
+	}
+}
+
+export {ImportListBook};
